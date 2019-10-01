@@ -1,0 +1,118 @@
+- id: 200
+  key: satoshi
+  currency: btc
+  sort_order: 3
+  min_confirm: 1
+  max_confirm: 3
+  fixed: 8
+
+- id: 400
+  key: bitcoin_cash
+  currency: bch
+  sort_order: 3
+  min_confirm: 1
+  max_confirm: 3
+  fixed: 8
+
+- id: 600
+  key: ethereum
+  currency: eth
+  sort_order: 3
+  min_confirm: 1
+  max_confirm: 6
+  fixed: 8
+
+- id: 800
+  key: tronix
+  currency: trx
+  sort_order: 3
+  min_confirm: 1
+  max_confirm: 3
+  fixed: 8
+
+- id: 1000
+  key: ripple
+  currency: xrp
+  sort_order: 3
+  min_confirm: 1
+  max_confirm: 3
+  fixed: 8
+
+- id: 1200
+  key: chelscoin
+  currency: csc
+  sort_order: 3
+  min_confirm: 1
+  max_confirm: 3
+  fixed: 8
+
+- id: 1400
+  key: eos_token
+  currency: eos
+  sort_order: 3
+  min_confirm: 1
+  max_confirm: 3
+  fixed: 8
+
+#- id: 1600
+#  key: fiat
+#  currency: usd
+#  sort_order: 3
+#  min_confirm: 1
+#  max_confirm: 3
+
+- id: 1500
+  key: impereum
+  currency: ipm
+  sort_order: 3
+  min_confirm: 1
+  max_confirm: 3
+  fixed: 8
+
+- id: 1600
+  key: ems_token
+  currency: ems
+  sort_order: 3
+  min_confirm: 1
+  max_confirm: 3
+  fixed: 8
+
+- id: 1800
+  key: ecpplus_token
+  currency: "ecp+"
+  sort_order: 3
+  min_confirm: 1
+  max_confirm: 3
+  fixed: 8
+
+- id: 2000
+  key: usdcoin
+  currency: usdc
+  sort_order: 3
+  min_confirm: 1
+  max_confirm: 3
+  fixed: 8
+
+- id: 2200
+  key: fto_token
+  currency: fto
+  sort_order: 3
+  min_confirm: 1
+  max_confirm: 3
+  fixed: 8
+
+- id: 2400
+  key: aokey7_token
+  currency: aok
+  sort_order: 3
+  min_confirm: 1
+  max_confirm: 3
+  fixed: 8
+
+- id: 2600
+  key: cacplus_token
+  currency: "cac+"
+  sort_order: 3
+  min_confirm: 1
+  max_confirm: 3
+  fixed: 8

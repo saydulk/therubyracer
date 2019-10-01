@@ -1,0 +1,46 @@
+<div class="white_block" id="deposit_trans_sub">
+    <div class="fund_history">
+        <div class="funds_history_left">
+            <h2>{{ "funds.deposit_history.title" | t }}</h2>
+        </div>
+        <div class="funds_history_right">
+            <ul>
+                <li>
+                    <input type="text" ng-model="search" class="form-control " placeholder="Search" style="height: 25px; margin-top: 2px;">
+                </li>
+               <li>
+                    <a class="more" target='_blank' href="/history/account?tab=deposit">{{ "funds.deposit_history.view_all" | t }}</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="table-responsive history_table">
+        <ng-include src="'/templates/funds/_deposit_' + currencyType + '_history.html'"></ng-include>
+    </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function(){
+        $(".shw_hide_arrow").unbind('click').bind('click', function (e) {
+            current_variable = $(this);
+            details(current_variable);
+        });
+    });
+
+    function details(current_variable){
+        i_tag =current_variable.find('i')
+        if(current_variable.find('.fa-angle-down').length > 0){
+            i_tag.removeClass('fa-angle-down');
+            i_tag.addClass('fa-angle-up');
+            $('.collapse').hide();
+            current_variable.parents('.accordion-toggle').first().siblings('.collapse').show();
+        }
+        else{
+            i_tag.removeClass('fa-angle-up');
+            i_tag.addClass('fa-angle-down');
+            current_variable.parents('.accordion-toggle').first().siblings('.collapse').hide();
+        }
+    }
+
+</script>

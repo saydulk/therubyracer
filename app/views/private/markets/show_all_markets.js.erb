@@ -1,0 +1,31 @@
+<% if @search_page.eql?('welcome') %>
+  $('#home_market_search').html('');
+  $('#home_market_search').append("<%= j render(:partial => 'welcome/market_ticker' , locals: { :@markets => @all_markets }) %>");
+  <% class_name =  if params['tab_active'].downcase == 'all' then 'fav'  else "quote-"+params['tab_active'].downcase end %>
+  $(".home_markets tr").each(function() {
+      if ($(this).hasClass('<%= class_name %>')){
+          $(this).show()
+      }
+      else
+          $(this).hide()
+  });
+<% else %>
+  $('#market_search').html('');
+  $('#market_search').append("<%= j render(:partial => 'market_ticker' , locals: { :@markets => @all_markets }) %>");
+  <% class_name =  if params['tab_active'].downcase == 'all' then 'fav'  else "quote-"+params['tab_active'].downcase end %>
+  $.each($(".markets tr"), function(index, val){
+      if ($("#chkYes").is(":checked")) {
+          $(".market_change").show();
+          $(".market_volume").hide();
+      }
+      else {
+          $(".market_volume").show();
+          $(".market_change").hide();
+      }
+      if ($(val).hasClass('<%= class_name %>')){
+          $(val).show()
+      }
+      else
+          $(val).hide()
+  })
+<% end %>

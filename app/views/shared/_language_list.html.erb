@@ -1,0 +1,43 @@
+<li>
+<a href="/en" class ="set_language" id="en">
+  <i class="fa"></i> English </a>
+</li>
+<!--<li>-->
+<!--<a href="/ru" class="set_language" id="ru">-->
+  <!--<i class="fa" title="Russian"></i> русский </a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="/es" class="set_language" id="es">-->
+  <!--<i class="fa" title="Spanish"></i> Español </a>-->
+<!--</li>-->
+<li>
+<a href="/zh" class="set_language" id="zh">
+  <i class="fa" title="Chinese"></i> 中文</a>
+</li>
+<!--<li>-->
+<!--<a href="/ja" class="set_language" id="ja">-->
+  <!--<i class="fa" title="Japanese"></i> 日本 </a>-->
+<!--</li>-->
+<li>
+<a href="/ko" class="set_language" id="ko">
+  <i class="fa" title="Korean"></i> 한국어 </a>
+</li>
+<!--<li>-->
+  <!--<a href="/ar" class="set_language" id="ar">-->
+    <!--<i class="fa" title="Arabic"></i> عربى </a>-->
+<!--</li>-->
+
+
+<script type="text/javascript">
+    jQuery(function() {
+        $('#'+localStorage.getItem('lang')).children().addClass('fa-check active');
+        lang_text = $('#'+localStorage.getItem('lang')).text()
+        if(localStorage.getItem('lang'))
+          $('.language_select').text(lang_text);
+        $('.set_language').click(function(){
+            current_var = $(this);
+            localStorage.setItem('lang', current_var.attr('id'));
+            $(this).children().addClass('fa-check');
+        })
+    });
+</script>

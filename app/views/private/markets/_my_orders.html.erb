@@ -1,0 +1,36 @@
+<div id="my_orders_wrapper" class="has-left-dropdown">
+  <div id="my_orders">
+    <div class="table-responsive">
+      <table class="table table-hover" id="open_orders">
+        <thead>
+        <tr>
+          <th><%= t('.date') %></th>
+          <th><%= t('.pair') %></th>
+          <th><%= t('.type') %></th>
+          <th class="text-center"><%= t('.side') %></th>
+          <th class="text-left"><%= t('.price') %></th>
+          <th class="text-right"><%= t('.amount') %></th>
+          <th class="text-right"><%= t('.filled') %></th>
+          <th class="text-right"><%= t('.total') %></th>
+          <th class="text-center">
+            <div class="btn-group " >
+              <%= link_to t('.clear_all_html'), clear_market_orders_path(params[:id]),method: :post,remote: :true, data: { confirm: 'Are your sure cancel  all orders?' }, class: 'btn btn-default' %>
+            </div>
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <% if current_user %>
+          <tr>
+            <td style="padding: 0" colspan="10">
+              <div class="empty-row">
+                <%= t('.no_open_orders') %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

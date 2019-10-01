@@ -1,0 +1,44 @@
+<div class="open_orders_pages" id ="open_order">
+  <div id="orders">
+      <div class="table-responsive">
+        <table class="table table-condensed table-hover current_history">
+        <thead>
+        <tr>
+          <th><%= t('.date') %></th>
+          <th><%= t('.pair') %></th>
+          <th><%= t('.type') %></th>
+          <th class="text-center"><%= t('.side') %></th>
+          <th class="text-center"> <%= t('.average') %> </th>
+          <th class="text-left"><%= t('.price') %></th>
+          <th class="text-right"><%= t('.filled') %></th>
+          <th class="text-right"><%= t('.remaining_amount') %></th>
+          <th class="text-right"><%= t('.remaining_total') %></th>
+          <!--<th><%#= t('.condition') %></th>-->
+          <th><%= t('.status') %></th>
+        </tr>
+        </thead>
+        <tbody class="list">
+          <% if current_user and @orders_history.empty? %>
+            <tr>
+              <td colspan="11" style="padding: 0px;"><div style="min-height: 200px;" class='empty-row'><p style="background-color: rgb(247, 247, 247); padding: 6px 10px;" class="text-center"><%= t('.no_order_history') %></p></div></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      </div>
+    <%if @orders_history.present? %>
+      <%= paginate @orders_history %>
+    <% end %>
+  </div>
+
+</div>
+
+<script>
+  // Prevent disabled next pagination click
+    $('.next ').click(function (e) {
+        if ($(this).is('.disabled')) {
+            e.preventDefault();
+        }
+    });
+</script>
+

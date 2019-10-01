@@ -1,0 +1,31 @@
+<div class="panel panel-info">
+  <div class="panel_inner">
+    <div class="panel-heading">
+      <span><%= t('.account_info') %></span>
+      <span> : </span>
+      <span><%= account.currency_text %></span>
+    </div>
+    <div class="panel-body">
+      <dl class="dl-horizontal">
+        <%= item_for account, :amount %>
+        <%= item_for account, :locked %>
+        <%= item_for account, :balance %>
+        <% if account.currency_obj.present? %>
+          <% if account.currency_obj.coin? %>
+                <%= item_for t('.payment_address') do %>
+                    <% if account.currency == 'bch'.present? %>
+                    <%= account.payment_address&.legacy_address.to_s.gsub('bitcoincash:','') %>
+                    <% else %>
+                        <% if account.currency == 'xrp'.present?%>
+                        <%= account.payment_address&.address.split('?dt=')[0]  %>
+                        <% else %>
+                            <%= account.payment_address&.address.to_s %>
+                        <% end %>
+                    <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </dl>
+    </div>
+  </div>
+</div>

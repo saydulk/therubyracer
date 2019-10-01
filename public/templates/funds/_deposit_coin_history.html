@@ -1,0 +1,48 @@
+
+<table class="table" ng-controller="DepositHistoryController as dhCtrl" >
+    <tbody dir-paginate="deposit in deposit_history | orderBy:predicate | filter:search | itemsPerPage:18">
+
+    <tr class="accordion-toggle" ng-click ="toogle_arrow(deposit.txid)" data-toggle="collapse" data-target="#collapse_{{ deposit.txid }}" ng-class="{ 'new-row':dhCtrl.newRecord(deposit) }">
+        <td>{{"funds.deposit_history." + deposit.aasm_state | t}}</td>
+        <td>{{ deposit.currency | uppercase }}</td>
+        <td>{{deposit.amount | number : deposit_channel.fixed }}</td>
+        <td>{{deposit.created_at | date:'yyyy-MM-dd HH:mm'}}</td>
+        <td class="col-lg-1 text-center arrow_td">
+            <span style="display: inline-block; width: 100%; text-align: center;" class="shw_hide_arrow"><i class="fa fa-angle-down"></i></span>
+        </td>
+    </tr>
+    <!--<tr id="collapse_{{ deposit.txid }}" class="collapse" ng-class="selected_txtid == deposit.txid ? 'in' : '' ">-->
+    <tr id="collapse_{{ deposit.txid }}" class="collapse" >
+        <td colspan="5">
+            <table class="table">
+                <tr>
+                    <td style="color: #999;">{{ "funds.deposit_history.address" | t }}</td>
+                    <td ng-if = "dhCtrl.account.currency != 'bch'">{{ account_history.deposit_address }}</td>
+                    <td ng-if = "dhCtrl.account.currency == 'bch'" >{{ account_history.legacy_address }}</td>
+                </tr>
+                <tr>
+                    <td>{{ "funds.deposit_history.txid" | t }}</td>
+                    <td>
+                        <a class href="{{deposit.blockchain_url}}" target='_blank' data-placement="top"
+                                title="{{deposit.txid_tip}}" onmouseenter="$(this).tooltip('show')">{{deposit.txid | truncate: 40}}</a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+    <tr ng-show="deposit_history.length == 0">
+        <td colspan="6">
+            <div class="no_rocord_found">
+                <image src="/zups.png" />
+                <p>{{ "funds.deposit_history.no_data" | t }}</p>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<dir-pagination-controls
+        max-size="18"
+        direction-links="true"
+        boundary-links="true" >
+</dir-pagination-controls>

@@ -1,0 +1,16 @@
+<div class="col-xs-24 currencies_summary">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <%= t('.oneday') %>
+        </div>
+        <%= render partial: 'table', locals: {banks: @oneday_banks} %>
+    </div>
+</div>
+<div class="col-xs-24 currencies_summary">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <%= t('.available') %>
+        </div>
+        <%= render partial: 'table', locals: {banks: @available_banks} %>
+    </div>
+</div>

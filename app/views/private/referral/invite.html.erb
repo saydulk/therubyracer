@@ -1,0 +1,245 @@
+<!-- Buy and sell section start -->
+<section class="blue_sec"></section>
+
+<section class="article_hding">
+  <%= image_tag('inviteBanner.jpg')%>
+</section>
+<section class="paiming_sec">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 paiming_block">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 paiming_block_row">
+            <ul class="flx_box">
+              <li class="flx_items">
+                <div class="badge_img"><%= image_tag('firstpm.jpg')%>
+                </div>
+                <div class="mail_sec">
+                  <p> <%= t('.text9') %></p>
+                  <p><b>ja***@***.com</b></p>
+                </div>
+                <div class="commision_sec">
+                  <p><%= t('.commission') %></p>
+                  <p><b>116.05949092 BTC</b></p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 paiming_block_row">
+            <ul class="flx_box">
+              <li class="flx_items">
+                <div class="badge_img"><%= image_tag('secendpm.jpg')%>
+                </div>
+                <div class="mail_sec">
+                  <p> <%= t('.text10') %></p>
+                  <p><b>mi***@***.com</b></p>
+                </div>
+                <div class="commision_sec">
+                  <p><%= t('.commission') %></p>
+                  <p><b>116.05949092 BTC</b></p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 paiming_block_row">
+            <ul class="flx_box">
+              <li class="flx_items">
+                <div class="badge_img"><%= image_tag('thirdpm.jpg')%>
+                </div>
+                <div class="mail_sec">
+                  <p><%= t('.text11') %></p>
+                  <p><b>h2***@***.com</b></p>
+                </div>
+                <div class="commision_sec">
+                  <p><%= t('.commission') %></p>
+                  <p><b>116.05949092 BTC</b></p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 referral_info_block">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 referral_info_left" >
+        <div class="row">
+          <div class="col-xs-3 col-sm-5 col-md-3 col-lg-3 left_qr_sec">
+            <div class="Qr_block">
+
+              <% qrcode = RQRCode::QRCode.new(domain_url({ ref: current_user.referral_id})) %>
+              <%= qrcode.as_svg(offset: 0, color: '000',
+                                shape_rendering: 'crispEdges',
+                                module_size: 3.5).html_safe %>
+            </div>
+          </div>
+          <div class="col-xs-9 col-sm-7 col-md-9 col-lg-9 right_referral_id_sec">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="row">
+                  <label class="custom_label" >My Referral ID: </label> <%= current_user.referral_id %>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="row">
+                  <label class="custom_label" >Your commission rate: </label>
+                  <strong class="percent"> <%= @active_plan ? @active_plan.transection_bonus : '0%'  %> </strong>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="row">
+                  <div class="btn-group ref_link">
+                    <label class="custom_label">Referral Link: </label>
+                    <input class="form-control" id="inviteLink2" type="text" name="inviteLink" value="<%= domain_url({ ref: current_user.referral_id})%>" readonly="">
+                    <button type="button" class="btn btn-default btn-sm" title="Copy" data-clipboard-action="copy" data-clipboard-target="#inviteLink2">
+                      <i class="fa fa-files-o" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <%= social_share_button_tag('It pays to have friends!', url: domain_url({ ref: current_user.referral_id}), desc: 'BitCorex CryptoExchange') %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 referral_info_right">
+        <table>
+          <tbody>
+          <tr>
+            <th><i></i>Referral Friends</th>
+            <th><i></i>Estimated Commission Value
+              <i class="iconfont icon-wen" ng-click="iconwenclick($event)"></i>
+            </th>
+          </tr>
+          <tr>
+            <td><strong > <%= current_user.referrers.count %></strong></td>
+            <td><strong >0 BTC</strong></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid referral_friends">
+  <div class="row">
+    <div class="container">
+      <div class="row ">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="margin-top: 17px">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="row">
+              <div class="col-xs-8 col-sm-8 col-md-10 col-lg-10">
+                <div class="row">
+                  Referral Friends
+                </div>
+              </div>
+              <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 export_sec text-right">
+                <div class="row">
+                  <a ng-href="/user/downloadAgentList.html" href="/user/downloadAgentList.html">Export</a>
+                  <i class="fa fa-file-excel-o" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class ="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-top: 10px;background: #F8F8F8">
+            <div class="row">
+              <table class="table">
+                <thead>
+                <tr>
+                  <th><%= t('.email') %></th>
+                  <th><%= t('.date') %></th>
+                </tr>
+                </thead>
+                <tbody>
+                  <% if current_user.referrers.present? %>
+                       <% current_user.referrers.each do |refer| %>
+                          <tr>
+                            <td> <%= refer.email %> </td>
+                            <td> <%= formate_date(refer.created_at) %> </td>
+                          </tr>
+                       <% end %>
+                  <% else %>
+                    <tr>
+                      <td class="noData" colspan="3"> <%= t('.no_friend') %> </td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="margin-top: 17px">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="row">
+              <div class="col-xs-8 col-sm-8 col-md-10 col-lg-10">
+                <div class="row">
+                  <%= t('.history') %>
+                </div>
+              </div>
+              <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 export_sec text-right">
+                <div class="row">
+                  <a ng-href="/user/downloadAgentList.html" href="/user/downloadAgentList.html"><%= t('.Export') %></a>
+                  <i class="fa fa-file-excel-o" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class ="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-top: 10px;background: #F8F8F8">
+            <div class="row">
+              <table class="table">
+                <thead>
+                <tr>
+                  <th><%= t('.commission') %></th>
+                  <th><%= t('.email') %></th>
+                  <th><%= t('.date') %></th>
+                </tr>
+                </thead>
+              </table>
+              <div style="text-align: center">
+                <p class="noData" style="padding: 10px;"><%= t('.no_commission') %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<section class="inviteRule">
+  <div class="container">
+    <div class="inviteRule-title">
+      <span class="minCenter"><%= t('.details') %></span>
+    </div>
+    <div class="minCenter">
+
+      <div class="inviteRule-con">
+        <ul>
+          <li><i class="iconfont icon-list"></i><%= t('.text',activated: @active_plan&.created_at ) %></li>
+          <li><i class="iconfont icon-list"></i><%= t('.text1', bonus: @active_plan&.referral_bonus, rate: @active_plan&.transection_bonus) %></li>
+          <li><i class="iconfont icon-list"></i><%= t('.text2') %></li>
+          <li><i class="iconfont icon-list"></i><%= t('.text3', limit: (@active_plan&.no_of_referral_choice ? "are #{@active_plan&.no_of_referral}" :'is no limit to the')) %></li>
+          <li><i class="iconfont icon-list"></i><%= t('.text4') %></li>
+          <li><i class="iconfont icon-list"></i><%= t('.text5') %></li>
+        </ul>
+        <div class="spe">
+          <strong><%= t('.notice') %></strong>
+          <p><%= t('.text6') %></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>

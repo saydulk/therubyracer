@@ -1,0 +1,3680 @@
+ko:
+  errors:
+      messages:
+        min_size_error: " 크기가 %{min_size}보다 커야합니다."
+        max_size_error: " 크기가 %{max_size}보다 작아야합니다."
+        content_type_whitelist_error: "파일 업로드 가능한 유형: '.jpg', '.jpeg', '.gif', '.png',"
+  activerecord:
+    error:
+      messages:
+        condition: "조건이 맞지 않습니다."
+    enums:
+      id_document:
+        gender:
+          Male: "남성"
+          Female: "여성"
+          Other: "기타"
+    models:
+      api_tokens: API 토큰
+      trade: 거래
+      order: 주문
+      order_bid: 경매
+      order_ask: 요청
+      withdraw: 출금
+      deposit: 입금
+      payment_transaction: 지불
+      id_document: ID 문서
+      statistic/orders_grid: 주문 통계
+      statistic/trades_grid: 거래 통계
+      statistic/members_grid: 회원 통계
+      statistic/deposits_grid: 입금 통계
+      statistic/withdraws_grid: 통계 실행 취소
+      admin/deposits_grid: 입금
+      admin/withdraws_grid: 종료
+      deposits/bank: 입금 은행
+      withdraws/bank: 출금 은행
+      withdraws/satoshi: 출금
+      withdraws/ripple: 출금
+    attributes:
+      api_token:
+        access_key: 엑세스 키
+        trusted_ip_list: IP 허용 목록
+        ip_whitelist: IP 허용 목록
+        label: 라벨
+        actions: 활동
+      fund_source:
+        address: 주소
+        category: 카테고리
+        label: 라벨
+      account:
+        currency: 화폐
+        currency_text: 화폐
+        balance_and_locked: '잔액 / 잠김'
+        balance: 잔액
+        locked: 고정
+      deposit:
+        state: 상태
+        tx_id: TxID
+        member_id: 회원 ID
+        created_at: 제출됨
+        address: 주소
+        amount: 수량
+        done_at: 완료됨
+        sn: SN
+      withdraw:
+        id: ID
+        sn: SN
+        withdraw_id: ID
+        created_at: 생성일
+        done_at: 완료됨
+        sum: 합계
+        fee: 수수료
+        currency: 화폐
+        amount: 수량
+        address: 주소
+        state: 상태
+        state_text: 상태
+        tx_id: TxID
+        fund_source_id: 출금 주소
+        detail: 세부 정보
+      account_version:
+        id: ID
+        locked: 동결됨
+        amount: 금액
+        balance: 잔액
+        reason: 사유
+        reason_text: 사유
+        modifiable_id: LINK ID
+        modifiable_type: LINK
+        created_at: 생성일
+        in: 소득
+        out: 비용
+        fee: 수수료
+      trade:
+        bid: 입찰
+        ask: 요청
+        fee: 수수료
+        price: 스트라이크 가격
+        volume: 스트라이크 수량
+        category: '입찰/요청'
+        order: 주문
+      order:
+        bid: 입찰
+        ask: 요청
+        price: 가격
+        total: 합계
+        volume: 수량
+        origin_volume: 수량
+        sum: 합계
+        category: '입찰/요청'
+        kind: 종류
+        at: At
+        id: ID
+        state: 상태
+        operation: 작업
+      payment_transaction:
+        at: 일시
+        txid: 거래 ID
+        amount: 금액
+        confirmations: 확인
+        state: 상태
+        state_done: 완료
+        state_wait: 대기
+      member:
+        id: ID
+        name: 실명
+        created_at: 등록 위치
+        sn: SN
+        id_document_number: Id 문서 번호
+        id_document_verified?: "Id 문서가 확인되었습니까?"
+      withdraws/bank:
+        id: ID
+        member_name: 회원
+        currency_obj_key_text: 화폐
+        state_and_actions: '상태/실행'
+        fund_source: 은행
+        fund_extra: 은행
+        fund_extra_text: 은행
+        fund_uid: 계좌
+        sum: 금액
+        fee: 수수료
+        amount: 금액
+        remark: 비고
+        created_at: 생성일
+      deposits/satoshi:
+        created_at: 생성일
+        txid: 거래 ID
+        amount: 금액
+        confirmations: 확인
+        aasm_state_text: 상태
+      deposits/bitcoin_cash:
+        created_at: 생성일
+        txid: 거래 ID
+        amount: 금액
+        confirmations: 확인
+        aasm_state_text: 상태
+      deposits/ethereum:
+        created_at: 생성일
+        txid: 거래 ID
+        amount: 금액
+        confirmations: 확인
+        aasm_state_text: 상태
+      deposits/tronix:
+        created_at: 생성일
+        txid: 거래 ID
+        amount: 금액
+        confirmations: 확인
+        aasm_state_text: 상태
+      deposits/ripple:
+        created_at: 생성일
+        txid: 거래 ID
+        amount: 금액
+        confirmations: 확인
+        aasm_state_text: 상태
+      deposits/eostoken:
+        created_at: 생성일
+        txid: 거래 ID
+        amount: 금액
+        confirmations: 확인
+        aasm_state_text: 상태
+      deposits/chelscoin:
+        created_at: 생성일
+        txid: 거래 ID
+        amount: 금액
+        confirmations: 확인
+        aasm_state_text: 상태
+      deposits/impereum:
+        created_at: 생성일
+        txid: 거래 ID
+        amount: 금액
+        confirmations: 확인
+        aasm_state_text: 상태
+      deposits/ems_token:
+        created_at: 생성일
+        txid: 거래 ID
+        amount: 금액
+        confirmations: 확인
+        aasm_state_text: 상태
+      deposits/ecpplus_token:
+        created_at: 생성일
+        txid: 거래 ID
+        amount: 금액
+        confirmations: 확인
+        aasm_state_text: 상태
+      deposits/fto_token:
+        created_at: 생성일
+        txid: 거래 ID
+        amount: 금액
+        confirmations: 확인
+        aasm_state_text: 상태
+      deposits/usdc:
+        created_at: 생성일
+        txid: 거래 ID
+        amount: 금액
+        confirmations: 확인
+        aasm_state_text: 상태
+      deposits/aokey7_token:
+        created_at: 생성일
+        txid: 거래 ID
+        amount: 금액
+        confirmations: 확인
+        aasm_state_text: 상태
+      withdraws/satoshi:
+        id: ID
+        member_name: 계좌
+        currency_obj_key_text: 화폐
+        state_and_actions: '상태/실행'
+        fund_extra_text: 출금 라벨
+        fund_extrat: 출금 라벨
+        fund_source: 은행
+        fund_uid: 계좌
+        created_at: 생성일
+        sum: 금액
+        amount: 금액
+        remark: 비고
+        fee: 수수료
+      withdraws/bitcoin_cash:
+        id: ID
+        member_name: 계좌
+        currency_obj_key_text: 화폐
+        state_and_actions: '상태/실행'
+        fund_extra_text: 출금 라벨
+        fund_extrat: 출금 라벨
+        fund_source: 은행
+        fund_uid: 계좌
+        created_at: 생성일
+        sum: 금액
+        amount: 금액
+        remark: 비고
+        fee: 수수료
+      withdraws/ethereum:
+        id: ID
+        member_name: 계좌
+        currency_obj_key_text: 화폐
+        state_and_actions: '상태/실행'
+        fund_extra_text: 출금 라벨
+        fund_extrat: 출금 라벨
+        fund_source: 은행
+        fund_uid: 계좌
+        created_at: 생성일
+        sum: 금액
+        amount: 금액
+        remark: 비고
+        fee: 수수료
+      withdraws/tronix:
+        id: ID
+        currency_obj_key_text: 화폐
+        state_and_actions: '상태/실행'
+        fund_extra_text: 출금 라벨
+        fund_extrat: 출금 라벨
+        fund_source: 은행
+        fund_uid: 계좌
+        created_at: 생성일
+        sum: 금액
+        amount: 금액
+        remark: 비고
+        fee: 수수료
+      withdraws/ripple:
+        id: ID
+        currency_obj_key_text: 화폐
+        state_and_actions: 상태/실행
+        fund_extra_text: 출금 라벨
+        fund_extrat: 출금 라벨
+        fund_source: 은행
+        fund_uid: 계좌
+        created_at: 생성일
+        sum: 금액
+        amount: 금액
+        remark: 비고
+        fee: 수수료
+      withdraws/eos_token:
+        id: ID
+        currency_obj_key_text: 화폐
+        state_and_actions: 상태/실행
+        fund_extra_text: 출금 라벨
+        fund_extrat: 출금 라벨
+        fund_source: 은행
+        fund_uid: 계좌
+        created_at: 생성일
+        sum: 금액
+        amount: 금액
+        remark: 비고
+        fee: 수수료
+      withdraws/chelscoin:
+        id: ID
+        currency_obj_key_text: 화폐
+        state_and_actions: 상태/실행
+        fund_extra_text: 출금 라벨
+        fund_extrat: 출금 라벨
+        fund_source: 은행
+        fund_uid: 계좌
+        created_at: 생성일
+        sum: 금액
+        amount: 금액
+        remark: 비고
+        fee: 수수료
+      withdraws/impereum:
+        id: ID
+        currency_obj_key_text: 화폐
+        state_and_actions: 상태/실행
+        fund_extra_text: 출금 라벨
+        fund_extrat: 출금 라벨
+        fund_source: 은행
+        fund_uid: 계좌
+        created_at: 생성일
+        sum: 금액
+        amount: 금액
+        remark: 비고
+        fee: 수수료
+      withdraws/ems_token:
+        id: ID
+        currency_obj_key_text: 화폐
+        state_and_actions: 상태/실행
+        fund_extra_text: 출금 라벨
+        fund_extrat:  출금 라벨
+        fund_source: 은행
+        fund_uid: 계좌
+        created_at: 생성일
+        sum: 금액
+        amount: 금액
+        remark: 비고
+        fee: 수수료
+      withdraws/ecpplus_token:
+        id: ID
+        currency_obj_key_text: 화폐
+        state_and_actions: 상태/실행
+        fund_extra_text: 출금 라벨
+        fund_extrat: 출금 라벨
+        fund_source: 은행
+        fund_uid: 계좌
+        created_at: 생성일
+        sum: 금액
+        amount: 금액
+        remark: 비고
+        fee: 수수료
+      withdraws/usdcoin:
+        id: ID
+        currency_obj_key_text: 화폐
+        state_and_actions: 상태/실행
+        fund_extra_text: 출금 라벨
+        fund_extrat: 출금 라벨
+        fund_source: 은행
+        fund_uid: 계좌
+        created_at: 생성일
+        sum: 금액
+        amount: 금액
+        remark: 비고
+        fee: 수수료
+      withdraws/fto_token:
+        id: ID
+        currency_obj_key_text: 화폐
+        state_and_actions: 상태/실행
+        fund_extra_text: 출금 라벨
+        fund_extrat: 출금 라벨
+        fund_source: 은행
+        fund_uid: 계좌
+        created_at: 생성일
+        sum: 금액
+        amount: 금액
+        remark: 비고
+        fee: 수수료
+      withdraws/aokey7_token:
+        id: ID
+        currency_obj_key_text: 화폐
+        state_and_actions: 상태/실행
+        fund_extra_text: 출금 라벨
+        fund_extrat: 출금 라벨
+        fund_source: 은행
+        fund_uid: 계좌
+        created_at: 생성일
+        sum: 금액
+        amount: 금액
+        remark: 비고
+        fee: 수수료
+
+
+    errors:
+      models:
+        identity:
+          attributes:
+            email:
+              invalid_email: '이메일이 유효하지 않습니다'
+              blank: 이메일은 필수항목 입니다
+              some:
+            password_digest:
+              blank: 비밀번호는 필수항목 입니다.
+            password:
+              invalid_password: 잘못된 암호입니다
+              blank: 비밀번호는 필수항목 입니다.
+              too_short: "1개 이상의 알파벳, 숫자, 특수문자를 포함하여 최소 8자 이상이어야 합니다"
+              invalid: "1개 이상의 알파벳, 숫자, 특수문자를 포함하여 최소 8자 이상이어야 합니다."
+            password_confirmation:
+              blank: "비밀번호 확인은 필수항목 입니다."
+              confirmation: "비밀번호 확인이 동일해야 합니다."
+            condition:
+
+
+        id_document:
+          attributes:
+            zipcode:
+              invalid_zipcode: 잘못된 값입니다
+            contact_no:
+              blank: "필수항목 입니다"
+        token/two_factor:
+          attributes:
+            base:
+              too_soon: 너무 오래되었습니다. 나중에 다시 시도하십시오.
+        token/reset_password:
+          attributes:
+            base:
+              too_soon: 너무 오래되었습니다. 나중에 다시 시도하십시오.
+            email:
+              invalid_email: ' 잘못된 값입니다'
+              blank: 이메일은 필수항목 입니다
+            password_digest:
+              blank: 비밀번호는 필수항목 입니다
+            password:
+              invalid_password: 적절하지 않은 비밀번호
+              blank: 비밀번호는 필수항목 입니다
+              too_short: "1개 이상의 알파벳, 숫자, 특수문자를 포함하여 최소 8자 이상이어야 합니다"
+              invalid: "1개 이상의 알파벳, 숫자, 특수문자를 포함하여 최소 8자 이상이어야 합니다."
+            member:
+              blank: 존재하지 않습니다!
+        activation:
+          attributes:
+            base:
+              too_soon: 활성화를 위한 이메일이 입력하신 주소로 발송되었습니다.(5분 이내 도착)
+        order_bid:
+          attributes:
+            sum:
+              expensive: 고액 계좌
+            price:
+              range: 가격 범위가 잘못되었습니다.
+        order_ask:
+          attributes:
+            origin_volume:
+              expensive: 고액 계좌
+            price:
+              range: 가격 범위가 잘못되었습니다.
+        account:
+          attributes:
+            balance:
+              less: 잔액 미달
+        fund_source:
+          attributes:
+            address:
+              satoshi_ismine: 사용된 주소
+              satoshi_invalid: 잘못된 주소
+              bitcoin_cash_ismine: 사용된 주소
+              bitcoin_cash_invalid: 잘못된 주소
+              ripple_ismine: 사용된 주소
+              ripple_invalid: 잘못된 주소
+              ethereum_ismine: 사용된 주소
+              ethereum_invalid: 잘못된 주소
+              tronix_ismine: 사용된 주소
+              tronix_invalid: 잘못된 주소
+              eos_token_ismine: 사용된 주소
+              eos_token_invalid: 잘못된 주소
+              chelscoin_ismine: 사용된 주소
+              chelscoin_invalid: 잘못된 주소
+              impereum_ismine: 사용된 주소
+              impereum_invalid: 잘못된 주소
+              ems_token_ismine: 사용된 주소
+              ems_token_invalid: 잘못된 주소
+              ecpplus_token_ismine: 사용된 주소
+              ecpplus_token_invalid: 잘못된 주소
+              fto_token_ismine: 사용된 주소
+              fto_token_invalid: 잘못된 주소
+              usdcoin_token_ismine: 사용된 주소
+              usdcoin_token_invalid: 잘못된 주소
+              aokey7_token_ismine: 사용된 주소
+              aokey7_token_invalid: 잘못된 주소
+
+        withdraw:
+          account_balance_is_poor: 계좌 잔액 부족
+          attributes:
+            password:
+              match: 잘못되었습니다
+            amount:
+              poor: 소액 계좌
+              bank_min: 5000.00 미만
+        withdraws/satoshi:
+          attributes:
+            fund_uid:
+              blank: 출금 주소를 입력하십시오.
+              invalid: 유효하지 않은 출금주소입니다. 검토요망
+              ismine: 새로운 주소를 사용해 주십시오..
+        withdraws/bitcoin_cash:
+          attributes:
+            fund_uid:
+              blank: 출금 주소를 입력하십시오.
+              invalid: 유효하지 않은 출금주소입니다. 검토요망
+              ismine: 새로운 주소를 사용해 주십시오..
+        withdraws/ethereum:
+          attributes:
+            fund_uid:
+              blank: 출금 주소를 입력하십시오.
+              invalid: 유효하지 않은 출금주소입니다. 검토요망
+              ismine: 새로운 주소를 사용해 주십시오..
+        withdraws/tronix:
+          attributes:
+            fund_uid:
+              blank: 출금 주소를 입력하십시오.
+              invalid: 유효하지 않은 출금주소입니다. 검토요망
+              ismine: 새로운 주소를 사용해 주십시오..
+        withdraws/ripple:
+          attributes:
+          fund_uid:
+          blank: 출금 주소를 입력하십시오.
+          invalid: 유효하지 않은 출금주소입니다. 검토요망
+          ismine: 새로운 주소를 사용해 주십시오..
+        withdraws/eos_token:
+          attributes:
+          fund_uid:
+          blank: 출금 주소를 입력하십시오.
+          invalid: 유효하지 않은 출금주소입니다. 검토요망
+          ismine: 새로운 주소를 사용해 주십시오..
+        withdraws/chelscoin:
+          attributeseos:
+          fund_uid:
+          blank: 출금 주소를 입력하십시오.
+          invalid: 유효하지 않은 출금주소입니다. 검토요망
+          ismine: 새로운 주소를 사용해 주십시오..
+        withdraws/impereum:
+          attributes:
+          fund_uid:
+          blank: 출금 주소를 입력하십시오.
+          invalid: 유효하지 않은 출금주소입니다. 검토요망
+          ismine: 새로운 주소를 사용해 주십시오..
+        withdraws/ems_token:
+          attributes:
+          fund_uid:
+          blank: 출금 주소를 입력하십시오.
+          invalid: 유효하지 않은 출금주소입니다. 검토요망
+          ismine: 새로운 주소를 사용해 주십시오..
+        withdraws/ecpplus_token:
+          attributes:
+          fund_uid:
+          blank: 출금 주소를 입력하십시오.
+          invalid: 유효하지 않은 출금주소입니다. 검토요망
+          ismine: 새로운 주소를 사용해 주십시오..
+        withdraws/usdcoin:
+          attributes:
+          fund_uid:
+          blank: 출금 주소를 입력하십시오.
+          invalid: 유효하지 않은 출금주소입니다. 검토요망
+          ismine: 새로운 주소를 사용해 주십시오..
+        withdraws/fto_token:
+          attributes:
+          fund_uid:
+          blank: 출금 주소를 입력하십시오.
+          invalid: 유효하지 않은 출금주소입니다. 검토요망
+          ismine: 새로운 주소를 사용해 주십시오..
+        withdraws/aokey7_token:
+          attributes:
+          fund_uid:
+          blank: 출금 주소를 입력하십시오.
+          invalid: 유효하지 않은 출금주소입니다. 검토요망
+          ismine: 새로운 주소를 사용해 주십시오..
+
+        application:
+          attributes:
+            redirect_uri:
+              fragment_present: 조각을 포함 할 수 없습니다..
+              invalid_uri: 유효한 URI여야 합니다.
+              relative_uri: 확실한 URI여야 합니다.
+      messages:
+        undef: 알 수 없는 이유
+        less: 잔액 부족
+        verify: 오류 확인
+        orders:
+          price: 가격 한도 %{l} ~ %{h}
+          sum: 합계 총액 한도 %{l} ~ %{h}
+          precision: 최소 정확도 %{p}
+  banks:
+    ab: Axis Bank
+    boi: Bank of India
+    cb: Canara Bank
+    cboi: Central Bank of India
+    fb: Federal Bank
+    icici: ICICI Bank
+    idbi: IDBI Bank
+    iib: IndusInd Bank
+    kb: Kotak Bank
+    psb: Punjab & Sind Bank
+    sbi: State Bank of India
+    sb: Syndicate Bank
+    ubi: Union Bank of India
+    yb: Yes Bank Ltd
+    uco: UCO Bank
+    boc: Bank of America
+    wf:  Wells Fargo
+    cg: Citigroup
+  market:
+    currency:
+      btc: BTC
+      bch: BCH
+      eth: ETH
+      trx: TRX
+      xrp: XRP
+      eos: EOS
+      csc: CSC
+      ipm: IPM
+      ems: EMS
+      ecp+: ECP+
+      fto: FTO
+      usdc: USDC
+      aok: AOK
+
+
+  currency:
+    satoshi:
+      key: BTC
+      code: BTC
+      name: Bitcoin
+      format: '0,0.0000'
+    bitcoin_cash:
+      key: BCH
+      code: BCH
+      name: Bitcoin Cash
+      format: '0,0.0000'
+    ethereum:
+      key: ETH
+      code: ETH
+      name: Ethereum
+      format: '0,0.0000'
+    tronix:
+      key: TRX
+      code: TRX
+      name: Tronix
+      format: '0,0.0000'
+    ripple:
+      key: XRP
+      code: XRP
+      name: Ripple
+      format: '0,0.00'
+    eos_token:
+      key: EOS
+      code: EOS
+      name: EOS
+      format: '0,0.00'
+    chelscoin:
+      key: CSC
+      code: CSC
+      name: CSC
+      format: '0,0.0000'
+    impereum:
+      key: IPM
+      code: IPM
+      name: IPM
+      format: '0,0.0000'
+    ems_token:
+      key: EMS
+      code: EMS
+      name: EMS
+      format: '0,0.0000'
+    ecpplus_token:
+      key: ECP+
+      code: ECP+
+      name: ECP+
+      format: '0,0.0000'
+    fto_token:
+      key: FTO
+      code: FTO
+      name: FTO
+      format: '0,0.0000'
+    usdcoin:
+      key: USDC
+      code: USDC
+      name: USDC
+      format: '0,0.0000'
+    aok_token:
+      key: AOK
+      code: AOK
+      name: AOk
+      format: '0,0.0000'
+
+
+
+  datagrid:
+    empty: 데이터가 없습니다.
+    filters:
+      date:
+        range_separator: " ~ "
+      datetime:
+        range_separator: " ~ "
+    form:
+      submit: 검색
+    admin_deposits_grid:
+      columns:
+        sn: SN
+        created_at: At
+        channel_key_text: 채널
+        fund_extra_text: 추가
+        fund_uid: UID
+        txid: TXID
+        amount: 금액
+        fee: 수수료
+        currency_text: 화폐
+        aasm_state_text: 상태
+        member_name: 회원
+    bank_deposits_grid:
+      columns:
+        sn: SN
+        created_at: At
+        channel_key_text: 카테고리
+        fund_extra_text: 은행
+        fund_uid: 계좌
+        amount: 금액
+        fee: 수수료
+        aasm_state_text: 상태
+    coin_deposits_grid:
+      columns:
+        sn: SN
+        txid: 거래 ID
+        created_at: At
+        amount: 금액
+        aasm_state_text: 상태
+        confirmations: 확인
+    withdraws_grid:
+      columns:
+        sn: SN
+        name: 이름
+        currency_text: 화폐
+        amount: 금액
+        fee: 수수료
+        created_at: 생성됨
+        done_at: 완료됨
+        state_text: 상태
+    members_grid:
+      columns:
+        sn: 일련 번호
+        created_at: 생성됨
+        actions: 실행
+    account_versions_grid:
+      columns:
+        created_at: 생성됨
+        currency_text: 화폐
+        balance: 잔액
+        in: In
+        out: Out
+        amount: 금액
+        reason_text: 사유
+        modifiable_type: 링크
+        fee: 수수료
+      filters:
+        reason: 사유
+        currency: 화폐
+    statistic_members_grid:
+      columns:
+        sn: 일련 번호
+        id: ID
+        email: 이메일
+        created_at: 생성됨
+        detail: 세부 정보
+        action: 실행
+      filters:
+        sn: 일련 번호
+        created_at: 생성됨
+    statistic_orders_grid:
+      columns:
+        id: 일련 번호
+        price: 가격
+        volume: 수량
+        created_at: 생성됨
+        state_text: 상태
+        member_id: 회원
+      filters:
+        state: 상태
+        currency: 화폐
+        created_at: 생성됨
+        type: 요청/입찰
+    statistic_trades_grid:
+      columns:
+        id: ID
+        price: 가격
+        volume: 수량
+        strike_amount: 금액
+        created_at: 생성됨
+      filters:
+        currency: 화폐
+        created_at: 생성됨
+    statistic_deposits_grid:
+      columns:
+        member: 회원
+        tx_id: TxID
+        amount: 금액
+        currency: 화폐
+        created_at: 생성됨
+        state_text: 상태
+      filters:
+        currency: 화폐
+        state: 상태
+        created_at: 생성됨
+    statistic_withdraws_grid:
+      columns:
+        member: 회원
+        address: 주소
+        amount: 금액
+        currency: 화폐
+        created_at: 생성됨
+        state_text: 상태
+      filters:
+        state: 상태
+        created_at: 생성됨
+  deposit_channel:
+    satoshi:
+      key: 블록체인
+      title: 비트코인 입금
+      intro: 회원님의 지갑에서 BitCorex 계정으로 Bitcoin을 입금하십시오.
+      latency: 1 체결
+      transfer: 수동
+      go: 입금
+    bitcoin_cash:
+      key: 블록체인
+      title: Bitcoin Cash 입금
+      intro: 회원님의 지갑에서 BitCorex 계정으로 Bitcoin Cash를 입금하십시오.
+      latency: 1 체결
+      transfer: 수동
+      go: 입금
+    ethereum:
+      key: ethereum
+      title: Ethereum 입금
+      intro: 회원님의 지갑에서 BitCorex 계정으로 Ethereum을 입금하십시오.
+      latency: 1 체결
+      transfer: 수동
+      go: 입금
+    tronix:
+      key: 블록체인
+      title: Tronix 입금
+      intro: 회원님의 지갑에서 BitCorex 계정으로 Trx을 입금하십시오.
+      latency: 1 체결
+      transfer: 수동
+      go: 입금
+    ripple:
+      key: 블록체인
+      title: Ripple 입금
+      intro: 회원님의 지갑에서 BitCorex 계정으로 Ripple을 입금하십시오.
+      latency: 1 체결
+      transfer: 수동
+      go: 입금
+    chelscoin:
+      key: 블록체인
+      title: Chelscoin 입금
+      intro: 회원님의 지갑에서 BitCorex 계정으로 Chelscoin을 입금하십시오.
+      latency: 1 체결
+      transfer: 수동
+      go: 입금
+    eos_token:
+      key: 블록체인
+      title: Eos 입금
+      intro: 회원님의 지갑에서 BitCorex 계정으로 Eos를 입금하십시오.
+      latency: 1 체결
+      transfer: 수동
+      go: 입금
+    impereum:
+      key: 블록체인
+      title: Impereum 입금
+      intro: 자신의 지갑 주소에서 Impereum 계정으로 Impereum 입금
+      latency: 1 체결
+      transfer: 수동
+      go: 입금
+    ems_token:
+      key: 블록체인
+      title: Ems 입금
+      intro: 자신의 지갑 주소에서 Ems 계정으로 Emstoken 입금
+      latency: 1 체결
+      transfer: 수동
+      go: 입금
+    ecpplus_token:
+      key: 블록체인
+      title: Ecp+ 입금
+      intro: 자신의 지갑 주소에서 Ecp+ 계정으로 Ecpplustoken 입금
+      latency: 1 체결
+      transfer: 수동
+      go: 입금
+    fto_token:
+      key: 블록체인
+      title: FTO 입금
+      intro: 자신의 지갑 주소에서 FTO 계정으로 FTOtoken 입금
+      latency: 1 체결
+      transfer: 수동
+      go: 입금
+    usdcoin:
+      key: 블록체인
+      title: Usdc 입금
+      intro: 자신의 지갑 주소에서 Usdc 계정으로 Usdcoin 입금
+      latency: 1 체결
+      transfer: 수동
+      go: 입금
+    aokey7_token:
+      key: 블록체인
+      title: Aok 입금
+      intro: 자신의 지갑 주소에서 Aok 계정으로 Aokey7token 입금
+      latency: 1 체결
+      transfer: 수동
+      go: 입금
+    cacplus_token:
+      key: 블록체인
+      title: CAC+ 입금
+      intro: 자신의 지갑 주소에서 CAC+ 계정으로 CAC+ 입금
+      latency: 1 체결
+      transfer: 수동
+      go: 입금
+
+
+    fiat:
+      title: 피아트 입금
+  deposits/bank:
+    aasm_state:
+      submitting: 제출중
+      cancelled: 취소됨
+      submitted: 제출됨
+      accepted: 수락됨
+      rejected: 거절됨
+      checked: 체크됨
+      warning: 주의
+  private:
+
+    deposits:
+      satoshis:
+        gen_address:
+          require_transaction: 아직 사용되지 않은 경우 새 주소를 생성 할 수 없습니다.
+      bitcoin_cash:
+        gen_address:
+          require_transaction: 아직 사용되지 않은 경우 새 주소를 생성 할 수 없습니다.
+    history:
+      transaction:
+        Deposit: 입금
+        Withdraw: 출금
+      account:
+        deposit: 입금
+        withdraw: 출금
+        currency: 화폐
+        buy: 구매
+        sell: 판매
+        filter_by_type: 유형별 필터링
+        account_history: 내역
+        type: 유형
+        timestamp: 날짜
+        fee: 수수료
+        coin: 암호화폐
+        amount: 금액
+        txid: Txid
+        download: 전체 입금내역 내보내기
+        download1: 출금내역 전체 내보내기
+        status: 상태
+        information: 정보
+      withdraws:
+        blank_withdraw: 출금 내역이 없습니다.
+        account_history: 내역
+        coin: 암호화폐
+        amount: 금액
+        status: 상태
+        information: 정보
+        timestamp: 날짜
+      deposits:
+        blank_deposit: 입금 내역이 없습니다.
+        account_history: 내역
+        coin: 암호화폐
+        amount: 금액
+        status: 상태
+        information: 정보
+        timestamp: 날짜
+      orders:
+        date: 날짜
+        pair: 페어
+        all: 전체
+        all1: 전체
+        all2: 전체
+        side: 사이드
+        sell: 판매
+        buy: 구매
+        search: 검색
+        order_history: 주문 내역
+        id: ID
+        type: 타입
+        state: 상태
+        market: 페어
+        price: 가격
+        volume: 수량
+        average_price: 평균 가격
+        fullfilled_volume: 충족됨
+        timestamp: 날짜
+        blank_order: 주문 내역이 없습니다.
+      order:
+        ask: 판매
+        bid: 구매
+        wait: 공개
+        cancel: 취소됨
+        done: 완료
+      trades:
+        date: 날짜
+        pair: 페어
+        trade_history: 거래 내역
+        side: 사이드
+        created_at: 날짜
+        all: 전체
+        all1: 전체
+        all2: 전체
+        sell: 판매
+        search: 검색
+        buy: 구매
+        market: 페어
+        base_currency: 기본 화폐
+        base_amount: 기본 금액
+        quote_currency: 견적 화폐
+        quote_amount: 견적 금액
+        price: 가격
+        blank_trade: 거래 내역이 없습니다.
+      open_orders:
+        open_order_history: 미체결 주문
+        type: 타입
+        state: 상태
+        volume: 수량
+        market: 페어
+        price: 가격
+        average_price: 평균 가격
+        fullfilled_volume: 충족됨
+        timestamp: 날짜
+        blank_open_order: 미체결 주문내역이 없습니다.
+      trade:
+        sell: 판매
+        buy: 구매
+      open_order:
+        wait: 공개
+        bid: 구매
+    trade:
+      trades:
+        orders:
+          title: 주문
+        trades:
+          title: 거래
+        charges:
+          title: 요금*
+      orders:
+        index:
+          done: 완료
+          cancel: 취소
+          confirm: '주문을 취소하시겠습니까? #%{id}?'
+        destroy:
+          'true': "#%{id} 주문 취소 성공"
+          'false': "#%{id} 주문 취소 거절"
+    withdraws:
+      update:
+        request_accepted: 출금 요청이 수락되었습니다.
+      destroy:
+        request_canceled: 출금 요청이 취소되었습니다.
+      index:
+        fee: 수수료
+        total: 합계
+        withdraw_history: 출금 내역
+      banks:
+        update:
+          notice: 은행 송금 신청이 완료되었습니다.
+            최대한 빠르게 처리해 드리겠습니다.
+        destroy:
+          notice: 은행 송금 신청이 취소되었습니다. 금액은
+            회원님의 계좌로 반환됩니다.
+        new:
+          fund_source: 펀드 소스 선택
+          manage_fund_source: 펀드 소스 관리
+          submit: 제출
+          allin: All-In
+        create:
+          notice: 출금 요청이 완료되었습니다. 아래의 정보를 사용하여
+            송금을 완료하십시오.
+      satoshis:
+        destroy:
+          notice: 출금 요청이 취소되었습니다. 잔액은 회원님의 계좌로 반환됩니다.
+        update:
+          notice: 출금 요청이 완료되었습니다.
+            최대한 빠르게 처리해 드리겠습니다.
+        new:
+          submit: 제출
+          allin: All-In
+          fund_source_label: 라벨
+          manage_fund_source: 펀드 소스 관리
+        create:
+          notice: 출금 요청이 완료되었습니다. 아래의 정보를 사용하여
+            송금을 완료하십시오.
+      bitcoin_cash:
+        destroy:
+          notice: 출금이 취소되었습니다. 잔액은 회원님의 계좌로 반환됩니다.
+        update:
+          notice: 출금 요청이 완료되었습니다.
+            최대한 빠르게 처리해 드리겠습니다.
+        new:
+          submit: 제출
+          allin: All-In
+          fund_source_label: 라벨
+          manage_fund_source: 펀드 소스 관리
+        create:
+          notice: 출금 요청이 완료되었습니다. 아래의 정보를 사용하여
+            송금을 완료하십시오.
+      ethereums:
+        destroy:
+          notice: 출금이 취소되었습니다. 잔액은 회원님의 계좌로 반환됩니다.
+        update:
+          notice: 출금 요청이 완료되었습니다.
+            최대한 빠르게 처리해 드리겠습니다.
+        new:
+          submit: 제출
+          allin: All-In
+          fund_source_label: 라벨
+          manage_fund_source: 펀드 소스 관리
+        create:
+          notice: 출금 요청이 완료되었습니다. 아래의 정보를 사용하여
+            송금을 완료하십시오.
+      tronix:
+        destroy:
+          notice: 출금이 취소되었습니다. 잔액은 회원님의 계좌로 반환됩니다.
+        update:
+          notice: 출금 요청이 완료되었습니다. 최대한 빠르게 처리해 드리겠습니다.
+        new:
+          submit: 제출
+          allin: All-In
+          fund_source_label: 라벨
+          manage_fund_source: 펀드 소스 관리
+        create:
+          notice: 출금 요청이 완료되었습니다. 아래의 정보를 사용하여 송금을 완료하십시오.
+      ripple:
+        destroy:
+          notice: 출금이 취소되었습니다. 잔액은 회원님의 계좌로 반환됩니다.
+        update:
+          notice: 출금 요청이 완료되었습니다. 최대한 빠르게 처리해 드리겠습니다.
+        new:
+          submit: 제출
+          allin: All-In
+          fund_source_label: 라벨
+          manage_fund_source: 펀드 소스 관리
+        create:
+          notice: 출금 요청이 완료되었습니다. 아래의 정보를 사용하여 송금을 완료하십시오.
+      eos_token:
+        destroy:
+          notice: 출금이 취소되었습니다. 잔액은 회원님의 계좌로 반환됩니다.
+        update:
+          notice: 출금 요청이 완료되었습니다. 최대한 빠르게 처리해 드리겠습니다.
+        new:
+          submit: 제출
+          allin: All-In
+          fund_source_label: 라벨
+          manage_fund_source: 펀드 소스 관리
+        create:
+          notice: 출금 요청이 완료되었습니다. 아래의 정보를 사용하여 송금을 완료하십시오.
+      chelscoin:
+        destroy:
+          notice: 출금이 취소되었습니다. 잔액은 회원님의 계좌로 반환됩니다.
+        update:
+          notice: 출금 요청이 완료되었습니다. 최대한 빠르게 처리해 드리겠습니다.
+        new:
+          submit: 제출
+          allin: All-In
+          fund_source_label: 라벨
+          manage_fund_source: 펀드 소스 관리
+        create:
+          notice: 출금 요청이 완료되었습니다. 아래의 정보를 사용하여 송금을 완료하십시오.
+      impereum:
+        destroy:
+          notice: 출금이 취소되었습니다. 잔액은 회원님의 계좌로 반환됩니다.
+        update:
+          notice: 출금 요청이 완료되었습니다. 최대한 빠르게 처리해 드리겠습니다.
+        new:
+          submit: 제출
+          allin: All-In
+          fund_source_label: 라벨
+          manage_fund_source: 펀드 소스 관리
+        create:
+          notice: 출금 요청이 완료되었습니다. 아래의 정보를 사용하여 송금을 완료하십시오.
+      ems_token:
+        destroy:
+          notice: 출금이 취소되었습니다. 잔액은 회원님의 계좌로 반환됩니다.
+        update:
+          notice: 출금 요청이 완료되었습니다. 최대한 빠르게 처리해 드리겠습니다.
+        new:
+          submit: 제출
+          allin: All-In
+          fund_source_label: 라벨
+          manage_fund_source: 펀드 소스 관리
+        create:
+          notice: 출금 요청이 완료되었습니다. 아래의 정보를 사용하여 송금을 완료하십시오.
+      ecpplus_token:
+        destroy:
+          notice: 출금이 취소되었습니다. 잔액은 회원님의 계좌로 반환됩니다.
+        update:
+          notice: 출금 요청이 완료되었습니다. 최대한 빠르게 처리해 드리겠습니다.
+        new:
+          submit: 제출
+          allin: All-In
+          fund_source_label: 라벨
+          manage_fund_source: 펀드 소스 관리
+        create:
+          notice: 출금 요청이 완료되었습니다. 아래의 정보를 사용하여 송금을 완료하십시오.
+      usdcoin:
+        destroy:
+          notice: 출금이 취소되었습니다. 잔액은 회원님의 계좌로 반환됩니다.
+        update:
+          notice: 출금 요청이 완료되었습니다. 최대한 빠르게 처리해 드리겠습니다.
+        new:
+          submit: 제출
+          allin: All-In
+          fund_source_label: 라벨
+          manage_fund_source: 펀드 소스 관리
+        create:
+          notice: 출금 요청이 완료되었습니다. 아래의 정보를 사용하여 송금을 완료하십시오.
+      fto_token:
+        destroy:
+          notice: 출금이 취소되었습니다. 잔액은 회원님의 계좌로 반환됩니다.
+        update:
+          notice: 출금 요청이 완료되었습니다. 최대한 빠르게 처리해 드리겠습니다.
+        new:
+          submit: 제출
+          allin: All-In
+          fund_source_label: 라벨
+          manage_fund_source: 펀드 소스 관리
+        create:
+          notice: 출금 요청이 완료되었습니다. 아래의 정보를 사용하여 송금을 완료하십시오.
+      aokey7_token:
+        destroy:
+          notice: 출금이 취소되었습니다. 잔액은 회원님의 계좌로 반환됩니다.
+        update:
+          notice: 출금 요청이 완료되었습니다. 최대한 빠르게 처리해 드리겠습니다.
+        new:
+          submit: 제출
+          allin: All-In
+          fund_source_label: 라벨
+          manage_fund_source: 펀드 소스 관리
+        create:
+          notice: 출금 요청이 완료되었습니다. 아래의 정보를 사용하여 송금을 완료하십시오.
+
+    account_versions:
+      index:
+        description: BitCorex에서 일어나는 모든 거래와 입금되는 금액은
+          철저하게 기록, 관리됩니다.
+    api_tokens:
+      user_tokens:
+        no_token: API토큰이 없습니다.
+        edit: 편집
+        destroy: 소각
+        destroy-confirm: 정말로 소각하시겠습니까?
+        create: 새 토큰 만들기
+        http: HTTP API 문서
+        websocket: Websocket API 문서
+        more: '자세한 내용은 github의 API 섹션을 참고하십시오:'
+      unbind:
+        success: 취소 성공
+        failed: 취소에 실패했습니다.
+      new:
+        label_hint: 라벨을 사용하면 토큰 사용처 등을 쉽게 기억할 수 있습니다.(선택사항)
+      create:
+        success: API 토큰이 성공적으로 생성되었습니다.
+        failed: API 토큰 생성 실패. 나중에 다시 시도하거나 관리자에게 문의하십시오.
+        desc: 아래의 키를 복사하여 안전한 장소에 저장하십시오. 비밀 키는 절대로 다시 표시되지 않습니다.
+        access_key: 접근 키
+        secret_key: 비밀 키
+      edit:
+        access_key_hint: 생성됨 %{created_at}
+        label_hint: 라벨을 사용하면 토큰 사용처 등을 쉽게 기억할 수 있습니다.(선택사항)
+        ip_whitelist_hint: IP를 쉼표로 구분하여 입력하십시오. 공백으로 둘 경우 모든 IP가 허용됩니다.
+      update:
+        success: 저장 성공
+        failed:  토큰을 저장하지 못했습니다. 나중에 다시 시도하거나 관리자에게 문의하십시오.
+      destroy:
+        success: 토큰이 성공적으로 소각되었습니다.
+        failed: 소각 실패
+    assets:
+      index:
+        liability-proof: 책임증명
+        coin-assets: '%{암호화폐} 자산'
+        fiat-assets: '%{암호화폐} 자산'
+      liability_tabs:
+        verify-inr: 내 INR 자산 확인
+        verify-coin: '내 %{암호화폐} 자산 확인'
+        verify-fiat: '내 %{암호화폐} 자산 확인'
+        coin-assets-total: '거래소 총 %{암호화폐} 자산: '
+        fiat-assets-total: '거래소 총 %{암호화폐} 자산: '
+      liability_proof:
+        title: 책임증명
+        intro: BitCorex은 거래소를 회원님들이 믿고 맡기신 모든 금액(암호화폐와
+          원화 모두 포함)을 차입금의 형태로 보유합니다. 본 페이지에서는 회원님께
+          BitCorex의 책무에 대하여 안내드립니다. 또한 회원님의 계좌 잔액이
+          실제 BitCorex이 보유한 차입금의 일부인지 확인하는 방법을 안내합니다.
+      liability_data:
+        liability-proof-generating: 책임증명 생성이 진행중입니다.
+          30분 뒤에 확인하여 주십시오.
+        root-json: 루트 노드
+        partial-tree: '내 %{암호화폐} 자산: '
+        get-partial-tree: 부분 트리 데이터 가져오기
+        timestamp: 증명 데이터 생성됨 %{time}.
+        go-verify: 확인
+      coin_assets:
+        title: '%{암호화폐} 자산'
+        intro: "거래소의 모든 %{암호화폐} 자신이 이곳에 표시됩니다."
+        total: '총 대시 자산'
+        address: 주소
+      partial_tree:
+        success: '성공! 증명 데이터 생성됨: %{timestamp}'
+    funds:
+      index:
+        deposit: 입금
+        withdraws: 출금
+      show:
+        account_history: 계좌 내역
+        inr_format: '0.00'
+        usd_format: '0.00'
+        btc_format: '0.00000000'
+        reason:
+          btc:
+            strike_add: 더하기
+            strike_sub: 빼기
+            deposit: 입금
+            withdraw: 출금
+            fix: 수정
+          bch:
+            strike_add: 더하기
+            strike_sub: 빼기
+            deposit: 입금
+            withdraw: 출금
+            fix: 수정
+          eth:
+            strike_add: 더하기
+            strike_sub: 빼기
+            deposit: 입금
+            withdraw: 출금
+            fix: 수정
+          trx:
+            strike_add: 더하기
+            strike_sub: 빼기
+            deposit: 입금
+            withdraw: 출금
+            fix: 수정
+          xrp:
+            strike_add: 더하기
+            strike_sub: 빼기
+            deposit: 입금
+            withdraw: 출금
+            fix: 수정
+          eos:
+            strike_add: 더하기
+            strike_sub: 빼기
+            deposit: 입금
+            withdraw: 출금
+            fix: 수정
+          csc:
+            strike_add: 더하기
+            strike_sub: 빼기
+            deposit: 입금
+            withdraw: 출금
+            fix: 수정
+          ipm:
+            strike_add: 더하기
+            strike_sub: 빼기
+            deposit: 입금
+            withdraw: 출금
+            fix: 수정
+          ems:
+            strike_add: 더하기
+            strike_sub: 빼기
+            deposit: 입금
+            withdraw: 출금
+            fix: 수정
+          ecp+:
+            strike_add: 더하기
+            strike_sub: 빼기
+            deposit: 입금
+            withdraw: 출금
+            fix: 수정
+          usdc:
+            strike_add: 더하기
+            strike_sub: 빼기
+            deposit: 입금
+            withdraw: 출금
+            fix: 수정
+          fto:
+            strike_add: 더하기
+            strike_sub: 빼기
+            deposit: 입금
+            withdraw: 출금
+            fix: 수정
+          aok:
+            strike_add: 더하기
+            strike_sub: 빼기
+            deposit: 입금
+            withdraw: 출금
+            fix: 수정
+        ref:
+          system: 시스템
+          default: 기본값
+
+    id_documents:
+      edit:
+        middle_name: 미들네임
+        last_name: 성
+        contact_no: 연락처
+        state: 상태
+        gender: 성별
+        state_unverified: 확인되지 않음
+        state_verifying: 확인중
+        state_verified: 확인됨
+        name: 이름
+        birth_date: 생일
+        address: 주소
+        city: 도시명
+        country: 국가명
+        zipcode: 우편번호
+        status: 상태
+        code: 코드
+        id_document_type: 신분증 종류
+        id_document_number: 신분증 번호
+        #        id_document_file: Document Photo
+        id_document_file: 신분증과 함께 찍은 사진
+        id_bill_file: 거주지 증명 사진
+        id_bill_type: 거주지 증명
+        name_blank: 이름은 필수항목입니다.
+        contact_blank: 연락처는 필수항목입니다.
+        age: 만 19세 이상만 이용 가능합니다.
+        msg12: 양식을 업데이트한 후 이곳에 이미지가 표시됩니다.
+        id_document_blank: 신분증 종류 선택은 필수입니다.
+        proof_residence_blank: 거주지 증명은 필수항목입니다.
+        address_length: 최대 길이는 300 자입니다.
+        city_max_length: 도시이름이 너무 깁니다. (최대 20 자)
+        id_document_min: 신분증이 항목이 너무 짧습니다. (최소 6 자)
+        id_doc_blank: 신분증 번호는 비워 둘 수 없습니다.
+        file_one: "업로드 가능한 파일 형식: jpg, jpeg, gif, png, pdf"
+      update:
+        notice: 회원님의 계정 인증 신청이 완료되었습니다.
+    markets:
+
+      candlestick:
+        load: '로딩중 ...'
+      show:
+        text: "%{num} 소수점"
+        limit: 시장가
+        market: 지정가
+        error: 실패
+        success: 성공
+        analysis_panel: 분석
+        help_panel: 도움말
+        done: 완료
+        cancel: 취소
+        cancel_confirm: 정말로 주문을 취소하시겠습니까?
+        confirm: 확인
+        ask_order: '##sn# 에 요청'
+        bid_order: '##sn# 에 입찰'
+        my_active_order: 유효
+        my_done_order: 완료
+        trades: 거래
+        chat: 채팅 채널
+        withdraw: 출금
+        deposit: 입금
+        history: 내역
+        open_orders: 미체결 주문
+        24_orders_history: 나의 24시간 주문 내역
+        more: 더 보기
+        Hide_Other_pairs: 다른 페어 숨기기
+        Hide_Other_pairs1: 다른 페어 숨기기
+
+      market_list:
+        bt1: 변경
+        bt: 수량
+        all: 전체 마켓
+        search: 검색
+        all_html: "<i class='fa fa-star'></i><span>즐겨찾기</span>"
+        tusd_html: "<i class='fa fa-check'></i><span>TUSD 마켓</span>"
+        eth_html: "<i class='fa fa-check'></i><span>ETH 마켓</span>"
+        btc_html: "<i class='fa fa-check'></i><span>BTC 마켓</span>"
+        price: 가격
+        change: "24h %"
+        btc: BTC
+        eth: ETH
+        tusd: TUSD
+      order:
+        wait: 공개
+        bid: 구매
+      order_history:
+        date: 날짜
+        wait: 공개
+        bid: 구매
+        price: 가격
+        average: 평균
+        volume: 수량
+        amount: 금액
+        time: 날짜
+        pair: 페어
+        type: 타입
+        side: 사이드
+        filled: 채워짐
+        total: 합계
+        condition: 발동 조건
+        all: 전체
+        status: 상태
+        no_order_history: 주문 내역이 없습니다.
+      market_ticker:
+        pair: 페어
+        all: 전체 마켓
+        all_html: "<i class='fa fa-check'></i><span>전체 마켓</span>"
+        ccy_html: "<i class='fa fa-check'></i><span>%{암호화폐} 마켓</span>"
+        price: 가격
+        #        change: "24h %"
+        change: 변경
+      range_switch:
+        switch_1: 1 분
+        switch_5: 5 분
+        switch_15: 15 분
+        switch_30: 30 분
+        switch_60: 1시간
+        switch_120: 2시간
+        switch_240: 4시간
+        switch_360: 6시간
+        switch_720: 12시간
+        switch_1440: 1 일
+        switch_4320: 3 일
+        switch_10080: 1 주
+        switch_43200: 1 월
+      depths:
+        price: 가격
+        amount: 수량
+        buy: 구매
+        sell: 판매
+        ask_orders: 판매
+        bid_orders: 구매
+      ticker:
+        last: 최종 가격
+        ask: 요청
+        bid: 입찰
+      account_balance:
+        title: 계좌 잔액
+        available: 사용가능 %{암호화폐}
+      market_bid_entry:
+        Market: 시장 가격
+        action: "%{암호화폐} 구매"
+        price: 가격
+        last_price: 최종 가격
+        amount: 수량
+        total: 합계
+        buy: 구매
+      bid_entry:
+        buy: 구매
+        action: "%{암호화폐} 구매"
+        price: 가격
+        last_price: 최종 가격
+        amount: 수량
+        total: 합계
+      ask_entry:
+        action: "%{암호화폐} 판매"
+        price: 가격
+        last_price: 최종 가격
+        amount: 수량
+        total: 합계
+        sell: 판매
+      market_ask_entry:
+        Market: 시장 가격
+        action: "%{암호화폐} 판매"
+        price: 가격
+        last_price: 최종 가격
+        amount: 수량
+        total: 합계
+        sell: 판매
+      place_order:
+        price: 가격
+        amount: 수량
+        total: 합계
+        price_high: 높음
+        price_low: 낮음
+        full_bid: 전체
+        full_ask: 비어 있음
+      order_book:
+        group: groups
+        title: 예약 주문
+        volume: 수량
+        price: (%{암호화폐}) 가격
+        amount: (%{암호화폐}) 수량
+        total: (%{암호화폐}) 합계
+        ask: 요청
+        bid: 입찰
+        fade_toggle_depth: 시장 심도*
+      trade_state:
+        new: 신규
+        partial: 부분
+        full: 가득참
+      market_trades:
+        all: 전체
+        trade_history: 거래 내역
+        my: 나의 소유
+        all_html: 마켓
+        my_html: 귀하 소유
+        time: 시간
+        price: 가격
+        volume: 수량
+      header:
+        network: 연결 상태
+        vol: 24h 수량
+        high: 24h 고가
+        low: 24h 저가
+        change: 24h 변동
+        last: 최종 가격
+      settings:
+        sound: 소리
+        notification: 알림
+        funds: "자금"
+        signout: "로그아웃"
+        settings: "프로필"
+        history: "내역"
+      account_summary:
+        title: 요약
+        account: 계좌
+        amount: 수량
+        locked: 고정
+        view_all_accounts: "전체 보기"
+        hide_all_accounts: "기타 숨기기"
+      my_orders:
+        orders_wait: 최근 주문
+        orders_done: 완료된 주문
+        orders_cancel: 취소 주문
+        no_open_orders: 미체결 주문이 없습니다.
+        clear_all_html: 전체 취소
+        clear_bids_html: 입찰 취소
+        clear_asks_html: 요청 취소
+        confirm_clear_all: 정말로 모든 주문을 취소하시겠습니까?
+        confirm_clear_bids: 정말로 모든 입찰을 취소하시겠습니까?
+        confirm_clear_asks: 정말로 모든 요청을 취소하시겠습니까?
+        price: 가격
+        volume: 수량
+        amount: 수량
+        time: 날짜
+        pair: 페어
+        type: 타입
+        side: 사이드
+        filled: 채워진%
+        total: 합계
+        condition: 발동 조건
+        all: 전체
+        date: 날짜
+
+
+      mask:
+        warning: <a class=text-up href='/signin'>로그인</a> 또는 <a class=text-up href='/signup'>회원가입</a> 거래를 위해
+      klime_chart:
+        title: 캔들 차트
+      global:
+        global_orders_title: 주문
+        global_trades_title: 거래
+      chat:
+        title: 채팅 채널
+    referral:
+      invite:
+        text: '%{활성화} 부터 유효 (UTC)'
+        text1: "추천 프로그램에서받은 커미션은 처음에 %{rate}의 비율로 설정되며 %{bonus} 이상을 보유한 계정의 경우이 비율은 40 %로 증가합니다."
+        text2: 나를 추천한 친구가 거래를 완료하는 즉시 수수료가 귀하의 BitCorex 계정으로 전송되며, 원래 수수료가 지불 된 토큰 또는 암호화폐로 지급됩니다.
+        text3: 추천할 수 있는 친구들의 수는 %{limit}명 입니다. 관련 방침은 변경될 수 있습니다.
+        text4: 초대받은 친구는 래퍼럴 링크, QR코드, 추천ID 중 하나를 통해 가입해야 합니다.
+        text5: BitCorex은 중복 계정이나 가짜 계정을 확인하고 이러한 계정에 추천 보너스를 지불하지 않습니다. 중복지급된 금액은 취소처리 됩니다.
+        notice: '* 중요 공지사항:'
+        text6: BitCorex은 시장 상황의 변화, 사기의 위험 또는 관련이 있다고 판단되는 기타 요인으로 인해 언제든지 추천 프로그램의 조건을 변경할 권리가 있습니다.
+        text9: No.1
+        commission: 추천인 보상
+        text10: No.2
+        text11: No.3
+        no_friend: 추천 친구가 없습니다.
+        history: 최근 추천인 보상 내역
+        Export: 내보내기
+        email: 이메일
+        date: 날짜
+        no_commission: 추천인 보상이 없습니다.
+    settings:
+      authentication_disable:
+        auth_text: 계정에서 2단계 보안인증을 사용하도록 설정하는 것이 좋습니다.
+        auth_text1: '2단계 보안인증 코드 수신 방법을 선택하십시오:'
+        google_auth: 구글OTP 인증
+        sms_auth: 문자 인증
+        text: 2단계 보안인증을 사용하지 않을 경우의 위험성을 이해합니다.
+        skip_text: 나중에 하기
+      success: 설정이 성공적으로 업데이트되었습니다.
+      failure: 패스코드가 잘못되었습니다. 다시 시도하십시오.
+      index:
+        reset_password: 비밀번호를 변경하십시오.
+        reauthenticate: 인증
+        activated: 인증메일이 발송되었습니다. 인증을 위해 가능한 빨리
+          확인해주십시오.  이메일을 받지 못하셨다면 "재전송"
+          버튼을클릭하십시오.
+        auth-activated: 이메일 주소를 확인해주세요.
+        auth-verified: 계정을 확인해주세요.
+        email:
+          title: 이메일 확인
+          description: 회원님의 이메일이 확인되지 않았습니다.
+            "메일전송" 버튼을 눌러주세요.
+          description-activated: 회원님의 이메일 주소 확인이 완료되었습니다.
+            이 메일주소를 반드시 기억해주시고 보안에 유의하세요.
+            인증에 사용되는 유일한 수단입니다.
+          resend: 다시 전송해 주세요.
+          activated: 확인됨
+          go: 제출
+        verification:
+          title: 계좌 확인
+          description: 타인이 비밀번호를 사용하여 회원님의 계좌를 사용하는
+            것으로부터 보호합니다.
+          go: 제출
+          verified: 확인됨
+        asset_passwords:
+          title: 자산 비밀번호
+          description: 자산 비밀번호는 출금할 때 필요합니다.
+            계정 비밀번호와 동일한 비밀번호를
+            사용하지 않도록 유의해주십시오.
+          go: 제출
+        passwords:
+          title: 비밀번호
+          description: 이 암호는 로그인 할 때 사용됩니다. 반드시 기억하세요!
+          go: 비밀번호 변경
+          set: 제출
+        api_tokens:
+          title: API 토큰
+          description: 회원님의 API토큰을 만들고 관리합니다.
+          go: 사용
+
+        bank_details:
+          title: 은행 세부정보
+          description: 출금을 위한 은행 세부정보 추가
+          go: 사용
+        google_authenticater:
+          title: Google 인증
+          description: 출금 및 보안항목 수정에 사용됩니다.
+          go: 제출
+          disable: 사용 안함
+          enable: 사용
+        sms_authenticater:
+          title: SMS 인증
+          description: 출금 및 보안항목 수정에 사용됩니다.
+          go: 제출
+          disable: 사용 안함
+          enable: 사용
+      sms_authentication:
+        notice: "%{type} 인증이 성공적으로 %{status}"
+        wrong_otp: 잘못된 OTP 코드입니다!
+      send_token_sms:
+        sms_text: "[BitCorex]확인 코드:- %{token} 피싱 방지를 위해 주소창의 사이트 주소가 %{domain} 인지 확인하십시오."
+      google_auth:
+        google_title: Google 인증
+        enable: 사용
+        disable: 사용 안함
+        update: 업데이트
+        Token_Verify: 토큰 확인
+      sms:
+        sms_title: SMS 인증
+        sms_error_msg: "인증 오류입니다."
+        sms_success_msg: "인증문자가 발송되었습니다."
+        sms_label: 휴대폰 번호
+        disable: 사용 안함
+        enable: 사용
+        sms_send: 제출
+        sms_send1: 인증문자 보내기
+        sms_token: 인증문자 토큰
+    shared:
+      balances:
+        locked: 잠김
+        balance: 잔액
+        available: 사용가능
+        title: "%{icon} %{c} 계좌"
+        btc_format: '0.00000000'
+        bch_format: '0.00000000'
+        eth_format: '0.00000000'
+        trx_format: '0.000000'
+        xrp_format: '0.000000'
+        eos_format: '0.000000000000000000'
+        csc_format: '0.000000'
+        ipm_format: '0.000000'
+        ems_format: '0.000000'
+        ecp+_format: '0.00000000'
+        usdc_format: '0.000000'
+        fto_format: '0.000000'
+        aok_format: '0.000000000000000000'
+
+        total: 합계
+  guides:
+    two_factors:
+      panel: 구글OTP 인증 재설정
+    private:
+      settings:
+        panel: 설정
+        index:
+          intro: 프로필을 관리하고 수정하십시오.
+      api_tokens:
+        panel: API 토큰
+        index:
+          title: 내 토큰
+          intro: 회원님이 보유한 모든 API토큰 목록입니다. 비어있는
+            'IP 화이트리스트'에는 토큰을 사용하기 위한 어떤 IP도 허용됩니다.
+        new:
+          title: API 토큰 생성
+        create:
+          title: API 토큰 생성
+        edit:
+          title: API 토큰 편집
+        update:
+          title: API 토큰 편집
+      tickets:
+        panel: 티켓
+      id_documents:
+        panel: 신원 인증
+        new:
+          title: 실명 인증이 포함된 증명서를 제출하세요.
+          intro: 국내법에 따라 신원인증 절차가 필요합니다.
+            계속 진행하려면 계정을 확인하십시오.
+
+    panels:
+      balance: 계좌
+    sessions:
+
+      panel: 로그인
+      new:
+        title: 로그인
+        intro: 이제 로그인하여 BitCorex에서 거래를 시작할 수 있습니다.
+
+      failure:
+        title: 로그인
+        intro: 이제 로그인하여 BitCorex에서 거래를 시작할 수 있습니다.
+
+
+
+    reset_passwords:
+      panel: 비밀번호
+      new:
+
+        title: 비밀번호 재설정
+        intro: 회원님의 정보에 등록된 이메일 주소를 입력해 주십시오.
+          비밀번호 재설정을 위해 인증코드를 입력하여 제출하고
+          이메일을 확인하신 후 다음 절차를 따르십시오.
+      create:
+        title: 비밀번호 재설정
+        intro: 회원님의 정보에 등록된 이메일 주소를 입력해 주십시오.
+          비밀번호 재설정을 위해 인증코드를 입력하여 제출하고
+          이메일을 확인하신 후 다음 절차를 따르십시오.
+      edit:
+        title: 비밀번호 설정
+      update:
+        title: 비밀번호 설정
+
+  activations:
+    new:
+      notice: 인증메일이 발송되었습니다. 인증을 위해 가능한 빨리 확인해주십시오. 이메일을 받지 못하셨다면 "재전송" 버튼을 클릭하십시오.
+      verified: 회원님의 이메일 주소 확인이 완료되었습니다.
+      login_required: 로그인 필요
+      tip: 활성화 링크가 %{email} 로 전송되었습니다.
+      spam: 스팸메일함에서 활성화 링크를 확인하십시오.
+    edit:
+      notice: 계좌 활성화가 완료되었습니다.
+      alert: 활성화 링크가 만료되었거나 유효하지 않습니다.
+
+  authentications:
+    emails:
+      new:
+        title: 이메일 설정
+        setup_email: 이메일 주소를 설정하십시오.
+        warning: 이메일 주소를 설정 후 받은 편지함을 확인하십시오.
+        email_address: 이메일 주소
+        save: 저장
+    weibo:
+      destroy:
+        last_auth_alert: 삭제 불가 인증수단이 최소 하나는 존재해야 합니다.
+        unbind_success:  Weibo에서 바인딩 해제
+    identities:
+      new:
+        title: 암호 설정
+        save: 저장
+      create:
+        success: 암호 설정 완료
+  forum:
+    index:
+      notice:
+        display_name: 포럼에 표시될 이름을 설정하십시오.
+  identities:
+    new:
+      title: 회원가입
+      signin: 로그인
+      password: 적어도 6자 이상의 암호를 입력하십시오. 또한 대소문자와 숫자
+        모두를 포함하는 것이 좋습니다.
+      heading: 등록
+      agree_content:  BitCorex의 다음 사항에 동의
+      email: 이메일
+      create_password: '비밀번호 생성'
+      confirm_password: '비밀번호 확인'
+      reference_user:  '추천인 ID(선택사항)'
+      register: 등록
+      login: 로그인
+      home: 홈으로
+      support: 고객지원
+      language: 언어
+      terms: 이용약관
+      register_content: 이미 아이디가 있으신가요?
+    update:
+      auth-error: '입력된 기존 비밀번호가 잘못되었습니다. 다시 입력하십시오.'
+      auth-same: 입력된 새로운 비밀번호가 이전 비밀번호와 동일합니다.
+        다시 입력하십시오.
+      notice: 계정 비밀번호가 업데이트되었습니다.
+    edit:
+      title: 비밀번호 재설정
+      old_password: 기존 비밀번호
+      new_password: 새로운 비밀번호
+      confirmation_password: 비밀번호 확인
+      update: 비밀번호 변경
+
+  token_expires:
+    index:
+      email_activation: 계정이 활성화되었습니다.
+
+  google_verifies:
+    new:
+      title: 토큰 검증
+      google_label: 구글OTP 인증코드
+      g_tab: 구글OTP 인증
+      sms_alert: 인증문자 전송이 완료되었습니다.
+      sms_label: 문자 인증코드
+      s_tab: 문자 인증
+      SMS_Token: SMS 토큰
+      Send_SMS: SMS 전송
+      SMS: '전화번호를 사용할 수 없나요?'
+      google_auth: 구글 OTP를 분실하셨나요?
+      login: 로그인
+
+
+  simple_form:
+    placeholders:
+      deposit:
+        bank:
+          amount: 최소 금액 100
+      session:
+        email: 이메일 주소
+        password: 비밀번호
+      order_bid:
+        origin_volume: 구매 수량
+        sum: 합계
+      order_ask:
+        origin_volume: 판매 수량
+        sum: 총 매출액
+      withdraw:
+        satoshi:
+          sum: 최소 금액 0.001
+          fund_extra: 이 주소의 라벨 입력(선택사항)
+    hints:
+      deposit:
+        bank:
+          sum: "<a target='_balance' href='#'>수수료 구조</a>"
+          member_name: "<span class='text-danger'>충전 은행계좌의 예금주와
+            실명인증된 회원님의 이름이 일치해야 합니다.</span>"
+          sn: "<span class='text-danger'>송금메세지에 포함된 시리얼넘버를 복사하십시오.
+            그렇지 않을 경우 빠른 처리가 이루어지지 않습니다. </span>"
+      id_document:
+      #        name: Please fill in the name which is consistent with your Credentials.
+      withdraw:
+        bank:
+          member_name: "<span class='text-danger'>출금 은행계좌의 예금주와
+            실명인증된 회원님의 이름이 일치해야 합니다.</span>"
+          sum: "<a target='_balance' href='#'>수수료 구조</a>"
+          fund_extra: 회원님의 은행이 목록에 없다면 고객센터에
+            문의해 주십시오.
+        satoshi:
+          sum: "<a target='_balance' href='#'>수수료 구조</a>"
+        bitcoin_cash:
+          sum: "<a target='_balance' href='#'>수수료 구조</a>"
+        ripple:
+          sum: "<a target='_balance' href='#'>수수료 구조</a>"
+        ether:
+          sum: "<a target='_balance' href='#'>수수료 구조</a>"
+        tronix:
+          sum: "<a target='_balance' href='#'>수수료 구조</a>"
+        eos:
+          sum: "<a target='_balance' href='#'>수수료 구조</a>"
+        csc:
+          sum: "<a target='_balance' href='#'>수수료 구조</a>"
+        ipm:
+          sum: "<a target='_balance' href='#'>수수료 구조</a>"
+        ems:
+          sum: "<a target='_balance' href='#'>수수료 구조</a>"
+        ecp+:
+          sum: "<a target='_balance' href='#'>수수료 구조</a>"
+        usdc:
+          sum: "<a target='_balance' href='#'>수수료 구조</a>"
+        fto:
+          sum: "<a target='_balance' href='#'>수수료 구조</a>"
+        aok:
+          sum: "<a target='_balance' href='#'>수수료 구조</a>"
+    creating: 생성중...
+    updating: 업데이트중...
+    buttons:
+      or: 또는
+      cancel: 취소
+    'yes': '예'
+    'no': '아니오'
+    required:
+      text: 필수
+      mark: "*"
+    error_notification:
+      default_message: '아래의 문제를 검토해 주십시오:'
+    labels:
+      defaults:
+        title: 타이틀
+      fund_source:
+        label: 라벨
+        address: 주소
+        category: 카테고리
+      withdraw:
+        satoshi:
+          fee: 수수료
+          sum: 금액
+          fund_uid: Bitcoin 주소
+          fund_extra: 라벨
+          account_balance: 계좌 잔액
+          member_name: 계좌
+        bitcoin_cash:
+          fee: 수수료
+          sum: 금액
+          fund_uid: Bitcoin 주소
+          fund_extra: 라벨
+          account_balance: 계좌 잔액
+          member_name: 계좌
+        ethereum:
+          fee: 수수료
+          sum: 금액
+          fund_uid: Litoshi 주소
+          fund_extra: 라벨
+          account_balance: 계좌 잔액
+        tronix:
+          fee: 수수료
+          sum: 금액
+          fund_uid: tronix 주소
+          fund_extra: 라벨
+          account_balance: 계좌 잔액
+        ripple:
+          fee: 수수료
+          sum: 금액
+          fund_uid: ripple 주소
+          fund_extra: 라벨
+          account_balance: 계좌 잔액
+        eos_token:
+          fee: 수수료
+          sum: 금액
+          fund_uid: eos 주소
+          fund_extra: 라벨
+          account_balance: 계좌 잔액
+        csc:
+          fee: 수수료
+          sum: 금액
+          fund_uid: csc 주소
+          fund_extra: 라벨
+          account_balance: 계좌 잔액
+        ipm:
+          fee: 수수료
+          sum: 금액
+          fund_uid: ipm 주소
+          fund_extra: 라벨
+          account_balance: 계좌 잔액
+        ems_token:
+          fee: 수수료
+          sum: 금액
+          fund_uid: ems 주소
+          fund_extra: 라벨
+          account_balance: 계좌 잔액
+        ecpplus_token:
+          fee: 수수료
+          sum: 금액
+          fund_uid: ecp 주소
+          fund_extra: 라벨
+          account_balance: 계좌 잔액
+        usdcoin:
+          fee: 수수료
+          sum: 금액
+          fund_uid: usd 주소
+          fund_extra: 라벨
+          account_balance: 계좌 잔액
+        fto_token:
+          fee: 수수료
+          sum: 금액
+          fund_uid: fto 주소
+          fund_extra: 라벨
+          account_balance: 계좌 잔액
+        aokey7_token:
+          fee: 수수료
+          sum: 금액
+          fund_uid: aok 주소
+          fund_extra: 라벨
+          account_balance: 계좌 잔액
+  admin:
+    deposits:
+      banks:
+        index:
+          oneday: 최근 24시간 내의 요청
+          available: 모든 보류중인 요청
+        show:
+          alert: 충전을 찾을 수 없습니다.
+          notice: 충전이 성공적으로 완료되었습니다.
+          deposit: 입금 요청
+          accept: 수락
+          target_deposit: 송금
+          confirm: 충전을 승인하시겠습니까?
+        update:
+          blank_txid: TxID는 필수항목 입니다
+      coins:
+        update:
+          notice: 입금이 완료되었습니다.
+        index:
+          accept: 수락
+          accept_confirm: 입금을 승인하시겠습니까?
+      fiats:
+        show:
+          id: ID
+          amount: 수량
+          done_at: 완료됨
+          back: 뒤로
+          reference: 추천인 ID
+    members:
+      index:
+        search: 검색
+        members: 회원
+        email: 이메일
+        name: 이름
+        wallet_address: 지갑 주소
+      show:
+        member_title: 회원 정보
+        actions_title: 실행
+        accounts_title: 계좌 정보
+        account_versions_title: 기록
+    dashboard:
+      index:
+        accounts_title: 계좌 요약
+        download_csv: CSV 다운로드
+    statistic:
+      filter: 필터
+      summary: 요약
+      click-to-expand: 펼치기
+      members:
+        show:
+          table: 결과
+      orders:
+        show:
+          avg: 평균
+          sum: 주문 수량
+          sum_strike: 수량으로 계산
+          count: 계산
+      trades:
+        show:
+          count: 거래
+          volume: 수량
+          amount: 합계 금액
+          min_price: 최소 가격
+          max_price: 최대 가격
+          avg_price: 평균 가격
+          amount_fee: 거래 수수료
+          volume_fee: 합계 수수료
+      deposits:
+        show:
+          count: 합계
+          amount: 합계 금액
+      withdraws:
+        show:
+          count: 합계
+          amount: 합계 금액
+          fee: 수수료
+    withdraws:
+      banks:
+        index:
+          one: 출금 대기 주문
+          all: 최근 24시간 주문
+          empty: 데이터 없음
+        show:
+          process: 프로세스
+          succeed: 성공
+          reject: 거부
+          succeed_confirm: 프로세스를 승인하시겠습니까?
+          reject_confirm: 거부하시겠습니까?
+          withdraw: 출금
+          empty: 데이터 없음
+        update:
+          notice: 출금이 완료되었습니다.
+        destroy:
+          notice: 출금이 거부되었습니다.
+      coins:
+        index:
+          one: 지난 24시간동안의 출금
+          all: 출금 전체
+          empty: 데이터 없음
+        show:
+          process: 수락됨
+          succeed: 출금
+          reject: 거부
+          succeed_confirm: 출금을 진행하시겠습니까?
+          reject_confirm: 출금을 거부하시겠습니까?
+          withdraw: 출금
+        withdraw_rejected_mail:
+          email: 이메일 작성
+          send: 보내기
+        update:
+          notice: 성공적으로 업데이트되었습니다.
+        destroy:
+          notice: 성공적으로 파기되었습니다.
+  deposits/satoshi:
+    aasm_state:
+      submitted: 제출됨
+      accepted: 수락됨
+      checked: 체크됨
+      warning: 주의
+  deposits/bitcoin_cash:
+    aasm_state:
+      submitted: 제출됨
+      accepted: 수락됨
+      checked: 체크됨
+      warning: 주의
+  deposits/ethereum:
+    aasm_state:
+      submitted: 제출됨
+      accepted: 수락됨
+      checked: 체크됨
+      warning: 주의
+  deposits/tronix:
+    aasm_state:
+      submitted: 제출됨
+      accepted: 수락됨
+      checked: 체크됨
+      warning: 주의
+  deposits/ripple:
+    aasm_state:
+      submitted: 제출됨
+      accepted: 수락됨
+      checked: 체크됨
+      warning: 주의
+  deposits/eos_token:
+    aasm_state:
+      submitted: 제출됨
+      accepted: 수락됨
+      checked: 체크됨
+      warning: 주의
+  deposits/csc:
+    aasm_state:
+      submitted: 제출됨
+      accepted: 수락됨
+      checked: 체크됨
+      warning: 주의
+  deposits/ipm:
+    aasm_state:
+      submitted: 제출됨
+      accepted: 수락됨
+      checked: 체크됨
+      warning: 주의
+  deposits/ems_token:
+    aasm_state:
+      submitted: 제출됨
+      accepted: 수락됨
+      checked: 체크됨
+      warning: 주의
+  deposits/ecpplus_token:
+    aasm_state:
+      submitted: 제출됨
+      accepted: 수락됨
+      checked: 체크됨
+      warning: 주의
+  deposits/usdcoin:
+    aasm_state:
+      submitted: 제출됨
+      accepted: 수락됨
+      checked: 체크됨
+      warning: 주의
+  deposits/fto_token:
+    aasm_state:
+      submitted: 제출됨
+      accepted: 수락됨
+      checked: 체크됨
+      warning: 주의
+  deposits/aokey7_token:
+    aasm_state:
+      submitted: 제출됨
+      accepted: 수락됨
+      checked: 체크됨
+      warning: 주의
+  easy_table:
+    satoshi:
+      amount: 금액
+      txid: TxId
+      created_at: 생성일
+      confirmations: 확인
+      member_name: 회원
+      state_and_actions: 상태/실행
+      currency_obj_key_text: 화폐
+    bitcoin_cash:
+      amount: 금액
+      txid: TxId
+      created_at: 생성일
+      confirmations: 확인
+      member_name: 회원
+      state_and_actions: 상태/실행
+      currency_obj_key_text: 화폐
+    ethereum:
+      amount: 금액
+      txid: TxId
+      created_at: 생성일
+      confirmations: 확인
+      member_name: 회원
+      state_and_actions: 상태/실행
+      currency_obj_key_text: 화폐
+    tronix:
+      amount: 금액
+      txid: TxId
+      created_at: 생성일
+      confirmations: 확인
+      member_name: 회원
+      state_and_actions: 상태/실행
+      currency_obj_key_text: 화폐
+    ripple:
+      amount: 금액
+      txid: TxId
+      created_at: 생성일
+      confirmations: 확인
+      state_and_actions: 상태/실행
+      currency_obj_key_text: 화폐
+    eos_token:
+      amount: 금액
+      txid: TxId
+      created_at: 생성일
+      confirmations: 확인
+      state_and_actions: 상태/실행
+      currency_obj_key_text: 화폐
+    csc:
+      amount: 금액
+      txid: TxId
+      created_at: 생성일
+      confirmations: 확인
+      state_and_actions: 상태/실행
+      currency_obj_key_text: 화폐
+    ipm:
+      amount: 금액
+      txid: TxId
+      created_at: 생성일
+      confirmations: 확인
+      state_and_actions: 상태/실행
+      currency_obj_key_text: 화폐
+    ems_token:
+      amount: 금액
+      txid: TxId
+      created_at: 생성일
+      confirmations: 확인
+      state_and_actions: 상태/실행
+      currency_obj_key_text: 화폐
+    ecpplus_token:
+      amount: 금액
+      txid: TxId
+      created_at: 생성일
+      confirmations: 확인
+      state_and_actions: 상태/실행
+      currency_obj_key_text: 화폐
+    usdcoin:
+      amount: 금액
+      txid: TxId
+      created_at: 생성일
+      confirmations: 확인
+      state_and_actions: 상태/실행
+      currency_obj_key_text: 화폐
+    fto_token:
+      amount: 금액
+      txid: TxId
+      created_at: 생성일
+      confirmations: 확인
+      state_and_actions: 상태/실행
+      currency_obj_key_text: 화폐
+    aokey7_token:
+      amount: 금액
+      txid: TxId
+      created_at: 생성일
+      confirmations: 확인
+      state_and_actions: 상태/실행
+      currency_obj_key_text: 화폐
+
+
+
+    bank:
+      sn: SN
+      amount: 금액
+      created_at: At
+      fund_source: 자금 출처
+      memo: 메모
+      member_name: 회원
+      state_and_actions: 상태/실행
+      currency_obj_key_text: 화폐
+  enumerize:
+    account_version:
+      reason:
+        fix: FIX
+        unknown: 알 수 없음
+        strike_add: 거래 더하기
+        strike_sub: 거래 빼기
+        strike_fee: 거래 수수료
+        strike_unlock: 거래 잠금 해제
+        order_cancel: 주문 취소
+        order_submit: 주문 제출
+        deposit: 입금
+        withdraw: 출금
+        withdraw_lock: 출금 잠금
+        withdraw_unlock: 출금 잠금 해제
+    state:
+      done: 완료
+      wait: 대기
+      cancel: 취소
+    currency:
+      btc: BTC
+      bch: BCH
+      eth: ETH
+      trx: TRX
+      xrp: XRP
+      eos: EOS
+      csc: CSC
+      ipm: IPM
+      ems: EMS
+      ecp+: ECP+
+      usdc:  USDC
+      fto: FTO
+      aok: AOK
+    order:
+      state:
+        done: 완료
+        wait: 대기
+        cancel: 취소
+    deposit:
+      aasm_state:
+        submitted: 제출됨
+        submitting: 제출중
+        accepted: 수락됨
+        cancelled: 취소됨
+        rejected: 거절됨
+        checked: 체크됨
+        warning: 주의
+    withdraw:
+      state:
+        submitting: 제출중
+        submitted: 제출됨
+        rejected: 거절됨
+        accepted: 수락됨
+        suspect: 추정*
+        processing: 처리중
+        done: 완료
+        canceled: 취소됨
+    fund_source:
+      category:
+        satoshi: Bitcoin
+        bank: 은행
+    id_document:
+      id_document_type:
+        id_card: 신분증
+        passport: 여권
+        driver_license: 운전면허증
+      id_bill_type:
+        bank_statement: 은행 상태
+        tax_bill: 세금계산서
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: Last &raquo;
+      previous: "&lsaquo; Prev"
+      next: Next &rsaquo;
+      truncate: "..."
+
+  mailer:
+    dear_user: 회원님들께,
+    signature: 감사합니다,<br/>BitCorex 고객센터
+    please_contact: 회원님이 아니실 경우 <a href='mailto:%{contact_mail}'>고객센터에 문의해 주십시오.</a>
+    footer: 본 메일은 자동으로 발송되었습니다. 문의사항이 있는 경우, <a href="mailto:%{contact_mail}">고객센터에 문의해 주십시오.</a>
+
+  member_mailer:
+    notify_signin:
+      subject: "[BitCorex] 로그인 되었습니다."
+      just_signed_in: 로그인 되었습니다.
+    google_auth_activated:
+      subject: "[BitCorex] 구글OTP 인증이 활성화 되었습니다."
+      google_auth_activated: 구글OTP인증 활성화가 완료되었습니다.
+    google_auth_deactivated:
+      subject: "[BitCorex] 구글OTP 인증이 비활성화 되었습니다."
+      google_auth_deactivated: 구글OTP인증 비활성화가 완료되었습니다
+    sms_auth_activated:
+      subject: "[BitCorex] 문자인증이 활성화 되었습니다."
+      sms_auth_activated: 문자인증 활성화가 완료되었습니다
+    sms_auth_deactivated:
+      subject: "[BitCorex] 문자인증이 비활성화 되었습니다."
+      sms_auth_deactivated: 문자인증 비활성화가 완료되었습니다
+    reset_password_done:
+      subject: "[BitCorex] 비밀번호가 변경되었습니다."
+      successful: 회원님의 BitCorex 비밀번호가 변경되었습니다. 출금이 24시간동안 제한됩니다. 회원님이 요청하신 것이 아닐 경우, 즉시 계정을 비활성화 한 뒤 고객센터에 문의주시기 바랍니다.
+      header_content: 비밀번호 변경됨
+      zinance_team: BitCorex 고객센터
+      hello: 안녕하세요,
+      footer_content: 자동 메시지입니다. 회신하지 마십시오.
+    phone_number_verified:
+      subject: "[BitCorex] 회원님의 휴대폰 번호 확인이 완료되었습니다."
+      verified: '회원님의 휴대폰 번호 확인이 완료되었습니다: %{phone_number}'
+    disable_google_auth:
+      google_auth_subject: "구글OTP 비활성화 성공"
+      sms_auth_subject: "문자인증 비활성화 성공"
+      google_auth_body: "회원님의 구글OPT 인증이 비활성화 되었습니다. 출금이 24시간동안 제한됩니다. 회원님이 요청하신 것이 아닐 경우, 즉시 계정을 비활성화 한 뒤 고객센터에 문의주시기 바랍니다."
+      sms_auth_body: "회원님의 문자인증이 비활성화 되었습니다. 출금이 24시간동안 제한됩니다. 회원님이 요청하신 것이 아닐 경우, 즉시 계정을 비활성화 한 뒤 고객센터에 문의주시기 바랍니다."
+      footer_content: 회원님이 요청하신 것이 아닐 경우, 즉시 계정을 비활성화 한 뒤 고객센터에 문의주시기 바랍니다.
+      zinance_team: BitCorex 고객센터
+      automated_text: 자동 메시지입니다. 회신하지 마십시오.
+      hello: 안녕하세요.
+
+  deposit_mailer:
+    accepted:
+      subject: "[BitCorex] 회원님의 입금요청이 처리 완료되었습니다."
+      hello: 안녕하세요.
+      content: 회원님의 BitCorex 계좌가 충전되었습니다.
+      head_content: 입금 성공
+      footer_content: 회원님이 요청하신 것이 아닐 경우, 즉시 고객센터에 문의주시기 바랍니다.
+      zinance_team: BitCorex 고객센터
+      automated_text: 자동 메시지입니다. 회신하지 마십시오.
+
+  system_mailer:
+    daily_stats:
+      member_stats: 회원 통계
+      signup: 가입
+      activation: 활성화
+      asset_stats: 자산 변동
+      trade_stats: 거래 변동
+      asset_value_change_total: 총 디지털 자산 변동
+      trades_change_total: 거래 변동 총액
+
+  ticket_mailer:
+    admin_notification:
+      subject: "[BitCorex] 회원님이 새로운 티켓을 만들었습니다."
+      admin_notification_content: '%{email} 회원님이 새 티켓을 만들었습니다. 아래 링크를 클릭하여 세부정보를 확인해 주십시오.'
+    author_notification:
+      subject: "[BitCorex] 티켓을 제출해 주셔서 감사합니다."
+      thanks_for_submit_ticket: 티켓을 제출해 주셔서 감사 드리며, 최대한 빨리 답변드리겠습니다.
+      head_content: 회원님의 등록정보를 확인해 주십시오.
+      welcome_content: BitCorex에 오신 것을 환영합니다!
+
+
+  token_mailer:
+    activation:
+      subject: "[BitCorex] 계정 활성화"
+      click_to_verify: 'BitCorex에 가입해 주셔서 감사합니다. 다음 링크를 통해 이메일 확인:'
+      unable_to_click: 링크 클릭을 통한 확인이 불가능한 경우 주소창에 링크를 복사해 주십시오.
+      link_expire: 링크가 30 분 후에 만료됩니다.
+      content_link: "인증을 완료하려면 아래 링크를 클릭하십시오:"
+      warning_msg: 회원님이 요청하신 내용이 아닌 경우 즉시 고객센터에 문의해주시기 바랍니다.
+      automated_msg: 자동 메시지입니다. 회신하지 마십시오.
+      security_msg:  "5가지 보안 팁:"
+      security_tip1:  "* 누구에게도 비밀번호를 알려주지 마십시오!"
+      security_tip2:  "* BitCorex 직원이라고 주장하는 사람의 전화 번호로 전화하지 마십시오!"
+      security_tip3:  "* BitCorex 직원이라고 주장하는 그 누구에게도 돈을 보내지 마십시오!"
+      security_tip4:  "* 2단계 인증을 사용하십시오."
+      security_tip5:  "* 접속중인 사이트가 BitCorex이 맞는지 확인하십시오. "
+      head_content: 회원님의 등록 확인
+      welcome_content: "BitCorex에 오신것을 환영합니다!"
+      verify_button: 이메일 인증
+    signin_verify:
+      header_content: 새 장치 인증
+      Authorize_This_Device: 이 장치 인증
+      Zinance_team: BitCorex 고객센터
+      Automated_message: 자동 메시지입니다. 회신하지 마십시오.
+      download: 다운로드
+      Location: '위치 :'
+      IP_Address: 'IP 주소:'
+      Device: '접속 장치:'
+      msg: 최근에 새 장치 또는 새 위치에서 BitCorex 계정에 로그인하려고 시도했습니다. 보안을 위해 추가 확인이 필요합니다.
+    reset_password:
+      subject: "[BitCorex] 비밀번호 재설정 "
+      hello: 안녕하세요,
+      follow_the_link: '30분 안에 이 링크를 따라 비밀번호를 재설정하십시오:'
+      header_content: 비밀번호 재설정
+      body_content: 방금 BitCorex 계정의 비밀번호 재설정 요청을 신청하셨습니다. 비밀번호가 변경되면 24시간동안 계좌 출금이 제한됩니다.
+      action_statment: "새 비밀번호를 설정하려면 아래 버튼을 클릭하십시오:"
+      reset_button: 비밀번호 재설정
+      suggest_msg: 위의 버튼을 클릭하여 확인할 수 없는 경우 아래 주소를 브라우저의 주소창에 복사하여 확인하십시오.
+      link_expire: 보안을 위해 이 링크는 30분 후에 만료됩니다.
+      security_msg: 회원님이 요청하신 내용이 아닌 경우 즉시 고객센터에 문의해주시기 바랍니다.
+      team: BitCorex 고객센터
+      automated_msg: 자동 메시지입니다. 회신하지 마십시오.
+
+    two_factor:
+      subject: "[BitCorex]- 2중 보안인증을 재설정 하십시오."
+      click_to_verify: "%{type} 인증을 재설정 하려면 클릭하십시오."
+      unable_to_click: 링크 클릭을 통한 확인이 불가능한 경우 주소창에 링크를 복사해 주십시오.
+      link_expire: 링크는 30분 후에 만료됩니다.
+      header_content: "%{type} 인증 재설정"
+      hello: 안녕하세요.
+      body_content: " 2단계 인증을 재설정 하십시오. 재설정이 완료된 후 48시간 동안은 출금이 제한됩니다. 재설정 하시려면 버튼을 클릭하십시오:"
+      reset_button: 재설정 확인
+      suggested_text: 링크 클릭을 통한 확인이 불가능한 경우 주소창에 아래 링크를 복사해 주십시오.
+      security_info: 회원님이 요청하신 내용이 아닌 경우 즉시 고객센터에 문의해주시기 바랍니다.
+      team: BitCorex 고객센터
+      automated_msg: 자동 메시지입니다. 회신하지 마십시오.
+  supports:
+    new:
+      Home: 홈
+      Support: 고객지원
+      FAQ: FAQ
+      text: 문의 종류를 선택하고 &amp; 내용을 작성해 주십시오.
+      text2: 일반 문의
+      text3: 기술 지원 문의
+      text4: 광고 문의
+      text5: 비즈니스 개발 문의
+      text6: 제휴 프로그램 문의
+      text7: 보도자료 문의*
+      text8: 문의 양식
+      text9: 양식을 작성하십시오. 이메일은 게재되지 않습니다. * 표시된 곳은 필수 입력란 입니다.
+      text18: Submit
+      text17: Write*
+      text16: Website*
+      text19: '연락처*'
+      text20: '이메일*'
+      text21: '이름*'
+      text22: '올바른 URL을 입력해주세요.'
+      text23: '올바른 URL 이나 사이트 주소를 입력해주세요 '
+      text10: "이름*"
+      text11: "이메일*"
+      text12: "연락처*"
+      text13: "웹사이트"
+      text14: "메세지 내용*"
+      text15: 메세지 전송
+    create:
+      success: '회원님의 문의 접수가 완료되었습니다. 곧 답변 드리겠습니다.'
+    _header:
+      submit_request:
+    _footer:
+      Zinance: BitCorex
+    info_page:
+      search: 검색
+      home: Home
+      제출_a_request: 요청 제출
+      Tips: '도움말: 의견 및 응답은 귀하의 이메일에 있습니다. 이슈 유형을 정확하게 선택하셔야 빠른 처리가 가능합니다.'
+      Please: 다음중 회원님께 해당하는 사항을 선택해 주십시오.
+      help: 입금 관련
+      help1: 출금 관련
+      help2: 이메일 수신 불가
+      help3: 클라이언트 관련
+      help4: 구글 OTP 관련
+      help5: 문자 인증 관련
+      help6: 계좌 관련
+      email: BitCorex 이메일 계정
+      text: BitCorex 계정에 등록된 이메일 주소를 입력하십시오.
+      Subject: 제목
+      Description: 설명
+      Submit: 제출
+  terms:
+    index:
+      text00: BitCorex 이용 약관
+      date: '[마지막 개정일 : 2018년 11월 15일]'
+      text1: 이 계약은 귀하와 서비스 운영 업체 인 BitCorex간에 체결됩니다. BitCorex 웹 사이트를 통해 제공되는 모든 서비스를 사용합니다.
+      text2: https://api.BitCorex.com
+      text0: https://www.BitCorex.com
+      text01: ', API'
+      text3: 또는 BitCorex 계열사는 GDPR 규정을 포함하고있는 본 개인 정보 취급 방침 및 동의서뿐만 아니라 본 이용 약관에 포함 된 모든 이용 약관을 읽고, 이해하고 수락한다는 데 동의합니다. 법적인 구속력이있는 계약이므로 당사 서비스를 사용하기 전에 본 계약 및 관련 고지 사항을주의 깊게 읽으십시오. BitCorex을 등록, 액세스 또는 사용함으로써 귀하는 본 사용자 계약서에 명시된 이용 약관에 동의 한 것입니다. 이 사용자 계약에 동의하지 않으면 (기존 사용자의 경우) 계정 잠금 기능을 시작하고 BitCorex 및 해당 서비스의 사용을 중지하십시오.
+      text4: BitCorex에 대한 자세한 내용은 웹 사이트에있는 회사 및 라이센스 정보를 참조하십시오. 이 계약과 관련하여 질문이 있으시면 고객 지원 팀을 통해 설명을 위해 BitCorex에 언제든지 연락하십시오.
+      text5: /hc/en-us/requests/new
+      text6: 계약 조건
+      text7: BitCorex은 언제든지 자유 재량에 따라 계약 내용을 수정하거나 변경할 수있는 권리를 보유합니다. BitCorex은 웹 페이지에서 수정 된 이용 약관을 업데이트함으로써 이러한 변경 사항을 통지합니다.
+      text8: /hc/en-us/articles/115000421672-Terms-of-Use
+      text9: '이 페이지에서 "[Last updated :]"날짜를 변경하십시오. 이용 약관의 모든 수정 또는 변경은 웹 사이트에 발표되거나 사용자에게 공개 될 때 즉시 효력을 발생합니다. 이와 같이, BitCorex의 서비스를 계속 사용하면 수정 된 계약 및 규칙을 수락하는 것으로 간주됩니다.'
+      text10: 적격성*
+      text11: BitCorex 계좌를 사용하기 위해 등록함으로써 귀하는 최소 20 세 이상이며 귀하와 BitCorex간에 본 이용 약관을 입력 할 수있는 완전한 법적 능력을 갖춘 개인, 법인 또는 기타 단체임을 확인했습니다. 그렇지 않은 경우, 귀하와 귀하의 보호자는 귀하의 행동으로 인한 모든 결과에 착수해야하며, BitCorex은 귀하와 귀하의 보호자에 대한 보상 청구 이외에 귀하의 계정을 취소하거나 동결시킬 권리가 있습니다.
+      text12: 사용 제한
+      text13: BitCorex과 그 서비스에 접속하여 사용함으로써 귀하는 유엔 안전 보장 이사회 제재 목록 및 그와 동등한 무역 제재 또는 경제 제재 목록에 없다는 것을 인정하고 선언합니다. BitCorex은 운영 할 시장 및 관할권을 선택할 권리를 보유하고 있으며 특정 국가에 대한 서비스를 제한하거나 거부 할 수 있습니다. 본 계약의 내용은 사용자가 속한 국가의 법률에서 제외되어서는 안됩니다. BitCorex은 금지 된 사용자가 BitCorex 및 해당 서비스에 액세스하거나 액세스하지 못하도록하는 입장을 유지합니다.
+      text14: 서비스 설명
+      text15: BitCorex은 일반적으로 암호화 토큰, 디지털 토큰 또는 암호화 통화로 알려진 제품에 대한 온라인 디지털 자산 거래 플랫폼 (암호화 간 암호화)을 제공합니다. BitCorex은 자사 플랫폼에서 거래를 처리 할 수있는 기능을 제공하지 않으며 이와 함께 엄격한 규제가 적용되지 않습니다. BitCorex은 거래 플랫폼 제공자로서의 기능을 수행하며 거래자들 사이에서 이루어진 거래에서 구매자 또는 판매자가 아닙니다. BitCorex은 또한 시장을 만드는 사람이 아닙니다. 거래자는 거래를 시작하기 전에 BitCorex에 계좌를 등록하고 열어야하며 디지털 자산을 예치해야합니다. 거래자는 이용 약관에 명시된 제한 사항에 따라 디지털 자산의 인출을 요청할 수 있습니다.
+      text16: BitCorex은 웹 사이트에 게시 된 정보의 정확성을 유지하기 위해 노력하지만 웹 사이트를 통해 콘텐츠의 정확성, 적합성, 신뢰성, 완성도, 성능 또는 적합성을 보장 할 수 없으며 발생할 수있는 손실이나 손해에 대해 책임을지지 않습니다. 콘텐츠에서 직접 또는 간접적으로 BitCorex 웹 사이트의 정보는 사전 통보없이 변경 될 수 있으며 사용자가 독립적 인 결정에 도달하도록하는 주요 목적으로 제공됩니다. BitCorex은 투자 또는 자문 조언을 제공하지 않으며 웹 사이트 또는 기타 통신 매체에 명시된대로 정보의 사용 또는 해석에 대한 책임을지지 않습니다. BitCorex의 전체 사용자는 거래와 관련된 위험이 있음을 이해해야합니다. BitCorex은 모든 사용자가 자신의 수단으로 신중하고 책임있게 거래하도록 권장합니다.
+      text17: BitCorex은 서비스의 연속성과 보안 성을 보장하기 위해 플랫폼 보안을 강조하지만 (중단 시간 / 유지 보수가 발생할 경우 발표 할 예정 임) 신의 행위, 악성 대상 해킹, 테러 공격 및 기타 예기치 않은 상황에 대해서는 책임지지 않습니다. BitCorex은 비정상적인 거래가 발생했을 때 플랫폼상의 모든 유형의 거래를 취소, 롤백 또는 차단할 권한을 보유합니다. BitCorex은 사용자로부터 암호를 요구하거나 사용자에게 거래 플랫폼에없는 자금을 이체하도록 요청하지 않습니다. 사용자는 사기를 일으킬 수 있는 할인이나 프로모션을 처리 할 때 신중을 기하시기 바랍니다. 이 목록은 포괄적이지는 않지만 귀하는 BitCorex이 위에 명시된 상황에서 발생하는 모든 손실에 대해 책임지지 않는다는 데 동의합니다.
+      text18: BitCorex과 그 서비스를 사용함으로써 귀하는 본 약관과 관련하여 BitCorex에 대한 모든 정보가 사실이며 정확하고 완전 함을 선언합니다.
+      text19: BitCorex 계좌 등록 및 요건
+      text20: 등록
+      text21: 전체 사용자는 반드시 등록을 해야합니다.
+      text22: /register.html
+      text23: 사이트를 사용하기 전에 BitCorex 계좌를 위해. 계정을 등록하려면 실명, 전자 메일 주소 및 암호를 제공하고 이용 약관, 개인 정보 취급 방침 및 동의서에 동의해야합니다. 특정 일정 및 단독 재량에 따라 귀하의 계좌 개설을 거부 할 수 있습니다.
+      text24: 사용자 신원 확인
+      text25: BitCorex에 계정을 등록하면 신원 확인을 위해 요청한 개인 정보를 공유하는 것에 동의하게됩니다. 이 정보는 BitCorex 플랫폼에서 자금 세탁, 테러 자금 조달, 사기 및 기타 금융 범죄를 탐지하기 위해 특별히 사용됩니다. 이 정보를 제공하는 것 외에도 데이터 보존에 대한 세계 산업 표준 준수를 용이하게하기 위해 귀하는 계정의 평생과 계정 해지 이후 5 년 동안 이러한 정보를 기록하도록 허용하는 데 동의합니다. 귀하는 또한 귀하의 신원을 확인하거나 사기와 같은 금융 범죄로부터 귀하 및 / 또는 당사를 보호하는 데 필요하다고 여겨지는 직접 또는 제 3자를 통한 문의를 할 수있는 권한을 부여합니다.
+      text26: '우리가 요구하는 신원 확인 정보에는 이름, 이메일 주소, 연락처 정보, 전화 번호, 사용자 이름, 정부 발급 신분증 등이 포함될 수 있습니다. 이 필수 정보를 제공함에있어 귀하는 그것이 정확하고 진품임을 확인합니다. 등록 후, 귀하는 변경 사항이있는 정보가 정확하고시기 적절하게 업데이트되었는지를 보증해야합니다. 귀하가 제공 한 정보가 잘못되었거나 진실하지 않거나 오래되었거나 불완전하다는 것에 대해 합당한 의심이있는 경우, BitCorex은 귀하에게 수정을 요구하는 통지를 보낼 권리를 가지며 관련 정보를 직접 삭제하고 경우에 따라 모두 또는 BitCorex Service의 일부입니다. 제공된 연락처 정보를 통해 연락 할 수없는 경우 BitCorex Service 사용 중 발생한 손실이나 비용에 대해 전적으로 귀하는 전적으로 책임을집니다. 귀하는 변경 사항이있는 경우 모든 정보를 최신 상태로 유지해야 할 의무가 있음을 인정하고 이에 동의합니다.'
+      text27: 계좌 사용 요건
+      text28: BitCorex 계정은 자신의 이름이 등록 된 사람 만 사용할 수 있습니다. BitCorex은 이름이 등록 된 사람 이외의 사람이 사용하는 계정을 정지, 동결 또는 취소 할 수있는 권리를 보유합니다. 따라서 BitCorex은 이러한 계정에 대해 법적 책임을지지 않습니다.
+      text29: 계좌 보안성
+      text30: 'BitCorex은 우리에게 맡겨진 사용자 자금의 안전성을 우선시하고 우리 플랫폼에 대한 산업 표준 보호를 구현했습니다. 그렇다면 개별 사용자 작업에 의해 생성되는 계정 수준의 위험이 있습니다. 귀하의 계좌와 개인 정보를 보호하기 위해 독립적으로 안전 조치를 취할 필요성을 이해해 주시기 바랍니다.'
+      text31: '귀하는 귀하 자신의 BitCorex 계정 및 암호의 보관에 대해 전적으로 책임을지며 귀하는 귀하의 로그인 이메일, BitCorex 계정 및 암호 (정보 공개, 정보 게시, 동의를 포함하되 이에 국한되지는 않음)에 따른 모든 활동에 대한 책임을집니다 웹 사이트를 클릭하거나 온라인 갱신 갱신 등 다양한 규칙 및 계약서 제출 또는 제출).'
+      text32: '귀하는 이에 동의합니다.:'
+      text33: '다른 사람이 BitCorex 계정과 암호를 무단으로 사용하거나 보안 규칙을 위반 한 사실을 알고 있다면 즉시 BitCorex에 알립니다.'
+      text34: 귀하는 웹 사이트 / 서비스의 보안, 인증, 처리, 청구, 철회 메커니즘 또는 절차를 엄격하게 준수해야합니다. 또한
+      text35: 방문 할 때마다 적절한 조치를 취하여 웹 사이트에서 로그 아웃합니다.
+      text36: BitCorex은 위의 계좌 보안 조항을 준수하지 않음으로 인해 초래 된 손실이나 결과에 대해 책임을지지 않습니다.
+      text37: 분쟁 해결
+      text38: BitCorex은 단독 재량으로 문제와 분쟁을 해결할 권리가 있습니다. 일부 문제에는 타인의 권리 침해, 법률 및 규정 위반, 비정상적인 거래 및 본 약관에 명시 적으로 언급되지 않은 기타 문제가 포함됩니다. 사용자는 분쟁 해결 프로세스에서 발생하는 비용을 부담 할 것에 동의합니다.
+      text39: BitCorex에서 서비스 사용 지침
+      text40: '귀하는 BitCorex에서 서비스를 이용하는 동안 다음과 같은 성약을 준수 할 것에 동의합니다 :'
+      text41: BitCorex Service 사용 중 수행하는 모든 활동은 해당 법률, 규정 및 BitCorex의 다양한 지침을 준수해야합니다.
+      text42: 공공의 이익, 공공 윤리 또는 타인의 정당한 이익을 침해하지 않으며,
+      text43: 지불 가능한 세금 또는 수수료의 회피를 구성하지 않으며 본 계약 또는 관련 규칙을 위반하지 않습니다. 귀하가 위의 약속을 위반하여 법적 결과를 초래하는 경우, 귀하는 귀하의 이름으로 모든 법적 책임을 독자적으로 수행하고 모든 사람으로부터 BitCorex을 면책합니다 그러한 위반으로 인해 발생하는 행동, 클레임 또는 비용. 귀하는 BitCorex의 사전 서면 동의없이 상업적 목적으로 사이트에 표시된 어떠한 데이터 나 정보도 사용하지 않습니다. 귀하는 불공정 경쟁 행위를하지 않거나 BitCorex의 정상적인 운영에 개입하지 않고 본 이용 약관 및 개인 정보 보호 정책에 따라 사이트를 사용합니다. 이러한 악의적 인 행위의 예는 다음을 포함하지만 이에 국한되지 않습니다.
+      text44: 장치, 소프트웨어 또는 서브 루틴을 사용하여 사이트를 방해하는 행위
+      text45: 부적절한 데이터 로드 요청으로 네트워크 장비에 과부하를 거는 행위
+      text46: 귀하는 BitCorex Service에 액세스하여 Coincel이 귀하가 상기 협약을 위반했는지 여부를 일방적으로 판단하고 사용자의 동의나 사전 고지 없이 관련 규칙을 적용할 수 있는 조치를 취할 권리가 있다는 데 동의합니다. 이러한 작업의 예로는 다음이 포함되지만 이에 국한되지는 않습니다.
+      text47: 주문 차단 및 마감
+      text48: 계정 정지
+      text49: 사고을 처리기관에 보고
+      text50: 취해진 혐의 위반 및 조치 공개
+      text51: 위반한 정보를 삭제하는 행위
+      text52: 귀하가 주장한 위반으로 인해 제 3 자에게 손해가 발생하는 경우, 귀하는 자신의 이름으로 모든 법적 책임을지고 손실, 벌금 또는 추가 비용으로부터 코 인셸을 무해하게 처분해야합니다. 위반 사항으로 인해 손해를 입거나 제 3 자의 손해 배상을 청구하거나 행정 당국이 처한 처벌을 받으면 합법적 인 변호사 비용을 포함한 손실 및 비용을 보상해야합니다.
+      text53: 서비스 수수료
+      text54: BitCorex은 서비스를 이용하는 사용자에게 서비스 요금을 부과 할 권리가 있습니다. BitCorex의 재량에 따라 서비스를 사용하는 사용자에게 부과되는 서비스 수수료를 조정합니다.
+      text541: 책임
+      text55: 서비스 제공
+      text56: BitCorex은 "있는 그대로" 및 "상업적으로 이용 가능한" 조건으로 BitCorex 서비스를 제공하며, 관련된 기술의 신뢰성, 안정성, 정확성 및 완전성과 관련하여 어떠한 형태의 보증도 제공하지 않습니다. BitCorex은 동전 관련 정보를 입수하고 동전 관련 거래를 할 수 있는 거래 장소일 뿐입니다. BitCorex은 규칙에 따라 의무를 이행하는 거래 당사자의 거래, 거래 정보의 진실성 또는 거래 당사자의 능력을 통제할 수 없습니다. 제공된 BitCorex 서비스를 사용하기 전에 관련 투자 위험, 거래 정보 및 투자 결정의 법적 상태 및 타당성을 신중하게 고려해야 합니다.
+      text57: 책임제한
+      text58: 귀하는 인정 및 동의하며, BitCorex은 다음을 포함하되 이에 국한되지 않는 다음 이벤트로 인해 발생한 모든 손실에 대해 책임지지 않습니다.
+      text59: 이익, 영업권, 사용 또는 데이터 또는 기타 무형자산의 손실
+      text60: BitCorex 서비스 사용 또는 사용 실패
+      text61: 귀하의 계정을 무단 사용하거나 타사에 의해 데이터를 무단 변경
+      text62: BitCorex 서비스에 대한 미숙지
+      text63: BitCorex에 직접 귀속되지 않는 BitCorex Service와 관련된 기타 손실
+      text64: 어떠한 경우에도 BitCorex은 정전, 자연재해, 서비스 제공업체 측 문제 또는 정부 조치와 같은 외부 요인이나 정기적인 네트워크 유지로 인한 서비스 장애 또는 지연에 대해 책임을 지지 않습니다.
+      text65: 구분
+      text66: 귀하는 무해한 BitCorex, 계열사 관련 licensors, 그리고 그들의 이사, 임원, 직원, 그리고 모든 소송과 손해에 대해에서 배상하겠다고 동의한다.(변호사 비용, 벌금 또는 처벌 어떤 규제 기관 따라 시행돼)당신의 침해나 이 계약의 우리 집행으로부터 발생한. 이것은 또한 BitCorex 서비스의 사용 동안 관련 법, 규칙, 또는 어떤 제3자의 권리의 당신의 위반에 적용해야 한다.
+      text67: 공고
+      text68: 모든 공지사항, 뉴스, 프로모션, 대회, 에어드랍 정보는
+      text69: '/hc/en-us/categories/115000056351-Announcements'
+      text70: 에 공지되며, 사용자에게 정기적으로 참조할 것을 권장합니다. BitCorex은 사용자가 공지 사항의 무지와 태만으로 인해 개인 손실을 입은 경우 어떠한 방식으로도 배상 책임이나 책임을 지지 않습니다.
+      text71: 계약 종료
+      text72: '귀하는 당사가 서비스 약관, 개인정보 보호정책, AML/CTF 행위 또는 적용 가능한 법률을 위반하는 것으로 의심되는 경우 귀하의 계정(및 관련 단체 또는 계열사가 유익한 소유의 모든 계정)을 즉시 중지하거나, 자금을 동결 또는 잠그고, BitCorex에 대한 귀하의 접근을 중단할 권리가 있다는 데 동의합니다.s & regulations. BitCorex은 이러한 계정과 관련된 거래 데이터 또는 기타 정보를 보관 및 사용할 권리가 있습니다. 위의 계정 컨트롤은 다음과 같은 경우에도 적용될 수 있습니다:'
+      text73: 계정은 정부 절차, 범죄 수사 또는 기타 미결 소송의 대상이 됩니다
+      text74: BitCorex은 비정상적인 계정 활동을 감지합니다.
+      text75: BitCorex은 계정에 대한 무단 액세스를 감지합니다.
+      text76: 'BitCorex은 법원의 명령 또는 규제/정부 당국의 명령에 의거합니다. 다음 중 어느 하나에 해당하는 경우, BitCorex은 귀하의 계정을 취소하여 본 계약을 직접 종료할 수 있는 권리를 가져야 하며, BitCorex에 대한 귀하의 계정 승인을 영구적으로 동결(취소)하고, 코어를 철회할 수 있는 권리를 가져야 합니다. BitCorex 계정 지원: '
+      text77: 'BitCorex이 당신에게 서비스를 종료한 후,'
+      text78: '귀하는 BitCorex 사용자로 다른 사람의 이름으로 직접 또는 간접적으로 다시 등록하거나 등록하는 것으로 간주됩니다;'
+      text79: '사용자가 제공한 정보의 주요 내용은 거짓, 부정확, 시대에 뒤떨어지거나 불완전합니다.;'
+      text80: '이 계약(규칙 포함)이 개정될 때, 당신은 개정된 서비스 계약을 수락하지 않으려는 당신의 의지를 명시적으로 진술하고 BitCorex에게 통지합니다.;'
+      text81: BitCorex이 서비스를 중단해야 한다고 생각하는 다른 상황. 계정이 종료되면 데이터 보존 표준을 충족하는 데 필요한 계정 및 트랜잭션 정보가 5년 동안 안전하게 저장됩니다. 또한, 계정 종료 프로세스 중에 거래가 완료되지 않은 경우, BitCorex은 거래상대방에 그 당시의 상황을 통지할 수 있는 권한을 가집니다.
+      text82: 계정 종료 후 잔금(정상)
+      text83: 일단 계좌가 폐쇄되거나 인출되면, 그 계좌에 남아 있는 모든 잔액(BitCorex에 대한 수수료와 부채를 포함)은 즉시 BitCorex에게 지급될 것입니다. BitCorex에 미납된 모든 요금을 지불하면(있을 경우), 사용자는 5 영업일 이내에 계좌에서 모든 자금을 인출할 수 있습니다.
+      text84: 계좌 해지(조건의 fraud/AML/violation)후 남은 자금
+      text85: 'BitCorex은 부정행위 조사, AML 조사 또는 BitCorex의 약관 위반(예: 지정된 국가에서 BitCorex에 대한 거래)으로 인해 계정 정지/압류 시 당국에 넘겨질 수 있는 자금 및 사용자 데이터/정보에 대한 완전한 관리권을 유지합니다.'
+      text86: 현지법 준수
+      text87: 지역 관할에서 BitCorex의 법적 사용과 관련하여 지역법을 준수하는 것은 사용자의 책임입니다. 또한 사용자는 지방법의 범위 내에서 과세, 원천징수, 신고 및 송금의 모든 측면을 해당 세무 당국에 고려해야 합니다. 전체 BitCorex 이용자와 그 서비스 이용자는 자금의 출처가 정당한 방법에서 나온 것이며 불법 활동에서 파생된 것이 아님을 인정하고 선언합니다. BitCorex은 전 세계 사법 당국과 협력하는 자세를 유지하고 있으며, 법적 권한에 의해 기명날인되거나 조사되는 사용자의 계정과 자금을 압류, 동결, 해지하는 것을 주저하지 않습니다.
+      text88: 개인 정보 보호 정책
+      text89: BitCorex은 BitCorex 플랫폼에 대한 개인 정보 보호 정책을 때때로 발표하고 수정할 수 있으며, 개인 정보 보호 정책은 본 사용 계약의 필수적인 부분입니다. GDPR이 포함된 개인 정보 보호 정책의 최신 버전은 항상 이 페이지에서 확인할 수 있습니다.
+      text90: 상속 및 고지 사항
+      text91: 귀하는 BitCorex 및 전체 계열사를 면책하고 Coincel이 이 약관을 위반하는 경우를 제외하고 모든 제3자 클레임에 대해 무해한 상태를 유지하는 데 동의합니다. 서비스 설명에서 언급된 바와 같이 BitCorex은 사이트의 데이터 무결성을 유지하기 위해 최선을 다하지만 플랫폼에서 제공되는 정보와 서비스를 보장하지는 않습니다. BitCorex은 서비스 사용으로 인해 발생하는 오류에 대해 책임을 지지 않습니다.
+      text92: 불만 사항
+      text93: 불만 사항, 피드백 또는 질문이 있는 경우 연락하십시오.
+      text94: "(https://support.BitCorex.com/hc/en-us/requests/new)"
+      text95: '최선을 다해서 해결하도록 하겠습니다.'
+      text96: '/statement.html'
+
+  withdraw_mailer:
+    submitted:
+      subject: "[BitCorex] 출금 상태 업데이트"
+      body_content: 회원님이 요청하신 %{암호화폐} 출금이 완료되었습니다. 가능한 한 빨리 처리하겠습니다. 문의 사항이 있으면 연락 주십시오.
+      header_content: 출금 제출됨
+      hello: 안녕하세요.
+      security_msg: 회원님이 요청하신 내용이 아닌 경우 즉시 고객센터에 문의해주시기 바랍니다.
+      team: BitCorex 고객센터
+      automated_msg: 자동 메시지입니다. 회신하지 마십시오.
+
+    processing:
+      subject: "[BitCorex] 회원님의 출금 상태 업데이트"
+      body_content: 회원님이 요청하신 %{암호화폐} 출금이 처리중입니다. 문의 사항이 있으면 연락 주십시오.
+      header_content: 출금 처리
+      hello: 안녕하세요.
+      security_msg: 회원님이 요청하신 내용이 아닌 경우 즉시 고객센터에 문의해주시기 바랍니다.
+      team: BitCorex 고객센터
+      automated_msg: 자동 메시지입니다. 회신하지 마십시오.
+
+    done:
+      subject: "[BitCorex] 회원님의 출금 상태 업데이트"
+      content: 회원님이 요청하신 %{암호화폐} 출금이 완료되었습니다. 확인바랍니다. 문의 사항이 있으면 연락 주십시오.
+      header_content: 출금 성공
+      hello: 안녕하세요.
+      body_content: 회원님이 요청하신 %{암호화폐} 출금이 완료되었습니다. 확인바랍니다. 문의 사항이 있으면 연락 주십시오.
+      security_msg: 회원님이 요청하신 내용이 아닌 경우 즉시 고객센터에 문의해주시기 바랍니다.
+      team: BitCorex 고객센터
+      automated_msg: 자동 메시지입니다. 회신하지 마십시오.
+
+    withdraw_state:
+      subject: "[BitCorex] 회원님의 출금 상태 업데이트"
+      your_state: '회원님의 출금 상태: '
+      header_content: 회원님의 출금 상태
+      hello: 안녕하세요.
+      team: BitCorex 고객센터
+      automated_msg: 자동 메시지입니다. 회신하지 마십시오.
+
+  'true': true
+  'false': false
+  view_on_github: 깃헙에서 보기
+  slogan:
+    heading: BitCorex
+    subheading: 간편하고 안전한 클라우드 구현
+    text1: BitCorex - 디지털 통화 관리를 위한 암호화 교환.
+    text2: Crypto 설치 및 구성 서비스를 제공합니다.
+  trade:
+    markets: 마켓
+    realtime_price:
+      title: 실시간 가격
+    account_balance:
+      title: 잔액
+  gon:
+    ask: 요청
+    bid: 입찰
+    brand: 암호화폐 거래
+    notification:
+      title: 암호화폐 거래
+      enabled: 알림 사용됨
+      new_trade: "%{kind} 주문#%{id} 이 실행됨: %{price} %{quote_unit} 체결: %{volume} %{base_unit}。"
+  back: 뒤로
+  invalid_password: 잘못된 비밀번호
+  all: 전체
+  date:
+    formats:
+      date-short: "%m-%d"
+      short: "%m-%d %H:%M"
+      default: "%m/%d/%Y %H:%M"
+  time:
+    formats:
+      date-short: "%m-%d"
+      short: "%m-%d %H:%M"
+      default: "%m/%d/%Y %H:%M"
+  header:
+    news: 뉴스
+    or: 또는
+    support: 지원
+    cc: "© %{year} %{host}"
+    All_Rights_Reserved: 무단 전재 금지
+    language: 언어
+    home: 홈
+    dashboard: 대시보드
+    admin: 관리 패널
+    market: 거래
+    settings: 프로필
+    signin: 로그인
+    login: 로그인
+    b_details: 은행 세부 정보
+    signout: 로그아웃
+    signup: 회원가입
+    register: 등록
+    forgot_password: "비밀번호를 잊으셨나요?"
+    funds: 자금
+    getstart: 마켓
+    assets: 지급능력
+    history: 내역
+    order_history: 주문 내역
+    trade_history: Trade 내역
+    account_history: 거래 내역
+    open_order_history: 미체결 주문
+    my_profile: 내 프로필
+    balance_summary: 잔액
+    account_balance: 합계 자산
+    back: 뒤로
+    total: 합계
+    deposit: 입금
+    withdraw: 출금
+    trade: Trade
+    sign_in_with_google: 구글 아이디로 로그인
+    sign_in_with_facebook: 페이스북 아이디로 로그인
+    toggle_navigation: 토글 네비게이션
+    exchange: 거래
+    basic: 기본
+    not_on: Not on*
+    website_translator: 웹사이트 번역기
+    yet: '아직인가요?'
+    translator_text: Google에 의한 번역은 편의를 위해 제공되며 문맥상 확인이 되지 않습니다. 정확도는 원본을 참조해 주세요.
+    account: 계좌
+    order: 주문
+  admin_header:
+    deposits: 입금
+    withdraws: 출금
+    statistics: 데이터 통계
+    id_documents: 계좌 확인
+    commission: 커미션
+    third_party: 유동성 관리
+    client_details: 클라이언트 세부 정보
+    members_details: 회원 세부 정보
+    referral: 래퍼럴 세팅
+  login_header:
+    hello: '테스트중'
+
+
+  footer:
+    Powered_by: Powered By
+    Antier_Solutions: BitCorex
+    about: 정보
+    privacy: 개인정보
+    contact: 연락
+    price: 가격
+    liability_proof: 책임 증명
+    terms: 조건
+    cc: "© %{year}-%{year1}%{host}. %{add} 모든 저작권은 BitCorex에 있습니다."
+    volume: 최근 24시간 수량
+    Connected: 연결됨
+  about:
+    index:
+      more: 추가
+      title: BitCorex 관련
+      safety_stability: 보안 안정성
+      system_architecture: 다중 계층 &amp; 멀티클러스터 시스템 아키텍처
+      performance: 고성능
+      processing: 초당 140,000개의 주문을 처리할 수 있습니다.
+      liquidity: 유동성 높음
+      resources: 리소스 및 파트너 부족
+      devices: 전체 디바이스 적용됨
+      device_text: Web, Android, iOS, Mobile Web, Windows, macOS
+      support: 다국어 지원
+      support_text: 여러 언어로 제공되는 지원 및 FAQ
+      coin_support: 다중 코인 지원
+      coins: BTC, ETH, USDT, CSC
+      advantages: 우리의 장점
+      team: 강력한 팀
+      team_text: 저희 팀은 월 스트리트와 암호 금융 분야에서 모두 경험을 쌓았습니다. 우리 팀은 또한 성공적인 스타트업 기록을 가지고 있습니다.
+      products: 입증된 제품
+      products_text: 기본 BitCorex 플랫폼은 30개 이상의 거래소에 이미 구축되어 있으며, 모든 장치와 여러 언어를 지원하므로 원활한 사용자 환경을 제공합니다.
+      technology: 우수한 기술
+      technology_text: 당사의 인증된 매칭 엔진은 초당 140,000개의 주문을 처리할 수 있으며, 현재 시장에서 가장 빠른 거래처 중 하나가 되었습니다.
+      resources: 산업 리소스
+      resources_text: 우리는 업계 선두업체와 긴밀한 관계를 맺고 있으며, 플랫폼 뒤에 서고자 하는 투자자 및 조언자 목록을 살펴보기만 하면 됩니다.
+      assets_download: 다운받을 자산
+      assets_text: 이러한 이미지는 BitCorex에 관한 기사에만 사용할 수 있도록 다운로드용으로 제작되었습니다. 이 이미지들을 다른 목적으로 사용하고 싶으시다면, 저희에게 연락 주십시오.
+  contact:
+    index:
+      view: '지원 문서 보기'
+      submit: '요청 제출'
+      title: 이용문의
+      question: 문의사항이 있으신가요?
+      FAQ1: BitCorex 공식 FAQ
+      please_content: 먼저 체크해 주세요
+      content: "질문에 이미 답변이 되었는지 확인하기 위해:"
+      request_msg: 아직도 원하시는 내용을 찾지 못하셨나요?
+      join_msg: "비계정 관련 커뮤니케이션을 위해 온라인 커뮤니티에 가입하십시오.:"
+      telegram: BitCorex 텔레그램
+      announcements: 공지사항
+
+  privacy:
+    index:
+      date: '[마지막 개정: 2018년 11월 15일]'
+      title: BitCorex 개인 정보 보호 정책
+      privacy_content: 이 개인 정보 보호 정책은 BitCorex.com 웹 사이트를 통해 얻은 사용자 정보를 수집, 사용, 공유 및 보호하는 방법에 대해 설명합니다. "우리"는 BitCorex Holdings Limited와 그 계열사를 말합니다. 우리가 사용자들에게 특정한 개인 정보를 요구할 때, 그것은 우리가 법에 의해 이 정보를 수집하도록 요구되거나 특정한 목적에 관련되기 때문입니다. 귀하가 저희에게 제공한 불필요한 정보는 자발적으로 처리됩니다. 귀하는 이러한 필수 정보가 아닌 정보를 제공할지 여부를 결정했으며, 그렇지 않을 경우 당사의 모든 서비스에 액세스하거나 활용하지 못할 수도 있습니다.
+      privacy_content2: 사이트를 사용하면 이 개인 정보 보호 정책에 설명된 데이터 관행에 동의합니다. BitCorex은 때때로 법률의 변경 사항이나 개인 데이터 수집 및 사용 관행을 반영하기 위해 이 개인 정보 보호 정책을 개정할 수 있습니다. 이 개인 정보 보호 정책에 대한 중요한 변경 사항이 있을 경우 해당 사이트에 게시하여 변경 내용을 공지합니다. 본 개인정보 보호정책에서 다루지 않는 목적을 위해 귀하의 정보를 사용하기 전에 귀하의 동의를 구합니다.
+      privacy_content3: 최신 프라이버시 정책은 EEA(European Economic Area) 내의 개인 정보 처리 규칙에 따라 행동하는 일반 데이터 보호 규정(GDPR)의 요소를 통합했습니다.
+      info_title: BitCorex이 수집하는 정보
+      last_revised_content: BitCorex의 서비스를 등록하고 사용할 때 수집하는 정보의 유형을 이해하시기 바랍니다.
+      info_content: 회원등록 시 제공하는 정보
+      privacy_content4: BitCorex 계좌를 만들 때 연락처 정보(이메일 주소, 이름 및 암호)가 포함된 개인 정보를 제공합니다. 보안을 향상시키기 위해 2FA 검증에 사용할 SMS 또는 Google Authenticator 계정의 전화 번호를 추가하도록 선택할 수도 있습니다.
+      info_identity: 사용자 ID를 인증할 때 수집되는 정보
+      privacy_content5: BitCorex은 안티머니 론딩(AML), KYC(Know-Your-Customer), CTF(Counter Trafficist Financing) 등 글로벌 업계 규정 표준을 준수하려면 개인 및 기업 수준 고객 모두에 대해 사용자 계정 인증을 받아야 합니다. 여기에는 공식적인 신분증 수집이 수반됩니다.
+      info_service: 사용자가 서비스를 사용할 때 수집하는 정보
+      service_title: 서비스 사용 정보
+      privacy_content6: 또한 BitCorex 플랫폼을 통해 액세스 날짜 및 시간, 장치 식별, 운영 체제, 브라우저 유형 및 IP 주소 등의 사용 관련 추적 정보를 모니터링하고 수집합니다. 이 정보는 BitCorex 또는 제3자 서비스를 통해 직접 얻을 수 있습니다. 이 서비스 사용 데이터는 시스템이 모든 플랫폼에 걸쳐 사용자가 인터페이스에 액세스할 수 있도록 하고 범죄 조사 중에 도움을 줄 수 있도록 합니다.
+      transaction_info: 거래 정보
+      privacy_content7: 모든 개인 및 기업 사용자 계정에 대해 예금 스냅샷, 계좌 잔액, 거래 내역, 인출, 주문 활동 및 유통 이력 등의 거래 정보를 수집합니다. 이 트랜잭션 데이터는 사용자 부정 행위 방지 및 법적 사건 해결을 위한 의심스러운 거래 활동에 대해 모니터링됩니다.
+      collect_info: BitCorex이 해당 정보를 수집하는 이유
+      maintain_info: 서비스 제공 및 유지 관리
+      privacy_content8_info: 수집된 정보를 사용하여 서비스를 제공하고 사용자 ID를 확인합니다.
+      privacy_content8: 당사는 장치의 쿠키에 저장된 IP 주소와 고유 식별자를 사용하여 사용자의 ID를 인증하고 서비스를 제공합니다. 당사의 법적 의무와 시스템 요구 사항을 고려할 때, 당사는 신분 확인, 연락처 정보 및 거래 관련 정보와 같은 데이터가 없으면 서비스를 제공할 수 없습니다.
+      protect_text: 사용자 보호
+      info_collect: 당사는 플랫폼, 사용자 계정 및 아카이브를 보호하기 위해 수집된 정보를 사용합니다.
+      info_collect2:  당사는 IP 주소와 쿠키 데이터를 사용하여 스팸, 피싱 및 DDoS(분산 서비스 거부) 공격과 같은 자동화된 남용으로부터 보호합니다.
+      privacy_content9: 의심스러운 행동을 조기에 발견해 악덕 행위자에 대한 잠재적 사기 및 자금 손실을 예방한다는 목표로 거래 활동을 분석하고 있습니다.
+      revised_info: 법적 및 규정 요건을 준수
+      privacy_content9: 귀하가 BitCorex과 함께 저장하는 데이터의 개인 정보 보호 및 보안에 대한 존중은 규정, 정부 요청 및 사용자가 생성한 문의 사항을 준수하기 위한 당사의 접근 방식을 알려줍니다. 당사는 당사의 법률 사례 팀 및/또는 사용자의 사전 동의 없이 제3자 출처에 어떠한 개인 정보도 공개하거나 제공하지 않습니다.
+      performance_info: 사이트 성능 측정
+      performance_text: 당사는 적극적으로 데이터를 측정하고 분석하여 서비스 사용 방법을 파악합니다. 이 검토 활동은 운영 팀이 지속적으로 플랫폼의 성능을 개선하고 사용자 환경의 문제를 해결하기 위해 수행합니다.
+      performance_text_content: 당사는 지속적으로 시스템의 활동 정보와 사용자와의 통신을 모니터링하여 문제를 찾고 신속하게 해결합니다.
+      communicate_info: 회원님과의 소통
+      performance_content10: 당사는 전자 메일 주소와 같이 수집된 개인 정보를 사용하여 티켓에 대한 고객 지원을 제공할 때 사용자와 직접 상호 작용하거나 로그 인, 변환 및 보안에 대한 정보를 제공합니다. 각 통신을 확인하기 위한 귀하의 개인 정보를 처리하지 않으면, 당사는 제출된 요청, 질문 및 문의에 응답할 수 없습니다. 전체 직접 커뮤니케이션은 기밀로 유지되며 정확성을 위해 내부적으로 검토됩니다.
+      agreements_info: 사용 약관 및 기타 계약을 시행
+      performance_content11: 당사 서비스 약관을 위반할 가능성이 있는 금지되거나 불법적인 활동을 지속적으로 검토, 조사 및 방지하는 것은 당사 및 고객에게 매우 중요합니다. 당사는 전체 사용자 기반을 위해 타사와의 계약을 신중하게 적용하고 게시된 사용 약관 위반을 적극적으로 조사합니다. BitCorex은 당사의 사용 약관을 위반하는 활동에 참여하는 것으로 확인된 모든 사용자에게 서비스 제공을 종료할 권리를 보유합니다.
+      protect_title: BitCorex이 사용자 데이터를 보호하는 방법
+      protect_content: "BitCorex은 정보가 손실되거나 남용되거나 변경되지 않도록 하기 위해 여러 가지 보안 수단을 구현했습니다. 당사의 데이터 보안 대책에는 PCI 검색, 보안 소켓 계층 암호화 기술, 가명화, 내부 데이터 액세스 제한, 빌딩 및 파일에 대한 엄격한 물리적 액세스 제어 등이 포함되지만 이에 국한되지는 않습니다. 인터넷으로 데이터를 100% 안전하게 전송하거나 전자 저장 방법을 보장할 수 없다는 점에 유의하시기 바랍니다. 따라서 본인 개인정보를 보호하기 위해 독자적으로 안전 예방조치를 취해야 할 책임을 이해해주길 바랍니다."
+      performance_content12: 개인 정보, 특히 계정 및/또는 비밀번호 정보가 손상된 것으로 의심될 경우 즉시 계정을 잠그고 BitCorex 고객 서비스에 문의하시기 바랍니다.
+      contact_title: 이용문의
+      conatct_content: 당사는 서비스에 신뢰를 둔 모든 BitCorex 사용자들의 자유와 권리를 존중하기 위해 최선을 다하고 있습니다. 이 개인 정보 보호 정책과 관련하여 질문이나 문제가 있거나 데이터 보호 요청을 제출하려는 경우 FAQ를 참조하고 지원 페이지를 통해 문의하시기 바랍니다.
+  actions:
+    go: 실행
+    submit: 제출
+    deposit: 입금
+    withdraw: 출금
+    select: 선택하세요
+    unlock: 언락
+    confirm: 확인
+    back: 뒤로
+    block: 블록으로 보기
+    destroy: 삭제
+    destroy_confirm: 이 항목을 삭제하시겠습니까?
+    detail: 세부 정보
+    publish: 게시
+    edit: 편집
+    preview: 미리보기
+    close: 닫기
+    cancel: 취소
+    view: 보기
+    member: 회원
+    transact: 거래
+    reject: 거절
+    clipboard:
+      click: 클릭해서 복사
+      done: 복사됨
+  chart:
+    open: 시가
+    high: 고가
+    low: 저가
+    close: 종가
+    price: 가격
+    volume: 수량
+    candlestick: '기본 차트'
+    line: '트레이딩뷰'
+    minute: 분
+    hour: 시
+    day: 일
+    week: 주
+    month: 월
+    year: 연
+    zoom: 확대
+    ask: 요청
+    bid: 입찰
+    depth: depth*
+    depth_title: 마켓 depth*
+  'yes': '예'
+  'no': '아니오'
+  helpers:
+    action:
+      view: 보기
+      customer_service: 이용문의
+    submit:
+      order_ask:
+        create: 요청
+      order_bid:
+        create: 입찰
+      member:
+        update: 미체결 계좌
+      fund_source:
+        create: 저장
+      deposit:
+        create: 입금
+      id_document:
+        create: 제출
+      withdraw:
+        create: 제출
+  layouts:
+    admin:
+      menus:
+        sections:
+          members: 회원
+          deposits: 입금
+          sites_statistics: 분석
+          operating: 작업
+        items:
+          operating:
+            proofs: 증명
+            deposits: 입금
+            withdraws: 출금
+          deposits:
+            currency: 입금
+    application:
+      close: 닫기
+    meta:
+      page_title: BitCorex - 거래소
+      page_description: BitCorex - 암호화폐 거래소
+      page_keywords: 암호화폐,거래소
+  members:
+    edit:
+      name: 신청양식을 작성해 주세요.
+    balance_summary:
+      search: 검색
+      coin: 암호화폐 종류
+      name: 이름
+      total_balance: 합계 잔액
+      available_balance: 사용가능 잔액
+      in_order: 주문량
+      security_recommendations: "보안 권장 사항: URL 확인, 2단계 인증 사용, BitCorex의 직원이라고 주장하는 사람에게 암호를 공개하거나 코인송금을 하지 마십시오."
+      visiting_text: 접속하신 페이지가 다음과 같은지 확인
+      prevention: 피싱 공격을 방지하려면 www.netcraft.com 에서 제공하는 Netcraft Anti-Phishing Extension을 설치하는 것이 좋습니다.
+      showico2_text: BitCorex과 연결되었다고 주장하는 브라우저 플러그인을 설치하지 마십시오.(Netcraft Anti-Phishing Extension은 제외)
+      showico3_text: BitCorex 고객센터 담당자를 사칭하는 전화에 절대 응하지 마십시오.
+      showico4_text: BitCorex 고객센터 담당자를 포함한 그 누구에게도 비밀번호나 2단계 인증코드/키를 알려주지 마십시오.
+      showico5_text: BitCorex Support의 회원이라고 주장하는 사람에게는 절대로 자금을 보내지 마세요.
+      estimate_value: 추정 값
+      limit: "하루 출금 한도：2BTC"
+      use: "사용 중：%{in_use} BTC"
+      balance: 잔액
+      btc_text: 'BTC 값'
+  two_factors:
+    panel: 구글OTP 인증 초기화
+    new:
+      info: 보안을 위해, 회원정보 내에서 구글OTP 2단계 인증을 활성해야 합니다.
+      warning: 구글OTP 인증을 재설정하는 작업은 수동으로 이루어지며 30분 이상 걸리는 경우가 많습니다.
+      notice: 재설정하면 계정이 구글OTP 인증 보호 기능을 잃게 됩니다. 자산 손실을 방지하려면 이메일 및 로그인 암호가 안전한지 확인하고, 재설정이 성공하면 즉시 구글OTP 인증을 다시 활성화 하십시오.
+      confirm: 재설정 요청 확인
+    create:
+      success: "이메일이 성공적으로 전송되었습니다. 메일을 확인해 주세요."
+    show:
+      reset: "%{type} 인증이 비활성화되었습니다."
+      token_expired: 토큰이 잘못되었거나 만료되었을 수 있습니다!
+
+  reset_passwords:
+    new:
+      text: '*보안상의 이유로 보안 방법 수정 후 24시간 동안 출금이 제한됩니다.'
+      text1: 이 항목은 필수입니다.
+      text2: 잘못된 이메일 주소
+      Submit: 제출
+      email: '회원님의 이메일'
+      Reset_Password1: 비밀번호 재설정
+      new_password: 비밀번호 재설정
+      submit: 제출
+    create:
+      success_old: 비밀번호를 재설정 확인 및 안내 메일이 전송되었습니다. 메일을받지 못했다면 "스팸메일함"을 확인해보시거나 재전송 요청바랍니다.
+      success: 비밀번호 재설정 안내가 포함된 이메일을 발송하였습니다.
+      blank_email: 등록된 이메일을 작성해 주세요.
+      msg: 계좌 비밀번호 업데이트가 완료되었습니다.
+    edit:
+      password: 암호를 6자 이상 입력하세요. 대문자와 소문자 및 숫자를 포함하는 것이 좋습니다.
+      invalid: 잘못된 요청입니다.
+      submit: 로그인 비밀번호를 재설정하세요.
+      alert: 암호 재설정 링크가 잘못되었습니다.
+    update:
+      success: 로그인 암호가 재설정되었습니다.
+      invalid: 잘못된 요청
+  welcome:
+    market_list:
+
+      search: 검색
+      all_html: "<i class='fa fa-star'></i><span>즐겨찾기</span>"
+      tusd_html: "<i class='fa fa-check'></i><span>TUSD 마켓</span>"
+      eth_html: "<i class='fa fa-check'></i><span>ETH 마켓</span>"
+      btc_html: "<i class='fa fa-check'></i><span>BTC 마켓</span>"
+      price: 가격
+      change: "24h %"
+      btc: BTC 마켓
+      eth: ETH 마켓
+      tusd: TUSD 마켓
+      csc: CSC 마켓
+
+    activity_sky:
+      rank: '회원님의 거래 수량:'
+      sKY: '? SKY'
+      rank1: '회원님의 순위:'
+      Q: '?'
+      please: 부탁드립니다.
+      login: '로그인 »'
+      Ranking: 순위
+      email: 이메일
+      Trading_수량: 거래 수량
+
+    activity_iotx:
+      trading: 거래 경쟁 순위
+      volume: '회원님의 거래 수량:'
+      text: '?IOTX'
+      ranking: '회원님의 순위:'
+      please: 부탁드립니다.
+      login: 로그인 »
+      ranking1: 순위
+      email: 이메일
+      trading_volume: 거래 수량
+    market_ticker:
+      pair: 페어
+      all: 전체 마켓
+      all_html: "<i class='fa fa-check'></i><span>전체 마켓</span>"
+      ccy_html: "<i class='fa fa-check'></i><span>%{암호화폐} 마켓</span>"
+      price: 가격
+      change: "24h %"
+      coin: Coin
+      change: 변동
+      last_price: 최종 가격
+      24h_change: 24h 변동
+      24h_high: 24h 고가
+      24h_low: 24h 저가
+      24h_volume: 24h 수량
+
+    ticker:
+      volume: '수량:'
+
+    index:
+      search: 검색
+      banner_heading: BitCorex - Exchange The World
+      banner_title: BitCorex은 bitcoin, ethereum 및 litecoin을 사고 팔 수 있는 최적의 거래소입니다.
+      placeholder: 이메일 주소를 입력해 주십시오.
+      button_title: 시작하기
+      banner_signup: BitCorex에 처음 오셨나요?
+      banner_signin: 로그인
+      already_register: 이미 가입하셨나요?
+      tab_1: IPM과 EMS가 2019년 3월 19일 CSC 마켓에 상장됩니다.
+      tab_2: CNC와 ECP+가 2019년 3월 30일 CSC마켓에 상장됩니다.
+      tab_3: FTO가 2019년 4월 4일 CSC마켓에 상장됩니다.
+      tab_4: BitCorex에서 2019년 3월 25일부터 USDT마켓을 지원합니다.
+      tab_5: aokey7이 2019년 5월 15일 BitCorex에 상장됩니다.
+      favorites: 즐겨찾기
+      btc_market: BTC 마켓
+      eth_market: ETH 마켓
+      tusd_market: TUSD 마켓
+      search_placeholder: 검색
+      pair: 페어
+      last_price: 최종 가격
+      24_change: 24h 변동
+      24_high: 24h 고가
+      24_low: 24h 저가
+      24_volume: 24h 수량
+      para_heading: 암호화폐 거래
+      para_1: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy tempor invidunt ut labore et dolore magna aliquyam.*
+      para_2: This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.*
+      join_now: 지금 가입하세요
+      create_an_account: 계정 만들기
+      start_time: 시작 시간
+      date_time: 2018-06-15 15:30:00
+      download: 다운로드
+      end: 끝남
+      slider1_days: 6
+      slider1_day: d
+      slider1_hours: 11
+      slider1_hour: H
+      slider1_minutes: 19
+      slider1_minute: m
+      slider1_seconds: 51
+      slider1_second: s
+      slider2_days: 1
+      slider2_hours: 11
+      slider2_minutes: 11
+      slider2_seconds: 51
+      slider3_days: 17
+      slider3_hours: 11
+      slider3_minutes: 19
+      slider3_seconds: 28
+      coin: 코인
+    application_form:
+      Your_answer: 회원님의 답변
+      Your_answer1: 회원님의 답변
+      Your_answer2: 회원님의 답변
+      Your_answer3: 회원님의 답변
+      Your_answer4: 회원님의 답변
+      Your_answer5: 회원님의 답변
+      Your_answer6: 회원님의 답변
+      Your_answer7: 회원님의 답변
+      Your_answer8: 회원님의 답변
+      Your_answer9: 회원님의 답변
+      Your_answer10: 회원님의 답변
+      Your_answer11: 회원님의 답변
+      Your_answer12: 회원님의 답변
+      Your_answer13: 회원님의 답변
+      Your_answer14: 회원님의 답변
+      Your_answer15: 회원님의 답변
+      Your_answer16: 회원님의 답변
+      Your_answer17: 회원님의 답변
+      Your_answer18: 회원님의 답변
+      Your_answer19: 회원님의 답변
+      yes2: 네
+      yes1: 네
+      no2: 아니오
+      no1:  아니오
+      header: BitCorex Angel 응용프로그램 양식
+      header_content: BitCorex Angels는 주로 BitCorex 생태계를 촉진하고 사용자 기반에 질문 및 우려 사항을 지원하는 다양한 방법으로 플랫폼을 지원하는 커뮤니티 내의 열정적인 자원봉사자입니다. BitCorex에서는 가능한 최고의 고객 경험을 창출하는 데 초점을 맞추고 있으며, BitCorex과 전 세계 커뮤니티 간의 연결고리 역할을 하는 엔젤은 매우 중요합니다.
+      info: Google 계정과 연결된 이름과 사진은 파일을 업로드하고 이 양식을 제출할 때 기록됩니다.
+      switch_account: 계정 전환
+      required: '* 표시된 항목은 필수항목입니다.'
+      name: 이름
+      gender: 성별
+      age: 나이
+      nationality: 국적
+      current_location:  현재 위치 - 국가 및 도시
+      current_location_info: 지역 이벤트에 참여할 수 있는 국가 및 도시입니다.
+      occupation: 직종
+      phone_number:  연락처
+      email: 이메일
+      telegram: 텔레그램
+      telegram_info: 이것은 BitCorex angels를 위해 꼭 필요한 도구입니다. 가지고 있지 않다면 반드시 등록해주시기 하랍니다.
+      skype: 스카이프
+      account: BitCorex 계정 (메일주소)
+      reason_text:  "BitCorex Angel 지원동기"
+      zinance_text: "BitCorex을 처음 알게 된 경로?"
+      work_commitment: "주일에 얼마나 많은 시간을 할당할 수 있습니까?"
+      work_exp: "블록 체인 분야에서 관련 업무 경험이 있습니까?"
+      strength: "당신의 강점은 무엇이며 어떻게 이를 BitCorex을 위해 어떻게 활용할 수 있습니까?"
+      language: "구사 가능한 외국어가 있습니까? 번역업무가 가능한가요?"
+      commit_time: "일주일에 얼마나 많은 시간을 할당할 수 있습니까?"
+      question: "BitCorex이 온라인과 오프라인 커뮤니티를 유지하도록 활동할 수 있습니까?"
+      question2: "BitCorex에 적용될 수 있는 블록체인 및 암호화폐와 관련된 영향력있는 미디어(언론)매체에 포스팅이 가능한가요?"
+      question3: "온라인과 오프라인에서 어떤 다른 암호화 커뮤니티/그룹에 등록되어 있습니까?"
+      question4:  "사진을 첨부해 주십시오(사진 없이 신청서는 처리되지 않습니다)"
+      question5: "BitCorex Angel은 보두 KYC 양식을 제출해야 합니다. 동의하나요?"
+      question6: "BitCorex Angel은 당신의 자발적인 활동임을 이해합니까?"
+      submit: 제출
+      submit_text: 절대 Google 양식을 통해 비밀번호를 제출하지 마십시오.
+    invite:
+      commission: 수수료
+      text9: 'No.1'
+      text10:  'No.2'
+      text11: 'No.3'
+      no_login_text: 로그인하지 않았습니다. 로그인하여 친구들과 공유하십시오..
+      login: 로그인
+      text: "BitCorex 회원이 아니신가요?"
+      register: 회원가입
+      details: 프로그램 세부 정보
+      text: 유효*
+      text1: 추천 프로그램으로부터 받는 커미션은 처음에는 20%의 비율로 설정됩니다. 500* 이상을 보유하고 있는 계정의 경우 이 비율이 40%로 증가합니다.
+      text2: 당신을 추천한 회원이 각 거래를 완료하면 수수료가 실시간으로 BitCorex 계정에 전송되며, 원래 수수료가 지불된 토큰/암호화폐로 지급됩니다.
+      text3: 언제든지 소개 프로그램 규칙을 조정하거나 변경할 수 있는 권리를 보유하지만, 추천인 수에는 제한이 없습니다.
+      text4: 추천인은 당신의 추천 링크, QR 코드 또는 추천인 ID를 통해 회원가입해야 합니다.
+      text5: BitCorex은 중복 또는 위조된 계정을 확인할 것이며 이들 계정에 대한 소개 보너스를 지급하지 않을 것입니다. 중복되거나 공유된 금액은 무효 처리됩니다.
+      notice: "* 중요 사항:"
+      text6: BitCorex은 시장 상황, 부정 행위 위험 또는 관련이 있다고 생각되는 기타 요인의 변화로 인해 언제든지 의뢰 프로그램의 조건을 변경할 수 있는 권리를 보유합니다.
+    vote:
+      text1: "제7회 '이 달의 공동체 코인' 세션입니다.' "
+      deadline: "마감 시간:"
+      text2: 아래에서 투표할 후보를 선택할 수 있습니다. 등록된 각 사용자는 여러 명의 후보자에게 투표할 수 있지만 전체 투표는 한 번만 제출할 수 있습니다. 사용자는 투표에서 후보당 0.1 *를 지불해야 합니다(즉, 2명의 후보가 선택되면 0.2 *를 공제함). 투표에 적용된 최종 다중 투표는 귀하의 * 보유량에 따라 결정됩니다.
+      click_content: "자세한 내용은 여기를 클릭하세요. »"
+      options: 옵션
+      voter: 투표자
+      votes: 투표
+      proportion: 비율
+      end: 투표종료
+      text3: "BitCorex 플랫폼에서 투표하는 방법:"
+      time: "투표 시간:"
+      text4: 등록된 각 사용자는 여러 명의 후보자에게 투표할 수 있지만 전체 투표는 한 번만 제출할 수 있습니다. 사용자는 투표에서 후보당 0.1 BNB를 지불해야 합니다(즉, 2명의 후보가 선택되면 0.2 BNB를 공제함).
+      text5: BitCorex은 2018/06/19 0:00 AM(UTC)에 각 사용자의 BNB 균형을 최종 스냅하여 사용자 표의 최종 배수를 결정합니다. 잔액에 포함된 1개의 BNB당 최종 배수는 최대 500배까지 1씩 증가합니다. 예를 들어, 스냅샷 시점에는 3.9 BNB의 균형을 가진 사용자가 3의 최종 배수를 가집니다. 1000 BNB의 균형을 가진 사용자는 500의 최종 배수를 가집니다.
+      text6: 사용자가 프로젝트 지명자에게 부여하는 각 표에 위의 3단계별로 계산된 최종 다중 표에 곱합니다.
+      text7: 투표 기간이 끝나면 각 후보별로 득표한 표를 검토해 최종 심사를 할 예정입니다. 늘 그렇듯이 각 표의 가중치를 조정할 수 있는 권한을 유보하고 있습니다.
+      text8: BitCorex은 투표 절차를 마치면 적당한 시간 내에 우리 거래소에 동전을 등록할 것입니다. 시장 반응에 따라 매월 실시하도록 노력하겠습니다.
+      text9: "참고: BitCorex은 결과를 취소하거나 투표 조작에 관여한 것으로 확인된 후보를 부적격으로 하는 등 통보 없이 이 행사의 규칙을 변경할 수 있는 모든 권한을 보유합니다. 여기에는 사용자 투표에 영향을 미치는 재정적 또는 금전적 인센티브, 에어방울 또는 경쟁적 보상이 포함되지만 이에 국한되지는 않습니다. 또한 각 투표의 가중치는 투표에 사용된 계정의 역사적 활동 수준을 포함한 다양한 요인에 따라 달라질 수 있습니다."
+  sessions:
+    new:
+
+      email: 이메일
+      password: 비밀번호
+      language: 언어
+      login: 로그인
+      register: 회원가입
+      log_in: 로그인
+      home: 홈
+      support: 고객지원
+      check: 접속중인 페이지가 다음이 맞는지 확인해주세요
+      new: BitCorex 회원이 아니신가요?
+      Password_Forgot: 비밀번호를 잊으셨나요?
+      msg: 우리가 잘 모르는 장치에서 또는 오랫동안 사용하지 않은 장치에서 BitCorex에 로그인하고 있을 수 있습니다. 보안을 위해 확인 이메일이 전자 메일 주소로 전송되었습니다.
+    clear_existing_session:
+      new1: 새 장치가 성공적으로 승인되었습니다.
+      new2: 새 장치를 승인했습니다.
+      new3: 다시 로그인해 보세요. 또한 웹 클라이언트의
+      new4: 사용자 센터에 로그인하여 장치 관리를 통해 언제든지 삭제할 수 있습니다.
+      new5: '로그인 >>'
+      Location: '지역:'
+      Ip_Address: 'Ip 주소:'
+      Device: '장치:'
+
+    create:
+      recaptcha_failed: Recaptcha에 실패했습니다. 다시 시도하십시오.
+      disabled: 계정이 비활성화되었습니다. 문제가 있으면 관리자에게 문의하십시오.
+      signed_up: 환영합니다! 성공적으로 가입했습니다.
+      error: 이메일 또는 암호가 잘못되었습니다. 다시 시도하십시오.
+      no_terms: 조항 & 조건을 선택해야 합니다.
+
+    failure:
+      account_locked: 로그인 시도 실패 횟수가 너무 많습니다. 회원님의 계정 보안을 위해
+        계정이 정지되었습니다. 해제하려면 다음을 클릭해서 암호를 재설정하십시오.
+        "암호를 잊어버렸습니다."
+      error: 이메일 또는 암호가 잘못되었습니다. 다시 시도하십시오.
+  shared:
+    admin:
+      member:
+        member_info: 회원 정보
+        inactive: 활성화
+        deactive: 비활성화
+      account:
+        account_info: 계정 정보
+        payment_address: 입금 주소
+    alert:
+      modern: 원활한 거래활동을 위하여
+        크롬 브라우져 사용을 권장합니다. <a target='_blank' href='https://www.google.com/#q=google+chrome'>Google
+        Chrome</a>。
+      pusher_unavailable: 일시적으로 네트워크 연결을 사용할 수 없습니다... <a
+        href='#' class='alert-link'>Please refresh</a>.
+    header:
+      balance: 잔액
+
+    header_account_balance:
+      locked: 잠김
+    market:
+      text: 소수점
+      ticker:
+        ask_price: 요청
+        bid_price: 입찰
+        high_price: 고가
+        low_price: 저가
+        volume: 수량
+        latest_price: 종가
+    frame:
+      deposit_now: 입금하기
+  withdraw_channel:
+    satoshi:
+      key: 블록체인
+      title: Bitcoin 블록체인
+      intro: 회원님의 Bitcoin 지갑으로 Bitcoin 출금
+      latency: 30 분
+      transfer: 수동
+      go: 출금
+    bitcoin_cash:
+      key: 블록체인
+      title: Bitcoin Cash 블록체인
+      intro: 회원님의 Bitcoin Cash 지갑으로 Bitcoin Cash 출금
+      latency: 30 분
+      transfer: 수동
+      go: 출금
+    ethereum:
+      key: 블록체인
+      title: Ethereum 블록체인
+      intro: 회원님의 Ethereum 지갑으로 Ethereum 출금
+      latency: 30 분
+      transfer: 수동
+      go: 출금
+    tronix:
+      key: 블록체인
+      title: Tronix 블록체인
+      intro: 회원님의 Tronix 지갑으로 Tronix 출금
+      latency: 30 분
+      transfer: 수동
+      go: 출금
+    ripple:
+      key: 블록체인
+      title: Ripple 블록체인
+      intro: 회원님의 Ripple 지갑으로 Ripple 출금
+      latency: 30 분
+      transfer: 수동
+      go: 출금
+    chelscoin:
+      key: 블록체인
+      title: Chelscoin 블록체인
+      intro: 회원님의 Chelscoin 지갑으로 Chelscoin 출금
+      latency: 30 분
+      transfer: 수동
+      go: 출금
+    eos_token:
+      key: 블록체인
+      title: Eos 블록체인
+      intro: 회원님의 Eos 지갑으로 Eos 출금
+      latency: 30 분
+      transfer: 수동
+      go: 출금
+    impereum:
+      key: 블록체인
+      title: Impereum 블록체인
+      intro: 회원님의 Impereum 지갑으로 imp 출금
+      latency: 30 분
+      transfer: 수동
+      go: 출금
+    ems_token:
+      key: 블록체인
+      title: Ems 블록체인
+      intro: 회원님의 Ems 지갑으로 ems 출금
+      latency: 30 분
+      transfer: 수동
+      go: 출금
+    ecpplus_token:
+      key: 블록체인
+      title: Ecp+ 블록체인
+      intro: 회원님의 Ecp+ 지갑으로 ecp 출금
+      latency: 30 분
+      transfer: 수동
+      go: 출금
+    fto_token:
+      key: 블록체인
+      title: FTO 블록체인
+      intro: 회원님의 FTO 지갑으로 ecp 출금
+      latency: 30 분
+      transfer: 수동
+      go: 출금
+    usdcoin:
+      key: 블록체인
+      title: Usdc 블록체인
+      intro: 회원님의 Usdc 지갑으로 usdc wallet
+      latency: 30 분
+      transfer: 수동
+      go: 출금
+    aokey7_token:
+      key: 블록체인
+      title: Aok 블록체인
+      intro: 회원님의 Aok 지갑으로 aok wallet
+      latency: 30 분
+      transfer: 수동
+      go: 출금
+    cacplus_token:
+      key: 블록체인
+      title: CAC+ 블록체인
+      intro: 회원님의 CAC+ 지갑으로 CAC+ wallet
+      latency: 30 분
+      transfer: 수동
+      go: 출금
+
+
+
+
+
+  withdraws:
+    invalid_address: 유효하지 않습니다. 이 주소로 출금할 수 없습니다.
+  withdraws/bank:
+    aasm_state:
+      submitting: 제출중
+      submitted: 제출됨
+      rejected: 거절됨
+      accepted: 수락됨
+      suspect: 추정
+      processing: 처리중
+      done: 완료
+      canceled: 취소됨
+      failed: 실패
+
+  withdraws/satoshi:
+    aasm_state:
+      submitting: 제출중
+      submitted: 제출됨
+      rejected: 거절됨
+      accepted: 수락됨
+      suspect: 추정
+      processing: 처리중
+      done: 완료
+      canceled: 취소됨
+      failed: 실패
+  withdraws/bitcoin_cash:
+    aasm_state:
+      submitting: 제출중
+      submitted: 제출됨
+      rejected: 거절됨
+      accepted: 수락됨
+      suspect: 추정
+      processing: 처리중
+      done: 완료
+      canceled: 취소됨
+      failed: 실패
+  withdraws/tronix:
+    aasm_state:
+      submitting: 제출중
+      submitted: 제출됨
+      rejected: 거절됨
+      accepted: 수락됨
+      suspect: 추정
+      processing: 처리중
+      done: 완료
+      canceled: 취소됨
+      failed: 실패
+  withdraws/ripple:
+    aasm_state:
+      submitting: 제출중
+      submitted: 제출됨
+      rejected: 거절됨
+      accepted: 수락됨
+      suspect: 추정
+      processing: 처리중
+      done: 완료
+      canceled: 취소됨
+      failed: 실패
+  withdraws/eos_token:
+    aasm_state:
+      submitting: 제출중
+      submitted: 제출됨
+      rejected: 거절됨
+      accepted: 수락됨
+      suspect: 추정
+      processing: 처리중
+      done: 완료
+      canceled: 취소됨
+      failed: 실패
+  withdraws/chelscoin:
+    aasm_state:
+      submitting: 제출중
+      submitted: 제출됨
+      rejected: 거절됨
+      accepted: 수락됨
+      suspect: 추정
+      processing: 처리중
+      done: 완료
+      canceled: 취소됨
+      failed: 실패
+  withdraws/impereum:
+    aasm_state:
+      submitting: 제출중
+      submitted: 제출됨
+      rejected: 거절됨
+      accepted: 수락됨
+      suspect: 추정
+      processing: 처리중
+      done: 완료
+      canceled: 취소됨
+      failed: 실패
+  withdraws/ems_token:
+    aasm_state:
+      submitting: 제출중
+      submitted: 제출됨
+      rejected: 거절됨
+      accepted: 수락됨
+      suspect: 추정
+      processing: 처리중
+      done: 완료
+      canceled: 취소됨
+      failed: 실패
+  withdraws/ecpplus_token:
+    aasm_state:
+      submitting: 제출중
+      submitted: 제출됨
+      rejected: 거절됨
+      accepted: 수락됨
+      suspect: 추정
+      processing: 처리중
+      done: 완료
+      canceled: 취소됨
+      failed: 실패
+  withdraws/usdcoin:
+    aasm_state:
+      submitting: 제출중
+      submitted: 제출됨
+      rejected: 거절됨
+      accepted: 수락됨
+      suspect: 추정
+      processing: 처리중
+      done: 완료
+      canceled: 취소됨
+      failed: 실패
+  withdraws/fto_token:
+    aasm_state:
+      submitting: 제출중
+      submitted: 제출됨
+      rejected: 거절됨
+      accepted: 수락됨
+      suspect: 추정
+      processing: 처리중
+      done: 완료
+      canceled: 취소됨
+      failed: 실패
+  withdraws/aokey7_token:
+    aasm_state:
+      submitting: 제출중
+      submitted: 제출됨
+      rejected: 거절됨
+      accepted: 수락됨
+      suspect: 추정
+      processing: 처리중
+      done: 완료
+      canceled: 취소됨
+      failed: 실패
+
+
+
+
+  grape:
+    entity:
+      auth:
+        wrong_email: 이메일 비밀번호가 맞지 않습니다.
+        token_expie: 토큰이 만료되었습니다.
+      profile:
+        incorrect: 로그인 비밀번호가 맞지 않습니다.
+        wrong_sms_code: 문자인증 코드가 맞지 않습니다.
+        wrong_google_code: 구글코드가 맞지 않습니다.
+        sms_sent: 인증문자가 발송되었습니다.
+        wrong_auth_code: 구글OTP 코드가 맞지 않습니다.
+        invalid_number: 잘못된 휴대폰 번호입니다.
+      reset_password:
+        invalid_current_password: 기존 암호를 잘못 입력하였습니다.
+        password_same: 새 비밀번호는 이전 비밀번호와 같을 수 없습니다.
+        password_changed: 암호가 변경되었습니다.
+        user_no_found: 존재하지 않는 사용자입니다.
+        token_expired: 토큰 코드가 만료되었습니다.
+      two_factor:
+        otp_matched: OTP코드가 일치합니다.
+        otp_no_matched: OTP 코드가 일치하지 않습니다.
+        invalid_two_factor: 2단계 인증 유형이 잘못되었습니다.
+        invalid_authorization: 인증 토큰이 잘못되었습니다.
+        otp_sent: OTP 전송이 완료되었습니다.
+      orders:
+        order_created: 주문이 완료되었습니다.
+        order_cancalled: 주문 취소가 완료되었습니다.
+      favorites:
+        favorite_added: 즐겨찾기 추가되었습니다.
+        favorite_deleted: 즐겨찾기 해제되었습니다.

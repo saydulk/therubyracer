@@ -1,0 +1,41 @@
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :identity, fields: [:email, :conditions, :description], on_failed_registration: IdentitiesController.action(:new)
+  if ENV['AUTH0_OAUTH2_SIGN_IN']
+    provider :auth0,
+             ENV.fetch('AUTH0_OAUTH2_CLIENT_ID'),
+             ENV.fetch('AUTH0_OAUTH2_CLIENT_SECRET'),
+             ENV.fetch('AUTH0_OAUTH2_DOMAIN'),
+             { authorize_params: {
+                 scope: ENV.fetch('AUTH0_OAUTH2_SCOPE', 'openid profile email')
+               }
+             }
+  end
+
+  if ENV['GOOGLE_OAUTH2_SIGN_IN']
+    provider :google_oauth2, ENV.fetch('GOOGLE_CLIENT_ID'), ENV.fetch('GOOGLE_CLIENT_SECRET')
+  end
+
+  if ENV['OMNIAUTH_FACEBOOK_SIGN_IN']
+    provider :facebook, ENV.fetch('FACEBOOK_CLIENT_ID'), ENV.fetch('FACEBOOK_CLIENT_SECRET')
+  end
+end
+
+OmniAuth.config.on_failure = lambda do |env|
+  SessionsController.action(:failure).call(env)
+end
+
+OmniAuth.config.logger = Rails.logger
+
+module OmniAuth
+  module Strategies
+    class Identity
+      def request_phase
+        redirect '/signin'
+      end
+
+      def registration_form
+        redirect '/signup'
+      end
+    end
+  end
+end

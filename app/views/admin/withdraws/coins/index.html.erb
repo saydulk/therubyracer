@@ -1,0 +1,90 @@
+<%= render 'admin/back_admin' %>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+<div class="history_tab_btns tbl_div">
+  <ul class="nav nav-tabs history_tabs tbl_cell">
+    <li class="active switch_history_tab">
+      <a data-toggle="tab" href="#full_withdraw_summary"> Full Summary </a>
+    </li>
+    <li class="switch_history_tab">
+      <a data-toggle="tab" href="#24_deposit_summary"> 24 hours summary </a>
+    </li>
+  </ul>
+</div>
+<% name = params[:controller].split('/').last %>
+
+
+<div class="tab-content">
+  <div id="full_withdraw_summary" class="tab-pane active ">
+    <%= link_to 'Download CSV', admin_withdraws_csv_withdraw_path(format: :csv,   controller_name: params[:controller], type: 'full' ), class:'download_link' %>
+
+      <table id="withdraws-datatable" class="table table-condensed table-hover withdraw_admin"  data-source="/admin/withdraws/<%=name%>.json?history=full">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Created At</th>
+          <th>Currency</th>
+          <th>Account</th>
+          <th>Bank</th>
+          <th>Amount</th>
+          <th>State and action</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    <!--<#% unless @all_withdraws.empty? %>-->
+      <!--<div class="panel panel-success">-->
+        <!--<div class="panel-heading">-->
+          <!--<span><#%= t('.all') %></span>-->
+        <!--</div>-->
+        <!--<#%= render partial: 'table', locals: {withdraws: @all_withdraws} %>-->
+      <!--</div>-->
+    <!--<#% else %>-->
+      <!--<h3 class="text-info text-center"><#%= t('.empty') %></h3>-->
+    <!--<#% end %>-->
+
+  </div>
+
+  <div id="24_deposit_summary" class="tab-pane ">
+    <%= link_to 'Download CSV', admin_withdraws_csv_withdraw_path(format: :csv,   controller_name: params[:controller], type: 'one_day'), class:'download_link' %>
+
+      <table id="withdraws_one_day_datatable" class="table table-condensed table-hover withdraw_admin"  data-source="/admin/withdraws/<%=name%>.json?history=one">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Created At</th>
+          <th>Currency</th>
+          <th>Account</th>
+          <th>Bank</th>
+          <th>Amount</th>
+          <th>State and action</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    <!--<#% unless @latest_withdraws.empty? %>-->
+      <!--<div class="panel panel-primary">-->
+        <!--<div class="panel-heading">-->
+          <!--<span><#%= t('.one') %></span>-->
+        <!--</div>-->
+        <!--<#%= render partial: 'table', locals: {withdraws: @latest_withdraws} %>-->
+      <!--</div>-->
+    <!--<#% else %>-->
+      <!--<h3 class="text-info text-center"><#%= t('.empty') %></h3>-->
+    <!--<#% end %>-->
+  </div>
+</div>
+
+<!--<script>-->
+<!--//    $(document).ready( function () {-->
+<!--//        $('.withdraw_admin').DataTable({-->
+<!--//            "bPaginate": false,-->
+<!--//            "bInfo" : false,-->
+<!--//            "order": [[ 1, "desc" ]]-->
+<!--//        });-->
+<!--//    } );-->
+<!--</script>-->

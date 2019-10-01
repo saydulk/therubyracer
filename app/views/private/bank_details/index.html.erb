@@ -1,0 +1,71 @@
+
+<div class="container bank_details">
+  <div class="bank_details_hdr tbl_div">
+    <div class="tbl_cell">
+      <h1>Bank Details</h1>
+    </div>
+    <div class="tbl_cell text-right">
+      <%= link_to 'New ', new_bank_detail_path, class:'btn btn-default btn-block enable_btn'  %>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <tr>
+        <th>Name</th>
+        <th>Bank Name</th>
+        <th>Account Number</th>
+        <th>IFSC Code</th>
+        <th>Account Status</th>
+        <th>Active</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @bank.each do |account| %>
+          <tr>
+            <td><%= account.name %></td>
+            <td><%= account.bank_name %></td>
+            <td><%= account.account_number %></td>
+            <td><%= account.ifsc_code %></td>
+            <td>
+              <!--<b><%#= account.aasm_state.capitalize %></b></td>-->
+            <td>
+              <%= radio_button_tag 'active', account.id, account.active, class: "color_input" %>
+            </td>
+
+            <td>
+              <%= link_to 'Edit', edit_bank_detail_path(account)  %>
+              |
+              <%= link_to 'Remove', bank_detail_path(account),
+                            method: :delete,
+                            data: { confirm: 'Are you sure?' } %>
+            </td>
+          </tr>
+
+      <% end %>
+    </table>
+  </div>
+
+</div>
+<script type="text/javascript">
+  $('.color_input').click(function(e){
+
+//   e.preventDefault();
+
+    var Id = this.value;
+//    $('#color_input').addClass("disabled");
+    $.ajax({
+      type: "PUT",
+      url: ' /bank_details/'+Id,
+      data: { ajax: true},
+      dataType: 'script',
+      success: function(data){
+        if(data == 'true' )
+          alert("your account is activate");
+
+      },
+
+    });
+
+  });
+
+</script>

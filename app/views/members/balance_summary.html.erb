@@ -1,0 +1,128 @@
+<% content_for :frame do %>
+    <div id="balance">
+      <div class="container balance_page">
+
+          <div class="panel-group security_accordian" id="accordion" role="tablist" aria-multiselectable="true" style="margin-top: -17px">
+            <div class="panel panel-default" style="margin-bottom: -15px">
+              <div class="panel-heading" role="tab" id="headingOne" >
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <%= t('.security_recommendations') %>
+                    <i class="downarrow fa fa-angle-down"></i>
+                    <i class="uparrow fa fa-angle-up"></i>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                  <ul class="saefty_rules">
+                    <li class="showico1"><%= t('.visiting_text') %> <span class="zinanceUrl"><%= domain_url %></span> <%= t('.prevention') %></li>
+                    <li class="showico2"><%= t('.showico2_text') %></li>
+                    <li class="showico3"><%= t('.showico3_text') %></li>
+                    <li class="showico4"><%= t('.showico4_text') %></li>
+                    <li class="showico5"><%= t('.showico5_text') %></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <h3 class="page_hding"><%= t('.balance') %></h3>
+          <div class="balance_table-hdr">
+            <div class="balance_table-hdr_left">
+              <div class="search_market">
+                 <span class="search_icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+                  <%= text_field_tag :search, params[:search], id: "search", placeholder:  t('.search') %>
+              </div>
+            </div>
+            <div class="balance_table-hdr_right text-right">
+              <p><%= t('.estimate_value') %> <b><%= @estimate_amount.round(8) %> BTC</b></p>
+              <ul>
+                <li><%= t('.limit') %></li>
+                <li><%= t('.use', in_use: @in_use.round(8)) %></li>
+              </ul>
+            </div>
+          </div>
+          <div class="table-responsive">
+              <table class="table table-condensed" id = "balance">
+                <thead>
+                  <tr id="balance" >
+                    <th><%= t('.coin') %> <i class="fa fa-long-arrow-up" aria-hidden="true"></i></th>
+                    <th class="text-center"><%= t('.name') %> <i class="fa " aria-hidden="true"></i></th>
+                    <th class="text-right"><%= t('.total_balance') %> <i class="fa " aria-hidden="true"></i> </th>
+                    <th class="text-right"><%= t('.available_balance') %> <i class="fa " aria-hidden="true"></i> </th>
+                    <th class="text-right"> <%= t('.in_order') %> <i class="fa " aria-hidden="true"></i></th>
+                    <th class="text-right"> <%= t('.btc_text') %> </th>
+                    <th class="text-right">&nbsp;</th>
+                  </tr>
+                </thead>
+                <tbody class="list" id = "balance_summary">
+                <%= render partial: 'summary', locals: {member_accounts: @member_accounts} %>
+
+                </tbody>
+              </table>
+          </div>
+      </div>
+    </div>
+  </div>
+  <script>
+      $(function () {
+          var minlength = 1;
+          $("#search").keyup(function () {
+              value = $(this).val();
+
+                  $.ajax({
+                      url: '<%= balance_summary_path %>',
+                      data: {search: value},
+                      datatype: 'script',
+                      method: 'GET'
+                  });
+
+          });
+
+      });
+
+      $('.panel-collapse').on('show.bs.collapse', function () {
+          $(this).siblings('.panel-heading').addClass('active');
+      });
+
+      $('.panel-collapse').on('hide.bs.collapse', function () {
+          $(this).siblings('.panel-heading').removeClass('active');
+      });
+
+      $( "#balance thead th" ).on( "click", function( event ) {
+          // $(this).children("i").toggleClass('fa-long-arrow-up fa-long-arrow-down');
+          if($(this).children("i").hasClass('fa-long-arrow-up')){
+              $("tr#balance").find('i').removeClass('fa-long-arrow-up')
+              $("tr#balance").find('i').removeClass('fa-long-arrow-down')
+              $(this).children("i").addClass('fa-long-arrow-down')
+          }
+          else{
+              $("tr#balance").find('i').removeClass('fa-long-arrow-up')
+              $("tr#balance").find('i').removeClass('fa-long-arrow-down')
+              $(this).children("i").addClass('fa-long-arrow-up')
+          }
+        if ($(this).children("i").hasClass( "fa-long-arrow-down" ))
+            {
+            $.ajax({
+                url: '<%= balance_summary_path %>',
+                data: {order: "desc"},
+                datatype: 'script',
+                method: 'GET'
+            });
+        }else
+        {
+            $.ajax({
+                url: '<%= balance_summary_path %>',
+                datatype: 'script',
+                method: 'GET'
+            });
+        }
+
+
+      });
+  </script>
+<% end %>
+
+
+

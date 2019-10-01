@@ -1,0 +1,332 @@
+en:
+  js:
+    brand: Crypto Exchange
+    submit: Submit
+    cancel: Cancel
+    confirm: Confirm
+    banks:
+      ab: Axis Bank
+      boi: Bank of India
+      cb: Canara Bank
+      cboi: Central Bank of India
+      fb: Federal Bank
+      icici: ICICI Bank
+      idbi: IDBI Bank
+      iib: IndusInd Bank
+      kb: Kotak Bank
+      psb: Punjab & Sind Bank
+      sbi: State Bank of India
+      sb: Syndicate Bank
+      ubi: Union Bank of India
+      yb: Yes Bank Ltd
+      uco: UCO Bank
+      boc: Bank of America
+      wf:  Wells Fargo
+      cg: Citigroup
+    fund_sources:
+      withdraw_disable:
+        text1: 'We strongly recommend you to enable 2FA on your account !'
+        text2: 'Please choose how you wish to receive 2FA code:'
+        text3: Google Authentication
+        text4: SMS Authentication
+        text5: I understand the risks for not enabling 2FA
+        text6: Skip for now
+
+      manage_bank_account: Bank Account Management
+      manage_bank_account_desc: To facilitate the choice of bank address
+      manage_coin_address: Coin Address Management
+      manage_coin_address_desc: To facilitate the choice of coin withdrawals address
+      bank: Bank
+      account: Bank Account
+      label: Label
+      address: Address
+      action: Action
+      add: Add
+      remove: Remove
+      default: Default
+    funds:
+      deposit: Deposit
+      withdraw: Withdraw
+      deposit_fiat:
+        title: '{{currency}} Deposit'
+        description: |
+          <div>Deposit to your account using the information below. You'll need to contact you bank for specific instructions.</div>
+          <ol>
+            <li>Be sure to include the «REFERENCE» code given below - this code identifies the deposit with your account.</li>
+            <li>Don't exceed your daily or monthly funding limits. If you exceed the limits, your account will be frozen until you get verified to higher limits, or until the funds are returned tou you.</li>
+            <li>Multiple deposits of the same amount within a few days of each other may become broken or delayed. If you must make multiple deposits, consider sending different amounts.</li>
+            <li>IMPORTANT: The name of the bank account you are depositing from must match the name entered for verification of your account you are depositing into.</li>
+          </ol>
+
+      currency_name:
+        btc: BTC
+        bch: BCH
+        eth: ETH
+        trx: TRX
+        xrp: XRP
+        eos: EOS
+        csc: CSC
+        ipm: IPM
+        ems: EMS
+        ecp+: ECP+
+        fto: FTO
+        usdc: USDC
+        aok: AOK
+        cac+: CAC+
+
+      deposit_btc:
+        title: BTC Deposit
+
+      deposit_bch:
+        title: BCH Deposit
+
+      deposit_eth:
+        title: ETH Deposit
+
+      deposit_trx:
+        title: TRX Deposit
+
+      deposit_xrp:
+        title: XRP Deposit
+
+      deposit_eos:
+        title: EOS Deposit
+
+      deposit_csc:
+        title: CSC Deposit
+
+      deposit_ipm:
+        title: IPM Deposit
+
+      deposit_ems:
+        title: EMS Deposit
+
+      deposit_ecp+:
+        title: ECP+ Deposit
+
+      deposit_fto:
+        title: FTO Deposit
+
+      deposit_usdc:
+        title: USDC Deposit
+
+      deposit_aok:
+        title: AOK Deposit
+
+      deposit_cac+:
+        title: CAC+ Deposit
+
+      deposit:
+        note_text: Please note
+        first_part: Coins will be deposited immediately after
+        second_part: network confirmations
+        progress_text: 'After making a deposit, you can track its progress on the'
+        history: history
+        page: page.
+
+      deposit_coin:
+        what: "What's"
+        no_address: Address not found
+        total_balance: Total Balance
+        in_order: In order
+        available_balance: Available balance
+        important: Important
+        max: At least
+        send_only: Send only
+        deposit_address: to this deposit address.
+        other_coin_text: Sending any other coin or token to this address may result in the loss of your deposit.
+        payment_text: Deposit Payment
+        min_withdraw: Minimum withdrawal
+        do_not_withdraw: Do not withdraw directly to a crowdfund or ICO address, as your account will not be credited with tokens from such sales
+        withdraw_addres: Withdrawal Address
+        address: Address
+        transaction_fee: 'Transaction Fee:'
+        will_gate: You Will Get
+        new_address: New Address
+        confirm_gen_new_address: You sure want to generate a new deposit address?
+        open-wallet: Please use your common wallet services, local wallet, mobile terminal or online wallet, select a payment and send.
+        detail: Please paste the address blow in your wallet, and fill in the amount you want to deposit, then confirm and send.
+        scan-qr: Deposit Address
+
+        after_deposit: Once you complete sending, you can check the status of your new deposit below.
+        generate-new: Generate new address
+
+      address:
+        deposit_address: Deposit Address
+        fetching_your: Fetching your
+        address_text: address
+        minute_text: It will take few minutes to get your
+        copy_address: Copy Address
+        qr_code_text: Show QR Code
+        address_text1: address
+      deposit_history:
+        balance_Available: Available balance
+        title: Deposit History
+        number: '#'
+        identification: Identification Code
+        time: Time
+        txid: Transaction ID
+        confirmations: Confirmations
+        from: From
+        amount: Amount
+        state_and_action: "State/Action"
+        cancel: cancel
+        no_data: You have no deposit history.
+        no_deposit_arrive: Deposit did not arrive
+        view_all: View all
+        address: "Address:"
+        txid: "Txid:"
+
+        submitting: Submitting
+        cancelled: Cancelled
+        submitted: Submitted
+        accepted: Accepted
+        rejected: Rejected
+        checked: Checked
+        warning: Warning
+        suspect: Suspect
+        collected: Accepted
+
+      trade:
+        go_to_trade: Go to Trade
+        trading_market: No Trading Market
+
+
+      withdraw_btc:
+        title: BTC Withdraw
+
+      withdraw_bch:
+        title: BCH Withdraw
+
+      withdraw_eth:
+        title: ETH Withdraw
+
+      withdraw_trx:
+        title: TRX Withdraw
+
+      withdraw_xrp:
+        title: XRP Withdraw
+
+      withdraw_eos:
+        title: EOS Withdraw
+
+      withdraw_csc:
+        title: CSC Withdraw
+
+      withdraw_ipm:
+        title: IPM Withdraw
+
+      withdraw_ems:
+        title: EMS Withdraw
+
+      withdraw_ecp+:
+        title: ECP+ Withdraw
+
+      withdraw_FTO:
+        title: FTO Withdraw
+
+      withdraw_usdc:
+        title: USDC Withdraw
+
+      withdraw_aok:
+        title: AOK Withdraw
+
+      withdraw_cac+:
+        title: CAC+ Withdraw  
+
+      withdraw_fiat:
+        title: '{{currency}} Withdraw'
+        intro: Select the bank to cash withdrawal amount and enter the account number and complete submission.
+        intro_2: Your bank account and name must be consistent with the real-name authentication name.
+        attention: "Working Hours: 9:00 - 18:00"
+        withdraw_address: Withdraw Address
+        balance: Balance
+        withdraw_amount: Withdraw Amount
+        min: At least
+        withdraw_all: Withdraw all
+
+      withdraw_coin:
+        what: What's
+        min1: 'Minimum withdrawal:'
+        24_with: '24h Withdrawal Limit:'
+        ava: 'Available:'
+        enter: Enter your amount
+        not: Not enough
+        trans: 'Transaction Fee:'
+        trans1: 'Transaction Fee:'
+        you: 'You Will Get:'
+        intro: Please fill in the address and amount, then submit the form. It will be confirmed in 10 minutes
+        label: Label
+        balance: Balance
+        amount: Amount
+        manage_withdraw: Manage Address
+        min: At least
+        max1n: At most
+        withdraw_all: Withdraw all
+        commission_fee: Commission Fee
+        balance_Total: Total Balance
+        order_in: In Order
+        balance_available: Available Balance
+        important: Important
+        msg1: Email
+        msg2: and
+        msg3: KYC
+        msg4: must be verified
+        text: 'Do not withdraw directly to a crowdfund or ICO address, as your account will not be credited with tokens from such sales.'
+        address_withdrawal: Withdrawal Address
+        address_payment_id: Withdrawal Payment ID
+        no_payment_id: No Payment ID
+        note_Please: Please note
+        text1: Coins will be Withdraw immediately after
+        text2: network confirmations
+        text3: After making a Withdraw, you can track its progress on the
+        hist: history
+        page: page.
+        enter_max: Enter maximum balance
+        enter_min: Enter minimum balance
+      withdraw_history:
+        title:  withdrawal history
+        number: Number
+        withdraw_time: Time
+        withdraw_account: Withdraw Account
+        withdraw_address: Address
+        withdraw_amount: Amount
+        actual_amount: Actual Amount
+        fee: Fee
+        miner_fee: Fee
+        state_and_action: "State/Action"
+        cancel: Cancel
+        no_data: "You have no withdrawal history."
+        view_all: View all
+        not_receive_email: Did not receive email
+        submitting: Submitting
+        submitted: Submitted
+        rejected: Rejected
+        accepted: Accepted
+        suspect: Suspect
+        processing: Processing
+        coin_ready: Coin Ready
+        coin_done: Coin Done
+        done: Done
+        canceled: Cancelled
+        failed: Failed
+        confirming: Confirming
+        approved: Approved
+    markets:
+      market_list:
+        all: All Market
+        btc: BTC Market
+        bch: BCH Market
+        eth: ETH Market
+        trx: TRX Market
+        xrp: XRP Market
+        eos: EOS Market
+        csc: CSC Market
+        ipm: IPM Market
+        ems: EMS Market
+        ecp+: ECP+ Market
+        fto: FTO Market
+        usdc: USDC Market
+        aok: AOK Market
+        cac+: CAC+ Market
+

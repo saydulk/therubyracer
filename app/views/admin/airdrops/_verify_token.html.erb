@@ -1,0 +1,74 @@
+<!-- Modal -->
+
+<div class="modal my_modal token_mdl fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Token Verification</h4>
+      </div>
+      <div class="modal-body">
+        <div class="loader">
+          <%= image_tag("loader.gif", :alt => "loader") %>
+        </div>
+
+        <div class="login_form">
+          <div class="simple_form">
+            <ul class="sms_auth nav nav-tabs" id="myTab" role="tablist">
+              <% if current_user.enable? %>
+                <li class="nav-item active" style="width: 50%;">
+                  <a class="nav-link " id="google_tab" data-toggle="tab" href="#google" role="tab" aria-controls="home"> Google Authentication </a>
+                </li>
+              <% end %>
+
+              <% if current_user.sms_enable? %>
+                <li class="nav-item" style="width: 50%;">
+                  <a class="nav-link" id="sms_tab" data-toggle="tab" href="#sms" role="tab" aria-controls="profile"> SMS Authentication </a>
+                </li>
+              <% end %>
+            </ul>
+
+            <div class="tab-content">
+              <div class="tab-pane <%= ((current_user.sms_enable? && current_user.enable?) || current_user.enable?) ? 'active' : ''%>" id="google" role="tabpanel">
+                <div class="form-group">
+                  <label class="inpt_lbl"> Google Authentication Code </label>
+                  <%#= f.input :otp_code_token, placeholder: 'Token', input_html: {required: true, class: 'input_fld'}, label: false %>
+                  <input type="text" class="form-control input_fld" placeholder="Token">
+                </div>
+              </div>
+
+              <div class="tab-pane <%= (current_user.sms_enable? && current_user.disable?) ? 'active' : ''%>" id="sms" role="tabpanel">
+                <div class="form-group">
+                  <label class="inpt_lbl"> SMS Authentication Code </label>
+                  <div class="input-group send_sms_block">
+                    <%#= f.input_field :otp_code, placeholder:  t('.SMS_Token'), class: 'form-control' %>
+                    <input type="text" class="form-control input_fld" placeholder="SMS_Token">
+                    <span class="input-group-text"> <button id="send_sms" class="btn btn-default"> Send SMS </button> </span> <%#= link_to  t('.Send_SMS'), send_token_sms_settings_path(member: @member), { method: :post, remote: true, id: 'send_sms', class: 'btn btn-default'} %>
+                  </div>
+                </div>
+              </div>
+
+              <span id="otp_error" style="color: red;"></span>
+
+              <div class="form-group text-center token_verifybtn">
+                <%#= f.button :wrapped,  t('.login'), class: "create_account grey_btn" %>
+                <button class="create_account grey_btn" id="send_token_btn"> Send Token </button>
+              </div>
+              <% if ((current_user.sms_enable? && current_user.enable?) || current_user.enable?) %>
+                <div class="text-right" id="google_link">
+                  <%#= link_to t('.google_auth'), new_two_factor_path(auth_type: :google, id: @member.id) %>
+                </div>
+              <% end%>
+
+              <div class="text-right <%= (current_user.sms_enable? && current_user.enable?) || (current_user.sms_disable? && current_user.enable?) ? 'hide' : '' %> " id="mobile_link">
+                <%#= link_to t('.SMS'), new_two_factor_path(auth_type: :mobile, id: current_user.id) %>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

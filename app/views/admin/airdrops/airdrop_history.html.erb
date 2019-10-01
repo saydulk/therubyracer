@@ -1,0 +1,71 @@
+
+<div class="tbl_div history_page">
+  <div class="tbl_cell history_left">
+    <h1> Airdrop History </h1>
+  </div>
+  <div class="tbl_cell history_right">
+    <ul class="nav navbar-nav navbar-right back_button_sec">
+      <li><%= link_to t('actions.back'), main_app.admin_airdrops_path %></li>
+    </ul>
+  </div>
+</div>
+
+
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th> Date & Time </th>
+    <th> Benficiary </th>
+    <th> Token Distributed </th>
+    <th> Transaction ID </th>
+    <th> Status </th>
+  </tr>
+  </thead>
+  <tbody>
+  <% if @airdrop_history.present? %>
+    <% @airdrop_history.each do |withdraw| %>
+      <tr>
+        <td> <%= withdraw.created_at %></td>
+        <td> <%= withdraw.fund_uid %></td>
+        <td> <%= withdraw.sum %></td>
+        <td> <%= withdraw.txid %></td>
+        <td> <%= withdraw.aasm_state %></td>
+      </tr>
+    <% end %>
+  <% else %>
+    <tr> <td colspan="5" class="text-center"> There is no history available </td></tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= paginate @airdrop_history %>
+
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function(){
+
+        $('.calender').datepicker({
+            format: 'yyyy-mm-dd',
+            endDate: '+0d',
+            autoclose: true
+        });
+
+        $('.view-calender').datepicker({
+            format: 'yyyy-mm-dd',
+            autoclose: true,
+            endDate: new Date()
+        });
+
+        $('.fa-calendar').click(function() {
+            $(this).siblings().focus()
+        });
+
+        $('.next ').click(function (e) {
+            if ($(this).is('.disabled')) {
+                e.preventDefault();
+
+            }
+        });
+
+    })
+</script>

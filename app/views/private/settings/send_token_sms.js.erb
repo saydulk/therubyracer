@@ -1,0 +1,11 @@
+<% if @sms_status%>
+  $("#sms_error").html('');
+  $("#sms_error").html('Please check phone number. It is invalid, not able to send any sms');
+  $("#sms_error").removeClass('hide');
+  $('#sms_success').addClass('hide');
+  $('#sms_success').fadeToggle(5000);
+<% else %>
+  $("#sms_error").addClass('hide');
+  $('#sms_success').removeClass('hide');
+  $('#sms_success').fadeToggle(5000);
+<% end %>

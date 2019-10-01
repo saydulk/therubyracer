@@ -1,0 +1,57 @@
+
+<footer class="footer">
+  <div class="container">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 footer_content">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-8 col-lg-8 footer_content_right">
+          <div class="row">
+            <div class="footer_content_right_inner" style="text-align:left;">
+              <ul class="nav">
+                <li><%= link_to t('footer.about'), about_path %></li>
+                <li><%= link_to t('footer.terms'), terms_path %></li>
+                <li><%= link_to t('footer.privacy'), privacy_path %></li>
+                <li><%= link_to t('footer.contact'), new_support_path %></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 footer_content_right text-right">
+          <div class="row">
+            <div class="footer_content_right_inner">
+              <ul class="ftr_social_link">
+                <li><a target="_blank" href="" title="wechat"><i class="fa fa-wechat"></i></a></li>
+                <li class="kakaotalk"><a target="_blank" href="" title="kakaotalk"></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" id="footer_data">
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-4 footer_content no_border">
+        <p><%= t('footer.cc', year: (DateTime.now.year-1),year1: (DateTime.now.year), add: "#{ENV.fetch('URL_SCHEME', 'http')}://#{ENV['URL_HOST']}" ,host: request.host.sub!("z", "Z")) %></p>
+        <!--<a href="https://seal.beyondsecurity.com/vulnerability-scanner-verification/stage.zinance.com"><img src="https://seal.beyondsecurity.com/verification-images/stage.zinance.com/vulnerability-scanner-2.gif" alt="Website Security Test" border="0"></a>-->
+      </div>
+      <% if controller_name == 'markets' or controller_name == 'welcome' %>
+          <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 footer_content no_border text-right">
+            <p>
+              <!--<i class="fa fa-clock-o" aria-hidden="true"></i>-->
+              <span class="white_txt date_time"><%= Time.now.strftime("%Y-%m-%d %H:%M:%S")%></span>
+             <%= t('footer.volume')%> <span class="white_txt btc">0.0</span>BTC /
+              <span class="white_txt eth">0.0</span>ETH /
+              <span class="white_txt usdt">0.0</span>USDT
+            </p>
+          </div>
+        <div class="col-xs-12 col-sm-12 col-md-2 col-lg-1 footer_content no_border">
+          <div class="row">
+            <p><i class="fa fa-wifi" aria-hidden="true"></i> <%= t('footer.Connected')%></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <!--<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 powered_by">-->
+      <!--<p style="float: left;color: #999;font-size: 11px;margin-bottom: 10px;width: 100%;text-align: right;text-transform: uppercase;"><span class="text-right"> <%= t ('footer.Powered_by')%> <a href="https://antiersolutions.com/" class="company" style="text-transform: none;color: #ccc; display: inline-block;"><%= t ('footer.Antier_Solutions')%></a></span></p>-->
+    <!--</div>-->
+  </div>
+</footer>
+

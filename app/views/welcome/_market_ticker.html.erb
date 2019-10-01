@@ -1,0 +1,105 @@
+<div class="panel-body panel-body-content" id="home_market_search">
+  <div class="table-responsive home_tbl_wrap">
+    <table class="table table-hover table-striped home_markets <%= @market.name.split('/')[1].downcase %>">
+    <thead>
+      <tr class="fav">
+        <th class="text-center" style="width: 50px !important; padding: 0px 20px !important;">
+          &nbsp;
+        </th>
+        <th class="pair col-lg-1" style="min-width: 66px;">
+          <span class="name"><%= t('.pair') %></span>
+        </th>
+        <th class="coin col-lg-2 ">
+          <%= t('.coin') %>
+
+        </th>
+        <th class="price col-lg-2">
+          <%= t('.last_price') %>
+        </th>
+        <th class="change text-right home_market_change col-lg-1">
+          <%= t('.24h_change') %>
+        </th>
+        <th class="text-right high col-lg-2">
+          <%= t('.24h_high') %>
+        </th>
+        <th class="text-right low col-lg-2">
+          <%= t('.24h_low') %>
+        </th>
+        <th class="text-right home_market_volume col-lg-3" style="min-width: 70px; text-align: right;padding-right: 10px !important;">
+          <%= t('.24h_volume') %>  <i class="caret"></i>
+        </th>
+      </tr>
+    </thead>
+    <tbody id="home_scroll_market_ticker">
+    <% if @markets != [nil] %>
+      <% @markets.each do |market| %>
+        <tr class=" <%= cookies[:favorites].to_s.split(',').include?(market.id) ? 'fav' : '' %> market quote-<%=  market.quote_unit.upcase == Koin.base_fiat_ccy ? 'fiat' : market.quote_unit %>" id="market-list-<%= market.id %>" data-market="<%= market.id %>" title="<%= gon.market_prices[market[:base_unit]].to_s.gsub(' ','') %>" ,style = "<%= params[:tab_active] == market.quote_unit.upcase and params[:search_page].present? ? 'display: block' : 'display: none'%>">
+          <td class="text-center home_vlues" style="width: 50px !important; padding: 0px 16px !important;">
+            <!--If choose favorite - then class 'orange'-->
+            <a href="javascript:void(0)" class="fa fa-star <%= cookies[:favorites].to_s.split(',').include?(market.id) ? 'orange' : 'grey' %> favorites" market="<%= market.id %>"></a>
+          </td>
+          <td class="col-lg-1 name ">
+            <%= link_to market.name, market_path(market) %>
+          </td>
+          <td class="coin col-lg-2 ">
+            <%= market.coin_name%>
+          </td>
+
+          <td class="price col-lg-2 " id="price">
+            <%= format_currency(Global[market.id].ticker[:last], market.id, n:6, symbol: false).html_safe %>
+          </td>
+          <td class="change text-right col-lg-1">
+            +0.00%
+          </td>
+
+          <td class="high text-right  col-lg-2 " id="high">
+            <%= format_currency(Global[market.id].ticker[:high], market.id, n:6, symbol: false).html_safe    %>
+          </td>
+
+          <td class="low text-right  col-lg-2 " id="low">
+            <%= format_currency(Global[market.id].ticker[:low], market.id, n:6, symbol: false).html_safe    %>
+          </td>
+
+          <td class="text-center market_volume col-lg-3 " style="min-width: 70px; text-align: right; padding-right: 10px !important;">
+            <%= number_with_precision(Global[market.id].ticker[:volume].to_f, precision: 8, delimiter: ',')  %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        // new SimpleBar(document.getElementById('home_scroll_market_ticker'), {autoHide: false});
+
+        $('a.favorites').on('click', function(e){
+            e.stopPropagation()
+            market = $(e.target).attr('market')
+
+            // To add/remove favorite in cookie
+            if ($(e.target).hasClass('grey')){
+                op_type = 'add'
+                $(e.target).removeClass('grey');
+                $(e.target).addClass('orange');
+                $(e.target.parentElement.parentElement).addClass('fav')
+            }
+            else if($(e.target).hasClass('orange')){
+                op_type = 'remove'
+                $(e.target).addClass('grey');
+                $(e.target).removeClass('orange');
+                $(e.target.parentElement.parentElement).removeClass('fav')
+            }
+
+            $.ajax({
+                method: 'GET',
+                url: "/favorite/" + market + '/' + op_type,
+                dataType: 'script'
+            })
+        });
+
+    });
+</script>
+

@@ -1,0 +1,152 @@
+
+<style>
+  .affix {
+    top: 0;
+    width: 100%;
+    z-index: 9999 !important;
+  }
+
+  .affix + .container-fluid {
+    padding-top: 70px;
+  }
+
+ /* mobile lang select  add 9.17  */
+ @media screen and (min-width: 760px) {
+      ul#mobile_lang {
+        display: none;
+      }
+  }
+
+  @media screen and (max-width: 760px) {
+      ul#mobile_lang {
+        display: block !imporant;
+        height: 80px;
+      }
+  }
+
+</style>
+<div class="container-fluid Top_nav">
+  <nav class="navbar navbar-default my_nav">
+    <div class="container-fluid">
+      <div class="row">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only"><%= t('header.toggle_navigation') %></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <% if current_user %>
+          <%= link_to '', settings_path, class: 'navbar-brand top_logo' %>
+        <% else %>
+          <%= link_to '', root_path, class: 'navbar-brand top_logo' %>
+        <% end %>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <!-- Left navbar-->
+        <ul class="nav navbar-nav top_left_nav navigation_links">
+          <li class="dropdown custom_dropmenu">
+            <a href="<%= '/markets/ethbtc' %>">
+              <%#= link_to t('header.exchange'), '/markets/ethbtc' %>
+              <span class="comn_nav_icons exchange_icon blue-exchng-icon"></span>
+              <%= t('header.exchange') %>
+            </a>
+          </li>
+
+        </ul>
+
+        <!-- Right navbar-->
+        <ul class="nav navbar-nav navbar-right navigation_links">
+          <% if current_user %>
+            <li class="dropdown custom_dropmenu">
+              <a href="exchange_basic.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <%= t('header.funds') %> </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="<%= balance_summary_path %>">
+                    <i></i><span><%= t('header.balance_summary') %></span>
+                  </a>
+                </li>
+                <li><%= link_to t('header.deposit'), '/funds?#/deposits/btc', class: 'head_deposit' %></li>
+                <li><%= link_to t('header.withdraw'), '/funds#/withdraws/btc', class: 'head_withdraw' %></li>
+                <li><%= link_to t('header.account_history'), account_history_path %></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)"><%= t ('header.order') %>
+              </a>
+              <ul class="dropdown-menu">
+                <% tabs.each do |name, args| %>
+                  <li><%= link_to t(args[0]), args[1] %></li>
+                <% end %>
+              </ul>
+            </li>
+            <li>
+              <%= link_to t('header.support'), new_support_path %>
+            </li>
+          <% end %>
+          <li class="logined_user">
+            <ul class="nav navbar-nav navbar-right">
+              <%= render partial: 'shared/header_profile_setting' if current_user %>
+              <% unless current_user %>
+                <li class="login_register">
+                  <%= link_to t('header.login'), signin_path%>
+                  <span> <%= t('header.or')%> </span>
+                  <%= link_to t('header.register'), signup_path, {:style=>" border-left: none !important;"} %>
+                </li>
+              <% end %>
+              <li class="dropdown custom_dropmenu language_dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)"><i class="fa fa-globe" aria-hidden="true"></i> <span class="language_select"> <%= t('header.language') %> </span>
+                </a>
+                <ul class="dropdown-menu " >
+                  <%= render partial: 'shared/language_list'%>
+                </ul>
+
+                <ul class="dropdown-menu1"  id="mobile_lang"> <!--add 9.17 -->
+                  <%= render partial: 'shared/language_list'%>
+                </ul>
+
+              </li>
+                <ul class="dropdown-menu">
+                  <li>
+                    <div class="google_translate">
+                      <h3><%= t('header.website_translator') %></h3>
+                      <select>
+                        <% %w(SelectLanguage English Hindi Urdu Punjabi Tamil Telugu).each do |languages| %>
+                          <option value="1"><%= languages %></option>
+                        <% end %>
+                      </select>
+                      <p><%= t('header.translator_text') %></p>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div> <!--/. row -->
+    </div>
+  </nav>
+</div>
+
+<script>
+  //show sub-menu onclick not on hover
+    $(function(){
+        $('.dropdown-toggle').on('click', function(e){
+            if(Modernizr.mq('screen and (max-width:767px)')) {
+                e.preventDefault();
+                $(this).next($('.dropdown-menu')).slideToggle();
+            }
+        })
+    });
+    $('.account-settings').on('shown.bs.dropdown', function () {
+        var ele = $(this).find("ul");
+        var posi = ele.offset().top-ele.innerHeight();
+        $('.dropdown').animate({
+            scrollTop: posi
+        }, 1000);
+    })
+</script>

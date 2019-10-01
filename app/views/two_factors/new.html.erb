@@ -1,0 +1,48 @@
+<%= content_for :header do %> <span></span> <% end %>
+<%= content_for :footer do %> <span></span> <% end %>
+
+<%= simple_form_for @token, url: two_factors_path do |f| %>
+  <div>
+    <%= image_tag('auth_manual.png') %>
+    <span><%= t('.info')%></span>
+    <%= hidden_field_tag 'auth_type', params[:auth_type] %>
+    <%= hidden_field_tag 'member_id', params[:id] %>
+  </div>
+
+  <ul class="comn_list">
+    <li>
+      <div class="check_ele">
+        <div class="check_box">
+          <%= check_box_tag 'notice', nil, false, class: 'check_input'%>
+          <span class="checklbl"></span>
+        </div>
+        <!--/.checkBox-->
+        <span class="icon icon-notice1"></span>
+        <label for="notice" class="check_lbl"><%= t('.notice') %></label>
+      </div>
+    </li>
+
+    <li>
+      <div class="check_ele">
+        <div class="check_box">
+          <%= check_box_tag 'warning', nil, false, class: 'check_input'%>
+          <span class="checklbl"></span>
+        </div>
+        <!--/.checkBox-->
+        <label for="notice" class="check_lbl"><%= t('.warning') %></label>
+      </div>
+    </li>
+  </ul>
+  <hr class="split">
+  <%= f.button :submit, value: t('.confirm'), disabled: true, id: 'submit' %>
+<% end %>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('input[type="checkbox"]').change(function(event) {
+            val = !($('#notice:checked').length == 1 && $('#warning:checked').length == 1)
+            $('#submit').prop('disabled', val);
+        });
+    });
+</script>

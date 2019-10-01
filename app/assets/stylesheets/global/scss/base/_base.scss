@@ -1,0 +1,78 @@
+
+html{
+	position: relative;
+	min-height: 100%;
+}
+/*section {
+	overflow-x:hidden;
+}*/
+.btn.active:focus, .btn.focus:active, .btn:active:focus, .btn:focus {
+  	outline: 0px;
+  	outline-offset: -2px;
+  	-webkit-appearance: none;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+    /* -webkit-text-fill-color: #ffffff !important; */
+}
+a, button {
+	// border: 0px;
+	@include box-shadow(none);
+	outline: none;
+  	-webkit-appearance: none;
+  	text-decoration: none;
+  	font-size: 14px;
+	&:hover, &:active, &:focus {
+		outline: none;
+		text-decoration: none;
+	}
+}
+input, textarea {
+	@include box-shadow(none);
+    outline: none !important;
+  	-webkit-appearance: none;
+}
+img {
+	max-width:100%;
+}
+ul, li{
+	list-style:none;
+	margin:0px;
+	padding:0px;	
+}
+h1, h2, h3, h4, h5, h6, p{
+	padding: 0px;
+	margin:0px;
+}
+p {
+	font-size: 14px;
+}
+.noPadd {
+	padding: 0 !important;
+}
+.noMarg {
+	margin: 0 !important;
+}
+hr {
+    background: $lines-color;
+    border: medium none;
+    display: block;
+    float: left;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.modal-backdrop.in {
+    opacity: 0.65;    
+}
+.modal-backdrop {
+    background-color: #3a3a3a;
+    z-index: 1090;
+}
+.modal {
+	z-index: 1091;		
+	.modal-content {
+		@include border-radius(20px);
+	}
+}

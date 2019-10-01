@@ -1,0 +1,58 @@
+<%= render  'admin/back_admin'  %>
+<div class="tabbable boxed parentTabs">
+  <ul class="nav nav-tabs">
+    <% @records.each_with_index  do |val, index|%>
+      <%
+        index_select = 0
+        if params[:exchange].present? && params[:exchange].casecmp(val[:exchange].upcase) == 0
+            index_select = index
+        end
+      %>
+      <li class="<%= (index == index_select ? 'active' : '') %>" name="<%= val[:exchange] %>" >
+        <a data-toggle="tab" href="#<%= val[:exchange] %>"><%= val[:exchange].capitalize %></a>
+      </li>
+    <% end %>
+  </ul>
+  <div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade active in" id="set1">
+      <% @records.each_with_index  do |val, index|%>
+        <div id="<%= val[:exchange] %>" class="tab-pane <%= index == 0 ? 'active' : '' %> ">
+
+          <div class="tabbable">
+            <ul class="nav nav-tabs">
+              <%
+                client_active = params[:entity_name].present? ? (params[:entity_name].casecmp('client') == 0 ? 'active' : '') : 'active'
+                member_active =  params[:entity_name].present? ? (params[:entity_name].casecmp('member') == 0 ? 'active' : '') : ''
+              %>
+              <li class="<%= client_active %>" name="client">
+                <a href="#<%= val[:exchange]%>_clients_details"> Client Details </a>
+              </li>
+              <li name="member" class="<%= member_active %>">
+                <a href="#<%= val[:exchange]%>_members_details"> Member Details </a>
+              </li>
+            </ul>
+            <div id="myTabContent" class="tab-content">
+              <div class="tab-pane  <%= client_active %> " id="<%= val[:exchange]%>_clients_details">
+                <%= render partial: 'admin/members/liquidity/client_detail', locals: {exchange: val[:exchange], client: exchange_client(val[:exchange]), currencies: @currencies}%>
+              </div>
+              <div class="tab-pane <%= member_active %>" id="<%= val[:exchange]%>_members_details">
+                <%= render partial: 'admin/members/liquidity/member_details', locals: {exchange: val[:exchange], member: exchange_member(val[:user]), currencies: @currencies}%>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function(){
+
+      $("ul.nav-tabs a").click(function (e) {
+          e.preventDefault();
+          $(this).tab('show');
+      });
+
+  })
+</script>

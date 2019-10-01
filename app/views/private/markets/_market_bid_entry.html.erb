@@ -1,0 +1,49 @@
+<div id="market_bid_entry" class="bid_entry entry-right">
+  <div class="panel-body">
+    <div class="buy_sell_currency tbl_div">
+      <div class="buy_sell_currency_left tbl_cell">
+        <h2><%= t('.buy')%> <span class="currency_type"><%= t(market.ask['currency'], scope: 'market.currency') %></span></h2>
+      </div>
+      <div class="buy_sell_currency_right tbl_cell">
+        <%= render partial: 'balance', locals: {currency: t(market.bid['currency'], scope: 'market.currency')} %>
+      </div>
+    </div>
+
+    <%= form_for [market, order], remote: true do |f| %>
+      <%= f.hidden_field :ord_type %>
+
+      <div class="amount market_flds tbl_div">
+        <label class="tbl_cell price_label"><%= t('.price') %></label>
+        <div class="tbl_cell input-group price_fld">
+          <span class="label label-danger hint-price-disadvantage"></span>
+          <div class="price_fld_block">
+            <%#= f.text_field :price, class: 'form-control', value: "Market Price", disabled: true %>
+            <%= text_field_tag '', t('.Market'), class: 'form-control', disabled:true %>
+            <%#= f.hidden_field :price, class: 'form-control',value: market.ticker[:last]%>
+            <span class="currency_type"><%= t(market.bid['currency'], scope: 'market.currency') %></span>
+          </div>
+        </div>`
+      </div>
+
+      <div class="amount market_flds tbl_div">
+        <label class="tbl_cell price_label"><%= t('.amount') %></label>
+        <div class="tbl_cell input-group price_fld">
+          <div class="price_fld_block">
+            <%= f.text_field :origin_volume, class: 'form-control' %>
+            <span class="currency_type"><%= t(market.ask['currency'], scope: 'market.currency') %></span>
+          </div>
+        </div>
+      </div>
+      <%= render partial: 'amount_percentage_buttons' %>
+      <% if current_user %>
+      <div class="buy_sell_btns">
+        <button class="btn btn-danger btn-block text-up" type="submit">
+          <%= t('.action', currency: t(market.ask['currency'], scope: 'market.currency')) %>
+        </button>
+      </div>
+        <% else %>
+        <%= render partial: 'mask' %>
+    <% end %>
+    <% end %>
+  </div>
+</div>

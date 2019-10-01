@@ -1,0 +1,90 @@
+<%= render 'admin/back_admin' %>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+<div class="history_tab_btns tbl_div">
+  <ul class="nav nav-tabs history_tabs tbl_cell">
+    <li class="active switch_history_tab">
+      <a data-toggle="tab" href="#full_currency_summary"> Full Summary </a>
+    </li>
+    <li class="switch_history_tab">
+      <a data-toggle="tab" href="#24_currency_summary"> 24 hours summary </a>
+    </li>
+  </ul>
+</div>
+
+<div class="panel panel-primary currencies_summary">
+  <div class="panel-body">
+    <div class="tab-content">
+      <div id="full_currency_summary" class="tab-pane active currencies_summary">
+        <div class="panel-heading">Currencies Summary <%= link_to 'Download CSV', admin_csv_dashboard_path(format: :csv, type: 'full' ), class: 'pull-right summary_download_btn' %> </div>
+
+        <table id="dashboard_full_datatable" class="table table-condensed table-hover" data-source="<%= admin_dashboard_path(format: :json, summary: 'full' ) %>">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Locked</th>
+            <th>Balance</th>
+            <th>Sum</th>
+            <th>Hot-Wallet Balance</th>
+            <th>Cold-Wallet Balance</th>
+          </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+
+      </div>
+      <div id="24_currency_summary" class="tab-pane ">
+        <div class="panel-heading">Currencies Summary <%= link_to 'Download CSV', admin_csv_dashboard_path(format: :csv, type: 'one_day'), class: 'pull-right summary_download_btn' %></div>
+        <table id="dashboard_one_day_datatable" class="table table-condensed table-hover" data-source="<%= admin_dashboard_path(format: :json, summary: 'one_day' ) %>">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Locked</th>
+            <th>Balance</th>
+            <th>Sum</th>
+            <th>Hot-Wallet Balance</th>
+            <th>Cold-Wallet Balance</th>
+          </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-xs-12 currencies_summary">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Exchange Summary</div>
+      <div class="panel-body">
+        <table class="table table-condensed table-hover">
+          <thead>
+          <tr>
+            <th>Index</th>
+            <th>Count</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Register Count</td>
+            <td><%= @register_count %></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+   $(document).ready(function(){
+       $('input[type = search]').keyup(function() {
+           var node = $(this);
+           node.val(node.val().replace(/[^a-zA-Z]/g,'') );
+       });
+   })
+</script>

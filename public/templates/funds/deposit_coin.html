@@ -1,0 +1,12 @@
+<ng-include src="'/templates/funds/_deposit_coin.html'"></ng-include>
+
+
+<div class="tips">
+    <strong> {{"funds.deposit.note_text" | t}} </strong>
+    <ul>
+        <li> {{"funds.deposit.first_part" | t}} <span class="yellow"> </span> {{"funds.deposit.second_part" | t}} </li>
+        <li>{{"funds.deposit.progress_text" | t}} <a target='_blank'  href="/history/account?tab=deposit" class="yellow"> {{"funds.deposit.history" | t}} </a> {{"funds.deposit.page" | t}}</li>
+    </ul>
+</div>
+
+<ng-include src="'/templates/funds/_trade.html'"></ng-include>

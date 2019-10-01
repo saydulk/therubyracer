@@ -1,0 +1,40 @@
+<div class="table-responsive total_balance">
+    <table class="table">
+        <tr>
+            <td> {{"funds.withdraw_coin.balance_Total" | t}}</td>
+            <td>{{ total_balance(account.balance, account.locked) | number : withdraw_channel.fixed }}{{account.currency | uppercase}} </td>
+        </tr>
+        <tr>
+            <td>{{"funds.withdraw_coin.order_in" | t}}</td>
+            <td>{{ account.locked | number : withdraw_channel.fixed }} {{account.currency | uppercase}} </td>
+        </tr>
+        <tr>
+            <td> {{"funds.withdraw_coin.balance_available" | t}} </td>
+            <td>{{ account.balance | number : withdraw_channel.fixed }} {{account.currency | uppercase}} </td>
+        </tr>
+    </table>
+</div>
+
+<div class="importants">
+    <strong> {{"funds.withdraw_coin.important" | t}}</strong>
+    <ul class="imp_notes">
+        <li> {{"funds.withdraw_coin.min" | t}} {{minval}} {{account.currency | uppercase}} </li>
+        <li> {{"funds.withdraw_coin.max1n" | t}} {{maxval}} {{account.currency | uppercase}} </li>
+        <li> <b>{{"funds.withdraw_coin.msg1" | t}} </b> {{"funds.withdraw_coin.msg2" | t}} <b> {{"funds.withdraw_coin.msg3" | t}} </b> {{"funds.withdraw_coin.msg4" | t}} </li>
+        <li> {{"funds.withdraw_coin.text" | t}}</li>
+    </ul>
+    <div class="depositAddress">
+        <strong> {{account.currency | uppercase}}  {{"funds.withdraw_coin.address_withdrawal" | t}} </strong>
+        <ng-include src="'/templates/funds/_coin_withdraw.html'"></ng-include>
+    </div>
+</div>
+
+<div class="tips">
+    <strong>{{"funds.withdraw_coin.note_Please" | t}}</strong>
+    <ul>
+        <li> {{"funds.withdraw_coin.text1" | t}}  <span class="yellow">  </span>  {{"funds.withdraw_coin.text2" | t}} </li>
+        <li>{{"funds.withdraw_coin.text3" | t}} <a target='_blank' href="/history/account" class="yellow">  {{"funds.withdraw_coin.hist" | t}} </a>{{"funds.withdraw_coin.page" | t}}</li>
+    </ul>
+</div>
+
+<ng-include src="'/templates/funds/_trade.html'"></ng-include>

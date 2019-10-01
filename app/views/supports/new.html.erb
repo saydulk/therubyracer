@@ -1,0 +1,106 @@
+<%= render partial: 'header'%>
+
+<!-- particles.js container -->
+<div id="particles-js">
+  <div class="faq_banner">
+    <div class="container">
+      <h1> <%= t('.FAQ')%></h1>
+    </div>
+  </div>j
+</div>
+
+<div class="contact-form-wrap">
+  <div class="text-center">
+    <div class="select_your_query">
+      <div class="container">
+        <div class="row">
+          <%= form_for @supports,  :html => { :onsubmit => "return Validate(this)"} do |f| %>
+            <div class="col-md-12">
+              <h2 data-animate="fadeInUp" data-delay=".1" class="animated fadeInUp" style="animation-duration: 0.6s; animation-delay: 0.1s; margin-bottom: 0px;"> <%= t('.text8')%></h2>
+              <p data-animate="fadeInUp" data-delay=".2" class="animated fadeInUp" style="animation-duration: 0.6s; animation-delay: 0.2s;"> <%= t('.text9')%> <span class="text-danger font-weight-bold">*</span></p>
+            </div>
+            <%= render 'shared/flash' %>
+            <div class="col-lg-12 col-md-12">
+              <div class="row form-group">
+                <div class="col-lg-6 col-md-12 position-relative animated fadeInUp input-fld" data-animate="fadeInUp" data-delay=".3" style="animation-duration: 0.6s; animation-delay: 0.3s;"> <%= f.text_field :name, placeholder: t('.text21') , class: 'form-control check_name', required: true %>  </div>
+<!--                  <span id="contact_error" style="color:#a94442"></span>-->
+                <div class="col-lg-6 col-md-12 position-relative animated fadeInUp input-fld" data-animate="fadeInUp" data-delay=".4" style="animation-duration: 0.6s; animation-delay: 0.4s;"> <%= f.email_field :email, placeholder:  t('.text20'), class: 'form-control '  , required: true%> </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-lg-6 col-md-12 position-relative animated fadeInUp input-fld" data-animate="fadeInUp" data-delay=".5" style="animation-duration: 0.6s; animation-delay: 0.5s;"> <%= f.text_field :contact_no, placeholder: t('.text19') , class: 'form-control check_tel', maxlength:"10",required: true %></div>
+                <div class="col-lg-6 col-md-12 position-relative animated fadeInUp input-fld" data-animate="fadeInUp" data-delay=".6" style="animation-duration: 0.6s; animation-delay: 0.6s;"> <%= f.text_field :url, placeholder: t('.text16'), id: 'url', class: 'form-control check_web', required: true %>
+                  <span id="url_error" style="color:#a94442;float: left;width: 100%;text-align: left; font-size: 13px;"></span>
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-lg-12 col-md-12 position-relative input-fld" data-animate="fadeInUp" data-delay=".7"><%= f.text_area :body, placeholder: t('.text17') , class: 'form-control', required: true %></div>
+              </div>
+              <div class="form-group">
+                <div class="captcha">
+                  <%= recaptcha_tags %>
+                </div>
+                <p class='error text-left' style="color: red; padding: 10px 0px; "><%= show_errors(@supports, :base) %></p>
+              </div>
+              <div class="row">
+                <%#= f.submit  "Submit",class:'btn btn-primary green_btn check' %>
+                <%= f.submit  t('.text18'),class:'btn btn-primary green_btn check' %>
+
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= javascript_include_tag 'js/particles.min' %>
+<%= javascript_include_tag 'js/particle_app' %>
+
+<%= render 'shared/footer'%>
+<script>
+    $(document).ready(function() {
+
+        $('.check_name').keyup(function() {
+            var node = $(this);
+            node.val(node.val().replace(/[^a-zA-Z \-]/g,'') );
+        });
+        $('.check_tel').keyup(function() {
+            var node = $(this);
+            node.val(node.val().replace(/[^0-9]/g,'') );
+        });
+        $('.check_web').change(function() {
+            str = $(this).val()
+            var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+            if(!str.match(regex)) {
+                alert("<%= t('.text22')%>");
+                return false;}
+        });
+    });
+
+    /* recaptcha */
+    function scaleCaptcha(elementWidth) {
+      var reCaptchaWidth = 304;
+      var containerWidth = $('.container').width();
+      if (reCaptchaWidth > containerWidth) {
+        var captchaScale = containerWidth / reCaptchaWidth;
+      }
+    }
+
+    $(function () {
+      scaleCaptcha();
+      $(window).resize($.throttle(100, scaleCaptcha));
+    });
+    function Validate(oForm) {
+        var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+         if(!str.match(regex)) {
+            $('#url_error').text("<%= t('.text23')%> ")
+            return false;
+         }
+    }
+
+
+</script>
+
+
+

@@ -1,0 +1,101 @@
+<% content_for :frame do %>
+  <div class="container history-pages">
+      <h1 class="page_hding"><%= t('.order_history') %></h1>
+        <div class="search_market_sec">
+          <%= form_tag order_history_path, method: :get do |f| %>
+            <span class="date">
+              <%= label_tag t('.date') %>
+              <span class="search_input">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                <%= text_field_tag :start_date, params[:start_date], id: "search", class: "view-calender", placeholder: "yyyy-mm-dd",style: "width:10%"%>
+              </span>
+              <%= "-" %>
+              <span class="search_input">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                <%= text_field_tag :end_date, params[:end_date], id: "search", class: "view-calender", placeholder: "yyyy-mm-dd",style: "width:10%"%>
+              </span>
+            </span>
+            <span class="pair">
+              <%= label_tag t('.pair') %>
+              <span class="search_select">
+                <%= select_tag 'currency', options_from_collection_for_select(@currency,:code_text,:code_text,params[:currency])
+              %>
+              </span>
+              <%= "/" %>
+              <span class="search_select">
+                <%= select_tag "market", options_for_select(["BTC", "ETH", "USDT"],params[:market]),:prompt=>t('.all1') %>
+              </span>
+            </span>
+            <span class="side">
+              <%= label_tag t('.side') %>
+              <span class="search_select">
+              <%= select_tag "side", options_for_select([ t('.sell'), t('.buy')],params[:side]),:prompt=> t('.all2') %>
+            </span>
+              <%= submit_tag  t('.search'), :class => 'submit' %>
+            </span>
+
+          <% end %>
+        </div>
+        <div id="orders">
+          <div class="table-responsive">
+            <table class="table table-condensed">
+          <thead>
+          <tr>
+            <th><%= t('.timestamp') %></th>
+            <th><%= t('.market') %></th>
+            <th><%= t('.type') %></th>
+            <th><%= t('.state') %></th>
+            <!--<th><%#= t('.id') %></th>-->
+
+            <th><%= t('.price') %></th>
+            <th><%= t('.volume') %></th>
+            <th><%= t('.average_price') %></th>
+            <th><%= t('.fullfilled_volume') %></th>
+
+          </tr>
+          </thead>
+          <tbody class="list">
+          <% if @orders.present? %>
+            <%= render partial: 'order', collection: @orders %>
+          <% else %>
+            <tr>
+              <td colspan="9">
+                <p class="text-center"><span class="not_found_img"><%= image_tag("zups.png", size: "85x75",) %></span><%= t('.blank_order') %></p></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+          </div>
+          <div class="pull-right">
+          <%= paginate @orders %>
+        </div>
+    </div>
+  </div>
+
+
+  <script>
+      $(function(){
+
+          $('.calender').datepicker({
+              format: 'yyyy-mm-dd',
+              endDate: '+0d',
+              autoclose: true
+          });
+          $('.view-calender').datepicker({
+              format: 'yyyy-mm-dd',
+              autoclose: true,
+              endDate: new Date()
+          })
+          $('.fa-calendar').click(function() {
+              $(this).siblings().focus()
+          });
+      });
+      // Prevent disabled next pagination click
+      $('.next ').click(function (e) {
+          if ($(this).is('.disabled')) {
+              e.preventDefault();
+          }
+      });
+
+  </script>
+<% end %>

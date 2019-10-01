@@ -1,0 +1,88 @@
+<div class="panel-body panel-body-content" id="market_search">
+  <table class="table trade_market_right_side" style="border: none;">
+    <thead style="/*position:  absolute;top: 0;left:  0; width:  100%;*/">
+    <tr>
+      <th class="pair col-lg-5" style="min-width: 66px;" >
+        <span class="name"><%= t('.pair') %></span>
+      </th>
+      <th class="price col-lg-3" >
+        <%= t('.price') %>
+      </th>
+      <th class="text-right change market_change col-lg-4" >
+        <%= t('.change') %>
+      </th>
+      <th class="text-right market_volume  col-lg-4" style="min-width: 70px; text-align: right;" >
+        <%= t('.volume') %>
+      </th>
+    </tr>
+    </thead>
+  </table>
+  <div id="scroll_market_ticker">
+    <table class="table table-hover markets <%= @market.name.split('/')[1].downcase %>">
+    <!--id="scroll_market_ticker" for scrollbar in tbody-->
+    <tbody>
+    <% if @markets != [nil] %>
+      <% @markets.each do |market| %>
+        <tr class="<%= @favorites.include?(market.id) ? 'fav' : '' %> market quote-<%= market.quote_unit.upcase == Koin.base_fiat_ccy ? 'fiat' : market.quote_unit %>" id="market-list-<%= market.id %>" data-market="<%= market.id %>" title=<%= gon.market_prices[market[:base_unit]].to_s.gsub(' ','') %> >
+          <td class="name col-lg-5" >
+            <a href="javascript:void(0)" class="fa fa-star <%= cookies[:favorites].to_s.split(',').include?(market.id) ? 'orange' : 'grey' %> favorites" market="<%= market.id %>"></a>
+            <%= link_to market.name, market_path(market) %>
+          </td>
+          <td class="price col-lg-3" id="price" >
+            <%= Global[market.id].ticker[:last] %>
+          </td>
+          <td class="change text-right market_change col-lg-4">
+            +0.00%
+          </td>
+          <td class="text-right market_volume col-lg-4" style="min-width: 70px; text-align: right;">
+            <%= Global[market.id].ticker[:volume] %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        new SimpleBar(document.getElementById('scroll_market_ticker'), {autoHide: false});
+
+        if ($("#chkYes").is(":checked")) {
+            $(".market_change").show();
+            $(".market_volume").hide();
+        }
+        else {
+            $(".market_volume").show();
+            $(".market_change").hide();
+        }
+
+        $('a.favorites').on('click', function(e){
+          e.stopPropagation()
+            market = $(e.target).attr('market')
+
+            // To add/remove favorite in cookie
+            if ($(e.target).hasClass('grey')){
+              op_type = 'add'
+              $(e.target).removeClass('grey');
+              $(e.target).addClass('orange');
+              $(e.target.parentElement.parentElement).addClass('fav')
+            }
+            else if($(e.target).hasClass('orange')){
+              op_type = 'remove'
+              $(e.target).addClass('grey');
+              $(e.target).removeClass('orange');
+              $(e.target.parentElement.parentElement).removeClass('fav')
+            }
+
+            $.ajax({
+                method: 'GET',
+                url: "/favorite/" + market + '/' + op_type,
+                dataType: 'script'
+            })
+        });
+
+    });
+</script>
+

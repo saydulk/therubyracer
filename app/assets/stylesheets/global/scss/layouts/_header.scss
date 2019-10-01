@@ -1,0 +1,436 @@
+.Top_nav {
+	position: absolute;
+	left:0;
+	top:0px;
+	right:0;
+	width:100%;
+	z-index:999;	
+}
+
+/* Top Contact bar */
+.top_contact_nav_sec {
+	background-color: $white;
+	box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.23); 
+	position: relative;
+	z-index: 1;		
+	& > .container {
+		@include breakpoint(medium) {
+			float: left;
+			width: 100%;
+		}
+	}
+	.top_contact_nav {
+		display: table;
+		width: 100%;	
+		@include breakpoint(medium) {
+			padding:0px;
+		}	
+		&.desk_social {
+			@include breakpoint(small) {
+				display: none;
+			}	
+		}	
+		@include breakpoint(small) {
+			padding:0px;
+		}
+		.top_social_links {
+			display: table-cell;
+			float: none;
+			vertical-align: middle;
+			width: 50%;
+			li {
+				display: inline-block;
+				margin-right: 3px;
+				.social_link {
+					background-repeat: no-repeat;
+					background-position: center center;
+					text-decoration: none;
+					width: 20px;
+					height: 20px;
+					display: inline-block;
+					&.facebook_icon {
+						background-image: url('../images/social_sprite.png');
+        				@include image-2x("../images/social_sprite@2x.png", 76px, 41px);	
+        				background-position: 2px 0px;
+        				&:hover, &:focus, &:active {
+							/* @include transition(all ease 0.5s); */
+							background-position: 2px -22px;
+						}
+					}
+					&.link_icon {
+						background-image: url('../images/social_sprite.png');
+        				@include image-2x("../images/social_sprite@2x.png", 76px, 41px);	
+        				background-position: -23px -1px;
+        				&:hover, &:focus, &:active {
+							/* @include transition(all ease 0.5s); */
+							background-position: -23px -23px;
+						}
+					}
+					&.youtube_icon {
+						background-image: url('../images/social_sprite.png');
+        				@include image-2x("../images/social_sprite@2x.png", 76px, 41px);	
+        				background-position: -54px 0px;
+        				&:hover, &:focus, &:active {
+							/* @include transition(all ease 0.5s); */
+							background-position: -54px -22px;
+						}
+					}
+				}
+			}
+		}
+		.top_right_contact {
+			display: table-cell;
+			float: none;
+			vertical-align: middle;
+			width: 50%;
+			text-align: right;
+			p {
+				color: $text-color;
+				font-size: 14px;
+				padding: 10px 0;
+				display: inline-block;
+				b {
+					a {
+						color: $black-color;
+						text-decoration: none;
+						@include transition(all ease 0.5s);
+						&:hover, &:focus, &:active {
+							@include transition(all ease 0.5s);
+							color:$base-color;
+						}
+					}
+				}
+			}			
+		}
+	} 
+}
+/* Top Contact bar end */
+
+.Top_addToCart_icons {
+	display: inline-block;
+	border-left:solid 1px #fbe0e0;
+	vertical-align: middle;
+	margin-left:10px;
+	&.desk_show {
+		@include breakpoint(small) {
+			display: none;
+		}
+	}
+	&.mob_show {
+		display: none;
+		@include breakpoint(small) {
+			display: inline-block;
+			position: absolute;
+			right: 75px;
+			top:18px;
+			border-left:none;
+			margin-left: 0px;
+		}
+	}
+	li {
+		display: inline-block;
+		vertical-align: middle;
+		height: 19px;
+		padding-left:12px;
+		&.top_like_icons {
+			&:hover, &:focus, &:active {
+				.Toplikes {	
+					background-position:0 -21px;
+				}
+			}
+			.Toplikes {
+				width: 19px;
+				height: 19px;
+				display: inline-block;
+				background-image:url('../images/like_icon.png');
+				@include image-2x('../images/like_icon@2x.png', 19px, 39px);
+				background-repeat:no-repeat;
+				background-position:0 0;								
+			}
+		}
+		&.top_cart_icons {
+			padding-left:6px;
+			&:hover, &:focus, &:active {
+				.Topcart {	
+					background-position:0 -21px;
+				}
+			}
+			.Topcart {
+				width: 19px;
+				height: 19px;
+				display: inline-block;
+				background-image:url('../images/cart_icon.png');
+				@include image-2x('../images/cart_icon@2x.png', 19px, 39px);
+				background-repeat:no-repeat;
+				background-position:0 0;								
+			}
+		}
+	}
+}
+
+/* main navigation start */
+.my_nav {
+	background-color:$white;
+	margin:0px;
+	border-top:none;
+	border:none;
+	@include border-radius(0);
+	@include box-shadow(1px 1px 5px 0px rgba(0, 0, 0, 0.23));
+	@include breakpoint(small) {
+		position: relative;
+	}
+	& > .container {
+		@include breakpoint(medium) {
+			width: 100%;
+			float:left;
+		}
+	}
+	.navigation_links {
+		@include breakpoint(small) {
+			padding:0px 0px 15px 0px;
+			margin: 0px;
+		}		
+		li {
+			a {
+				padding: 30px 12px;
+				font-weight: 400;
+				font-size: 15px;
+				@include breakpoint(medium) {
+					font-size: 13px;
+					padding: 24px 8px;
+				}
+				@include breakpoint(small) {
+					padding: 10px 0;
+					font-size: 14px;
+				}
+				&:hover, &:focus, &:active {
+					@include transition(all ease 0.5s);
+					color:$base-color;
+					/* font-weight: 600; */
+					background-color: rgba(0,0,0,0);
+				}
+			}
+
+			&.login_btn {
+				margin-top: 20px;
+				margin-left: 12px;
+				@include breakpoint(medium) {
+					margin-top: 17px;
+  				}
+				@include breakpoint(small) {
+					margin-left: 0px;
+					margin-top: 12px;
+				}
+				a {
+					line-height: 20px;
+					padding: 10px 25px;
+					text-transform: uppercase;
+					font-weight: 600;
+					color: $white;
+					border-radius: 100px;
+					display: inline-block;
+					@include breakpoint(medium) {
+						padding: 8px 24px;
+					}
+					&:hover, &:focus, &:active {
+						@include transition(all ease 0.5s);
+						color:$white;
+						font-weight: 600;
+						background-color: $base-color-2;
+					}
+				}
+			}
+			&.active {
+				a {
+					font-weight: 600;
+					background-color: rgba(0,0,0,0);
+					color: $black-color;
+					background-color: rgba(0,0,0,0) !important;
+				}
+			}
+			&.welcome_user_sec {
+				text-align: right;
+				padding:25px 0px 25px 20px;
+				margin-left: 10px;
+				position: relative;
+				@include breakpoint(medium) {
+					padding:20px 0px 20px 10px;
+					margin-left: 5px;
+				}
+				@include breakpoint(small) {
+					text-align: left;
+					margin-left: 0px;					
+					padding-left:0px;
+				}
+				&:before {
+					position: absolute;
+					content:'';
+					top: 50%;
+					left: 0;
+					background-color:$base-color;
+					height: 30px;
+					width: 1px;
+					@include transform(translateY(-50%));
+					@include breakpoint(small) {
+					background-color:rgba(0,0,0,0);
+					}
+				}
+				p {
+					color: $black-color;
+					font-size: 14px;
+					@include breakpoint(medium) {
+						font-size: 13px;
+					}
+					@include breakpoint(small) {
+						font-size: 14px;
+					}
+				}
+				a {
+					padding:0px;
+					&:hover, &:focus, &:active {
+						&.logout {
+							color: $black-color;
+						}	
+					}
+					&.logout {
+						line-height: 10px;
+						color: $base-color;
+						font-size: 13px;
+						@include breakpoint(medium) {
+							font-size: 12px;
+						}
+						@include breakpoint(small) {
+							font-size: 14px;
+							line-height: 20px;
+						}
+					}
+				}
+			}
+			.top_right_contact {
+				display: none;
+				@include breakpoint(small) {
+					display: block;
+				}
+				p {
+					color: $text-color;
+					b {
+						a {
+							color: $black-color;
+							text-decoration: none;							
+							&:hover, &:focus, &:active {
+								@include transition(all ease 0.5s);
+								color:$base-color;
+							}
+						}
+					}
+				}				
+			}
+		}
+		.top_contact_nav {
+			&.mob_social {
+				display: none;
+				@include breakpoint(small) {
+					display: block;
+					padding:10px 0;
+				}
+			}
+		}
+	}
+	.navbar-header {
+		.navbar-toggle {
+			@include breakpoint(small) {
+				margin-top: 12px;
+			}
+			&:hover, &:focus, &:active {
+				border-color:$base-color;
+				background-color:$white;
+				.icon-bar {
+					background-color:$base-color;
+				}
+			}			
+		}
+	}
+	.navbar-collapse {
+		@include breakpoint(small) {
+			background-color:$white;
+		}
+	}
+}
+
+.top_logo {
+	background-image: url('../images/logo.png');
+	@include image-2x("../images/logo@2x.png", 100%, auto);
+	background-repeat: no-repeat;
+	display: inline-block;
+	width: 173px;
+	height: 37px;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-position: center center;
+	margin-right: 22px;
+	@include breakpoint(xlarge) {
+		margin-left: 0px;
+		margin-right: 11px;
+		width: 100px;
+	}
+	@include breakpoint(medium) {
+		background-size:100%;
+		width:137px;
+	}
+	@include breakpoint(small) {
+		margin-left: 10px !important;
+		margin-top:9px;
+		background-position:0 3px;
+	}
+	@include breakpoint(x-small) {
+		background-image: url('../../../assets/images/mob-logo.png');
+		width: 42px !important;
+		height: 41px;
+		background-size: 100%;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+}
+
+.top_social_links {
+	li {
+		display: inline-block;
+		margin-right: 3px;
+		.social_link {
+			background-repeat: no-repeat;
+			background-position: center center;
+			text-decoration: none;
+			width: 20px;
+			height: 20px;
+			display: inline-block;
+			&.facebook_icon {
+				background-image: url('../images/social_sprite.png');
+				@include image-2x("../images/social_sprite@2x.png", 76px, 41px);	
+				background-position: 2px 0px;
+				&:hover, &:focus, &:active {
+					/* @include transition(all ease 0.5s); */
+					background-position: 2px -22px;
+				}
+			}
+			&.link_icon {
+				background-image: url('../images/social_sprite.png');
+				@include image-2x("../images/social_sprite@2x.png", 76px, 41px);	
+				background-position: -23px -1px;
+				&:hover, &:focus, &:active {
+					/* @include transition(all ease 0.5s); */
+					background-position: -23px -23px;
+				}
+			}
+			&.youtube_icon {
+				background-image: url('../images/social_sprite.png');
+				@include image-2x("../images/social_sprite@2x.png", 76px, 41px);	
+				background-position: -54px 0px;
+				&:hover, &:focus, &:active {
+					/* @include transition(all ease 0.5s); */
+					background-position: -54px -22px;
+				}
+			}
+		}
+	}
+}
+/* main navigation end */

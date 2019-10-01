@@ -1,0 +1,61 @@
+<% content_for :header do %> <span></span>
+<% end %>
+<% content_for :footer do %> <span></span>
+<% end %>
+<section class="expire_email_token">
+  <div class="container">
+    <div class="login_block">
+      <div class="login_block_inner signup_block">
+        <div class="login_logo"><a class="navbar-brand top_logo" href="<%= root_path %>"></a></div>
+        <div class="login_hding">
+          <span>Account Activation</span>
+        </div>
+        <div class="middle ng-scope">
+          <div class="messageBox-con">
+            <% if params[:flag].eql?("true") %>
+                <p class="ng-binding"><%= t('.email_activation') %>&nbsp;
+                  <% if !current_user.present? %>
+                      <a href="<%= signin_path %>" class="ng-binding login_now">Log In</a></p>
+                  <% end %>
+            <% else %>
+                <p class="ng-binding"><%= t('.email_activation') %>
+                  <a href="<%= signin_path %>" class="ng-binding login_now">Log In</a></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+</section>
+
+<!--<section class="login_footer">-->
+  <!--<div class="container">-->
+    <!--<div class="login_footer_links_sec">-->
+      <!--<ul>-->
+        <!--<li><%#= link_to 'Home', root_path, class: 'login_footer_links' %></li>-->
+        <!--<li><%#= link_to 'Support', supports_path, class: 'login_footer_links' %></li>-->
+        <!--<li class="dropdown custom_dropmenu language_dropdown">-->
+          <a class="dropdown-toggle" id="lang" data-toggle="dropdown" href="javascript:void(0)"><!--<i class="fa fa-globe" aria-hidden="true"></i> <%#= t('header.language') %>
+            <!--<span class="caret"></span>-->
+          <!--</a>-->
+          <!--<ul class="dropdown-menu">-->
+            <!--<%# %w(English Hindi Urdu Punjabi Tamil Telugu).each do |language| %>-->
+              <!--<li>-->
+               <!-- <label class="custom_check"> --> <%#= language %>
+                  <!--<input type="radio" checked="checked" name="radio">-->
+                  <!--<span class="checkmark"></span>-->
+                <!--</label>-->
+              <!--</li>-->
+            <!--<%# end %>-->
+          <!--</ul>-->
+        <!--</li>-->
+      <!--</ul>-->
+      <!--<p>© <%#= Time.zone.now.year %> ZINANCE.com. All Rights Reserved.</p>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</section>-->
+
+
+

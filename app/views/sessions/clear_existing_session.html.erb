@@ -1,0 +1,65 @@
+<% content_for :header do %> <span></span>
+<% end %>
+<% content_for :footer do %> <span></span>
+<% end %>
+<section class="expire_email_token" style="margin-top: 100px">
+  <div class="container">
+    <div class="login_block">
+      <div class="login_block_inner signup_block">
+        <div class="login_logo"><a class="navbar-brand top_logo" href="<%= root_path %>"></a></div>
+        <div class="login_hding" style="max-width: 100%;">
+          <span style="width: 75%;"><%= t('sessions.clear_existing_session.new1')%></span>
+        </div>
+        <div class="middle ng-scope">
+          <div class="messageBox-con">
+            <p class="ng-binding"> <%= t('sessions.clear_existing_session.new2')%><br>
+              <%= t('sessions.clear_existing_session.new3')%>   <br> <%= t('sessions.clear_existing_session.new4')%> <a href="<%= signin_path %>" class="ng-binding "style="color: #00aeef;"><%= t('sessions.clear_existing_session.new5')%> </a></p>
+
+          </div>
+        </div>
+
+          <tr>
+            <td>
+              <hr style="margin-top: 9px">
+              <table>
+                <tr>
+                  <td style="margin-bottom: 6px;display:  inline-block;color: #333;font-size: 14px;text-align: right;"><%= t('sessions.clear_existing_session.Location') %></td>
+                  <td style="margin-bottom: 6px; display:  inline-block; color: #333;font-size: 14px; text-align: left;"><%= @location %></td>
+                </tr>
+              </table>
+              <hr>
+                <table>
+                <tr>
+                  <td style="margin-bottom: 6px;display:  inline-block;color: #333;font-size: 14px;text-align: right;"><%= t('sessions.clear_existing_session.Ip_Address') %></td>
+                  <td style="margin-bottom: 6px; display:  inline-block; color: #333;font-size: 14px; text-align: left;"><%=  @ip_address %></td>
+                </tr>
+                </table>
+              <hr>
+                <table>
+                <tr>
+                  <td style="margin-bottom: 6px;display:  inline-block;color: #333;font-size: 14px;text-align: right;"><%= t('sessions.clear_existing_session.Device') %></td>
+                  <% if @is_devise %>
+                    <td style="margin-bottom: 10px; display:  inline-block; color: #333;font-size: 14px; text-align: left;"><%=  @user_agent %> </td>
+                  <% else %>
+                    <td style="margin-bottom: 10px; display:  inline-block; color: #333;font-size: 14px; text-align: left;"><%=  @user_agent %> V<%= @user_agent2 %> (<%= @user_agent1 %> )</td>
+                  <% end %>
+                </tr>
+              </table>
+
+              <hr>
+            </td>
+
+      </div>
+
+    </div>
+  </div>
+  </div>
+</section>
+<%= render 'shared/session_footer' %>
+<script type="text/javascript" charset="utf-8">
+    $('#lang').on('click', function(){
+        $(this).parent().toggleClass('open');
+    });
+</script>
+
+

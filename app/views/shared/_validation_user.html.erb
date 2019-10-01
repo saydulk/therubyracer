@@ -1,0 +1,66 @@
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function(){
+
+        $('#email_req').hide();
+        $('#invalid_email').hide();
+
+        $("#reset_password_email").keyup(function() {
+            email_text = $(this).val()
+            if(email_text.length){
+                $('#email_req').hide();
+                is_valid = validate_email(email_text)
+                if(is_valid){
+                    $('.reset_button').removeAttr('disabled');
+                    $('.reset_button').addClass('submit_enable');
+                }
+                else{
+                    $('.reset_button').attr("disabled", true);
+                    $('.reset_button').removeClass('submit_enable');
+                }
+            }
+        });
+
+        $("#reset_password_email").focusout(function() {
+            email_text = $(this).val()
+            if($(this).val().length){
+                $('#email_req').hide();
+                is_valid = validate_email(email_text)
+                if(is_valid){
+                    $('.reset_button').removeAttr('disabled');
+                    $('.reset_button').addClass('submit_enable');
+                }
+                else{
+                    $('.reset_button').attr("disabled", true);
+                    $('.reset_button').removeClass('submit_enable');
+
+                }
+                invalid_error_msg(is_valid)
+            }
+            else{
+                $('.reset_button').attr("disabled", true);
+                $('.reset_button').removeClass('submit_enable');
+                $('#email_req').show();
+                $('#invalid_email').hide();
+                $('#reset_password_email').addClass("reset_email");
+            }
+        })
+
+        function invalid_error_msg(is_valid){
+            if(is_valid){
+                $('#invalid_email').hide();
+                $('#reset_password_email').removeClass("reset_email");
+            }
+            else{
+                $('#reset_password_email').addClass("reset_email");
+                $('#invalid_email').show();
+            }
+        }
+
+        function validate_email(email_text) {
+            var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            return regex.test(email_text)
+        }
+
+    });
+
+</script>

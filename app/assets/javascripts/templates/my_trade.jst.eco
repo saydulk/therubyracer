@@ -1,0 +1,12 @@
+<% trend = formatter.trend @kind %>
+<tr class='<%= @classes %>'>
+  <td class='price <%= trend %>'><div>
+    <%- formatter.mask_fixed_price @price %>
+  </div></td>
+  <td class='volume text-right'><div>
+    <%- formatter.mask_fixed_volume @volume %>
+  </div></td>
+   <td colspan=2 class="time text-right"><div>
+      <%- formatter.trade_time @at %>
+    </div></td>
+</tr>

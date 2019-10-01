@@ -1,0 +1,35 @@
+<div id="transactions">
+  <div class="col-xs-12">
+    <div class="row">
+      <div class="table-responsive">
+        <table class="table table-condensed">
+        <thead>
+        <tr>
+          <th class="col-lg-2"><%= t('.status') %></th>
+          <th class="col-lg-1"><%= t('.coin') %></th>
+          <th class="col-lg-2"><%= t('.amount') %></th>
+          <th class="col-lg-2"><%= t('.timestamp') %></th>
+          <th class="col-lg-4"><%= t('.information') %></th>
+          <th class="col-lg-1 text-center">&nbsp;</th>
+
+
+        </tr>
+        </thead>
+        <tbody class="list">
+        <% if @withdraws.present? %>
+          <%= render partial: 'transaction', collection: @withdraws %>
+        <% else %>
+          <tr>
+            <td colspan="6">
+              <p class="text-center" style="padding: 10px 0px;"><span class="not_found_img"><%= image_tag("zups.png", size: "85x75",) %></span><%= t('.blank_withdraw') %></p></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+      </div>
+      <div class="pull-right">
+        <%= paginate @deposits %>
+      </div>
+    </div>
+</div>
+</div>

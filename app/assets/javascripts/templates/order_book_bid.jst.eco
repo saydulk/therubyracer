@@ -1,0 +1,15 @@
+<% percentage_change = formatter.percentage_color @price,@volume%>
+<tr style="background: -webkit-gradient(linear, left top, right top, color-stop(<%= percentage_change %>%,#fff), color-stop(<%= percentage_change %>%,rgba(112, 168, 0, 0.1)));
+               background: -moz-linear-gradient(left center, #fff <%= percentage_change %>%, rgba(112, 168, 0, 0.1) <%= percentage_change %>%);
+               background: -o-linear-gradient(left, #fff <%= percentage_change %>%, rgba(112, 168, 0, 0.1) <%= percentage_change %>%);
+               background: linear-gradient(to right, #fff <%= percentage_change %>%, rgba(112, 168, 0, 0.1) <%= percentage_change %>%);" data-order='<%= @index %>' data-price='<%= @price %>' data-volume='<%= @volume %>' class='<%= @classes %>'>
+  <td class='price text-left text-up'><a class="ask_val">
+    <%- formatter.mask_fixed_price @price %>
+  </a></td>
+  <td class='volume text-right '><a class="ask_val">
+    <%- formatter.mask_fixed_volume @volume %>
+  </a></td>
+  <td class='amount text-right'><a class="ask_val">
+    <%- formatter.round(formatter.amount(@volume, @price), 6) %>
+  </a></td>
+</tr>

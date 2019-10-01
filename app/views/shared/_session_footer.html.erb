@@ -1,0 +1,20 @@
+<section class="login_footer">
+  <div class="container">
+    <div class="login_footer_links_sec">
+      <ul>
+        <li><%= link_to  t('header.home'), root_path, class: 'login_footer_links' %></li>
+        <li><%= link_to t('header.support'), new_support_path, class: 'login_footer_links' %></li>
+        <li class="dropdown custom_dropmenu language_dropdown">
+          <a class="dropdown-toggle" id = "lang" data-toggle="dropdown" href="javascript:void(0)"><i class="fa fa-globe" aria-hidden="true"></i> <%= t('header.language') %>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+
+            <%= render partial: 'shared/language_list'%>
+          </ul>
+        </li>
+      </ul>
+      <p><%#= Time.zone.now.year %>©  2018 - 2019 BitCorex.com.  <%= t('header.All_Rights_Reserved') %></p>
+    </div>
+  </div>
+</section>

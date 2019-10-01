@@ -1,0 +1,46 @@
+<div class="market_value" id="market_order_book">
+  <div class="market_layout">
+    <div class="market_layout_block">
+      <div class="market_layout_block_left">
+        <ul>
+          <% %w(ask_bid bid ask).each_with_index do |val, index| %>
+            <li class="<%= index == 0 ? 'active' : '' %>">
+              <%= image_tag("#{val}.png", class: "book_layout", name: index)  %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="market_layout_block_right">
+        <div class="decimal_group">
+          <label><%= t('.group') %></label>
+          <%= select_tag 'decimal', options_for_select(@decimal_dropdown, @set_decimal), class: 'slct_box', id: 'decimal_drop_down' %>
+          <%#= decimal_select(@market[:quote_unit]) %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="book_order_title">
+    <table class="table">
+      <tr>
+        <th><%= t('.price', currency: @market[:quote_unit].upcase) %></th>
+        <th class="text-right"><%= t('.amount', currency: @market[:base_unit].upcase) %></th>
+        <th class="text-right"><%= t('.total', currency: @market[:quote_unit].upcase) %></th>
+      </tr>
+    </table>
+  </div>
+  <div class="market_ask">
+    <%= render partial: 'ask_book' %>
+  </div>
+  <div class="currency_latest_price">
+    <span class="last_price" id="last_price"></span>
+    <span class="currency_dollor_price" id="dollar_price"></span>
+    <span class="tower">
+         <%= image_tag("network.png") %>
+      </span>
+  </div>
+  <div class="market_bid">
+    <%= render partial: 'bid_book' %>
+  </div>
+</div>
+
+

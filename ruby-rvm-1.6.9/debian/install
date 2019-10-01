@@ -1,0 +1,2 @@
+debian/rvmrc etc
+debian/rvm.sh etc/profile.d

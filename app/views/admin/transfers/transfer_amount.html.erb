@@ -1,0 +1,150 @@
+<ul class="nav navbar-nav navbar-right back_button_sec">
+  <li><%= link_to t('actions.back'), main_app.admin_wallets_path %></li>
+</ul>
+
+<h3>Transfer info</h3>
+
+
+  <div class="card-deck">
+
+    <div class="card">
+      <div class="card-body">
+        <div class="form-group">
+          <label>Currency Id</label>
+          <%= select_tag 'currency_id', options_from_collection_for_select(@currency,:code_text,:code_text) , {class: 'form-control mb-3'} %>
+
+          <label>Wallet Address</label>
+          <%= text_field_tag  'wallet_address', '', class: 'form-control mb-3' %>
+
+          <label>Cold Wallet Address</label>
+          <%= text_field_tag  'cold_wallet_address', '', class: 'form-control mb-3' %>
+
+          <label>Amount</label>
+          <%= text_field_tag  'amount', '', class: 'form-control mb-3' %>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <%= button_tag 'Submit', class: 'btn btn-primary btn-lg mt-3 transfer',id: 'transfer',style: 'margin-bottom: 15px;',onclick: "myFunction()" %>
+
+<div class="transfer-withdrawl">
+  <%= render partial: 'transfer_withdrawl',locals: {transfers: @transfer} %>
+
+</div>
+
+<%= render partial: "google_auth_disable" %>
+
+<script>
+    $('#authgoogleModal').modal('hide');
+    $('#authgoogleVerify').modal('hide');
+    var check_google_code = "false";
+    var google_auth = "<%= current_user.enable? %>";
+    function myFunction() {
+        var issuer = $('#wallet_address').val();
+        var receipent = $('#cold_wallet_address').val();
+        var currency =  $('#currency_id').val();
+        var amount =  $('#amount').val();
+
+        if(google_auth == 'false'){
+
+            $('#authgoogleModal').modal('show');
+            return false;
+        }
+
+
+        if (issuer == "")
+        {
+
+            window.alert("Please enter your Wallet Address.");
+            $('#wallet_address').focus();
+            return false;
+        }
+        if (receipent == "")
+        {
+            window.alert("Please enter your Cold Wallet Address.");
+            $('#cold_wallet_address').focus();
+            return false;
+        }
+
+        if (amount == "")
+        {
+            window.alert("Please enter your amount.");
+            $('#amount').focus();
+            return false;
+        }
+
+        if(google_auth == 'true'){
+
+            if(check_google_code != 'true'){
+                $('#authgoogleVerify').modal('show');
+                return false;
+            }
+
+        }
+            $.ajax({
+                url: '<%= admin_withdrawl_path %>',
+                data: {currency_id: currency.toLowerCase(),issuer_address:issuer,receipent_address: receipent,amount: amount},
+                datatype: 'json',
+                method: 'GET',
+                success: function() {
+                  check_google_code = "false"
+                }
+            });
+
+        $('#wallet_address').val('');
+        $('#cold_wallet_address').val('');
+        $('#amount').val('');
+
+    }
+
+    $(document).ready(function(){
+
+        $('#submit_button').click(function(){
+            $('#error_msg').text();
+            var google_code =  $('#google_code').val()
+            if( google_code.length > 0 ){
+
+                $.ajax({
+                    type: "GET",
+                    url: '<%= admin_verify_auth_path %>',
+                    data: { google_code: google_code },
+                    dataType: 'script',
+                    success: function(data) {
+                        check_google_code = data
+                        if( data == "true"){
+                            $('#authgoogleVerify').modal('hide');
+                            myFunction();
+                        }
+                        else{
+                            $('#error_msg').text(" Entered Otp code is wrong");
+                        }
+                    }
+                });
+
+            }
+        });
+
+        $("#google_code").keydown(function (e) {
+            // Allow: backspace, delete, tab, escape, enter and .
+            if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110]) !== -1 ||
+                // Allow: Ctrl+A, Command+A
+                (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+                // Allow: home, end, left, right, down, up
+                (e.keyCode >= 35 && e.keyCode <= 40)) {
+                // let it happen, don't do anything
+                return;
+            }
+            // Ensure that it is a number and stop the keypress
+            if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                e.preventDefault();
+            }
+        });
+
+
+    });
+
+</script>
+

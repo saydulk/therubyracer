@@ -1,0 +1,53 @@
+ <div class="table-responsihUZQtiCP5qbqWT1xve total_balance">
+     <table class="table">
+         <tr>
+             <td>{{"funds.deposit_coin.total_balance" | t}}</td>
+             <td>{{ total_balance(account.balance, account.locked) | number : deposit_channel.fixed }} {{account.currency | uppercase}} </td>
+         </tr>
+         <tr>
+             <td>{{"funds.deposit_coin.in_order" | t}}</td>
+             <td>{{ account.locked | number : deposit_channel.fixed }} {{account.currency | uppercase}} </td>
+         </tr>
+         <tr>
+             <td>{{"funds.deposit_coin.available_balance" | t}}</td>
+             <td>{{ account.balance | number : deposit_channel.fixed}} {{account.currency | uppercase}} </td>
+             <!--<td class="text-right"><a href="javascript:Void(0)"><i class="fa fa-info"></i>{{"funds.deposit_coin.what" | t}} {{account.currency | uppercase}}?</a></td>-->
+         </tr>
+     </table>
+ </div>
+ <div class="importants">
+     <strong>{{"funds.deposit_coin.important" | t}}</strong>
+     <ul class="imp_notes">
+         <li>{{"funds.deposit_coin.max" | t}} {{minval}} {{account.currency | uppercase}}</li>
+         <li>{{"funds.deposit_coin.send_only" | t}} <b>{{account.currency | uppercase}}</b>  {{"funds.deposit_coin.deposit_address" | t}} {{"funds.deposit_coin.other_coin_text" | t}}</li>
+     </ul>
+     <div class="depositAddress">
+         <div ng-if="currency == 'xrp' && proceed_accepted">
+             <strong>{{account.currency | uppercase}} Deposit Tag </strong>
+         </div>
+         <div ng-if="currency == 'xmr'">
+         <strong> {{account.currency | uppercase}} Deposit Payment ID </strong> </div>
+         <ng-include src="'/templates/funds/_address.html'"></ng-include>
+     </div>
+     <div ng-if= " currency=='xrp' && !proceed_accepted ">
+         <div class="alert alert-danger" style="border: 1px solid #FF001E;" >
+             <ul>
+                 <li style="width: 6%;float: left;">
+                     <span class="fa fa-exclamation-triangle"></span>
+                 </li>
+                 <li style="width: 94%;float: right;">
+                     Notice:Both a Tag and an Address are required to successfully deposit your XRP to Coinchel
+                 </li>
+             </ul>
+
+         </div>
+         <div style="margin-top: 10px; position: relative">
+             <input id="terms_xrp"  class="term_box" type="checkbox" style="margin: 3.5px 0 0;" ng-change="xrp_terms(checkStatus)" ng-model="checkboxterms.value1"/>
+                <h6 class="h6">I understand that deposits without a Tag will be lost.</h6>
+             <button type="button" class=" btn buttons " ng-disabled="proceed_btn" ng-click="proceed_xrp()">Continue Deposit »</button>
+         </div>
+     </div>
+ </div>
+
+
+

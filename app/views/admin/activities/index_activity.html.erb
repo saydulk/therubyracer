@@ -1,0 +1,28 @@
+<%= render 'admin/back_admin' %>
+<div class="activity">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <span><%= "Member Activity" %>
+        <%= link_to 'Download CSV', admin_csv_activity_path(format: :csv), class: 'pull-right summary_download_btn' %>
+      </span>
+    </div>
+
+    <table id="activity_datatable" class="table table-condensed table-hover" data-source="<%= admin_activity_path(format: :json) %>">
+      <thead>
+      <tr>
+        <th> IP Address </th>
+        <th> User Email </th>
+        <th> Signin Time </th>
+        <th> Action </th>
+      </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+
+

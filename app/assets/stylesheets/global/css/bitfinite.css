@@ -1,0 +1,1626 @@
+/* Fonts*/
+/* color */
+/* Width */
+/* border-radius */
+/* Placeholder */
+/* Box Sizing */
+/* box-shadow */
+/* text-shadow */
+/* @mixin text-shadow($text-shadow) {
+  -webkit-text-shadow: $text-shadow;
+     -moz-text-shadow: $text-shadow;
+          text-shadow: $box-shadow;
+} */
+/* breakpoints */
+/* Retina */
+/* transition */
+/* ===== transformation ===== */
+/* rotate */
+/* scale */
+/* translate */
+/* skew */
+/* transform origin */
+/* ===== transformation Ends ===== */
+/* line 2, ../scss/base/_base.scss */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+/* line 6, ../scss/base/_base.scss */
+section {
+  overflow-x: hidden;
+}
+
+/* line 9, ../scss/base/_base.scss */
+.btn.active:focus, .btn.focus:active, .btn:active:focus, .btn:focus {
+  outline: 0px;
+  outline-offset: -2px;
+  -webkit-appearance: none;
+}
+
+/* line 14, ../scss/base/_base.scss */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  /* -webkit-text-fill-color: #ffffff !important; */
+}
+
+/* line 18, ../scss/base/_base.scss */
+a, button {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+  -webkit-appearance: none;
+  text-decoration: none;
+  font-size: 14px;
+}
+/* line 25, ../scss/base/_base.scss */
+a:hover, a:active, a:focus, button:hover, button:active, button:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+/* line 30, ../scss/base/_base.scss */
+input, textarea {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  outline: none !important;
+  -webkit-appearance: none;
+}
+
+/* line 35, ../scss/base/_base.scss */
+img {
+  max-width: 100%;
+}
+
+/* line 38, ../scss/base/_base.scss */
+ul, li {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* line 43, ../scss/base/_base.scss */
+h1, h2, h3, h4, h5, h6, p {
+  padding: 0px;
+  margin: 0px;
+}
+
+/* line 47, ../scss/base/_base.scss */
+p {
+  font-size: 14px;
+}
+
+/* line 50, ../scss/base/_base.scss */
+.noPadd {
+  padding: 0 !important;
+}
+
+/* line 53, ../scss/base/_base.scss */
+.noMarg {
+  margin: 0 !important;
+}
+
+/* line 56, ../scss/base/_base.scss */
+hr {
+  background: #dadada;
+  border: medium none;
+  display: block;
+  float: left;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* line 66, ../scss/base/_base.scss */
+.modal-backdrop.in {
+  opacity: 0.65;
+}
+
+/* line 69, ../scss/base/_base.scss */
+.modal-backdrop {
+  background-color: #3a3a3a;
+  z-index: 1090;
+}
+
+/* line 73, ../scss/base/_base.scss */
+.modal {
+  z-index: 1091;
+}
+/* line 75, ../scss/base/_base.scss */
+.modal .modal-content {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  border-radius: 20px;
+}
+
+/* line 1, ../scss/modules/_bitfinite.scss */
+html {
+  height: 100%;
+}
+
+/* line 4, ../scss/modules/_bitfinite.scss */
+body {
+  min-height: 100%;
+}
+/* line 8, ../scss/modules/_bitfinite.scss */
+body.mini-sidebar #main-wrapper .page-wrapper {
+  width: calc(100% - 60px);
+  /* 991 px*/
+}
+@media (max-width: 991px) {
+  /* line 8, ../scss/modules/_bitfinite.scss */
+  body.mini-sidebar #main-wrapper .page-wrapper {
+    width: 100%;
+  }
+}
+/* line 16, ../scss/modules/_bitfinite.scss */
+body #main-wrapper {
+  height: 100%;
+  min-height: 100vh !important;
+  float: left;
+  width: 100%;
+}
+/* line 21, ../scss/modules/_bitfinite.scss */
+body #main-wrapper .left-sidebar {
+  box-shadow: none !important;
+}
+/* line 24, ../scss/modules/_bitfinite.scss */
+body #main-wrapper .page-wrapper {
+  height: 100%;
+  min-height: 100vh !important;
+  float: left;
+  position: relative;
+  width: calc(100% - 240px);
+  box-shadow: 0px 0px 1px #ddd;
+  border-left: solid 1px #ddd;
+  /* 991 px*/
+  /* 767 px*/
+}
+@media (max-width: 991px) {
+  /* line 24, ../scss/modules/_bitfinite.scss */
+  body #main-wrapper .page-wrapper {
+    width: calc(100% - 60px);
+  }
+}
+@media (max-width: 767px) {
+  /* line 24, ../scss/modules/_bitfinite.scss */
+  body #main-wrapper .page-wrapper {
+    padding-top: 60px;
+  }
+}
+/* line 38, ../scss/modules/_bitfinite.scss */
+body #main-wrapper .page-wrapper > .container-fluid {
+  height: 100%;
+  float: left;
+}
+
+/* line 45, ../scss/modules/_bitfinite.scss */
+.error_msg {
+  color: #f00;
+}
+
+/* line 48, ../scss/modules/_bitfinite.scss */
+.topbar {
+  z-index: 1001;
+}
+
+/* line 51, ../scss/modules/_bitfinite.scss */
+.footer {
+  width: 100%;
+  left: 0px !important;
+}
+
+/* line 56, ../scss/modules/_bitfinite.scss */
+.comn_box_shadow {
+  -webkit-box-shadow: 0px 0px 3.8px 1.2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 0px 3.8px 1.2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 3.8px 1.2px rgba(0, 0, 0, 0.1);
+}
+
+/* line 59, ../scss/modules/_bitfinite.scss */
+.bitfinite_page {
+  padding: 30px 15px;
+}
+
+/* line 62, ../scss/modules/_bitfinite.scss */
+.bsf_usd {
+  padding: 20px 25px;
+}
+
+/* line 65, ../scss/modules/_bitfinite.scss */
+.bsf_contnt_left {
+  display: table;
+  width: 100%;
+}
+/* line 68, ../scss/modules/_bitfinite.scss */
+.bsf_contnt_left .bsf_img {
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+  width: 60px;
+  text-align: center;
+}
+/* line 75, ../scss/modules/_bitfinite.scss */
+.bsf_contnt_left .bsf_info {
+  display: table-cell;
+  float: none;
+  vertical-align: middle;
+}
+/* line 79, ../scss/modules/_bitfinite.scss */
+.bsf_contnt_left .bsf_info h2 {
+  font-size: 15px;
+  color: #2cc2e1;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 600;
+  margin-bottom: 5px;
+  line-height: 15px;
+}
+/* line 87, ../scss/modules/_bitfinite.scss */
+.bsf_contnt_left .bsf_info p {
+  color: #999999;
+  font-size: 15px;
+}
+
+/* line 93, ../scss/modules/_bitfinite.scss */
+.graph_sec {
+  margin: 30px 0;
+  padding: 20px;
+}
+
+/* line 98, ../scss/modules/_bitfinite.scss */
+.summary_sec .summary_sec_left {
+  /* 1199 px*/
+}
+@media (max-width: 1199px) {
+  /* line 98, ../scss/modules/_bitfinite.scss */
+  .summary_sec .summary_sec_left {
+    float: left;
+    width: 100%;
+    max-width: 100%;
+    flex: 100%;
+  }
+}
+/* line 105, ../scss/modules/_bitfinite.scss */
+.summary_sec .summary_sec_left:last-child {
+  /* 1199 px*/
+}
+@media (max-width: 1199px) {
+  /* line 105, ../scss/modules/_bitfinite.scss */
+  .summary_sec .summary_sec_left:last-child {
+    margin-top: 30px;
+  }
+}
+/* line 110, ../scss/modules/_bitfinite.scss */
+.summary_sec .summary_sec_left .comn_box_shadow {
+  padding: 30px;
+  display: inline-block;
+  width: 100%;
+  min-height: 430px;
+  /* 1199 px*/
+}
+@media (max-width: 1199px) {
+  /* line 110, ../scss/modules/_bitfinite.scss */
+  .summary_sec .summary_sec_left .comn_box_shadow {
+    padding: 20px;
+  }
+}
+/* line 118, ../scss/modules/_bitfinite.scss */
+.summary_sec .summary_sec_left .comn_box_shadow h2 {
+  color: #1a86e1;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+/* line 127, ../scss/modules/_bitfinite.scss */
+.summary_sec .summary_sec_left .comn_box_shadow ul.summary_details.sample2 {
+  width: 50%;
+  float: left;
+  padding-right: 50px;
+  /* 991 px*/
+}
+@media (max-width: 991px) {
+  /* line 127, ../scss/modules/_bitfinite.scss */
+  .summary_sec .summary_sec_left .comn_box_shadow ul.summary_details.sample2 {
+    width: 100%;
+    padding-right: 0px;
+  }
+}
+/* line 135, ../scss/modules/_bitfinite.scss */
+.summary_sec .summary_sec_left .comn_box_shadow ul.summary_details.sample2:last-child {
+  padding-right: 0px;
+}
+/* line 139, ../scss/modules/_bitfinite.scss */
+.summary_sec .summary_sec_left .comn_box_shadow ul.summary_details li {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: solid 1px #ddd;
+  float: left;
+}
+/* line 145, ../scss/modules/_bitfinite.scss */
+.summary_sec .summary_sec_left .comn_box_shadow ul.summary_details li:first-child {
+  border-top: solid 1px #ddd;
+}
+/* line 148, ../scss/modules/_bitfinite.scss */
+.summary_sec .summary_sec_left .comn_box_shadow ul.summary_details li .average_Sec {
+  display: table;
+  width: 100%;
+}
+/* line 151, ../scss/modules/_bitfinite.scss */
+.summary_sec .summary_sec_left .comn_box_shadow ul.summary_details li .average_Sec .average_left {
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+}
+/* line 155, ../scss/modules/_bitfinite.scss */
+.summary_sec .summary_sec_left .comn_box_shadow ul.summary_details li .average_Sec .average_left p {
+  color: #696969;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+/* line 161, ../scss/modules/_bitfinite.scss */
+.summary_sec .summary_sec_left .comn_box_shadow ul.summary_details li .average_Sec .average_right {
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+  text-align: right;
+}
+/* line 166, ../scss/modules/_bitfinite.scss */
+.summary_sec .summary_sec_left .comn_box_shadow ul.summary_details li .average_Sec .average_right p {
+  color: #999;
+  font-size: 14px;
+}
+/* line 169, ../scss/modules/_bitfinite.scss */
+.summary_sec .summary_sec_left .comn_box_shadow ul.summary_details li .average_Sec .average_right p .bitcoin_icon {
+  background-image: url("../images/bitcoin.png");
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: -3px;
+}
+/* line 185, ../scss/modules/_bitfinite.scss */
+.summary_sec .summary_sec_left .comn_box_shadow ul.nav-tabs .nav-item {
+  margin-bottom: 0px;
+}
+/* line 187, ../scss/modules/_bitfinite.scss */
+.summary_sec .summary_sec_left .comn_box_shadow ul.nav-tabs .nav-item a {
+  border-radius: 3px;
+  border: solid 1px #ddd;
+  margin-right: 5px;
+  color: #999999;
+  font-size: 13px;
+  font-weight: 500;
+}
+/* line 194, ../scss/modules/_bitfinite.scss */
+.summary_sec .summary_sec_left .comn_box_shadow ul.nav-tabs .nav-item a.active {
+  border: solid 1px #1a86e1;
+  background-color: #1a86e1;
+  color: #fff;
+}
+
+/* line 207, ../scss/modules/_bitfinite.scss */
+.nav-tabs .nav-item {
+  margin-bottom: 0px;
+}
+/* line 209, ../scss/modules/_bitfinite.scss */
+.nav-tabs .nav-item a {
+  border-radius: 3px;
+  border: solid 1px #ddd;
+  margin-right: 5px;
+  color: #999999;
+  font-size: 13px;
+  font-weight: 500;
+}
+/* line 216, ../scss/modules/_bitfinite.scss */
+.nav-tabs .nav-item a.active {
+  border: solid 1px #1a86e1;
+  background-color: #1a86e1;
+  color: #fff;
+}
+
+/* line 224, ../scss/modules/_bitfinite.scss */
+.page-titles .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+  content: "/";
+}
+
+/* line 227, ../scss/modules/_bitfinite.scss */
+.buy_order_sect {
+  float: left;
+  margin-top: 10px;
+  width: 100%;
+}
+/* line 231, ../scss/modules/_bitfinite.scss */
+.buy_order_sect .form-group {
+  display: table;
+  width: 100%;
+  margin-bottom: 10px;
+}
+/* line 235, ../scss/modules/_bitfinite.scss */
+.buy_order_sect .form-group .form-label {
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+  width: 200px;
+  padding-right: 15px;
+  /* 767 px*/
+}
+@media (max-width: 767px) {
+  /* line 235, ../scss/modules/_bitfinite.scss */
+  .buy_order_sect .form-group .form-label {
+    width: 100%;
+    float: left;
+  }
+}
+/* line 245, ../scss/modules/_bitfinite.scss */
+.buy_order_sect .form-group .form-label .col-form-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #999;
+}
+/* line 250, ../scss/modules/_bitfinite.scss */
+.buy_order_sect .form-group .form-label .get_free {
+  background-color: #1a86e1;
+  color: #fff;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  border-radius: 100px;
+  padding: 4px 20px;
+  font-size: 13px;
+  float: right;
+  /* 1199 px*/
+}
+@media (max-width: 1199px) {
+  /* line 250, ../scss/modules/_bitfinite.scss */
+  .buy_order_sect .form-group .form-label .get_free {
+    float: left;
+    margin-bottom: 10px;
+  }
+}
+/* line 263, ../scss/modules/_bitfinite.scss */
+.buy_order_sect .form-group .form_input_sec {
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+  /* 1199 px*/
+}
+@media (max-width: 1199px) {
+  /* line 263, ../scss/modules/_bitfinite.scss */
+  .buy_order_sect .form-group .form_input_sec {
+    width: 100%;
+    float: left;
+  }
+}
+/* line 271, ../scss/modules/_bitfinite.scss */
+.buy_order_sect .form-group .form_input_sec .btn-group {
+  width: 100%;
+}
+/* line 273, ../scss/modules/_bitfinite.scss */
+.buy_order_sect .form-group .form_input_sec .btn-group input {
+  width: calc(100% - 115px);
+}
+/* line 276, ../scss/modules/_bitfinite.scss */
+.buy_order_sect .form-group .form_input_sec .btn-group .blue_btn {
+  margin-left: 15px;
+}
+/* line 280, ../scss/modules/_bitfinite.scss */
+.buy_order_sect .form-group .form_input_sec input {
+  font-size: 14px;
+}
+/* line 284, ../scss/modules/_bitfinite.scss */
+.buy_order_sect .form-group .form_input_sec .input-group .input-group-addon {
+  background-color: #1a86e1;
+}
+
+/* line 291, ../scss/modules/_bitfinite.scss */
+.blue_btn {
+  background-color: #1a86e1;
+  border-color: #1a86e1;
+  border-radius: 3px !important;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+}
+
+/* line 300, ../scss/modules/_bitfinite.scss */
+.cancel_btn {
+  background-color: #999;
+  border-color: #999;
+  color: #fff;
+}
+/* line 304, ../scss/modules/_bitfinite.scss */
+.cancel_btn:hover, .cancel_btn:focus, .cancel_btn:active {
+  background-color: #fff;
+  border-color: #999;
+  color: #333;
+}
+
+/* line 310, ../scss/modules/_bitfinite.scss */
+.purple_btn {
+  background-color: #7460ee;
+  border-color: #7460ee;
+  border-radius: 3px !important;
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+}
+
+/* line 319, ../scss/modules/_bitfinite.scss */
+.Buying_orders {
+  margin: 30px 0px 0px;
+  float: left;
+  width: 100%;
+  /* 767 px*/
+}
+@media (max-width: 767px) {
+  /* line 319, ../scss/modules/_bitfinite.scss */
+  .Buying_orders {
+    padding: 0px;
+  }
+}
+/* line 326, ../scss/modules/_bitfinite.scss */
+.Buying_orders .comn_box_shadow {
+  padding: 30px;
+  float: left;
+  width: 100%;
+}
+/* line 331, ../scss/modules/_bitfinite.scss */
+.Buying_orders h2 {
+  color: #1a86e1;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+/* line 338, ../scss/modules/_bitfinite.scss */
+.Buying_orders table {
+  margin-bottom: 0;
+}
+/* line 341, ../scss/modules/_bitfinite.scss */
+.Buying_orders table tr th {
+  color: #696969;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 400;
+  border-top: solid 1px #f3f1f1;
+}
+/* line 348, ../scss/modules/_bitfinite.scss */
+.Buying_orders table tr td {
+  color: #999;
+  font-size: 14px;
+  font-weight: 400;
+}
+/* line 353, ../scss/modules/_bitfinite.scss */
+.Buying_orders table tr .comn_tbl_btn {
+  background-color: #1a86e1;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  -moz-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+/* line 360, ../scss/modules/_bitfinite.scss */
+.Buying_orders table tr .comn_tbl_btn:hover, .Buying_orders table tr .comn_tbl_btn:focus, .Buying_orders table tr .comn_tbl_btn:active {
+  background-color: #333;
+  -moz-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  color: #fff;
+}
+/* line 367, ../scss/modules/_bitfinite.scss */
+.Buying_orders table tr:last-child td {
+  border-bottom: solid 1px #f3f1f1;
+}
+
+/* line 375, ../scss/modules/_bitfinite.scss */
+.open_order_tbl .tab-pane {
+  padding: 20px;
+}
+/* line 377, ../scss/modules/_bitfinite.scss */
+.open_order_tbl .tab-pane .table-responsive {
+  border: solid 1px #f3f1f1;
+}
+
+/* line 385, ../scss/modules/_bitfinite.scss */
+.sidebar-nav li.active a {
+  font-weight: 400 !important;
+}
+/* line 388, ../scss/modules/_bitfinite.scss */
+.sidebar-nav li.active a .comn_left_icon.bitfinite {
+  background-position: 0 -31px;
+}
+/* line 391, ../scss/modules/_bitfinite.scss */
+.sidebar-nav li.active a .comn_left_icon.wallets {
+  background-position: 0 -31px;
+}
+/* line 394, ../scss/modules/_bitfinite.scss */
+.sidebar-nav li.active a .comn_left_icon.profile {
+  background-position: 0 -31px;
+}
+/* line 397, ../scss/modules/_bitfinite.scss */
+.sidebar-nav li.active a .comn_left_icon.setting {
+  background-position: 0 -31px;
+}
+/* line 400, ../scss/modules/_bitfinite.scss */
+.sidebar-nav li.active a .comn_left_icon.logout {
+  background-position: 0 -31px;
+}
+/* line 406, ../scss/modules/_bitfinite.scss */
+.sidebar-nav li a {
+  font-weight: 400;
+}
+/* line 408, ../scss/modules/_bitfinite.scss */
+.sidebar-nav li a:hover, .sidebar-nav li a:focus, .sidebar-nav li a:active {
+  background-color: #2cc2e1;
+  color: #fff !important;
+}
+/* line 412, ../scss/modules/_bitfinite.scss */
+.sidebar-nav li a:hover .comn_left_icon.bitfinite, .sidebar-nav li a:focus .comn_left_icon.bitfinite, .sidebar-nav li a:active .comn_left_icon.bitfinite {
+  background-position: 0 -31px;
+}
+/* line 415, ../scss/modules/_bitfinite.scss */
+.sidebar-nav li a:hover .comn_left_icon.wallets, .sidebar-nav li a:focus .comn_left_icon.wallets, .sidebar-nav li a:active .comn_left_icon.wallets {
+  background-position: 0 -31px;
+}
+/* line 418, ../scss/modules/_bitfinite.scss */
+.sidebar-nav li a:hover .comn_left_icon.profile, .sidebar-nav li a:focus .comn_left_icon.profile, .sidebar-nav li a:active .comn_left_icon.profile {
+  background-position: 0 -31px;
+}
+/* line 421, ../scss/modules/_bitfinite.scss */
+.sidebar-nav li a:hover .comn_left_icon.setting, .sidebar-nav li a:focus .comn_left_icon.setting, .sidebar-nav li a:active .comn_left_icon.setting {
+  background-position: 0 -31px;
+}
+/* line 424, ../scss/modules/_bitfinite.scss */
+.sidebar-nav li a:hover .comn_left_icon.logout, .sidebar-nav li a:focus .comn_left_icon.logout, .sidebar-nav li a:active .comn_left_icon.logout {
+  background-position: 0 -31px;
+}
+/* line 431, ../scss/modules/_bitfinite.scss */
+.sidebar-nav .comn_left_icon {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  margin-bottom: -7px;
+  margin-right: 10px;
+}
+/* line 439, ../scss/modules/_bitfinite.scss */
+.sidebar-nav .comn_left_icon.bitfinite {
+  background-image: url("../images/left_nav_icon2.png");
+}
+/* line 442, ../scss/modules/_bitfinite.scss */
+.sidebar-nav .comn_left_icon.wallets {
+  background-image: url("../images/left_nav_icon1.png");
+}
+/* line 445, ../scss/modules/_bitfinite.scss */
+.sidebar-nav .comn_left_icon.profile {
+  background-image: url("../images/left_nav_icon3.png");
+}
+/* line 448, ../scss/modules/_bitfinite.scss */
+.sidebar-nav .comn_left_icon.setting {
+  background-image: url("../images/left_nav_icon5.png");
+}
+/* line 451, ../scss/modules/_bitfinite.scss */
+.sidebar-nav .comn_left_icon.logout {
+  background-image: url("../images/left_nav_icon4.png");
+}
+
+/* line 459, ../scss/modules/_bitfinite.scss */
+.withdrawal_Sec {
+  padding: 30px 15px;
+}
+/* line 461, ../scss/modules/_bitfinite.scss */
+.withdrawal_Sec .withdrawal_outer {
+  /* 991 px*/
+}
+@media (max-width: 991px) {
+  /* line 461, ../scss/modules/_bitfinite.scss */
+  .withdrawal_Sec .withdrawal_outer {
+    margin-bottom: 30px;
+  }
+}
+/* line 466, ../scss/modules/_bitfinite.scss */
+.withdrawal_Sec .withdrawal {
+  background-color: #fff;
+  padding: 0px;
+  width: 100%;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+}
+/* line 471, ../scss/modules/_bitfinite.scss */
+.withdrawal_Sec .withdrawal .withdrwl_hdr {
+  padding: 10px 20px;
+  display: table;
+  width: 100%;
+  background-color: #2f3d4a;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+/* line 478, ../scss/modules/_bitfinite.scss */
+.withdrawal_Sec .withdrawal .withdrwl_hdr .withdrwl_hdr_left {
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+}
+/* line 482, ../scss/modules/_bitfinite.scss */
+.withdrawal_Sec .withdrawal .withdrwl_hdr .withdrwl_hdr_left p {
+  color: #fff;
+  font-weight: 400;
+  font-size: 18px;
+  /* 767 px*/
+}
+@media (max-width: 767px) {
+  /* line 482, ../scss/modules/_bitfinite.scss */
+  .withdrawal_Sec .withdrawal .withdrwl_hdr .withdrwl_hdr_left p {
+    font-size: 14px;
+  }
+}
+/* line 491, ../scss/modules/_bitfinite.scss */
+.withdrawal_Sec .withdrawal .withdrwl_hdr .withdrwl_hdr_right {
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+  text-align: right;
+}
+/* line 497, ../scss/modules/_bitfinite.scss */
+.withdrawal_Sec .withdrawal .withdrwl_hdr .withdrwl_hdr_right p b {
+  color: #fc4b6c;
+  font-weight: 700;
+  font-size: 18px;
+  /* 767 px*/
+}
+@media (max-width: 767px) {
+  /* line 497, ../scss/modules/_bitfinite.scss */
+  .withdrawal_Sec .withdrawal .withdrwl_hdr .withdrwl_hdr_right p b {
+    font-size: 14px;
+  }
+}
+/* line 508, ../scss/modules/_bitfinite.scss */
+.withdrawal_Sec .withdrawal .withdrwl_body {
+  padding: 30px;
+  display: inline-block;
+  width: 100%;
+  /* 767 px*/
+}
+@media (max-width: 767px) {
+  /* line 508, ../scss/modules/_bitfinite.scss */
+  .withdrawal_Sec .withdrawal .withdrwl_body {
+    padding: 20px;
+  }
+}
+/* line 515, ../scss/modules/_bitfinite.scss */
+.withdrawal_Sec .withdrawal .withdrwl_body .note_sec {
+  float: left;
+  width: 100%;
+}
+/* line 518, ../scss/modules/_bitfinite.scss */
+.withdrawal_Sec .withdrawal .withdrwl_body .note_sec p {
+  font-size: 15px;
+}
+/* line 523, ../scss/modules/_bitfinite.scss */
+.withdrawal_Sec .withdrawal .withdrwl_body form .form-group {
+  float: left;
+  width: 100%;
+}
+/* line 526, ../scss/modules/_bitfinite.scss */
+.withdrawal_Sec .withdrawal .withdrwl_body form .form-group label {
+  float: left;
+  width: 100%;
+}
+/* line 534, ../scss/modules/_bitfinite.scss */
+.withdrawal_Sec .withdrawal .withdrwl_body .btc_form .form-group:last-child {
+  margin-bottom: 0px;
+  /* 767 px*/
+}
+@media (max-width: 767px) {
+  /* line 534, ../scss/modules/_bitfinite.scss */
+  .withdrawal_Sec .withdrawal .withdrwl_body .btc_form .form-group:last-child {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 575px) {
+  /* line 540, ../scss/modules/_bitfinite.scss */
+  .withdrawal_Sec .withdrawal .withdrwl_body .btc_form .form-group .date_flds {
+    margin-bottom: 10px;
+  }
+}
+/* line 545, ../scss/modules/_bitfinite.scss */
+.withdrawal_Sec .withdrawal .withdrwl_body .btc_form .form-group label {
+  width: 100%;
+}
+/* line 548, ../scss/modules/_bitfinite.scss */
+.withdrawal_Sec .withdrawal .withdrwl_body .btc_form .form-group p {
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+/* line 557, ../scss/modules/_bitfinite.scss */
+.star {
+  color: #fc4b6c;
+}
+
+/* line 561, ../scss/modules/_bitfinite.scss */
+.myselect .btn {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+/* line 564, ../scss/modules/_bitfinite.scss */
+.myselect .btn:focus {
+  outline: none;
+}
+
+/* line 569, ../scss/modules/_bitfinite.scss */
+.bootstrap-select .dropdown-toggle:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* line 573, ../scss/modules/_bitfinite.scss */
+.bar_code_Sec {
+  float: left;
+  width: 100%;
+}
+/* line 576, ../scss/modules/_bitfinite.scss */
+.bar_code_Sec .bar_code {
+  margin: 30px auto;
+  float: none;
+  text-align: center;
+}
+/* line 581, ../scss/modules/_bitfinite.scss */
+.bar_code_Sec p {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+/* line 588, ../scss/modules/_bitfinite.scss */
+.UniqueCode {
+  margin: 20px 0;
+  text-align: center;
+  padding: 20px;
+  display: inline-block;
+  width: 100%;
+}
+/* line 594, ../scss/modules/_bitfinite.scss */
+.UniqueCode p {
+  margin-bottom: 15px;
+}
+/* line 597, ../scss/modules/_bitfinite.scss */
+.UniqueCode .blue_btn {
+  width: 100%;
+}
+
+/* line 601, ../scss/modules/_bitfinite.scss */
+.profil_page {
+  padding: 0px;
+}
+
+/* line 604, ../scss/modules/_bitfinite.scss */
+.doc_sec {
+  margin-top: 30px;
+  /* 1280 px*/
+}
+@media (max-width: 1280px) {
+  /* line 604, ../scss/modules/_bitfinite.scss */
+  .doc_sec {
+    margin-top: 20px;
+    float: left;
+    flex: 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* line 614, ../scss/modules/_bitfinite.scss */
+.upload_file_Sec {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  float: left;
+}
+/* line 619, ../scss/modules/_bitfinite.scss */
+.upload_file_Sec:hover, .upload_file_Sec:focus, .upload_file_Sec:active {
+  -moz-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+/* line 621, ../scss/modules/_bitfinite.scss */
+.upload_file_Sec:hover .Uploadpicture, .upload_file_Sec:focus .Uploadpicture, .upload_file_Sec:active .Uploadpicture {
+  background-color: #1a86e1;
+  border: solid 1px #1a86e1;
+  color: #fff;
+  -moz-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+/* line 628, ../scss/modules/_bitfinite.scss */
+.upload_file_Sec .filetype {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+}
+/* line 635, ../scss/modules/_bitfinite.scss */
+.upload_file_Sec .Uploadpicture {
+  color: #333;
+  background-color: #ddd;
+  border: solid 1px #ddd;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  padding: 6px 15px;
+  display: inline-block;
+  font-size: 14px;
+  -moz-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+/* line 646, ../scss/modules/_bitfinite.scss */
+.uploadedDocs {
+  float: left;
+  width: 100%;
+  margin-top: 15px;
+}
+/* line 651, ../scss/modules/_bitfinite.scss */
+.uploadedDocs ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+/* line 654, ../scss/modules/_bitfinite.scss */
+.uploadedDocs ul li:last-child {
+  margin-right: 0px;
+}
+/* line 657, ../scss/modules/_bitfinite.scss */
+.uploadedDocs ul li .img_thumb {
+  background-color: #eee;
+  border: solid 1px #ddd;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+/* line 668, ../scss/modules/_bitfinite.scss */
+.uploadedDocs ul li .img_thumb .delete_thumb {
+  position: absolute;
+  background-color: #1a86e1;
+  width: 20px;
+  height: 20px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px #1a86e1;
+  color: #fff;
+  right: 5px;
+  top: 5px;
+  line-height: 0px;
+  cursor: pointer;
+  -moz-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+/* line 684, ../scss/modules/_bitfinite.scss */
+.uploadedDocs ul li .img_thumb .delete_thumb:hover, .uploadedDocs ul li .img_thumb .delete_thumb:focus, .uploadedDocs ul li .img_thumb .delete_thumb:active {
+  -moz-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  background-color: #fff;
+  color: #1a86e1;
+  border: solid 1px #1a86e1;
+}
+
+/* line 696, ../scss/modules/_bitfinite.scss */
+.form_btns li {
+  display: inline-block;
+  margin-right: 10px;
+  /* 767 px*/
+}
+@media (max-width: 767px) {
+  /* line 696, ../scss/modules/_bitfinite.scss */
+  .form_btns li {
+    margin-bottom: 10px;
+  }
+}
+/* line 702, ../scss/modules/_bitfinite.scss */
+.form_btns li:last-child {
+  margin-right: 0px;
+}
+
+/* line 709, ../scss/modules/_bitfinite.scss */
+.account_verify ul li {
+  margin-bottom: 30px;
+  border-bottom: solid 1px #ddd;
+  padding-bottom: 30px;
+}
+/* line 713, ../scss/modules/_bitfinite.scss */
+.account_verify ul li:last-child {
+  margin-bottom: 0px;
+  border-bottom: none;
+  padding-bottom: 0px;
+}
+/* line 718, ../scss/modules/_bitfinite.scss */
+.account_verify ul li .account_verify_Sec {
+  display: table;
+  width: 100%;
+}
+/* line 721, ../scss/modules/_bitfinite.scss */
+.account_verify ul li .account_verify_Sec .account_verify_Sec_left {
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+}
+/* line 725, ../scss/modules/_bitfinite.scss */
+.account_verify ul li .account_verify_Sec .account_verify_Sec_left h2 {
+  margin-bottom: 5px;
+  font-size: 20px;
+  line-height: 24px;
+  color: #333;
+  font-weight: 400;
+}
+/* line 733, ../scss/modules/_bitfinite.scss */
+.account_verify ul li .account_verify_Sec .account_verify_Sec_right {
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+  width: 200px;
+  text-align: right;
+}
+/* line 739, ../scss/modules/_bitfinite.scss */
+.account_verify ul li .account_verify_Sec .account_verify_Sec_right .verifiedbtn {
+  background-color: #94d094;
+  color: #fff;
+  display: inline-block;
+  padding: 4px 50px;
+  border: none;
+  min-width: 175px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+}
+/* line 747, ../scss/modules/_bitfinite.scss */
+.account_verify ul li .account_verify_Sec .account_verify_Sec_right .verifiedbtn .verify_icon {
+  margin-right: 6px;
+}
+/* line 751, ../scss/modules/_bitfinite.scss */
+.account_verify ul li .account_verify_Sec .account_verify_Sec_right .Unverifiedbtn {
+  background-color: #428bca;
+  color: #fff;
+  border: none;
+  display: inline-block;
+  padding: 6px 50px;
+  min-width: 175px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 765, ../scss/modules/_bitfinite.scss */
+.balance_Sec {
+  width: 100%;
+  display: table;
+  background: #f3f1f1;
+  border-bottom: solid 1px #ddd;
+}
+/* line 770, ../scss/modules/_bitfinite.scss */
+.balance_Sec .balance_Sec_left {
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+  text-align: center;
+  width: 50%;
+  padding: 15px;
+  border-right: solid 1px #ddd;
+}
+/* line 778, ../scss/modules/_bitfinite.scss */
+.balance_Sec .balance_Sec_left:last-child {
+  border-right: none;
+}
+/* line 781, ../scss/modules/_bitfinite.scss */
+.balance_Sec .balance_Sec_left h2 {
+  line-height: 20px;
+  margin-bottom: 2px;
+  color: #333;
+}
+
+/* line 788, ../scss/modules/_bitfinite.scss */
+.notice {
+  font-size: 12px;
+  margin: 10px 0;
+}
+
+/* line 793, ../scss/modules/_bitfinite.scss */
+.form-control.value_fld {
+  border: none;
+}
+/* line 795, ../scss/modules/_bitfinite.scss */
+.form-control.value_fld:focus {
+  color: #747d8a;
+  background-color: #fff;
+  border: solid 1px #80bdff;
+  outline: 0;
+}
+
+/* line 803, ../scss/modules/_bitfinite.scss */
+.form-control {
+  font-size: 14px;
+}
+
+/* line 806, ../scss/modules/_bitfinite.scss */
+.btc_form_sec {
+  float: left;
+  width: 100%;
+}
+/* line 809, ../scss/modules/_bitfinite.scss */
+.btc_form_sec .btc_form {
+  padding: 0px;
+}
+
+/* line 814, ../scss/modules/_bitfinite.scss */
+.setup_sec p {
+  font-size: 17px;
+  line-height: 20px;
+}
+/* line 818, ../scss/modules/_bitfinite.scss */
+.setup_sec .setup_steps {
+  margin-top: 10px;
+  float: left;
+  width: 100%;
+}
+/* line 822, ../scss/modules/_bitfinite.scss */
+.setup_sec .setup_steps li {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 4px;
+  position: relative;
+  padding-left: 25px;
+}
+/* line 828, ../scss/modules/_bitfinite.scss */
+.setup_sec .setup_steps li:before {
+  content: '';
+  width: 15px;
+  height: 18px;
+  position: absolute;
+  display: inline-block;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  left: 0;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%) !important;
+}
+/* line 841, ../scss/modules/_bitfinite.scss */
+.setup_sec .setup_steps li.android:before {
+  background-image: url("../images/app_store1.png");
+}
+/* line 846, ../scss/modules/_bitfinite.scss */
+.setup_sec .setup_steps li.ios:before {
+  background-image: url("../images/app_store2.png");
+}
+/* line 850, ../scss/modules/_bitfinite.scss */
+.setup_sec .setup_steps li a {
+  color: #999;
+  text-decoration: none;
+  -moz-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+/* line 854, ../scss/modules/_bitfinite.scss */
+.setup_sec .setup_steps li a:hover, .setup_sec .setup_steps li a:focus, .setup_sec .setup_steps li a:active {
+  -moz-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  color: #1a86e1;
+}
+
+/* line 863, ../scss/modules/_bitfinite.scss */
+.Two-Factor li {
+  display: inline-block;
+  width: auto;
+  float: left;
+  margin-right: 27px;
+}
+/* line 868, ../scss/modules/_bitfinite.scss */
+.Two-Factor li:last-child {
+  margin-right: 0px;
+}
+/* line 871, ../scss/modules/_bitfinite.scss */
+.Two-Factor li .my-radio {
+  float: left;
+  width: 100%;
+  display: table;
+}
+/* line 875, ../scss/modules/_bitfinite.scss */
+.Two-Factor li .my-radio .radioBox {
+  display: table-cell;
+  float: none;
+  vertical-align: middle;
+  width: 30px;
+}
+/* line 881, ../scss/modules/_bitfinite.scss */
+.Two-Factor li .my-radio [type="radio"]:checked + label::after, .Two-Factor li .my-radio [type="radio"].with-gap:checked + label::after {
+  background-color: #287db2;
+  z-index: 0;
+}
+/* line 885, ../scss/modules/_bitfinite.scss */
+.Two-Factor li .my-radio [type="radio"]:checked + label::after, .Two-Factor li .my-radio [type="radio"].with-gap:checked + label::before, .Two-Factor li .my-radio [type="radio"].with-gap:checked + label::after {
+  border: 2px solid #287db2;
+}
+/* line 888, ../scss/modules/_bitfinite.scss */
+.Two-Factor li .my-radio .lablel {
+  float: none;
+  margin-bottom: 0;
+  display: table-cell;
+}
+
+/* line 896, ../scss/modules/_bitfinite.scss */
+.account_setup {
+  margin-top: 20px;
+  border-top: solid 1px #ddd;
+  float: left;
+  width: 100%;
+  padding-top: 20px;
+}
+/* line 902, ../scss/modules/_bitfinite.scss */
+.account_setup h2 {
+  font-size: 20px;
+}
+
+/* line 907, ../scss/modules/_bitfinite.scss */
+#confirmModal .modal-dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) !important;
+  margin: 0 auto;
+  width: 500px;
+  text-align: center;
+  /* 767 px*/
+}
+@media (max-width: 767px) {
+  /* line 907, ../scss/modules/_bitfinite.scss */
+  #confirmModal .modal-dialog {
+    transform: translate(0px, 0px) !important;
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 30px auto;
+    width: 94%;
+  }
+}
+/* line 923, ../scss/modules/_bitfinite.scss */
+#confirmModal .modal-dialog .modal-body {
+  padding: 40px;
+  /* 767 px*/
+  /* 480 px*/
+}
+@media (max-width: 767px) {
+  /* line 923, ../scss/modules/_bitfinite.scss */
+  #confirmModal .modal-dialog .modal-body {
+    padding: 30px;
+  }
+}
+@media (max-width: 480px) {
+  /* line 923, ../scss/modules/_bitfinite.scss */
+  #confirmModal .modal-dialog .modal-body {
+    padding: 20px;
+  }
+}
+/* line 931, ../scss/modules/_bitfinite.scss */
+#confirmModal .modal-dialog .modal-body h2 {
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #333;
+  /* 767 px*/
+}
+@media (max-width: 767px) {
+  /* line 931, ../scss/modules/_bitfinite.scss */
+  #confirmModal .modal-dialog .modal-body h2 {
+    font-size: 20px;
+    line-height: 23px;
+  }
+}
+/* line 941, ../scss/modules/_bitfinite.scss */
+#confirmModal .modal-dialog .modal-body p {
+  font-size: 20px;
+  /* 767 px*/
+}
+@media (max-width: 767px) {
+  /* line 941, ../scss/modules/_bitfinite.scss */
+  #confirmModal .modal-dialog .modal-body p {
+    font-size: 16px;
+  }
+}
+/* line 947, ../scss/modules/_bitfinite.scss */
+#confirmModal .modal-dialog .modal-body .mdl_btns {
+  margin-top: 30px;
+  /* 767 px*/
+}
+@media (max-width: 767px) {
+  /* line 947, ../scss/modules/_bitfinite.scss */
+  #confirmModal .modal-dialog .modal-body .mdl_btns {
+    margin-top: 20px;
+  }
+}
+/* line 953, ../scss/modules/_bitfinite.scss */
+#confirmModal .modal-dialog .modal-body .mdl_btns ul li {
+  display: inline-block;
+  margin: 0px 5px;
+}
+/* line 956, ../scss/modules/_bitfinite.scss */
+#confirmModal .modal-dialog .modal-body .mdl_btns ul li button {
+  min-width: 100px;
+  /* 480 px*/
+}
+@media (max-width: 480px) {
+  /* line 956, ../scss/modules/_bitfinite.scss */
+  #confirmModal .modal-dialog .modal-body .mdl_btns ul li button {
+    min-width: auto;
+  }
+}
+
+/*********************************************** 
+	responsive part start here of left nav 
+************************************************/
+/* line 972, ../scss/modules/_bitfinite.scss */
+.mini-sidebar .page-wrapper {
+  /* 991 px*/
+}
+@media (max-width: 991px) {
+  /* line 972, ../scss/modules/_bitfinite.scss */
+  .mini-sidebar .page-wrapper {
+    margin-left: 0px !important;
+  }
+}
+/* line 977, ../scss/modules/_bitfinite.scss */
+.mini-sidebar .left-sidebar {
+  /* 991 px*/
+}
+@media (max-width: 991px) {
+  /* line 977, ../scss/modules/_bitfinite.scss */
+  .mini-sidebar .left-sidebar {
+    left: -1013px;
+  }
+}
+/* line 982, ../scss/modules/_bitfinite.scss */
+.mini-sidebar .page-wrapper {
+  /* 991 px*/
+}
+@media (max-width: 991px) {
+  /* line 982, ../scss/modules/_bitfinite.scss */
+  .mini-sidebar .page-wrapper {
+    position: relative;
+  }
+}
+/* line 986, ../scss/modules/_bitfinite.scss */
+.mini-sidebar .page-wrapper:before {
+  /* 991 px*/
+}
+@media (max-width: 991px) {
+  /* line 986, ../scss/modules/_bitfinite.scss */
+  .mini-sidebar .page-wrapper:before {
+    background: rgba(0, 0, 0, 0);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    content: '';
+    z-index: 0;
+  }
+}
+
+/* line 999, ../scss/modules/_bitfinite.scss */
+.page-wrapper {
+  /* 991 px*/
+}
+@media (max-width: 991px) {
+  /* line 999, ../scss/modules/_bitfinite.scss */
+  .page-wrapper {
+    position: relative;
+  }
+}
+/* line 1003, ../scss/modules/_bitfinite.scss */
+.page-wrapper:before {
+  /* 991 px*/
+}
+@media (max-width: 991px) {
+  /* line 1003, ../scss/modules/_bitfinite.scss */
+  .page-wrapper:before {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    content: '';
+    z-index: 9;
+  }
+}
+
+/* line 1014, ../scss/modules/_bitfinite.scss */
+.left-sidebar {
+  /* 991 px*/
+}
+@media (max-width: 991px) {
+  /* line 1014, ../scss/modules/_bitfinite.scss */
+  .left-sidebar {
+    left: 0px;
+  }
+}
+
+/* line 1019, ../scss/modules/_bitfinite.scss */
+#line_graph {
+  /* 1400 px*/
+}
+@media (max-width: 1400px) {
+  /* line 1019, ../scss/modules/_bitfinite.scss */
+  #line_graph {
+    height: 250px !important;
+  }
+}
+
+/* line 1024, ../scss/modules/_bitfinite.scss */
+#line_graph {
+  /* 1199 px*/
+}
+@media (max-width: 1199px) {
+  /* line 1024, ../scss/modules/_bitfinite.scss */
+  #line_graph {
+    height: 150px !important;
+  }
+}
+
+/* line 1029, ../scss/modules/_bitfinite.scss */
+.sml_hidden {
+  /* 767 px*/
+}
+@media (max-width: 767px) {
+  /* line 1029, ../scss/modules/_bitfinite.scss */
+  .sml_hidden {
+    display: none !important;
+  }
+}
+
+/* line 1034, ../scss/modules/_bitfinite.scss */
+.btc_value_sec {
+  /* 767 px*/
+}
+@media (max-width: 767px) {
+  /* line 1034, ../scss/modules/_bitfinite.scss */
+  .btc_value_sec {
+    margin-right: 10px;
+  }
+}
+/* line 1038, ../scss/modules/_bitfinite.scss */
+.btc_value_sec .btc_value {
+  /* 767 px*/
+}
+@media (max-width: 767px) {
+  /* line 1038, ../scss/modules/_bitfinite.scss */
+  .btc_value_sec .btc_value {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+/* line 1045, ../scss/modules/_bitfinite.scss */
+.container-fluid {
+  /* 767 px*/
+}
+@media (max-width: 767px) {
+  /* line 1045, ../scss/modules/_bitfinite.scss */
+  .container-fluid {
+    padding: 0 15px 25px 15px;
+  }
+}
+
+@media (max-width: 991px) {
+  /* line 1051, ../scss/modules/_bitfinite.scss */
+  .left-sidebar {
+    width: 60px;
+    /* overflow: hidden !important; */
+  }
+
+  /* line 1055, ../scss/modules/_bitfinite.scss */
+  .sidebar-nav ul li a {
+    padding: 8px 15px 8px 15px;
+  }
+
+  /* line 1059, ../scss/modules/_bitfinite.scss */
+  .sidebar-nav ul li a:hover .hide-menu, .sidebar-nav ul li a:focus .hide-menu, .sidebar-nav ul li a:active .hide-menu {
+    display: inline;
+    margin-left: 10px;
+  }
+
+  /* line 1064, ../scss/modules/_bitfinite.scss */
+  .sidebar-nav #sidebarnav > li > a {
+    padding: 9px 15px;
+    width: 50px;
+  }
+
+  /* line 1068, ../scss/modules/_bitfinite.scss */
+  .sidebar-nav #sidebarnav > li > a:hover {
+    width: 260px;
+  }
+
+  /* line 1071, ../scss/modules/_bitfinite.scss */
+  .sidebar-nav {
+    background: transparent;
+  }
+
+  /* line 1074, ../scss/modules/_bitfinite.scss */
+  .user-profile {
+    width: 60px;
+  }
+
+  /* line 1077, ../scss/modules/_bitfinite.scss */
+  .slimScrollDiv, .scroll-sidebar {
+    overflow: visible !important;
+  }
+
+  /* line 1080, ../scss/modules/_bitfinite.scss */
+  .sidebar-nav {
+    padding: 5px;
+  }
+
+  /* line 1083, ../scss/modules/_bitfinite.scss */
+  .sidebar-nav .comn_left_icon {
+    margin-right: 0;
+  }
+
+  /* line 1086, ../scss/modules/_bitfinite.scss */
+  .hide-menu {
+    display: none;
+  }
+
+  /* line 1089, ../scss/modules/_bitfinite.scss */
+  .scroll-sidebar {
+    padding-bottom: 0px;
+    position: absolute;
+  }
+}
+/* 991 px*/

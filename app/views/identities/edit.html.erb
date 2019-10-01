@@ -1,0 +1,40 @@
+<section class="login_page">
+  <div class="container">
+    <div class="login_block">
+      <div class="login_block_inner signup_block">
+        <div class="login_logo"><a class="navbar-brand top_logo" href="<%= root_path %>"></a></div>
+        <div class="login_hding"><span><%= t('.title') %></span></div>
+        <div class="login_form pass_reset_sec">
+          <%= render 'shared/flash' %>
+          <%= simple_form_for @identity,:html=>{:onsubmit=>"return Validate(this);"} do |f| %>
+            <span id="doc_type_error_msg" style="color:#a94442"></span>
+            <%= f.input :old_password,:label =>  t('.old_password')  %>
+            <%= f.input :password, :label => t('.new_password') %>
+            <span id="doc_type_error_msg1" style="color:#a94442"></span>
+            <%= f.input :password_confirmation,:label => t('.confirmation_password') %>
+            <span id="doc_type_error_msg2" style="color:#a94442"></span>
+            <%= f.button :wrapped, t('.update'),class: 'newbutton', cancel: settings_path %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  $( document ).ready(function() {
+    $("[name='commit']").addClass('change_pwd');
+    $('a.pull-right').addClass('reset_cancel');
+    $('#identity_old_password').val("");
+  });
+  function Validate(oForm) {
+      val = $('#identity_old_password').val();
+      val1 =  $('#identity_password').val();
+      val2 = $('#identity_password_confirmation').val();
+      if (val == ''|| val1 == '' || val2 == ''){
+          $('#doc_type_error_msg').text(" required filed can't be blank")
+          return false
+      }
+  }
+
+</script>

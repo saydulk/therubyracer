@@ -1,0 +1,248 @@
+<style>
+    .customecss {
+        /*margin-top: -36px;*/
+        padding: 10px;
+    }
+    .customecss > div {
+        width: 100% !important;
+    }
+    .customecss > div > iframe {
+        width: 100% !important;
+    }
+
+          
+ .pop4{
+  padding-top:0px;
+  width:400px; height:400px;
+  background: linear-gradient( 30deg, #fa4f27, #9e6cbe );        
+  color:#fff; 
+  position:absolute; top:230px; left:410px; text-align:center; 
+  z-index:300;
+  opacity: 12;
+  padding: 0px;
+  }  
+
+      
+@media only screen and (max-width: 600px) {
+.pop4{
+  padding-top:0px;
+  width:300px; height:390px; 
+  background: linear-gradient( 30deg, #fa4f27, #9e6cbe );     
+  color:#fff; 
+  position:absolute; top:100px; left:30px; text-align:center; 
+  padding: 11px;
+  z-index:300;
+  }   
+}
+
+</style>
+<%=  render 'shared/flash' %>
+<div class="loader">
+  <%= image_tag("loader.gif", :alt => "loader") %>
+</div>
+
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators" style="bottom: -11px;">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+  </ol>
+<div class="carousel-inner" role="listbox">
+  <div class="item active">
+    <div class="banner-main">
+      <div class="banner_content">
+        <%= image_tag('banner.jpg')%>
+      </div>
+    </div>
+    <div class="carousel-caption">
+    </div>
+  </div>
+
+
+  <div class="item ">
+    <div class="banner-main">
+      <div class="banner_content">
+        <%= link_to image_tag("second-logo.jpg"), "http://victorynt.net", target: :_blank ,:title => "http://victorynt.net" %>
+      </div>
+    </div>
+    <div class="carousel-caption">
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+<div class="container-fluid koinshark_currency">
+  <div class="container">
+    <div class="row">
+      <div class="owl-carousel top_carousel">
+        <div> <span class="bitcoin_price"> <span class="btc"><%= t('.tab_1')%></span></span> </div>
+        <div> <span class="bitcoin_price"><span class="btc"> <%= t('.tab_2')%></span> </span> </div>
+        <div> <span class="bitcoin_price"><span class="btc"><%= t('.tab_3')%></span></span> </div>
+        <div> <span class="bitcoin_price"><span class="btc"><%= t('.tab_4')%></span></span> </div>
+        <div> <span class="bitcoin_price"><span class="btc"><%= t('.tab_5')%></span></span> </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pop4"  style="display:block;">  
+<div >
+  <a id="close" href="javascript:p4close();" class="text-white"> 
+  <p class="text-white" style="float:right;padding:5px 20px;font-size:1.2em;">X </p></a>
+   <p class="text-white" style="padding-top:10px;text-align:center;font-weight:500;font-size:1.2em; color:#fff;">  ☆ CAC코인  판매 마감 안내 ☆</p>
+
+   <p class="text-white" style="padding: 0 20px;text-align:center;font-weight:500;font-size:1em; color:#fff;">
+      3차 사전판매는 5월 25일 24시에 종료됩니다.<br>
+      5월 24일 호재정보를 공지로 알려드리겠습니다. <br>
+      항상 믿고 응원해 주시는 고객님들 감사합니다. 
+  </p>
+  <br>
+  <img src="<%=asset_path 'binance001.jpg'%>" ></img>
+</div>
+</div>
+
+<section class="currency_block" id="ticker">
+  <%= render 'ticker' %>
+</section>
+<!--/.currency_block-->
+
+
+<section class="currency_market" id="sticky">
+  <div class="container">
+    <%= render partial: 'market_list' %>
+  </div>
+</section> <!--/.currency_market-->
+<section class="responsive_sec">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 responsive_sec_block text-right">
+      </div>
+    </div>
+  </div>
+</section>
+<!-- owl.carousel js -->
+<script>
+    $(document).ready(function(){
+        var owl = $('.currency_carousel');
+        owl.owlCarousel({
+            items:7,
+            loop:false,
+            rtl: false,
+            margin:0,
+            autoplay:true,
+            autoplayTimeout:1000,
+            autoplayHoverPause:true,
+            responsive:{
+                0:{
+                    items:1,
+                },
+                600:{
+                    items:3,
+                },
+                601:{
+                    items:5,
+                },
+                1200:{
+                    items:7
+                }
+            }
+        });
+    });
+
+    $(document).ready(function(){
+        var owl = $('.top_carousel');
+        owl.owlCarousel({
+            items:3,
+            loop:false,
+            rtl: false,
+            margin:0,
+            autoplay:true,
+            autoplayTimeout:1000,
+            autoplayHoverPause:true,
+            responsive:{
+                0:{
+                    items:1,
+                },
+                600:{
+                    items:1,
+                },
+                1000:{
+                    items:3
+                }
+            }
+        });
+    });
+
+    function p4close() {
+       $('.pop4').hide();
+    }  
+
+    /* price marquee */
+    $('.bitcoin_price').on('click', function(){
+        // $('.bitcoin_price').removeClass('current');
+        $(this).toggleClass('current');
+    });
+
+    /* onscroll add and remove class */
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 150) {
+            $("body").addClass("fixed");
+        } else {
+            $("body").removeClass("fixed");
+        }
+
+        sticky_scollbar = $("#sticky").offset().top;
+
+        if (scroll >= sticky_scollbar){
+            $("#sticky").addClass('sticky');
+            $(".search_market_sec").addClass('container');
+
+
+        }else {
+            $("#sticky").removeClass('sticky');
+            $(".search_market_sec").removeClass('container');
+//
+        }
+    });
+
+    $('.head_withdraw').click(function(){
+        $('.dropdown .text').text('INR');
+
+    });
+
+    $('.head_deposit').click(function(){
+        $('.dropdown .text').text('INR');
+
+    });
+    $('.carousel').carousel({
+       interval: 3000
+    });
+
+    $('#carousel-example-generic').carousel({
+        items: 1,
+        lazyLoad: true,
+        // loop:true
+        nav: false
+    });
+
+    var total_images = $("body img").length;
+    console.log(total_images)
+    var images_loaded = 0;
+
+    $("body").find('img').each(function () {
+        images_loaded++;
+        var fakeSrc = $(this).attr('src');
+        if ((images_loaded >= total_images) && fakeSrc) {
+            $('.loader').hide();
+            $("body").removeClass('loading');
+        } else {
+            $('.loader').show();
+            $("body").addClass('loading');
+        }
+    });
+</script>

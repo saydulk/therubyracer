@@ -1,0 +1,134 @@
+<div class="card-deck">
+  <div class="card">
+    <div class="card-body">
+      <%= form_for ([:admin, @referral]) do |f| %>
+
+        <% if @referral.errors.any? %>
+          <div id="error_explanation">
+            <h2>
+              <%= pluralize(@referral.errors.count, "error") %> prohibited
+              this plan from being saved:
+            </h2>
+            <ul>
+              <% @referral.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <br />
+
+        <div class="form-group">
+          <label>Name</label>
+          <%= f.text_field :name, class: 'form-control mb-3' %>
+        </div>
+
+        <div class="form-group custom-control custom-radio">
+          <div class="row">
+            <div class="col-lg-3">
+              <label>Date validity:</label>
+            </div>
+            <div class="col-lg-2">
+              <%= f.radio_button :date_validity_choice, false, checked: true, class: 'dt unlimited custom-control-input' %>
+              <label class="custom-control-label" for="customRadio">Unlimited</label>
+            </div>
+            <div class="col-lg-2">
+              <%= f.radio_button :date_validity_choice, true, class: 'dt limited custom-control-input' %>
+              <label class="custom-control-label" for="customRadio">Limited</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group" id="date_section">
+          <label>Validity till date</label>
+          <%= f.text_field :date_validity, class: 'form-control mb-3' %>
+        </div>
+
+        <div class="form-group custom-control custom-radio">
+          <div class="row">
+            <div class="col-lg-3">
+              <label>Referrals:</label>
+            </div>
+            <div class="col-lg-2">
+              <%= f.radio_button :no_of_referral_choice, false, checked: true, class: 'referral_choice unlimited custom-control-input' %>
+              <label class="custom-control-label" for="customRadio">Unlimited</label>
+            </div>
+            <div class="col-lg-2">
+              <%= f.radio_button :no_of_referral_choice, true, class: 'referral_choice limited custom-control-input' %>
+              <label class="custom-control-label" for="customRadio">Limited</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group" id="referral_section">
+          <label>Referrals (per day)</label>
+          <%= f.number_field :no_of_referral, class: 'form-control mb-3', min: 0, step: 1 %>
+        </div>
+
+        <div class="form-group">
+          <label>Referral Amount</label>
+          <div class="row">
+            <div class="col-lg-18">
+              <%= f.number_field :amount, class: 'form-control mb-3', min: 0, step: 1 %>
+            </div>
+            <div class="col-lg-6">
+              <%= f.select :currency, options_for_select(Currency.all.map{|m| [m.code.upcase, m.code]}, selected: Currency.find_by_code(ENV['AIRDROP_CURRENCY'])&.code), {}, class: 'form-control mb-3' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Transaction Bonus(in %)</label>
+          <%= f.number_field :transaction_bonus, class: 'form-control mb-3', min: 0, step: 1 %>
+        </div>
+
+        <div class="form-group">
+          <label>Beneficial Level no</label>
+          <%= f.number_field :level_no, class: 'form-control mb-3', min: 1, step: 1, max: 2 %>
+          (<b>note:</b> 1<sup>th</sup> level - Only Referral bonus or 2<sup>th</sup> level - (Referral + Transaction))
+        </div>
+        <%= f.submit 'Save', class: 'btn btn-primary btn-md mt-1' %>
+        &nbsp;
+        <%= link_to 'Back', admin_referrals_path, class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<style>
+  .field_with_errors {
+    padding: 2px;
+    background-color: red;
+  }
+</style>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+    $(document).ready(function(){
+      $( "#referral_date_validity" ).datepicker({
+          dateFormat: "dd-mm-yy",
+          minDate: 0
+      });
+
+      if(!$("input[id='referral_date_validity_choice_true']:checked").val()){
+        $('#date_section').css('display', 'none');
+      }
+
+      if(!$("input[id='referral_no_of_referral_choice_true']:checked").val()){
+        $('#referral_section').css('display', 'none');
+      }
+
+      $(".dt").click(function(){
+         var val = ($(this).hasClass('limited')) ? 'block' : 'none';
+         $('#date_section').css('display', val);
+      });
+
+      $(".referral_choice").click(function(){
+        var val = ($(this).hasClass('limited')) ? 'block' : 'none';
+        $('#referral_section').css('display', val);
+      });
+    });
+</script>

@@ -1,0 +1,88 @@
+
+<section class="mob-view-section" style="display: none;">
+  <div class="mob-hedr">
+    <div class="market_hdr hdr-mob-market">
+      <%= render partial: 'private/markets/header' %>
+    </div>
+  </div>
+  <ul class="nav nav-tabs tabs-style-mobile">
+    <li class="active"><a data-toggle="tab" href="#home">Charts</a></li>
+    <li><a data-toggle="tab" href="#menu1">Trade</a></li>
+    <li><a data-toggle="tab" href="#menu2">Open Orders</a></li>
+  </ul>
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade  in active">
+      <div class="trading_chart ">
+        <%= render partial: 'trading_chart' %>
+      </div>
+
+      <div class="chart-tab-blocks">
+        <div class="trademarkets">
+          <%= render partial: 'market_trades' %>
+        </div>
+        <div class="market_graph_value">
+          <%= render partial: 'order_book' %>
+        </div>
+      </div>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <div class="entery_block">
+        <div class="tab">
+          <button class="tablinks" onclick="openCity(event, 'Limit')" id="defaultOpen"><%= t('.limit') %></button>
+          <button class="tablinks" onclick="openCity(event, 'Market')"><%= t('.market') %></button>
+        </div>
+
+        <div id="Limit" class="tabcontent" style="padding: 0px 0px">
+          <%= render partial: 'bid_entry', locals: {market: @market, order: @order_bid} %>
+          <%= render partial: 'ask_entry', locals: {market: @market, order: @order_ask} %>
+        </div>
+
+        <div id="Market" class="tabcontent" style="padding: 0px 0px">
+          <%= render partial: 'market_bid_entry', locals: {market: @market, order: @order_bid_market} %>
+          <%= render partial: 'market_ask_entry', locals: {market: @market, order: @order_ask_market} %>
+        </div>
+      </div>
+      <div class="market_right">
+        <div class="allmarkets">
+          <%= render partial: 'market_list', locals: {market_search: @market_search} %>
+        </div>
+       </div>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <div class="open_order_sec">
+        <div class="open_order_inner">
+          <div class="open_order_left">
+            <h2><%= t('.open_orders') %> <span class="ylw_txt" id="open_orders_count">(0)</span></h2>
+          </div>
+          <div class="open_order_right">
+            <div class="checkbox">
+              <!--<label><input type="checkbox">  <%#= t('.Hide_Other_pairs1') %> </label>-->
+            </div>
+          </div>
+        </div>
+        <%= render partial: 'my_orders' %>
+      </div>
+      <div class="open_order_sec">
+        <div class="open_order_inner">
+          <div class="open_order_left">
+            <h2><%= t('.24_orders_history') %>
+              <span class="ylw_txt" id="history_orders_count">(<%= @all_history.nil? ? '0' : @all_history %>)</span></h2>
+          </div>
+          <div class="open_order_right">
+            <div class="checkbox">
+              <label id="hide_other_pair"><input type="checkbox" id="other_checkbox">  <%= t('.Hide_Other_pairs') %> </label>
+            </div>
+          </div>
+          <div class="more">
+            <% if current_user.present? %>
+                <%= link_to t('.more'), '/history/orders' %>
+            <% else %>
+                <%= link_to t('.more'), signin_path %>
+            <% end %>
+          </div>
+        </div>
+        <%= render partial: 'order_history' %>
+      </div>
+    </div>
+  </div>
+</section>

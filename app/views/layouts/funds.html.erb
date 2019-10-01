@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="funds">
+  <head>
+    <%= render 'shared/meta' %>
+    <%= render 'shared/sentry' %>
+    <%= csrf_meta_tags %>
+
+    <!--<link href="/favicon.ico" rel="shortcut icon" />-->
+    <%= favicon_link_tag 'fav_icon.png' %>
+
+    <%# stylesheet = content_for?(:stylesheet) ? yield(:stylesheet) : 'application' %>
+    <%#= stylesheet_link_tag stylesheet, media: 'all' %>
+
+    <%= render 'shared/theme' %>
+
+    <%= include_gon %>
+    <%= render 'shared/html5' %>
+    <%= javascript_include_tag "locales/#{I18n.locale}" %>
+    <%= javascript_include_tag 'funds' %>
+    <%= yield(:scripts) if content_for?(:scripts) %>
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+    <!-- font-awesome -->
+    <!--<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">-->
+
+    <!-- Bootstrap css-->
+    <%= stylesheet_link_tag 'node_modules/bootstrap/dist/css/bootstrap.min.css' %>
+    <!-- responsive tabs css -->
+    <%= stylesheet_link_tag 'css/easy-responsive-tabs.css' %>
+
+    <!-- Custom css -->
+    <%= stylesheet_link_tag 'css/main.css' %>
+    <%= stylesheet_link_tag 'css/funds' %>
+
+    <!-- Bootstrap Js -->
+    <%#= javascript_include_tag 'js/jquery.min.js' %>
+    <%= javascript_include_tag 'js/bootstrap.min.js' %>
+    <%= javascript_include_tag 'js/jquery.cookie' %>
+
+    <script type="text/javascript">
+      jQuery(function() {
+        $.cookie('tz', (new Date()).getTimezoneOffset());
+      });
+    </script>
+  </head>
+
+  <body id="<%= body_id %>" data-lang="<%= "#{locale_name}" %>">
+
+    <div id="wrap">
+      <%- if content_for?(:header) %>
+        <%= yield(:header) %>
+      <%- else %>
+        <%= render 'shared/header' %>
+      <%- end %>
+
+      <div class='container'>
+        <%= yield %>
+      </div>
+      <div id="push"></div>
+
+      <%- if content_for?(:footer) %>
+        <%= yield(:footer) %>
+      <%- else %>
+        <%= render 'shared/footer' %>
+      <%- end %>
+    </div>
+
+  </body>
+</html>
+

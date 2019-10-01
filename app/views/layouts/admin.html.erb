@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= favicon_link_tag 'fav_icon.png' %>
+    <%= render 'shared/meta' %>
+    <%= render 'shared/sentry' %>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'admin', media: 'all' %>    
+    <!-- Custom css -->
+    <%= stylesheet_link_tag 'css/main.css' %>
+    <%= javascript_include_tag 'admin' %>
+  </head>
+
+  <body id="<%= body_id %>" class="admin_sec" >
+    <nav id="top-menu" class="navbar" role="navigation">
+      <div class="container">
+        <ul class="nav navbar-nav navbar-left">
+          <li class="<%= check_active('dashboard') %>">
+            <%= link_to t('header.dashboard'), main_app.admin_dashboard_path %>
+          </li>
+
+          <% if can? :manage, IdDocument %>
+            <li class="<%= check_active('id_documents') %>">
+              <%= link_to t('admin_header.id_documents'), admin_id_documents_path %>
+            </li>
+          <% end %>
+
+          <% if can? :read, Activity %>
+          <li class=" <%= check_active(Activity) %> ">
+          <%= link_to "Signin Activity", admin_activity_path %>
+          </li>
+          <% end %>
+
+          <% if can? :manage, Wallet %>
+            <li class="list-icon-item <%= check_active('wallets') %>">
+              <%= link_to admin_wallets_path do %>
+                <i class="icon fa fa-money-bill-wave"></i>
+                <span class="menu-text"> Collection Wallets</span>
+              <% end %>
+            </li>
+          <% end %>
+
+          <% if can? :menu, Deposit %>
+            <li class="dropdown <%= check_active('deposits') %>">
+              <%= link_to 'javascript:;', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' do %>
+                <span><%= t('admin_header.deposits') %></span>
+
+              <% end %>
+              <ul class="dropdown-menu">
+                <% DepositChannel.all.sort_by(&:currency).each do |c| %>
+                  <% if can? :manage, c.kls %>
+                    <li><%= link_to c.title_text, [:admin, c.kls] %></li>
+                  <% end %>
+                <% end %>
+              </ul>
+            </li>
+          <% end %>
+
+          <% if can? :menu, Withdraw %>
+            <li class="dropdown <%= check_active('withdraws') %>">
+              <%= link_to 'javascript:;', class: 'dropdown-toggle', 'data-toggle'=> 'dropdown' do %>
+                <span><%= t('admin_header.withdraws') %></span>
+
+              <% end %>
+              <ul class="dropdown-menu">
+                <% WithdrawChannel.all.sort_by(&:currency).each do |c| %>
+
+                  <% if can? :manage, c.kls %>
+                    <li><%= link_to c.title_text, [:admin, c.kls] %></li>
+                  <% end %>
+                <% end %>
+              </ul>
+            </li>
+          <% end %>
+
+          <% if can? :manage, Member %>
+            <li class=" <%= check_active('members') %> ">
+              <%= link_to t('.menus.sections.members'), admin_members_path %>
+            </li>
+          <% end %>
+
+          <li class="dropdown <%= check_active('statistic') %>">
+            <%= link_to 'javascript:;', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' do %>
+              <span><%= t('admin_header.statistics') %></span>
+            <% end %>
+            <ul class="dropdown-menu">
+              <% if can? :stat, Member %>
+                <li class="<%= check_active(Member) %>">
+                  <%= link_to Member.model_name.human, admin_statistic_members_path %>
+                </li>
+              <% end %>
+
+              <% if can? :read, Order %>
+                <li class="<% check_active(Order) %>">
+                  <%= link_to Order.model_name.human, admin_statistic_orders_path %>
+                </li>
+              <% end %>
+
+              <% if can? :read, Trade %>
+                <li class=" <%= check_active(Trade) %> ">
+                  <%= link_to Trade.model_name.human, admin_statistic_trades_path %>
+                </li>
+              <% end %>
+
+              <% if can? :menu, Withdraw %>
+                <li class="<% check_active(Withdraw) %>">
+                  <%= link_to Withdraw.model_name.human, admin_statistic_withdraws_path %>
+                </li>
+              <% end %>
+
+              <% if can? :menu, Deposit %>
+                <li class="<% check_active(Deposit) %>">
+                  <%= link_to Deposit.model_name.human, admin_statistic_deposits_path %>
+                </li>
+              <% end %>
+            </ul>
+          </li>
+
+          <% if can? :menu, Withdraw %>
+            <li class=" <%= check_active(commission_admin_members_path) %> ">
+              <%= link_to t('admin_header.commission'), commission_admin_members_path %>
+            </li>
+          <% end %>
+
+          <li class=" <%= check_active(admin_airdrops_path) %> ">
+            <%= link_to t('admin_header.airdrop'), admin_airdrops_path %>
+          </li>
+
+          <%# if can? :menu, Referral %>
+<!--            <li class=" <%#= check_active('referral') %> ">-->
+              <%#= link_to t('admin_header.referral'), admin_referrals_path %>
+<!--            </li>-->
+          <%# end %>
+
+          <li class="dropdown notify" data-behavior="notifications" >
+            <a class="dropdown-toggle" type="button" data-behavior="notifications-link" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= fa_icon "bell" %> <span class="badge" data-behavior="unread-count"></span>
+            </a>
+            <ul class="dropdown-menu notification_list" aria-labelledby="dropdownMenu1" data-behavior="notification-items">
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <%= render 'shared/flash' %>
+      <%= yield %>
+    </div>
+  </body>
+</html>

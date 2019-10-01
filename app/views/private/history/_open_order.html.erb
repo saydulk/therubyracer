@@ -1,0 +1,16 @@
+<tr>
+  <td><%= open_order.created_at %></td>
+  <% market_pair = open_order.currency.upcase.scan(/.{3}/) %>
+  <td><%= market_pair[0] + "/" + market_pair[1] %></td>
+  <td><%= t(".#{open_order.kind}") %></td>
+  <td><%= t(".#{open_order.state}") %></td>
+  <!--<td><%#= open_order.id %></td>-->
+  <% if open_order.ord_type == 'limit' %>
+    <td><%= open_order.price %></td>
+  <% else %>
+    <td><%= open_order.ord_type %></td>
+  <% end %>
+  <td><%= open_order.origin_volume %></td>
+  <td><%= open_order.avg_price %></td>
+  <td><%= open_order.origin_volume - open_order.volume %></td>
+</tr>

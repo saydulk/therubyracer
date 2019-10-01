@@ -1,0 +1,29 @@
+<table class="table table-hover markets all" id="<%= coin_code %>">
+    <thead>
+    <tr>
+      <th class="">
+        <%= t('.index.pair') %>
+      </th>
+      <th class="coin">
+        <%= t('.index.coin') %>
+      </th>
+      <th class="last">
+        <%= t('.last_price') %>
+      </th>
+      <th class="text-right change">
+        <%= t('.24_change') %>
+      </th>
+      <th class="text-right high">
+        <%= t('.24_high') %>
+      </th>
+      <th class="text-right low">
+        <%= t('.24_low') %>
+      </th>
+      <th class="text-right vol">
+       <%= t('.24_volume') %>
+      </th>
+    </tr>
+    </thead>
+    <tbody class ="<%= coin_code %>_data">
+    </tbody>
+  </table>

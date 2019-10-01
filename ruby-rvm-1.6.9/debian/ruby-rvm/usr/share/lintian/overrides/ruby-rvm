@@ -1,0 +1,2 @@
+#The included scripts are sourced and not intended to be executed independently
+ruby-rvm: script-not-executable

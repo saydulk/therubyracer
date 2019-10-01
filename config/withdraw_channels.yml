@@ -1,0 +1,122 @@
+- id: 200
+  key: satoshi
+  currency: btc
+  fixed: 8
+  fee: 0.0005
+  inuse: true
+  type: WithdrawChannelSatoshi
+
+- id: 400
+  key: bitcoin_cash
+  currency: bch
+  fixed: 8
+  fee: 0.01
+  inuse: true
+  type: WithdrawChannelBitcoinCash
+
+- id: 600
+  key: ethereum
+  currency: eth
+  min_confirm: 1
+  max_confirm: 6
+  inuse: true
+  fixed: 8
+  fee: 0.01
+  type: WithdrawChannelEthereum
+
+- id: 800
+  key: tronix
+  currency: trx
+  fixed: 8
+  fee: 1
+  inuse: true
+  type: WithdrawChannelTronix
+
+- id: 1000
+  key: ripple
+  currency: xrp
+  fixed: 3
+  fee: 0.25
+  inuse: true
+  type: WithdrawChannelRipple
+
+- id: 1200
+  key: eos_token
+  currency: eos
+  fixed: 8
+  fee: 0.01
+  inuse: true
+  type: WithdrawChannelEosToken
+
+#- id: 1400
+#  key: Dollar
+#  currency: usd
+#  fixed: 2
+#  fee: 0.01
+#  inuse: true
+#  type: WithdrawChannelDollar
+
+- id: 1400
+  key: chelscoin
+  currency: csc
+  fixed: 8
+  fee: 100
+  inuse: true
+  type: WithdrawChannelChelscoin
+
+- id: 1500
+  key: impereum
+  currency: ipm
+  fixed: 8
+  fee: 10
+  inuse: true
+  type: WithdrawChannelImpereum
+
+- id: 1600
+  key: ems_token
+  currency: ems
+  fixed: 8
+  fee: 3
+  inuse: true
+  type: WithdrawChannelEmsToken
+
+- id: 1800
+  key: ecpplus_token
+  currency: "ecp+"
+  fixed: 8
+  fee: 30
+  inuse: true
+  type: WithdrawChannelEcpplusToken
+
+- id: 2000
+  key: fto_token
+  currency: fto
+  fixed: 8
+  fee: 30
+  inuse: true
+  type: WithdrawChannelFtoToken
+
+- id: 2200
+  key: usdcoin
+  currency: usdc
+  fixed: 8
+  fee: 30
+  inuse: true
+  type: WithdrawChannelUsdcoin
+
+- id: 2400
+  key: aokey7_token
+  currency: aok
+  fixed: 8
+  fee: 100
+  inuse: true
+  type: WithdrawChannelAokey7Token
+
+
+- id: 2600
+  key: cacplus_token
+  currency: "cac+"
+  fixed: 8
+  fee: 30
+  inuse: true
+  type: WithdrawChannelCacplusToken

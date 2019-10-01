@@ -1,0 +1,86 @@
+<div id="home_market_list_wrapper" class="has-right-dropdown">
+  <div id="home_market_list" class="panel-body-head">
+    <div class="search_market_sec_outer">
+      <div class="search_market_sec">
+        <div class="search_market_left">
+          <% if @market_groups.size > 1 %>
+            <div class="dropdown-wrapper">
+              <ul class="dropdown-menu" id="home_market_tab">
+                <li>
+                  <a data-name="all" href="javascript:;">
+                     <%= t(".all_html") %>
+                  </a>
+                </li>
+                <% @market_groups.each_with_index do |name, index| %>
+                <li>
+                  <a class= "<%= 'active' if index == 0 %>" data-name="<%= name %>" href="javascript:;">
+                    <%= t(".#{name}") %>
+                  </a>
+                </li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+        </div>
+        <div class="search_market_right">
+          <div class="search_market">
+              <span class="search_icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+              <%= text_field_tag :search, params[:search], id: 'sample_search', placeholder:  t('.search') %>
+            </div>
+        </div>
+      </div>
+    </div>
+      <%= render partial: 'market_ticker', locals: {:@markets => @markets} %>
+  </div>
+</div>
+<script>
+    $(function () {
+        var minlength = 1;
+
+        $("#sample_search").keyup(function () {
+            value = $(this).val();
+            tab_active =  $('#home_market_tab li a.active').text().trim().split(' ')[0]
+            if (value.length >= minlength) {
+                $.ajax({
+                    url: '<%= search_market_path %>',
+                    data: {search: value,search_page:'welcome',tab_active: tab_active },
+                    datatype: 'script',
+                    method: 'GET'
+                });
+
+            } else {
+                $.ajax({
+                    url: '<%= show_all_markets_path  %>',
+                    data: {search_page: 'welcome', tab_active: tab_active},
+                    datatype: 'script',
+                    method: 'GET'
+                });
+            }
+
+        });
+    });
+
+
+    $(function () {
+        if ($("#chkYes").is(":checked")) {
+            $(".market_change").show();
+            $(".market_volume").hide();
+        }
+        else {
+            $(".market_volume").show();
+            $(".market_change").hide();
+
+        }
+        $("input[name='chkMarket']").click(function () {
+            if ($("#chkYes").is(":checked")) {
+                $(".market_change").show();
+                $(".market_volume").hide();
+            } else {
+                $(".market_volume").show();
+                $(".market_change").hide();
+
+            }
+        });
+    });
+
+</script>

@@ -1,0 +1,48 @@
+<div class="tradingview-widget-container">
+  <div id="tradingview_99b08"></div>
+</div>
+
+<script type="text/javascript">
+
+    TradingView.onready(function()
+    {
+        var widget = window.tvWidget = new TradingView.widget({
+            width: '100%',
+            symbol: gon.market.id,
+            interval: '15',
+            container_id: "tradingview_99b08",
+            datafeed: new Datafeeds.UDFCompatibleDatafeed("<%= domain_url%>/api/v2"),
+            library_path: "/charting_library/",
+            locale: gon.local,
+            timezone: '<%= time_zone_chart %>',
+            disabled_features: ['left_toolbar'],
+            theme: 'Light',
+            favorites: {
+              intervals: ["60", "30", "15", "5", "1"],
+              "chartTypes": ["Candles"]
+            },
+            "overrides": {
+                "mainSeriesProperties.style": 1,
+                "paneProperties.vertGridProperties.color": "#ebebe0",
+                "paneProperties.horzGridProperties.color": "#ebebe0",
+                "symbolWatermarkProperties.transparency": 90,
+                "scalesProperties.textColor" : "#AAA",
+                "mainSeriesProperties.barStyle.upColor": '#70a800',
+                "mainSeriesProperties.barStyle.downColor": '#ea0070',
+                "mainSeriesProperties.candleStyle.wickUpColor": '#70a800',
+                "mainSeriesProperties.candleStyle.wickDownColor": '#ea0070',
+                "mainSeriesProperties.candleStyle.upColor": '#70a800' ,
+                "mainSeriesProperties.candleStyle.downColor": '#ea0070',
+                "mainSeriesProperties.candleStyle.borderColor": '#378658',
+                "mainSeriesProperties.candleStyle.borderUpColor": '#70a800',
+                "mainSeriesProperties.candleStyle.borderDownColor": '#ea0070',
+                "paneProperties.leftAxisProperties.log": true,
+                "paneProperties.leftAxisProperties.logDisabled" :true,
+                "mainSeriesProperties.priceAxisProperties.log": true,
+                "mainSeriesProperties.priceAxisProperties.logDisabled":true,
+                "volumePaneSize": "tiny"
+            }
+        });
+    });
+
+</script>

@@ -1,0 +1,61 @@
+<header class="navbar navbar-default sml_hdr" role = "navigation">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 sml_nav">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 left_nav">
+          <ul id="menu" class="nav navbar-nav navbar-left">
+            <li>
+              <a class="navbar-brand currency_name" href="<%= root_path %>">
+                <ul class="trade_market_logo">
+                  <li class="bold_txt"><%= @market.name.split('/')[0] %></li>
+                  <li><%= @market.name.split('/')[1] %></li>
+                </ul>
+                <p><i class="fa fa-info"></i><%= @market.coin_name %></p>
+              </a>
+            </li>
+
+            <li>
+              <p class="navbar-text">
+                <span data-title="<%= t('.last') %>">
+                  <span class="last comn_price"></span>
+                </span>
+              </p>
+            </li>
+
+            <li>
+              <p class="navbar-text">
+                <span data-title="<%= t('.change') %>">
+                  <span class="change comn_price"></span>
+                </span>
+              </p>
+            </li>
+
+            <li>
+              <p class="navbar-text">
+                <span data-title="<%= t('.high') %>">
+                  <span class="high comn_price"></span>
+                </span>
+              </p>
+            </li>
+
+            <li>
+              <p class="navbar-text">
+                <span data-title="<%= t('.low') %>">
+                  <span class="low comn_price"></span>
+                </span>
+              </p>
+            </li>
+
+            <li>
+              <p class="navbar-text">
+                <span data-title="<%= t('.vol') %>">
+                  <span class="vol comn_price"></span>
+                </span>
+              </p>
+            </li>
+          </ul>
+          </div>
+
+
+      </div>
+    </div>
+</header>

@@ -1,0 +1,16 @@
+//= require jquery
+//= require jquery_ujs
+//= require bootstrap
+//= require bootstrap-datetimepicker
+//= require admin/app
+//= require admin/notifications
+//= require admin/id_documents
+//= require admin/activity_datatable
+//= require datatables
+//= require admin/fusioncharts
+//= require admin/fusioncharts.charts
+//= require admin/fusioncharts.theme.fint
+//= require admin/admin_activity
+//= require admin/collection_wallet
+//= require admin/admin_withdraw
+//= require bootstrap-datepicker

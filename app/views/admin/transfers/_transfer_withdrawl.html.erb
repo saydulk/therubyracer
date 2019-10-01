@@ -1,0 +1,44 @@
+
+<div class="row">
+  <div class="col-xs-24 ">
+    <div class="panel panel-primary">
+      <div class="panel-body">
+        <table class="table table-condensed table-hover" id="one_day_summary">
+          <thead>
+          <tr>
+            <th>Currency</th>
+            <th class="text-right">Wallet Address</th>
+            <th class="text-right">Cold-Wallet Address</th>
+            <th class="text-right">Amount</th>
+            <th class="text-right">State</th>
+          </tr>
+          </thead>
+          <tbody>
+
+          <% transfers.each do |data| %>
+            <tr>
+              <td class="text-right">
+                <%= data.currency_id %>
+              </td>
+              <td class="text-right">
+                <%= data.wallet_address %>
+              </td>
+              <td class="text-right">
+                <%= data.cold_wallet_address %>
+              </td>
+              <td class="text-right">
+                <%= data.amount %>
+              </td>
+              <td class="text-right">
+                <%= data.aasm_state %>
+              </td>
+
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>

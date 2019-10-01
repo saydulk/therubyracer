@@ -1,0 +1,22 @@
+<%= render 'admin/back_admin' %>
+<div class="row">
+  <div class="col-xs-12 alert">
+    <div id="filter-accordion" class="panel-group">
+      <%= render 'admin/statistic/shared/filter', form_target: @trades_grid, url: admin_statistic_trades_path %>
+      <%= render 'admin/statistic/shared/summary', groups: @groups %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-24">
+    <%= render partial: 'admin/statistic/shared/graph', locals: { chart: @chart } %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-24">
+    <%= link_to "Download CSV", url_for(format: 'csv', statistic_trades_grid: params[:statistic_trades_grid]) %>
+    <%= datagrid_table(@trades_grid, @assets) %>
+  </div>
+</div>

@@ -1,0 +1,107 @@
+#- id: 1
+#  code: boi
+#  currency: inr
+#  deposit: true
+#  withdraw: true
+
+- id: 1
+  code: boi
+  currency: inr
+  deposit: true
+  withdraw: true
+
+- id: 2
+  code: sbi
+  currency: inr
+  deposit: true
+  withdraw: true
+
+- id: 3
+  code: cb
+  currency: usd
+  deposit: true
+  withdraw: true
+
+- id: 4
+  code: boc
+  currency: usd
+  deposit: true
+  withdraw: true
+
+#- id: 6
+#  code: bcm
+#  currency: usd
+#  deposit: true
+#  withdraw: true
+
+#- id: 7
+#  code: abc
+#  currency: usd
+#  deposit: true
+#  withdraw: true
+#
+#- id: 8
+#  code: cmb
+#  currency: usd
+#  deposit: true
+#  withdraw: true
+#
+#- id: 9
+#  code: cmbc
+#  currency: usd
+#  deposit: true
+#  withdraw: true
+#
+#- id: 10
+#  code: cncb
+#  currency: usd
+#  deposit: true
+#  withdraw: true
+#
+#- id: 11
+#  code: hxb
+#  currency: usd
+#  deposit: true
+#  withdraw: true
+#
+#- id: 12
+#  code: cib
+#  currency: usd
+#  deposit: true
+#  withdraw: true
+#
+#- id: 13
+#  code: spdb
+#  currency: usd
+#  deposit: true
+#  withdraw: true
+#
+#- id: 14
+#  code: bob
+#  currency: usd
+#  deposit: true
+#  withdraw: true
+#
+#- id: 15
+#  code: ceb
+#  currency: usd
+#  deposit: true
+#  withdraw: true
+#
+#- id: 16
+#  code: sdb
+#  currency: usd
+#  deposit: true
+#  withdraw: true
+#
+#- id: 17
+#  code: pab
+#  currency: usd
+#  deposit: true
+#  withdraw: true
+#
+#- id: 18
+#  code: gdb
+#  currency: usd
+#  deposit: true
+#  withdraw: true

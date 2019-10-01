@@ -1,0 +1,50 @@
+.container id='home_tickers'
+  div.tickers_block
+    div.owl-carousel.owl-theme
+      - gon.tickers.each do |key, value|
+        - if %w(ethbtc bchbtc bcheth).include?(key)
+            div.item
+               div.ticker_list class ="#{key}"
+                  a.ticker_inner_contnt href="markets/#{key}"
+                    .tbl_div.ticker_value
+                      .tbl_cell
+                        h2 = value[:name]
+                      .tbl_cell.text-right.change
+                        - if value[:last].to_f >= value[:open].to_f
+                          p.green_txt
+                            = currency_change_percentage(value[:open], value[:last])
+                        - else
+                          p.pink_txt
+                            = currency_change_percentage(value[:open], value[:last])
+
+                    .currency_vol
+                      p.last
+                        strong
+                          = format_currency(value[:last].to_f, value[:name].split('/')[0].downcase, n:6, symbol: false).html_safe
+                        span
+                          = gon.market_prices[value[:name].split('/')[0].downcase]
+                      p.vol
+                        span = t('.volume')
+                        span.val style="margin-left: 4px;"
+                          = number_with_precision(value[:volume].to_f, precision: 6, delimiter: ',')
+                        span style="margin-left: 4px;"
+                          = value[:name].split('/')[1]
+
+javascript:
+
+  $('.owl-carousel').owlCarousel({
+    loop: false,
+    margin: 10,
+    nav: false,
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 3
+      },
+      1000: {
+        items: 5
+      }
+    }
+  })

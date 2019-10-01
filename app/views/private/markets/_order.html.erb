@@ -1,0 +1,60 @@
+<%# content_for :frame do %>
+  <div class="open_orders_pages" id ="open_order">
+    <%#= render 'tabs', active: :order %>
+
+    <div id="orders">
+        <!--<h1 class="page_hding">Open Order </h1>-->
+        <table class="table table-condensed">
+          <thead>
+          <tr>
+            <th><%= t('.id') %></th>
+            <th><%= t('.type') %></th>
+            <th><%= t('.state') %></th>
+            <th><%= t('.market') %></th>
+            <th><%= t('.price') %></th>
+            <th><%= t('.volume') %></th>
+            <th><%= t('.average_price') %></th>
+            <th><%= t('.fullfilled_volume') %></th>
+            <th><%= t('.timestamp') %></th>
+          </tr>
+          </thead>
+          <tbody class="list">
+          <% if @orders.present? %>
+           <% i = 0 %>
+            <% @orders.each do |order| %>
+              <td>
+              <%= i += 1%>
+              </td>
+              <td>
+                <%= t(".#{order.kind}") %></td>
+              </td>
+              <td>
+                <%= t(".#{order.state}") %>
+              </td>
+              <% string = order.currency.upcase.scan(/.{3}/) %>
+              <td><%= string[0] + "/" + string[1] %></td>
+              <% if order.ord_type == 'limit' %>
+                <td><%= order.price %></td>
+              <% else %>
+                <td><%= order.ord_type %></td>
+              <% end %>
+              <td><%= order.origin_volume %></td>
+              <td><%= order.avg_price %></td>
+              <td><%= order.origin_volume - order.volume %></td>
+              <td><%= order.created_at %></td>
+              </tr>
+            <% end %>
+
+          <% else %>
+            <tr>
+              <td colspan="9"><p class="text-center"><span class="not_found_img"><%= image_tag("zups.png", size: "85x75", ) %></span>You have no order history</p></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <div class="pull-right">
+          <%= paginate @orders,:param_name => 'order_page' if @orders%>
+        </div>
+      </div>
+  </div>
+<%# end %>

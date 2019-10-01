@@ -1,0 +1,188 @@
+<ul class="nav navbar-nav navbar-right back_button_sec">
+  <li><%= link_to t('actions.back'), main_app.admin_id_documents_path(tab: @id_document.aasm_state == 'verified' ? 'verified' : 'unverified') %></li>
+</ul>
+<div class="col-xs-18">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-xs-6 text-right">
+          <label><%= t('.id') %></label>
+        </div>
+        <div class="col-xs-18">
+          <span><%= @id_document.id %></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 text-right">
+          <label><%= t('.contact_no') %></label>
+        </div>
+        <div class="col-xs-18">
+          <span><%= @id_document.contact_no %></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 text-right">
+          <label><%= t('.name') %></label>
+        </div>
+        <div class="col-xs-18">
+          <span><%= link_to @id_document.name.blank? ? t('.unknown') :@id_document.name, admin_member_path(@id_document.member) %></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 text-right">
+          <label><%= t('.email') %></label>
+        </div>
+        <div class="col-xs-18">
+          <span><%= link_to @id_document.member.email, admin_member_path(@id_document.member) %></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 text-right">
+          <label><%= t('.birth_day') %></label>
+        </div>
+        <div class="col-xs-18">
+          <span><%= @id_document.birth_date %></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 text-right">
+          <label><%= t('.address') %></label>
+        </div>
+        <div class="col-xs-18">
+          <span><%= @id_document.address %></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 text-right">
+          <label><%= t('.city') %></label>
+        </div>
+        <div class="col-xs-18">
+          <span><%= @id_document.city %></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 text-right">
+          <label><%= t('.country') %></label>
+        </div>
+        <div class="col-xs-18">
+          <span><%= @id_document.country %></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 text-right">
+          <label><%= t('.zipcode') %></label>
+        </div>
+        <div class="col-xs-18">
+          <span><%= @id_document.zipcode %></span>
+        </div>
+      </div>
+      <!--<div class="row">-->
+        <!--<div class="col-xs-6 text-right">-->
+          <!--<label><%#= t('.id_document_type') %></label>-->
+        <!--</div>-->
+        <!--<div class="col-xs-18">-->
+          <!--<span><%#= @id_document.id_document_type %></span>-->
+        <!--</div>-->
+      <!--</div>-->
+      <div class="row">
+        <div class="col-xs-6 text-right">
+          <label><%= t('.id_document_number') %></label>
+        </div>
+        <div class="col-xs-18">
+          <span><%= @id_document.id_document_number %></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 text-right">
+          <label><%= t('.id_document_file') %></label>
+        </div>
+        <div class="col-xs-18">
+          <%= admin_asset_tag @id_document.id_document_file %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 text-right">
+          <label><%= t('.id_bill_type') %></label>
+        </div>
+        <div class="col-xs-18">
+          <span><%= @id_document.id_bill_type.present? ? @id_document.id_bill_type : "" %></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 text-right">
+          <label><%= t('.id_bill_file') %></label>
+        </div>
+        <div class="col-xs-18">
+          <%= admin_asset_tag @id_document.id_bill_file %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 text-right">
+          <label><%= t('.created_at') %></label>
+        </div>
+        <div class="col-xs-18">
+          <span><%= @id_document.created_at %></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 text-right">
+          <label><%= t('.updated_at') %></label>
+        </div>
+        <div class="col-xs-18">
+          <span><%= @id_document.updated_at %></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 text-right">
+          <label><%= t('.state') %></label>
+        </div>
+        <div class="col-xs-18">
+          <span><%= t("#{@id_document.aasm_state}") %></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 text-right">
+          <label><%= t('.verified') %></label>
+        </div>
+        <div class="col-xs-18">
+          <%= yesno(@id_document.verified?) %>
+        </div>
+      </div>
+
+      <hr class="split">
+      <% shu = @id_document.name.present?&& @id_document.contact_no.present?&& @id_document.id_document_type && @id_document.id_bill_type.present? && @id_document.id_document_number.present? %>
+      <div class="row">
+        <ul class="withdraw-action" style="padding: 15px 20px;">
+          <% if @id_document.may_approve? %>
+            <li>
+              <%= link_to admin_id_document_path(@id_document, approve: 'true'), method: :patch, style: 'color: white;', class: 'approve_link' do %>
+                <button class="btn btn-primary new1class   <%= shu.present? ? 'enabled' : 'disabled'%>" id="approve_button">
+
+                  <%= t('.approve') %>
+                </button>
+              <% end %>
+            </li>
+          <% end %>
+
+          <% if @id_document.may_reject? %>
+            <li>
+              <%= link_to admin_id_document_path(@id_document, reject: 'true'), method: :patch, style: 'color: white;'  do %>
+                <button class="btn btn-danger new1class ">
+                  <%= t('.reject') %>
+                </button>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  is_valid = '<%=shu %>'
+  if (is_valid== 'false') {
+    alert('kyc is not submitted by user')
+  }
+</script>
+
+

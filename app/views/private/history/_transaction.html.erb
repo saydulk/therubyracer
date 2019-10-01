@@ -1,0 +1,62 @@
+<% if transaction.currency_obj.present? %>
+  <tr>
+    <td class="col-lg-2"><%= transaction.aasm_state.capitalize %></td>
+    <td class="col-lg-1"><%= transaction.currency_obj.code_text %></td>
+    <td class="col-lg-2"><%= transaction.amount %></td>
+    <td class="col-lg-2"><%= transaction.created_at %></td>
+    <td class="col-lg-4 information_td" style="position: relative;">
+      <table class="nested_tbl">
+        <tr>
+          <td class="add_td" style="vertical-align:top;padding-right: 0px; padding-left: 0px;">
+            Address:
+          </td>
+          <td class="add_td" style="vertical-align:top;color:#333;padding-right: 0px; padding-left: 10px;">
+            <% if transaction.class.name.include?'Deposit' %>
+              <p class="transaction_info"><%= transaction.address %></p>
+            <% else %>
+              <p class="transaction_info"><%= transaction.fund_uid %></p>
+            <% end %>
+          </td>
+        </tr>
+        <tr class = "trans_td"  style="display:none;">
+          <td class = "trans_td" style="vertical-align:top;padding-right: 0px; padding-left: 0px;">
+            Txid:
+          </td>
+          <td  style="vertical-align:top; color:#333;padding-right: 0px; padding-left: 10px;">
+            <p class="transaction_info"><%=  transaction.txid %></p>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td class="col-lg-1 text-center arrow_td">
+      <span style="display: inline-block; width: 100%; text-align: center;" class="shw_hide_arrow"><i class="fa fa-angle-down"></i></span>
+    </td>
+  </tr>
+<% end %>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function(){
+
+        $(".shw_hide_arrow").unbind('click').bind('click', function (e) {
+            current_variable = $(this);
+            details(current_variable);
+        });
+    });
+
+    function details(current_variable){
+      i_tag =current_variable.find('i')
+      if(current_variable.find('.fa-angle-down').length > 0){
+        i_tag.removeClass('fa-angle-down');
+        i_tag.addClass('fa-angle-up');
+        $('.trans_td').hide();
+        current_variable.parent().siblings(".information_td").find('table').find(".trans_td").show();
+      }
+      else{
+        i_tag.removeClass('fa-angle-up');
+        i_tag.addClass('fa-angle-down');
+        current_variable.parent().siblings(".information_td").find('table').find(".trans_td").hide();
+      }
+
+    }
+
+</script>

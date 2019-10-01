@@ -1,0 +1,13 @@
+CREATE TABLE `core_currency` (
+  `id`  int(3)  NOT NULL,
+  `coincd` varchar(20) DEFAULT NULL,
+  `coinnm` varchar(20) DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+/*코인명 저장 테이블 추가 , 기존 파일에 정의되어 불편해서 추가함 */
+

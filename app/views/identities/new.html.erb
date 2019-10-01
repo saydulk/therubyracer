@@ -1,0 +1,91 @@
+<% content_for :header do %> <span></span>
+<% end %>
+<% content_for :footer do %> <span></span>
+<% end %>
+
+<section class="login_page">
+  <div class="container">
+    <div class="login_block">
+      <div class="login_block_inner signup_block">
+        <div class="login_logo"><a href="<%= root_path %>" class="navbar-brand top_logo"></a></div>
+        <div class="login_hding"><span><%= t('.heading') %></span></div>
+
+        <div class="login_form">
+          <%= render 'shared/flash'%>
+          <%= simple_form_for @identity, url: '/auth/identity/register',defaults: { wrapper: false }  do |f| %>
+
+            <div class="form-group">
+              <div class="mail_fld form_row">
+                <%= f.input :email, input_html: { name: 'email', autofocus: 'true', required:true, class:'input_fld'}, placeholder:t('.email'), label: false %>
+                <span class="fld_icon">
+                  <%= image_tag('pic_fillemail.png')%>
+                </span>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="pass_fld form_row">
+                <%= f.input :password, input_html: { name: 'password' ,class:'input_fld'},placeholder:t('.create_password'),label:false %>
+                <span class="fld_icon">
+                  <%= image_tag('pic_pwd.png')%>
+                </span>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="pass_fld form_row">
+                <%= f.input :password_confirmation, input_html: { name: 'password_confirmation',class:"input_fld" },placeholder:t('.confirm_password'),label:false %>
+                <span class="fld_icon">
+                  <%= image_tag('pic_pwd.png')%>
+                </span>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="pass_fld form_row">
+                <%= f.input :description, readonly: true, input_html: {name: 'description',class:"input_fld disabled", value: cookies[:ref]}, placeholder:t('.reference_user'), label:false%>
+                <span class="fld_icon">
+                  <%= image_tag('agent.png')%>
+                </span>
+              </div>
+            </div>
+
+            <%= hidden_field_tag 'register','1'%>
+            <div class="form-group">
+              <div class="checkbox" >
+                <div class="my-check">
+                  <%= f.input :conditions, as: :boolean, required: true, input_html: { name: 'conditions', class: 'terms' }, label:false%>
+                  <label for="check1" class="lablel"><%= t('.agree_content') %> <span class="links"> <a class="" href="/terms" target="_blank"> <%= t('.terms') %> </a></span> </label>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="form-group"style="margin-top: 12px;">
+              <%= f.button :wrapped, t('.register'),class:'create_account grey_btn' %>
+            </div>
+            <div class="form-group">
+              <span href="javascript:void(0)" style="text-align:right;width: 100%;float: left;"><%= t('.register_content') %>  <span class="links"> <%= link_to t('.login'),signin_path %></span></span>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div> <!--/.login_block-->
+  </div>
+</section>
+<%= render 'shared/session_footer' %>
+<%= content_for(:the_links) do %>
+  I agree to the <%= link_to "Terms of Service", terms_path,:remote => true %>
+  and <%= link_to "Privacy Policy", privacy_path, :remote => true %>
+<% end %>
+
+<script>
+    $('#lang').on('click', function(){
+        $(this).parent().toggleClass('open');
+    });
+
+    $(document).on('click', function(){
+        $('#lang').parent().removeClass('open');
+    });
+    if($('#identity_conditions').parents('div.checkbox').find('span.error'))
+    {
+        $('#identity_conditions').parents('div.checkbox').find('span.error').css({'position': 'absolute', 'margin-top': '17px'});
+    }
+</script>

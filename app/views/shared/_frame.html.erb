@@ -1,0 +1,24 @@
+
+<div class="container-fluid Setting_page">
+    <% if content_for?(:before) %>
+      <%= yield(:before) %>
+    <% end %>
+    <div style="display: inline-block; width: 100%;">
+     <!--<h2 style="padding: 10px 0;" class="panel-title"><%= guide_panel_title %></h2>-->
+
+        <div id="content" class="SafetyInstruction api_content edit_documnets">
+          <% unless controller_name == 'settings' %>
+            <%= render 'shared/flash' %>
+          <% end %>
+          <%= yield %>
+        </div>
+      </div>
+      <% if content_for?(:secondary) %>
+        <%= yield(:c) %>
+      <% end %>
+
+    <% if content_for?(:after) %>
+      <%= yield(:after) %>
+    <% end %>
+</div>
+

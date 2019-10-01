@@ -1,0 +1,14 @@
+var error = '<%= @error %>'
+$('.error_submit').html(" ")
+<% if @error %>
+    <% if @commission.errors.any? %>
+      <% @commission.errors.full_messages.each do |message| %>
+        $('.error_submit').append('<span><%= message %></span>')
+      <% end %>
+    <% end %>
+    $('.error_submit').show()
+    $('.error_submit').delay(7000).fadeOut();
+<% else %>
+  alert('Commission withdraw has been successfully done!');
+  location.reload();
+<% end %>

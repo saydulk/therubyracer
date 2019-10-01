@@ -1,0 +1,46 @@
+<%= stylesheet_link_tag 'angular-datepicker' %>
+<%= javascript_include_tag 'dirPagination' %>
+<%= javascript_include_tag 'angular-datepicker' %>
+<div class="container-fluid funds_page">
+  <div class="row">
+    <div class="container">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 funds_setting_page">
+        <div class="row">
+          <h2 id="title" ng-if="controller_name == 'Deposit' ">
+            <%=  t('.deposit')%>
+          </h2>
+          <h2 id="title" ng-if="controller_name == 'Withdraws' ">
+            <%=  t('.withdraws')%>
+          </h2>
+          <div class="funds_setting_block">
+            <div class="funds_setting_left">
+              <div class="white_block">
+                <div class="funds_setting_left_inner">
+                  <accounts></accounts>
+                  <div ui-view="deposit_data"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="funds_setting_right">
+              <div ui-view="history_data"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-xs-12 col-sm-4 col-md-5 col-lg-6"></div>
+
+<% content_for :scripts do %>
+  <script type="text/javascript" charset="utf-8">
+      $(window).load(function () {
+          $.ajax({
+              type: "post",
+              url: "<%= gen_address_funds_path %>"
+          })
+      });
+  </script>
+<% end %>

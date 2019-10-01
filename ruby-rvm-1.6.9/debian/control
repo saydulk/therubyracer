@@ -1,0 +1,29 @@
+Source: ruby-rvm
+Section: ruby
+Priority: extra
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Brian Thomason <brian.thomason@canonical.com>
+Build-Depends: debhelper (>= 7.0.50~), ruby
+Standards-Version: 3.9.1
+Homepage: https://rvm.beginrescueend.com/
+
+Package: ruby-rvm
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, build-essential, curl, zlib1g-dev,
+         libreadline-gplv2-dev, libxml2-dev, libsqlite3-dev, file, git, bison,
+         adduser
+Description: easily install, manage and work with multiple ruby environments
+ RVM allows users to deploy each project with its own completely self-contained
+ and dedicated environment - from the specific version of ruby all the way down
+ to the precise set of required gems to run the application.
+ .
+ Having a precise set of gems also avoids the issue of version conflicts between
+ projects, causing difficult-to-trace errors and hours of hair loss. With RVM,
+ NO OTHER GEMS than those required are installed. This makes working with
+ multiple complex applications where each has a long list of gem dependencies
+ efficient.
+ .
+ RVM allows one to easily test gem upgrades by switching to a new clean set of
+ gems to test with while leaving the original set intact. It is flexible enough
+ to even have a set of gems per environment or development branch--or even
+ individual developer's taste!

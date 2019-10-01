@@ -1,0 +1,163 @@
+<!-- font-awesome -->
+<%= stylesheet_link_tag 'font-awesome/css/font-awesome.min' %>
+<%= stylesheet_link_tag 'css/terms.css' %>
+<section class="terms_block about_sec">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center about_banner">
+        <div class="row">
+          <h1><%= t('.title') %></h1>
+          <div class="zinance_origin tbl_div">
+            <div class="zinance_origin_img tbl_cell text-left">
+              <%= image_tag('about.png') %>
+            </div>
+            <div class="zinance_origin_img tbl_cell text-left">
+              <%= image_tag('about2.png') %>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 safety_rules">
+            <div class="row">
+              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-left safety_rules_blocks">
+                <div class="safety_rules_blocks_content tbl_div">
+                  <div class="safety_rules_blocks_content_left tbl_cell">
+                    <div class="left_icon">
+                      <!--<i class="fa fa-shield" aria-hidden="true"></i>-->
+                      <%= image_tag('aboutIcon1.png')%>
+                    </div>
+                  </div>
+                  <div class="safety_rules_blocks_content_right tbl_cell">
+                    <h5><%= t('.safety_stability') %></h5>
+                    <p><%= t('.system_architecture') %></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-left safety_rules_blocks">
+                <div class="safety_rules_blocks_content tbl_div">
+                  <div class="safety_rules_blocks_content_left tbl_cell">
+                    <div class="left_icon">
+                      <!--<i class="fa fa-tachometer" aria-hidden="true"></i>-->
+                      <%= image_tag('aboutIcon2.png')%>
+                      </div>
+                  </div>
+                  <div class="safety_rules_blocks_content_right tbl_cell">
+                    <h5><%= t('.performance') %></h5>
+                    <p><%= t('.processing') %></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-left safety_rules_blocks">
+                <div class="safety_rules_blocks_content tbl_div">
+                  <div class="safety_rules_blocks_content_left tbl_cell">
+                    <div class="left_icon">
+                      <!--<i class="fa fa-deviantart" aria-hidden="true"></i>-->
+                      <%= image_tag('aboutIcon3.png')%>
+                    </div>
+                  </div>
+                  <div class="safety_rules_blocks_content_right tbl_cell">
+                    <h5><%= t('.liquidity') %></h5>
+                    <p><%= t('.resources') %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-left safety_rules_blocks">
+                <div class="safety_rules_blocks_content tbl_div">
+                  <div class="safety_rules_blocks_content_left tbl_cell">
+                    <div class="left_icon">
+                      <!--<i class="fa fa-tablet" aria-hidden="true"></i>-->
+                      <%= image_tag('aboutIcon4.png')%>
+                    </div>
+                  </div>
+                  <div class="safety_rules_blocks_content_right tbl_cell">
+                    <h5><%= t('.devices') %></h5>
+                    <p><%= t('.device_text') %></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-left safety_rules_blocks">
+                <div class="safety_rules_blocks_content tbl_div">
+                  <div class="safety_rules_blocks_content_left tbl_cell">
+                    <div class="left_icon">
+                      <!--<i class="fa fa-globe" aria-hidden="true"></i>-->
+                      <%= image_tag('aboutIcon6.png')%>
+                    </div>
+                  </div>
+                  <div class="safety_rules_blocks_content_right tbl_cell">
+                    <h5><%= t('.support') %></h5>
+                    <p><%= t('.support_text') %></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-left safety_rules_blocks">
+                <div class="safety_rules_blocks_content tbl_div">
+                  <div class="safety_rules_blocks_content_left tbl_cell">
+                    <div class="left_icon">
+                      <!--<i class="fa fa-btc" aria-hidden="true"></i>-->
+                      <%= image_tag('aboutIcon5.png')%>
+                    </div>
+                  </div>
+                  <div class="safety_rules_blocks_content_right tbl_cell">
+                    <h5><%= t('.coin_support') %></h5>
+                    <p><%= t('.coins') %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="terms_block text-center advantages_sec">
+  <div class="container">
+    <div class="row">
+      <h1><%= t('.advantages') %></h1>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 advantages_block">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 advantages_block_content">
+            <div class="advantages_block_content_inner">
+              <%= image_tag ('advantage1.png') %>
+              <h4><%= t('.team') %></h4>
+              <p><%= t('.team_text') %></p>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 advantages_block_content">
+            <div class="advantages_block_content_inner">
+              <%= image_tag ('advantage2.png') %>
+              <h4><%= t('.products') %></h4>
+              <p><%= t('.products_text') %></p>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 advantages_block_content">
+            <div class="advantages_block_content_inner">
+              <%= image_tag ('advantage3.png') %>
+              <h4><%= t('.technology') %></h4>
+              <p> <%= t('.technology_text') %></p>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6
+               col-md-3 col-lg-3 advantages_block_content">
+            <div class="advantages_block_content_inner">
+              <%= image_tag ('advantage4.png') %>
+              <h4><%= t('.resources') %></h4>
+              <p> <%= t('.resources_text') %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

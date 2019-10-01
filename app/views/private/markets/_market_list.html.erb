@@ -1,0 +1,105 @@
+<div id="market_list_wrapper" class="has-right-dropdown">
+
+  <div id="market_list" class="panel-body-head">
+        <% if @market_groups.size > 1 %>
+          <div class="dropdown-wrapper">
+            <ul class="dropdown-menu" id="markets_tab">
+              <li>
+                <a data-name="all" href="javascript:;">
+                  <%= t('.all_html') %>
+                </a>
+              </li>
+              <% @market_groups.each_with_index do |name, index| %>
+                <li>
+                  <a class= "<%= 'active' if name.eql?( params[:bid]) %>" data-name="<%= name %>" href="javascript:void(0);" oncontextmenu="return false;">
+                    <%= t(".#{name}") %>
+                  </a>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="search_market_sec tbl_div">
+              <div class="search_market_left tbl_cell">
+                <div class="search_market">
+                  <span class="search_icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+                  <%= text_field_tag :search, params[:search], id: 'sample_search', placeholder: t('.search') %>
+                </div>
+              </div>
+              <div class="change_vol tbl_cell">
+                <ul class="choose_vol">
+                  <li>
+                    <div class="my-radio">
+                    <span class="radioBox">
+                      <input type="radio" id="chkYes" name="chkMarket" checked="checked"/>
+                      <label for="chkYes"></label>
+                    </span>
+                      <label for="chkYes" class="lablel"><%= t('.bt1')%> </label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="my-radio">
+                    <span class="radioBox">
+                      <input type="radio" id="chkNo" name="chkMarket"/>
+                      <label for="chkNo"></label>
+                    </span>
+                      <label for="chkNo" class="lablel"><%= t('.bt')%></label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        <% end %>
+      <%= render partial: 'market_ticker', locals: {:@markets => @markets} %>
+  </div>
+</div>
+<script>
+    $(function () {
+        var minlength = 1;
+
+        $("#sample_search").keyup(function () {
+            value = $(this).val();
+            tab_active =  $('#markets_tab li a.active').text().trim().split(' ')[0]
+            if (value.length >= minlength) {
+                $.ajax({
+                    url: '<%= search_market_path %>',
+                    data: {search: value,search_page:'markets', tab_active: tab_active},
+                    datatype: 'script',
+                    method: 'GET'
+                });
+
+            } else {
+               $.ajax({
+                  url: '<%= show_all_markets_path  %>',
+                  data: {search_page: 'markets', tab_active: tab_active},
+                  datatype: 'script',
+                  method: 'GET'
+               });
+            }
+
+        });
+    });
+
+
+    $(function () {
+        if ($("#chkYes").is(":checked")) {
+            $(".market_change").show();
+            $(".market_volume").hide();
+        }
+        else {
+            $(".market_volume").show();
+            $(".market_change").hide();
+
+        }
+        $("input[name='chkMarket']").click(function () {
+            if ($("#chkYes").is(":checked")) {
+                $(".market_change").show();
+                $(".market_volume").hide();
+            } else {
+                $(".market_volume").show();
+                $(".market_change").hide();
+
+            }
+        });
+    });
+
+</script>

@@ -1,0 +1,60 @@
+#!/bin/bash
+# postinst script for ruby-rvm
+#
+# see: dh_installdeb(1)
+
+set -e
+
+# summary of how this script can be called:
+#        * <postinst> `configure' <most-recently-configured-version>
+#        * <old-postinst> `abort-upgrade' <new version>
+#        * <conflictor's-postinst> `abort-remove' `in-favour' <package>
+#          <new-version>
+#        * <postinst> `abort-remove'
+#        * <deconfigured's-postinst> `abort-deconfigure' `in-favour'
+#          <failed-install-package> <version> `removing'
+#          <conflicting-package> <version>
+# for details, see http://www.debian.org/doc/debian-policy/ or
+# the debian-policy package
+
+
+case "$1" in
+    configure)
+	#ensure gemsets and config files are owned by admin group
+        for FILE in `cat /var/lib/dpkg/info/ruby-rvm.list |grep \/var\/lib\/ruby-rvm`; do
+          MODE=`stat --format=%a $FILE`
+          dpkg-statoverride --update --add root admin $MODE $FILE
+        done
+
+	#create dirs in /var/cache
+	for DIR in archives environments rubies src tmp wrappers; do
+	    mkdir -p /var/cache/ruby-rvm/$DIR;
+	done
+	chown -R root:admin /var/cache/ruby-rvm
+	chmod -R 775  /var/cache/ruby-rvm
+	#create /var/lib dirs
+	mkdir -p /var/lib/ruby-rvm/gems
+	chown -R root:admin /var/lib/ruby-rvm
+	chmod -R 775  /var/lib/ruby-rvm
+	#create bin dir; ruby symlinks are installed here
+	mkdir -p /usr/share/ruby-rvm/bin
+	chown -R root:admin /usr/share/ruby-rvm/bin
+	chmod -R 775 /usr/share/ruby-rvm/bin
+	#creat log dir
+	mkdir -p /var/log/ruby-rvm
+	chown -R root:admin /var/log/ruby-rvm
+	chmod -R 775  /var/log/ruby-rvm
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0

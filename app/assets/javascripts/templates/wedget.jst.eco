@@ -1,0 +1,29 @@
+<% change_val = formatter.price_change(parseFloat(@open), parseFloat(@last))  %>
+<% color_class = formatter.ticker_color_class(parseFloat(@last), parseFloat(@open)) %>
+
+<tr>
+  <td>
+
+    <%- @name %>
+  </td>
+  <td>
+    <%- @coin_name %>
+  </td>
+
+  <td class='<%- color_class %>'>
+    <%- formatter.mask_fixed_volume @last %>
+  </td>
+
+  <td class='text-right <%- color_class %>'>
+    <%- change_val + '%'%>
+  </td>
+  <td class='text-right'>
+    <%- formatter.mask_fixed_volume(@high) %>
+  </td>
+  <td class='text-right'>
+    <%- formatter.mask_fixed_volume(@low) %>
+  </td>
+  <td class='text-right'>
+    <%- formatter.mask_fixed_volume(@volume) %>
+  </td>
+</tr>

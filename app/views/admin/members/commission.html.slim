@@ -1,0 +1,23 @@
+= render 'admin/back_admin'
+ul.nav.nav-tabs.tbl_cell
+  li.active.commission_tab
+    a data-toggle="tab" href="#withdraw_commission" Withdraw
+  li.commission_tab
+    a data-toggle="tab" href="#trade_commission"  Trade
+
+.tab-content
+  .tab-pane.active id="withdraw_commission"
+    = render partial: 'withdraw_commission', locals: {commissions: @commissions, commission_list: @commission_list}
+  .tab-pane id="trade_commission"
+    = render partial: 'trade_commission', locals: {commissions: @commission_trades, commission_list: @commission_list}
+
+= render 'admin/statistic/shared/filter', form_target: @trades_grid, url: commission_admin_members_path
+= datagrid_table(@trades_grid, @assets)
+
+//javascript:
+//    $(document).ready(function () {
+//        localStorage.setItem('commission_tab','Withdraw')
+//        $('.commission_tab').click(function(){
+//            localStorage.setItem('commission_tab',$(this).find('a').text())
+//        })
+//    });

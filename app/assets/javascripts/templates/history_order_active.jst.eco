@@ -1,0 +1,46 @@
+<% trade_state = formatter.get_trade_state @origin_volume, @volume %>
+
+<tr data-id="<%= @id %>" data-kind="<%= @kind %>" class="order <%= @kind %> <%= @market %>">
+  <td class='time text-left '>
+    <span><%- formatter.fulltime_order @at %></span>
+  </td>
+
+  <td class='market text-left'>
+    <span><%- formatter.market_set_capitalize @market %></span>
+  </td>
+
+  <td class='state text-left'>
+    <span>Limit</span>
+  </td>
+
+  <td class='kind text-center'>
+    <span class='label label-<%= @kind %>'><%= formatter.short_trade @kind %></span><span class='label label-<%= trade_state %>'><%= gon.i18n.trade_state[trade_state] %></span>
+  </td>
+
+  <% if @average: %>
+    <td> <%- formatter.mask_fixed_price @average  %></td>
+  <% else: %>
+    <td> <%- formatter.calculate_average @origin_locked, @locked, @funds_received, @kind %></td>
+  <% end %>
+
+
+  <td class='price text-left <%= formatter.trend @kind %>'>
+    <span><%- formatter.mask_fixed_price @price %></span>
+  </td>
+
+  <td class='amount text-right'>
+    <span><%- formatter.fulled_amount @origin_volume, @volume %></span>
+  </td>
+
+  <td class='volume text-right'>
+    <span><%- formatter.mask_fixed_volume @volume %></span>
+  </td>
+
+  <td class='amount text-right'>
+    <span title= '<%- formatter.total_amount_title @volume, @price  %>'><%- formatter.amount @volume, @price %></span>
+  </td>
+
+  <td class='amount text-left'>
+    <span> <%- formatter.order_status @state %> </span>
+  </td>
+</tr>

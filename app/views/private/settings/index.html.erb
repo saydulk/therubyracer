@@ -1,0 +1,238 @@
+<%#= render 'refferal' %>
+<% if flash[:alert] %>
+  <div class="container">
+    <div class="flash-message">
+      <div class="alert alert-dismissable alert-danger" style="margin-top: 10px">
+        <button class="close" type="button" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <p>
+          <i class="fa fa-info-circle"></i>
+          <span ><%= flash[:alert] %></span>
+        </p>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <%= render 'shared/flash' %>
+<% end %>
+
+<div class="container">
+  <div class="setting_wrapper">
+  <div class="setting_wrap">
+    <div class="setting_wrap_left">
+      <div class="setting_blocks">
+        <div class="setting_left_info">
+          <div class="setting_left_info_icon">
+            <span class="comn_icon icon1"></span>
+          </div>
+
+          <div class="setting_left_info_txt">
+            <h4><%= t('.email.title') %></h4>
+            <% if current_user.activated? %>
+              <p class="text-ignore"><%= t('.email.description-activated') %></p>
+            <% else %>
+              <p class="text-ignore"><%= t('.email.description') %></p>
+            <% end %>
+          </div>
+        </div>
+        <div class="setting_right_info">
+          <% if current_user.activated? %>
+            <a href="#" class="btn btn-success btn-block disabled" role="button">
+              <i class="fa fa-check-circle"></i>
+              <span><%= t('.email.activated') %></span>
+            </a>
+          <% else %>
+            <%= link_to t('.email.resend'), new_activation_path, class: 'btn btn-default btn-block' %>
+          <% end %>
+        </div>
+      </div> <!--/.setting_blocks-->
+
+      <div class="setting_blocks">
+        <div class="setting_left_info">
+          <div class="setting_left_info_icon">
+            <span class="comn_icon icon2"></span>
+          </div>
+          <div class="setting_left_info_txt">
+            <h4>
+              <span><%= t('.verification.title') %></span>
+              <i class="fa fa-bolt text-warning"></i>
+            </h4>
+            <p class="text-ignore"><%= t('.verification.description') %></p>
+          </div>
+        </div>
+
+        <div class="setting_right_info">
+          <% if current_user.id_document_verified? %>
+            <a href="#" class="btn btn-success btn-block disabled" role="button">
+              <i class="fa fa-check-circle"></i>
+              <span><%= t('.verification.verified') %></span>
+            </a>
+          <% else %>
+            <%= link_to t('.verification.go'), edit_id_document_path, class: 'btn btn-default btn-block' %>
+          <% end %>
+        </div>
+      </div> <!--/.setting_blocks-->
+
+      <div class="setting_blocks">
+        <div class="setting_left_info">
+          <div class="setting_left_info_icon">
+            <span class="comn_icon icon3"></span>
+          </div>
+          <div class="setting_left_info_txt">
+            <h4><%= t('.passwords.title') %></h4>
+            <p class="text-ignore"><%= t('.passwords.description') %></p>
+          </div>
+        </div>
+        <div class="setting_right_info">
+          <% if current_user.identity %>
+            <%= link_to t('.passwords.go'), edit_identity_path, class: 'btn btn-default btn-block' %>
+          <% else %>
+            <%= link_to t('.passwords.set'), new_authentications_identity_path, class: 'btn btn-default btn-block' %>
+          <% end %>
+        </div>
+
+      </div> <!--/.setting_blocks-->
+
+    </div>
+    <div class="setting_wrap_right">
+      <div class="setting_blocks">
+        <div class="setting_left_info">
+          <div class="setting_left_info_icon">
+            <span class="comn_icon icon4"></span>
+          </div>
+          <div class="setting_left_info_txt">
+            <h4><%= t('.google_authenticater.title') %></h4>
+            <p class="text-ignore"><%= t('.google_authenticater.description') %></p>
+          </div>
+        </div>
+        <div class="setting_right_info">
+          <%= link_to "#{current_user.enable? ? t('.google_authenticater.disable') : t('.google_authenticater.enable')}",
+                      '#two_factor',
+                      data: { toggle: :modal },
+                      class: 'btn btn-default btn-block enable_btn' %>
+        </div>
+      </div> <!--/.setting_blocks-->
+
+      <div class="setting_blocks">
+        <div class="setting_left_info">
+          <div class="setting_left_info_icon">
+            <span class="comn_icon icon5"></span>
+          </div>
+          <div class="setting_left_info_txt">
+            <h4><%= t('.sms_authenticater.title') %></h4>
+            <p class="text-ignore"><%= t('.sms_authenticater.description') %></p>
+          </div>
+        </div>
+        <div class="setting_right_info">
+          <%= link_to "#{current_user.sms_enable? ? t('.sms_authenticater.disable') : t('.sms_authenticater.enable')}",
+                      '#sms_modal', data: { toggle: :modal },
+                      class: 'btn btn-default btn-block enable_btn',id:'set_country_code' %>
+        </div>
+      </div> <!--/.setting_blocks-->
+      <div class="setting_blocks">
+        <div class="setting_left_info">
+            <div class="setting_left_info_icon" style="max-width: 18% " >
+              <%= image_tag('api_img.png') %>
+            </div>
+
+          <div class="setting_left_info_txt">
+            <h4><%= t('.api_tokens.title') %></h4>
+            <p class="text-ignore"><%= t('.api_tokens.description') %></p>
+          </div>
+        </div>
+        <div class="setting_right_info">
+          <%= link_to t('.api_tokens.go'), api_tokens_path, class: 'btn btn-default btn-block enable_btn' %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<%= render partial: 'google_auth' %>
+<%= render partial: 'sms', locals: {current_user: current_user} %>
+<%= render partial: "authentication_disable" %>
+
+
+<% content_for :guide_title do %>
+  <h3>
+    <i class="fa fa-user"></i>
+    <span><%= current_user.email %></span>
+  </h3>
+<% end %>
+
+<% content_for :guide do %>
+  <ul class="list-group">
+    <% if current_user.admin? %>
+      <span class="label label-warning">ADMIN</span>
+    <% end %>
+  </ul>
+  <p class="text-warning">
+    <%= t('.safety_instruction').html_safe %>
+  </p>
+<% end %>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        sms_enable = '<%= current_user.sms_auth? %>'
+        google_enable = '<%= current_user.otp_module? %>'
+//         if(sms_enable == 'false' &&  google_enable == 'false'){
+//             $('#authModal').modal('show');
+//         }
+
+        $('#skipNow').click(function(){
+            $('#authModal').modal('hide');
+        });
+
+        $('.redirect_setting').click(function(){
+            window.location = "/settings";
+        })
+
+        $('#sms_modal').on('shown.bs.modal', function (e) {
+            $('#settings_country_code').chosen();
+        })
+        $('#send_sms').click(function(e){
+            e.preventDefault();
+            mob_no = $("#settings_contact_no").val(),
+            country_code= $("#settings_country_code").val(),
+            $('#send_sms').addClass("disabled");
+            <% if current_user.sms_enable? %>
+              mob_no = '<%= current_user.contact_no_without_country_code %>'
+            <% end %>
+
+            if(!mob_no){
+              $("#sms_error").html('Please fill the valid mobile number with country code');
+              $("#sms_error").removeClass('hide');
+
+            }
+
+            else {
+              $.ajax({
+                type: "POST",
+                url: '<%= send_token_sms_settings_path %>',
+                data: { to: mob_no, code: country_code },
+                dataType: 'script',
+                  success: function(data){
+                      $('#send_sms').removeClass("disabled");
+                  },
+                  complete: function(){
+                }
+              });
+            }
+
+        });
+
+        $("#settings_contact_no").on('focus', function(){
+          $("#sms_error").html('');
+          $("#sms_success").addClass('hide');
+        });
+        $('#settings_country_code').on('change', function(){
+        });
+        <% if current_user.sms_enable? %>
+          $('.country-code-inputs span select').attr('disabled', 'disabled')
+        <% end %>
+    });
+
+</script>
+

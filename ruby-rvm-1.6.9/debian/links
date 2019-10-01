@@ -1,0 +1,11 @@
+var/lib/ruby-rvm/gems usr/share/ruby-rvm/gems
+var/lib/ruby-rvm/gemsets usr/share/ruby-rvm/gemsets
+var/cache/ruby-rvm/archives usr/share/ruby-rvm/archives
+var/cache/ruby-rvm/environments usr/share/ruby-rvm/environments
+usr/lib/ruby-rvm usr/share/ruby-rvm/lib
+var/log/ruby-rvm usr/share/ruby-rvm/log
+var/cache/ruby-rvm/rubies usr/share/ruby-rvm/rubies
+var/cache/ruby-rvm/src usr/share/ruby-rvm/src
+var/cache/ruby-rvm/tmp usr/share/ruby-rvm/tmp
+var/lib/ruby-rvm/config usr/share/ruby-rvm/config
+var/cache/ruby-rvm/wrappers usr/share/ruby-rvm/wrappers

@@ -1,0 +1,136 @@
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
+<% content_for :header do %> <span></span>
+<% end %>
+<% content_for :footer do %> <span></span>
+<% end %>
+
+<section class="login_page">
+  <div class="login_block">
+      <div class="login_block_inner">
+        <div class="login_logo"><a class="navbar-brand top_logo" href="<%= root_path %>"></a></div>
+        <!--<div class="login_logo"><a class="navbar-brand top_logo"></a></div>-->
+        <div class="login_hding"><span><%= t ('.log_in')%></span></div>
+
+        <div class="visit_info">
+          <p><span class="fa fa-exclamation-circle"></span><%=  t ('.check')%> <b><%= domain_url %></b></p>
+          <!--<span class="askimg"><%= image_tag('safeLink1.jpg')%></span>-->
+          <div class="url_img">
+            <div class="input_block tbl_div">
+              <button class="lock_btn tbl_cell"><i class="fa fa-lock"></i></button>
+              <span class="tbl_cell"> <a href="javascript:void(0)">https://t.me/CoinchelExchange</a></span></div></div>
+        </div>
+
+        <div class="login_form">
+          <%= render 'shared/flash' %>
+          <%= simple_form_for @identity, url: '/auth/identity/callback', defaults: {wrapper: false}, method: :post do |f| %>
+            <div class="alert alert-warning" role="alert", id="email_send">
+              <%= t('sessions.new.msg')%>
+            </div>
+            <div class="form-group">
+              <div class="mail_fld form_row">
+                <%= f.input :email, input_html: {name: 'auth_key', autofocus: 'true', required: true, class: 'input_fld'}, placeholder: t('.email'), label: false %>
+                <span class="fld_icon">
+                  <%= image_tag('pic_fillemail.png')%>
+                </span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="pass_fld form_row">
+                <%= f.input :password, as: 'password', input_html: {name: 'password', required: true, class: 'input_fld'}, placeholder: t('.password'), label: false %>
+                <span class="fld_icon">
+                  <%= image_tag('pic_pwd.png')%>
+                </span>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="captcha">
+                <%= @country_code.inspect  %>
+                <%# if I18n.locale == :zh || @country_code.downcase == 'cn' || @country_code.downcase == 'chn' %>
+                <% if I18n.locale == :zh  %>
+                  <%= rucaptcha_input_tag(class: 'form-control', placeholder: 'Input Captcha') %>
+                  <%= rucaptcha_image_tag(alt: 'Captcha') %>
+                <% else %>
+                  <%= recaptcha_tags %>
+                <% end %>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= f.button :wrapped, t('.login'), class: "create_account grey_btn" %>
+            </div>
+
+            <div class="form-group">
+              <span href="javascript:void(0)" class="forgot_sec"><span class="links"><%= link_to t('.Password_Forgot'), new_reset_password_path %></span> <%= t('.new') %> <span class="links"> <%= link_to t('.register'), signup_path %></span></span>
+            </div>
+
+          <% end %>
+        </div>
+      </div>
+    </div> <!--/.login_block-->
+</section>
+
+<%= render 'shared/session_footer' %>
+<script>
+
+    /* recaptcha */
+    function scaleCaptcha(elementWidth) {
+        // Width of the reCAPTCHA element, in pixels
+        var reCaptchaWidth = 304;
+        // Get the containing element's width
+        var containerWidth = $('.container').width();
+
+        // Only scale the reCAPTCHA if it won't fit
+        // inside the container
+        if (reCaptchaWidth > containerWidth) {
+            // Calculate the scale
+            var captchaScale = containerWidth / reCaptchaWidth;
+            // Apply the transformation
+            // $('.g-recaptcha').css({
+            //     'transform': 'scale(' + captchaScale + ')'
+            // });
+        }
+    }
+
+    $('#lang').on('click', function(){
+       $(this).parent().toggleClass('open');
+    });
+
+    $(document).on('click', function(){
+        $('#lang').parent().removeClass('open');
+    });
+
+
+    $(function () {
+        // Initialize scaling
+        scaleCaptcha();
+
+        // Update scaling on window resize
+        // Uses jQuery throttle plugin to limit strain on the browser
+        $(window).resize($.throttle(100, scaleCaptcha));
+    });
+
+    $('#email_send').hide();
+     var value = readCookie('is_logged');
+     if (value == "true") {
+         $('#email_send').show();
+         $('#email_send').delay(10000).fadeOut()
+         document.cookie = "is_logged=false"
+     }
+     else{
+         document.cookie = "is_logged=false"
+     }
+
+    function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+
+
+</script>

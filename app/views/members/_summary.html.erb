@@ -1,0 +1,38 @@
+<% member_accounts.each do |account| %>
+  <% unless account.currency.nil? %>
+    <tr>
+      <td>
+        <span> <img class="currency_img" src="/icon-<%= account.currency %>.png" alt="<%= account.currency %>"/> <%= account.currency.to_s.upcase %></span>
+      </td>
+      <td class="text-center">
+        <%= Currency.coin_name(account.currency) %>
+      </td>
+      <td class="text-right">
+        <%=  sprintf("%.8f",(account.locked.to_f + account.balance.to_f).round(8)) %>
+      </td>
+      <td class="text-right">
+        <%= sprintf("%.8f",account.balance.to_f.round(8)) %>
+      </td>
+      <td class="text-right">
+        <%= sprintf("%.8f", account.locked.to_f.round(8)) %>
+      </td>
+      <td class="text-right">
+        <%= sprintf("%.8f", current_user.set_estimated_price([account])[0].round(8)) %>
+      </td>
+      <td class="text-right">
+        <ul class="tbl_btns">
+          <li>
+            <%= link_to t('header.deposit'), "/funds?#/deposits/#{account.currency}", class: 'head_deposit'  %>
+          </li>
+          <li>
+            <%= link_to t('header.withdraw'), "/funds#/withdraws/#{account.currency}", class: 'head_withdraw' %>
+          </li>
+          <li>
+            <%= link_to t('header.trade'), '/markets/ethbtc' %>
+          </li>
+        </ul>
+      </td>
+
+    </tr>
+  <% end %>
+<% end %>

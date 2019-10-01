@@ -1,0 +1,270 @@
+.simple_form .nav-tabs {
+    border: none;
+    box-shadow: none;
+    margin-bottom: 14px;
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    float: left;
+    width: 100%;
+}
+
+.simple_form .nav-tabs > li {
+    margin: 0;
+    display: inline-block;
+    float: none;
+}
+
+.simple_form .nav-tabs .nav-link {
+    display: block;
+    float: left;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    padding: 0;
+    text-align: center;
+    -webkit-transition: all 0.35s ease;
+    -moz-transition: all 0.35s ease;
+    -ms-transition: all 0.35s ease;
+    -o-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+    font-size: 13px;
+    height: 35px;
+    line-height: 35px;
+    border: 1px solid #d4d4d4;
+    background: #f5f5f5;
+    color: #666;
+}
+
+.simple_form .nav-tabs .nav-item.active .nav-link {
+    background-color: #00aeef;
+    color: #fff;
+}
+.simple_form .nav-tabs li.active .nav-link, .simple_form .nav-tabs li.active .nav-link:hover {
+    background: #00aeef;
+    border-color: #00aeef;
+    border: 1px solid #d4d4d4;
+    color: #FFFFFF;
+}
+
+.simple_form .nav-tabs li:first-child .nav-link {
+    margin-right: -2px;
+}
+
+.simple_form .form-group .inpt_lbl {
+    float: left;
+    font-size: 12px;
+    color: #666;
+    line-height: 23px;
+    margin: 0 0 5px 0;
+    width: 100%;
+}
+
+/*.simple_form .form-group .form-control {*/
+    /*!*border: 1px solid #d4d4d4;*!*/
+    /*-webkit-border-radius: 0;*/
+    /*-moz-border-radius: 0;*/
+    /*border-radius: 0;*/
+    /*height: 38px;*/
+    /*!*line-height: 1.3px;*!*/
+    /*padding: 5px 15px;*/
+    /*width: 100%;*/
+/*}*/
+
+.simple_form .form-group .form-control:hover {
+    transition: all ease 0.3s;
+    border-color:  #00aeef !important;
+    box-shadow: none;
+}
+
+.simple_form .form-group .form-control:focus {
+    border-color: #00aeef !important;
+}
+
+.simple_form .input-group {
+    display: block;
+    float: left;
+    position: relative;
+    width: 100%;
+}
+
+.simple_form .input-group .form-control {
+    border: 1px solid #d4d4d4;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    box-shadow: none;
+    display: block;
+    float: left;
+    height: 36px;
+    line-height: 23px;
+    padding: 5px 15px;
+    width: 100%;
+}
+
+.simple_form .input-group .form-control:hover, .simple_form .input-group .form-control:focus, .simple_form .input-group .form-control:active {
+    border-color: #00aeef;
+}
+
+.simple_form .input-group .input-group-btn {
+    display: block;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    width: auto;
+    z-index: 10;
+}
+
+.simple_form .input-group .input-group-btn .btn.btn-block {
+    background: #cfcfcf;
+    border: 1px solid #cfcfcf;
+    border: none;
+    border-radius: 0;
+    color: #ffffff;
+    display: block;
+    float: left;
+    font-size: 12px;
+    line-height: 30px;
+    text-transform: uppercase;
+    height: 30px;
+    padding: 0 15px;
+}
+
+.simple_form .input-group .input-group-btn .btn.btn-block:hover {
+    background: #00aeef;
+    color: #ffffff;
+}
+
+.simple_form .input-group .input-group-btn .btn.btn-block:focus {
+    border: 1px solid #00aeef;
+}
+
+.send_sms_block {
+    display: flex !important;
+}
+.send_sms_block input {
+    height: 34px;
+}
+
+.data_table {
+    position: relative;
+    float: left;
+    width: 100%;
+    margin-bottom: 50px;
+}
+.data_table {
+    position: relative;
+}
+.data_table .download_link {
+    position: absolute;
+    top: -24px;
+    left: 0px;
+    background: #fff;
+    padding: 5px 10px;
+    display: inline-block;
+    border: solid 1px #ddd;
+    cursor: pointer;
+    transition: all ease 0.5s ;
+}
+.data_table .download_link:hover, .data_table .download_link:focus, .data_table .download_link:active {
+    transition: all ease 0.5s ;
+    color: #00aeef;
+    border-color: #00aeef;
+}
+
+
+.auth_verification .modal-header .close {
+    margin-top: -20px;
+}
+.auth_verification .modal-body {
+    text-align: center;
+    padding: 30px;
+}
+.auth_verification .modal-body .error_img {
+    margin-bottom: 13px;
+}
+.auth_verification .modal-footer {
+    text-align: center;
+    padding-bottom: 30px;
+}
+.auth_verification .modal-footer .btn {
+    min-width: 100px;
+}
+.auth_verification .modal-footer .btn-primary:hover, .auth_verification .modal-footer .btn-primary:focus, .auth_verification .modal-footer .btn-primary:active {
+    color:#fff;
+    background-color: #F3BA2F;
+    border-color: #F3BA2F;
+}
+.form-control {
+    border-radius: 0px;
+    box-shadow: none;
+}
+.auth_verification .modal-body .form-group {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.compose_email .panel-body{ padding: 15px;}
+.compose_email .panel-body #message_body {
+    border: solid 1px #ddd;
+    width: 100%;
+    padding: 15px;
+
+}
+.compose_email .panel-body #send_email {
+    transition: all ease 0.5s;
+    background-color: #00aeef;
+    border:none;
+    color: #fff;
+    cursor: pointer;
+    padding: 8px 30px;
+    border-radius: 0px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+.compose_email .panel-body #send_email:hover, .compose_email .panel-body #send_email:focus, .compose_email .panel-body #send_email:active {
+    background-color: #efc45f;
+
+}
+.members_info_blocks {
+    margin: 0px -20px;
+}
+.members_info_blocks .members_info_blocks_inner {
+    float: left;
+    width: 50%;
+    padding: 0px 10px;
+}
+#Withdrawals .dl-horizontal {
+    margin-bottom: 0px;
+}
+#Withdrawals .dl-horizontal dt, #Withdrawals .dl-horizontal dd {
+    padding: 6px 8px;
+}
+.withdraw-action {
+    padding: 30px;
+}
+.withdraw-action li {
+    display: inline-block;
+    margin-right: 10px;
+}
+.withdraw-action li:last-child {
+    margin-right: 0px;
+}
+
+.wallet_icon_Sec{
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+.withdraw-action  li {display: inline-block; margin-right: 10px;}
+.withdraw-action  li a {display: inline-block;}
+.withdraw-action  li a button {margin-top: 0px;}
+.withdraw-action  li:last-child {margin-right: 0px;}
+.dataTables_wrapper .table {
+    width: 100% !important;
+}
+.dataTables_wrapper .dataTables_processing {
+    padding: 20px 15px !important;
+    line-height: 0px !important;
+}

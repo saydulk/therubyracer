@@ -1,0 +1,97 @@
+<!-- Modal -->
+<div class="modal fade" id="commission_<%= object.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="exampleModalLabel"><%= "#{object.modifiable_type.capitalize} Commission"%></h4>
+      </div>
+      <div class="modal-body">
+        <div style="color:red" class="error_submit"></div>
+        <%= form_tag('/admin/commissions', remote: true, class: 'form-horizontal' )  do %>
+          <div class="form-group">
+            <label for="currency" class="col-form-label">Currency:</label>
+            <%= text_field_tag 'currency', object.currency, class: 'form-control', readonly: true %>
+          </div>
+
+
+          <div class="form-group">
+            <label for="total" class="col-form-label">Total Commission</label>
+            <%= text_field_tag 'total', object.total_fees.round(precision), class: 'form-control', readonly: true %>
+          </div>
+
+          <div class="form-group">
+            <label for="wallet_address" class="col-form-label">Sender Address:</label>
+            <%= text_field_tag 'wallet_address', central_address(object), class: 'form-control', readonly:true%>
+          </div>
+
+          <div class="form-group">
+            <label for="receipent_address" class="col-form-label">Recipient Address</label>
+            <%= text_field_tag 'receipent_address', '' , class: 'form-control', required: true%>
+          </div>
+
+          <div class="form-group">
+            <label for="amount" class="col-form-label">Amount</label>
+            <%= number_field_tag 'amount', amount, class: 'form-control remaining_amount', step: :any %>
+            <span id="amount_msg">Notes: minimum amount must be <%= min_amount%> </span>
+          </div>
+
+          <div class="form-group">
+            <label for="otp_code" class="col-form-label">2FA Code</label>
+            <%= number_field_tag 'otp_code', '', class: 'form-control', required: true %>
+          </div>
+
+          <div class="form-group">
+            <%= submit_tag 'Submit', class: 'btn btn-primary'%>
+            <%= button_tag 'Close', class: 'btn btn-secondary', "data-dismiss" =>'modal'%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+      $('.amount').click(function(){
+         current_row = $(this).parents('td').parent('tr')
+      })
+
+      $('.remaining_amount').bind('click keyup', function(event) {
+          var min_amount = current_row.find('td').eq(1).text();
+          var remaining_amt = current_row.find('td').eq(4).text();
+          var  is_valid = true ;
+          if( (parseFloat(remaining_amt) < parseFloat(min_amount)) || ( parseFloat($(this).val()) < parseFloat(min_amount)) ) {
+              $(this).focus();
+          }
+          else if( parseFloat($(this).val()) > parseFloat(remaining_amt) ){
+              $('#amount_msg').text("Amount can't be greater than remaining amount");
+              $(this).focus();
+          }
+      })
+
+      $('form').on('submit', function(e){
+          e.preventDefault();
+          var min_amount = current_row.find('td').eq(1).text();
+          var remaining_amt = current_row.find('td').eq(4).text();
+          var current_amount = this.elements[5]['value']
+          if( (parseFloat(remaining_amt) < parseFloat(min_amount)) || ( parseFloat(current_amount) < parseFloat(min_amount)) ) {
+              $('.remaining_amount').focus();
+              return false;
+          }
+          else if( parseFloat(current_amount) > parseFloat(remaining_amt) ){
+              $('#amount_msg').text("Amount can't be greater than remaining amount");
+              $('.remaining_amount').focus();
+              return false;
+          }
+          return true
+      });
+
+    });
+
+
+
+</script>

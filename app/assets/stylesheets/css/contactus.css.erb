@@ -1,0 +1,1366 @@
+/* Fonts*/
+/* color */
+/* Width */
+/* border-radius */
+/* Placeholder */
+/* Box Sizing */
+/* box-shadow */
+/* text-shadow */
+/* @mixin text-shadow($text-shadow) {
+  -webkit-text-shadow: $text-shadow;
+     -moz-text-shadow: $text-shadow;
+          text-shadow: $box-shadow;
+} */
+/* breakpoints */
+/* Retina */
+/* transition */
+/* ===== transformation ===== */
+/* rotate */
+/* scale */
+/* translate */
+/* skew */
+/* transform origin */
+/* ===== transformation Ends ===== */
+/* line 2, ../scss/base/_base.scss */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+/* line 6, ../scss/base/_base.scss */
+body {
+  background: #eeeeee;
+  font-family: "Open Sans", sans-serif;
+  margin: 0px;
+  padding: 0px;
+  padding-bottom: 97px;
+  float: left;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -ms-overflow-style: scrollbar;
+  /* min-width: 767px; */
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+/* line 26, ../scss/base/_base.scss */
+.btn.active:focus, .btn.focus:active, .btn:active:focus, .btn:focus {
+  outline: 0px;
+  outline-offset: -2px;
+  -webkit-appearance: none;
+}
+
+/* line 31, ../scss/base/_base.scss */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  /* -webkit-text-fill-color: #ffffff !important; */
+}
+
+/* line 35, ../scss/base/_base.scss */
+:focus {
+  outline: none !important;
+}
+
+/* line 38, ../scss/base/_base.scss */
+a, button {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+  -webkit-appearance: none;
+  text-decoration: none;
+  font-size: 14px;
+}
+/* line 45, ../scss/base/_base.scss */
+a:hover, a:active, a:focus, button:hover, button:active, button:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+/* line 50, ../scss/base/_base.scss */
+input, textarea {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  outline: none !important;
+  -webkit-appearance: none;
+}
+
+/* line 55, ../scss/base/_base.scss */
+img {
+  max-width: 100%;
+}
+
+/* line 58, ../scss/base/_base.scss */
+ul, li {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* line 63, ../scss/base/_base.scss */
+h1, h2, h3, h4, h5, h6, p {
+  padding: 0px;
+  margin: 0px;
+}
+
+/* line 67, ../scss/base/_base.scss */
+p {
+  font-size: 14px;
+}
+
+/* line 70, ../scss/base/_base.scss */
+h1 {
+  font-size: 27px;
+  font-weight: 300;
+  font-family: inherit;
+  color: #c1c1c1;
+}
+
+/* line 76, ../scss/base/_base.scss */
+h2 {
+  color: #333333;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: inherit;
+}
+
+/* line 82, ../scss/base/_base.scss */
+h3 {
+  color: #333333;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: inherit;
+}
+
+/* line 88, ../scss/base/_base.scss */
+.noPadd {
+  padding: 0 !important;
+}
+
+/* line 91, ../scss/base/_base.scss */
+.noMarg {
+  margin: 0 !important;
+}
+
+/* line 94, ../scss/base/_base.scss */
+hr {
+  background: #dadada;
+  border: medium none;
+  display: block;
+  float: left;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* line 104, ../scss/base/_base.scss */
+.modal-backdrop.in {
+  opacity: 0.65;
+}
+
+/* line 107, ../scss/base/_base.scss */
+.modal-backdrop {
+  background-color: #3a3a3a;
+  z-index: 1090;
+}
+
+/* line 111, ../scss/base/_base.scss */
+.modal {
+  z-index: 1091;
+}
+/* line 113, ../scss/base/_base.scss */
+.modal .modal-content {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  border-radius: 20px;
+}
+
+/* line 1, ../scss/modules/_components.scss */
+body {
+  -ms-overflow-style: scrollbar;
+}
+
+/* table div style */
+/* line 5, ../scss/modules/_components.scss */
+.tbl_div {
+  display: table;
+  width: 100%;
+}
+
+/* line 9, ../scss/modules/_components.scss */
+.tbl_cell {
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+}
+
+/* white box style */
+/* line 15, ../scss/modules/_components.scss */
+.whitebox {
+  background-color: white;
+  float: left;
+  width: 100%;
+  border: solid 1px #dadada;
+  -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.16);
+  -moz-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.16);
+}
+
+/* line 23, ../scss/modules/_components.scss */
+.input_fld {
+  background-color: white;
+  border: solid 1px #dddddd;
+  height: 45px;
+  padding: 0px 15px;
+  width: 100%;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
+}
+/* line 30, ../scss/modules/_components.scss */
+.input_fld:hover, .input_fld:active, .input_fld:focus {
+  -webkit-box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+  -moz-box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+  border-color: #66afe9;
+}
+/* line 34, ../scss/modules/_components.scss */
+.input_fld.grey_border {
+  border: solid 1px #d9d9d9;
+  box-shadow: none;
+}
+/* line 37, ../scss/modules/_components.scss */
+.input_fld.grey_border:hover, .input_fld.grey_border:active, .input_fld.grey_border:focus {
+  -webkit-box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+  -moz-box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+  border-color: #66afe9;
+}
+
+/* line 44, ../scss/modules/_components.scss */
+.input_area {
+  background-color: white;
+  border: solid 1px #0598ff;
+  resize: none;
+  padding: 15px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
+}
+/* line 50, ../scss/modules/_components.scss */
+.input_area:hover, .input_area:active, .input_area:focus {
+  -webkit-box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+  -moz-box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+  border-color: #66afe9;
+}
+/* line 54, ../scss/modules/_components.scss */
+.input_area.grey_border {
+  border: solid 1px #d9d9d9;
+  box-shadow: none;
+}
+/* line 57, ../scss/modules/_components.scss */
+.input_area.grey_border:hover, .input_area.grey_border:active, .input_area.grey_border:focus {
+  -webkit-box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+  -moz-box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+  border-color: #66afe9;
+}
+
+/* line 63, ../scss/modules/_components.scss */
+.form_label {
+  font-size: 15px;
+  font-weight: 400;
+  color: #282828;
+  margin-bottom: 10px;
+  float: left;
+  width: 100%;
+}
+
+/* line 72, ../scss/modules/_components.scss */
+.caret {
+  border-top: 6px dashed;
+  border-bottom: none;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+
+/* common btn */
+/* line 79, ../scss/modules/_components.scss */
+.comn_btn {
+  display: inline-block;
+  padding: 10px 30px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  text-transform: uppercase;
+  -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  -moz-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  /* 767 px*/
+  /* 480 px*/
+}
+@media (max-width: 767px) {
+  /* line 79, ../scss/modules/_components.scss */
+  .comn_btn {
+    font-size: 16px;
+  }
+}
+@media (max-width: 480px) {
+  /* line 79, ../scss/modules/_components.scss */
+  .comn_btn {
+    font-size: 14px;
+  }
+}
+/* line 96, ../scss/modules/_components.scss */
+.comn_btn:hover, .comn_btn:focus, .comn_btn:active {
+  -moz-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  border: none;
+  -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+}
+/* line 101, ../scss/modules/_components.scss */
+.comn_btn.small_btn {
+  padding: 8px 15px;
+  font-size: 16px;
+}
+/* line 105, ../scss/modules/_components.scss */
+.comn_btn.ylo_btn {
+  background-color: #f39611;
+}
+/* line 107, ../scss/modules/_components.scss */
+.comn_btn.ylo_btn:hover, .comn_btn.ylo_btn:focus, .comn_btn.ylo_btn:active {
+  background-color: #555555;
+  color: white;
+}
+/* line 112, ../scss/modules/_components.scss */
+.comn_btn.blue_btn {
+  background-color: #555555;
+}
+/* line 114, ../scss/modules/_components.scss */
+.comn_btn.blue_btn:hover, .comn_btn.blue_btn:focus, .comn_btn.blue_btn:active {
+  background-color: #1b2028;
+  color: white;
+}
+/* line 119, ../scss/modules/_components.scss */
+.comn_btn.green_btn {
+  background-color: #aad181;
+}
+/* line 121, ../scss/modules/_components.scss */
+.comn_btn.green_btn:hover, .comn_btn.green_btn:focus, .comn_btn.green_btn:active {
+  background-color: #555555;
+  color: white;
+}
+
+/* check box style */
+/* line 129, ../scss/modules/_components.scss */
+.my-check {
+  display: inline-block;
+  float: left;
+  padding-left: 25px;
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+@media (max-width: 375px) {
+  /* line 129, ../scss/modules/_components.scss */
+  .my-check {
+    padding-left: 25px;
+  }
+}
+/* line 139, ../scss/modules/_components.scss */
+.my-check .label {
+  color: #999;
+  float: left;
+  font-family: "Open Sans",sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 16px;
+  white-space: normal;
+  margin: 0;
+}
+@media (max-width: 375px) {
+  /* line 139, ../scss/modules/_components.scss */
+  .my-check .label {
+    font-size: 13px;
+  }
+}
+/* line 152, ../scss/modules/_components.scss */
+.my-check .label a:hover, .my-check .label a:focus, .my-check .label a:active {
+  color: #181d24;
+}
+
+/* line 158, ../scss/modules/_components.scss */
+.checkBox {
+  cursor: pointer;
+  display: block;
+  float: left;
+  height: 24px;
+  width: 24px;
+  left: 0;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  vertical-align: middle;
+}
+@media (max-width: 375px) {
+  /* line 158, ../scss/modules/_components.scss */
+  .checkBox {
+    height: 20px;
+    width: 20px;
+  }
+}
+/* line 174, ../scss/modules/_components.scss */
+.checkBox > label {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: 2px solid #cfcfcf;
+  border-radius: 0;
+  cursor: pointer;
+  float: left;
+  height: 100%;
+  margin: 0;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+  padding: 0px !important;
+  min-height: auto !important;
+}
+/* line 187, ../scss/modules/_components.scss */
+.checkBox > label:after {
+  border-color: #f39714;
+  border-style: solid;
+  border-width: 0 0 3px 3px;
+  content: "";
+  height: 7px;
+  left: 5px;
+  opacity: 0;
+  position: absolute;
+  top: 5px;
+  transform: rotate(-45deg) !important;
+  width: 11px;
+}
+@media (max-width: 375px) {
+  /* line 187, ../scss/modules/_components.scss */
+  .checkBox > label:after {
+    height: 7px;
+    left: 3px;
+    top: 3px;
+    width: 10px;
+  }
+}
+/* line 207, ../scss/modules/_components.scss */
+.checkBox input[type="checkbox"] {
+  height: 100% !important;
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  position: absolute !important;
+  top: 0;
+  width: 100% !important;
+  z-index: 10;
+}
+/* line 217, ../scss/modules/_components.scss */
+.checkBox input[type="checkbox"]:hover + label, .checkBox input[type="checkbox"]:active + label {
+  border-color: #f39714;
+}
+/* line 220, ../scss/modules/_components.scss */
+.checkBox input[type="checkbox"]:checked + label::after {
+  opacity: 1;
+}
+/* line 224, ../scss/modules/_components.scss */
+.checkBox input[type="checkbox"]:checked + label {
+  /* background-color: $base-color; */
+  border-color: #f39714;
+}
+/* line 228, ../scss/modules/_components.scss */
+.checkBox input[type="checkbox"]:disabled + label, .checkBox input[type="checkbox"]:checked:disabled + label {
+  background-color: #f7f7f7;
+  border-color: #f39714;
+}
+/* line 232, ../scss/modules/_components.scss */
+.checkBox input[type="checkbox"]:checked:disabled + label::after {
+  border-color: #f39714;
+}
+
+/* check box style end */
+/* Radio box style */
+/* line 239, ../scss/modules/_components.scss */
+.my-radio {
+  display: inline-block;
+  float: none;
+  padding-left: 25px;
+  position: relative;
+  text-align: left;
+  vertical-align: middle;
+  width: auto;
+}
+@media (max-width: 375px) {
+  /* line 239, ../scss/modules/_components.scss */
+  .my-radio {
+    padding-left: 25px;
+  }
+}
+/* line 250, ../scss/modules/_components.scss */
+.my-radio > label {
+  color: #888888;
+  float: left;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  white-space: normal;
+  margin: 0;
+}
+
+/* line 260, ../scss/modules/_components.scss */
+.radioBox {
+  cursor: pointer;
+  display: block;
+  float: left;
+  height: 18px;
+  left: 0;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  vertical-align: middle;
+  width: 18px;
+}
+/* line 272, ../scss/modules/_components.scss */
+.radioBox input[type="radio"] {
+  cursor: pointer;
+  height: 100% !important;
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  position: absolute !important;
+  top: 0;
+  width: 100% !important;
+  z-index: 10;
+}
+/* line 283, ../scss/modules/_components.scss */
+.radioBox > label {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
+  cursor: pointer;
+  float: left;
+  height: 100%;
+  margin: 0;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+/* line 294, ../scss/modules/_components.scss */
+.radioBox > label:after {
+  border-color: #f39714;
+  border-radius: 100px;
+  border-style: solid;
+  border-width: 7px;
+  content: "";
+  height: 13px;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  transform: rotate(-45deg) !important;
+  width: 13px;
+}
+/* line 309, ../scss/modules/_components.scss */
+.radioBox input[type="radio"]:hover + label, .radioBox input[type="radio"]:active + label {
+  border-color: #f39714;
+}
+/* line 315, ../scss/modules/_components.scss */
+.radioBox input[type="radio"]:checked + label::after {
+  border-color: #f39714;
+  opacity: 1;
+}
+
+/* line 322, ../scss/modules/_components.scss */
+.my-radio.checked .label, .my-radio.checked > label, .my-check.checked .label, .my-check.checked > label {
+  color: #333333;
+}
+
+/* Radio box style end */
+/* daterange picker style */
+/* line 331, ../scss/modules/_components.scss */
+.daterangepicker .dropdown-menu {
+  max-width: 500px !important;
+}
+
+/* star style */
+/* line 337, ../scss/modules/_components.scss */
+.star {
+  color: #f39611;
+}
+
+/* line 340, ../scss/modules/_components.scss */
+.comn_para {
+  color: #aaaaaa;
+  font-size: 15px;
+  float: left;
+  width: 100%;
+}
+
+/* line 346, ../scss/modules/_components.scss */
+.comn_padd {
+  padding: 50px 0px;
+}
+
+/* line 349, ../scss/modules/_components.scss */
+.table-responsive {
+  border: none;
+}
+
+/* line 352, ../scss/modules/_components.scss */
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+  width: 100%;
+}
+
+/* line 356, ../scss/modules/_components.scss */
+.bootstrap-select .btn-default {
+  height: 40px;
+  padding: 10px 15px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
+}
+/* line 360, ../scss/modules/_components.scss */
+.bootstrap-select .btn-default:hover, .bootstrap-select .btn-default:active, .bootstrap-select .btn-default:focus {
+  background-color: #fff;
+  border-color: #66afe9;
+  box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+}
+/* line 367, ../scss/modules/_components.scss */
+.bootstrap-select.open .btn-default {
+  background-color: #fff;
+  border-color: #66afe9 !important;
+  box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+}
+/* line 374, ../scss/modules/_components.scss */
+.bootstrap-select .dropdown-menu li {
+  border-bottom: solid 1px #d9d9d9;
+}
+/* line 376, ../scss/modules/_components.scss */
+.bootstrap-select .dropdown-menu li:last-child {
+  border-bottom: none;
+}
+/* line 379, ../scss/modules/_components.scss */
+.bootstrap-select .dropdown-menu li a {
+  padding: 6px 15px;
+}
+
+/* line 386, ../scss/modules/_components.scss */
+.owl-dots {
+  text-align: center;
+}
+/* line 388, ../scss/modules/_components.scss */
+.owl-dots .owl-dot {
+  width: 10px;
+  height: 10px;
+  background: #ddd;
+  display: inline-block;
+  border-radius: 100px;
+  margin: 0 2px;
+}
+/* line 395, ../scss/modules/_components.scss */
+.owl-dots .owl-dot.active {
+  background-color: #ce3f3f;
+}
+
+/* line 1, ../scss/modules/_frontend.scss */
+.top_banner {
+  background-image: url(<%= asset_path 'top_bg.jpg' %>);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 65px 0px;
+  text-align: center;
+  /* 1199 px*/
+}
+@media (max-width: 1199px) {
+  /* line 1, ../scss/modules/_frontend.scss */
+  .top_banner {
+    padding: 15px 20px;
+  }
+}
+/* line 10, ../scss/modules/_frontend.scss */
+.top_banner > .container {
+  /* 991 px*/
+}
+@media (max-width: 991px) {
+  /* line 10, ../scss/modules/_frontend.scss */
+  .top_banner > .container {
+    width: 100%;
+  }
+}
+/* line 15, ../scss/modules/_frontend.scss */
+.top_banner h2 {
+  color: white;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 26px;
+  margin-top: 36px;
+  text-transform: uppercase;
+  /* 1199 px*/
+  /* 991 px*/
+  /* 767 px*/
+  /* 480 px*/
+}
+@media (max-width: 1199px) {
+  /* line 15, ../scss/modules/_frontend.scss */
+  .top_banner h2 {
+    font-size: 30px;
+    margin-bottom: 22px;
+  }
+}
+@media (max-width: 991px) {
+  /* line 15, ../scss/modules/_frontend.scss */
+  .top_banner h2 {
+    font-size: 28px;
+    margin-bottom: 18px;
+  }
+}
+@media (max-width: 767px) {
+  /* line 15, ../scss/modules/_frontend.scss */
+  .top_banner h2 {
+    font-size: 25px;
+    margin-bottom: 14px;
+  }
+}
+@media (max-width: 480px) {
+  /* line 15, ../scss/modules/_frontend.scss */
+  .top_banner h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+}
+/* line 39, ../scss/modules/_frontend.scss */
+.top_banner p {
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  /* 991 px*/
+  /* 480 px*/
+}
+@media (max-width: 991px) {
+  /* line 39, ../scss/modules/_frontend.scss */
+  .top_banner p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 480px) {
+  /* line 39, ../scss/modules/_frontend.scss */
+  .top_banner p {
+    font-size: 14px;
+  }
+}
+/* line 50, ../scss/modules/_frontend.scss */
+.top_banner .get_started_sec {
+  max-width: 460px;
+  margin: 45px auto 0px;
+  float: none;
+  /* 1199 px*/
+  /* 991 px*/
+}
+@media (max-width: 1199px) {
+  /* line 50, ../scss/modules/_frontend.scss */
+  .top_banner .get_started_sec {
+    margin: 35px auto 0px;
+  }
+}
+@media (max-width: 991px) {
+  /* line 50, ../scss/modules/_frontend.scss */
+  .top_banner .get_started_sec {
+    margin: 25px auto 0px;
+  }
+}
+/* line 60, ../scss/modules/_frontend.scss */
+.top_banner .get_started_sec .get_started_inner {
+  background-color: rgba(219, 106, 154, 0.7);
+  padding: 30px;
+  float: left;
+  width: 100%;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  border-radius: 7px;
+}
+/* line 66, ../scss/modules/_frontend.scss */
+.top_banner .get_started_sec .get_started_inner .btn-group {
+  width: 100%;
+  background-color: white;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+/* line 71, ../scss/modules/_frontend.scss */
+.top_banner .get_started_sec .get_started_inner .btn-group .emailFld {
+  background-color: white;
+  border: none;
+  box-sizing: border-box;
+  padding: 18px;
+  font-size: 15px;
+  width: calc(100% - 137px);
+  float: left;
+  /* 991 px*/
+  /* 480 px*/
+}
+@media (max-width: 991px) {
+  /* line 71, ../scss/modules/_frontend.scss */
+  .top_banner .get_started_sec .get_started_inner .btn-group .emailFld {
+    padding: 15px 18px;
+  }
+}
+@media (max-width: 480px) {
+  /* line 71, ../scss/modules/_frontend.scss */
+  .top_banner .get_started_sec .get_started_inner .btn-group .emailFld {
+    width: 100%;
+  }
+}
+/* line 86, ../scss/modules/_frontend.scss */
+.top_banner .get_started_sec .get_started_inner .btn-group .get_start_btn {
+  background-color: #ff682d;
+  padding: 18px;
+  display: inline-block;
+  max-width: 133px;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  float: right;
+  -moz-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  /* 991 px*/
+  /* 480 px*/
+}
+@media (max-width: 991px) {
+  /* line 86, ../scss/modules/_frontend.scss */
+  .top_banner .get_started_sec .get_started_inner .btn-group .get_start_btn {
+    padding: 15px 18px;
+  }
+}
+@media (max-width: 480px) {
+  /* line 86, ../scss/modules/_frontend.scss */
+  .top_banner .get_started_sec .get_started_inner .btn-group .get_start_btn {
+    max-width: 100%;
+  }
+}
+/* line 106, ../scss/modules/_frontend.scss */
+.top_banner .get_started_sec .get_started_inner .btn-group .get_start_btn:hover, .top_banner .get_started_sec .get_started_inner .btn-group .get_start_btn:focus, .top_banner .get_started_sec .get_started_inner .btn-group .get_start_btn:active {
+  -moz-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  background-color: #ce3f3f;
+  color: white;
+}
+/* line 114, ../scss/modules/_frontend.scss */
+.top_banner .get_started_sec .about_bitcoin {
+  margin: 20px 0px 55px;
+  float: left;
+  width: 100%;
+  /* 991 px*/
+}
+@media (max-width: 991px) {
+  /* line 114, ../scss/modules/_frontend.scss */
+  .top_banner .get_started_sec .about_bitcoin {
+    margin: 20px 0px 35px;
+  }
+}
+/* line 122, ../scss/modules/_frontend.scss */
+.top_banner .get_started_sec .about_bitcoin ul li {
+  display: inline-block;
+  margin: 0px 18px;
+}
+/* line 125, ../scss/modules/_frontend.scss */
+.top_banner .get_started_sec .about_bitcoin ul li a {
+  font-size: 13px;
+  color: white;
+  font-weight: 400;
+  -moz-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+/* line 130, ../scss/modules/_frontend.scss */
+.top_banner .get_started_sec .about_bitcoin ul li a:hover, .top_banner .get_started_sec .about_bitcoin ul li a:focus, .top_banner .get_started_sec .about_bitcoin ul li a:active {
+  -moz-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  color: #f39611;
+}
+/* line 139, ../scss/modules/_frontend.scss */
+.top_banner .get_started_sec .comming_soon_sec {
+  float: left;
+  width: 100%;
+  text-align: center;
+}
+/* line 143, ../scss/modules/_frontend.scss */
+.top_banner .get_started_sec .comming_soon_sec .coming_soon_btn {
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  border-radius: 6px;
+  border: solid 1px #87a1b7;
+  color: white;
+  padding: 18px 54px;
+  text-transform: uppercase;
+  display: inline-block;
+  font-size: 15px;
+  -moz-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  /* 991 px*/
+}
+@media (max-width: 991px) {
+  /* line 143, ../scss/modules/_frontend.scss */
+  .top_banner .get_started_sec .comming_soon_sec .coming_soon_btn {
+    padding: 14px 44px;
+  }
+}
+/* line 155, ../scss/modules/_frontend.scss */
+.top_banner .get_started_sec .comming_soon_sec .coming_soon_btn:hover, .top_banner .get_started_sec .comming_soon_sec .coming_soon_btn:focus, .top_banner .get_started_sec .comming_soon_sec .coming_soon_btn:active {
+  -moz-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  color: white;
+  background-color: #f39611;
+  border-color: #f39611;
+}
+
+/* line 165, ../scss/modules/_frontend.scss */
+.currency_block {
+  padding: 20px 15px;
+}
+
+/* line 168, ../scss/modules/_frontend.scss */
+.currency_item {
+  margin: 15px 5px;
+}
+/* line 170, ../scss/modules/_frontend.scss */
+.currency_item .bitcoin_price {
+  background-image: url(<%= asset_path 'graph_icon.png' %>);
+  background-position: bottom center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding: 10px 15px 20px;
+  background-color: white;
+  width: 100%;
+  display: inline-block;
+  -webkit-box-shadow: 0px 0px 3px #e6e6e6;
+  -moz-box-shadow: 0px 0px 3px #e6e6e6;
+  box-shadow: 0px 0px 3px #e6e6e6;
+  -moz-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+/* line 181, ../scss/modules/_frontend.scss */
+.currency_item .bitcoin_price:hover, .currency_item .bitcoin_price:focus, .currency_item .bitcoin_price:active {
+  -webkit-box-shadow: 0px 0px 3px #ea96be;
+  -moz-box-shadow: 0px 0px 3px #ea96be;
+  box-shadow: 0px 0px 3px #ea96be;
+  -moz-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+/* line 185, ../scss/modules/_frontend.scss */
+.currency_item .bitcoin_price h2 {
+  font-size: 14px;
+  color: #3c3c3c;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+/* line 190, ../scss/modules/_frontend.scss */
+.currency_item .bitcoin_price h2 span {
+  float: right;
+  font-weight: 400;
+}
+/* line 193, ../scss/modules/_frontend.scss */
+.currency_item .bitcoin_price h2 span.green_txt {
+  color: #70a800;
+}
+/* line 196, ../scss/modules/_frontend.scss */
+.currency_item .bitcoin_price h2 span.pink_txt {
+  color: #ea0070;
+}
+/* line 201, ../scss/modules/_frontend.scss */
+.currency_item .bitcoin_price h3 {
+  font-size: 13px;
+  color: #3c3c3c;
+  font-weight: 400;
+  margin-bottom: 2px;
+}
+/* line 206, ../scss/modules/_frontend.scss */
+.currency_item .bitcoin_price h3 b {
+  font-weight: 700;
+}
+/* line 210, ../scss/modules/_frontend.scss */
+.currency_item .bitcoin_price p {
+  font-weight: 400;
+  font-size: 12px;
+  color: #666666;
+}
+
+/* line 218, ../scss/modules/_frontend.scss */
+.currency_market {
+  background-color: white;
+}
+/* line 220, ../scss/modules/_frontend.scss */
+.currency_market #currency_marketTabs {
+  position: relative;
+}
+/* line 222, ../scss/modules/_frontend.scss */
+.currency_market #currency_marketTabs .serch_tab {
+  position: relative;
+  display: inline-block;
+  margin-left: 15px;
+}
+/* line 226, ../scss/modules/_frontend.scss */
+.currency_market #currency_marketTabs .serch_tab input {
+  position: relative;
+  height: 30px;
+  border-radius: 0px;
+  box-shadow: none;
+  border: solid 1px #ddd;
+  padding: 10px 10px 10px 30px;
+  background-image: url(<%=asset_path 'search.png'  %>);
+  background-repeat: no-repeat;
+  background-position: left 10px center;
+}
+@media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+  /* line 226, ../scss/modules/_frontend.scss */
+  .currency_market #currency_marketTabs .serch_tab input {
+    background-image: url(<%= asset_path 'search@2x.png' %>);
+
+    /* on retina, use image that's scaled by 2 */
+    background-size: 100% auto;
+    /*@include image-2x("url", 100px, 25px);*/
+  }
+}
+
+/* line 2, ../scss/modules/_contactus.scss */
+.contactus_blk .contact_banner {
+  background-image: url(<%= asset_path 'contact_banner_bg.jpg' %>);
+  background-repeat: no-repeat;
+  background-position: center top;
+  height: 400px;
+}
+/* line 7, ../scss/modules/_contactus.scss */
+.contactus_blk .contact_banner .contact-banner-block {
+  max-height: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  background-color: #a0dfdf;
+  color: #333333;
+  text-align: center;
+  padding: 30px 10px;
+}
+/* line 15, ../scss/modules/_contactus.scss */
+.contactus_blk .contact_banner .contact-banner-block h4 {
+  font-size: 20px;
+  padding: 0;
+  font-weight: bold;
+}
+/* line 20, ../scss/modules/_contactus.scss */
+.contactus_blk .contact_banner .contact-banner-block p {
+  margin-top: 20px;
+  padding: 0;
+  font-size: 13px;
+}
+/* line 23, ../scss/modules/_contactus.scss */
+.contactus_blk .contact_banner .contact-banner-block p a {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #333;
+}
+/* line 29, ../scss/modules/_contactus.scss */
+.contactus_blk .contact_banner .contact-banner-block .view-support-btn {
+  display: block;
+  max-width: 275px;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  background: #333;
+  margin: 26px auto 0 auto;
+}
+/* line 40, ../scss/modules/_contactus.scss */
+.contactus_blk .contact_banner .contact_banner_heading h2 {
+  margin: 0;
+  padding: 0;
+  height: 134px;
+  line-height: 134px;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  font-weight: normal;
+}
+
+/* line 53, ../scss/modules/_contactus.scss */
+.links_blk {
+  padding: 58px 0px;
+}
+/* line 56, ../scss/modules/_contactus.scss */
+.links_blk .link_imgs ul {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+}
+/* line 62, ../scss/modules/_contactus.scss */
+.links_blk .link_imgs ul li {
+  display: block;
+  float: left;
+  width: 142px;
+  height: auto;
+  overflow: hidden;
+  margin: 0;
+  padding: 18px 0;
+  text-align: center;
+}
+/* line 72, ../scss/modules/_contactus.scss */
+.links_blk .link_imgs ul li.links1 a {
+  background-position: 16px 0;
+}
+/* line 74, ../scss/modules/_contactus.scss */
+.links_blk .link_imgs ul li.links1 a:hover {
+  background-position: 16px -100px;
+}
+/* line 80, ../scss/modules/_contactus.scss */
+.links_blk .link_imgs ul li.links2 a {
+  background-position: -110px 0;
+}
+/* line 82, ../scss/modules/_contactus.scss */
+.links_blk .link_imgs ul li.links2 a:hover {
+  background-position: -110px -100px;
+}
+/* line 88, ../scss/modules/_contactus.scss */
+.links_blk .link_imgs ul li.links3 a {
+  background-position: -230px 0;
+}
+/* line 90, ../scss/modules/_contactus.scss */
+.links_blk .link_imgs ul li.links3 a:hover {
+  background-position: -230px -100px;
+}
+/* line 96, ../scss/modules/_contactus.scss */
+.links_blk .link_imgs ul li.links4 a {
+  background-position: -350px 0;
+}
+/* line 98, ../scss/modules/_contactus.scss */
+.links_blk .link_imgs ul li.links4 a:hover {
+  background-position: -350px -100px;
+}
+/* line 104, ../scss/modules/_contactus.scss */
+.links_blk .link_imgs ul li.links5 a {
+  background-position: -470px 0;
+}
+/* line 106, ../scss/modules/_contactus.scss */
+.links_blk .link_imgs ul li.links5 a:hover {
+  background-position: -470px -100px;
+}
+/* line 112, ../scss/modules/_contactus.scss */
+.links_blk .link_imgs ul li.links6 a {
+  background-position: -588px 0;
+}
+/* line 114, ../scss/modules/_contactus.scss */
+.links_blk .link_imgs ul li.links6 a:hover {
+  background-position: -588px -100px;
+}
+/* line 120, ../scss/modules/_contactus.scss */
+.links_blk .link_imgs ul li.links7 a {
+  background-position: -711px 0;
+}
+/* line 122, ../scss/modules/_contactus.scss */
+.links_blk .link_imgs ul li.links7 a:hover {
+  background-position: -711px -100px;
+}
+/* line 128, ../scss/modules/_contactus.scss */
+.links_blk .link_imgs ul li.links8 a {
+  background-position: -829px 0;
+}
+/* line 130, ../scss/modules/_contactus.scss */
+.links_blk .link_imgs ul li.links8 a:hover {
+  background-position: -829px -100px;
+}
+/* line 135, ../scss/modules/_contactus.scss */
+.links_blk .link_imgs ul li a {
+  background-image: url(<%= asset_path 'links-ico.png' %>);
+  background-repeat: no-repeat;
+  background-position: center top;
+  display: block;
+  height: 100px;
+}
+/* line 136, ../scss/modules/_contactus.scss */
+.links_blk .link_imgs ul li a.icon_img {
+  position: relative;
+}
+/* line 139, ../scss/modules/_contactus.scss */
+.links_blk .link_imgs ul li a span {
+  color: #454545;
+}
+/* line 140, ../scss/modules/_contactus.scss */
+.links_blk .link_imgs ul li a span.icon_link {
+  position: absolute;
+  bottom:0px;
+  left: 0;
+  width: 100%;
+}
+/* line 153, ../scss/modules/_contactus.scss */
+.links_blk .link_imgs ul li a:hover span {
+  color: #00aeef;
+  text-decoration: underline;
+}
+
+/* line 164, ../scss/modules/_contactus.scss */
+.BinanceTelegram_blk {
+  padding: 50px 0px;
+}
+
+/* line 167, ../scss/modules/_contactus.scss */
+.zinanceTelegram_blk {
+  background-color: #f6f6f6;
+  padding: 50px 0px;
+}
+/* line 171, ../scss/modules/_contactus.scss */
+.zinanceTelegram_blk .zinanceTelegram_container .telegram_img {
+  margin-bottom: 15px;
+}
+/* line 175, ../scss/modules/_contactus.scss */
+.zinanceTelegram_blk .zinanceTelegram_container .img_heading h2 {
+  font-weight: 600;
+}
+
+/* line 181, ../scss/modules/_contactus.scss */
+.announcements_sec {
+  max-width: 800px;
+  margin: 0px auto 20px;
+  display: table;
+}
+/* line 185, ../scss/modules/_contactus.scss */
+.announcements_sec h2 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+/* line 190, ../scss/modules/_contactus.scss */
+.announcements_sec .input_block {
+  /* 767 px*/
+}
+@media (max-width: 767px) {
+  /* line 190, ../scss/modules/_contactus.scss */
+  .announcements_sec .input_block {
+    margin-bottom: 10px;
+  }
+}
+
+/* line 196, ../scss/modules/_contactus.scss */
+.input_block {
+  border: solid 1px #ccc;
+  background: #fff;
+  padding: 4px 10px;
+  box-shadow: 0px 0px 3px #ddd inset;
+  border-radius: 2px;
+}
+/* line 202, ../scss/modules/_contactus.scss */
+.input_block .lock_btn {
+  background-color: transparent;
+  border: none;
+  padding: 0px;
+}
+/* line 206, ../scss/modules/_contactus.scss */
+.input_block .lock_btn i {
+  color: #008141;
+}
+/* line 211, ../scss/modules/_contactus.scss */
+.input_block a {
+  color: #333;
+  padding-left: 5px;
+  margin-left: 5px;
+  border-left: solid 1px #ccc;
+  font-size: 12px;
+}
+
+/* line 219, ../scss/modules/_contactus.scss */
+.announcements_details_sec {
+  float: left;
+  width: 100%;
+}
+
+/* line 223, ../scss/modules/_contactus.scss */
+.announcements_details_block {
+  margin: 15px 0px 0;
+}
+/* line 225, ../scss/modules/_contactus.scss */
+.announcements_details_block .announcements_details_left {
+  /* 767 px*/
+}
+@media (max-width: 767px) {
+  /* line 225, ../scss/modules/_contactus.scss */
+  .announcements_details_block .announcements_details_left {
+    text-align: left;
+  }
+}
+/* line 229, ../scss/modules/_contactus.scss */
+.announcements_details_block .announcements_details_left p {
+  padding: 5px 0px;
+  font-size: 12px;
+}
+/* line 233, ../scss/modules/_contactus.scss */
+.announcements_details_block .announcements_details_left a {
+  font-size: 12px;
+}
+
+/* line 238, ../scss/modules/_contactus.scss */
+.zinanceTelegram_container {
+  margin-bottom: 20px;
+}
+
+.view-supports-btn {
+  display: block;
+  width: 275px;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  background: #333;
+  margin: 26px auto 0 auto;
+}
+.view-supports-btn:hover, .view-supports-btn:focus, .view-supports-btn:active {
+  color: #fff;
+  background: #333;
+}

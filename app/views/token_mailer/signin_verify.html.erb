@@ -1,0 +1,163 @@
+<style>
+  #outlook a{padding:0;}
+  body{width:100% !important; height:100%; background-color:#41849a;-webkit-text-size-adjust:none; -ms-text-size-adjust:none;margin:0 !important; padding:0 !important;}
+  .ReadMsgBody{width:100%;}
+  .ExternalClass{width:100%;}
+  ol li {margin-bottom:15px;}
+
+  img{height:auto; line-height:100%; outline:none; text-decoration:none;}
+  #backgroundTable{height:100% !important; margin:0; padding:0; width:100% !important;}
+
+  p {margin: 1em 0;}
+
+  h1, h2, h3, h4, h5, h6 {font-family:Arial, Helvetica, sans-serif; line-height: 100% !important;}
+
+  table td {border-collapse:collapse;}
+
+  .yshortcuts, .yshortcuts a, .yshortcuts a:link,.yshortcuts a:visited, .yshortcuts a:hover, .yshortcuts a span { color: black; text-decoration: none !important; border-bottom: none !important; background: none !important;}
+
+  .im {color:black;}
+  div[id="tablewrap"] {
+    width:100%;
+    max-width:600px!important;
+  }
+  table[class="fulltable"], td[class="fulltd"] {
+    max-width:100% !important;
+    width:100% !important;
+    height:auto !important;
+  }
+  @media screen and (max-device-width: 620px), screen and (max-width: 620px) {
+    .devicewidth {
+      width: 100% !important;
+    }
+    .logo {
+      padding: 30px 20px !important;
+    }
+    img.logo {
+      padding: 0px !important;
+    }
+    .leftpart {
+      padding-left: 10px;
+    }
+    .rightpart {
+      padding-right: 10px;
+    }
+    .subscribe {
+      padding: 0px 10px;
+    }
+    h2 {
+      font-size: 18px !important;
+    }
+  }
+
+  @media screen and (max-device-width: 430px), screen and (max-width: 430px) {
+    td[class=emailcolsplit]{
+      width:100%!important;
+      float:left!important;
+      padding-left:0!important;
+      max-width:430px !important;
+    }
+    td[class=emailcolsplit] img {
+      margin-bottom:20px !important;
+    }
+  }
+</style>
+
+<body style="width:100% !important; margin:0 !important; padding:0 !important; -webkit-text-size-adjust:none; -ms-text-size-adjust:none; background: #ebeced url(images/footerImg.png) repeat-x; background-position:bottom !important; width: 100%; padding-bottom: 8px;">
+   <table style="font-size:14px;font-family:Microsoft Yahei,Arial,Helvetica,sans-serif;padding:0;margin:0;color:#333;background-image:none;background-color:#f7f7f7;background-repeat:repeat-x;background-removed-by-webmail:bottom left" width="100%" height="100%" cellspacing="0" cellpadding="0" border="0">
+     <tbody>
+        <tr>
+          <td>
+            <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
+              <tbody>
+                <tr>
+                  <td style="padding:33px 0" valign="middle" align="center">
+                    <a href='<%="#{ENV.fetch('URL_SCHEME', 'http')}://#{ENV['URL_HOST']}"%>' target="_blank" defaultcontextmenu="yes"></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="border-bottom: solid 1px #ddd;font-size: 14px ; line-height: 23px ; padding: 20px ; color: #333 ; background: #fff;"><%=t('token_mailer.signin_verify.header_content')%></td>
+                </tr>
+              <tr>
+                <td style="font-size: 14px;line-height: 23px;padding: 20px;color: #666;background: #fff;">
+                      <%= t('token_mailer.signin_verify.msg')%>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: 20px; background-color: #fff;">
+                  <table style="width: 100%;">
+                    <tr>
+                      <td style="background-color: #eee; padding: 20px; border: solid 1px #ddd;">
+                        <table style="width: 100%;">
+                          <tr>
+                            <td>
+                              <table>
+                                <tr>
+                                  <td style="margin-bottom: 10px;display:  inline-block;color: #333;font-size: 14px;min-width: 100px;text-align: left;"><%=t('token_mailer.signin_verify.Location')%></td>
+                                  <td style="margin-bottom: 10px; display:  inline-block; color: #333;font-size: 14px; text-align: left;"><%=  @location %></td>
+                                </tr>
+                                <tr>
+                                  <td style="margin-bottom: 10px;display:  inline-block;color: #333;font-size: 14px;min-width: 100px;text-align: left;"><%=t('token_mailer.signin_verify.IP_Address')%></td>
+                                  <td style="margin-bottom: 10px; display:  inline-block; color: #333;font-size: 14px; text-align: left;"><%=  @ip_address %></td>
+                                </tr>
+                                <tr>
+                                  <td style="margin-bottom: 10px;display:  inline-block;color: #333;font-size: 14px;min-width: 100px;text-align: left;"><%=t('token_mailer.signin_verify.Device')%></td>
+                                  <% if @is_devise %>
+                                    <td style="margin-bottom: 10px; display:  inline-block; color: #333;font-size: 14px; text-align: left;"><%=  @user_agent %> </td>
+                                  <% else %>
+                                    <td style="margin-bottom: 10px; display:  inline-block; color: #333;font-size: 14px; text-align: left;"><%=  @user_agent.browser %> V<%= @user_agent.version %> (<%= @user_agent.os %> )</td>
+                                  <% end %>
+                                </tr>
+                              </table>
+                            </td>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+                <tr>
+                  <td style="font-size: 14px;line-height: 23px;padding: 20px;color: #666;background: #fff;"><a href="<%= @token_url %>" style="padding:10px 28px;background:#ebb44d;color:#fff;text-decoration:none" target="_blank" defaultcontextmenu="yes"> <%=t('token_mailer.signin_verify.Authorize_This_Device')%> </a></td>
+                </tr>
+                <tr>
+                  <td style="font-size: 14px;line-height: 23px;padding:10px 20px;color: #666;background: #fff;">
+                    <!--<a style="color: #e9b434 ; cursor: pointer" href="https://www.mailinator.com/key/url?url=http%3A//localhost%3A3000/support" target="_other" rel="nofollow"> http://localhost:3000/support </a>-->
+                    <a style="color:#1456C6;cursor: pointer;" href="<%= raw t("mailer.please_contact", contact_mail: ENV['SUPPORT_MAIL']) %>" target="_blank" defaultcontextmenu="yes" href="<%= "#{ENV.fetch('URL_SCHEME', 'http')}://#{ENV['URL_HOST']}" %>/support"> <%= "#{ENV.fetch('URL_SCHEME', 'http')}://#{ENV['URL_HOST']}" %>/support </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px 20px; font-size: 12px ; color: #999 ;background: #fff; line-height: 20px"><%=t('token_mailer.signin_verify.Zinance_team')%><br><%=t('token_mailer.signin_verify.Authorize_This_Device')%>
+                  </td>
+                </tr>
+                <!--<tr>-->
+                  <!--<td style="padding: 20px 0" align="center">-->
+                    <!--<table>-->
+                      <!--<tbody>-->
+                      <!--<tr>-->
+                        <!--<td>-->
+                          <!--<div class="responsive_img_sec">-->
+                            <!--<img src="https://zinance.com/assets/responsive_img-104919f9bcf6df07c81eb6e71060b2bb8bd40e7a45c6f21d279a2801701d545d.png" alt="img">-->
+                          <!--</div>-->
+                        <!--</td>-->
+                        <!--<td style="text-align: center" valign="top">-->
+
+                          <!--<a href="<%#="#{ENV.fetch('URL_SCHEME', 'http')}://#{ENV['URL_HOST']}"%>/client_downloads" style="border: solid 1px #ddd; padding: 6px 15px; font-size: 14px; background-color: #fff;display: inline-block; color: #333; text-decoration: none;"><%=t('token_mailer.signin_verify.download')%></a>-->
+
+                        <!--</td>-->
+                      <!--</tr>-->
+                      <!--</tbody>-->
+                    <!--</table>-->
+                  <!--</td>-->
+                <!--</tr>-->
+                <tr>
+                  <td style="font-size: 12px ; color: #999 ; padding: 20px 0" align="center">©  <%=" #{Date.today.year} #{ENV.fetch('URL_SCHEME', 'http')}://#{ENV['URL_HOST']}"%> All Rights Reserved <br> URL： <a style="color: #999 ; text-decoration: none" href="https://www.mailinator.com/key/url?url=http%3A//url2048.zinance.com/wf/click%3Fupn%3DXbZMWVuME96I4l0MlZQ0dV2i7NfKq4UUM8-2BIdXnCrU8-3D_K3V9CFGk8yadfPVC-2FRVl0E7PXCsCwg6DAOxMTpC3d3ikJ0vHJfiRLkiVq91S14imz-2B-2Bj9sxZ7PkQldbZFDxDPq9L8fFY6Z9M46p8ukahSPPf8iSpTlgJjaT5F-2BEDmgIcPilOOyafVsWfRpCB-2Fv-2FOKzhuOg4CUtDv9iXuj-2B-2F7Sj7fuPdYvlCcmU74Stud120sFnMHQW-2FI54kh9is7MHUlasuFTNRh1hHjCW7hBUeDpDY-3D" target="_other" rel="nofollow">http://localhost:3000</a>&nbsp;&nbsp;E-mail： <a style="color: #999 ; text-decoration: none"> support@arcoinchelibex.zendesk.com </a>
+                  </td>
+                </tr>
+
+           </table>
+          </td>
+        </tr>
+     </tbody>
+  </table>
+</body>

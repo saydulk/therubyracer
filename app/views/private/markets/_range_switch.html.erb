@@ -1,0 +1,60 @@
+<ul id="range_switch" class="switch" data-x="60">
+  <li class="time active">
+    <% %w(15).each do |x| %>
+      <a class="hand-point chart-switch" href="javascript:void(0)" data-x="<%= x %>">
+        Time
+      </a>
+    <% end %>
+  </li>
+  <li class="minutes">
+    <div class="dropdown">
+      <button class="dropdown-toggle" type="button" data-toggle="dropdown">m
+        <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <% %w(1 5 15 30).each do |x| %>
+          <li class="text-center">
+            <a class="hand-point chart-switch" href="javascript:void(0)" data-x="<%= x %>">
+              <%= t(".switch_#{x}") %>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </li>
+  <li class="hours">
+    <div class="dropdown">
+      <button class="dropdown-toggle" type="button" data-toggle="dropdown">H
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <% %w(60 120 240 360 720).each do |x| %>
+            <li class="text-center">
+              <a class="hand-point chart-switch" href="javascript:void(0)" data-x="<%= x %>">
+                <%= t(".switch_#{x}") %>
+              </a>
+            </li>
+          <% end %>
+        </ul>
+    </div>
+  </li>
+  <li class="days">
+    <% %w(1440).each do |x| %>
+      <a class="hand-point chart-switch" href="javascript:void(0)" data-x="<%= x %>">
+        <%= t(".switch_#{x}") %>
+      </a>
+    <% end %>
+  </li>
+  <li class="weeks">
+    <% %w(10080).each do |x| %>
+      <a class="hand-point chart-switch" href="javascript:void(0)" data-x="<%= x %>">
+        <%= t(".switch_#{x}") %>
+      </a>
+    <% end %>
+  </li>
+  <li class="months">
+    <% %w(43200).each do |x| %>
+      <a class="hand-point chart-switch" href="javascript:void(0)" data-x="<%= x %>">
+        <%= t(".switch_#{x}") %>
+      </a>
+  <% end %>
+  </li>
+</ul>

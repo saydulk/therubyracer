@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--<link href="/favicon.ico" rel="shortcut icon" />-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=7; IE=8; IE=EmulateIE8;  IE=9; IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no"/>
+  <meta name="format-detection" content="telephone=no">
+  <%= favicon_link_tag 'fav_icon.png' %>
+  <%= include_gon %>
+
+  <%#= stylesheet_link_tag 'market', media: "all" %>
+  <%= stylesheet_link_tag 'newdesign', media: "all" %>
+  <%= javascript_include_tag 'market'%>
+  <%= javascript_include_tag "locales/#{I18n.locale}" %>
+  <%= render 'shared/html5' %>
+  <%= render 'shared/meta' %>
+  <%= csrf_meta_tags %>
+
+
+  <!-- Bootstrap css-->
+  <%= stylesheet_link_tag 'node_modules/bootstrap/dist/css/bootstrap.min.css' %>
+  <!-- owl slider css -->
+  <%= stylesheet_link_tag 'css/owl.carousel.min.css' %>
+  <!-- responsive tabs css -->
+  <%= stylesheet_link_tag 'css/easy-responsive-tabs.css' %>
+
+  <!-- Custom css -->
+  <%= stylesheet_link_tag 'css/main.css' %>
+  <%= stylesheet_link_tag 'global/css/style' %>
+
+  <style>
+    body {
+      font-family: Arial;
+    }
+
+    /* Style the tab */
+    .tab {
+      overflow: hidden;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+    }
+
+    /* Style the buttons inside the tab */
+    .tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+      background-color: #ddd;
+    }
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+      background-color: #ccc;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+  </style>
+</head>
+
+<body id="<%= body_id %>" data-lang="<%= locale_name %>">
+<div class="trade_hdr">
+  <!-- Static navbar -->
+  <% if current_user %>
+    <header>
+      <div class="container-fluid Top_nav">
+        <nav class="navbar navbar-default my_nav">
+          <div class="container-fluid">
+            <div class="row">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <!--<a class="navbar-brand top_logo" href="<%#= root_path %>"></a>-->
+                <% if current_user %>
+                  <a class="navbar-brand top_logo" href="/settings"></a>
+                <% else %>
+                  <a class="navbar-brand top_logo" href="<%= root_path %>"></a>
+                <% end %>
+              </div>
+
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <!-- Left navbar-->
+                  <ul class="nav navbar-nav top_left_nav navigation_links">
+                    <li class="dropdown custom_dropmenu">
+                      <a href="<%= '/markets/ethbtc' %>">
+                        <span class="comn_nav_icons exchange_icon"></span>
+                        <%= t('header.exchange') %>
+                      </a>
+                    </li>
+                  </ul>
+                  <!-- Right navbar-->
+                  <ul class="nav navbar-nav navbar-right navigation_links">
+                    <li class="dropdown custom_dropmenu">
+                      <a href="exchange_basic.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" oncontextmenu="return false;">
+                         <%= t('header.funds') %> </a>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a href="<%= balance_summary_path %>">
+                            <i></i><span><%= t('header.balance_summary') %></span>
+                          </a>
+                        </li>
+                        <li><%= link_to t('header.deposit'), '/funds?#/deposits/btc', class: 'head_deposit' %></li>
+                        <li><%= link_to t('header.withdraw'), '/funds?#/withdraws/btc', class: 'head_withdraw' %></li>
+                        <li><%= link_to t('header.account_history'), account_history_path %></li>
+
+
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" oncontextmenu="return false;">Orders
+                      </a>
+                      <ul class="dropdown-menu">
+                        <% tabs.each do |name, args| %>
+                          <li><%= link_to t(args[0]), args[1] %></li>
+                        <% end %>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <%= link_to t('header.support'), supports_path, oncontextmenu: "return false;" %>
+                    </li>
+
+                    <li class="logined_user">
+                      <ul class="nav navbar-nav navbar-right">
+                        <%= render partial: 'shared/header_profile_setting' if current_user %>
+                        <% unless current_user %>
+                          <li class="login_register">
+                            <%= link_to t('header.login'), signin_path %>
+                            <span><%= t('header.or')%></span>
+                            <%= link_to t('header.register'), signup_path %>
+                          </li>
+                        <% end %>
+                        <li class="dropdown custom_dropmenu language_dropdown">
+                          <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)"><i class="fa fa-globe" aria-hidden="true"></i> <span class="language_select">  <%= t('header.language') %> </span>
+                          </a>
+                          <ul class="dropdown-menu">
+                            <%= render partial: 'shared/language_list'%>
+                          </ul>
+                        </li>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <div class="google_translate">
+                                <h3><%= t('header.website_translator') %></h3>
+                                <select>
+                                  <% %w(SelectLanguage English Hindi Urdu Punjabi Tamil Telugu).each do |languages| %>
+                                    <option value="1"><%= languages %></option>
+                                  <% end %>
+                                </select>
+                                <p><%= t('header.translator_text') %></p>
+                              </div>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+              </div><!-- /.navbar-collapse -->
+            </div> <!--/. row -->
+          </div>
+        </nav>
+
+      </div>
+
+      <div class="container-fluid koinshark_currency">
+        <div class="container">
+          <div class="row">
+            <div class="owl-carousel top_carousel">
+              <div>
+                <span class="bitcoin_price"> <span class="btc">BitCorex Will List GoChain (GO) on 2018/09/12 </span></span>
+              </div>
+              <div>
+                <span class="bitcoin_price"><span class="btc"> BitCorex is Now Available in Polish  </span> </span>
+              </div>
+              <div>
+                <span class="bitcoin_price"><span class="btc"> NULS Competition Has Now Concluded   </span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  <% else %>
+    <%= render partial: 'shared/header' %>
+  <% end %>
+
+</div>
+
+<audio preload="preload" id="success-fx">
+  <source src="<%= audio_path('success.mp3') %>"/>
+</audio>
+
+<audio preload="preload" id="warning-fx">
+  <source src="<%= audio_path('warning.mp3') %>"/>
+</audio>
+
+<section class="market_page mob-position-tabs">
+  <div class="container">
+    <div class="market_sec">
+      <div class="market_left">
+        <div class="market_left_inner">
+          <div class="market_hdr">
+            <%= render partial: 'private/markets/header' %>
+          </div>
+          <div class="market_graph_value">
+            <% if mobile_device != 'mobile' %>
+              <%= render partial: 'order_book' %>
+            <% end %>
+            <div class="market_graph">
+              <div class="market_graph_inner">
+                <div class="chart_indicators_block">
+                  <div class="chart_indicators_left">
+                    <%#= render partial: 'range_switch' %>
+                  </div>
+                  <div class="chart_indicators_right">
+                    <%#= render partial: 'indicator_switch' %>
+                  </div>
+                </div>
+                <div class="show_chart">
+                  <div class="trading_chart ">
+                    <% if mobile_device != 'mobile' %>
+                      <%= render partial: 'trading_chart' %>
+                    <% end %>
+                  </div>
+
+                  <div class="original_graph">
+                    <%#= render partial: 'candlestick' %>
+                  </div>
+
+
+                  <div class="depths_sec hide ">
+                    <%= render partial: 'ticker' %>
+                    <%= render partial: 'depths' %>
+                  </div>
+
+                </div>
+              </div>
+              <% if mobile_device != 'mobile' %>
+                <div class="entery_block">
+                  <div class="tab">
+                    <button class="tablinks" onclick="openCity(event, 'Limit')" id="defaultOpen"><%= t('.limit') %></button>
+                    <button class="tablinks" onclick="openCity(event, 'Market')"><%= t('.market') %></button>
+                  </div>
+
+                  <div id="Limit" class="tabcontent" style="padding: 0px 0px">
+                    <%= render partial: 'bid_entry', locals: {market: @market, order: @order_bid} %>
+                    <%= render partial: 'ask_entry', locals: {market: @market, order: @order_ask} %>
+                  </div>
+
+                  <div id="Market" class="tabcontent" style="padding: 0px 0px">
+                    <%= render partial: 'market_bid_entry', locals: {market: @market, order: @order_bid_market} %>
+                    <%= render partial: 'market_ask_entry', locals: {market: @market, order: @order_ask_market} %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="market_right">
+        <% if mobile_device != 'mobile' %>
+          <div class="allmarkets">
+            <%= render partial: 'market_list', locals: {market_search: @market_search} %>
+          </div>
+            <div class="trademarkets">
+              <%= render partial: 'market_trades' %>
+            </div>
+        <% end %>
+
+      </div>
+    </div>
+    <% if mobile_device != 'mobile' %>
+    <div class="open_order_sec">
+      <div class="open_order_inner">
+        <div class="open_order_left">
+          <h2><%= t('.open_orders') %> <span class="ylw_txt" id="open_orders_count">(0)</span></h2>
+        </div>
+        <div class="open_order_right">
+          <div class="checkbox">
+            <!--<label><input type="checkbox">  <%#= t('.Hide_Other_pairs1') %> </label>-->
+          </div>
+        </div>
+      </div>
+      <%= render partial: 'my_orders' %>
+    </div>
+
+
+    <div class="open_order_sec">
+      <div class="open_order_inner">
+        <div class="open_order_left">
+          <h2><%= t('.24_orders_history') %>
+            <span class="ylw_txt" id="history_orders_count">(<%= @all_history.nil? ? '0' : @all_history %>)</span></h2>
+        </div>
+        <div class="open_order_right">
+          <div class="checkbox">
+            <label id="hide_other_pair"><input type="checkbox" id="other_checkbox">  <%= t('.Hide_Other_pairs') %> </label>
+          </div>
+        </div>
+        <div class="more">
+          <% if current_user.present? %>
+            <%= link_to t('.more'), '/history/orders' %>
+          <% else %>
+            <%= link_to t('.more'), signin_path %>
+          <% end %>
+        </div>
+      </div>
+      <%= render partial: 'order_history' %>
+    </div>
+    <% end %>
+  </div>
+</section>
+<% if mobile_device == 'mobile' %>
+  <%= render 'show_mobile' %>
+<% end %>
+
+<!--footer-->
+<%= render partial: 'shared/footer' %>
+
+<!--/.footer-->
+<!-- Bootstrap Js -->
+<%= javascript_include_tag 'js/owl.carousel.min' %>
+<%= javascript_include_tag 'js/easyResponsiveTabs.js' %>
+<!-- owl.carousel js -->
+<script>
+
+    // To show the dollar price
+    function dollar_price(a,b) {
+      return (parseFloat(a.replace(/[^0-9-.]/g, '')) * parseFloat(b.replace(/[^0-9-.]/g, ''))).toFixed(3)
+    }
+
+    function set_tooltip(val) {
+        $('[data-toggle="tooltip"]').attr('data-original-title', parseFloat(val).formatMoney());
+        $('[data-toggle="tooltip"]').tooltip();
+
+        $("[data-toggle=tooltip]").focus(function(){
+            $('.tooltip').css('left', '10px')
+        });
+    }
+
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+    $(document).ready(function () {
+        price = dollar_price(gon.ticker.last, gon.market_prices[gon.market.base_unit]);
+        set_tooltip(price);
+
+        $("[data-toggle=tooltip]").on('input propertychange past  e', function () {
+            var $this = $(this);
+            price = dollar_price($this.val(), gon.market_prices[gon.market.base_unit]);
+            console.log('price', price);
+            if(price > 0 && price != null){
+              $this.attr('data-original-title', parseFloat(price).formatMoney());
+              $this.tooltip('show');
+              $('.tooltip').css('left', '10px');
+            }else {
+              $this.tooltip('hide');
+            }
+        });
+
+        var owl = $('.currency_carousel');
+        var owl_2 = $('.top_carousel');
+        owl.owlCarousel({
+            items: 7,
+            loop: false,
+            rtl: false,
+            margin: 0,
+            autoplay: true,
+            autoplayTimeout: 1000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                600: {
+                    items: 3,
+                },
+                601: {
+                    items: 5,
+                },
+                1200: {
+                    items: 7
+                }
+            }
+        });
+
+        owl_2.owlCarousel({
+            items: 3,
+            loop: false,
+            rtl: false,
+            margin: 0,
+            autoplay: true,
+            autoplayTimeout: 1000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                600: {
+                    items: 1,
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        });
+    });
+
+    /* Responsive tabs */
+    $('#currency_marketTabs').easyResponsiveTabs({
+        type: 'default', //Types: default, vertical, accordion
+        width: 'auto', //auto or any width like 600px
+        fit: true, // 100% fit in a container
+        tabidentify: 'hor_1', // The tab groups identifier
+        activate: function (event) { // Callback function if tab is switched
+            var $tab = $(this);
+            var $info = $('#nested-tabInfo');
+            var $name = $('span', $info);
+            $name.text($tab.text());
+            $info.show();
+        }
+    });
+    /* price marquee */
+    $('.bitcoin_price').on('click', function () {
+        // $('.bitcoin_price').removeClass('current');
+        $(this).toggleClass('current');
+    });
+
+    <% if params.has_key?('full_graph') %>
+      $(".market_graph_inner").addClass("graph_zoom");
+      $("#depths").css("width", "100%");
+      $(".market_graph_inner").css("height", "800px");
+    <% end %>
+
+    $('.hand-point').on('click', function () {
+//        $('.trading_chart').hide();
+        $('.original_graph').hide();
+        $('.depths_sec').hide();
+        $('#range_switch').hide();
+//        if ($(this).parent().hasClass('change_graph')) {
+//            $('.depths_sec').show();
+//            $('.depths_sec').removeClass('hide');
+//        }
+//        else if ($(this).parent().hasClass('trade_chart')) {
+//            $('.trading_chart').show();
+//            $('.trading_chart').removeClass('hide');
+//        }
+//        else {
+//            $('.original_graph').show();
+//            $('#range_switch').show();
+//        }
+    });
+
+    /* onscroll add and remove class */
+    $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 150) {
+            $("body").addClass("fixed");
+        } else {
+            $("body").removeClass("fixed");
+        }
+    });
+
+    time_to_update = <%= %(stage production).include?(Rails.env) ? 300000 : 1500000 %>
+    setInterval(function(){
+        $.ajax({
+           type: 'GET',
+           url: '/market/prices'
+        });
+    }, time_to_update);
+
+</script>
+</body>
+</html>

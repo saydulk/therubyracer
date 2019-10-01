@@ -1,0 +1,47 @@
+<% content_for :header do %>
+  <nav class="navbar navbar-default white_nav">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand top_logo wt_logo  %>" href="/" style="margin-left: 0px !important; padding-left: 0px;"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <% unless current_user.present? %>
+            <li><a href="<%=signin_path %>">Sign In</a></li>
+          <% end %>
+          </li>
+          <li>
+            <a href="<%= root_path %>"><%= t('header.home') %></a>
+          </li>
+          <li><a href="#"><%= current_user.email  if current_user%></a></li>
+          <!--<li> <#%= link_to  t('supports._header.submit_request'), info_page_path %>-->
+          <!--</li>-->
+          <li class="dropdown custom_dropmenu language_dropdown">
+            <a class="dropdown-toggle" id = "lang" data-toggle="dropdown" href="javascript:void(0)"><i class="fa fa-globe" aria-hidden="true"></i> <%= t('header.language') %>
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <%= render partial: 'shared/language_list'%>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+<% end %>
+
+<script>
+  $(document).ready(function() {
+    $(".dropdown-toggle").dropdown();
+  });
+</script>

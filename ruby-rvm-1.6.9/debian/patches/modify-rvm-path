@@ -1,0 +1,13 @@
+Description: Modify rvm path from rvm to ruby-rvm
+Author: Brian Thomason <brian.thomason@canonical.com>
+--- ruby-rvm-1.6.9.orig/scripts/functions/installer
++++ ruby-rvm-1.6.9/scripts/functions/installer
+@@ -248,7 +248,7 @@ determine_install_path()
+       then
+         rvm_path="${rvm_prefix}/.rvm"
+       else
+-        rvm_path="${rvm_prefix}/rvm"
++        rvm_path="${rvm_prefix}/ruby-rvm"
+       fi
+     fi
+ 

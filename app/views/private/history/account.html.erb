@@ -1,0 +1,35 @@
+<% content_for :frame do %>
+  <div class="container history-pages">
+    <h1 class="page_hding"><%= t('.account_history') %></h1>
+    <%#= render 'tabs', active: :account %>
+    <div class="history_tab_btns tbl_div">
+      <ul class="nav nav-tabs history_tabs tbl_cell">
+        <li class=" <%= 'active' if params[:tab] == 'deposit' or !params.has_key?(:tab) %> switch_history_tab">
+          <a data-toggle="tab" href="#tab-0-wtytpktm"><%= t('.deposit')%></a>
+        </li>
+        <li class="switch_history_tab <%= 'active' if params[:tab] == 'withdraw' %>">
+          <a data-toggle="tab" href="#tab-1-eesnydho"> <%= t('.withdraw')%></a>
+        </li>
+      </ul>
+    </div>
+    <div class="tab-content">
+      <div id="tab-0-wtytpktm" class="tab-pane <%= 'active' if params[:tab] == 'deposit' or !params.has_key?(:tab) %> ">
+        <span class="export_xlc_file"><%= link_to t('.download'), download_csv_history_path(format:"csv",type:'deposit'), class: "download_btn" %> <span class="excel_icon"></span></span>
+        <%= render partial: 'deposits', locals: {transaction: @deposits} %>
+      </div>
+      <div id="tab-1-eesnydho" class="tab-pane  <%= 'active' if params[:tab] == 'withdraw' %>">
+        <span class="export_xlc_file"><%= link_to t('.download1'), download_csv_history_path(format:"csv",type:'withdrawl'), class: "download_btn" %> <span class="excel_icon"></span></span>
+        <%= render partial: 'withdraws', locals: {transaction: @withdraws } %>
+      </div>
+    </div>
+  </div>
+  <script>
+      // Prevent disabled next pagination click
+      $('.next ').click(function (e) {
+          if ($(this).is('.disabled')) {
+              e.preventDefault();
+
+          }
+      });
+  </script>
+<% end %>

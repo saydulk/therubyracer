@@ -1,0 +1,88 @@
+<% if ENV['MARKETS_CONFIG'] %>
+<%= File.read(ENV['MARKETS_CONFIG']) %>
+<% else %>
+- id: ethbtc
+  code: 1
+  base_unit: eth
+  quote_unit: btc
+  sort_order: 1
+  bid: { fee: 0.0015, currency: btc, fixed: 2 }
+  ask: { fee: 0.0015, currency: eth, fixed: 4 }
+
+  # default name
+  # name: BTC/USD
+
+  # aggregate price levels in orderbook
+  # price_group_fixed: 1
+
+  # default is true
+  # visible: false
+
+- id: bchbtc
+  code: 2
+  base_unit: bch
+  quote_unit: btc
+  sort_order: 1
+  bid: { fee: 0.0015, currency: btc, fixed: 2 }
+  ask: { fee: 0.0015, currency: bch, fixed: 3 }
+
+
+- id: trxbtc
+  code: 3
+  base_unit: trx
+  quote_unit: btc
+  sort_order: 1
+  bid: { fee: 0.0015, currency: btc, fixed: 2 }
+  ask: { fee: 0.0015, currency: trx, fixed: 3 }
+
+- id: btceth
+  code: 4
+  base_unit: btc
+  quote_unit: eth
+  sort_order: 1
+  bid: { fee: 0.0015, currency: eth, fixed: 3 }
+  ask: { fee: 0.0015, currency: btc, fixed: 4 }
+
+- id: bcheth
+  code: 5
+  base_unit: bch
+  quote_unit: eth
+  sort_order: 1
+  bid: { fee: 0.0015, currency: eth, fixed: 2 }
+  ask: { fee: 0.0015, currency: bch, fixed: 4 }
+
+- id: trxeth
+  code: 6
+  base_unit: trx
+  quote_unit: eth
+  sort_order: 1
+  bid: { fee: 0.0015, currency: eth, fixed: 2 }
+  ask: { fee: 0.0015, currency: trx, fixed: 4 }
+
+- id: btcusdt
+  code: 7
+  base_unit: btc
+  quote_unit: usdt
+  sort_order: 1
+  bid: { fee: 0.0015, currency: usdt, fixed: 2 }
+  ask: { fee: 0.0015, currency: btc, fixed: 4 }
+
+
+- id: bchusdt
+  code: 8
+  base_unit: bch
+  quote_unit: usdt
+  sort_order: 1
+  bid: { fee: 0.0015, currency: usdt, fixed: 2 }
+  ask: { fee: 0.0015, currency: bch, fixed: 4 }
+
+- id: trxusdt
+  code: 9
+  base_unit: trx
+  quote_unit: usdt
+  sort_order: 1
+  bid: { fee: 0.0015, currency: usdt, fixed: 2 }
+  ask: { fee: 0.0015, currency: trx, fixed: 4 }
+
+
+<% end %>

@@ -1,0 +1,106 @@
+<div class="modal fade my_modal" id="sms_modal">
+  <%= simple_form_for :settings, url: sms_authentication_settings_path, html: { class: 'form',:onsubmit=>"return Validate(this);" }  do |f| %>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title"><%= current_user.sms_enable? ? t('.disable') : t('.enable') %> <%=  t('.sms_title')%></h4>
+            <span class="alert-danger hide" id="sms_error"><%= t('.sms_error_msg') %></span>
+            <span class="alert-success hide" id="sms_success"><%= t('.sms_success_msg') %></span>
+          </div>
+          <div class="modal-body">
+            <div class="form-group authentication_mdl">
+              <label for="uname1"><%= t('.sms_label') %></label>
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 country-code-inputs">
+                  <div class="country_code">
+                    <% if current_user.sms_enable? %>
+                      <% contact_num = current_user.contact_no_without_country_code %>
+                      <%= f.input_field :contact_no, class: 'form-control form-control-lg rounded-0 bfh-phone', disabled: true, placeholder: contact_num.gsub(contact_num[2,5],'XXXXX') %>
+                      <span class="country-code-names choose_country slct_drop_box" disabled="disabled">
+                        <%= f.select :country_code, get_all_country_codes, selected: current_user.id_document.country_code || ENV['TWILLIO_REGION'] ,class:'form-control form-control-lg rounded-0 bfh-phone chosen-select', disabled: 'disabled' %>
+                      </span>
+                    <% else %>
+                        <%= f.input_field :contact_no, class: 'form-control form-control-lg rounded-0 bfh-phone contact_validate target5'   %>
+                        <span class="country-code-names choose_country slct_drop_box">
+                          <%= f.select :country_code, get_all_country_codes, selected: (request.location.country_code || ENV['TWILLIO_REGION']), class:'form-control form-control-lg rounded-0 bfh-phone chosen-select ' %>
+                        </span>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            <div>
+          </div>
+        </div>
+
+        <div class="input-group form-group send_sms_block">
+          <%= f.input_field :otp_code, placeholder: t('.sms_token'), class: 'form-control', style: 'height: 36px; width:calc(100% - 100px);' %>
+          <span class="input-group-text"><%= link_to t('.sms_send1'), '#', id:'send_sms', class: 'btn btn-default btn-block' %></span>
+        </div>
+
+        <span id="name_error1" style="color:#a94442"></span>
+
+        <div class="form-group text-center">
+          <%= f.submit t('.sms_send') , class: 'btn btn-lg btn-block btn-primary' , id: 'sms_submit_btn' %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<script>
+  $(document).ready(function(){
+
+//    $( "#sms_submit_btn" ).click(function() {
+//      if($('settings_contact_no').val().length > 10) {
+//
+//      } else {
+//        // Disable submit button
+//      }
+//    });
+    $(".contact_validate").keydown(function (e) {
+      // Allow: backspace, delete, tab, escape, enter and .
+      if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110]) !== -1 ||
+          // Allow: Ctrl+A, Command+A
+          (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+          // Allow: home, end, left, right, down, up
+          (e.keyCode >= 35 && e.keyCode <= 40)) {
+        // let it happen, don't do anything
+        return;
+      }
+      // Ensure that it is a number and stop the keypress
+      if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+        e.preventDefault();
+      }
+    });
+
+  });
+  $(".target5").keyup(function() {
+
+      var maxChars = 15;
+      if ($(this).val().length > maxChars) {
+          $(this).val($(this).val().substr(0, maxChars));
+          $('#name_error').text('  number is too long (maximum is 15 characters)')
+      }
+      else{ ( length > 0 &&  length <= 15 )
+          $('#name_error').text("")
+      }
+  });
+
+  function Validate(oForm) {
+
+      var sms_enable = '<%= current_user.sms_enable? %>';
+      if(sms_enable == 'true'){
+          $('#name_error').text()
+          return true
+      }
+      else if ($('.contact_validate').val().length == 0){
+          $('#name_error').text('Please Enter Phone Number')
+          return false
+      }
+      return true;
+
+  }
+</script>
+

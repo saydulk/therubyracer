@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	DESTDIR=$(CURDIR)/debian/ruby-rvm/usr/share ./install
+	#mv executables to /usr/bin
+	mv $(CURDIR)/debian/ruby-rvm/usr/share/ruby-rvm/bin/* $(CURDIR)/debian/ruby-rvm/usr/bin
+	rmdir $(CURDIR)/debian/ruby-rvm/usr/share/ruby-rvm/bin
+	#mv lib dir
+	mv $(CURDIR)/debian/ruby-rvm/usr/share/ruby-rvm/lib/* $(CURDIR)/debian/ruby-rvm/usr/lib/ruby-rvm
+	#mv pre-installed gemsets
+	mv $(CURDIR)/debian/ruby-rvm/usr/share/ruby-rvm/gemsets $(CURDIR)/debian/ruby-rvm/var/lib/ruby-rvm
+	#mv config dir
+	mv $(CURDIR)/debian/ruby-rvm/usr/share/ruby-rvm/config $(CURDIR)/debian/ruby-rvm/var/lib/ruby-rvm
+	#remove empty dirs
+	for DIR in archives gems lib environments log man rubies src tmp wrappers; do\
+	    rmdir $(CURDIR)/debian/ruby-rvm/usr/share/ruby-rvm/$$DIR || true;\
+	done
+	#remove duplicate LICENCE file
+	rm -f $(CURDIR)/debian/ruby-rvm/usr/share/ruby-rvm/LICENCE
+	#remove duplicate README
+	rm -f $(CURDIR)/debian/ruby-rvm/usr/share/ruby-rvm/README

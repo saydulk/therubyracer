@@ -1,0 +1,48 @@
+<% content_for :frame do %>
+  <div class="container history-pages">
+    <div id="orders">
+        <h1 class="page_hding"><%= t('.open_order_history') %></h1>
+        <div class="table-responsive">
+          <table class="table table-condensed">
+          <thead>
+          <tr>
+            <th><%= t('.timestamp') %></th>
+            <th><%= t('.market') %></th>
+            <th><%= t('.type') %></th>
+            <th><%= t('.state') %></th>
+            <!--<th><%#= t('.id') %></th>-->
+            <th><%= t('.price') %></th>
+            <th><%= t('.volume') %></th>
+            <th><%= t('.average_price') %></th>
+            <th><%= t('.fullfilled_volume') %></th>
+
+          </tr>
+          </thead>
+          <tbody class="list">
+          <% if @open_orders.present? %>
+            <%= render partial: 'open_order', collection: @open_orders %>
+          <% else %>
+            <tr>
+              <td colspan="9">
+                <p class="text-center"><span class="not_found_img"><%= image_tag("zups.png", size: "85x75",) %></span><%= t('.blank_open_order') %></p></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+        </div>
+        <div class="pull-right">
+          <%= paginate @open_orders %>
+        </div>
+    </div>
+  </div>
+  <script>
+      // Prevent disabled next pagination click
+      $('.next ').click(function (e) {
+          if ($(this).is('.disabled')) {
+              e.preventDefault();
+
+          }
+      });
+  </script>
+
+<% end %>

@@ -1,0 +1,801 @@
+@import 'ngDialog/ngDialog';
+@import 'ngDialog/ngDialog-theme-default';
+
+#funds-index {
+  background-color: #f7f7f7;
+  .ngdialog.ngdialog-theme-default .ngdialog-close {
+   //display: none;
+  }
+}
+
+
+.funds_page {
+  padding-bottom: 40px;
+  @media (max-width: 767px) {
+    padding: 10px 0 30px;
+  }
+}
+.funds_setting_page {
+  h2 {
+    width: 100%;
+    line-height: 40px;
+    font-size: 16px;
+    color: #333;
+  }
+  .funds_setting_block {
+    display: table;
+    margin: 0px;
+    .funds_setting_left {
+      display: table-cell;
+      vertical-align: top;
+      float: none;
+      width: 60%;
+      padding: 0px 30px 0px 0px;
+      @media (max-width: 991px) {
+        float: left;
+        width: 100%;
+        padding: 0px;
+      }
+      .white_block {
+        border: solid 1px #ddd;
+        background-color: #fff;
+        //padding: 38px 58px 20px;
+        float: left;
+        width: 100%;
+        .funds_setting_left_inner {
+          padding: 38px 58px 20px;
+          float: left;
+          width: 100%;
+          @media (max-width:1199px){
+            padding: 20px;
+          }
+        }
+      }
+    }
+    .funds_setting_right {
+      display: table-cell;
+      vertical-align: top;
+      float: none;
+      width: 40%;
+      padding: 0px;
+      background-color: #fff;
+      border: solid 1px #ddd;
+      @media (max-width: 991px) {
+        float: left;
+        width: 100%;
+        margin-top: 15px;
+      }
+      .white_block {
+        background-color: #fff;
+        padding: 0px;
+        float: left;
+        width: 100%;
+      }
+    }
+  }
+}
+.total_balance {
+  margin-top: 5px;
+  .table {
+    border: none;
+    tr {
+      td {
+        border: none;
+        padding: 2px 0px;
+        color: #666;
+        a {
+          color: #666;
+          font-size: 13px;
+          &:hover, &:focus, &:active {
+            text-decoration: underline;
+            color: #00aeef;
+          }
+          .fa {
+            color: #fff;
+            border: solid 1px #00aeef;
+            padding: 1px 4px;
+            background: #00aeef;
+            border-radius: 3px;
+            font-size: 9px;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+.importants {
+  background: #f8f8f8;
+  border: 1px solid #e6e6e6;
+  padding: 15px 20px;
+  float: left;
+  width: 100%;
+  margin: 15px 0px 5px;
+  font-size: 12px;
+  strong {
+    display: inline-block;
+    width: 100%;
+    color: #00aeef;
+  }
+  .imp_notes {
+    float: left;
+    width: 100%;
+    padding: 0px 15px;
+    li {
+      float: left;
+      width: 100%;
+      margin-bottom: 10px;
+      list-style-type: disc;
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
+.depositAddress {
+  margin-top: 15px;
+  float: left;
+  width: 100%;
+  strong {
+    font-size: 12px;
+    color: #333;
+    line-height: 100%;
+    display: block;
+    float: left;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  .changeAddress {
+    display: inline-block;
+    width: 100%;
+    border-sizing: border-box;
+    border: 1px solid #e6e6e6;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    background: #f8f8f8;
+    margin: 6px 0;
+    line-height: 22px !important;
+    padding: 10px;
+    word-wrap: break-word;
+    white-space: normal;
+    word-break: break-all;
+    line-height: 0px;
+  }
+  .paymentAddress {
+    display: inline-block;
+    width: 100%;
+    border-sizing: border-box;
+    border: 1px solid #e6e6e6;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    background: #f8f8f8;
+    margin: 6px 0;
+    line-height: 32px;
+    padding: 5px 10px;
+  }
+
+
+  .msg_changeAddress {
+    display: inline-block;
+    width: 100%;
+    border-sizing: border-box;
+    border: 1px solid #e6e6e6;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    background: #f8f8f8;
+    margin: 6px 0;
+    line-height: 32px;
+    padding: 5px 10px;
+  }
+  .qr_btns {
+    float: left;
+    width: 100%;
+    text-align: right;
+    li {
+      display: inline-block;
+      margin-bottom: 4px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      button {
+        background: #fff;
+        border: solid 1px #ddd;
+        padding: 4px 10px;
+        font-size: 13px;
+        color: #777;
+        transition: all ease 0.5s;
+        &:hover, &:focus, &:active {
+          background: #00aeef;
+          border-color: #00aeef;
+          color: #fff;
+          transition: all ease 0.5s;
+        }
+      }
+      a {
+        background: #fff;
+        border: solid 1px #ddd;
+        padding: 4px 10px;
+        font-size: 13px;
+        color: #777;
+        transition: all ease 0.5s;
+        &:hover, &:focus, &:active {
+          background: #00aeef;
+          border-color: #00aeef;
+          color: #fff;
+          transition: all ease 0.5s;
+        }
+      }
+    }
+  }
+}
+.tips {
+  margin-top: 20px;
+  float: left;
+  width: 100%;
+  strong {
+    color: #333;
+    font-size: 12px;
+    display: inline-block;
+    margin-bottom: 6px;
+  }
+  ul {
+    float: left;
+    width: 100%;
+    padding: 0px 15px;
+    li {
+      list-style-type: disc;
+      font-size: 12px;
+      color: #666;
+      line-height: 20px;
+      .yellow {
+        color: #00aeef;
+        &:hover, &:focus, &:active {
+          color: #000 !important;
+        }
+      }
+    }
+  }
+}
+.asset-link {
+  padding: 5px 0px;
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+  float: left;
+  width: 100%;
+  margin-top: 10px;
+  strong {
+    font-size: 14px;
+    color: #333;
+  }
+  .breadcrumb {
+    padding: 0;
+    margin-top: 6px;
+    margin-bottom: 0;
+    list-style: none;
+    background-color: transparent;
+    border-radius: 0;
+    li {
+      padding: 0px 10px;
+      &:hover, &:focus, &:active {
+        a {
+          color: #00aeef;
+          text-decoration: underline;
+        }
+      }
+      &:first-child {
+        padding-left: 0px;
+      }
+      a {
+        color: #333;
+        font-size: 12px;
+      }
+    }
+  }
+}
+.breadcrumb li + li::before {
+  padding: 0 5px;
+  color: #333;
+  content: " ";
+}
+.funds_setting_right {
+  .white_block {
+    position: relative;
+    padding: 0px;
+    .fund_history {
+      background-color: #f4f4f4;
+      font-size: 3px;
+      color: #999;
+      margin-top: 2px;
+      border: none;
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+
+      .funds_history_left {
+        display: table-cell;
+        float: none;
+        min-width: 119px;
+        vertical-align: middle;
+        padding: 0 14px;
+        @media (max-width:1199px) {
+          float: left;
+
+        }
+        h2 {
+          font-size: 12px;
+          color: #999;
+          line-height: 30px;
+          border: none;
+          @media (max-width:1199px) {
+            line-height: 20px;
+          }
+        }
+      }
+      .funds_history_right {
+        display: table-cell;
+        float: none;
+        width: 60%;
+        vertical-align: middle;
+        text-align: right;
+        @media (max-width:1199px) {
+          float: left;
+          text-align: left;
+          width: 100%;
+        }
+        ul {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          width: 100%;
+          li {
+            display: inline-block;
+            width: 50%;
+            &:first-child{
+              float: left;
+              width: auto;
+              margin: 8px 0px;
+              input{
+                height: 25px;
+                margin-top: 2px;
+                max-width: 150px;
+                border-radius: 4px;
+              }
+            }
+            &:last-child {
+              min-width: 74px;
+              float: right;
+              width: 74px;
+              a {
+                border-right: none;
+              }
+            }
+            a {
+              font-size: 12px;
+              display: inline-block;
+              padding: 4px 14px;
+              border-right: solid 1px #ddd;
+              @media (max-width:1199px) {
+                border-right: none;
+              }
+              @media (max-width:480px) {
+                padding: 4px 8px;
+              }
+              &:hover, &:focus, &:active {
+                color: #333;
+                text-decoration: underline;
+              }
+              &.deposit {
+                color: #e8b342;
+              }
+              &.more {
+                color: #333;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.no_rocord_found {
+  padding: 20px 0px;
+  text-align: center;
+  float: left;
+  width: 100%;
+  img {
+    max-width: 100%;
+    margin: 0px auto 10px;
+    width: 70px;
+  }
+  p {
+    color: #777;
+    font-size: 13px;
+  }
+}
+.history_table {
+  .table {
+    border: none;
+    tbody {
+      border: none !important;
+    }
+    tr {
+      cursor: pointer;
+      td {
+        color: #777777;
+        font-size: 13px;
+        vertical-align: middle;
+        &.arrow {
+          &.up {
+            .fa {
+              transform: rotate(180deg);
+            }
+          }
+        }
+        .table {
+          tr {
+            td {
+              border: none;
+              padding: 2px 6px;
+            }
+          }
+        }
+        .fa {
+          font-size: 24px;
+          color: #999;
+        }
+      }
+    }
+  }
+}
+
+.history_table {
+  .table {
+    tr {
+      td {
+        a {
+          color: #333;
+          transition: all ease 0.5s;
+          &:hover, &:focus, &:active {
+            color: #00aeef;
+            transition: all ease 0.5s;
+          }
+        }
+      }
+    }
+  }
+}
+.decimal_block {
+  float: left;
+  width: 100%;
+  .decimal_fld {
+    float: left;
+    width: calc(100% - 50px);
+    position: relative;
+    z-index: 0;
+    #withdraw_all_btn {
+      position: absolute;
+      top: 50%;
+      right: 0px;
+      transform: translateY(-50%);
+      z-index: 2;
+      color: #999;transition: all ease 0.5s;
+      @media (max-width: 767px) {
+        position: relative;
+        top: 0;
+        right: 0px;
+        transform: none;
+        z-index: 1;
+        float: left;
+        width: 100%;
+        padding: 0;
+      }
+      &:hover, &:focus, &:active {
+        color: #00aeef;
+        transition: all ease 0.5s;
+      }
+    }
+  }
+  .payment_fld{
+    float: left;
+    width: calc(100% - 1px);
+    position: relative;
+    z-index: 0;
+  }
+  .slctd_currency {
+    background: #f3f3f3;
+    border: 1px solid #e6e6e6;
+    border-left: none;
+    font-size: 12px;
+    color: #999;
+    width: 50px;
+    padding: 10px;
+    height: 34px;
+    line-height: 14px;
+    float: left;
+    text-align: center;
+    transition: all ease 0.5s;
+    &:hover, &:focus, &:active {
+      transition: all ease 0.5s;
+      background: #f3f3f3;
+      border-left: none;
+      border: 1px solid #e6e6e6;
+      color: #999;
+    }
+  }
+}
+.transaction_fee {
+  .error_div {
+    float: left;
+    width: 100%;
+    height: 24px;
+    line-height: 24px;
+    p {
+      float: left;
+      width: 100%;
+      font-size: 12px;
+      &.red_txt {
+        color: #f00;
+      }
+    }
+  }
+
+  span {
+    color: #333;
+  }
+}
+.form-group {
+  .form-submit {
+    .btn {
+      width: 100%;
+      &:hover, &:focus, &:active {
+        background-color: #0a9bd1;
+        border-color: #0a9bd1;
+      }
+    }
+  }
+}
+/* For Firefox */
+input[type='number'] {
+  -moz-appearance:textfield;
+}
+
+/* Webkit browsers like Safari and Chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.manage_add {
+  .ngdialog-content {
+    width: 548px !important;
+    border-radius: 0px !important;
+    padding: 50px 15px !important;
+    background-color: #fff !important;
+    .ngdialog-close {
+      display: none;
+    }
+    .withdraw_disable {
+      text-align: center;
+      .error_img {
+        margin-bottom: 15px;
+        float: left;
+        width: 100%;
+      }
+      p {
+        line-height: 24px;
+        color: #333;
+        font-size: 14px;
+        &.red_txt {
+          color: #ea2323;
+        }
+      }
+      .yzChoose {
+        width: 458px;
+        margin: 35px auto;
+        display: flex;
+        a {
+          display: inline-block;
+          border: 1px solid #efefef;
+          color: #666666;
+          font-size: 14px;
+          background: #fafafa;
+          position: relative;
+          padding: 16px 11px 16px 60px;
+          line-height: 36px;
+          white-space:nowrap;
+          &.btgoogle {
+            margin-right: 10px;
+            float: left;
+          }
+          &:hover, &:focus, &:active {
+            border: 1px solid #f6e4be;
+            color: #e8b342;
+            .imgicon {
+              &.img-google1 {
+                background-position: 0 0;
+                top: 16px;
+                left: 13px;
+              }
+              &.img-phone {
+                background-position: -131px 0;
+                top: 16px;
+                left: 20px;
+              }
+            }
+          }
+
+          p {
+            font-size: 14px;
+            line-height: 36px;
+            text-align: left;
+            color: #666666;
+          }
+          .imgicon {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            vertical-align: middle;
+            background: image-url('yzchoose.png') no-repeat center;
+            position: absolute;
+            &.img-google1 {
+              background-position: -46px 0;
+              top: 16px;
+              left: 13px;
+            }
+            &.img-phone {
+              background-position: -92px 0;
+              top: 16px;
+              left: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.total_balance {
+  tr {
+    td {
+      @media (max-width: 480px) {
+        white-space: normal !important;
+      }
+    }
+    th {
+      @media (max-width: 480px) {
+        white-space: normal !important;
+      }
+    }
+  }
+}
+
+
+.smalltip {
+  text-align: right;
+  padding: 0px 30px;
+  span {
+    font-size: 12px;
+    color: #666;
+  }
+  .btn-orange {
+    display: inline-block;
+    background: #e8b342 !important;
+    border-color: #e8b342 !important;
+    color: #fff !important;
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 0px;
+    margin-left: 10px;
+    &:hover {
+      background: #f1c55f !important;
+      border-color: #f1c55f !important;
+      color: #fff !important;
+    }
+  }
+}
+
+.ngdialog.ngdialog-theme-default {
+  padding: 0px;
+}
+
+#funds-index {
+  .ngdialog {
+    .ngdialog-content {
+      background-color: transparent;
+      //height: 100%;
+      //width: 100%;
+      .ngdialog-close {
+      //  display: none;
+        &:before {
+          right: 20px;
+          top: 25px;
+        }
+      }
+      .deposit_address {
+        //position: absolute;
+        //left: 50%;
+        //top: 50%;
+        //transform: translate(-50%, -50%);
+        width: 100%;
+        background: #f0f0f0;
+        max-width: 500px;
+        height: 100%;
+        .ngdialog-close {
+          display: block;
+        }
+        .deposit_content {
+          padding: 0px;
+          .modal_hdr {
+            position: relative;
+            background: #fff;
+            border-bottom: solid 1px #ddd;
+            padding: 0px 15px;
+            float: left;
+            width: 100%;
+          }
+          .deposit_content_inner {
+            padding: 30px;
+            float: left;
+            width: 100%;
+            text-align: center;
+            .ngdialog-close {
+              right: -8px;
+              top: -6px;
+            }
+          }
+          .qr_block {
+            float: none;
+            margin: 20px auto 0px;
+            .no_qr_code {
+              background-color: #fafafa;
+              border: solid 1px #DDd;
+              max-width: 100%;
+              width: 100%;
+              height: 100%;
+              border-radius: 3px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              p {
+                color: #333333;
+                font-size: 18px;
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.withdraw_payment_sec {
+  display: flex;
+  margin-bottom: 10px;
+  label, strong {
+    margin-bottom: 0px;
+    width:50%;
+  }
+  strong {
+    line-height: 20px;
+  }
+  label {
+    display: flex;
+    text-align: right;
+    justify-content: end;
+    input {
+      margin: 0px;
+      margin-right: 5px;
+    }
+  }
+}
+
+.tooltip{
+  white-space: pre-wrap;       /* css-3 */
+  word-break: break-all;
+}

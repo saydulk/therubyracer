@@ -1,0 +1,333 @@
+zh:
+  js:
+    brand: Crypto Exchange
+    submit: Submit
+    cancel: Cancel
+    confirm: Confirm
+    banks:
+      ab: Axis Bank
+      boi: Bank of India
+      cb: Canara Bank
+      cboi: Central Bank of India
+      fb: Federal Bank
+      icici: ICICI Bank
+      idbi: IDBI Bank
+      iib: IndusInd Bank
+      kb: Kotak Bank
+      psb: Punjab & Sind Bank
+      sbi: State Bank of India
+      sb: Syndicate Bank
+      ubi: Union Bank of India
+      yb: Yes Bank Ltd
+      uco: UCO Bank
+      boc: Bank of America
+      wf:  Wells Fargo
+      cg: Citigroup
+    fund_sources:
+      withdraw_disable:
+        text1: '我们强烈建议您在帐户中启用2FA！'
+        text2: "请选择您希望如何获得2FA代码："
+        text3: 'Google身份验证'
+        text4: '短信认证'
+        text5: '我理解不启用2FA的风险'
+        text6: '暂时跳过'
+      manage_bank_account: '银行账户管理'
+      manage_bank_account_desc: '方便银行地址的选择'
+      manage_coin_address: '硬币地址管理'
+      manage_coin_address_desc: '方便选择硬币提款地址'
+      bank: 银行
+      account: 银行帐户
+      label: 标签
+      address: 地址
+      action: 行动
+      add: 添加
+      remove: 删除
+      default: 默认
+    funds:
+      deposit: 存款
+      withdraw: 退出
+      deposit_fiat:
+        title: '{{currency}} 存款'
+        description: |
+          <div>使用以下信息存入您的帐户。您需要与银行联系以获取具体说明。</ div>
+          <ol>
+            <li>请务必提供下面给出的"参考"代码 - 此代码用您的帐户识别存款。</ li>
+            <li>不要超过每日或每月的资金限额。如果您超出限额，您的帐户将被冻结，直到您获得更高限额的验证，或直到您的资金被退回为止。</ li>
+            <li>相互之间的相同数量的多次存款可能会被破坏或延迟。如果您必须多次存款，请考虑发送不同的金额。</ li>
+            <li>重要提示：您要存入的银行帐户名称必须与您为存入帐户进行验证时输入的名称一致。</ li>
+          </ol>
+
+      currency_name:
+        btc: BTC
+        bch: BCH
+        eth: ETH
+        trx: TRX
+        xrp: XRP
+        eos: EOS
+        csc: CSC
+        ipm: IPM
+        ems: EMS
+        ecp+: ECP+
+        fto: FTO
+        usdc: USDC
+        aok: AOK
+        cac+: CAC+
+
+      deposit_btc:
+        title: BTC 存款
+
+      deposit_bch:
+        title: BCH 存款
+
+      deposit_eth:
+        title: ETH 存款
+
+      deposit_trx:
+        title: TRX 存款
+
+      deposit_xrp:
+        title: XRP 存款
+
+      deposit_eos:
+        title: EOS 存款
+
+      deposit_csc:
+        title: CSC 存款
+
+      deposit_ipm:
+        title: IPM 存款
+
+      deposit_ems:
+        title: Ems 存款
+
+      deposit_ecp+:
+        title: Ecp+ 存款
+
+      deposit_fto:
+        title: FTO 存款
+
+      deposit_usdc:
+        title: USDC 存款
+
+      deposit_aok:
+        title: AOk 存款
+ 
+      deposit_cac+:
+        title: CAC+ 存款
+
+      deposit:
+        note_text: 请注意
+        first_part: 硬币将立即存入
+        second_part: 网络确认
+        progress_text:  '存款后，您可以追踪其进度'
+        history: 历史
+        page: 页面
+
+      deposit_coin:
+
+        what: "什么是"
+        no_address: 找不到地址
+        total_balance: 总余额
+        in_order: 按顺序
+        available_balance: 可用余额
+        important: 重要的
+        send_only: 仅发送
+        max1n: At most
+        min: At least
+        deposit_address: "到这个存款地址。"
+        other_coin_text: "将任何其他硬币或代币发送到此地址可能会导致您的存款损失。"
+        payment_text: 存款付款
+        min_withdraw: 最低提款
+        max: At least
+        do_not_withdraw: "不要直接提取到众筹或ICO地址，因为您的帐户不会从此类销售中记入代币"
+        withdraw_addres: 提款地址
+        address: 地址
+        transaction_fee: '交易费：'
+        will_gate: 你会得到的
+        new_address: 新地址
+        confirm_gen_new_address: "您确定要生成新的存款地址吗？"
+        open-wallet: "请使用您的普通钱包服务，本地钱包，移动终端或网上钱包，选择付款并发送。"
+        detail: "请将地址粘贴到您的钱包中，并填写您要存入的金额，然后确认并发送。"
+        scan-qr: 存款地址
+
+        after_deposit: "完成发送后，您可以在下面查看新存款的状态。"
+        generate-new: 生成新地址
+
+      address:
+        deposit_address: 存款地址
+        fetching_your: 获取你的
+        address_text: 地址
+        minute_text: 需要几分钟才能得到你的
+        copy_address: 复制地址
+        qr_code_text: 显示QR码
+        address_text1: 地址
+      deposit_history:
+        balance_Available: 可用余额
+        title: 存款历史
+        number: '＃'
+        identification: 识别码
+        time: 时间
+        txid: 交易ID
+        confirmations: 确认
+        from: 来自
+        amount: 金额
+        state_and_action: "态/行动"
+        cancel: 取消
+        no_data: 您没有存款记录。
+        no_deposit_arrive: 存款没有到达
+        view_all: 查看全部
+        address: "地址："
+        txid:  "Txid："
+
+        submitting: 提交
+        cancelled: 已取消
+        submitted: 已提交
+        accepted: 接受
+        rejected: 拒绝
+        checked: 已检查
+        warning: 警告
+        suspect: 怀疑
+        collected: 已接受
+
+      trade:
+        go_to_trade: 去贸易
+        trading_market: 没有交易市场
+
+
+      withdraw_btc:
+        title:  BTC退出
+
+      withdraw_bch:
+        title:  BCH退出
+
+      withdraw_eth:
+        title:  ETH退出
+
+      withdraw_trx:
+        title:  TRX退出
+
+      withdraw_xrp:
+        title:  XRP退出
+
+      withdraw_eos:
+        title:  EOS退出
+
+      withdraw_csc:
+        title:  CSC退出
+
+      withdraw_ipm:
+        title:  IPM退出
+
+      withdraw_ems:
+        title:  EMS退出
+
+      withdraw_ecp+:
+        title:  ECP+退出
+
+      withdraw_fto:
+        title:  Fto退出
+
+      withdraw_usdc:
+        title:  USDC退出
+
+      withdraw_aok:
+        title:  AOK退出
+
+      withdraw_cac+:
+        title: CAC+退出  
+
+      withdraw_fiat:
+        title: '{{currency}}退出'
+        intro: 选择银行到现金提取金额并输入帐号并完成提交。
+        intro_2: "您的银行帐户和名称必须与实名身份验证名称一致。"
+        attention: "工作时间：9：00-18：00"
+        withdraw_address: 退出地址
+        balance: 平衡
+        withdraw_amount: 退出金额
+        min: 至少
+        withdraw_all: 退出全部
+
+      withdraw_coin:
+        what: 什么
+        min1: '最低提款额：'
+        24_with: '24小时取款限额：'
+        ava: '可用：'
+        enter: 输入您的金额
+        not: 不够
+        trans: '交易费：'
+        trans1: '交易费：'
+        you: '你会得到：'
+        intro: 请填写地址和金额，然后提交表格。它将在10分钟内确认
+        label: 标签
+        balance: 平衡
+        amount: 金额
+        manage_withdraw: 管理地址
+        min: 至少
+        withdraw_all: 退出全部
+        commission_fee: 佣金
+        max1n: At most
+        balance_Total: 总余额
+        order_in: 按顺序
+        balance_available: 可用余额
+        important: 重要的
+        msg1: Email
+        msg2: and
+        msg3: KYC
+        msg4: must be verified
+        text: '不要直接退出到众筹或ICO地址，因为您的帐户不会从此类销售中获得代币'
+        address_withdrawal: 提款地址
+        address_payment_id: 提款付款ID
+        no_payment_id: 没有付款ID
+        note_Please: 请注意
+        text1: 硬币将在之后立即取款
+        text2: 网络确认
+        text3: "完成提款后，您可以跟踪其进度"
+        hist: 历史
+        page: 页面。
+        enter_min: 输入最低余额
+        enter_max: Enter maximum balance
+      withdraw_history:
+        title: 历史
+        number: 号码
+        withdraw_time: 时间
+        withdraw_account: 退出帐户
+        withdraw_address: 地址
+        withdraw_amount: 退出金额
+        actual_amount: 实际金额
+        fee: 费用
+        miner_fee: 费用
+        state_and_action: "态/行动"
+        cancel: 取消
+        no_data: "你没有退出历史。"
+        view_all: 查看全部
+        not_receive_email: 没有收到电子邮件
+        submitting: 提交
+        submitted: 提交
+        rejected: 被拒絕
+        accepted: 接受
+        suspect: 怀疑
+        processing: 加工
+        coin_ready: 硬币就绪
+        coin_done: 硬币完成
+        done: 完成
+        canceled: 已取消
+        failed: 失败
+        confirming: 确认
+        approved: 批准
+    markets:
+      market_list:
+        all: 所有市场
+        btc: BTC市场
+        bch: BCH市场
+        eth: ETH市场
+        trx: TRX市场
+        xrp: XRP市场
+        eos: EOS市场
+        csc: CSC市场
+        ipm: IPM市场
+        ems: EMS市场
+        ecp+: ECP+市场
+        fto: FTO市场
+        usdc: USDC市场
+        aok: AOK市场
+        cac+: CAC+市场

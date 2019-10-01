@@ -1,0 +1,216 @@
+<section class="zinance_application_form_sec">
+  <div class="zinance_application_banner">
+    <%= image_tag('angelsgoogleformheader.jpg', :class => "img-responsive" )%>
+  </div>
+  <div class="zinance_application_form">
+    <div class="form_content">
+      <h1><%= t('.header') %></h1>
+      <p><%= t('.header_content') %></p>
+      <p><%= t('.info') %> <span class="loggedin_user">htmlproject.antech@gmail.com</span>? <a href="https://accounts.google.com/AccountChooser?continue=https://docs.google.com/forms/d/e/1FAIpQLSchhxh7oMK8JAMo4fNqURtx7xHU6TnAm_t-ZAHdbtPwQduIXQ/viewform?usp%3Dsend_form&amp;service=wise" target="_blank" aria-describedby="jd1ybd"><%= t('.switch_account') %></a></p>
+      <div class="create_account_sec">
+        <span class="red_text"><%= t('.required') %> </span>
+
+          <%= form_tag( html: {class: "create_account_form"}) do  %>
+          <div class="form-group">
+            <%= label_tag  t('.name')  %>
+              <span class="red_text">*</span>
+            <%= text_field(:name, :name, class: 'input_fld', placeholder:  t('.Your_answer')) %>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag t('.gender') %>
+              <span class="red_text">*</span>
+            <%= text_field(:gender, :gender, class: 'input_fld', placeholder:  t('.Your_answer1')) %>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag  t('.age')  %>
+             <span class="red_text">*</span>
+            <%= text_field(:age, :age, class: 'input_fld', placeholder:  t('.Your_answer2')) %>
+
+          </div>
+
+          <div class="form-group">
+            <%= label_tag t('.nationality') %>
+              <span class="red_text">*</span>
+            <%= text_field(:nationality, :nationality, class: 'input_fld', placeholder:  t('.Your_answer3')) %>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag t('.current_location')  %>
+             <span class="red_text">*</span><p><%= t('.current_location_info') %> </p>
+            <%= text_field(:country, :country, class: 'input_fld', placeholder:  t('.Your_answer4')) %>
+
+          </div>
+
+          <div class="form-group">
+            <%= label_tag t('.occupation')  %>
+              <span class="red_text">*</span>
+            <%= text_field(:occupation, :occupation, class: 'input_fld', placeholder:  t('.Your_answer5')) %>
+
+          </div>
+
+          <div class="form-group">
+            <%= label_tag t('.phone_number')   %>
+            <span class="red_text">*</span>
+            <%= text_field(:phone_number, :phone_number, class: 'input_fld', placeholder:  t('.Your_answer6')) %>
+
+          </div>
+
+          <div class="form-group">
+            <%= label_tag t('.email')  %>
+              <span class="red_text">*</span>
+            <%= text_field(:email, :email, class: 'input_fld', placeholder:t('.Your_answer7')) %>
+
+          </div>
+
+          <div class="form-group">
+            <%= label_tag t('.telegram')  %>
+             <span class="red_text">*</span><p><%= t('.telegram_info') %></p>
+            <%= text_field(:telegram, :telegram, class: 'input_fld', placeholder: t('.Your_answer8')) %>
+
+          </div>
+
+          <div class="form-group">
+           <%= label_tag t('.skype')  %>
+              <span class="red_text">*</span>
+            <%= text_field(:skypee, :skypee, class: 'input_fld', placeholder: t('.Your_answer9')) %>
+
+          </div>
+
+          <div class="form-group">
+            <%= label_tag t('.account')  %>
+              <span class="red_text">*</span>
+            <%= text_field(:zinance_acc_email, :zinance_acc_email, class: 'input_fld', placeholder: t('.Your_answer10')) %>
+
+          </div>
+
+          <div class="form-group">
+           <%= label_tag t('.reason_text')  %>
+            <span class="red_text">*</span>
+            <%= text_field(:reason, :reason, class: 'input_fld', placeholder: t('.Your_answer11')) %>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag t('.zinance_text') do %>
+              <span class="red_text">*</span>
+            <% end %>
+            <%= text_field(:hear_zinance, :hear_zinance, class: 'input_fld', placeholder: t('.Your_answer12')) %>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag t('.commit_time')  %>
+            <span class="red_text">*</span>
+            <%= text_field(:free_time, :free_time, class: 'input_fld', placeholder: t('.Your_answer13')) %>
+
+          </div>
+
+          <div class="form-group">
+            <label><%= t('.work_exp') %> <span class="red_text">*</span></label>
+            <input type="text" placeholder="Your answer" class="input_fld">
+          </div>
+
+          <div class="form-group">
+           <%= label_tag t('.strength') %>
+           <span class="red_text">*</span>
+            <%= text_field(:strength, :strength, class: 'input_fld', placeholder: t('.Your_answer14')) %>
+
+          </div>
+
+          <div class="form-group">
+            <%= label_tag t('.language')  %>
+              <span class="red_text">*</span>
+            <%= text_field(:languages, :languages, class: 'input_fld', placeholder: t('.Your_answer15')) %>
+
+          </div>
+
+          <div class="form-group">
+            <%= label_tag t('.question') %>
+            <span class="red_text">*</span>
+            <%= text_field(:zinance_maintain, :zinance_maintain, class: 'input_fld', placeholder:t('.Your_answer16')) %>
+
+          </div>
+
+          <div class="form-group">
+           <%= label_tag t('.question2')  %>
+              <span class="red_text">*</span>
+
+            <%= text_field(:local_influential, :local_influential, class: 'input_fld', placeholder: t('.Your_answer17')) %>
+
+          </div>
+
+          <div class="form-group">
+            <%= label_tag t('.question3')  %>
+             <span class="red_text">*</span>
+            <%= text_field(:cryto_comminity, :cryto_comminity, class: 'input_fld', placeholder: t('.Your_answer18')) %>
+
+          </div>
+
+          <div class="form-group">
+           <%= label_tag  t('.question4') %>
+              <span class="red_text">*</span>
+            <%= text_field(:photo, :photo, class: 'input_fld', placeholder: t('.Your_answer19')) %>
+
+          </div>
+
+          <div class="form-group">
+           <%= label_tag t('.question5')  %>
+              <span class="red_text">*</span>
+            <ul class="choose_option">
+              <li>
+                <div class="my-radio">
+                    <span class="radioBox">
+                      <input id="check1" type="radio"  name="radio1">
+                      <label for="check1"></label>
+                    </span>
+                  <label for="check1" class="lablel"><%= t('.yes2') %> </label>
+                </div>
+              </li>
+              <li>
+                <div class="my-radio">
+                    <span class="radioBox">
+                      <input id="check2" type="radio"  name="radio1">
+                      <label for="check2"></label>
+                    </span>
+                  <label for="check2" class="lablel"><%= t('.no2') %> </label>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="form-group">
+            <label><%= t('.question6') %><span class="red_text">*</span></label>
+            <ul class="choose_option">
+              <li>
+                <div class="my-radio">
+                    <span class="radioBox">
+                      <input id="check3" type="radio"  name="radio">
+                      <label for="check3"></label>
+                    </span>
+                  <label for="check3" class="lablel"><%= t('.yes1') %> </label>
+                </div>
+              </li>
+              <li>
+                <div class="my-radio">
+                    <span class="radioBox">
+                      <input id="check4" type="radio" name="radio">
+                      <label for="check4"></label>
+                    </span>
+                  <label for="check4" class="lablel"><%= t('.no1') %> </label>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="form-group">
+            <button class="submit_btn"><%= t('.submit') %></button>
+          </div>
+          <div class="form-group">
+            <!--<p><%#= t('.submit_text') %></p>-->
+          </div>
+
+       <% end %>
+      </div>
+    </div>
+  </div>
+</section>

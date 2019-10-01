@@ -1,0 +1,38 @@
+<%= render 'admin/back_admin' %>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+<div class="wallet_row">
+  <div class="col-6">
+    <h3> Collection Wallets</h3>
+  </div>
+</div>
+<div class="wallet_row" >
+  <% if can? :create, Wallet %>
+    <div class="wallet_icon_Sec tbl_div">
+      <span class="wallet_icon_blocks text-left tbl_cell">
+      <%= link_to raw("<i class='fa fa-plus mr-2'></i> New Wallet"), new_admin_wallet_path, class: 'btn btn-primary float-right mb-3' %>
+      </span>
+      <span class="wallet_icon_blocks text-right tbl_cell">
+         <%= link_to raw("<i class='fa fa-plus mr-2'></i> Transfer"), admin_transfer_path, class: 'btn btn-primary float-right mb-3' %>
+      </span>
+    </div>
+  <% end %>
+
+</div>
+<table  id="admin_wallet_datatable" class="table" data-source="<%= admin_wallets_path(format: :json) %>">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Currency Id</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Kind</th>
+    <th>Status</th>
+    <th>created_at</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+<%= paginate @wallets %>

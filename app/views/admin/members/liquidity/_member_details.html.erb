@@ -1,0 +1,32 @@
+<div class="panel-heading">
+  <span> <%= exchange.capitalize %> Member Details </span>
+</div>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Currency</th>
+    <th class="text-center"> Crypto Address </th>
+    <th class="text-center"> Available Balance </th>
+    <th class="text-center"> Locked Balance </th>
+    <th class="text-center"> Minimum Balance </th>
+    <th class="text-center"> Action </th>
+  </tr>
+  </thead>
+  <tboby>
+    <% if member.present? %>
+      <% member.accounts.each do |val| %>
+        <% if val.present? && val.try(:currency).present? %>
+          <% currency = val.try(:currency) %>
+          <tr>
+            <td> <%= currency.upcase %> </td>
+            <td class="text-center"> <%= val.payment_address.address %> </td>
+            <td class="text-center"> <%= val.try(:balance).round(8) %> </td>
+            <td class="text-center"> <%= val.try(:locked).round(8) %> </td>
+            <td class="text-center"> <%= ENV["BITTREX_MIN_#{currency.upcase}"] %> </td>
+            <td class="text-center"> <%= link_to '', "/funds#/withdraws/#{currency.downcase}", class: 'fa fa-money text-center', title: 'Withdraw' %> </td>
+          </tr>
+        <%end%>
+      <%end%>
+    <% end %>
+  </tboby>
+</table>

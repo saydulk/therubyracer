@@ -1,0 +1,3741 @@
+zh:
+  errors:
+    messages:
+      min_size_error: "大小应该大于%{min_size}"
+      max_size_error: "大小应小于%{max_size}"
+      content_type_whitelist_error: "您不允许上传文件，允许的类型:  '.jpg'，'.jpeg'，'.gif', '.png',"
+  activerecord:
+    error:
+      messages:
+        condition: "必须接受条件"
+    enums:
+      id_document:
+        gender:
+          Male: "男"
+          Female: "女"
+          Other: "其他"
+    models:
+      api_tokens: API Token
+      trade: 交易
+      order: 订单
+      order_bid: BID
+      order_ask: ASK
+      withdraw: 退出
+      deposit: 存款
+      payment_transaction: 付款
+      id_document: ID文档
+      statistic/orders_grid: 订单统计
+      statistic/trades_grid: 交易统计
+      statistic/members_grid: 成员统计
+      statistic/deposits_grid: 存款统计
+      statistic/withdraws_grid: 撤消统计
+      admin/deposit_grid: 存款
+      admin/withdraws_grid: 退出
+      deposits/bank: 存款银行
+      withdraws/bank: 提款银行
+      withdraws/satoshi: 退出
+      withdraws/ripple: 退出
+    attributes:
+      api_token:
+        access_key: 访问密钥
+        trusted_ip_list: IP白名单
+        ip_whitelist: IP白名单
+        label: 标签
+        actions: 行动
+      fund_source:
+        address: 地址
+        category: 类别
+        label: 标签
+      account:
+        currency: 货币
+        currency_text: 货币
+        balance_and_locked: '平衡/锁定'
+        balance: 平衡
+        locked: 冻结
+      deposit:
+        state: 态
+        tx_id: TxID
+        member_id: 会员ID
+        created_at: 提交于
+        address: 地址
+        amount: 金额
+        done_at: 完成于
+        sn: SN
+      withdraw:
+        id: ID
+        sn: SN
+        withdraw_id: ID
+        created_at: 创建于
+        done_at: 完成
+        sum: 总和
+        fee: 费用
+        currency: 货币
+        amount: 金额
+        address: 地址
+        state: 状态
+        state_text: 状态
+        tx_id: TxID
+        fund_source_id: 提取地址
+        detail: 细节
+      account_version:
+        id: ID
+        locked: Forzen
+        amount: 金额
+        balance: 平衡
+        reason: 原因
+        reason_text: 原因
+        modifiable_id: LINK ID
+        modifiable_type: LINK
+        created_at: 创建于
+        in: 收入
+        out: 费用
+        fee: 费用
+      trade:
+        bid: 出价
+        ask: 问
+        fee: 费用
+        price: 罢工价格
+        volume: 罢工音量
+        category: '买/卖'
+        order: 订单
+      order:
+        bid: 出价
+        ask: 问
+        price: 价格
+        total: 总计
+        volume: 体积
+        origin_volume: 卷
+        sum: 总和
+        category: '买/卖'
+        kind: 类
+        at: At
+        id: ID
+        state: 态
+        operation: 操作
+      payment_transaction:
+        at: 日期时间
+        txid: 交易ID
+        amount: 金额
+        confirmations: 确认
+        state: 态
+        state_done: 完成
+        state_wait: 等等
+      member:
+        id: ID
+        name: 真实姓名
+        created_at: 注册
+        sn: SN
+        id_document_number: Id文档编号
+        id_document_verified?: "Id文件已经过验证？"
+      withdraws/bank:
+        id: ID
+        member_name: 成员
+        currency_obj_key_text: 货币
+        state_and_actions: '状态/行动'
+        fund_source: 银行
+        fund_extra: 银行
+        fund_extra_text: 银行
+        fund_uid: 银行账户
+        sum: 金额
+        fee: 费用
+        amount: 金额
+        remark: 备注
+        created_at: 创建于
+      deposits/satoshi:
+        created_at: 创建于
+        txid: 交易ID
+        amount: 金额
+        confirmations: 确认
+        aasm_state_text: 态
+      deposits/bitcoin_cash:
+        created_at: 创建于
+        txid: 交易ID
+        amount: 金额
+        confirmations: 确认
+        aasm_state_text: 态
+      deposits/ethereum:
+        created_at: 创建于
+        txid: 交易ID
+        amount: 金额
+        confirmations: 确认
+        aasm_state_text: 态
+      deposits/tronix:
+        created_at: 创建于
+        txid: 交易ID
+        amount: 金额
+        confirmations: 确认
+        aasm_state_text: 态
+      deposits/ripple:
+        created_at: 创建于
+        txid: 交易ID
+        amount: 金额
+        confirmations: 确认
+        aasm_state_text: 态
+      deposits/eostoken:
+        created_at: 创建于
+        txid: 交易ID
+        amount: 金额
+        confirmations: 确认
+        aasm_state_text: 态
+      deposits/chelscoin:
+        created_at: 创建于
+        txid: 交易ID
+        amount: 金额
+        confirmations: 确认
+        aasm_state_text: 态
+      deposits/impereum:
+        created_at: 创建于
+        txid: 交易ID
+        amount: 金额
+        confirmations: 确认
+        aasm_state_text: 态
+      deposits/ems_token:
+        created_at: 创建于
+        txid: 交易ID
+        amount: 金额
+        confirmations: 确认
+        aasm_state_text: 态
+      deposits/ecpplus_token:
+        created_at: 创建于
+        txid: 交易ID
+        amount: 金额
+        confirmations: 确认
+        aasm_state_text: 态
+      deposits/usdcoin:
+        created_at: 创建于
+        txid: 交易ID
+        amount: 金额
+        confirmations: 确认
+        aasm_state_text: 态
+      deposits/fto_token:
+        created_at: 创建于
+        txid: 交易ID
+        amount: 金额
+        confirmations: 确认
+        aasm_state_text: 态
+      deposits/aokey7_token:
+        created_at: 创建于
+        txid: 交易ID
+        amount: 金额
+        confirmations: 确认
+        aasm_state_text: 态
+      deposits/cacplus_token:
+        created_at: 创建于
+        txid: 交易ID
+        amount: 金额
+        confirmations: 确认
+        aasm_state_text: 态  
+      withdraws/satoshi:
+        id: ID
+        member_name: 帐户
+        currency_obj_key_text: 货币
+        state_and_actions: '状态/行动'
+        fund_extra_text: 提取标签
+        fund_extrat: 提取标签
+        fund_source: 银行
+        fund_uid: 账户
+        created_at: 创建于
+        sum: 金额
+        amount: 金额
+        remark: 备注
+        fee: 费用
+      withdraws/bitcoin_cash:
+        id: ID
+        member_name: 帐户
+        currency_obj_key_text: 货币
+        state_and_actions: '状态/行动'
+        fund_extra_text: 提取标签
+        fund_extrat: 提取标签
+        fund_source: 银行
+        fund_uid: 账户
+        created_at: 创建于
+        sum: 金额
+        amount: 金额
+        remark: 备注
+        fee: 费用
+      withdraws/ethereum:
+        id: ID
+        member_name: 帐户
+        currency_obj_key_text: 货币
+        state_and_actions: '状态/行动'
+        fund_extra_text: 提取标签
+        fund_extrat: 提取标签
+        fund_source: 银行
+        fund_uid: 账户
+        created_at: 创建于
+        sum: 金额
+        amount: 金额
+        remark: 备注
+        fee: 费用
+      withdraws/tronix:
+        id: ID
+        currency_obj_key_text: 货币
+        state_and_actions: '状态/行动'
+        fund_extra_text: 提取标签
+        fund_extrat: 提取标签
+        fund_source: 银行
+        fund_uid: 账户
+        created_at: 创建于
+        sum: 金额
+        amount: 金额
+        remark: 备注
+        fee: 费用
+      withdraws/ripple:
+        id: ID
+        currency_obj_key_text: 货币
+        state_and_actions: 状态/动作
+        fund_extra_text: 提取标签
+        fund_extrat: 提取标签
+        fund_source: 银行
+        fund_uid: 账户
+        created_at: 创建于
+        sum: 金额
+        amount: 金额
+        remark: 备注
+        fee: 费用
+      withdraws/eos_token:
+        id: ID
+        currency_obj_key_text: 货币
+        state_and_actions: 状态/动作
+        fund_extra_text: 提取标签
+        fund_extrat: 提取标签
+        fund_source: 银行
+        fund_uid: 账户
+        created_at: 创建于
+        sum: 金额
+        amount: 金额
+        remark: 备注
+        fee: 费用
+      withdraws/chelscoin:
+        id: ID
+        currency_obj_key_text: 货币
+        state_and_actions: 状态/动作
+        fund_extra_text: 提取标签
+        fund_extrat: 提取标签
+        fund_source: 银行
+        fund_uid: 账户
+        created_at: 创建于
+        sum: 金额
+        amount: 金额
+        remark: 备注
+        fee: 费用
+      withdraws/impereum:
+        id: ID
+        currency_obj_key_text: 货币
+        state_and_actions: 状态/动作
+        fund_extra_text: 提取标签
+        fund_extrat: 提取标签
+        fund_source: 银行
+        fund_uid: 账户
+        created_at: 创建于
+        sum: 金额
+        amount: 金额
+        remark: 备注
+        fee: 费用
+      withdraws/ems_token:
+        id: ID
+        currency_obj_key_text: 货币
+        state_and_actions: 状态/动作
+        fund_extra_text: 提取标签
+        fund_extrat: 提取标签
+        fund_source: 银行
+        fund_uid: 账户
+        created_at: 创建于
+        sum: 金额
+        amount: 金额
+        remark: 备注
+        fee: 费用
+      withdraws/ecpplus_token:
+        id: ID
+        currency_obj_key_text: 货币
+        state_and_actions: 状态/动作
+        fund_extra_text: 提取标签
+        fund_extrat: 提取标签
+        fund_source: 银行
+        fund_uid: 账户
+        created_at: 创建于
+        sum: 金额
+        amount: 金额
+        remark: 备注
+        fee: 费用
+      withdraws/usdcoin:
+        id: ID
+        currency_obj_key_text: 货币
+        state_and_actions: 状态/动作
+        fund_extra_text: 提取标签
+        fund_extrat: 提取标签
+        fund_source: 银行
+        fund_uid: 账户
+        created_at: 创建于
+        sum: 金额
+        amount: 金额
+        remark: 备注
+        fee: 费用
+      withdraws/fto_token:
+        id: ID
+        currency_obj_key_text: 货币
+        state_and_actions: 状态/动作
+        fund_extra_text: 提取标签
+        fund_extrat: 提取标签
+        fund_source: 银行
+        fund_uid: 账户
+        created_at: 创建于
+        sum: 金额
+        amount: 金额
+        remark: 备注
+        fee: 费用
+      withdraws/aokey7_token:
+        id: ID
+        currency_obj_key_text: 货币
+        state_and_actions: 状态/动作
+        fund_extra_text: 提取标签
+        fund_extrat: 提取标签
+        fund_source: 银行
+        fund_uid: 账户
+        created_at: 创建于
+        sum: 金额
+        amount: 金额
+        remark: 备注
+        fee: 费用
+      withdraws/cacplus_token:
+        id: ID
+        currency_obj_key_text: 货币
+        state_and_actions: 状态/动作
+        fund_extra_text: 提取标签
+        fund_extrat: 提取标签
+        fund_source: 银行
+        fund_uid: 账户
+        created_at: 创建于
+        sum: 金额
+        amount: 金额
+        remark: 备注
+        fee: 费用
+    errors:
+      models:
+        identity:
+          attributes:
+            email:
+              invalid_email: '电子邮件无效'
+              blank: 电子邮件不能为空
+              some:
+            password_digest:
+              blank: 密码不能为空
+            password:
+              invalid_password: 无效的密码
+              blank: 密码不能为空
+              too_short: "必须包含至少八个字符，包括一个字母，一个数字和一个特殊字符"
+              invalid: "必须包含至少八个字符，包括一个字母，一个数字和一个特殊字符。"
+            password_confirmation:
+              blank: "密码确认不能为空"
+              confirmation: "密码确认必须相同。"
+            condition:
+
+        id_document:
+          attributes:
+            zipcode:
+              invalid_zipcode: 无效
+            contact_no:
+              blank: "不能空白"
+          token/two_factor:
+            attributes:
+              base:
+                too_soon: 太早访问，请稍后再试。
+          token/reset_password:
+            attributes:
+              base:
+                too_soon: 太早访问，请稍后再试。
+              email:
+                invalid_email: '无效'
+                blank: 电子邮件不能为空
+              password_digest:
+                blank: 密码不能为空
+              password:
+                invalid_password: 密码无效
+                blank: 密码不能为空
+                too_short: "必须包含至少八个字符，包括一个字母，一个数字和一个特殊字符"
+                invalid: "必须包含至少八个字符，包括一个字母，一个数字和一个特殊字符"
+              member:
+                blank: 不存在！
+          activation:
+            attributes:
+              base:
+                too_soon: 不到5分钟前，您的电子邮件地址已发送激活邮件。
+          order_bid:
+            attributes:
+              sum:
+                expensive: 昂贵的帐户
+              price:
+                range: 无效的价格范围
+          order_ask:
+            attributes:
+              origin_volume:
+                expensive: 昂贵的帐户
+              price:
+                range: 无效的价格范围
+          account:
+            attributes:
+              balance:
+                less: 平衡更少
+          fund_source:
+            attributes:
+              address:
+                satoshi_ismine: 使用地址
+                satoshi_invalid: 地址无效
+                bitcoin_cash_ismine: 使用的地址
+                bitcoin_cash_invalid: 地址无效
+                ripple_ismine: 使用的地址
+                ripple_invalid: 地址无效
+                ethereum_ismine: 使用地址
+                ethereum_invalid: 地址无效
+                tronix_ismine: 使用的地址
+                tronix_invalid: 地址无效
+                eos_token_ismine: 使用过的地址
+                eos_token_invalid: 地址无效
+                chelscoin_ismine: 使用地址
+                chelscoin_invalid: 地址无效
+                impereum_ismine: 使用地址
+                impereum_invalid: 地址无效
+                ems_token_ismine: 使用地址
+                ems_token_invalid: 地址无效
+                ecpplus_token_ismine: 使用地址
+                ecpplus_token_invalid: 地址无效
+                usdcoin_ismine: 使用地址
+                usdcoin_invalid: 地址无效
+                fto_token_ismine: 使用地址
+                fto_token_invalid: 地址无效
+                aokey7_token_ismine: 使用地址
+                aokey7_token_invalid: 地址无效
+                cacplus_token_ismine: 使用地址
+                cacplus_token_invalid: 地址无效
+          withdraw:
+            account_balance_is_poor: 帐户余额不足
+            attributes:
+              password:
+                match: 无效
+              amount:
+                poor: 不足
+                bank_min: 少于5000.00
+          withdraws/satoshi:
+            attributes:
+              fund_uid:
+                blank: 请输入您的提款地址
+                invalid: 提款地址无效，请查看。
+                ismine: 请使用新地址。
+          withdraws/bitcoin_cash:
+            attributes:
+              fund_uid:
+                blank: 请输入您的提款地址
+                invalid: 提款地址无效，请查看。
+                ismine: 请使用新地址。
+          withdraws/ethereum:
+            attributes:
+              fund_uid:
+                blank: 请输入您的提款地址
+                invalid: 提款地址无效，请查看。
+                ismine: 请使用新地址。
+          withdraws/tronix:
+            attributes:
+              fund_uid:
+                blank: 请输入您的提款地址
+                invalid: 提款地址无效，请查看。
+                ismine: 请使用新地址。
+          withdraws/ripple:
+            attributes:
+              fund_uid:
+                blank: 请输入您的提款地址
+                invalid: 提款地址无效，请查看。
+                ismine: 请使用新地址。
+          withdraws/eos_token:
+            attributes:
+              fund_uid:
+                blank: 请输入您的提款地址
+                invalid: 提款地址无效，请查看。
+                ismine: 请使用新地址。
+          withdraws/chelscoin:
+            attributes:
+              fund_uid:
+                blank: 请输入您的提款地址
+                invalid: 提款地址无效，请查看。
+                ismine: 请使用新地址。
+          withdraws/impereum:
+            attributes:
+              fund_uid:
+                blank: 请输入您的提款地址
+                invalid: 提款地址无效，请查看。
+                ismine: 请使用新地址。
+          withdraws/ems_token:
+            attributes:
+              fund_uid:
+                blank: 请输入您的提款地址
+                invalid: 提款地址无效，请查看。
+                ismine: 请使用新地址。
+          withdraws/ecpplus_token:
+            attributes:
+              fund_uid:
+                blank: 请输入您的提款地址
+                invalid: 提款地址无效，请查看。
+                ismine: 请使用新地址。
+          withdraws/usdcoin:
+            attributes:
+              fund_uid:
+                blank: 请输入您的提款地址
+                invalid: 提款地址无效，请查看。
+                ismine: 请使用新地址。
+          withdraws/fto_token:
+            attributes:
+              fund_uid:
+                blank: 请输入您的提款地址
+                invalid: 提款地址无效，请查看。
+                ismine: 请使用新地址。
+          withdraws/aokey7_token:
+            attributes:
+              fund_uid:
+                blank: 请输入您的提款地址
+                invalid: 提款地址无效，请查看。
+                ismine: 请使用新地址。
+          withdraws/cacplus_token:
+            attributes:
+              fund_uid:
+                blank: Please enter your withdrawal address
+                invalid: Invalid withdrawals address, please review.
+                ismine: Please use a new address.
+          application:
+            attributes:
+              redirect_uri:
+                fragment_present: 不能包含片段。
+                invalid_uri: 必须是有效的URI。
+                relative_uri: 必须是绝对URI。
+        messages:
+          undef: 未知原因
+          less: 平衡少
+          verify: 验证错误
+          orders:
+            price: 限价%{l}〜%{h}
+            sum: 限制总和价格%{l}〜%{h}
+            precision: 最小精度%{p}
+  banks:
+    ab: Axis Bank
+    boi: Bank of India
+    cb: Canara Bank
+    cboi: Central Bank of India
+    fb: Federal Bank
+    icici: ICICI Bank
+    idbi: IDBI Bank
+    iib: IndusInd Bank
+    kb: Kotak Bank
+    psb: Punjab & Sind Bank
+    sbi: State Bank of India
+    sb: Syndicate Bank
+    ubi: Union Bank of India
+    yb: Yes Bank Ltd
+    uco: UCO Bank
+    boc: Bank of America
+    wf:  Wells Fargo
+    cg: Citigroup
+  market:
+    currency:
+      btc: BTC
+      bch: BCH
+      eth: ETH
+      trx: TRX
+      xrp: XRP
+      eos: EOS
+      csc: CSC
+      ipm: IPM
+      ems: EMS
+      ecp+: ECP+
+      usdc: USDC
+      fto: FTO
+      aok: AOK
+  currency:
+    satoshi:
+      key: BTC
+      code: BTC
+      name: Bitcoin
+      format: '0,0.0000'
+    bitcoin_cash:
+      key: BCH
+      code: BCH
+      name: Bitcoin Cash
+      format: '0,0.0000'
+    ethereum:
+      key: ETH
+      code: ETH
+      name: Ethereum
+      format: '0,0.0000'
+    tronix:
+      key: TRX
+      code: TRX
+      name: Tronix
+      format: '0,0.0000'
+    ripple:
+      key: XRP
+      code: XRP
+      name: Ripple
+      format: '0,0.00'
+    eos_token:
+      key: EOS
+      code: EOS
+      name: EOS
+      format: '0,0.00'
+    chelscoin:
+      key: CSC
+      code: CSC
+      name: CSC
+      format: '0,0.0000'
+    impereum:
+      key: IPM
+      name: IPM
+      code: IPM
+      format: '0,0.0000'
+    ems_token:
+      key: EMS
+      name: EMS
+      code: EMS
+      format: '0,0.0000'
+    ecpplus_token:
+      key:  ECP+
+      name: ECP+
+      code: ECP+
+      format: '0,0.0000'
+    usdcoin:
+      key: USDC
+      name: USDC
+      code: USDC
+      format: '0,0.0000'
+    fto_token:
+      key: FTO
+      name: FTO
+      code: FTO
+      format: '0,0.0000'
+    aokey7_token:
+      key: AOk
+      name: AOk
+      code: AOk
+      format: '0,0.0000'
+    cacplus_token:
+      key: CAC+
+      code: CAC+
+      name: CAC+
+      format: '0,0.0000'
+
+
+  datagrid:
+    empty: 没有找到数据
+    filters:
+      date:
+        range_separator: "to"
+      datetime:
+        range_separator: "to"
+    form:
+      submit: 搜索
+    admin_deposits_grid:
+      columns:
+        sn: SN
+        created_at: At
+        channel_key_text: 频道
+        fund_extra_text: 额外的
+        fund_uid: UID
+        txid: TXID
+        amount: 金额
+        fee: 费用
+        currency_text: 货币
+        aasm_state_text: 态
+        member_name: 成员
+    bank_deposits_grid:
+      columns:
+        sn: SN
+        created_at: At
+        channel_key_text: 类别
+        fund_extra_text: 银行
+        fund_uid: 账户
+        amount: 金额
+        fee: 费用
+        aasm_state_text: 态
+    coin_deposits_grid:
+      columns:
+        sn: SN
+        txid: 交易ID
+        created_at: At
+        amount: 金额
+        aasm_state_text: 态
+        confirmations: 确认
+    withdraws_grid:
+      columns:
+        sn: SN
+        name: 名称
+        currency_text: 货币
+        amount: 金额
+        fee: 费用
+        created_at: 创建于
+        done_at: 完成于
+        state_text: 状态
+    members_grid:
+      columns:
+        sn: 序列号
+        created_at: 创建于
+        actions: 行动
+    account_versions_grid:
+      columns:
+        created_at: 创建于
+        currency_text: 货币
+        balance: 平衡
+        in: In
+        out: 出去
+        amount: 金额
+        reason_text: 原因
+        modifiable_type: 链接
+        fee: 费用
+      filters:
+        reason: 原因
+        currency: 货币
+    statistic_members_grid:
+      columns:
+        sn: 序列号
+        id: ID
+        email: 电邮
+        created_at: 创建于
+        detail: 细节
+        action: 行动
+      filters:
+        sn: 序列号
+        created_at: 创建于
+    statistic_orders_grid:
+      columns:
+        id: 序列号
+        price: 价格
+        volume: 体积
+        created_at: 创建于
+        state_text: 状态
+        member_id: 会员
+      filters:
+        state: 态
+        currency: 货币
+        created_at: 创建于
+        type: 询问/出价
+    statistic_trades_grid:
+      columns:
+        id: ID
+        price: 价格
+        volume: 体积
+        strike_amount: 金额
+        created_at: 创建于
+      filters:
+        currency: 货币
+        created_at: 创建于
+    statistic_deposits_grid:
+      columns:
+        member: 成员
+        tx_id: TxID
+        amount: 金额
+        currency: 货币
+        created_at: 创建于
+        state_text: 状态
+      filters:
+        currency: 货币
+        state: 态
+        created_at: 创建于
+    statistic_withdraws_grid:
+      columns:
+        member: 成员
+        address: 地址
+        amount: 金额
+        currency: 货币
+        created_at: 创建于
+        state_text: 状态
+      filters:
+        state: 态
+        created_at: 创建于
+  deposit_channel:
+    satoshi:
+      key: 块链
+      title: Bitcoin存款
+      intro: 将Bitcoin从您自己的钱包地址存入BitCorex账户
+      latency: 1次确认
+      transfer: 手动
+      go: 存款
+    bitcoin_cash:
+      key: 块链
+      title: Bitcoin Cash存款
+      intro: 将Bitcoin Cash从您自己的钱包地址存入BitCorex账户
+      latency:  1次确认
+      transfer: 手动
+      go: 存款
+    ethereum:
+      key: ethereum
+      title: Ethereum存款
+      intro: 将Ethereum从您自己的钱包地址存入BitCorex账户
+      latency: 1次确认
+      transfer: 手动
+      go: 存款
+    tronix:
+      key: 块链
+      title: Tronix存款
+      intro: 将Trx从您自己的钱包地址存入BitCorex账户
+      latency: 1次确认
+      transfer: 手动
+      go: 存款
+    ripple:
+      key: 块链
+      title: Ripple存款
+      intro: 将Ripple从您自己的钱包地址存入BitCorex账户
+      latency: 1次确认
+      transfer: 手动
+      go: 存款
+    chelscoin:
+      key: 块链
+      title: Chelscoin存款
+      intro: 将Chelscoin从您自己的钱包地址存入BitCorex账户
+      latency: 1次确认
+      transfer: 手动
+      go: 存款
+    eos_token:
+      key: 块链
+      title: Eos存款
+      intro: 将Eos从您自己的钱包地址存入BitCorex账户
+      latency: 1次确认
+      transfer: 手动
+      go: 存款
+    impereum:
+      key: 块链
+      title: Impereum存款
+      intro: 将Impereum从您自己的钱包地址存入Impereum账户
+      latency: 1次确认
+      transfer: 手动
+      go: 存款
+    ems_token:
+      key: 块链
+      title: Ems存款
+      intro: 将Ems从您自己的钱包地址存入Ems账户
+      latency: 1次确认
+      transfer: 手动
+      go: 存款
+    ecpplus_token:
+      key: 块链
+      title: Ecp+存款
+      intro: 将Ecp+从您自己的钱包地址存入Ecp+账户
+      latency: 1次确认
+      transfer: 手动
+      go: 存款
+    usdcoin:
+      key: 块链
+      title: Usdc存款
+      intro: 将Usdc从您自己的钱包地址存入Usdc账户
+      latency: 1次确认
+      transfer: 手动
+      go: 存款
+    fto_token:
+      key: 块链
+      title: Fto存款
+      intro: 将Fto从您自己的钱包地址存入Fto账户
+      latency: 1次确认
+      transfer: 手动
+      go: 存款
+    aokey7_token:
+      key: 块链
+      title: Aok存款
+      intro: 将Aok从您自己的钱包地址存入Aok账户
+      latency: 1次确认
+      transfer: 手动
+      go: 存款
+    cacplus_token:
+      key: 块链
+      title: Cac+存款
+      intro: 将Cac+从您自己的钱包地址存入Cac+账户
+      latency: 1次确认
+      transfer: 手动
+      go: 存款
+    fiat:
+      title: 菲亚特存款
+  deposits/bank:
+    aasm_state:
+      submitting: 提交
+      cancelled: 已取消
+      submitted: 已提交
+      accepted: 接受
+      rejected: 拒绝
+      checked: 已检查
+      warning: 警告
+  private:
+
+    deposits:
+      satoshis:
+        gen_address:
+          require_transaction: 如果尚未使用，则无法生成新地址。
+      bitcoin_cash:
+        gen_address:
+          require_transaction: 如果尚未使用，则无法生成新地址。
+    history:
+      transaction:
+        Deposit: 存款
+        Withdraw: 退出
+      account:
+        deposit: 存款
+        withdraw: 退出
+        currency:  货币
+        buy: 购买
+        sell: 卖
+        filter_by_type: 按类型过滤
+        account_history: 历史
+        type: 类型
+        timestamp: 日期
+        fee: 费用
+        coin: 硬币
+        amount: 金额
+        txid: Txid
+        download: 导出完整存款历史记录
+        download1: Export Complete withdrawl History
+        status: 状态
+        information: 信息
+      withdraws:
+        blank_withdraw: 您没有退出历史记录。
+        account_history: 历史
+        coin: 硬币
+        amount: 金额
+        status: 状态
+        information: 信息
+        timestamp: 日期
+      deposits:
+        blank_deposit: 您没有存款历史记录。
+        account_history: 历史
+        coin: 硬币
+        amount: 金额
+        status: 状态
+        information: 信息
+        timestamp: 日期
+      orders:
+        date: 日期
+        pair: 对
+        all: 全部
+        all1: 全部
+        all2: 全部
+        side: 边
+        sell: 卖
+        buy: 购买
+        search: 搜索
+        order_history: 订单历史
+        id: ID
+        type: 类型
+        state: 态
+        market: 对
+        price: 价格
+        volume: 体积
+        average_price: 平均价钱
+        fullfilled_volume: 已满
+        timestamp: 日期
+        blank_order: 您没有订单历史记录
+      order:
+        ask: 卖
+        bid:  购买
+        wait: 打开
+        cancel: 已取消
+        done: 完成
+      trades:
+        date: 日期
+        pair: 对
+        trade_history: 贸易史
+        side: 边
+        created_at: 日期
+        all: 全部
+        all1: 全部
+        all2: 全部
+        sell: 卖
+        search: 搜索
+        buy: 购买
+        market: 对
+        base_currency: 基础货币
+        base_amount: 基本金额
+        quote_currency: 报价货币
+        quote_amount: 报价金额
+        price: 价格
+        blank_trade: 您没有交易记录
+      open_orders:
+        open_order_history: 打开订单
+        type: 类型
+        state:  态
+        volume: 体积
+        market: 对
+        price: 价格
+        average_price: 平均价钱
+        fullfilled_volume: 已满
+        timestamp: 日期
+        blank_open_order: 您没有未结的订单历史记录
+      trade:
+        sell: 卖
+        buy: 购买
+      open_order:
+        wait: 打开
+        bid: 购买
+    trade:
+      trades:
+        orders:
+          title: 订单
+        trades:
+          title: 交易
+        charges:
+        title: 收费
+      orders:
+        index:
+          done: 完成
+          cancel: 取消
+          confirm: '您确定要取消订单＃%{id}吗？'
+        destroy:
+          'true': "＃%{id}取消订单成功"
+          'false': "＃%{id}取消订单拒绝"
+    withdraws:
+      update:
+        request_accepted: 已接受提款请求。
+      destroy:
+        request_canceled: 取消请求已取消
+      index:
+        fee: 费用
+        total: 总计
+        withdraw_history: 退出历史
+      banks:
+        update:
+          notice: 银行转账提款申请已经提交，我们会
+            尽快处理它
+        destroy:
+          notice: 银行转账取款已取消，冻结金额已经取消
+            退回到您的帐户。
+        new:
+          fund_source: 选择基金来源
+          manage_fund_source: 管理资金来源
+          submit:  提交
+          allin: All-In
+        create:
+          notice: 提款请求已成功提交。使用以下信息
+            完成银行转帐。
+      satoshis:
+        destroy:
+          notice: 取消已取消，冻结余额已返回到您的帐户
+        update:
+          notice: 提款请求提交成功，我们会尽快处理
+            尽可能
+        new:
+          submit:  提交
+          allin: All-In
+          fund_source_label: 标签
+          manage_fund_source: 管理资金来源
+        create:
+          notice: 提款请求已成功提交。使用以下信息
+            完成银行转帐。
+      bitcoin_cash:
+        destroy:
+          notice: 取消已取消，冻结余额已返回到您的帐户
+        update:
+          notice: 提款请求提交成功，我们会尽快处理
+            尽可能
+        new:
+          submit:  提交
+          allin: All-In
+          fund_source_label: 标签
+          manage_fund_source: 管理资金来源
+        create:
+          notice: 提款请求已成功提交。使用以下信息
+            完成银行转帐。
+      ethereums:
+        destroy:
+          notice: 取消已取消，冻结余额已返回到您的帐户
+        update:
+          notice: 提款请求提交成功，我们会尽快处理
+            尽可能
+        new:
+          submit:  提交
+          allin: All-In
+          fund_source_label: 标签
+          manage_fund_source: 管理资金来源
+        create:
+          notice: 提款请求已成功提交。使用以下信息
+            完成银行转帐。
+      tronix:
+        destroy:
+          notice: 取消已取消，冻结余额已返回到您的帐户
+        update:
+          notice: 提款请求提交成功，我们会尽快处理
+        new:
+          submit:  提交
+          allin: All-In
+          fund_source_label: 标签
+          manage_fund_source: 管理资金来源
+        create:
+          notice: 提款请求已成功提交。使用以下信息完成银行转帐。
+      ripple:
+        destroy:
+          notice: 取消已取消，冻结余额已返回到您的帐户
+        update:
+          notice: 提款请求提交成功，我们会尽快处理
+        new:
+          submit:  提交
+          allin: All-In
+          fund_source_label: 标签
+          manage_fund_source: 管理资金来源
+        create:
+          notice: 提款请求已成功提交。使用以下信息完成银行转帐。
+      eos_token:
+        destroy:
+          notice: 取消已取消，冻结余额已返回到您的帐户
+        update:
+          notice: 提款请求提交成功，我们会尽快处理
+        new:
+          submit:  提交
+          allin: All-In
+          fund_source_label: 标签
+          manage_fund_source: 管理资金来源
+        create:
+          notice: 提款请求已成功提交。使用以下信息完成银行转帐。
+      chelscoin:
+        destroy:
+          notice: 取消已取消，冻结余额已返回到您的帐户
+        update:
+          notice: 提款请求提交成功，我们会尽快处理
+        new:
+          submit:  提交
+          allin: All-In
+          fund_source_label: 标签
+          manage_fund_source: 管理资金来源
+        create:
+          notice: 提款请求已成功提交。使用以下信息完成银行转帐。
+      impereum:
+        destroy:
+          notice: 取消已取消，冻结余额已返回到您的帐户
+        update:
+          notice: 提款请求提交成功，我们会尽快处理
+        new:
+          submit:  提交
+          allin: All-In
+          fund_source_label: 标签
+          manage_fund_source: 管理资金来源
+        create:
+          notice: 提款请求已成功提交。使用以下信息完成银行转帐。
+      ems_token:
+        destroy:
+          notice: 取消已取消，冻结余额已返回到您的帐户
+        update:
+          notice: 提款请求提交成功，我们会尽快处理
+        new:
+          submit:  提交
+          allin: All-In
+          fund_source_label: 标签
+          manage_fund_source: 管理资金来源
+        create:
+          notice: 提款请求已成功提交。使用以下信息完成银行转帐。
+      ecpplus_token:
+        destroy:
+          notice: 取消已取消，冻结余额已返回到您的帐户
+        update:
+          notice: 提款请求提交成功，我们会尽快处理
+        new:
+          submit:  提交
+          allin: All-In
+          fund_source_label: 标签
+          manage_fund_source: 管理资金来源
+        create:
+          notice: 提款请求已成功提交。使用以下信息完成银行转帐。
+      usdcoin:
+        destroy:
+          notice: 取消已取消，冻结余额已返回到您的帐户
+        update:
+          notice: 提款请求提交成功，我们会尽快处理
+        new:
+          submit:  提交
+          allin: All-In
+          fund_source_label: 标签
+          manage_fund_source: 管理资金来源
+        create:
+          notice: 提款请求已成功提交。使用以下信息完成银行转帐
+      fto_token:
+        destroy:
+          notice: 取消已取消，冻结余额已返回到您的帐户
+        update:
+          notice: 提款请求提交成功，我们会尽快处理
+        new:
+          submit:  提交
+          allin: All-In
+          fund_source_label: 标签
+          manage_fund_source: 管理资金来源
+        create:
+          notice: 提款请求已成功提交。使用以下信息完成银行转帐。。
+      aokey7_token:
+        destroy:
+          notice: 取消已取消，冻结余额已返回到您的帐户
+        update:
+          notice: 提款请求提交成功，我们会尽快处理
+        new:
+          submit:  提交
+          allin: All-In
+          fund_source_label: 标签
+          manage_fund_source: 管理资金来源
+        create:
+          notice: 提款请求已成功提交。使用以下信息完成银行转帐。。
+      cacplus_token:
+        destroy:
+          notice: 取消已取消，冻结余额已返回到您的帐户
+        update:
+          notice: 提款请求提交成功，我们会尽快处理
+        new:
+          submit:  提交
+          allin: All-In
+          fund_source_label: 标签
+          manage_fund_source: 管理资金来源
+        create:
+          notice: 提款请求已成功提交。使用以下信息完成银行转帐。。
+    account_versions:
+      index:
+        description: BitCorex的每笔交易和每一分钱的收入都很好
+          记录和详尽。
+    api_tokens:
+      user_tokens:
+        no_token: 您没有API令牌。
+        edit: 编辑
+        destroy: 毁灭
+        destroy-confirm: 你确定吗？
+        create: 创建新令牌
+        http: HTTP API文档
+        websocket: Websocket API文档
+        more: '有关更多信息，请查看github上的API部分: '
+      unbind:
+        success: 成功撤销。
+        failed: 撤销失败。
+      new:
+        label_hint: Label可帮助您记住令牌使用情况，可选。
+      create:
+        success: API令牌已成功创建。
+        failed: 无法创建API令牌。请稍后再试或联系管理员。
+        desc: 请将下面的密钥复制并粘贴到安全的地方并保存。密钥永远不会再显示。
+        access_key: 访问密钥
+        secret_key: 密钥
+      edit:
+        access_key_hint: 创建于%{created_at}
+        label_hint: Label可帮助您记住令牌使用情况，可选。
+        ip_whitelist_hint: 用逗号分隔IP，将该字段留空意味着允许所有IP。
+      update:
+        success: 成功保存。
+        failed: 无法保存令牌。请稍后再试或联系管理员。
+      destroy:
+        success: 令牌已成功销毁。
+        failed: 无法销毁令牌。
+    assets:
+      index:
+        liability-proof: 责任证明
+        coin-assets:  '%{currency}资产'
+        fiat-assets:  '%{货币}资产'
+      liability_tabs:
+        verify-inr: 验证我的INR资产
+        verify-coin: '验证我的%{货币}资产'
+        verify-fiat: '验证我的%{货币}资产'
+        coin-assets-total: '交换的总%{货币}交换资产: '
+        fiat-assets-total: '交换的总%{货币}交换资产: '
+      liability_proof:
+        title: 负债证明
+        intro: 作为交换，我们的负债是指金额（两者兼而有之）
+          我们的用户信任我们的加密货币和法定货币。上
+          这个页面，我们向您介绍我们的责任。我们还为您提供了一条途径
+          验证您的帐户余额确实是我们的责任的一部分。
+      liability_data:
+        liability-proof-generating: 请在过程中产生责任证明
+          30分钟后回来。
+        root-json: 根节点
+        partial-tree: '我的%{货币}assets: '
+        get-partial-tree: 获取我的部分树数据
+        timestamp: 证明数据在%{time}生成。
+        go-verify: 验证
+      coin_assets:
+        title: '%{currency}资产'
+        intro: "此处列出了所有交易所的%{货币}资产。"
+        total: 'Dash的总资产'
+        address: 地址
+      partial_tree:
+        success: '成功！生成的验证数据: %{timestamp}'
+    funds:
+      index:
+        deposit: 存款
+        withdraws: 退出
+      show:
+        account_history: 帐户历史记录
+        inr_format: '0.00'
+        usd_format: '0.00'
+        btc_format: '0.00000000'
+        reason:
+          btc:
+            strike_add: 加号
+            strike_sub: 子
+            deposit: 存款
+            withdraw: 退出
+            fix: 修复
+          bch:
+            strike_add: 加号
+            strike_sub: 子
+            deposit: 存款
+            withdraw: 退出
+            fix: 修复
+          eth:
+            strike_add: 加号
+            strike_sub: 子
+            deposit: 存款
+            withdraw: 退出
+            fix: 修复
+          trx:
+            strike_add: 加号
+            strike_sub: 子
+            deposit: 存款
+            withdraw: 退出
+            fix: 修复
+          xrp:
+           strike_add: 加号
+           strike_sub: 子
+           deposit: 存款
+           withdraw: 退出
+           fix: 修复
+          eos:
+            strike_add: 加号
+            strike_sub: 子
+            deposit: 存款
+            withdraw: 退出
+            fix: 修复
+          csc:
+            strike_add: 加号
+            strike_sub: 子
+            deposit: 存款
+            withdraw: 退出
+            fix: 修复
+          ipm:
+            strike_add: 加号
+            strike_sub: 子
+            deposit: 存款
+            withdraw: 退出
+            fix: 修复
+          ems:
+            strike_add: 加号
+            strike_sub: 子
+            deposit: 存款
+            withdraw: 退出
+            fix: 修复
+          ecp+:
+            strike_add: 加号
+            strike_sub: 子
+            deposit: 存款
+            withdraw: 退出
+            fix: 修复
+          usdc:
+            strike_add: 加号
+            strike_sub: 子
+            deposit: 存款
+            withdraw: 退出
+            fix: 修复
+          fto:
+            strike_add: 加号
+            strike_sub: 子
+            deposit: 存款
+            withdraw: 退出
+            fix: 修复
+          aok:
+            strike_add: 加号
+            strike_sub: 子
+            deposit: 存款
+            withdraw: 退出
+            fix: 修复
+        ref:
+          system: 系统
+          default: 默认
+
+    id_documents:
+      edit:
+        middle_name: 中间名
+        last_name: 姓氏
+        contact_no: 联系号码
+        state: 态
+        gender: 性别
+        state_unverified: 未完成
+        state_verifying: 验证
+        state_verified: 已验证
+        name: 名字
+        birth_date: 出生日期
+        address: 地址
+        city: 城市
+        country: 国家
+        zipcode: 邮编
+        status: 状态
+        code: 代码
+        id_document_type: ID文档类型
+        id_document_number: ID文档编号
+        #        id_document_file: 文档照片
+        id_document_file: 具有ID文档的Selfie
+        id_bill_file: 居住证明照片
+        msg12: Image will be displayed here after updating the form.
+        id_bill_type: 居住证明
+        age: age must be at least 18 and above
+        name_blank: 名称不能为空
+        contact_blank: 联系人不能为空
+        id_document_blank: Id文档类型不能为空
+        proof_residence_blank: 居住证明不能为空
+        address_length:  地址最大长度为300个字符
+        city_max_length: 城市太长（最多20个字符）
+        id_document_min: Id文件太短（最少6个字符）
+        id_doc_blank: Id文档编号不能为空
+        file_one: "你上传这些文件允许的类型: jpg，jpeg，gif，png，pdf"
+      update:
+        notice: 您的帐户验证已提交。
+    markets:
+
+      candlestick:
+        load: '正在加载'
+      show:
+        text: "%{num} 小數點"
+        limit: 限制
+        market: 市场
+        error: 失败
+        success: 成功
+        analysis_panel: 分析
+        help_panel: 帮助
+        done: 完成
+        cancel: 取消
+        cancel_confirm: 你确定取消订单吗？
+        confirm: 确认
+        ask_order: '问## sn＃'
+        bid_order: 'BID ## sn＃'
+        my_active_order: 有效
+        my_done_order: 完成
+        trades: 交易
+        chat: 聊天频道
+        withdraw: 退出
+        deposit: 存款
+        history: 历史
+        open_orders: 未结订单
+        24_orders_history: 我的24小时订单历史
+        more: 更多
+        Hide_Other_pairs: 隐藏其他对
+        Hide_Other_pairs1: 隐藏其他对
+
+      market_list:
+        bt1: 改变
+        bt: 音量
+        all: 所有市场
+        search: 搜索
+        all_html: "<i class ='fa fa-star'> </i> <span>收藏夹</span>"
+        tusd_html: "<i class ='fa fa-check'> </i> <span> TUSD 市场 </span>"
+        eth_html: "<i class ='fa fa-check'> </i> <span> ETH 市场 </span>"
+        btc_html: "<i class ='fa fa-check'> </i> <span> BTC 市场 </span>"
+        csc_html: "<i class ='fa fa-check'> </i> <span> CSC 市场 </span>"
+        price: 价格
+        change: "24h%"
+        btc: BTC
+        eth: ETH
+        tusd: TUSD
+        csc:  CSC
+      order:
+        wait: 打开
+        bid: 购买
+      order_history:
+        date: 日期
+        wait: 打开
+        bid: 购买
+        price: 价格
+        average: 平均值
+        volume: 体积
+        amount: 金额
+        remaining_amount: Remaining Amount
+        time: 日期
+        pair: 对
+        type: 类型
+        side: 边
+        filled: 填充
+        total: 总计
+        remaining_total: Remaining Total
+        condition: 触发条件
+        all: 全部
+        status: 状态
+        no_order_history: 您没有订单历史记录。
+      market_ticker:
+        pair: 对
+        all: 所有市场
+        all_html: "<i class ='fa fa-check'> </i> <span>所有市场</span>"
+        ccy_html: "<i class ='fa fa-check'> </i> <span>%{currency} 市场 </span>"
+        price: 价格
+        #        change: "24h %"
+        change: 改变
+      range_switch:
+        switch_1: 1分
+        switch_5: 5分
+        switch_15: 15分
+        switch_30: 30分
+        switch_60: 1小时
+        switch_120: 2小时
+        switch_240: 4小时
+        switch_360: 6小时
+        switch_720: 12小时
+        switch_1440: 1日
+        switch_4320: 3日
+        switch_10080: 1周
+        switch_43200: 1月
+      depths:
+        price: 价格
+        amount: 金额
+        buy: 购买
+        sell: 卖
+        ask_orders: 卖
+        bid_orders: 购买
+      ticker:
+        last: 最后价格
+        ask: 问
+        bid: BID
+      account_balance:
+        title: 帐户余额
+        available: 可用%{货币}
+      market_bid_entry:
+        Market: 市场价格
+        action: "购买%{货币}"
+        price: 价格
+        last_price: 最后价格
+        amount: 金额
+        total: 总计
+        buy: 购买
+      bid_entry:
+        buy:
+        action: "购买%{货币}"
+        price: 价格
+        last_price: 最后价格
+        amount: 金额
+        total: 总计
+      ask_entry:
+        action: "卖出%{货币}"
+        price: 价格
+        last_price: 最后价格
+        amount: 金额
+        total: 总计
+        sell: 卖
+      market_ask_entry:
+        Market: 市场价格
+        action: "卖出%{货币}"
+        price: 价格
+        last_price: 最后价格
+        amount: 金额
+        total: 总计
+        sell: 卖
+      place_order:
+        price: 价格
+        amount: 金额
+        total: 总计
+        price_high: 高
+        price_low: 低
+        full_bid: 充分
+        full_ask: 空
+      order_book:
+        group: 组
+        title: 订单簿
+        volume: 体积
+        price: 价格（%{货币}）
+        amount: 金额（%{货币}）
+        total: 总计（%{货币}）
+        ask: 问
+        bid: 出價
+        fade_toggle_depth: 市场深度
+      trade_state:
+        new: 新的
+        partial: 部分
+        full: 充分
+      market_trades:
+        all: 全部
+        trade_history: 贸易史
+        my: 我的
+        all_html: 市场
+        my_html: 你的
+        time: 时间
+        price: 价格
+        volume: 体积
+      header:
+        network: 连接状态
+        vol: 24h卷
+        high: 24小时高
+        low: 24小时低
+        change: 24小时变化
+        last: 最后价格
+      settings:
+        sound: 声音
+        notification: 通知
+        funds: "基金"
+        signout: "退出"
+        settings: "个人资料"
+        history: "历史"
+      account_summary:
+        title: 摘要
+        account: 帐户
+        amount: 金额
+        locked: 冻结
+        view_all_accounts: "查看全部"
+        hide_all_accounts: "隐藏其他"
+      my_orders:
+        orders_wait: 最新订单
+        orders_done: 已完成订单
+        orders_cancel: 取消订单
+        no_open_orders: 你没有未结订单。
+        clear_all_html: 全部取消
+        clear_bids_html: 取消出价
+        clear_asks_html: 取消要求
+        confirm_clear_all: 您确定要取消所有订单吗？
+        confirm_clear_bids: 您确定要取消所有BIDS吗？
+        confirm_clear_asks: 你确定要取消所有ASKS吗？
+        price: 价格
+        volume: 体积
+        amount: 金额
+        time: 日期
+        pair: 对
+        type: 类型
+        side: 边
+        filled: 填充%
+        total: 总计
+        condition: 触发条件
+        all: 全部
+        date: 日期
+
+
+      mask:
+        warning: <a class=text-up href='/signin'>登录</a>或<a class=text-up href='/signup'>注册</a>进行交易
+      klime_chart:
+        title: 烛台图表
+      global:
+        global_orders_title: ORDERS
+        global_trades_title: TRADES
+      chat:
+        title: 聊天频道
+    referral:
+      invite:
+        text: '从%{激活}开始生效（UTC）'
+        text1: "您从推荐计划收到的佣金最初将设置为%{rate}。对于持有%{bonus}或更多奖金的帐户，此费率将增加到40%。"
+        text2: 当您的裁判完成每笔交易时，费用佣金将立即实时发送到您的BitCorex账户，并将以原始费用支付的任何令牌/加密货币支付给您。
+        text3: 虽然我们保留随时调整或更改推荐计划规则的权利，但您可以参考的朋友数量为{{}}%{限制}。
+        text4: 每位裁判必须通过您的推荐链接，QR码或推荐ID进行注册。
+        text5: BitCorex将检查重复或虚假账户，并且不会支付这些账户的推荐奖金。重复或共享财务将导致取消资格。
+        notice: '* 重要的提醒: '
+        text6: 由于市场条件变化，欺诈风险或我们认为相关的任何其他因素，BitCorex保留随时更改推荐计划条款的权利。
+        text9: No.1
+        commission: 佣金
+        text10: No.2
+        text11: No.3
+        no_friend: 你没有推荐的朋友。
+        history: 最新委员会历史
+        Export: 出口
+        email: 电邮
+        date: 日期
+        no_commission: 你没有佣金。
+    settings:
+      authentication_disable:
+        auth_text: 我们强烈建议您在帐户中启用2FA！
+        auth_text1: '请选择您希望如何接收2FAcode: '
+        google_auth: Google身份验证
+        sms_auth: 短信认证
+        text: 我理解不启用2FA的风险
+        skip_text: 暂时跳过
+      success: 设置已成功更新。
+      failure: 密码无效。请再试一次。
+      index:
+        reset_password: 休息你的密码
+        reauthenticate: 身份验证
+        activated: 已将电子邮件发送到您的邮箱，请检查以进行验证
+          尽快地。如果您没有收到，请点击"再次发送"
+          按键
+        auth-activated: 请先确认您的电子邮件地址。
+        auth-verified: 请先验证您的帐户。
+        email:
+          title: 电子邮件验证
+          description: 您的电子邮件尚未经过验证，请单击"发送邮件"按钮
+            完成验证
+          description-activated: 您的电子邮件地址已成功验证，
+            记住并保护这个电子邮件地址，它是单一的证书
+            为您的帐户
+          resend: 再发一次
+          activated: 已验证
+          go: 设置
+        verification:
+          title: 验证帐户
+          description: 使用您的帮助将坏人排除在帐户之外
+            密码
+          go: 提交
+          verified: 已验证
+        asset_passwords:
+          title: 资产密码
+          description: 取款时需要输入资产密码。
+            强烈建议您不要使用与您相同的密码
+            户口密码！
+          go: 设置
+        passwords:
+          title: 密码
+          description: 登录时需要输入密码，请记住。
+          go: 更改密码
+          set: 设置
+        api_tokens:
+          title: API令牌
+          description: 创建和管理您的API令牌。
+          go: 启用
+
+        bank_details:
+          title: 银行明细
+          description: 添加提款银行详细信息
+          go: 启用
+        google_authenticater:
+          title: Google身份验证
+          description: 用于提款和安全修改。
+          go: 设置
+          disable: 禁用
+          enable: 启用
+        sms_authenticater:
+          title: 短信认证
+          description: 用于提款和安全修改。
+          go: 设置
+          disable: 禁用
+          enable: 启用
+      sms_authentication:
+        notice: "%{type}身份验证成功%{status}！"
+        wrong_otp: 错误的OTP代码！
+      send_token_sms:
+        sms_text: "[BitCorex]验证码:  - %{token}。在继续tp之前，请确保地址栏中的域名为%{domain}，以防止网上诱骗。"
+      google_auth:
+        google_title: Google身份验证
+        enable: 启用
+        disable: 禁用
+        update: 更新
+        Token_Verify: 验证令牌
+      sms:
+        sms_title: 短信认证
+        sms_error_msg: "错误消息这里......."
+        sms_success_msg: "短信已成功发送！"
+        sms_label: 电话号码
+        disable: 禁用
+        enable: 启用
+        sms_send: 提交
+        sms_send1: 发送短信
+        sms_token: 短信令牌
+    shared:
+      balances:
+        locked: 冻结
+        balance: 平衡
+        available: 可用
+        title: "%{icon}%{c}帐户"
+        btc_format: '0.00000000'
+        bch_format: '0.00000000'
+        eth_format: '0.00000000'
+        trx_format: '0.000000'
+        xrp_format: '0.000000'
+        eos_format: '0.000000000000000000'
+        csc_format: '0.000000'
+        ipm_format: '0.000000'
+        ems_format: '0.000000'
+        ecpplus_format: '0.00000000'
+        usdc_format: '0.000000'
+        fto_format: '0.000000'
+        aok_format: '0.000000000000000000'
+
+        total: 总计
+  guides:
+    two_factors:
+      panel: 重置Google验证
+    private:
+      settings:
+        panel: 设置
+        index:
+          intro: 管理和修改您的个人资料。
+      api_tokens:
+        panel: API令牌
+        index:
+          title: 我的代币
+          intro: 所有API令牌的列表。空的'IP白名单'意味着任何
+            允许ip使用令牌。
+        new:
+          title: 创建API令牌
+        create:
+          title: 创建API令牌
+        edit:
+          title: 编辑API令牌
+        update:
+          title: 编辑API令牌
+      tickets:
+        panel: 门票
+      id_documents:
+        panel: 身份验证
+        new:
+          title: 提交实名认证信息
+          intro: 根据国家法律，需要进行身份验证。
+            请验证您的帐户以继续。
+
+    panels:
+      balance: 账户
+    sessions:
+
+      panel: 登录
+      new:
+        title: 登录我的帐户
+        intro: 登录BitCorex现在供您交流。
+
+      failure:
+        title: 登录我的帐户G
+        intro: 登录BitCorex现在供您交流。
+
+
+
+    reset_passwords:
+      panel: 密码
+      new:
+
+        title: 重置密码
+        intro: 请输入您的帐户验证的电子邮件地址，
+          输入验证码进行提交，并登录您的邮箱，按照提示操作
+          重置密码。
+      create:
+        title: 重置密码
+        intro: 请输入您的帐户验证的电子邮件地址，
+          输入验证码进行提交，并登录您的邮箱，按照提示操作
+          重置密码。
+      edit:
+        title: 设置密码
+      update:
+        title: 设置密码
+
+  activations:
+    new:
+      notice: 电子邮件已发送到您的邮箱，请尽快检查验证。如果您没有收到，请点击"再次发送"按钮。
+      verified: 您的电子邮件地址已成功验证。
+      login_required: 需要登录！
+      tip: 激活链接已发送至%{email}
+      spam: 请检查您的垃圾邮件文件夹中的激活链接。
+    edit:
+      notice: 帐户已成功激活！
+      alert: 激活链接已过期或无效
+
+
+  authentications:
+    emails:
+      new:
+        title: 设置电子邮件
+        setup_email: 请设置您的电子邮件地址。
+        warning: 保存电子邮件地址后请检查收件箱。
+        email_address: 电子邮件地址
+        save: 保存
+    weibo:
+      destroy:
+        last_auth_alert: 您无法删除上次身份验证
+        unbind_success: 取消与微博的绑定
+    identities:
+      new:
+        title: 设置密码
+        save: 保存
+      create:
+        success: 成功设置密码
+  forum:
+    index:
+      notice:
+        display_name: 请设置论坛的显示名称。
+  identities:
+    new:
+      title: 注册
+      signin: 登录
+      password: 请输入至少6个字符的密码，最好包含
+        大写和小写字母和数字。
+      heading: 注册
+      agree_content: 我同意BitCorex的意见
+      email: 电邮
+      create_password: '创建密码'
+      confirm_password: '确认密码'
+      reference_user: '推荐ID（可选）'
+      register: 注册
+      login: 登录
+      home: 主页
+      support: 支持
+      language: 语言
+      terms: 使用条款
+      register_content: 已经注册？
+    update:
+      auth-error: '您输入的原始密码不正确，请重新输入。'
+      auth-same: 您输入的新密码与旧密码相同
+        重新输入。
+      notice: 帐户密码已成功更新。
+    edit:
+      title: 重置密码
+      old_password: 旧密码
+      new_password: 新密码
+      confirmation_password: 确认密码
+      update: 更改密码
+
+  token_expires:
+    index:
+      email_activation: 您的电子邮件地址已成功验证
+
+  google_verifies:
+    new:
+      title: 令牌验证
+      google_label: Google身份验证码
+      g_tab: Google身份验证
+      sms_alert: 短信已成功发送！
+      sms_label: 短信认证码
+      s_tab: 短信认证
+      SMS_Token: 短信令牌
+      Send_SMS: 发送短信
+      SMS: '电话号码不可用？'
+      google_auth: 丢失了您的Google身份验证器？
+      login: 登录
+
+
+  simple_form:
+    placeholders:
+      deposit:
+        bank:
+          amount: 最低金额100
+      session:
+        email: 电子邮件地址
+        password: 密码
+      order_bid:
+        origin_volume: 购买量
+        sum: 总和
+      order_ask:
+        origin_volume: 卖出量
+        sum: 总营业额
+      withdraw:
+        satoshi:
+          sum: 最低金额0.001
+          fund_extra: 输入此地址的标签（可选）
+    hints:
+      deposit:
+        bank:
+          sum: "<a target='_balance' href='#'>费用结构</a>"
+          member_name: "<span class ='text-danger'>充值银行帐户名称必须
+            将名称与您的真实身份验证相匹配</span>"
+          sn: "<span class ='text-danger'>请在银行转帐中复制SN
+            消息，否则我们无法快速处理您的订单。</span>"
+      id_document:
+         name: 请填写与您的凭证一致的名称。
+      withdraw:
+        bank:
+          member_name: "<span class ='text-danger'>提取银行帐户名称必须
+            匹配用于实名认证的名称</span>"
+          sum: "<a target='_balance' href='#'>费用结构</a>"
+          fund_extra: 如果您的银行不在列表中，请联系客户
+            服务
+        satoshi:
+          sum: "<a target='_balance' href='#'>费用结构</a>"
+        bitcoin_cash:
+          sum: "<a target='_balance' href='#'>费用结构</a>"
+        ripple:
+          sum: "<a target='_balance' href='#'>费用结构</a>"
+        ether:
+          sum: "<a target='_balance' href='#'>费用结构</a>"
+        tronix:
+          sum: "<a target='_balance' href='#'>费用结构</a>"
+        eos:
+          sum: "<a target='_balance' href='#'>费用结构</a>"
+        csc:
+          sum: "<a target='_balance' href='#'>费用结构</a>"
+        ipm:
+          sum: "<a target='_balance' href='#'>费用结构</a>"
+        ems:
+          sum: "<a target='_balance' href='#'>费用结构</a>"
+        ecp+:
+          sum: "<a target='_balance' href='#'>费用结构</a>"
+        usdc:
+          sum: "<a target='_balance' href='#'>费用结构</a>"
+        fto:
+          sum: "<a target='_balance' href='#'>费用结构</a>"
+        aok:
+          sum: "<a target='_balance' href='#'>费用结构</a>"
+        cac+:
+          sum: "<a target='_balance' href='#'>费用结构</a>"  
+    creating: 创建...
+    updating: 正在更新...
+    buttons:
+      or: 或者
+      cancel: 取消
+    'yes': '是的'
+    'no': '不'
+    required:
+      text: 必填
+      mark: "*"
+    error_notification:
+      default_message: '请查看以下问题: '
+    labels:
+      defaults:
+        title: 标题
+      fund_source:
+        label: 标签
+        address: 地址
+        category: 类别
+      withdraw:
+        satoshi:
+          fee: 费用
+          sum: 金额
+          fund_uid: 比特币地址
+          fund_extra: 标签
+          account_balance: 帐户余额
+          member_name: 帐户
+        bitcoin_cash:
+          fee: 费用
+          sum: 金额
+          fund_uid: 比特币地址
+          fund_extra: 标签
+          account_balance: 帐户余额
+          member_name: 帐户
+        ethereum:
+           fee: 费用
+           sum: 金额
+           fund_uid: 利托什地址
+           fund_extra: 标签
+           account_balance: 帐户余额
+        tronix:
+          fee: 费用
+          sum: 金额
+          fund_uid: tronix地址
+          fund_extra: 标签
+          account_balance: 帐户余额
+        ripple:
+          fee: 费用
+          sum: 金额
+          fund_uid: 涟漪地址
+          fund_extra: 标签
+          account_balance: 帐户余额
+        eos_token:
+          fee: 费用
+          sum: 金额
+          fund_uid: eos地址
+          fund_extra: 标签
+          account_balance: 帐户余额
+        csc:
+          fee: 费用
+          sum: 金额
+          fund_uid: csc地址
+          fund_extra: 标签
+          account_balance: 帐户余额
+        ipm:
+          fee: 费用
+          sum: 金额
+          fund_uid: ipm地址
+          fund_extra: 标签
+          account_balance: 帐户余额
+        ems:
+          fee: 费用
+          sum: 金额
+          fund_uid: ems地址
+          fund_extra: 标签
+          account_balance: 帐户余额
+        ecpplus_token:
+          fee: 费用
+          sum: 金额
+          fund_uid: ecp+地址
+          fund_extra: 标签
+          account_balance: 帐户余额
+        usdcoin:
+          fee: 费用
+          sum: 金额
+          fund_uid: usdc地址
+          fund_extra: 标签
+          account_balance: 帐户余额
+        fto_token:
+          fee: 费用
+          sum: 金额
+          fund_uid: fto地址
+          fund_extra: 标签
+          account_balance: 帐户余额
+        aok_token:
+          fee: 费用
+          sum: 金额
+          fund_uid: aok地址
+          fund_extra: 标签
+          account_balance: 帐户余额
+  admin:
+    deposits:
+      banks:
+        index:
+          oneday: 过去24小时内的请求
+          available: 所有待处理的请求
+        show:
+          alert: 无法找到充值。
+          notice: 充电成功。
+          deposit: 存款申请
+          accept: 接受
+          target_deposit: 电汇
+          confirm: 确认充值？
+        update:
+          blank_txid: TxID不能为空
+      coins:
+        update:
+          notice: 存款成功。
+        index:
+          accept: 接受
+          accept_confirm: 确认存款？
+      fiats:
+        show:
+          id: ID
+          amount: 金额
+          done_at: 完成AT
+          back: 回来
+          reference: 参考ID
+    members:
+      index:
+        search: 搜索
+        members: 成员
+        email: 电邮
+        name: 名称
+        wallet_address: 钱包地址
+      show:
+        member_title: 用户信息
+        actions_title: 动作
+        accounts_title: 帐户信息
+        account_versions_title: 记录
+    dashboard:
+      index:
+        accounts_title: 帐户摘要
+        download_csv: 下载CSV
+    statistic:
+      filter: 过滤器
+      summary: 摘要
+      click-to-expand: 展开
+      members:
+        show:
+          table: 结果
+      orders:
+        show:
+          avg: 平均值
+          sum: 订单量
+          sum_strike: 按体积计算
+          count: 伯爵
+      trades:
+        show:
+          count: 交易
+          volume: 体积
+          amount: 总金额
+          min_price: 最低价格
+          max_price: 最高价格
+          avg_price: 平均价格
+          amount_fee: 交易费用
+          volume_fee: 总费用
+      deposits:
+        show:
+          count: 总计
+          amount: 总金额
+      withdraws:
+        show:
+          count: 总计
+          amount: 总金额
+          fee: 费用
+    withdraws:
+      banks:
+        index:
+          one: 提前退出订单
+          all: 二十四小时订单
+          empty: 没有数据
+        show:
+          process: 过程
+          succeed: 成功
+          reject: 拒绝
+          succeed_confirm: 确认流程？
+          reject_confirm: 确认拒绝？
+          withdraw: 退出
+          empty: 没有数据
+        update:
+          notice: 退出成功。
+        destroy:
+          notice: 退出被拒绝。
+      coins:
+        index:
+          one: 过去24小时退出
+          all: 全部退出
+          empty: 没有数据
+        show:
+          process: 接受
+          succeed: 退出
+          reject: 拒绝
+          succeed_confirm: 流程撤销？
+          reject_confirm: 拒绝退出？
+          withdraw: 取款
+        withdraw_rejected_mail:
+          email: 撰写电子邮件
+          send: 发送
+        update:
+          notice: 成功更新。
+        destroy:
+          notice: 成功销毁。
+  deposits/satoshi:
+    aasm_state:
+      submitted:  已提交
+      accepted: 接受
+      checked: 已检查
+      warning: 警告
+  deposits/bitcoin_cash:
+    aasm_state:
+      submitted:  已提交
+      accepted: 接受
+      checked: 已检查
+      warning: 警告
+  deposits/ethereum:
+    aasm_state:
+      submitted:  已提交
+      accepted: 接受
+      checked: 已检查
+      warning: 警告
+  deposits/tronix:
+    aasm_state:
+      submitted:  已提交
+      accepted: 接受
+      checked: 已检查
+      warning: 警告
+  deposits/ripple:
+    aasm_state:
+      submitted:  已提交
+      accepted: 接受
+      checked: 已检查
+      warning: 警告
+  deposits/eos_token:
+    aasm_state:
+      submitted:  已提交
+      accepted: 接受
+      checked: 已检查
+      warning: 警告
+  deposits/csc:
+    aasm_state:
+      submitted:  已提交
+      accepted: 接受
+      checked: 已检查
+      warning: 警告
+  deposits/ipm:
+    aasm_state:
+      submitted:  已提交
+      accepted: 接受
+      checked: 已检查
+      warning: 警告
+  deposits/ems:
+    aasm_state:
+      submitted:  已提交
+      accepted: 接受
+      checked: 已检查
+      warning: 警告
+  deposits/ecpplus_token:
+    aasm_state:
+      submitted:  已提交
+      accepted: 接受
+      checked: 已检查
+      warning: 警告
+  deposits/usdcoin:
+    aasm_state:
+      submitted:  已提交
+      accepted: 接受
+      checked: 已检查
+      warning: 警告
+  deposits/fto_token:
+    aasm_state:
+      submitted:  已提交
+      accepted: 接受
+      checked: 已检查
+      warning: 警告
+  deposits/aokey7_token:
+    aasm_state:
+      submitted:  已提交
+      accepted: 接受
+      checked: 已检查
+      warning: 警告
+  deposits/cacplus_token:
+    aasm_state:
+      submitted:  已提交
+      accepted: 接受
+      checked: 已检查
+      warning: 警告    
+  easy_table:
+    satoshi:
+      amount: 金额
+      txid: TxId
+      created_at: 创建于
+      confirmations: 确认
+      member_name: 成员
+      state_and_actions: 状态/动作
+      currency_obj_key_text: 货币
+    bitcoin_cash:
+      amount: 金额
+      txid: TxId
+      created_at: 创建于
+      confirmations: 确认
+      member_name: 成员
+      state_and_actions: 状态/动作
+      currency_obj_key_text: 货币
+    ethereum:
+      amount: 金额
+      txid: TxId
+      created_at: 创建于
+      confirmations: 确认
+      member_name: 成员
+      state_and_actions: 状态/动作
+      currency_obj_key_text: 货币
+    tronix:
+      amount: 金额
+      txid: TxId
+      created_at: 创建于
+      confirmations: 确认
+      member_name: 成员
+      state_and_actions: 状态/动作
+      currency_obj_key_text: 货币
+    ripple:
+      amount: 金额
+      txid: TxId
+      created_at: 创建于
+      confirmations: 确认
+      state_and_actions: 状态/动作
+      currency_obj_key_text: 货币
+    eos_token:
+      amount: 金额
+      txid: TxId
+      created_at: 创建于
+      confirmations: 确认
+      state_and_actions: 状态/动作
+      currency_obj_key_text: 货币
+    csc:
+      amount: 金额
+      txid: TxId
+      created_at: 创建于
+      confirmations: 确认
+      state_and_actions: 状态/动作
+      currency_obj_key_text: 货币
+    ipm:
+      amount: 金额
+      txid: TxId
+      created_at: 创建于
+      confirmations: 确认
+      state_and_actions: 状态/动作
+      currency_obj_key_text: 货币
+    ems_token:
+      amount: 金额
+      txid: TxId
+      created_at: 创建于
+      confirmations: 确认
+      state_and_actions: 状态/动作
+      currency_obj_key_text: 货币
+    ecpplus_token:
+      amount: 金额
+      txid: TxId
+      created_at: 创建于
+      confirmations: 确认
+      state_and_actions: 状态/动作
+      currency_obj_key_text: 货币
+    usdcoin:
+      amount: 金额
+      txid: TxId
+      created_at: 创建于
+      confirmations: 确认
+      state_and_actions: 状态/动作
+      currency_obj_key_text: 货币
+    fto_token:
+      amount: 金额
+      txid: TxId
+      created_at: 创建于
+      confirmations: 确认
+      state_and_actions: 状态/动作
+      currency_obj_key_text: 货币
+    aokey7_token:
+      amount: 金额
+      txid: TxId
+      created_at: 创建于
+      confirmations: 确认
+      state_and_actions: 状态/动作
+      currency_obj_key_text: 货币
+    cacplus_token:
+      amount: 金额
+      txid: TxId
+      created_at: 创建于
+      confirmations: 确认
+      state_and_actions: 状态/动作
+      currency_obj_key_text: 货币
+
+    #
+    bank:
+      sn: SN
+      amount: 金额
+      created_at: At
+      fund_source: 资金来源
+      memo: 备忘录
+      member_name: 成员
+      state_and_actions: 状态/动作
+      currency_obj_key_text: 货币
+  enumerize:
+    account_version:
+      reason:
+        fix: FIX
+        unknown: 未知
+        strike_add: 貿易加
+        strike_sub: 貿易子
+        strike_fee: 交易費
+        strike_unlock: 贸易解锁
+        order_cancel: 訂單取消
+        order_submit: 訂單提交
+        deposit: 存款
+        withdraw: 退出
+        withdraw_lock: 退出鎖定
+        withdraw_unlock: 退出解鎖
+    state:
+      done: 完成
+      wait: 等待
+      cancel: 取消
+    currency:
+      btc: BTC
+      bch: BCH
+      eth: ETH
+      trx: TRX
+      xrp: XRP
+      eos: EOS
+      csc: CSC
+      ipm: IPM
+      ems: EMS
+      ecp+: ECP+
+      usdc: USDC
+      fto: FTO
+      aok: AOk
+    order:
+      state:
+        done: 完成
+        wait: 等待
+        cancel: 取消
+    deposit:
+      aasm_state:
+        submitted: 已提交
+        submitting: 提交
+        accepted: 接受
+        cancelled: 已取消
+        rejected: 拒绝
+        checked: 已检查
+        warning: 警告
+    withdraw:
+      state:
+        submitting: 提交
+        submitted: 已提交
+        rejected: 拒绝
+        accepted: 接受
+        suspect: 怀疑
+        processing: 加工
+        done: 完成
+        canceled: 已取消
+    fund_source:
+      category:
+        satoshi: Bitcoin
+        bank: 银行
+    id_document:
+      id_document_type:
+        id_card: 身份证
+        passport: 护照
+        driver_license: 驾驶执照
+      id_bill_type:
+        bank_statement: 银行对账单
+        tax_bill: 税单
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: Last &raquo;
+      previous: "&lsaquo; Prev"
+      next: Next &rsaquo;
+      truncate: "..."
+
+  mailer:
+    dear_user: "亲爱的用户，"
+    signature: "谢谢，<br/> BitCorex团队"
+    please_contact: "如果不是你，请尽快<a href='mailto:%{contact_mail}'>与我们联系</a>。"
+    footer: 这是一封自动生成的电子邮件，请不要回复，如果您有任何疑问，请<a href="mailto:%{contact_mail}">与我们联系</a>。
+  #
+  member_mailer:
+    notify_signin:
+      subject: "[BitCorex]你刚刚登录"
+      just_signed_in: 你刚刚登录了。
+    google_auth_activated:
+      subject: "[BitCorex] Google身份验证器激活"
+      google_auth_activated: 您已成功激活Google身份验证器
+
+    sms_auth_activated:
+      subject: "[BitCorex] SMS身份验证器激活"
+      sms_auth_activated: 您已成功激活SMS身份验证器
+    sms_auth_deactivated:
+      subject: "[BitCorex] SMS身份验证器已停用"
+      sms_auth_deactivated: 您已成功停用SMS身份验证器
+    google_auth_deactivated:
+      subject: "[BitCorex] Google 身份驗證器已停用"
+      google_auth_deactivated: 您已成功停用 google 身份驗證器
+    reset_password_done:
+      subject: "[BitCorex]密码已更改"
+      successful: 您的BitCorex密码已更改。退款功能在24小时内无法使用。如果此活动不是您自己的操作，请停用您的帐户并立即与我们联系。
+      header_content: 密码已更改
+      zinance_team: BitCorex团队
+      hello: 你好，
+      footer_content: 自动消息。请不要回复
+    phone_number_verified:
+      subject: "[BitCorex]您的电话号码已验证"
+      verified: '您的电话号码已verification: %{phone_number}'
+    disable_google_auth:
+      google_auth_subject: "Google Auth禁用成功"
+      sms_auth_subject: "Sms Auth禁用成功"
+      google_auth_body: "您的BitCorex的Google Auth已被停用。退款功能在24小时内无法使用。如果此活动不是您自己的操作，请立即与我们联系。"
+      sms_auth_body: "您的BitCorex的Sms Auth已被禁用。退出功能在24小时内无法使用。如果此活动不是您自己的操作，请立即与我们联系。"
+      footer_content: 如果此活动不是您自己的操作，请立即与我们联系。
+      zinance_team: BitCorex团队
+      automated_text: 自动消息。请不要回复
+      hello: 你好，
+
+  deposit_mailer:
+    accepted:
+      subject: "[BitCorex]您的存款已存入您的帐户"
+      hello: 你好,
+      content: 您的BitCorex帐户已充值
+      head_content: 存款成功
+      footer_content: 如果此活动不是您自己的操作，请立即与我们联系。
+      zinance_team: BitCorex团队
+      automated_text: 自动消息。请不要回复
+
+  system_mailer:
+    daily_stats:
+      member_stats: 会员统计
+      signup: 注册
+      activation: 激活
+      asset_stats: 资产变更
+      trade_stats: 交易变化
+      asset_value_change_total: 数字资产变更总计
+      trades_change_total: 交易变更总计
+
+  ticket_mailer:
+    admin_notification:
+      subject: "[BitCorex]用户创建了一张新票"
+      admin_notification_content: 用户%{email}创建了一张新票证，请点击以下链接查看详细信息
+    author_notification:
+      subject: "[BitCorex]谢谢你提交门票"
+      thanks_for_submit_ticket: 感谢您提交给我们的门票，我们会尽快给您回复。
+      head_content: 确认您的注册
+      welcome_content: 欢迎来到BitCorex！
+
+
+  token_mailer:
+    activation:
+      subject: "[BitCorex]帐户激活"
+      click_to_verify: '感谢您注册BitCorex，请点击此链接验证您的email: '
+      unable_to_click: 如果您无法点击并访问该链接，请复制并打开浏览器中的链接。
+      link_expire: 该链接在30分钟后到期。
+      content_link: "点击下面的链接完成verification: "
+      warning_msg: 如果此活动不是您自己的操作，请立即与我们联系。
+      automated_msg: 自动消息。请不要回复
+      security_msg: "5个安全提示: "
+      security_tip1: "*不要将密码提供给任何人！"
+      security_tip2: "*不要为声称是BitCorex支持的人拨打任何电话号码！"
+      security_tip3: "*不要向任何声称自己是BitCorex成员的人发送任何款项！"
+      security_tip4: "*启用Google双重身份验证！"
+      security_tip5: "*确保您正在访问"
+      head_content: 确认您的注册
+      welcome_content: "欢迎来到BitCorex！"
+      verify_button: 验证电子邮件
+    signin_verify:
+      header_content: 授权新设备
+      Authorize_This_Device: 授权此设备
+      Zinance_team: BitCorex团队
+      Automated_message: 自动消息。请不要回复
+      download: 下载
+      Location: '位置: '
+      IP_Address: 'IPaddress: '
+      Device: '设备: '
+      msg: 您最近尝试从新设备或新位置登录您的BitCorex帐户。作为安全措施，我们需要在允许访问您的BitCorex帐户之前进行额外确认
+    reset_password:
+      subject: "[BitCorex]密码重置"
+      hello: 你好，
+      follow_the_link: '请点击此链接在30分钟内重置passwords: '
+      header_content: 密码重置
+      body_content: 您刚刚发起了重置BitCorex帐户密码的请求。如果密码已更改，您的帐户将被冻结24小时。
+      action_statment: "要设置新密码，请点击下面的按钮: "
+      reset_button: 重置密码
+      suggest_msg: 如果您无法通过单击上面的按钮进行确认，请将以下地址复制到浏览器地址栏进行确认。
+      link_expire: 出于安全考虑，此链接将在30分钟后过期。
+      security_msg: 如果此活动不是您自己的操作，请立即与我们联系。
+      team: BitCorex团队
+      automated_msg: 自动消息。请不要回复
+    two_factor:
+      subject: "[BitCorex]  - 重置双因素身份验证。"
+      click_to_verify: "单击以重置%{type}身份验证。"
+      unable_to_click: 如果您无法点击并访问该链接，请复制并打开浏览器中的链接。
+      link_expire: 该链接在30分钟后到期。
+      header_content: "重置%{type}身份验证器"
+      hello: 你好，
+      body_content: "重置你的双因素验证器。复位完成后48小时内不允许取消。请点击按钮重置: "
+      reset_button: 确认重置
+      suggested_text: 如果您无法通过单击上面的按钮进行确认，请将以下地址复制到浏览器地址栏进行确认。
+      security_info: 如果此活动不是您自己的操作，请立即与我们联系。
+      team: BitCorex团队
+      automated_msg: 自动消息。请不要回复
+  supports:
+    new:
+      Home: 主页
+      Support: 支持
+      FAQ: FAQ
+      text: 选择您的查询＆amp;写信给我们的专家。
+      text2: 基本查询或常规查询
+      text3: 技术支持查询
+      text4: 广告查询
+      text5: 业务开发查询
+      text6: 联盟计划查询
+      text7: 按区域查询
+      text18: Submit
+      text17: Write*
+      text16: Website*
+      text19: 'Telephone*'
+      text20: 'Email*'
+      text21: 'Name*'
+      text22: 'Please enter valid URL.'
+      text23: 'please enter valid Url or Website '
+      text8: 联系表格
+      text9: 填写表格。你的邮箱不会被公开。必填字段标有
+      text10: "姓名*"
+      text11: "电子邮件*"
+      text12: "电话*"
+      text13: "网站"
+      text14: "写信息*"
+      text15: 发送消息
+    create:
+      success: 'You query has been submitted successfully. We will get back to you soon ...'
+    _header:
+      home: 主页
+      submit_request:
+    _footer:
+      Zinance: BitCorex
+    info_page:
+      search: 搜索
+      home: 主页
+      Submit_a_request: 提交请求
+      Tips: '提示: 反馈和回复都在您的电子邮件中;准确选择问题类型，因为这将大大加快支持流程;'
+      Please: 请在下面选择您的问题。
+      help: 帮助存款
+      help1: 帮助提款
+      help2: 没有收到电子邮件
+      help3: 帮助客户问题
+      help4: 帮助Google Auth
+      help5: 帮助SMS Auth
+      help6: 帮助帐户
+      email: BitCorex电子邮件帐户
+      text: 请输入您的BitCorex帐户电子邮件地址。
+      Subject: 主题
+      Description: 描述
+      Sumbit: 透过
+  terms:
+    index:
+      text00: 'BitCorex使用条款'
+      date: '[最后修订date: 2018年11月15日]'
+      text1: '本协议由您和服务运营商BitCorex共同承担。使用通过BitCorex网站提供的任何服务'
+      text2: 'https: //api.BitCorex.com'
+      text0: 'https: //www.BitCorex.com'
+      text01: '，API'
+      text3: '或BitCorex附属公司，您同意您已阅读，理解并接受本使用条款协议中包含的所有条款和条件，以及已纳入GDPR法规的我们的隐私政策和同意书。由于这是具有法律约束力的合同，因此在使用我们的任何服务之前，请仔细阅读本协议及相关通知。通过注册，访问或使用BitCorex，您已同意本用户协议中规定的条款和条件。如果您不同意本用户协议，请继续启动帐户锁定功能（针对现有用户）并停止使用BitCorex及其任何服务。'
+      text4: '有关BitCorex的更多信息，您可以参考网站上的公司和许可证信息。如果您对本协议有任何疑问，请随时通过我们的客户支持团队联系BitCorex进行澄清'
+      text5: '/ hc / en-us / requests / new'
+      text6: '协议条件'
+      text7: 'BitCorex保留随时自行决定修改或更改协议条款和条件的权利。 BitCorex将通过更新网页上的修订使用条款来提供有关这些更改的通知'
+      text8: '/ hc / en-us / articles / 115000421672-使用条款'
+      text9: '并在此页面上更改"[Last revised: ]"日期。对使用条款的任何和所有修改或更改将在网站上公布或发布给用户后立即生效。因此，您继续使用BitCorex的服务即表示接受修订后的协议和规则。'
+      text10: '资格'
+      text11: '通过注册使用BitCorex账户，您已确认您已年满18周岁，并且是您和BitCorex之间具有完全法律行为能力的个人，法人或其他组织。如果您不是，您和您的监护人应承担您的行为所产生的一切后果，除了向您和您的监护人提出索赔要求外，BitCorex有权取消或冻结您的帐户。'
+      text12: '禁止使用'
+      text13: '通过访问和使用BitCorex及其任何服务，您承认并声明您不在任何贸易或经济制裁名单上，例如联合国安理会制裁名单及其等同物。 BitCorex保留选择其运营市场和司法管辖区的权利，并可能限制或拒绝向某些国家/地区提供服务。本协议的内容不得排除在用户所属国家/地区的法律之外。 BitCorex坚持其禁止用户不使用或访问BitCorex及其任何服务的立场。'
+      text14: '服务描述'
+      text15: 'BitCorex为通常称为加密令牌，数字令牌或加密货币的产品提供在线数字资产交易平台（加密加密）。 BitCorex不在其平台上提供法定交易功能，因此不受其附带的严格规定的约束。 BitCorex作为交易平台提供商，不是交易者之间交易的买方或卖方。 BitCorex也不是做市商。交易者必须在开始交易前在BitCorex注册并开立账户并存入数字资产。交易者可以要求退出其数字资产，但须遵守条款和条件中规定的限制。'
+      text16: 'BitCorex努力维护其网站上发布的信息的准确性，但不能保证通过网站内容的准确性，适用性，可靠性，完整性，性能或适用性，并且不对任何损失或损害承担责任。可能直接或间接地来自内容。有关BitCorex网站的信息可能会随时更改，恕不另行通知，主要目的是为了方便用户做出独立决策。 BitCorex不提供投资或咨询建议，也不对其网站或其他通信媒介中所述的信息的使用或解释承担任何责任。 BitCorex的所有用户必须明白交易存在风险。 BitCorex鼓励所有用户谨慎行事，并以自己的方式负责任地进行交易。'
+      text17: '虽然BitCorex强调平台安全性以确保其服务的连续性和安全性（将在停机/维护时发布公告），但对上帝的行为，恶意针对性黑客攻击，恐怖袭击和其他不可预见的情况将不负责任。如果发生异常交易，BitCorex保留取消，回滚或阻止其平台上所有类型交易的权利。 BitCorex不会要求用户提供任何密码，也不会要求用户转移未在其交易平台上列出的资金。鼓励用户谨慎处理可能导致他们被骗的折扣或促销活动。虽然该清单并非详尽无遗，但您同意BitCorex对由上述情况引起的任何损失不承担责任。'
+      text18: '通过使用BitCorex及其任何服务，您声明与BitCorex相关的所有信息都是真实，准确和完整的。'
+      text19: 'BitCorex账户注册和要求'
+      text20: '注册'
+      text21: '所有用户都必须注册'
+      text22: '/register.html'
+      text23: '使用网站前的BitCorex帐户。要注册帐户，您必须提供您的真实姓名，电子邮件地址和密码，以及接受使用条款，隐私政策和同意书。根据特定情况，我们可以自行决定拒绝为您开设账户。'
+      text24: '用户身份验证'
+      text25: '在BitCorex注册帐户后，您同意共享为身份验证而请求的个人信息。该信息专门用于检测BitCorex平台上的洗钱，恐怖主义融资，欺诈和其他金融犯罪。除了提供此信息之外，为了便于遵守全球行业数据保留标准，您同意允许我们在您的帐户有效期内加上此类信息的记录，以及帐户关闭后的5年。您还授权我们直接或通过第三方进行查询，这些查询被认为是验证您的身份或保护您和/或我们免受欺诈等金融犯罪所必需的。'
+      text26: "我们要求的身份验证信息可能包括但不限于您: 姓名，电子邮件地址，联系信息，电话号码，用户名，政府颁发的身份证。在提供此必需信息时，您确认其准确且真实。注册后，您必须保证信息的真实性，完整性和及时更新的任何变更。如果您有任何合理怀疑，您提供的任何信息是错误的，不真实的，过时的或不完整的，BitCorex有权向您发送要求更正的通知，直接删除相关信息，并视具体情况终止所有或BitCorex服务的一部分给你。如果您无法通过所提供的联系信息与您联系，则您应对使用BitCorex服务期间发生的任何损失或费用承担全部责任。您特此确认并同意，如果有任何更改，您有义务及时更新所有信息。"
+      text27: '帐户使用要求'
+      text28: 'BitCorex账户只能由其注册名称的人使用。 BitCorex保留暂停，冻结或取消其注册名称以外的人使用的帐户的权利。因此，BitCorex不会对这些账户承担法律责任。'
+      text29: '帐户安全'
+      text30: 'BitCorex优先考虑维护委托给我们的用户资金的安全性，并为我们的平台实施了行业标准保护。话虽如此，但是存在由各个用户操作创建的帐户级风险。我们要求您了解是否需要独立采取安全预防措施来保护您自己的帐户和个人信息。'
+      text31: '您应自行负责保护您的BitCorex帐户和密码，并且您应对您的登录电子邮件，BitCorex帐户和密码（包括但不限于信息披露，信息）下的所有活动负责。通过点击网站，在线续订协议等方式发布，同意或提交各种规则和协议。'
+      text32: '你在此同意: '
+      text33: '如果您发现任何人未经授权使用您的BitCorex帐户和密码或任何其他违反安全规则的行为，您将立即通知BitCorex;'
+      text34: 您将严格遵守网站/服务的安全，认证，交易，收费，退出机制或程序;和
+      text35: 您将在每次访问结束时采取适当的步骤从网站注销。
+      text36: 对于因未遵守上述帐户安全规定而导致的任何损失或后果，BitCorex概不负责。
+      text37: 争议解决
+      text38: BitCorex保留自行决定解决问题和争议的权利。一些问题包括侵犯他人权利，违反法律法规，异常交易以及未在条款中明确提及的其他问题。用户同意承担争议解决过程中产生的费用。
+      text39: BitCorex服务使用指南
+      text40: '您在此同意在您使用BitCorex服务时遵守以下约定: '
+      text41: 您在使用BitCorex服务期间开展的所有活动都将符合适用法律，法规以及BitCorex各种指南的要求，
+      text42: 不会违反公共利益，公共道德或其他合法利益，
+      text43: 不构成对应付税款或费用的规避，不违反本协议或相关规定。如果您违反上述承诺，从而造成任何法律后果，您应以自己的名义独立承担所有法律责任，并赔偿BitCorex来自此类违规行为引起的所有诉讼，索赔或费用。未经BitCorex事先书面同意，您不得将本网站上显示的任何数据或信息用于商业目的。您将根据使用条款和隐私政策使用本网站，不会采取不正当竞争行为，也不会试图干预BitCorex的正常运作。此类恶意行为的示例包括但不限于
+      text44: 使用设备，软件或子程序来干扰网站
+      text45: 使用不合理的数据加载请求重载网络设备
+      text46: 在市场上执行恶意销售或购买通过访问BitCorex服务，您同意BitCorex有权单方面确定您是否违反了上述任何约定，并在未经您同意或事先提供的情况下采取措施应用相关规则通知你。此类行为的示例包括但不限于
+      text47: 阻止和关闭订单请求
+      text48: 冻结您的帐户
+      text49: 向当局报告此事件
+      text50: 公布所指控的违规行为和已采取的行动
+      text51: '删除您发布的违规信息'
+      text52: '如果您所指控的违规行为导致第三方遭受任何损失，您应单独承担您自己名下的所有法律责任，并使BitCorex免于任何损失，罚款或额外费用。如果由于任何涉嫌违规的BitCorex发生任何损失，由任何第三方索赔或遭受任何行政当局的任何处罚，您应赔偿BitCorex因此造成的任何损失和费用，包括合理的律师费。'
+      text53: '服务费'
+      text54: "C'oinchel保留向使用其服务的用户征收服务费的权利。由BitCorex自行决定调整使用其服务向用户收取的服务费。"
+      text541: '责任'
+      text55: '提供服务'
+      text56: 'BitCorex将以"现状"和"商业可用"条件提供BitCorex服务，并且不提供有关服务的可靠性，稳定性，准确性和所涉及技术的完整性的任何形式的保证。 BitCorex仅仅作为交易场所，可以获得与硬币相关的信息并且可以进行与硬币相关的交易。 BitCorex无法控制任何交易中涉及的硬币的质量，安全性或合法性，交易信息的真实性，或任何交易各方履行规则义务的能力。在使用所提供的BitCorex服务之前，您必须仔细考虑相关的投资风险，法律状态以及交易信息和投资决策的有效性。'
+      text57: '责任限制'
+      text58: '您承认并同意，BitCorex不对由以下任何事件造成的任何损失承担责任，包括但不限于'
+      text59: '利润，商誉，使用或数据或任何其他无形损失的损失'
+      text60: '使用或未使用BitCorex服务'
+      text61: '第三方未经授权使用您的帐户或未经授权擅自更改您的数据'
+      text62: '您对BitCorex服务的误解'
+      text63: '与BitCorex Service有关的任何其他损失，不直接归属于BitCorex'
+      text64: '在任何情况下，BitCorex均不对由于常规网络维护或外部因素（如电源故障，自然灾害，服务提供商方面的问题或政府行为）导致的任何服务故障或延迟承担责任。'
+      text65: '赔偿'
+      text66: '您同意赔偿并使BitCorex，其关联公司，承包商，许可人及其各自的董事，高级职员，员工和代理人免受任何索赔和损害赔偿（包括律师费，罚款或任何监管机构的处罚）由于您的违反或我们执行本协议而产生的。这也适用于您在使用BitCorex服务期间违反任何适用法律，法规或任何第三方的权利。'
+      text67: '公告'
+      text68: '请注意所有官方公告，新闻，促销，竞赛和空投都将列在上面'
+      text69: '/ hc / en-us / categories / 115000056351-Announcements'
+      text70: '我们敦促所有用户定期参考。如果用户因无知或疏忽公告而招致个人损失，BitCorex将不承担任何赔偿责任或责任。'
+      text71: '终止协议'
+      text72: '您同意我们有权立即暂停您的帐户（以及相关实体或关联公司实益拥有的任何帐户），冻结或锁定所有此类帐户中的资金，并在我们怀疑任何此类帐户时暂停您对BitCorex的访问权限违反服务条款，隐私政策，AML / CTF法案或任何适用的法律法规。 BitCorex有权保留和使用与此类账户相关的交易数据或其他信息。上述帐户控制也适用于以下情况: '
+      text73: '该帐户受政府诉讼，刑事调查或其他未决诉讼的约束'
+      text74: '我们检测到帐户中的异常活动'
+      text75: '我们检测到对帐户的未授权访问'
+      text76: '我们必须通过法院命令或监管/政府机构的命令这样做如果发生以下任何事件，BitCorex有权通过取消您的帐户直接终止本协议，并且有权利永久冻结（取消）您在BitCorex的帐户授权并退出相应的BitCorexaccount: '
+      text77: '在BitCorex终止服务给你之后，'
+      text78: '您涉嫌直接或间接地再次注册或以任何其他人的名义注册为BitCorex用户;'
+      text79: '您提供的用户信息的主要内容是不真实，不准确，过时或不完整;'
+      text80: '当本协议（包括规则）修订时，您明确声明并通知BitCorex您不愿意接受修改后的服务协议;'
+      text81: BitCorex认为应终止服务的任何其他情况。如果帐户被终止，满足数据保留标准所需的帐户和交易信息将被安全存储五年。此外，如果在帐户终止过程中未完成交易，BitCorex有权在当时通知您的交易对手当前的情况。
+      text82: 帐户终止后的剩余资金（正常）
+      text83: 账户关闭/撤销后，账户上的所有剩余余额（包括对BitCorex的欠款和负债）将立即支付给BitCorex。在向BitCorex（如果有）支付所有未付费用后，用户将有5个工作日从账户中提取所有资金。
+      text84: 帐户终止后的剩余资金（欺诈/反洗钱/违反条款）
+      text85: 'BitCorex保持对资金和用户数据/信息的完全保管，如果因欺诈调查，反洗钱调查或违反BitCorex条款（例如从BitCorex交易）导致帐户暂停/关闭，可能会将其转交给当局。受制裁的国家）。'
+      text86: 遵守当地法律
+      text87: 用户有责任遵守有关BitCorex在其当地司法管辖区的合法使用的当地法律。用户还必须在当地法律的范围内考虑税收的所有方面，扣缴，收集，报告和汇款给相应的税务机关。 BitCorex及其任何服务的所有用户都承认并声明其资金来源来自合法方式，并非来自非法活动。 BitCorex保持与全球执法机构合作的立场，并将毫不犹豫地抓住，冻结，终止被法律授权标记或调查的用户的账户和资金。
+      text88: 隐私政策
+      text89: BitCorex可能会不时在BitCorex平台上公布和修改其隐私政策，隐私政策应成为本使用协议的组成部分。包含GDPR的最新版本的隐私政策始终可以在此页面上找到
+      text90: 赔偿和免责声明
+      text91: 您同意赔偿BitCorex及其全部附属公司，并使其免受所有第三方索赔的损害，除非BitCorex违反这些条款。如服务描述中所述，BitCorex尽最大努力维护其站点上的数据完整性，但不保证其平台中提供的信息和服务。 BitCorex对因使用其服务而产生的错误概不负责。
+      text92: 投诉
+      text93: 如果您有任何投诉，反馈或问题，请联系
+      text94: "(https: //BitCorex.hk/hc/en-us/requests/new) "
+      text95: '我们将竭尽全力为您解决问题。'
+      text96: '/statate.html'
+
+  withdraw_mailer:
+    submitted:
+      subject: "[BitCorex]你的撤销状态更新"
+      body_content: 您的%{currency}提款请求已成功提交，我们会尽快处理。请耐心等待我们。如有任何问题，请联系我们。
+      header_content: 提取已提交
+      hello: 你好，
+      security_msg: 如果此活动不是您自己的操作，请立即与我们联系。
+      team: BitCorex团队
+      automated_msg: 自动消息。请不要回复。
+
+    processing:
+      subject: "[BitCorex]你的撤销状态更新"
+      body_content: 您的%{currency}提款请求正在进行中。请耐心等待我们。如有任何问题，请联系我们。
+      header_content: 已提取已处理
+      hello: 你好，
+      security_msg: 如果此活动不是您自己的操作，请立即与我们联系。
+      team: BitCorex团队
+      automated_msg: 自动消息。请不要回复。
+
+    done:
+      subject: "[BitCorex]你的撤销状态更新"
+      content: 您的%{currency}提款请求已完成。请检查一下。如有任何问题，请联系我们。
+      header_content: 撤消成功
+      hello: 你好，
+      body_content: 您的%{currency}提款请求已完成。请查看。
+      security_msg: 如果此活动不是您自己的操作，请立即与我们联系。
+      team: BitCorex团队
+      automated_msg: 自动消息。请不要回复。
+
+    withdraw_state:
+      subject: "[BitCorex]你的撤销状态更新"
+      your_state: '你的退出status: '
+      header_content: 您的提款状态
+      hello: 你好，
+      team: BitCorex团队
+      automated_msg: 自动消息。请不要回复。
+
+  'true': true
+  'false': false
+  view_on_github: 在Github上查看
+  slogan:
+    heading: BitCorex
+    subheading: 云部署简单安全
+    text1: BitCorex  - 用于管理数字货币的加密货币交换。
+    text2: 我们提供加密安装和配置服务。
+  trade:
+    markets: 市场
+    realtime_price:
+      title: 实时价格
+    account_balance:
+      title: 平衡
+  gon:
+    ask: 问
+    bid: 出价
+    brand: 加密交换
+    notification:
+      title: 加密交换
+      enabled: 已启用通知。
+      new_trade: "%{kind}订单＃%{id}已在%{price}%{quote_unit}执行%{volume}%{base_unit}。"
+  back: 回来
+  invalid_password: 密码无效
+  all: 全部
+  date:
+    formats:
+      date-short: "%m-%d"
+      short: "%m-%d %H:%M"
+      default: "%m /%d /%Y%H: %M"
+  time:
+    formats:
+      date-short: "%m-%d"
+      short: "%m-%d %H:%M"
+      default: "%m /%d /%Y%H: %M"
+  header:
+    news: 新闻
+    or: 或
+    support: 支持
+    cc: "©%{year}%{host}"
+    All_Rights_Reserved: 保留所有权利
+    language: 语言
+    home: 主页
+    dashboard: 仪表板
+    admin: 管理员面板
+    market: 贸易
+    settings: 个人资料
+    signin: 登录
+    login: 登录
+    b_details: 银行详细信息
+    signout: 退出
+    signup: 注册
+    register: 注册
+    forgot_password: "忘了密码？"
+    funds: 资金
+    getstart: 市场
+    assets: 偿付能力
+    history: 历史
+    order_history: 订单历史
+    trade_history: 贸易史
+    account_history: 交易历史记录
+    open_order_history: 未结订单
+    my_profile: 我的个人资料
+    balance_summary: 余额
+    account_balance: 总资产
+    back: 回来
+    total: 总计
+    deposit: 存款
+    withdraw: 退出
+    trade: 贸易
+    sign_in_with_google: 使用Google登录
+    sign_in_with_facebook: 使用Facebook登录
+    toggle_navigation: 切换导航
+    exchange: 交换
+    basic: 基本的
+    not_on: 没有
+    website_translator: 网站翻译
+    yet: '还是吗？'
+    translator_text: Google提供的翻译是为了方便起见，未在上下文中进行验证。请参考原件的准确性。
+    account: 帐户
+    order: 订单
+  admin_header:
+    deposits: 存款
+    withdraws: 退出
+    statistics: 数据统计
+    id_documents: 验证帐户
+    commission: 佣金
+    third_party: 流动性管理
+    client_details: 客户端详细信息
+    members_details: 会员详细信息
+    referral: 推荐设置
+    airdrop: 空投
+  login_header:
+    hello: '测试'
+
+  footer:
+    Powered_by: Powered By
+    Antier_Solutions: BitCorex
+    about: 关于
+    privacy: 隐私
+    contact: 联系
+    price: 价格
+    liability_proof: 责任证明
+    terms: 术语
+    cc: "©%{year}  - %{year1}%{host}。%{add}保留所有权利。"
+    volume: 24小时
+    Connected: 已连接
+  about:
+    index:
+    more: 更多
+    title: 关于BitCorex
+    safety_stability: 安全稳定性
+    system_architecture: 多层＆amp;多集群系统架构
+    performance: 高性能
+    processing: 能够处理每秒1,400,000个订单
+    liquidity: 高流动性
+    resources: 丰富的资源和合作伙伴
+    devices: 涵盖的所有设备
+    device_text: Web，Android，iOS，移动Web，Windows，macOS
+    support: 多语言支持
+    support_text: 支持和常见问题解答以多种语言提供
+    coin_support: 多币支持
+    coins: BTC，ETH，USDT，CSC
+    advantages: 我们的优势
+    team: 强大的团队
+    team_text: 我们的团队拥有华尔街和加密金融方面的经验。 我们的团队也有成功创业的记录。
+    products: 经过验证的产品
+    products_text: 底层的BitCorex平台已经部署在30多个交换机上。它支持所有设备和多种语言，提供无缝的用户体验。
+    technology: 卓越的技术
+    technology_text: 我们的认证匹配引擎每秒可处理1,400,000个订单，使BitCorex成为当今市场上最快的交易所之一。
+    resources: 行业资源
+    resources_text: 我们与行业领导者建立了牢固的关系，只需查看愿意支持我们平台的投资者和顾问名单。
+    assets_download: 资产下载
+    assets_text: 这些图像可供下载，仅用于撰写有关BitCorex的文章。如果您想将这些图像用于任何其他目的，请通过以下方式与我们联系
+  contact:
+    index:
+    view: '查看支持文档'
+    submit:  '提交请求'
+    title: 联系我们
+    question: 有问题吗？
+    FAQ1: 官方BitCorex常见问题解答
+    please_content: 请先检查一下
+    content: "看看你的问题是否已被回答: "
+    request_msg: 仍然无法找到你要找的东西？请
+    join_msg: "对于与帐户无关的通信，请加入我们的在线社区: "
+    telegram: BitCorex Telegram
+    announcements: 公告
+
+  privacy:
+    index:
+      date: '[最后修订date: 2018年11月15日]'
+      title: BitCorex隐私政策
+      privacy_content: 本隐私政策解释了BitCorex Holdings Limited（"BitCorex"）如何收集，使用，共享和保护通过BitCorex.com网站获得的用户信息。 "我们"，"我们"和"我们的"这些术语指的是BitCorex Holdings Limited及其附属公司。当我们向用户索取某些个人信息时，这是因为法律要求我们收集这些信息，或者它与特定目的相关。您提供给我们的任何非必要信息都是自愿完成的。您决定是否向我们提供这些不需要的信息;如果您选择不这样做，您可能无法访问或使用我们的所有服务。
+      privacy_content2: 使用本网站即表示您同意本隐私政策中描述的数据做法。有时，BitCorex可能会修订本隐私政策，以反映法律或我们的个人数据收集和使用惯例的变化。如果对本隐私政策进行了重大更改，则将通过在网站上发布来更新更改。在将您的信息用于本隐私政策未涵盖的任何目的之前，我们会征求您的同意。
+      privacy_content3: 最新的隐私政策已纳入通用数据保护法规（GDPR）中的要素，因为我们根据其在欧洲经济区（EEA）内的个人信息处理规则行事。
+      info_title: 信息BitCorex COLLECTS
+      last_revised_content: 我们希望您了解我们在您注册和使用BitCorex服务时收集的信息类型
+      info_content: 您在注册时提供给我们的信息
+      privacy_content4: 当您创建BitCorex帐户时，您向我们提供包含您的联系信息（电子邮件地址，姓名和密码）的个人信息。您还可以选择为SMS或Google身份验证器帐户添加电话号码，以用于2FA验证，以提高安全性。
+      info_identity: 我们在验证用户身份时收集的信息
+      privacy_content5: 为了遵守全球行业监管标准，包括反洗钱（AML），了解客户（KYC）和反恐融资（CTF），BitCorex要求用户帐户对个人和企业进行用户身份验证。级别帐户。这需要收集正式的身份证明。
+      info_service: 我们在您使用我们的服务时收集的信息
+      service_title: 服务使用信息
+      privacy_content6: 通过使用BitCorex平台，我们还监控和收集与使用相关的跟踪信息，例如访问日期和时间，设备标识，操作系统，浏览器类型和IP地址。该信息可以通过BitCorex或第三方服务直接获得。此服务使用数据有助于我们的系统确保我们的界面可供所有平台的用户访问，并可在刑事调查期间提供帮助。
+      transaction_info: 交易信息
+      privacy_content7: 对于所有个人和企业用户帐户，我们收集交易信息，包括存款快照，帐户余额，交易历史，提款，订单活动和分销历史。针对用户欺诈保护和法律案件解决的可疑交易活动监控此交易数据。
+      collect_info: 为什么BitCorex会收集这些信息
+      maintain_info: 提供和维护我们的服务
+      privacy_content8_info: 我们使用收集的信息来提供服务并验证用户身份。
+      privacy_content8: 我们使用设备cookie中存储的IP地址和唯一标识符来帮助我们验证您的身份并提供我们的服务。鉴于我们的法律义务和系统要求，我们无法为您提供没有识别，联系信息和交易相关信息等数据的服务。
+      protect_text: 保护我们的用户
+      info_collect: 我们使用收集的信息来保护我们的平台，用户的帐户和档案。
+      info_collect2: 我们使用IP地址和cookie数据来防止垃圾邮件，网络钓鱼和分布式拒绝服务（DDoS）攻击等自动滥用。
+      privacy_content9: 我们分析交易活动的目的是及早发现可疑行为，以防止潜在的欺诈行为和不良行为者的资金损失。
+      revised_info: 遵守法律和监管要求
+      privacy_content9: 尊重您使用BitCorex存储的数据的隐私和安全性，通知我们遵守法规，政府要求和用户生成的查询的方法。未经我们的法律案例小组审查和/或用户事先同意，我们不会向第三方来源披露或提供任何个人信息。
+      performance_info: 测量站点性能
+      performance_text: 我们主动测量和分析数据，以了解我们的服务使用情况。此审核活动由我们的运营团队进行，以不断改进我们平台的性能并解决用户体验问题。
+      performance_text_content: 我们持续监控系统的活动信息以及与用户的通信，以便查找并快速解决问题。
+      communicate_info: 与您沟通
+      performance_content10: 我们使用收集的个人信息，例如电子邮件地址，在门票上提供客户支持时直接与用户交互，或让您了解登录，转换和安全性。如果不处理您的个人信息以确认每次通信，我们将无法回复您提交的请求，问题和查询。所有直接通信都保密，并在内部进行审查以确保准确性
+      agreements_info: 执行我们的使用条款和其他协议
+      performance_content11: 对于我们和我们的客户，我们不断审查，调查和防止任何违反我们服务条款的潜在违禁或非法活动，这一点非常重要。为了我们整个用户群的利益，我们会认真执行与第三方的协议，并积极调查违反我们发布的使用条款的行为。 BitCorex保留终止向任何从事违反我们使用条款的活动的用户提供服务的权利。
+      protect_title: BitCorex如何保护用户数据
+      protect_content: "BitCorex已实施了多项安全措施，以确保您的信息不会丢失，滥用或更改。我们的数据安全措施包括但不限于: PCI扫描，安全套接字分层加密技术，假名，内部数据访问限制，以及对建筑物和文件的严格物理访问控制。请注意，无法保证通过Internet 100%安全传输数据或电子存储方法。因此，我们要求您理解独立承担安全的责任保护您自己的个人信息的预防措施。"
+      performance_content12: 如果您怀疑自己的个人信息已被盗用，尤其是帐户和/或密码信息，请锁定您的帐户并立即联系BitCorex客户服务。
+      contact_title: 联系我们
+      conatct_content: 我们致力于尊重所有信赖我们服务的BitCorex用户的自由和权利。如果您对本隐私政策有任何问题或疑虑，或者您想提交数据保护请求，请参阅我们的常见问题解答并在我们的支持页面上与我们联系。
+  actions:
+    go: 去
+    submit:  提交
+    deposit: 存款
+    withdraw: 退出
+    select: 请选择
+    unlock: 解锁
+    confirm: 确认
+    back: 回来
+    block: 在块中查看
+    destroy: 删除
+    destroy_confirm: 你确定要删除吗？
+    detail: 细节
+    publish: 发布
+    edit: 编辑
+    preview: 预览
+    close: 关闭
+    cancel: 取消
+    view: 查看
+    member: 成员
+    transact: 交易
+    reject: 拒绝
+    clipboard:
+      click: 单击以复制
+      done: 复制
+  chart:
+    open: 打开
+    high: 高
+    low: 低
+    close: 关闭
+    price: 价格
+    volume: 体积
+    candlestick: '原创'
+    line: 'TradingView'
+    minute: m
+    hour: 小时
+    day: 日
+    week: 周
+    month: 月
+    year: 年
+    zoom: 缩放
+    ask: 问
+    bid: BID
+    depth: 深度
+    depth_title: 市场深度
+  'yes': '是的'
+  'no': '不'
+  helpers:
+    action:
+      view: 查看
+      customer_service: 联系我们
+    submit:
+      order_ask:
+        create: ASK
+      order_bid:
+        create: BID
+      member:
+        update: 打开帐户
+      fund_source:
+        create: 保存
+      deposit:
+        create: 存款
+      id_document:
+        create: 提交
+      withdraw:
+        create: 提交
+  layouts:
+    admin:
+      menus:
+        sections:
+          members: 成员
+          deposits: 存款
+          sites_statistics: 分析
+          operating: 运营
+        items:
+          operating:
+            proofs: 证明
+            deposits: 存款
+            withdraws: 退出
+          deposits:
+            currency: 存款
+    application:
+      close: 关闭
+    meta:
+      page_title: BitCorex  - 交流
+      page_description: BitCorex  - 加密货币交换
+      page_keywords: 加密，交换，加密货币
+  members:
+    edit:
+      name: 请填写申请表。
+    balance_summary:
+      search: 硬币
+      coin: 硬币
+      name: 名称
+      total_balance: 总余额
+      available_balance: 可用余额
+      in_order: 按顺序
+      security_recommendations: "安全建议: 确认URL;启用2FA;绝不向任何声称是BitCorex支持的人披露密码或进行任何交易。"
+      visiting_text: 确保您正在访问
+      prevention: 为防止任何网络钓鱼攻击，我们建议您安装Netcraft反网络钓鱼扩展（由www.netcraft.com提供）。
+      showico2_text: 永远不要安装任何声称与BitCorex相关联的浏览器插件。（Netcraft Anti-Phishing Extension除外）。
+      showico3_text: 切勿向声称自己是BitCorex支持代表的任何人打过电话。
+      showico4_text: 切勿将密码或2FA密码/密钥告知任何人，包括BitCorex支持。
+      showico5_text: 永远不要向声称自己是BitCorex支持成员的人发送资金
+      estimate_value: 估计值
+      limit: "24小时取款限额: 2BTC"
+      use: "使用中: %{in_use} BTC"
+      balance: 余额
+      btc_text: 'BTC价值'
+  two_factors:
+    panel: 重置Google验证
+    new:
+      info: 出于安全原因。您必须在个人资料中激活Google双因素身份验证作为访问权限。
+      warning: 重置Google身份验证器非常简单，通常需要30分钟以上。
+      notice: 重置会导致您的帐户失去Google身份验证器保护。为避免资产丢失，请确保您的电子邮件和登录密码是安全的，并在重置成功后立即重新绑定Google身份验证器。
+      confirm: 确认您的重置请求
+    create:
+      success: "电子邮件已成功发送。请查看收件箱。"
+    show:
+      reset: "%{type}身份验证已成功禁用！"
+      token_expired: 令牌无效或可能已过期！
+
+  reset_passwords:
+    new:
+      text: '*出于安全考虑，在修改安全方法后24小时内不允许提款。'
+      text1: 此字段是必填字段。
+      text2: 无效的电子邮件地址。
+      Submit:  提交
+      email: '你的电子邮件'
+      Reset_Password1: 重置密码
+      new_password: 重置密码
+      submit:  提交
+    create:
+      success_old: 通过简介重置密码的电子邮件已发送到您的邮箱。未能收到电子邮件，首先转到"垃圾邮件"，或再次发送请求。
+      success: 我们已向您发送了一封重置密码说明的电子邮件。
+      blank_email: 请填写您的注册邮箱。
+      msg: 帐户密码已成功更新。
+    edit:
+      password: 请输入至少6个字符的密码，最好包含大写和小写字母和数字。
+      invalid: 请求无效
+      submit:  重置登录密码
+      alert: 无效的重置密码链接。
+    update:
+      success: 登录密码已重置，请保留您的新密码。
+      invalid: 请求无效
+  welcome:
+    market_list:
+
+      search: 搜索
+      all_html: "<i class ='fa fa-star'> </i> <span>收藏夹</span>"
+      tusd_html: "<i class ='fa fa-check'> </i> <span> TUSD 市场 </span>"
+      eth_html: "<i class ='fa fa-check'> </i> <span> ETH 市场 </span>"
+      btc_html: "<i class ='fa fa-check'> </i> <span> BTC 市场 </span>"
+      csc_html: "<i class='fa fa-check'></i><span>CSC 市场</span>"
+      price: 价格
+      change: "24h%"
+      btc: BTC 市场
+      eth: ETH 市场
+      tusd: TUSD 市场
+      csc: CSC 市场
+
+
+    activity_sky:
+      rank: '您的交易量: '
+      sKY: '？天空'
+      rank1: '你的排名: '
+      Q: '？'
+      please: 拜托
+      login: '登录»'
+      Ranking: 排名
+      email: 电邮
+      Trading_Volume: 交易量
+
+    activity_iotx:
+      trading: 交易竞争排名
+      volume: '您的交易量: '
+      text: '？IOTX'
+      ranking: '你的排名: '
+      please: 拜托
+      login: 登录»
+      ranking1: 排名
+      email: 电邮
+      trading_volume: 交易量
+    market_ticker:
+      pair: 对
+      all: 所有市场
+      all_html: "<i class ='fa fa-check'> </i> <span>所有市场</span>"
+      ccy_html: "<i class ='fa fa-check'> </i> <span>%{currency} 市场 </span>"
+      price: 价格
+      change: "24h%"
+      coin: 硬币
+      change: 改变
+      last_price: 最后价格
+      24h_change: 24h变化
+      24h_high: 24h高
+      24h_low: 24h低
+      24h_volume: 24小时音量
+
+    ticker:
+      volume: '成交量: '
+    index:
+      search: 搜索
+      banner_heading: BitCorex  - 交换世界
+      banner_title: BitCorex是世界上最受欢迎的买卖比特币，以太币和莱特币的方式。
+      placeholder: 输入您的电子邮件地址
+      button_title: 开始使用
+      banner_signup: BitCorex新手？
+      banner_signin: 登录
+      already_register: 已经注册？
+      tab_1: BitCorex将于2018/09/12（09-11）列出GoChain（GO）
+      tab_2: BitCorex现已推出波兰语（09-10）
+      tab_3: NULS比赛现已结束（09-07）
+      tab_4: BitCorex将支持USDT市场 2019/03/25
+      tab_5: aokey7将于2019年5月15日在BitCorex上市
+      favorites: 收藏夹
+      btc_market: BTC 市场
+      eth_market: ETH 市场
+      tusd_market: TUSD 市场
+      search_placeholder: 搜索
+      pair: 对
+      last_price: 最后价格
+      24_change: 24h变化
+      24_high: 24h高
+      24_low: 24h低
+      24_volume: 24小时音量
+      para_heading: 买卖加密货币
+      para_1: "Lorem ipsum dolor sit amet，consetetur sadipscing elitr，sed diam nonumy tempor invidunt ut labore et dolore magna aliquyam。"
+      para_2: 这是Photoshop的Lorem Ipsum版本。 Proin gravida nibh vel velit auctor aliquet。 Aenean sollicitudin，lorem quis bibendum auctor，nisi elit consequat ipsum，nec sagittis sem nibh id elit。 Duis sed odio坐在amet nibh vulputate cursus a sit amet mauris。 Morbi accumsan ipsum velit。
+      join_now: 立即加入
+      create_an_account: 创建一个帐户
+      start_time: 开始时间
+      date_time: "2018-06-15 15: 30: 00"
+      download: 下载
+      end: 结束
+      slider1_days: 6
+      slider1_day: d
+      slider1_hours: 11
+      slider1_hour: H
+      slider1_minutes: 19
+      slider1_minute: m
+      slider1_seconds: 51
+      slider1_second: s
+      slider2_days: 1
+      slider2_hours: 11
+      slider2_minutes: 11
+      slider2_seconds: 51
+      slider3_days: 17
+      slider3_hours: 11
+      slider3_minutes: 19
+      slider3_seconds: 28
+      coin: 硬币
+    application_form:
+      Your_answer: 你的答案
+      Your_answer1: 你的答案
+      Your_answer2: 你的答案
+      Your_answer3: 你的答案
+      Your_answer4: 你的答案
+      Your_answer5: 你的答案
+      Your_answer6: 你的答案
+      Your_answer7: 你的答案
+      Your_answer8: 你的答案
+      Your_answer9: 你的答案
+      Your_answer10: 你的答案
+      Your_answer11: 你的答案
+      Your_answer12: 你的答案
+      Your_answer13: 你的答案
+      Your_answer14: 你的答案
+      Your_answer15: 你的答案
+      Your_answer16: 你的答案
+      Your_answer17: 你的答案
+      Your_answer18: 你的答案
+      Your_answer19: 你的答案
+      yes2: 是的
+      yes1: 是的
+      no2: 没有
+      no1: 没有
+      header: BitCorex 申请表
+      header_content: BitCorex Angels是我们社区内充满激情的志愿者，他们以各种方式支持我们的平台，主要是推广BitCorex生态系统并帮助我们的用户群提出问题和疑虑。在BitCorex，我们专注于创造最佳的客户体验，而Angels扮演着重要角色，充当了BitCorex与世界各地社区之间的桥梁。
+      info: 当您上传文件并提交此表单时，将记录与您的Google帐户相关联的名称和照片。不
+      switch_account: 切换帐户
+      required: '*必填'
+      name: 名称
+      gender: 性别
+      age: 年龄
+      nationality: 国籍
+      current_location: 当前位置 - 国家和城市
+      current_location_info: 您所在的国家和城市，可以加入本地活动
+      occupation: 职业
+      phone_number: 电话号码
+      email: 电邮
+      telegram: Telegram
+      telegram_info: 这是BitCorex天使的必备工具。如果您没有，请注册一个。
+      skype: Skype
+      account: BitCorex帐户（电子邮件地址）
+      reason_text: "想成为BitCorex天使的理由？"
+      zinance_text: "你刚在哪里听说过BitCorex？"
+      work_commitment: "你每周可以腾出多少空闲时间？"
+      work_exp: "你在区块链领域有相关的工作经验吗？"
+      strength: "你有什么优势，你怎么能把它们带到BitCorex？"
+      language: "你会说什么语言？你能帮我们做一些翻译吗？"
+      commit_time: "你每周可以有多少空闲时间？"
+      question: "你可以帮助BitCorex在你的空闲时间维持和调节线上和线下社区吗？"
+      question2: "你能否列出与可能适用于BitCorex的区块链和加密货币有关的当地有影响力的媒体？"
+      question3: "您注册了哪些其他加密社区/群组？在线和离线。"
+      question4: "请附上你自己的照片（没有照片，你的申请将不会被处理）"
+      question5: "所有天使都被要求提交KYC表格。你同意吗？"
+      question6: "你明白BitCorex Angel是一个自愿角色吗？"
+      submit:  提交
+      submit_text: 永远不要通过Google表单提交密码。
+    invite:
+      commission: 佣金
+      text9: 'No.1'
+      text10: 'No.2'
+      text11: 'No.3'
+      no_login_text: 您尚未登录，请登录并与您的朋友分享。
+      login: 登录
+      text: "还没有BitCorex？"
+      register: 注册
+      details: 计划详情
+      text: 有效期至
+      text1: 您从推荐计划收到的佣金最初将设定为20%。对于持有500BNB或更多的账户，此费率将增加至40%。
+      text2: 当您的裁判完成每笔交易时，费用佣金将立即实时发送到您的BitCorex账户，并将以原始费用支付的任何令牌/加密货币支付给您。
+      text3: 虽然我们保留随时调整或更改推荐计划规则的权利，但您可以推荐的朋友数量没有限制。
+      text4: 每位裁判必须通过您的推荐链接，QR码或推荐ID进行注册。
+      text5: BitCorex将检查重复或虚假账户，并且不会支付这些账户的推荐奖金。重复或共享财务将导致取消资格。
+      notice: "*重要notice: "
+      text6: 由于市场条件变化，欺诈风险或我们认为相关的任何其他因素，BitCorex保留随时更改推荐计划条款的权利。
+    vote:
+      text1: "本月社区硬币第七届会议"
+      deadline: "Deadline:"
+      text2: 您可以在下面选择您想投票的候选人。每个注册用户可以投票给多个候选人，但只能提交一次全票。用户在投票时需要为每位候选人支付0.1 BNB（如果选择2位候选人，将扣除0.2 BNB）。适用于您投票的最终倍数取决于您的BNB持有量。
+      click_content: "点击此处了解更多详情»"
+      options: 选项
+      voter: 选民
+      votes: 投票
+      proportion: 比例
+      end: 投票结束
+      text3: "如何在BitCorex平台上投票: "
+      time: "投票time: "
+      text4: 每个注册用户可以投票给多个候选人，但只能提交一次全票。用户在投票时需要为每位候选人支付0.1 BNB（如果选择2位候选人，将扣除0.2 BNB）。
+      text5: BitCorex將在2018/06/19 0:00 AM（UTC）對每個用戶的BNB餘額進行最終快照，以確定用戶投票的最終倍數。 對於餘額中持有的每1個BNB，最終倍數將增加1，最大為500的最終倍數。例如，在快照時，平衡3.9 BNB的用戶將具有3的最終倍數 具有1000 BNB餘額的用戶將具有500的最終倍數。
+      text6: 用户给予任何项目提名者的每次投票将乘以上面步骤3计算的最终倍数。
+      text7: 在投票结束时，我们将审查每位候选人获得的最终审查票数。与往常一样，我们保留调整每次投票权重的权利。
+      text8: 投票过程完成后，BitCorex将在合理的时间范围内将硬币列入我们的交易所。根据市场反应，我们将尝试每月举办此活动。
+      text9: "请notice: BitCorex保留更改此事件规则的所有权利，恕不另行通知，包括撤销结果或取消确认参与投票操作的候选人。这包括但不限于任何形式的财务或提供的金钱激励，空投或竞争奖励将影响用户投票。每次投票的权重也可能因各种因素而有所不同，包括但不限于用于投票的账户的历史活动水平。"
+  sessions:
+    new:
+
+      email: 电邮
+      password: 密码
+      language: 语言
+      login: 登录
+      register: 注册
+      log_in: 登录
+      home: 主页
+      support: 支持
+      check: 请检查您是否正在访问
+      new: 不是在BitCorex上了吗？
+      Password_Forgot: 忘记密码
+      msg: 您可能正在使用我们不熟悉的设备或长时间未使用的设备登录BitCorex为了您的安全，我们已将确认电子邮件发送到您的电子邮件地址
+    clear_existing_session:
+      new1: 成功授权新设备
+      new2: 您已成功授权新设备。请
+      new3: 尝试再次登录。您可以登录您的用户
+      new4: Web服务器中心随时通过设备管理删除
+      new5: '登录>>'
+      Location: '位置: '
+      Ip_Address: 'IPaddress: '
+      Device: '设备: '
+
+    create:
+      recaptcha_failed: Recaptcha失败，请再试一次。
+      disabled: 您的帐户已被停用，如果您有任何问题，请与管理员联系。
+      signed_up: 欢迎！您已成功注册。
+      error: 电子邮件或密码不正确。请再试一次。
+      no_terms: 必须选择条款和条件
+
+    failure:
+      account_locked: 登录尝试失败次数过多。确保您的安全
+        帐户，我们已锁定您的帐户。要解锁，请单击以重置密码
+        在"忘记密码"。
+      error: 电子邮件或密码不正确。请再试一次。
+  shared:
+    admin:
+      member:
+        member_info: 会员信息
+        inactive: 无效
+        deactive: Deactive
+      account:
+        account_info: 帐户信息
+        payment_address: 存款地址
+    alert:
+      modern: 为了不影响交易体验，请使用更受欢迎的
+        浏览器交易，我们建议您<a target='_blank' href='https://www.google.com/#q=google+chrome'> Google
+        Chrome浏览器</a>。
+      pusher_unavailable: 网络连接暂时不可用... <a
+        href ='＃'class ='alert-link'>请刷新</a>。
+    header:
+      balance: 平衡
+
+    header_account_balance:
+      locked: 锁定
+    market:
+      text: 小數點
+      ticker:
+        ask_price: 问
+        bid_price: 出价
+        high_price: 高
+        low_price: 低
+        volume: 体积
+        latest_price: 最后
+    frame:
+      deposit_now: 立即存款
+  withdraw_channel:
+    satoshi:
+      key: 区块链
+      title: 比特币区块链
+      intro: 将比特币提取到您自己的比特币钱包
+      latency: 30分钟
+      transfer: 手动
+      go: 退出
+    bitcoin_cash:
+      key: 块链
+      title: Bitcoin Cash存款
+      intro: 将Bitcoin Cash从您自己的钱包地址存入BitCorex账户
+      latency:  30分钟
+      transfer: 手动
+      go: 存款
+    ethereum:
+      key: ethereum
+      title: Ethereum存款
+      intro: 将Ethereum从您自己的钱包地址存入BitCorex账户
+      latency: 30分钟
+      transfer: 手动
+      go: 存款
+    tronix:
+      key: 块链
+      title: Tronix存款
+      intro: 将Trx从您自己的钱包地址存入BitCorex账户
+      latency: 30分钟
+      transfer: 手动
+      go: 存款
+    ripple:
+      key: 块链
+      title: Ripple存款
+      intro: 将Ripple从您自己的钱包地址存入BitCorex账户
+      latency: 30分钟
+      transfer: 手动
+      go: 存款
+    chelscoin:
+      key: 块链
+      title: Chelscoin存款
+      intro: 将Chelscoin从您自己的钱包地址存入BitCorex账户
+      latency: 30分钟
+      transfer: 手动
+      go: 存款
+    eos_token:
+      key: 块链
+      title: Eos存款
+      intro: 将Eos从您自己的钱包地址存入BitCorex账户
+      latency: 30分钟
+      transfer: 手动
+      go: 存款
+    impereum:
+      key: 块链
+      title: Impereum存款
+      intro: 将Impereum从您自己的钱包地址存入Impereum账户
+      latency: 30分钟
+      transfer: 手动
+      go: 存款
+    ems_token:
+      key: 块链
+      title: Ems存款
+      intro: 将Ems从您自己的钱包地址存入Ems账户
+      latency: 30分钟
+      transfer: 手动
+      go: 存款
+    ecpplus_token:
+      key: 块链
+      title: Ecp+存款
+      intro: 将Ecp+从您自己的钱包地址存入Ecp+账户
+      latency: 30分钟
+      transfer: 手动
+      go: 存款
+    usdcoin:
+      key: 块链
+      title: Usdc存款
+      intro: 将Usdc从您自己的钱包地址存入Usdc账户
+      latency: 30分钟
+      transfer: 手动
+      go: 存款
+    fto_token:
+      key: 块链
+      title: fto存款
+      intro: 将fto从您自己的钱包地址存入Usdc账户
+      latency: 30分钟
+      transfer: 手动
+      go: 存款
+    aokey7_token:
+      key: 块链
+      title: Aok存款
+      intro: 将Aok从您自己的钱包地址存入Aok账户
+      latency: 30分钟
+      transfer: 手动
+      go: 存款
+    cacplus_token:
+      key: 块链
+      title: Cac+存款
+      intro: 将Cac+从您自己的钱包地址存入Cac+账户
+      latency: 30分钟
+      transfer: 手动
+      go: 存款
+
+
+  withdraws:
+    invalid_address: 无效。你不能退到这个地址。
+    withdraws/bank:
+      aasm_state:
+        submitting:  提交
+        submitted:  已提交
+        rejected: 拒绝
+        accepted: 接受
+        suspect: 怀疑
+        processing: 加工
+        done: 完成
+        canceled: 已取消
+        failed: 失败
+
+    withdraws/satoshi:
+      aasm_state:
+        submitting:  提交
+        submitted:  已提交
+        rejected: 拒绝
+        accepted: 接受
+        suspect: 怀疑
+        processing: 加工
+        done: 完成
+        canceled: 已取消
+        failed: 失败
+    withdraws/bitcoin_cash:
+      aasm_state:
+        submitting:  提交
+        submitted:  已提交
+        rejected: 拒绝
+        accepted: 接受
+        suspect: 怀疑
+        processing: 加工
+        done: 完成
+        canceled: 已取消
+        failed: 失败
+    withdraws/tronix:
+       aasm_state:
+         submitting:  提交
+         submitted:  已提交
+         rejected: 拒绝
+         accepted: 接受
+         suspect: 怀疑
+         processing: 加工
+         done: 完成
+         canceled: 已取消
+         failed: 失败
+    withdraws/ripple:
+       aasm_state:
+         submitting:  提交
+         submitted:  已提交
+         rejected: 拒绝
+         accepted: 接受
+         suspect: 怀疑
+         processing: 加工
+         done: 完成
+         canceled: 已取消
+         failed: 失败
+    withdraws/eos_token:
+       aasm_state:
+         submitting:  提交
+         submitted:  已提交
+         rejected: 拒绝
+         accepted: 接受
+         suspect: 怀疑
+         processing: 加工
+         done: 完成
+         canceled: 已取消
+         failed: 失败
+    withdraws/chelscoin:
+      aasm_state:
+        submitting:  提交
+        submitted:  已提交
+        rejected: 拒绝
+        accepted: 接受
+        suspect: 怀疑
+        processing: 加工
+        done: 完成
+        canceled: 已取消
+        failed: 失败
+    withdraws/impereum:
+      aasm_state:
+        submitting:  提交
+        submitted:  已提交
+        rejected: 拒绝
+        accepted: 接受
+        suspect: 怀疑
+        processing: 加工
+        done: 完成
+        canceled: 已取消
+        failed: 失败
+    withdraws/ems_token:
+      aasm_state:
+        submitting:  提交
+        submitted:  已提交
+        rejected: 拒绝
+        accepted: 接受
+        suspect: 怀疑
+        processing: 加工
+        done: 完成
+        canceled: 已取消
+        failed: 失败
+    withdraws/ecpplus_token:
+      aasm_state:
+        submitting:  提交
+        submitted:  已提交
+        rejected: 拒绝
+        accepted: 接受
+        suspect: 怀疑
+        processing: 加工
+        done: 完成
+        canceled: 已取消
+        failed: 失败
+    withdraws/usdcoin:
+      aasm_state:
+        submitting:  提交
+        submitted:  已提交
+        rejected: 拒绝
+        accepted: 接受
+        suspect: 怀疑
+        processing: 加工
+        done: 完成
+        canceled: 已取消
+        failed: 失败
+    withdraws/fto_token:
+      aasm_state:
+        submitting:  提交
+        submitted:  已提交
+        rejected: 拒绝
+        accepted: 接受
+        suspect: 怀疑
+        processing: 加工
+        done: 完成
+        canceled: 已取消
+        failed: 失败
+    withdraws/aokey7_token:
+      aasm_state:
+        submitting:  提交
+        submitted:  已提交
+        rejected: 拒绝
+        accepted: 接受
+        suspect: 怀疑
+        processing: 加工
+        done: 完成
+        canceled: 已取消
+        failed: 失败
+    withdraws/cacplus_token:
+      aasm_state:
+        submitting:  提交
+        submitted:  已提交
+        rejected: 拒绝
+        accepted: 接受
+        suspect: 怀疑
+        processing: 加工
+        done: 完成
+        canceled: 已取消
+        failed: 失败
+
+
+    grape:
+      entity:
+        auth:
+          wrong_email: 错误的电子邮件或密码！
+          token_expie: 令牌已过期
+        profile:
+          incorrect: 登录密码不正确
+          wrong_sms_code: 错误的短信代码！
+          wrong_google_code: 错误的谷歌代码！
+          sms_sent: 短信已发送！
+          wrong_auth_code: 错误的google身份验证码！
+          invalid_number: 手机号码无效
+        reset_password:
+          invalid_current_password: 当前密码无效
+          password_same: 新密码不能与旧密码相同
+          password_changed: 密码已成功更改！
+          user_no_found: 用户不存在！
+          token_expired: 令牌代码已过期！
+        two_factor:
+          otp_matched: otp代码匹配
+          otp_no_matched: otp代码无效
+          invalid_two_factor: 两个因子类型无效
+          invalid_authorization: 无效的授权令牌
+          otp_sent: Otp发送成功
+        orders:
+          order_created: 订单已成功下单！
+          order_cancalled: 订单已成功取消！
+        favorites:
+          favorite_added: 收藏加入
+          favorite_deleted: 收藏删除
+

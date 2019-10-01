@@ -1,0 +1,29 @@
+
+<div class="deposit_address" style="display: flex; flex-direction: column;">
+    <div class="deposit_content">
+        <div class="modal_hdr">
+            <h2 class="navbar-brand top_logo"></h2>
+        </div>
+        <div class="deposit_content_inner">
+            <div class="ngdialog-close"></div>
+            <div class="text-center title_address">
+                <p  style="text-align: center; font-weight: 100; letter-spacing:1.1px;"> <img src="icon-{{account.currency}}.png" width="20" height="20"  /> XRP Deposit Tag</p>
+            </div>
+            <div class="qr_block" ng-if="account.deposit_address">
+                <!-- this is being used for xrp tag and plz don't remove -->
+                <div id="qrcode1"></div>
+                <div id="qrcode" class="qrcode-container img-thumbnail" data-width="180" data-height="180" data-text="{{ account.deposit_address}}" title="{{account.deposit_address}}"></div>
+            </div>
+            <div class="qr_block" ng-if="!account.deposit_address">
+                <div class="no_qr_code">
+                    <p>{{ "funds.deposit_coin.no_address" | t }}</p>
+                </div>
+            </div>
+
+            <div class="changeAddress" id="xrp_address" ng-if="currency == 'xrp' && account.deposit_address ">
+                {{ account.deposit_address ? account.deposit_address.split("=")[1] : '' }}
+            </div>
+
+        </div>
+    </div>
+</div>

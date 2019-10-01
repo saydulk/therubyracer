@@ -1,0 +1,14 @@
+<div class="amount market_flds tbl_div">
+  <label class="tbl_cell price_label"></label>
+  <div class="tbl_cell input-group text-right price_fld">
+    <div class="amount_percentage_btns">
+      <ul>
+        <% %w(25% 50% 75% 100%).each do |per_val| %>
+          <li>
+            <%= link_to per_val, 'javascript:void(0)', { type: 'button', class: 'calc_amount', value: per_val }%>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

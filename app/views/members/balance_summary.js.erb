@@ -1,0 +1,2 @@
+$('#balance_summary').html('');
+$('#balance_summary').append("<%= j render(:partial => 'summary',locals: { :member_accounts => @member_accounts })  %>");

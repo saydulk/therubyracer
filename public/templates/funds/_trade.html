@@ -1,0 +1,14 @@
+<div class="asset-link">
+    <strong>{{"funds.trade.go_to_trade" | t}}</strong>
+    <ol class="breadcrumb" >
+        <li ng-repeat="trade in trades | orderBy : 'id'" class="breadcrumb-item">
+            <a href="markets/{{trade.id}}">{{ trade.name }} ></a>
+        </li>
+    </ol>
+
+    <div class="no_rocord_found" ng-if="trades.length == 0 ">
+        <image src="/zups.png" />
+        <p>{{"funds.trade.trading_market" | t}}</p>
+    </div>
+</div>
+

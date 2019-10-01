@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-xs-24 currencies_summary">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Currencies Summary <%= link_to 'Download CSV', admin_csv_dashboard_path(format: :csv, type: 'one_day'), class: 'pull-right summary_download_btn' %></div>
+      <div class="panel-body">
+        <table class="table table-condensed table-hover" id="one_day_summary">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th class="text-right">Locked</th>
+            <th class="text-right">Balance</th>
+            <th class="text-right">Sum</th>
+            <th class="text-right">Hot-Wallet Balance</th>
+            <th class="text-right">Cold-Wallet Balance</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% curreny_summary.each do |c| %>
+            <tr>
+              <td>
+                <b><%= c[:name] %></b>
+              </td>
+              <td class="text-right"><%= c[:locked].present? ? c[:locked].round(6) : ''  %></td>
+              <td class="text-right"><%= c[:balance].present? ? c[:balance].round(6) : '' %></td>
+              <td class="text-right"><%= c[:sum].present? ? c[:sum].round(6) : '' %></td>
+              <% if c[:coinable] %>
+                <td class="text-right"><%= c[:hot] %></td>
+                <% if c[:hot] == 'N/A' || c[:hot].is_a?(Hash) %>
+                  <td class="text-right">N/A</td>
+                <% elsif c[:sum] - c[:hot] < 0 %>
+                  <td class="text-right">0.0</td>
+                <% else %>
+                  <% diff = c[:sum] - c[:hot] %>
+                  <td class="text-right"><%= diff.present? ? diff.round(6) : '' %></td>
+                <% end %>
+              <% else %>
+                <td class="text-right">N/A</td>
+                <td class="text-right">N/A</td>
+              <% end %>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class="panel-footer">
+        <span>Tips: Locked + Balance = Sum | Hot-Wallet + Cold-Wallet = Sum</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    $(document).ready( function () {
+        $('#one_day_summary').DataTable({
+            "pageLength": 15,
+            "lengthMenu": [10,15,25,50,100]
+        });
+    } );
+</script>

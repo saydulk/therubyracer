@@ -1,0 +1,89 @@
+<ul class="nav navbar-nav navbar-right back_button_sec">
+  <li><%= link_to t('actions.back'), main_app.admin_withdraws_satoshis_path %></li>
+</ul>
+<div class="row">
+  <div class="col-xs-24">
+    <div class="panel panel-primary">
+      <div class="history_tab_btns tbl_div">
+        <ul class="nav nav-tabs history_tabs tbl_cell">
+          <li class='active' >
+            <a data-toggle="tab" href="#Withdrawals"> Withdrawals </a>
+          </li>
+
+          <li>
+            <a data-toggle="tab" href="#Member_Info"> Member Info </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="tab-content">
+  <div id="Withdrawals" class="tab-pane active">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <span><%= t('admin.withdraws.coins.show.withdraw', sn: @withdraw.id) %></span>
+      </div>
+      <div class="panel-body">
+        <%= description_for :withdraw do %>
+          <%= item_for @withdraw, :id %>
+          <%= item_for @withdraw, :created_at %>
+          <%= item_for @withdraw, :aasm_state %>
+          <hr class="split">
+          <%= item_for @withdraw.member, :name %>
+          <%= item_for @withdraw, :fund_extra %>
+          <%= item_for @withdraw, :fund_uid do %>
+            <span><%= @withdraw.fund_uid %></span>
+          <% end %>
+          <%= item_for @withdraw, :amount %>
+          <hr class="split">
+          <%= item_for @withdraw, :remark %>
+          <hr class="split">
+          <ul class="list-inline withdraw-action">
+            <% if @withdraw.may_reject? %>
+              <li>
+                <%= link_to t('admin.withdraws.coins.show.reject'),
+                            url_for([:admin, @withdraw]),
+                            class: 'btn btn-danger',
+                            method: 'DELETE',
+                            confirm: t('admin.withdraws.coins.show.reject_confirm') %>
+              </li>
+            <% end %>
+            <% if @withdraw.may_approve?%>
+              <li>
+                <%= link_to t('admin.withdraws.coins.show.process'),
+                            url_for([:admin, @withdraw]),
+                            class: 'btn btn-primary',
+                            method: 'PATCH' %>
+              </li>
+            <% end %>
+          </ul>
+        <% end %>
+
+      </div>
+
+    </div>
+    <div id="Compose_Email" class="tab-pane">
+
+      <%= render partial: 'withdraw_rejected_mail', locals: {withdraw: @withdraw} %>
+
+    </div>
+  </div>
+
+  <% if @withdraw.aasm_state != "done"%>
+
+  <% end %>
+
+  <div id="Member_Info" class="tab-pane ">
+    <div class="members_info_blocks">
+      <div class="members_info_blocks_inner">
+        <%= render partial: 'shared/admin/member', locals: {member: @withdraw.member} %>
+      </div>
+      <div class="members_info_blocks_inner">
+        <%= render partial: 'shared/admin/account', locals: {account: @withdraw.account} %>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>

@@ -1,0 +1,176 @@
+<%= render 'admin/back_admin' %>
+<div class="wlt_balance">
+  <button type="button" class="btn btn-primary text-right" data-toggle="modal" data-target="#exampleModal">
+      Upload CSV File
+    </button>
+    <h1 style="color: black;"> Wallet Balance : <%= @avail_balance %></h1>
+    <%= link_to " File Sample", download_pdf_admin_airdrops_path , class: 'btn btn-primary ',style: 'margin-bottom: 10px;' %>
+  </div>
+  <h1 style="font-size: 16px;color: black;" class="text-right"> Note :*Amount should be greater than <%=Currency.find_by_code('csc').quick_withdraw_min %> and less than <%=Currency.find_by_code('csc').quick_withdraw_max %> </h1>
+
+<div class="modal upload_csv_mdl fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" style="margin-right: 10px;" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="upload_csv_Sec">
+          <h1> Upload CSV File </h1>
+          <%= simple_form_for @airdrop, url: admin_airdrops_path ,:html=>{:onsubmit=>"return Validate(this);"} do |f| %>
+            <%= f.simple_fields_for :file_airdrop, @airdrop.file_airdrop || @airdrop.build_file_airdrop do |p| %>
+              <%= p.input :file, as: :file, label: 'Upload CSV' %>
+              <span id="file_one" style="color:red;"></span>
+            <% end %>
+            <!-- <span id="file_one"></span>-->
+            <ul>
+              <li><%= f.submit 'Upload', class:'btn grey_btn',id: 'btn' %></li>
+              <li><button type="button" class="btn default_btn" data-dismiss="modal">Close</button></li>
+            </ul>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th>File</th>
+    <th> Uploaded At </th>
+    <th>Amount to be Transfered</th>
+    <th> Used </th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% if @airdrop_all.present? %>
+    <% @airdrop_all.each do |airdrop| %>
+      <% if airdrop.file_airdrop.present? %>
+        <tr>
+          <td><%= airdrop.original_name %></td>
+          <td><%= airdrop.created_at %></td>
+          <% file_valid  =  CsvCheckerService.new(airdrop.file_airdrop).is_valid? %>
+          <% total_amount = CsvCheckerService.new(airdrop.file_airdrop).total_amount %>
+          <td> <%= file_valid ? total_amount  : '-' %></td>
+          <td> <%= yesno(airdrop.is_used) %></td>
+          <td> <%= link_to 'History', airdrop_history_admin_airdrop_path(airdrop)  %>
+            <% if  @avail_balance >= total_amount and !airdrop.is_used  %>
+              | <span class="send_token"  id="<%= airdrop.id %>" > Send </span>
+            <% else  %>
+              <% unless airdrop.is_used %>
+                | <span class="token_used disabled"  id="<%= airdrop.id %>" onmouseenter="$(this).tooltip('show')" data-original-title=" <%= 'No Sufficient Balance' unless airdrop.is_used %>"> Send </span>
+              <% end %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  <% else %>
+    <tr> <td colspan="5" class="text-center"> There is no uploaded files </td></tr>
+  <% end %>
+
+  </tbody>
+</table>
+
+<% if @airdrop_all.present? %>
+  <%= paginate @airdrop_all %>
+<% end %>
+
+<%= render partial: 'two_factor'%>
+<%= render partial: 'verify_token' %>
+
+
+<script>
+
+    $(document).ready(function(){
+        $('.loader').hide();
+        $('.send_token').click(function(){
+            id = $(this).attr('id');
+            if('<%= current_user.otp_module? %>' == 'false' && '<%= current_user.sms_auth? %>' == 'false'){
+                $('#two_factor_enable').modal('show');
+                return false;
+            }
+            else{
+                $('#myModal').modal('show');
+            }
+        });
+
+        $('#send_token_btn').click(function(){
+
+            if(!$('.input_fld').val()){
+                $('.input_fld').focus()
+                return false
+            }
+            $('.loader').show();
+            $.ajax({
+                url: ' /admin/airdrops/'+id+'/send_token',
+                method: 'GET',
+                processData: true,
+                data: {otp_code: $('.input_fld').val() },
+                success: function(data){
+                    if( data['otp_verify'] == false ){
+                        $('#otp_error').text(' OTP entered is invalid ')
+                        $('.loader').hide();
+                    }
+                    else{
+                        location.reload()
+                    }
+                }
+            });
+        })
+
+        $('#send_sms').click(function(){
+            $.ajax({
+                type: "POST",
+                url: '<%= send_token_sms_settings_path %>',
+                data: { to: '<%= current_user.contact_no %>', code: '<%= current_user.country_code %>' },
+                dataType: 'script',
+                success: function(data){
+                },
+                complete: function(){
+                }
+            });
+        })
+
+
+        $('#btn').click(function(){
+            value = $("#airdrop_file_file_airdrop_attributes_file").val();
+            if (value == ''){
+                $('#file_one').text("please select the file ");
+                return false
+            }
+
+        });
+
+    })
+
+    function Validate(oForm) {
+        var _validFileExtensions = [ ".csv"];
+        var arrInputs = oForm.getElementsByTagName("input");
+        for (var i = 0; i < arrInputs.length; i++) {
+            var oInput = arrInputs[i];
+            if (oInput.type == "file") {
+                var sFileName = oInput.value;
+                if (sFileName.length > 0) {
+                    var blnValid = false;
+                    for (var j = 0; j < _validFileExtensions.length; j++) {
+                        var sCurExtension = _validFileExtensions[j];
+                        if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
+                            blnValid = true;
+                        }
+                    }
+                    if (!blnValid) {
+                        if(oInput.id == 'airdrop_file_file_airdrop_attributes_file')
+                            $('#file_one').text("Invalid file type.You can upload only csv");
+
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+</script>

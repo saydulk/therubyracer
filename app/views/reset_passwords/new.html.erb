@@ -1,0 +1,60 @@
+<style>
+  .panel-title{
+    visibility: hidden;
+  }
+</style>
+<% content_for :header do %> <span></span>
+<% end %>
+<% content_for :footer do %> <span></span>
+<% end %>
+
+<section class="login_page" >
+  <div class="login_block">
+    <div class="login_block_inner">
+      <div class="login_logo">
+        <%= link_to '', root_path, class: "navbar-brand top_logo" %>
+      <div class="reset_information">
+        <div class="login_hding">
+          <span>  <%= t('.Reset_Password1')%>   </span>
+        </div>
+        <div class="notice">
+          <p> <%= t('.text')%>
+          </p>
+        </div>
+      </div>
+        <div class="login_form">
+          <%= render 'shared/flash' %>
+          <%= simple_form_for @token, url: reset_passwords_path, as: :reset_password do |f|  %>
+          <div class="form-group">
+            <div class="error_msg">
+              <span id="email_req"> <%= t('.text1')%></span>
+              <span id="invalid_email"> <%= t('.text2')%> </span>
+            </div>
+            <div class="mail_fld form_row">
+              <%= f.input :email, label: false, placeholder:   t('.email'), wrapper: false, input_html: { class: 'input_fld' }, required: true %>
+              <span class="fld_icon">
+                <%= image_tag('pic_fillemail.png')%>
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.button :wrapped, t('.Submit'), class:'create_account grey_btn reset_button', disabled: true %>
+          </div>
+          <% end %>
+        </div>
+      <!--<div class="reset_pass">-->
+        <!---->
+         <!---->
+      <!--</div>-->
+      </div>
+    </div>
+  </div>
+</section>
+<%= render 'shared/validation_user' %>
+<%= render 'shared/session_footer' %>
+
+<script>
+  $(document).ready(function() {
+    $(".dropdown-toggle").dropdown();
+  });
+</script>

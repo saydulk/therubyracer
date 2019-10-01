@@ -1,0 +1,92 @@
+<ul class="nav navbar-nav navbar-right back_button_sec">
+  <li><%= link_to t('.back'), main_app.admin_deposits_fiats_path %></li>
+</ul>
+<div class="col-xs-18">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-xs-6 text-right">
+          <label><%= t('.id') %></label>
+        </div>
+        <div class="col-xs-18">
+          <span><%= @fiat_deposit.id %></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 text-right">
+          <label><%= t('.amount') %></label>
+        </div>
+        <div class="col-xs-18">
+          <span> <%= @fiat_deposit.amount %> </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-6 text-right">
+          <label><%= t('.done_at') %></label>
+        </div>
+        <div class="col-xs-18">
+          <span> <%= @fiat_deposit.done_at %> </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-6 text-right">
+          <label><%= t('.reference') %></label>
+        </div>
+        <div class="col-xs-18">
+          <span> <%= @fiat_deposit.fund_uid %> </span>
+        </div>
+      </div>
+
+      <hr class="split">
+      <%# shu = @id_document.name.present?&& @id_document.contact_no.present?&& @id_document.id_document_type && @id_document.id_bill_type.present? && @id_document.id_document_number.present? %>
+      <div class="row">
+        <ul class="withdraw-action" style="padding: 15px 20px;">
+          <%# if @id_document.may_approve? %>
+              <li>
+                <%#= link_to admin_id_document_path(@id_document, approve: 'true'), method: :patch, style: 'color: white;', class: 'approve_link' do %>
+                    <button class="btn btn-primary new1class   <%#= shu.present? ? 'enabled' : 'disabled'%>" id="approve_button">
+
+                      <%#= t('.approve') %>
+                    </button>
+                <%# end %>
+              </li>
+          <%# end %>
+
+          <%# if @id_document.may_reject? %>
+              <li>
+                <%#= link_to admin_id_document_path(@id_document, reject: 'true'), method: :patch, style: 'color: white;'  do %>
+                    <button class="btn btn-danger new1class ">
+                      <%#= t('.reject') %>
+                    </button>
+                <%# end %>
+              </li>
+          <%# end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  is_valid = '<%#=shu %>'
+  if (is_valid== 'false') {
+    $(".approve_link").attr("href", "#")
+  }
+
+  $('.approve_link').click(function(event) {
+    var url = $(this).attr('href');
+    if (url == '#') {
+
+      event.preventDefault();
+
+      return false
+      //i want to prevent
+    } else {
+      //redirect
+    }
+  });
+
+</script>
+
+

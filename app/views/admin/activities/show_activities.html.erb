@@ -1,0 +1,48 @@
+<ul class="nav navbar-nav navbar-right back_button_sec">
+  <li><%= link_to t('actions.back'), main_app.admin_activity_path %></li>
+</ul>
+<div class="activity">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <span><%= "Activities" %>
+        <%= link_to 'Download CSV', admin_single_activity_download_path(format: :csv, id: params[:id]), class: 'pull-right summary_download_btn' %>
+      </span>
+    </div>
+    <div class="panel-body filter_form">
+      <%= user_activity_status(params[:id]).html_safe %>
+    </div>
+    <table id="admin_activity_datatable"class="table" ,data-source="<%= admin_show_activity_path(format: :json) %>">
+      <thead >
+      <tr>
+        <th> IP Address </th>
+        <th> Signin Time </th>
+
+      </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <!--<table class="table">-->
+      <!--&lt;!&ndash;<tr>&ndash;&gt;-->
+        <!--&lt;!&ndash;<th>IP Address</th>&ndash;&gt;-->
+        <!--&lt;!&ndash;<th> Signin Time</th>&ndash;&gt;-->
+
+      <!--&lt;!&ndash;</tr>   &ndash;&gt;-->
+      <!--&lt;!&ndash;<tr>&ndash;&gt;-->
+        <!--&lt;!&ndash;<#% #@member_activities.each do |data| %>&ndash;&gt;-->
+          <!--&lt;!&ndash;<td>&ndash;&gt;-->
+            <!--&lt;!&ndash;<%#= data.ip_address %>&ndash;&gt;-->
+          <!--&lt;!&ndash;</td>&ndash;&gt;-->
+          <!--&lt;!&ndash;<td>&ndash;&gt;-->
+            <!--&lt;!&ndash;<%#= data.created_at %>&ndash;&gt;-->
+          <!--&lt;!&ndash;</td>&ndash;&gt;-->
+          <!--&lt;!&ndash;</tr>&ndash;&gt;-->
+        <!--&lt;!&ndash;<#% end %>&ndash;&gt;-->
+
+        <!--</table>-->
+    <!--<%#= paginate @member_activities %>-->
+  </div>
+
+</div>
+
+

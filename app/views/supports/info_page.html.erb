@@ -1,0 +1,95 @@
+<%= render partial: 'header'%>
+<div class="faq_banner" style="text-align: left; position: relative;">
+  <div class="container">
+    <div class="request_sec tbl_div">
+      <div class="request_left tbl_cell">
+        <ol class="breadcrumb">
+          <li><a href="#"><%= t('.home') %></a></li>
+          <li><svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg></li>
+          <li class="active"> <%= t('.Submit_a_request') %></li>
+        </ol>
+      </div>
+      <div class="request_right tbl_cell">
+        <form role="search" class="search" data-search="" action="/hc/en-us/search" accept-charset="UTF-8" method="get">
+          <input name="utf8" value="✓" type="hidden">
+          <input name="query" id="query" placeholder= <%= t('.search') %> aria-label="Search" type="search">
+        </form>
+      </div>
+    </div>
+
+    <div class="submit_req col-xs-12 col-md-8">
+      <div style="text-align:left;background-color:#FFF7E5;padding:15px;max-width:650px;color:#B48D5F;margin-bottom:15px;font-size:14px;border:1px solid #B48D5F;border-radius:5px;"><%= t('.Tips') %> </div>
+      <h2> <%= t('.Submit_a_request') %></h2>
+      <div class="request_form">
+        <form>
+          <div class="form-group">
+            <label> <%= t('.Please') %></label>
+            <select class="selectpicker">
+              <option value="1"> <%= t('.help') %></option>
+              <option value="2"><%= t('.help1') %></option>
+              <option value="3"> <%= t('.help2') %></option>
+              <option value="4"><%= t('.help3') %> </option>
+              <option value="5"><%= t('.help4') %></option>
+              <option value="6"><%= t('.help5') %></option>
+              <option value="7"><%= t('.help6') %></option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label> <%= t('.email') %><span class="star">*</span></label>
+            <input class="form-control" type="email" placeholder="">
+            <p class="note"><%= t('.text') %></p>
+          </div>
+          <div class="form-group">
+            <label><%= t('.Subject') %> <span class="star">*</span></label>
+            <input class="form-control" type="email" placeholder="">
+          </div>
+          <div class="form-group">
+            <label><%= t('.Description') %><span class="star">*</span></label>
+            <textarea class="form-control" rows="3"></textarea>
+          </div>
+
+          <div class="form-group">
+            <div class="captcha">
+              <%= recaptcha_tags %>
+            </div>
+          </div>
+          <div class="form-group">
+            <button class="submit_btn btn"><%= t('.Sumbit') %></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render partial: 'footer'%>
+
+<script>
+    /* recaptcha */
+    function scaleCaptcha(elementWidth) {
+        // Width of the reCAPTCHA element, in pixels
+        var reCaptchaWidth = 304;
+        // Get the containing element's width
+        var containerWidth = $('.container').width();
+
+        // Only scale the reCAPTCHA if it won't fit
+        // inside the container
+        if (reCaptchaWidth > containerWidth) {
+            // Calculate the scale
+            var captchaScale = containerWidth / reCaptchaWidth;
+            // Apply the transformation
+            // $('.g-recaptcha').css({
+            //     'transform': 'scale(' + captchaScale + ')'
+            // });
+        }
+    }
+
+
+    $(function () {
+        // Initialize scaling
+        scaleCaptcha();
+
+        // Update scaling on window resize
+        // Uses jQuery throttle plugin to limit strain on the browser
+        $(window).resize($.throttle(100, scaleCaptcha));
+    });
+</script>

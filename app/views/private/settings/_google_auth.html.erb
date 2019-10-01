@@ -1,0 +1,42 @@
+<div class="modal fade my_modal" id="two_factor">
+  <%= simple_form_for :settings, url: google_authentication_settings_path, html: { class: 'form-inline' }  do |f| %>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title"><%= current_user.enable? ? t('.disable') :  t('.enable') %> <%= t('.google_title') %></h4>
+        </div>
+        <div class="modal-body">
+          <% unless current_user.otp_module? %>
+            <%#= current_user.email %>
+            <%#= (current_user.provisioning_uri("Zinance.com"+" "+"(#{current_user})")) %>
+            <% qr = RQRCode::QRCode.new(current_user.provisioning_uri("#{request.domain}"+" "+"(#{current_user.email})"), size: 10, level: :h ) %>
+            <div class="qr_tbl">
+              <table class="qr" align="center">
+                <% qr.modules.each_index do |x| %>
+                  <tr>
+                    <% qr.modules.each_index do |y| %>
+                      <% if qr.dark?(x,y) %>
+                        <td class="black"/>
+                      <% else %>
+                        <td class="white"/>
+                      <% end %>
+                    <% end %>
+                  </tr>
+                <% end %>
+              </table>
+            </div>
+          <% end %>
+          <div class='verify_token tbl_div'>
+            <div class='text-center tbl_cell'>
+              <%= f.input_field :otp_code, placeholder: t('.Token_Verify'), class: 'form-control input-lg input_fld' %>
+            </div>
+            <div class="submit_btn_sec tbl_cell">
+              <%= f.submit  t('.update'), class: 'btn btn-lg btn-block btn-primary' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

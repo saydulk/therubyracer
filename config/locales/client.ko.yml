@@ -1,0 +1,329 @@
+ko:
+  js:
+    brand: Crypto Exchange
+    submit: Submit
+    cancel: Cancel
+    confirm: Confirm
+    banks:
+      ab: Axis Bank
+      boi: Bank of India
+      cb: Canara Bank
+      cboi: Central Bank of India
+      fb: Federal Bank
+      icici: ICICI Bank
+      idbi: IDBI Bank
+      iib: IndusInd Bank
+      kb: Kotak Bank
+      psb: Punjab & Sind Bank
+      sbi: State Bank of India
+      sb: Syndicate Bank
+      ubi: Union Bank of India
+      yb: Yes Bank Ltd
+      uco: UCO Bank
+      boc: Bank of America
+      wf:  Wells Fargo
+      cg: Citigroup
+    fund_sources:
+      withdraw_disable:
+        text1: '계정 2단계 보안인증 사용을 권장합니다!'
+        text2: '2단계 보안인증 코드 수신방법을 선택하십시오：'
+        text3: 'Google 인증'
+        text4: 'SMS 인증'
+        text5: '2단계 보안인증을 사용하지 않을 경우의 위험성을 이해합니다.'
+        text6: '나중에 하기'
+
+      manage_bank_account: 계좌 관리
+      manage_bank_account_desc: 편리한 계좌 선택
+      manage_coin_address: 지갑 주소 관리
+      manage_coin_address_desc: 편리한 코인 출금주소 선택
+      bank: 은행
+      account: 계좌
+      label: 레이블
+      address: 주소
+      action: 조치
+      add: 추가
+      remove: 제거
+      default: 기본값
+    funds:
+      deposit: 입금
+      withdraw: 출금
+      deposit_fiat:
+        title: '{{currency}} 입금'
+        description: |
+          <div>아래 정보를 사용하여 귀하의 계정에 입금하십시오. 세부사항은 은행에 문의하여 주시기 바랍니다.</ div>
+          <ol>
+            <li>아래에 제공된 "REFERENCE" 코드를 포함해야 합니다. 이 코드를 통해 귀하의 계정으로의 입금을 확인합니다.</ li>
+            <li>일일 또는 월간 예산 한도를 초과하지 마십시오. 한도를 초과하면 더 높은 한도가 생기거나 금액이 반환 될 때까지 계정이 정지됩니다.</ li>
+            <li>며칠 이내에 동일 금액의 입금이 있을 경우 예금이 누락되거나 지연될 수 있습니다. 해당 경우, 금액을 다르게 하여 입금해주시기 바랍니다.</ li>
+            <li>중요 : 입금하려는 계좌(보내는 쪽)의 이름은 입금계좌를 확인할 때 입력된 이름과 동일해야합니다.</ li>
+          </ol>
+#
+      currency_name:
+        btc: BTC
+        bch: BCH
+        eth: ETH
+        trx: TRX
+        xrp: XRP
+        eos: EOS
+        csc: CSC
+        ipm: IPM
+        ems: EMS
+        ecp+: ECP+
+        fto: FTO
+        usdc: USDC
+        aok: AOK
+        cac+: CAC+
+
+      deposit_btc:
+        title: BTC 입금
+
+      deposit_bch:
+        title: BCH 입금
+
+      deposit_eth:
+        title: ETH 입금
+
+      deposit_trx:
+        title: TRX 입금
+
+      deposit_xrp:
+        title: XRP 입금
+
+      deposit_eos:
+        title: EOS 입금
+
+      deposit_csc:
+        title: CSC 입금
+
+      deposit_ipm:
+        title: IPM 입금
+
+      deposit_ems:
+        title: EMS 입금
+
+      deposit_ecp+:
+        title: ECP+ 입금
+
+      deposit_fto:
+        title: FTO 입금
+
+      deposit_usdc:
+        title: USDC 입금
+
+      deposit_aok:
+        title: AOK 입금
+
+      deposit_cac+:
+        title: CAC+ 입금
+#
+#
+      deposit:
+        note_text: 주의사항
+        first_part: 암호화폐 입금은 즉시 처리됩니다.
+        second_part: 네트워크 확인
+        progress_text:  '입금 후 진행 상황을 확인할 수 있습니다'
+        history: 내역
+        page: 페이지
+
+      deposit_coin:
+        what: "무엇이*"
+        no_address: 주소를 찾을 수 없습니다.
+        total_balance: 총 잔액
+        in_order: 순서대로
+        available_balance: 사용 가능한 잔액
+        important: 중요
+        max: At least
+        send_only: 보내기 전용
+        deposit_address: 이 입금 주소로*
+        other_coin_text: 이 주소로 다른 암호화폐나 토큰을 보내면 입금액이 손실 될 수 있습니다.
+        payment_text: 입금 결제
+        min_withdraw: 최소 출금
+        do_not_withdraw: 크라우드 펀딩 또는 ICO 입금 주소로 바로 전송하지 마십시오. 귀하의 계정에 해당 판매의 토큰이 적립되지 않습니다.
+        withdraw_addres: 출금 주소
+        address: 주소
+        transaction_fee: '거래 수수료：'
+        will_gate: 실 입금액
+        new_address: 새로운 주소
+        confirm_gen_new_address: 새 입금 주소를 생성하시겠습니까?
+        open-wallet: 일반 지갑, 로컬 지갑, 모바일 디바이스 또는 온라인 지갑을 사용하여 지불을 선택하고 전송하십시오.
+        detail: 주소를 지갑에 붙여넣고 입금하고자 하는 금액을 기입, 확인후 전송하십시오.
+        scan-qr: 입금 주소
+
+        after_deposit: 송금을 완료하면 아래에서 새 입금 상태를 확인할 수 있습니다.
+        generate-new: 새 주소 생성
+
+      address:
+        deposit_address: 입금 주소
+        fetching_your: 가져오는 중
+        address_text: 주소
+        minute_text: 정보를 가지고 오기까지 몇 분정도 걸릴 수 있습니다.
+        copy_address: 주소 복사
+        qr_code_text: QR코드 표시
+        address_text1: 주소
+      deposit_history:
+        balance_Available: 사용 가능 잔액
+        title: 입금 내역
+        number: '＃'
+        identification: 식별 코드
+        time: 시간
+        txid: 거래 ID
+        confirmations: 승인
+        from: 송금자*
+        amount: 금액
+        state_and_action: "상태/조치"
+        cancel: 취소
+        no_data: 입금 내역이 없습니다.
+        no_deposit_arrive: 입금액이 확인되지 않았습니다.
+        view_all: 모두 보기
+        address: "주소："
+        txid:  "거래 ID："
+
+        submitting: 제출중
+        cancelled: 취소됨
+        submitted: 제출됨
+        accepted: 수락됨
+        rejected: 거부됨
+        checked: 확인됨
+        warning: 경고
+        suspect: 올바르지 않은 접근
+        collected: 승인됨
+
+      trade:
+        go_to_trade: 거래하기
+        trading_market: 거래 시장 없음
+
+
+      withdraw_btc:
+        title:  BTC출금
+
+      withdraw_bch:
+        title:  BCH출금
+
+      withdraw_eth:
+        title:  ETH출금
+
+      withdraw_trx:
+        title:  TRX출금
+
+      withdraw_xrp:
+        title:  XRP출금
+
+      withdraw_eos:
+        title:  EOS출금
+
+      withdraw_csc:
+        title:  CSC출금
+
+      withdraw_ipm:
+        title: IPM 출금
+
+      withdraw_ems:
+        title: EMS 출금
+
+      withdraw_ecp+:
+        title: ECP+ 출금
+
+      withdraw_FTO:
+        title: FTO 출금
+
+      withdraw_usdc:
+        title: USDC 출금
+
+      withdraw_aok:
+        title: AOk 출금
+
+      withdraw_cac+:
+        title: CAC+ 출금
+
+      withdraw_fiat:
+        title: '{{currency}}출금'
+        intro: 출금은행과 출금액을 선택한 뒤, 계좌번호를 입력하고 제출을 완료하십시오.
+        intro_2: 은행계좌와 이름이 실명인증한 계좌, 이름과 일치해야합니다.
+        attention: "출금 가능 시간：9：00-18：00"
+        withdraw_address: 출금 주소
+        balance: 잔액
+        withdraw_amount: 출금액
+        min: 최소
+        withdraw_all: 전액 출금
+
+      withdraw_coin:
+        what: 무엇?*
+        min: '최소 출금액：'
+        24_with: '24시간 출금 한도'
+        ava: '사용가능：'
+        enter: 금액 입력
+        not: 잔액 부족
+        trans: '수수료：'
+        trans1: '수수료：'
+        you: '실 출금액：'
+        max1n: At most
+        intro: 주소와 금액을 입력 후 양식을 제출하십시오. 10분 내로 처리됩니다.
+        label: 레이블
+        balance: 잔액
+        amount: 금액
+        manage_withdraw: 주소 관리
+        withdraw_all: 전액 출금
+        commission_fee: 수수료
+        balance_Total: 총 잔액
+        order_in: 사용중 금액
+        balance_available: 사용 가능한 잔액
+        important: 중요
+        msg1: 이메일
+        msg2: 과
+        msg3: 보인인증
+        msg4: 이 필요합니다.
+        text: '크라우드펀딩 또는 ICO 모금 주소로 직접 출금하지 마십시오. 귀하의 계정에 해당 판매의 토큰이 적립되지 않습니다'
+        address_withdrawal: 출금 주소
+        address_payment_id: 출금 ID
+        no_payment_id: 결제 ID가 없습니다.
+        note_Please: 주의사항
+        text1: 암호화폐는 즉시 출금됩니다.
+        text2: 네트워크 확인
+        text3: 출금후 진행상황을 확인할 수 있습니다.
+        hist: 내역
+        page: 페이지
+      withdraw_history:
+        title: 내역
+        number: 번호
+        withdraw_time: 시간
+        withdraw_account: 출금 계좌
+        withdraw_address: 주소
+        withdraw_amount: 출금액
+        actual_amount: 실 출금액
+        fee: 수수료
+        miner_fee: 수수료
+        state_and_action: "상태/조치"
+        cancel: 취소
+        no_data: "인출 내역이 없습니다."
+        view_all: 전체 보기
+        not_receive_email: 이메일을 받지 못했습니다.
+        submitting: 제출중
+        submitted: 제출됨
+        rejected: 거부됨
+        accepted: 수락됨
+        suspect: 올바르지 않은 접근
+        processing: 처리중
+        coin_ready: 암호화폐 준비*
+        coin_done: 암호화폐 완료*
+        done: 완료
+        canceled: 취소됨
+        failed: 실패함
+        confirming: 확인중
+        approved: 승인됨
+    markets:
+      market_list:
+        all: 모든 마켓
+        btc: BTC 마켓
+        bch: BCH 마켓
+        eth: ETH 마켓
+        trx: TRX 마켓
+        xrp: XRP 마켓
+        eos: EOS 마켓
+        csc: CSC 마켓
+        ipm: IPM 마켓
+        ems: EMS 마켓
+        ecp+: ECP+ 마켓
+        fto: FTO 마켓
+        usdc: USDC 마켓
+        aok: AOK 마켓
+        cac+: CAC+ 마켓

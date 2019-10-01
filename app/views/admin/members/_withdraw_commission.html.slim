@@ -1,0 +1,33 @@
+.activity
+  .panel.panel-primary
+    .panel-heading.new1change
+      span Withdraw Commissions
+
+    table.table
+      thead
+        tr
+          th Currency
+          th.text-center Total
+          th.text-center Withdraw
+          th.text-center Remaining
+          th.text-center Actions
+      tbody
+        - commissions.each do |object|
+
+          - unless object.currency.nil?
+            - precision, min_amount = get_currency_precision(object)
+            - commission_amt = calculate_commission(object.currency.value,object.modifiable_type, commission_list).round(precision)
+            - is_withdrawable = object.total_fees - commission_amt < min_amount ? 'disabled' : 'enabled'
+            tr
+              td = object.currency.upcase
+              td.min_amount = min_amount
+              td.text-center = object.total_fees.round(precision)
+              td.text-center = commission_amt.round(precision)
+              td.text-center = object.total_fees - commission_amt
+              td.text-center
+                = link_to 'Withdraw', '', class: "btn btn-success btn-xs text-center amount #{is_withdrawable} ", title: 'Withdraw', data: {toggle: 'modal', target: "#commission_#{object.id}"}
+
+            = render partial: 'commission', locals: {object: object, amount: (object.total_fees - commission_amt), precision: precision, min_amount: min_amount}
+
+
+

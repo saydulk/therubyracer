@@ -1,0 +1,138 @@
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  min-height: 100%;
+  position: relative;
+}
+body {
+  padding-bottom: 54px;
+  @include breakpoint(xlarge) {
+    padding-bottom: 114px;
+  }
+}
+.footer {
+  background-color: $black-color;
+  bottom: 0;
+  /* height: 56px; */
+  position: absolute;
+  width: 100%;
+}
+
+/* Sticky footer styles Ends
+-------------------------------------------------- */
+
+.footer {
+  background-color: $black-color;
+  .footer_links_sec {
+    .footer_links {
+      @include breakpoint(xlarge) {
+        padding:0px;
+      }
+      @include breakpoint(medium) {
+        text-align: center;
+      }
+      @include breakpoint(x-small) {
+        padding:0px 10px;
+      }
+      p {
+        color: #9a9b9e;
+        font-size: 13px;
+        vertical-align: middle;
+        padding:18px 0px;
+        @include breakpoint(medium) {
+          padding:12px 0px;
+        }        
+      }
+      .footer_quick_links {        
+        li {
+          display: inline-block;
+          a {
+            color: #bfbfbf;
+            font-size: 14px;
+            display: inline-block;
+            padding:18px 10px;
+            text-decoration: none;
+            @include breakpoint(xlarge) {
+              padding:18px 4px;
+            }
+            @include breakpoint(medium) {
+              padding:0px 10px;
+            }
+            &:hover, &:focus, &:active, &.active {
+              color: $base-color;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      .top_social_links {
+        li {
+          padding:18px 5px;
+          @include breakpoint(medium) {
+            padding:10px 5px 8px;
+          }
+          &:last-child {
+            margin-right: 0px;
+          }
+          a {       
+            margin-bottom: -5px;  
+            @include breakpoint(medium) {
+              margin-bottom: 0px;  
+            }   
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Responsive Footer Style */
+
+@include breakpoint(xlarge) {         // Below 1199px
+	
+}
+
+@include breakpoint(medium) {         // Below 991px  
+}
+
+@include breakpoint(small) {         // Below 768px
+  body {
+    padding-bottom: 105px;
+  }
+  .footer {
+    .footer_links_sec {
+      .footer_links {
+        .footer_quick_links {
+          li {
+            a {
+              padding: 0px 7px;
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+	
+}
+@include breakpoint(x-small) {         // Below 480px
+  body {
+    padding-bottom: 134px;
+  }
+  .footer {
+    .footer_links_sec {
+      .footer_links {
+        .footer_quick_links {
+          li {
+            a {
+              padding: 0 4px 5px;
+            }
+          }
+        }
+      }
+    }
+  }  
+}
+

@@ -1,0 +1,3 @@
+window.location.reload();
+$('#transfer-withdrawl').html('');
+$('#transfer-withdrawl').append("<%= j render(:partial => 'transfer_withdrawl',locals: { :transfers => @transfer })  %>");

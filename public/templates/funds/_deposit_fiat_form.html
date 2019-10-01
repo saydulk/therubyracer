@@ -1,0 +1,29 @@
+<form id="deposit_fiat" ng-controller="DepositsController as depositsCtrl" ng-submit="deposit_fiat(currency)">
+
+    <div class="form-group">
+        <label for="amount"> Amount:</label>
+        <input type="text" class="form-control" id="amount" ng-model="amount_deposit"  ng-keyup="valid_number()" required>
+    </div>
+
+    <div class="form-group">
+        <label for="transaction_date"> Transaction Date:</label>
+        <datepicker>
+            <input ng-model="transaction_date" type="text" class="form-control view-calender " id="transaction_date" />
+        </datepicker>
+        <span class="color:red"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="transaction_id"> Transaction ID:</label>
+        <input type="text" class="form-control" id="transaction_id" ng-model="transaction_id" required>
+        <span class="color:red"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="file_upload"> File Upload: </label>
+        <input type="file" fileread="transaction_file" id="file_upload" required/>
+    </div>
+    <div class="form-submit col-sm-12">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>

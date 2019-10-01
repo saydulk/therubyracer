@@ -1,0 +1,64 @@
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<div class="dropdown all_currencies_dropdown">
+    <button class="btn btn-primary dropdown-toggle text" type="button" data-toggle="dropdown">Dropdown Example
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu all_currencies">
+       <li ng-repeat="account in accounts | orderBy : 'priority'" ng-class="{selected: accountsCtrl.isSelected(account.currency),
+        'deposit-now': accountsCtrl.isDeposit(),
+        'withdraw-now': accountsCtrl.isWithdraw(),
+        'commission-now': accountsCtrl.isCommission(),
+        'hide_withdraw' : accountsCtrl.isWithdraw(),
+        'hide-deposit': accountsCtrl.isDeposit(),
+        'hide-commission': accountsCtrl.isCommission()
+      }"
+          data-currency="{{account.currency}}">
+
+            <p class="currency-deposit hide-deposit"><a href="#" style="display:block;padding:10px 15px;" ng-click="accountsCtrl.deposit(account); $event.preventDefault()" >
+              <span class="c_name cur_name"><img class="cur_icon" ng-src="/icon-{{account.currency}}.png" alt="" width="20px"> {{ account.currency | uppercase }}</span></a>
+            </p>
+
+            <p class="currency-withdraw hide_withdraw"><a style="display:block;padding:10px 15px;" href="#" ng-click="accountsCtrl.withdraw(account); $event.preventDefault()" >
+              <span class="c_name"><img class="cur_icon" ng-src="/icon-{{account.currency}}.png" alt="" width="20px"> {{ account.currency | uppercase }}</span></a>
+            </p>
+
+            <p class="currency-commission hide-commission"><a href="#" style="display:block;padding:10px 15px;" ng-click="accountsCtrl.commission(account); $event.preventDefault()" >
+              <span class="c_name"><img class="cur_icon" ng-src="/icon-{{account.currency}}.png" alt="" width="20px"> {{ account.currency | uppercase }}</span></a>
+            </p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+<script>
+
+$('.dropdown-menu').click(function(){
+    $('.text').html($('.all_currencies .selected .cur_name').html());
+});
+$(document).ready(function(){
+
+ $('.text').html($('.all_currencies .selected .cur_name').html());
+});
+
+</script>
+
+<style>
+  .all_currencies
+  {
+   height: 422%;
+   overflow: auto;
+  }
+.all_currencies li.hide_withdraw .hide_withdraw
+{
+  display:none;
+}
+.all_currencies li.hide-deposit .hide-deposit
+{
+  display:none;
+}
+.all_currencies li.hide-commission .hide-commission
+{
+  display:none;
+}
+</style>

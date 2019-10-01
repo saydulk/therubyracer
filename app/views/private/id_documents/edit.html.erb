@@ -1,0 +1,414 @@
+<style>
+  .panel-body {
+    padding: 0px;
+  }
+  .Setting_page .panel-heading {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .simple_form  {
+    padding: 0px;
+  }
+</style>
+<div class="container">
+  <div class="state clearfix">
+    <div class="row">
+      <div class="col-xs-12 text-left state_hding" style="margin-bottom: 20px;">
+        <h2><%= t('.status') %> : <span style="color: #999; font-size: 18px;"><%= t(".state_#{@id_document.aasm_state}") %></span></h2>
+      </div>
+    </div>
+  </div>
+
+  <%= simple_form_for @id_document, :html=>{:onsubmit=>"return Validate(this);"} do |f| %>
+
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="row">
+          <div class="col-lg-4 form-group">
+            <%= f.input :name, label: t('.name') ,  :input_html => { :class => 'name_validate target ' } %>
+            <span id="name_error" style="color:#a94442"></span>
+          </div>
+
+          <div class="col-lg-4 form-group">
+            <%= f.input :middle_name, label: t('.middle_name') , :input_html => { class: 'name_validate middle_name'} %>
+            <span id="name_error1" style="color:#a94442"></span>
+          </div>
+
+          <div class="col-lg-4 form-group">
+            <%= f.input :last_name, label: t('.last_name') , :input_html => { :class => 'name_validate last_name'} %>
+            <span id="name_error2" style="color:#a94442"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-lg-12">
+      <div class="row">
+        <%= f.input :gender,label: t('.gender'), as: :radio_buttons, collection: enum_options_for_select(IdDocument, :gender), label_method: :second, value_method: :first %>
+      </div>
+    </div>
+
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="row">
+          <div class="col-lg-4 form-group">
+            <label style="margin-bottom: 0px; padding: 7px 0px 6px; font-weight: normal;"><%= t('.birth_date') %> </label>
+            <div class="cal_fld">
+              <input name="id_document[birth_date]" id="search" class="form-control view-calender age_diff" placeholder="yyyy-mm-dd" type="text">
+              <span class="fa fa-calendar"></span>
+            </div>
+            <span id="age_error" style="color:#a94442"></span>
+
+
+          </div>
+          <div class="col-lg-4 form-group">
+            <label style="margin-bottom: 0px; padding: 7px 0px 6px; font-weight: normal;"><%= t('.code') %> </label>
+            <%= f.select :country_code, get_all_country_codes, {selected: f.object.country_code || (request.location.country_code || ENV['TWILLIO_REGION']) }, {class: 'form-control', label: t('.contact_no'), style: 'height: 36px;'} %>
+          </div>
+          <div class="col-lg-4 form-group">
+            <%= f.input :contact_no, label: t('.contact_no'), input_html: {class: 'contact_validate' , type: 'text', value: contact_no_without_code(f.object.contact_no, f.object.country_code)},  required: true %>
+            <span id="contact_error" style="color:#a94442"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="row">
+          <div class="col-lg-4 form-group">
+            <%= f.input :city, label: t('.city'), :input_html => { :class => 'city_validate target4' ,} %>
+            <span id="name_error4" style="color:#a94442"></span>
+          </div>
+          <div class="col-lg-4 form-group">
+            <%= f.input :country, as: :country, label: t('.country') %>
+          </div>
+          <div class="col-lg-4 form-group">
+            <%= f.input :zipcode, label: t('.zipcode') ,:input_html => { :class => 'zip_validate target5' } %>
+            <span id="name_error5" style="color:#a94442"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-12 form-group">
+      <div class="row">
+        <%= f.input :address,:input_html => { :class => ' target3' ,}, label: t('.address') %>
+        <span id="name_error3" style="color:#a94442"></span>
+      </div>
+    </div>
+
+
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="row">
+          <div class="col-lg-6 form-group">
+            <div class="row">
+              <div class="col-lg-12 form-group">
+                <%= f.input :id_document_number, label: t('.id_document_number'),:input_html => { :class => ' target6' } %>
+                <span id="name_error6" style="color:#a94442"></span>
+              </div>
+              <div class="col-lg-12 upload_files">
+                <%= f.simple_fields_for :id_document_file, @id_document.id_document_file || @id_document.build_id_document_file do |p| %>
+                  <%= p.input :file, as: :file, label: t('.id_document_file') %>
+                <% end %>
+              </div>
+              <div class="col-lg-12 uploaded_imgs ">
+                <%  if !@id_document.id_document_file.file.present? %>
+
+                  <%= image_tag('noimage.png', width:  '100px', height: 'auto', class:'thumb')%>
+                    <%= t('.msg12') %>
+                <% else %>
+                  <img src="<%=@id_document.id_document_file.file.url%>" align="middle"  style="float:left;width:100px;height:100px; ">
+                <% end %>
+              </div>
+              <span id="file_one" style="color:#a94442"></span>
+            </div>
+          </div>
+          <div class="col-lg-6 form-group">
+            <div class="row">
+              <div class="col-lg-12">
+                <%= f.input :id_bill_type, prompt: t('actions.select'), label: t('.id_bill_type') %>
+                <span id="proof_error"  style="color:#a94442"></span>
+              </div>
+              <div class="col-lg-12 form-group">
+                <div class="row">
+                  <div class="col-lg-12 upload_files">
+                    <%= f.simple_fields_for :id_bill_file, @id_document.id_bill_file || @id_document.build_id_bill_file do |p| %>
+                      <%= p.input :file, as: :file, label: t('.id_bill_file') %>
+                    <% end %>
+                  </div>
+                  <div class="col-lg-12 uploaded_imgs">
+                    <% if !@id_document.id_bill_file.file.present? %>
+                      <%= image_tag('noimage.png', width: '100px', height: 'auto', class:'thumb')%>
+
+                        <%=  t('.msg12') %>
+                    <% else %>
+                      <img src="<%=@id_document.id_bill_file.file.url%>" align="middle"  style="float:left;width:100px;height:100px; ">
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+              <span id="file_two" style="color:#a94442"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-12">
+      <div class="row">
+        <%= f.button :wrapped, cancel: settings_path %>
+      </div>
+    </div>
+
+  <% end %>
+
+  <% content_for :guide do %>
+    <p class="text-warning">
+      <%= t('.warning') %>
+    </p>
+  <% end %>
+</div>
+
+<script>
+
+    $(document).ready(function(){
+        $('.view-calender').datepicker({
+            format: 'yyyy-mm-dd',
+            endDate: new Date(),
+            autoclose: true
+        });
+
+        $('.view-calender').datepicker('setDate', '<%= @id_document.birth_date %>')
+
+        $('.fa-calendar').click(function() {
+            $(this).siblings().focus()
+        });
+
+        $(".contact_validate").keyup(function() {
+            var node = $(this);
+            node.val(node.val().replace(/[^0-9]/g,'') );
+            if($(this).val().length == 0)
+                $('#contact_error').text("<%= t('.contact_blank') %>");
+            else
+                $('#contact_error').text("");
+        });
+
+
+
+        $("#id_document_id_document_type").change(function() {
+            if($(this).val() == "")
+                $('#doc_type_error_msg').text("<%= t('.id_document_blank') %>")
+            else
+                $('#doc_type_error_msg').text('')
+        });
+
+        $("#id_document_id_bill_type").change(function() {
+            if($(this).val() == "")
+                $('#proof_error').text("<%= t('.proof_residence_blank') %>")
+            else
+                $('#proof_error').text('')
+        });
+
+
+        $('input.required, #id_document_contact_no, select.required').each(function( index ) {
+            $(this).on('focus', function(){
+                $($(this).parent().siblings()[1]).hide()
+            })
+        });
+        window.history.pushState('page2', 'Title', '/id_document/edit');
+
+        $('.target').keyup(function() {
+            var node = $(this);
+            node.val(node.val().replace(/[^a-zA-Z\-]/g,'') );
+            var maxChars = 30;
+            var length = $(this).val().length;
+            if ( length> maxChars) {
+                $(this).val($(this).val().substr(0, maxChars));
+            }
+            else if( length > 0 &&  length <= 30 )
+                $('#name_error').text("");
+            else
+                $('#name_error').text("<%= t('.name_blank') %>");
+        });
+        $('.middle_name').keyup(function() {
+            var node = $(this);
+            node.val(node.val().replace(/[^a-zA-Z\-]/g,'') );
+        });
+        $('.last_name').keyup(function() {
+            var node = $(this);
+            node.val(node.val().replace(/[^a-zA-Z\-]/g,'') );
+        });
+        $('.age_diff').change(function() {
+             select_value = new Date($(this).val())
+             current_datetime = new Date();
+             diff_date = Math.floor((Date.UTC(current_datetime.getFullYear(), current_datetime.getMonth(), current_datetime.getDate()) - Date.UTC(select_value.getFullYear(), select_value.getMonth(), select_value.getDate()) ) /(1000 * 60 * 60 * 24));
+             age = diff_date/365
+            if (age < 18){
+                $('#age_error').text("<%= t('.age') %>");
+                $(this).val('');
+            }
+            else
+                $('#age_error').text("");
+        });
+
+
+        $('.city_validate').keyup(function() {
+            var node = $(this);
+            node.val(node.val().replace(/[^aA-zZ's\-  ' ']/g, ''));
+            var maxChars = 30;
+            if ($(this).val().length > maxChars) {
+                $(this).val($(this).val().substr(0, maxChars));
+                $('#name_error5').text('')
+            }
+            else {
+                (length > 0 && length <= 15)
+                $('#name_error5').text("")
+            }
+        });
+
+        $(".target3").keyup(function() {
+            $('#name_error3').text()
+            var maxChars = 300;
+            if ($(this).val().length > maxChars) {
+                $(this).val($(this).val().substr(0, maxChars));
+                $('#name_error3').text("<%= t('.address_length') %>");
+            }
+            else{( length > 0 &&  length <= 300 )
+                $('#name_error3').text("")
+            }
+        });
+
+        $(".target5").keyup(function() {
+
+            var maxChars = 15;
+            if ($(this).val().length > maxChars) {
+                $(this).val($(this).val().substr(0, maxChars));
+                $('#name_error5').text('')
+            }
+            else{ ( length > 0 &&  length <= 15 )
+                $('#name_error5').text("")
+            }
+        });
+
+        $(".target6").keyup(function() {
+            $('#name_error6').text()
+            var minChars = 6;
+            var maxChars = 15;
+            var length = $(this).val().length;
+            if ( length < minChars) {
+                $('#name_error6').text(" <%= t('.id_document_min') %>")
+            }
+//            else if( length >= 6 &&  length <= 15 )
+            else if( length >= 6 )
+                $('#name_error6').text("");
+            else
+                $(this).val($(this).val().substr(0,30));
+        });
+
+
+        $(".zip_validate").bind("keypress", function (event) {
+            if (event.charCode!=0) {
+                var regex = new RegExp("^[a-zA-Z0-9]+$");
+                var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+                if (!regex.test(key)) {
+                    event.preventDefault();
+                    return false;
+                }
+            }
+        });
+
+    });
+
+    function Validate(oForm) {
+        $('#file_one').text("");
+        $('#file_two').text("");
+        $('#doc_type_error_msg').text('');
+        $('#contact_error').text();
+        $('#name_error6').text();
+        $('#doc_type_error_msg').text()
+
+        if($('#id_document_name').val().length == 0){
+            $('#name_error').text("<%= t('.name_blank') %>")
+            return false
+        }
+
+        if($("#id_document_contact_no").val().length == 0){
+            $('#contact_error').text("<%= t('.contact_blank') %>");
+            return false;
+        }
+
+        if($('#id_document_id_document_type').val() == ""){
+            $('#doc_type_error_msg').text("<%= t('.id_document_blank') %>")
+            return false
+        }
+
+        if($('#id_document_id_document_number').val().length == 0){
+            $('#name_error6').text("<%= t('.id_doc_blank') %>");
+            return false
+        }
+
+        if($('#id_document_id_document_number').val().length < 6){
+            $('#name_error6').text("<%= t('.id_document_min') %> ")
+            return false;
+        }
+
+        if($('#id_document_id_bill_type').val() == ""){
+            $('#proof_error').text('<%= t('.proof_residence_blank') %>');
+            return false
+        }
+
+
+        var _validFileExtensions = [".jpg", ".jpeg", ".gif", ".png", ".pdf"];
+        var arrInputs = oForm.getElementsByTagName("input");
+        for (var i = 0; i < arrInputs.length; i++) {
+            var oInput = arrInputs[i];
+            if (oInput.type == "file") {
+                var sFileName = oInput.value;
+                if (sFileName.length > 0) {
+                    var blnValid = false;
+                    for (var j = 0; j < _validFileExtensions.length; j++) {
+                        var sCurExtension = _validFileExtensions[j];
+                        if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
+                            blnValid = true;
+                        }
+                    }
+                    if (!blnValid) {
+                        if(oInput.id == 'id_document_id_document_file_attributes_file')
+                            $('#file_one').text("<%= t('.file_one')%>");
+                        if(oInput.id == 'id_document_id_bill_file_attributes_file')
+                            $('#file_two').text("<%= t('.file_one')%>");
+                        return false;
+                    }
+                    if(allow_file_size('id_document_id_document_file_attributes_file') == false){
+                        $('#file_one').text("<%= t('.file_size')%>");
+                        return false;
+                    }
+                    if(allow_file_size('id_document_id_bill_file_attributes_file') == false){
+                        $('#file_two').text("<%= t('.file_size')%>");
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+
+    function allow_file_size(file_id) {
+        // size in KB
+        limit_file_size = 1024
+        file_input = document.getElementById(file_id).files
+        if(file_input.length == 0)
+            return true;
+        current_size = file_input[0].size / 1024
+        if( current_size <= limit_file_size)
+            return true
+        else
+            return false
+    }
+</script>
+
+
+

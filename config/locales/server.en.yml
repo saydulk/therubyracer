@@ -1,0 +1,3773 @@
+en:
+  errors:
+      messages:
+        min_size_error: " size should be greater than %{min_size}"
+        max_size_error: " size should be less than %{max_size}"
+        content_type_whitelist_error: "You are not allowed to upload files,allowed types: '.jpg', '.jpeg', '.gif', '.png',"
+  activerecord:
+    error:
+      messages:
+        condition: "Conditions must be accepted"
+    enums:
+      id_document:
+        gender:
+          Male: "Male"
+          Female: "Female"
+          Other: "Other"
+    models:
+      api_tokens: API Token
+      trade: Trades
+      order: Orders
+      order_bid: BID
+      order_ask: ASK
+      withdraw: Withdraw
+      deposit: Deposit
+      payment_transaction: Payment
+      id_document: ID Document
+      statistic/orders_grid: Orders Stat
+      statistic/trades_grid: Trading Stat
+      statistic/members_grid: Members Stat
+      statistic/deposits_grid: Deposits Stat
+      statistic/withdraws_grid: Withdraws Stat
+      admin/deposits_grid: Deposits
+      admin/withdraws_grid: Withdraws
+      deposits/bank: Deposit Bank
+      withdraws/bank: Withdraw Bank
+      withdraws/satoshi: Withdraw
+      withdraws/ripple: Withdraw
+    attributes:
+      api_token:
+        access_key: Access Key
+        trusted_ip_list: IP Whitelist
+        ip_whitelist: IP Whitelist
+        label: Label
+        actions: Actions
+      fund_source:
+        address: Address
+        category: Category
+        label: Label
+      account:
+        currency: Currency
+        currency_text: Currency
+        balance_and_locked: 'Balance / Locked'
+        balance: Balance
+        locked: Frozen
+      deposit:
+        state: State
+        tx_id: TxID
+        member_id: Member ID
+        created_at: Submitted at
+        address: Address
+        amount: Amount
+        done_at: Completed at
+        sn: SN
+      withdraw:
+        id: ID
+        sn: SN
+        withdraw_id: ID
+        created_at: Created At
+        done_at: Done At
+        sum: Sum
+        fee: Fee
+        currency: Currency
+        amount: Amount
+        address: Address
+        state: Status
+        state_text: Status
+        tx_id: TxID
+        fund_source_id: Withdraw address
+        detail: Detail
+      account_version:
+        id: ID
+        locked: Forzen
+        amount: Amount
+        balance: Balance
+        reason: Reason
+        reason_text: Reason
+        modifiable_id: LINK ID
+        modifiable_type: LINK
+        created_at: Created At
+        in: Income
+        out: Expenses
+        fee: Fee
+      trade:
+        bid: Bid
+        ask: Ask
+        fee: Fee
+        price: Strike Price
+        volume: Strike Volume
+        category: 'Bid/Ask'
+        order: Order
+      order:
+        bid: Bid
+        ask: Ask
+        price: Price
+        total: Total
+        volume: Volume
+        origin_volume: Volume
+        sum: Sum
+        category: 'Bid/Ask'
+        kind: Kind
+        at: At
+        id: ID
+        state: State
+        operation: Operation
+      payment_transaction:
+        at: Date Time
+        txid: Transaction ID
+        amount: Amount
+        confirmations: Confirmations
+        state: State
+        state_done: Done
+        state_wait: Wait
+      member:
+        id: ID
+        name: Real Name
+        created_at: Register At
+        sn: SN
+        id_document_number: Id Document Number
+        id_document_verified?: "Id Document Verified?"
+      withdraws/bank:
+        id: ID
+        member_name: Member
+        currency_obj_key_text: Currency
+        state_and_actions: 'State/Action'
+        fund_source: Bank
+        fund_extra: Bank
+        fund_extra_text: Bank
+        fund_uid: Bank Account
+        sum: Amount
+        fee: Fee
+        amount: Amount
+        remark: Remark
+        created_at: Created At
+      deposits/satoshi:
+        created_at: Created At
+        txid: Transaction ID
+        amount: Amount
+        confirmations: Confirmation
+        aasm_state_text: State
+      deposits/bitcoin_cash:
+        created_at: Created At
+        txid: Transaction ID
+        amount: Amount
+        confirmations: Confirmation
+        aasm_state_text: State
+      deposits/ethereum:
+        created_at: Created At
+        txid: Transaction ID
+        amount: Amount
+        confirmations: Confirmation
+        aasm_state_text: State
+      deposits/tronix:
+        created_at: Created At
+        txid: Transaction ID
+        amount: Amount
+        confirmations: Confirmation
+        aasm_state_text: State
+      deposits/ripple:
+        created_at: Created At
+        txid: Transaction ID
+        amount: Amount
+        confirmations: Confirmation
+        aasm_state_text: State
+      deposits/eos_token:
+        created_at: Created At
+        txid: Transaction ID
+        amount: Amount
+        confirmations: Confirmation
+        aasm_state_text: State
+      deposits/chelscoin:
+        created_at: Created At
+        txid: Transaction ID
+        amount: Amount
+        confirmations: Confirmation
+        aasm_state_text: State
+      deposits/impereum:
+        created_at: Created At
+        txid: Transaction ID
+        amount: Amount
+        confirmations: Confirmation
+        aasm_state_text: State
+      deposits/ems_token:
+        created_at: Created At
+        txid: Transaction ID
+        amount: Amount
+        confirmations: Confirmation
+        aasm_state_text: State
+      deposits/ecpplus_token:
+        created_at: Created At
+        txid: Transaction ID
+        amount: Amount
+        confirmations: Confirmation
+        aasm_state_text: State
+      deposits/fto_token:
+        created_at: Created At
+        txid: Transaction ID
+        amount: Amount
+        confirmations: Confirmation
+        aasm_state_text: State
+      deposits/usdc:
+        created_at: Created At
+        txid: Transaction ID
+        amount: Amount
+        confirmations: Confirmation
+        aasm_state_text: State
+      deposits/aokey7_token:
+        created_at: Created At
+        txid: Transaction ID
+        amount: Amount
+        confirmations: Confirmation
+        aasm_state_text: State
+      deposits/cacplus_token:
+        created_at: Created At
+        txid: Transaction ID
+        amount: Amount
+        confirmations: Confirmation
+        aasm_state_text: State  
+      withdraws/satoshi:
+        id: ID
+        member_name: Account
+        currency_obj_key_text: Currency
+        state_and_actions: 'State/Action'
+        fund_extra_text: Withdraw Label
+        fund_extrat: Withdraw Label
+        fund_source: Bank
+        fund_uid: Account
+        created_at: Created At
+        sum: Amount
+        amount: Amount
+        remark: Remark
+        fee: Fee
+      withdraws/bitcoin_cash:
+        id: ID
+        member_name: Account
+        currency_obj_key_text: Currency
+        state_and_actions: 'State/Action'
+        fund_extra_text: Withdraw Label
+        fund_extrat: Withdraw Label
+        fund_source: Bank
+        fund_uid: Account
+        created_at: Created At
+        sum: Amount
+        amount: Amount
+        remark: Remark
+        fee: Fee
+      withdraws/ethereum:
+        id: ID
+        member_name: Account
+        currency_obj_key_text: Currency
+        state_and_actions: 'State/Action'
+        fund_extra_text: Withdraw Label
+        fund_extrat: Withdraw Label
+        fund_source: Bank
+        fund_uid: Account
+        created_at: Created At
+        sum: Amount
+        amount: Amount
+        remark: Remark
+        fee: Fee
+      withdraws/tronix:
+        id: ID
+        currency_obj_key_text: Currency
+        state_and_actions: 'State/Action'
+        fund_extra_text: Withdraw Label
+        fund_extrat: Withdraw Label
+        fund_source: Bank
+        fund_uid: Account
+        created_at: Created At
+        sum: Amount
+        amount: Amount
+        remark: Remark
+        fee: Fee
+      withdraws/ripple:
+       id: ID
+       currency_obj_key_text: Currency
+       state_and_actions: State/Action
+       fund_extra_text: Withdraw Label
+       fund_extrat: Withdraw Label
+       fund_source: Bank
+       fund_uid: Account
+       created_at: Created At
+       sum: Amount
+       amount: Amount
+       remark: Remark
+       fee: Fee
+      withdraws/eos_token:
+       id: ID
+       currency_obj_key_text: Currency
+       state_and_actions: State/Action
+       fund_extra_text: Withdraw Label
+       fund_extrat: Withdraw Label
+       fund_source: Bank
+       fund_uid: Account
+       created_at: Created At
+       sum: Amount
+       amount: Amount
+       remark: Remark
+       fee: Fee
+      withdraws/chelscoin:
+        id: ID
+        currency_obj_key_text: Currency
+        state_and_actions: State/Action
+        fund_extra_text: Withdraw Label
+        fund_extrat: Withdraw Label
+        fund_source: Bank
+        fund_uid: Account
+        created_at: Created At
+        sum: Amount
+        amount: Amount
+        remark: Remark
+        fee: Fee
+      withdraws/impereum:
+        id: ID
+        currency_obj_key_text: Currency
+        state_and_actions: State/Action
+        fund_extra_text: Withdraw Label
+        fund_extrat: Withdraw Label
+        fund_source: Bank
+        fund_uid: Account
+        created_at: Created At
+        sum: Amount
+        amount: Amount
+        remark: Remark
+        fee: Fee
+      withdraws/ems_token:
+        id: ID
+        currency_obj_key_text: Currency
+        state_and_actions: State/Action
+        fund_extra_text: Withdraw Label
+        fund_extrat: Withdraw Label
+        fund_source: Bank
+        fund_uid: Account
+        created_at: Created At
+        sum: Amount
+        amount: Amount
+        remark: Remark
+        fee: Fee
+      withdraws/ecpplus_token:
+        id: ID
+        currency_obj_key_text: Currency
+        state_and_actions: State/Action
+        fund_extra_text: Withdraw Label
+        fund_extrat: Withdraw Label
+        fund_source: Bank
+        fund_uid: Account
+        created_at: Created At
+        sum: Amount
+        amount: Amount
+        remark: Remark
+        fee: Fee
+      withdraws/usdcoin:
+        id: ID
+        currency_obj_key_text: Currency
+        state_and_actions: State/Action
+        fund_extra_text: Withdraw Label
+        fund_extrat: Withdraw Label
+        fund_source: Bank
+        fund_uid: Account
+        created_at: Created At
+        sum: Amount
+        amount: Amount
+        remark: Remark
+        fee: Fee
+      withdraws/fto_token:
+        id: ID
+        currency_obj_key_text: Currency
+        state_and_actions: State/Action
+        fund_extra_text: Withdraw Label
+        fund_extrat: Withdraw Label
+        fund_source: Bank
+        fund_uid: Account
+        created_at: Created At
+        sum: Amount
+        amount: Amount
+        remark: Remark
+        fee: Fee
+      withdraws/aokey7_token:
+        id: ID
+        currency_obj_key_text: Currency
+        state_and_actions: State/Action
+        fund_extra_text: Withdraw Label
+        fund_extrat: Withdraw Label
+        fund_source: Bank
+        fund_uid: Account
+        created_at: Created At
+        sum: Amount
+        amount: Amount
+        remark: Remark
+        fee: Fee
+      withdraws/cacplus_token:
+        id: ID
+        currency_obj_key_text: Currency
+        state_and_actions: State/Action
+        fund_extra_text: Withdraw Label
+        fund_extrat: Withdraw Label
+        fund_source: Bank
+        fund_uid: Account
+        created_at: Created At
+        sum: Amount
+        amount: Amount
+        remark: Remark
+        fee: Fee
+
+    errors:
+      models:
+        identity:
+          attributes:
+            email:
+              invalid_email: 'email is invalid'
+              blank: email can't be blank
+              some:
+            password_digest:
+              blank: password can't be blank
+            password:
+              invalid_password: Infdfvalid Password
+              blank: password can't be blank
+              too_short: "must contain at least eight characters, including one alphabet, one number and one special character"
+              invalid: "must contain at least eight characters, including one alphabet, one number and one special character."
+            password_confirmation:
+              blank: "Password confirmation can't be blank"
+              confirmation: "Password Confirmation must be same."
+            condition:
+
+
+        id_document:
+          attributes:
+            zipcode:
+              invalid_zipcode: is invalid
+            contact_no:
+              blank: "can't be blank"
+        token/two_factor:
+          attributes:
+            base:
+              too_soon: Visit too soon, please try it later.
+        token/reset_password:
+          attributes:
+            base:
+              too_soon: Visit too soon, please try it later.
+            email:
+              invalid_email: ' is invalid'
+              blank: email can't be blank
+            password_digest:
+              blank: password can't be blank
+            password:
+              invalid_password: Invalid Password
+              blank: password can't be blank
+              too_short: "must contain at least eight characters, including one alphabet, one number and one special character"
+              invalid: "must contain at least eight characters, including one alphabet, one number and one special character."
+            member:
+              blank: Not exist!
+        activation:
+          attributes:
+            base:
+              too_soon: An activation email was sent to your email address less than 5 minutes ago.
+        order_bid:
+          attributes:
+            sum:
+              expensive: Expensive Account
+            price:
+              range: Invalid Price Range
+        order_ask:
+          attributes:
+            origin_volume:
+              expensive: Expensive Account
+            price:
+              range: Invalid Price Range
+        account:
+          attributes:
+            balance:
+              less: Blance Less
+        fund_source:
+          attributes:
+            address:
+              satoshi_ismine: Used Address
+              satoshi_invalid: Invalid Address
+              bitcoin_cash_ismine: Used Address
+              bitcoin_cash_invalid: Invalid Address
+              ripple_ismine: Used Address
+              ripple_invalid: Invalid Address
+              ethereum_ismine: Used Address
+              ethereum_invalid: Invalid Address
+              tronix_ismine: Used Address
+              tronix_invalid: Invalid Address
+              eos_token_ismine: Used Address
+              eos_token_invalid: Invalid Address
+              chelscoin_ismine: Used Address
+              chelscoin_invalid: Invalid Address
+              impereum_ismine: Used Address
+              impereum_invalid: Invalid Address
+              ems_token_ismine: Used Address
+              ems_token_invalid: Invalid Address
+              ecpplus_token_ismine: Used Address
+              ecpplus_token_invalid: Invalid Address
+              fto_token_ismine: Used Address
+              fto_token_invalid: Invalid Address
+              usdcoin_token_ismine: Used Address
+              usdcoin_token_invalid: Invalid Address
+              aokey7_token_ismine: Used Address
+              aokey7_token_invalid: Invalid Address
+              cacplus_token_ismine: Used Address
+              cacplus_token_invalid: Invalid Address
+
+        withdraw:
+          account_balance_is_poor: Account balance is insufficient
+          attributes:
+            password:
+              match: invalid
+            amount:
+              poor: insufficient
+              bank_min: Less 5000.00
+        withdraws/satoshi:
+          attributes:
+            fund_uid:
+              blank: Please enter your withdrawal address
+              invalid: Invalid withdrawals address, please review.
+              ismine: Please use a new address.
+        withdraws/bitcoin_cash:
+          attributes:
+            fund_uid:
+              blank: Please enter your withdrawal address
+              invalid: Invalid withdrawals address, please review.
+              ismine: Please use a new address.
+        withdraws/ethereum:
+          attributes:
+            fund_uid:
+               blank: Please enter your withdrawal address
+               invalid: Invalid withdrawals address, please review.
+               ismine: Please use a new address.
+        withdraws/tronix:
+          attributes:
+            fund_uid:
+              blank: Please enter your withdrawal address
+              invalid: Invalid withdrawals address, please review.
+              ismine: Please use a new address.
+        withdraws/ripple:
+          attributes:
+          fund_uid:
+          blank: Please enter your withdrawal address
+          invalid: Invalid withdrawals address, please review.
+          ismine: Please use a new address.
+        withdraws/eos_token:
+          attributes:
+          fund_uid:
+          blank: Please enter your withdrawal address
+          invalid: Invalid withdrawals address, please review.
+          ismine: Please use a new address.
+        withdraws/chelscoin:
+          attributes:
+          fund_uid:
+          blank: Please enter your withdrawal address
+          invalid: Invalid withdrawals address, please review.
+          ismine: Please use a new address.
+        withdraws/impereum:
+          attributes:
+          fund_uid:
+          blank: Please enter your withdrawal address
+          invalid: Invalid withdrawals address, please review.
+          ismine: Please use a new address.
+        withdraws/ems_token:
+          attributes:
+          fund_uid:
+          blank: Please enter your withdrawal address
+          invalid: Invalid withdrawals address, please review.
+          ismine: Please use a new address.
+        withdraws/ecpplus_token:
+          attributes:
+          fund_uid:
+          blank: Please enter your withdrawal address
+          invalid: Invalid withdrawals address, please review.
+          ismine: Please use a new address.
+        withdraws/usdcoin:
+          attributes:
+          fund_uid:
+          blank: Please enter your withdrawal address
+          invalid: Invalid withdrawals address, please review.
+          ismine: Please use a new address.
+        withdraws/fto_token:
+          attributes:
+          fund_uid:
+          blank: Please enter your withdrawal address
+          invalid: Invalid withdrawals address, please review.
+          ismine: Please use a new address.
+        withdraws/aokey7_token:
+          attributes:
+          fund_uid:
+          blank: Please enter your withdrawal address
+          invalid: Invalid withdrawals address, please review.
+          ismine: Please use a new address.
+        withdraws/cacplus_token:
+          attributes:
+          fund_uid:
+          blank: Please enter your withdrawal address
+          invalid: Invalid withdrawals address, please review.
+          ismine: Please use a new address.
+
+        application:
+          attributes:
+            redirect_uri:
+              fragment_present: cannot contain a fragment.
+              invalid_uri: must be a valid URI.
+              relative_uri: must be an absolute URI.
+      messages:
+        undef: unknown reason
+        less: balance less
+        verify: verify error
+        orders:
+          price: limit price %{l} ~ %{h}
+          sum: limit sum price %{l} ~ %{h}
+          precision: minimum precision %{p}
+  banks:
+    ab: Axis Bank
+    boi: Bank of India
+    cb: Canara Bank
+    cboi: Central Bank of India
+    fb: Federal Bank
+    icici: ICICI Bank
+    idbi: IDBI Bank
+    iib: IndusInd Bank
+    kb: Kotak Bank
+    psb: Punjab & Sind Bank
+    sbi: State Bank of India
+    sb: Syndicate Bank
+    ubi: Union Bank of India
+    yb: Yes Bank Ltd
+    uco: UCO Bank
+    boc: Bank of America
+    wf:  Wells Fargo
+    cg: Citigroup
+  market:
+    currency:
+      btc: BTC
+      bch: BCH
+      eth: ETH
+      trx: TRX
+      xrp: XRP
+      eos: EOS
+      csc: CSC
+      ipm: IPM
+      ems: EMS
+      ecp+: ECP+
+      fto: FTO
+      usdc: USDC
+      aok: AOK
+      cac+: CAC+
+
+  currency:
+    satoshi:
+      key: BTC
+      code: BTC
+      name: Bitcoin
+      format: '0,0.0000'
+    bitcoin_cash:
+      key: BCH
+      code: BCH
+      name: Bitcoin Cash
+      format: '0,0.0000'
+    ethereum:
+      key: ETH
+      code: ETH
+      name: Ethereum
+      format: '0,0.0000'
+    tronix:
+      key: TRX
+      code: TRX
+      name: Tronix
+      format: '0,0.0000'
+    ripple:
+      key: XRP
+      code: XRP
+      name: Ripple
+      format: '0,0.00'
+    eos_token:
+      key: EOS
+      code: EOS
+      name: EOS
+      format: '0,0.00'
+    chelscoin:
+      key: CSC
+      code: CSC
+      name: CSC
+      format: '0,0.0000'
+    impereum:
+      key: IPM
+      code: IPM
+      name: IPM
+      format: '0,0.0000'
+    ems_token:
+      key: EMS
+      code: EMS
+      name: EMS
+      format: '0,0.0000'
+    ecpplus_token:
+      key: ECP+
+      code: ECP+
+      name: ECP+
+      format: '0,0.0000'
+    fto_token:
+      key: FTO
+      code: FTO
+      name: FTO
+      format: '0,0.0000'
+    usdcoin:
+      key: USDC
+      code: USDC
+      name: USDC
+      format: '0,0.0000'
+    aokey7_token:
+      key: AOK
+      code: AOK
+      name: AOK
+      format: '0,0.0000'
+    cacplus_token:
+      key: CAC+
+      code: CAC+
+      name: CAC+
+      format: '0,0.0000'
+
+
+  datagrid:
+    empty: no data found
+    filters:
+      date:
+        range_separator: " to "
+      datetime:
+        range_separator: " to "
+    form:
+      submit: Search
+    admin_deposits_grid:
+      columns:
+        sn: SN
+        created_at: At
+        channel_key_text: Channel
+        fund_extra_text: Extra
+        fund_uid: UID
+        txid: TXID
+        amount: Amount
+        fee: Fee
+        currency_text: Currency
+        aasm_state_text: State
+        member_name: Member
+    bank_deposits_grid:
+      columns:
+        sn: SN
+        created_at: At
+        channel_key_text: Category
+        fund_extra_text: Bank
+        fund_uid: Account
+        amount: Amount
+        fee: Fee
+        aasm_state_text: State
+    coin_deposits_grid:
+      columns:
+        sn: SN
+        txid: Transaction ID
+        created_at: At
+        amount: Amount
+        aasm_state_text: State
+        confirmations: Confirm
+    withdraws_grid:
+      columns:
+        sn: SN
+        name: Name
+        currency_text: Currency
+        amount: Amount
+        fee: Fee
+        created_at: Created at
+        done_at: Completed at
+        state_text: State
+    members_grid:
+      columns:
+        sn: Serial number
+        created_at: Created at
+        actions: Actions
+    account_versions_grid:
+      columns:
+        created_at: Created at
+        currency_text: Currency
+        balance: Balance
+        in: In
+        out: Out
+        amount: Amount
+        reason_text: Reason
+        modifiable_type: Link
+        fee: Fee
+      filters:
+        reason: Reason
+        currency: Currency
+    statistic_members_grid:
+      columns:
+        sn: Serial number
+        id: ID
+        email: Email
+        created_at: Created at
+        detail: Detail
+        action: Action
+      filters:
+        sn: Serial number
+        created_at: Created at
+    statistic_orders_grid:
+      columns:
+        id: Serial number
+        price: Price
+        volume: Volume
+        created_at: Created at
+        state_text: State
+        member_id: Member
+      filters:
+        state: State
+        currency: Currency
+        created_at: Created at
+        type: Ask/Bid
+    statistic_trades_grid:
+      columns:
+        id: ID
+        price: Price
+        volume: Volume
+        strike_amount: Amount
+        created_at: Created at
+      filters:
+        currency: Currency
+        created_at: Created at
+    statistic_deposits_grid:
+      columns:
+        member: Member
+        tx_id: TxID
+        amount: Amount
+        currency: Currency
+        created_at: Created at
+        state_text: State
+      filters:
+        currency: Currency
+        state: State
+        created_at: Created at
+    statistic_withdraws_grid:
+      columns:
+        member: Member
+        address: Adress
+        amount: Amount
+        currency: Currency
+        created_at: Created at
+        state_text: State
+      filters:
+        state: State
+        created_at: Created at
+  deposit_channel:
+    satoshi:
+      key: Block Chain
+      title: Bitcoin Deposits
+      intro: Deposit bitcoin from your own wallet address to BitCorex account
+      latency: 1 confirmation
+      transfer: Manual
+      go: Deposit
+    bitcoin_cash:
+      key: Block Chain
+      title: Bitcoin Cash Deposits
+      intro: Deposit Bitcoin Cash from your own wallet address to BitCorex account
+      latency: 1 confirmation
+      transfer: Manual
+      go: Deposit
+    ethereum:
+      key: ethereum
+      title: Ethereum Deposits
+      intro: Deposit Ethereum from your own wallet address to BitCorex account
+      latency: 1 confirmation
+      transfer: Manual
+      go: Deposit
+    tronix:
+      key: Block Chain
+      title: Tronix Deposits
+      intro: Deposit Trx from your own wallet address to BitCorex account
+      latency: 1 confirmation
+      transfer: Manual
+      go: Deposit
+    ripple:
+        key: Block Chain
+        title: Ripple Deposits
+        intro: Deposit Ripple from your own wallet address to BitCorex account
+        latency: 1 confirmation
+        transfer: Manual
+        go: Deposit
+    chelscoin:
+         key: Block Chain
+         title: Chelscoin Deposits
+         intro: Deposit Chelscoin from your own wallet address to BitCorex account
+         latency: 1 confirmation
+         transfer: Manual
+         go: Deposit
+    eos_token:
+        key: Block Chain
+        title: EOS Deposits
+        intro: Deposit EOS from your own wallet address to Zinance account
+        latency: 1 confirmation
+        transfer: Manual
+        go: Deposit
+    impereum:
+      key: Block Chain
+      title: Impereum Deposits
+      intro: Deposit Impereum from your own wallet address to Impereum account
+      latency: 1 confirmation
+      transfer: Manual
+      go: Deposit
+    ems_token:
+      key: Block Chain
+      title: EMS Deposits
+      intro: Deposit Emstoken from your own wallet address to Ems account
+      latency: 1 confirmation
+      transfer: Manual
+      go: Deposit
+    ecpplus_token:
+      key: Block Chain
+      title: ECP+ Deposits
+      intro: Deposit Ecpplustoken from your own wallet address to Ecp+ account
+      latency: 1 confirmation
+      transfer: Manual
+      go: Deposit
+    fto_token:
+      key: Block Chain
+      title: FTO Deposits
+      intro: Deposit FTO from your own wallet address to Ecp+ account
+      latency: 1 confirmation
+      transfer: Manual
+      go: Deposit
+    usdcoin:
+      key: Block Chain
+      title: USDC Deposits
+      intro: Deposit Usdcoin from your own wallet address to Usdc account
+      latency: 1 confirmation
+      transfer: Manual
+      go: Deposit
+    aokey7_token:
+      key: Block Chain
+      title: Aokey7 Deposits
+      intro: Deposit Aok from your own wallet address to Aok account
+      latency: 1 confirmation
+      transfer: Manual
+      go: Deposit
+    cacplus_token:
+      key: Block Chain
+      title: CAC+ Deposits
+      intro: Deposit Cacplustoken from your own wallet address to Cac+ account
+      latency: 1 confirmation
+      transfer: Manual
+      go: Deposit
+
+    fiat:
+        title: Fiat Deposits
+  deposits/bank:
+    aasm_state:
+      submitting: Submitting
+      cancelled: Cancelled
+      submitted: Submitted
+      accepted: Accepted
+      rejected: Rejected
+      checked: Checked
+      warning: Warning
+  private:
+
+    deposits:
+      satoshis:
+        gen_address:
+          require_transaction: it can't generate new address if it hasn't been used.
+      bitcoin_cash:
+        gen_address:
+          require_transaction: it can't generate new address if it hasn't been used.
+    history:
+      transaction:
+        Deposit: Deposit
+        Withdraw: Withdraw
+      account:
+        deposit: Deposit
+        withdraw: Withdraw
+        currency: Currency
+        buy: Buy
+        sell: Sell
+        filter_by_type: Filter by type
+        account_history: History
+        type: Type
+        timestamp: Date
+        fee: Fee
+        coin: Coin
+        amount: Amount
+        txid: Txid
+        download: Export Complete Deposit History
+        download1: Export Complete withdrawl History
+        status: Status
+        information: Information
+      withdraws:
+         blank_withdraw: You have no withdrawl history.
+         account_history: History
+         coin: Coin
+         amount: Amount
+         status: Status
+         information: Information
+         timestamp: Date
+      deposits:
+         blank_deposit: You have no deposit history.
+         account_history: History
+         coin: Coin
+         amount: Amount
+         status: Status
+         information: Information
+         timestamp: Date
+      orders:
+        date: Date
+        pair: Pair
+        all: All
+        all1: All
+        all2: All
+        side: Side
+        sell: Sell
+        buy: Buy
+        search: Search
+        order_history: Order History
+        id: ID
+        type: Type
+        state: State
+        market: Pair
+        price: Price
+        volume: Volume
+        average_price: Avg. Price
+        fullfilled_volume: Fullfilled
+        timestamp: Date
+        blank_order: You have no order history
+      order:
+        ask: Sell
+        bid: Buy
+        wait: Open
+        cancel: Cancelled
+        done: Done
+      trades:
+        date: Date
+        pair: Pair
+        trade_history: Trade History
+        side: Side
+        created_at: Date
+
+        all1: All
+        all2: All
+        sell: Sell
+        search: Search
+        buy: Buy
+        market: pair
+        base_currency: Base Currency
+        base_amount: Base Amount
+        quote_currency: Quote Currency
+        quote_amount: Quote Amount
+        price: Price
+        blank_trade: You have no trade history
+      open_orders:
+        open_order_history: Open Order
+        type: Type
+        state: State
+        volume: Volume
+        market: Pair
+        price: Price
+        average_price: Avg. Price
+        fullfilled_volume: Fullfilled
+        timestamp: Date
+        blank_open_order: You have no open order history
+      trade:
+        sell: Sell
+        buy: Buy
+      open_order:
+        wait: Open
+        bid: Buy
+    trade:
+      trades:
+        orders:
+          title: Orders
+        trades:
+          title: Trades
+        charges:
+          title: Charges
+      orders:
+        index:
+          done: Done
+          cancel: Cancel
+          confirm: 'Are you sure cancel order #%{id}?'
+        destroy:
+          'true': "#%{id} Cancel Order Successful"
+          'false': "#%{id} Cancel Order Reject"
+    withdraws:
+      update:
+        request_accepted: Withdraw request accepted.
+      destroy:
+        request_canceled: Withdraw request canceled
+      index:
+        fee: Fee
+        total: Total
+        withdraw_history: Withdrawal History
+      banks:
+        update:
+          notice: Bank Transfer withdrawal application has been submitted, we will
+            process it as soon as possible
+        destroy:
+          notice: Bank Transfer withdraw has been cancelled, frozen amount has been
+            returned to your account.
+        new:
+          fund_source: Select Fund Source
+          manage_fund_source: Manage Fund Source
+          submit: Submit
+          allin: All-In
+        create:
+          notice: Withdrawal request successfully submitted. Use the info below to
+            complete the bank transfer.
+      satoshis:
+        destroy:
+          notice: Withdraw been canceled, frozen balance has returned to your account
+        update:
+          notice: Withdraw request is submit successful, we will process it as soon
+            as possible
+        new:
+          submit: Submit
+          allin: All-In
+          fund_source_label: Label
+          manage_fund_source: Manage Fund Source
+        create:
+          notice: Withdrawal request successfully submitted. Use the info below to
+            complete the bank transfer.
+      bitcoin_cash:
+        destroy:
+          notice: Withdraw been canceled, frozen balance has returned to your account
+        update:
+          notice: Withdraw request is submit successful, we will process it as soon
+            as possible
+        new:
+          submit: Submit
+          allin: All-In
+          fund_source_label: Label
+          manage_fund_source: Manage Fund Source
+        create:
+          notice: Withdrawal request successfully submitted. Use the info below to
+            complete the bank transfer.
+      ethereums:
+        destroy:
+          notice: Withdraw been canceled, frozen balance has returned to your account
+        update:
+          notice: Withdraw request is submit successful, we will process it as soon
+                  as possible
+        new:
+          submit: Submit
+          allin: All-In
+          fund_source_label: Label
+          manage_fund_source: Manage Fund Source
+        create:
+          notice: Withdrawal request successfully submitted. Use the info below to
+                  complete the bank transfer.
+      tronix:
+        destroy:
+          notice: Withdraw been canceled, frozen balance has returned to your account
+        update:
+          notice: Withdraw request is submit successful, we will process it as soon as possible
+        new:
+          submit: Submit
+          allin: All-In
+          fund_source_label: Label
+          manage_fund_source: Manage Fund Source
+        create:
+          notice: Withdrawal request successfully submitted. Use the info below to complete the bank transfer.
+      ripple:
+        destroy:
+          notice: Withdraw been canceled, frozen balance has returned to your account
+        update:
+          notice: Withdraw request is submit successful, we will process it as soon as possible
+        new:
+          submit: Submit
+          allin: All-In
+          fund_source_label: Label
+          manage_fund_source: Manage Fund Source
+        create:
+          notice: Withdrawal request successfully submitted. Use the info below to complete the bank transfer.
+      eos_token:
+        destroy:
+          notice: Withdraw been canceled, frozen balance has returned to your account
+        update:
+          notice: Withdraw request is submit successful, we will process it as soon as possible
+        new:
+          submit: Submit
+          allin: All-In
+          fund_source_label: Label
+          manage_fund_source: Manage Fund Source
+        create:
+          notice: Withdrawal request successfully submitted. Use the info below to complete the bank transfer.
+      chelscoin:
+        destroy:
+          notice: Withdraw been canceled, frozen balance has returned to your account
+        update:
+          notice: Withdraw request is submit successful, we will process it as soon as possible
+        new:
+          submit: Submit
+          allin: All-In
+          fund_source_label: Label
+          manage_fund_source: Manage Fund Source
+        create:
+          notice: Withdrawal request successfully submitted. Use the info below to complete the bank transfer.
+      impereum:
+        destroy:
+          notice: Withdraw been canceled, frozen balance has returned to your account
+        update:
+          notice: Withdraw request is submit successful, we will process it as soon as possible
+        new:
+          submit: Submit
+          allin: All-In
+          fund_source_label: Label
+          manage_fund_source: Manage Fund Source
+        create:
+          notice: Withdrawal request successfully submitted. Use the info below to complete the bank transfer.
+      ems_token:
+        destroy:
+          notice: Withdraw been canceled, frozen balance has returned to your account
+        update:
+          notice: Withdraw request is submit successful, we will process it as soon as possible
+        new:
+          submit: Submit
+          allin: All-In
+          fund_source_label: Label
+          manage_fund_source: Manage Fund Source
+        create:
+          notice: Withdrawal request successfully submitted. Use the info below to complete the bank transfer.
+      ecpplus_token:
+        destroy:
+          notice: Withdraw been canceled, frozen balance has returned to your account
+        update:
+          notice: Withdraw request is submit successful, we will process it as soon as possible
+        new:
+          submit: Submit
+          allin: All-In
+          fund_source_label: Label
+          manage_fund_source: Manage Fund Source
+        create:
+          notice: Withdrawal request successfully submitted. Use the info below to complete the bank transfer.
+      usdcoin:
+        destroy:
+          notice: Withdraw been canceled, frozen balance has returned to your account
+        update:
+          notice: Withdraw request is submit successful, we will process it as soon as possible
+        new:
+          submit: Submit
+          allin: All-In
+          fund_source_label: Label
+          manage_fund_source: Manage Fund Source
+        create:
+          notice: Withdrawal request successfully submitted. Use the info below to complete the bank transfer.
+      fto_token:
+        destroy:
+          notice: Withdraw been canceled, frozen balance has returned to your account
+        update:
+          notice: Withdraw request is submit successful, we will process it as soon as possible
+        new:
+          submit: Submit
+          allin: All-In
+          fund_source_label: Label
+          manage_fund_source: Manage Fund Source
+        create:
+          notice: Withdrawal request successfully submitted. Use the info below to complete the bank transfer.
+      aokey7_token:
+        destroy:
+          notice: Withdraw been canceled, frozen balance has returned to your account
+        update:
+          notice: Withdraw request is submit successful, we will process it as soon as possible
+        new:
+          submit: Submit
+          allin: All-In
+          fund_source_label: Label
+          manage_fund_source: Manage Fund Source
+        create:
+          notice: Withdrawal request successfully submitted. Use the info below to complete the bank transfer.
+      cacplus_token:
+        destroy:
+          notice: Withdraw been canceled, frozen balance has returned to your account
+        update:
+          notice: Withdraw request is submit successful, we will process it as soon as possible
+        new:
+          submit: Submit
+          allin: All-In
+          fund_source_label: Label
+          manage_fund_source: Manage Fund Source
+        create:
+          notice: Withdrawal request successfully submitted. Use the info below to complete the bank transfer.
+
+
+    account_versions:
+      index:
+        description: Every transaction and every penny of income in BitCorex are well
+          documented and exhaustive.
+    api_tokens:
+      user_tokens:
+        no_token: You have no API token.
+        edit: Edit
+        destroy: Destroy
+        destroy-confirm: Are you sure?
+        create: Create New Token
+        http: HTTP API Document
+        websocket: Websocket API Document
+        more: 'For more information please check the API section on github:'
+      unbind:
+        success: Successfully revoked.
+        failed: Revoke failed.
+      new:
+        label_hint: Label helps you remember token usage, optional.
+      create:
+        success: API token created successfully.
+        failed: Failed to create API token. Please try again later or contact admin.
+        desc: Please copy and paste keys below to a safe place and save. The secret key will never be displayed again.
+        access_key: Access Key
+        secret_key: Secret Key
+      edit:
+        access_key_hint: Created at %{created_at}
+        label_hint: Label helps you remember token usage, optional.
+        ip_whitelist_hint: Seperate IP by commas, leave this field blank means all IP are allowed.
+      update:
+        success: Saved successfully.
+        failed: Failed to save token. Please try again later or contact admin.
+      destroy:
+        success: The token has been successfully destroyed.
+        failed: Failed to destroy token.
+    assets:
+      index:
+        liability-proof: Proof of Liabilities
+        coin-assets: '%{currency} Assets'
+        fiat-assets: '%{currency} Assets'
+      liability_tabs:
+        verify-inr: Verify My INR Assets
+        verify-coin: 'Verify My %{currency} Assets'
+        verify-fiat: 'Verify My %{currency} Assets'
+        coin-assets-total: 'Total %{currency} assets of exchange: '
+        fiat-assets-total: 'Total %{currency} assets of exchange: '
+      liability_proof:
+        title: Proof of Liabilities
+        intro: As an exchange, our liabilities refer to the sum of money (in both
+          crypto currencies and fiat currencies) that our users trust us with. On
+          this page, we present you our liabilities. We also provide you a way to
+          verify that your account balance is indeed part of our liabilities.
+      liability_data:
+        liability-proof-generating: Proof of Liability generation in process, please
+          come back after 30 minutes.
+        root-json: Root node
+        partial-tree: 'My %{currency} Assets: '
+        get-partial-tree: Get my partial tree data
+        timestamp: The proof data is generated at %{time}.
+        go-verify: Verify
+      coin_assets:
+        title: '%{currency} Assets'
+        intro: "All of exchange's %{currency} assets are listed here."
+        total: 'Total Dash Assets'
+        address: Address
+      partial_tree:
+        success: 'Success! Verification data generated at: %{timestamp}'
+    funds:
+      index:
+        deposit: Deposit
+        withdraws: Withdraws
+      show:
+        account_history: Account History
+        inr_format: '0.00'
+        usd_format: '0.00'
+        btc_format: '0.00000000'
+        reason:
+          btc:
+            strike_add: Plus
+            strike_sub: Sub
+            deposit: Deposit
+            withdraw: Withdraw
+            fix: Fix
+          bch:
+            strike_add: Plus
+            strike_sub: Sub
+            deposit: Deposit
+            withdraw: Withdraw
+            fix: Fix
+          eth:
+            strike_add: Plus
+            strike_sub: Sub
+            deposit: Deposit
+            withdraw: Withdraw
+            fix: Fix
+          trx:
+            strike_add: Plus
+            strike_sub: Sub
+            deposit: Deposit
+            withdraw: Withdraw
+            fix: Fix
+          xrp:
+           strike_add: Plus
+           strike_sub: Sub
+           deposit: Deposit
+           withdraw: Withdraw
+           fix: Fix
+          eos:
+            strike_add: Plus
+            strike_sub: Sub
+            deposit: Deposit
+            withdraw: Withdraw
+            fix: Fix
+          csc:
+            strike_add: Plus
+            strike_sub: Sub
+            deposit: Deposit
+            withdraw: Withdraw
+            fix: Fix
+          ipm:
+            strike_add: Plus
+            strike_sub: Sub
+            deposit: Deposit
+            withdraw: Withdraw
+            fix: Fix
+          ems:
+            strike_add: Plus
+            strike_sub: Sub
+            deposit: Deposit
+            withdraw: Withdraw
+            fix: Fix
+          ecp+:
+            strike_add: Plus
+            strike_sub: Sub
+            deposit: Deposit
+            withdraw: Withdraw
+            fix: Fix
+          usdc:
+            strike_add: Plus
+            strike_sub: Sub
+            deposit: Deposit
+            withdraw: Withdraw
+            fix: Fix
+          fto:
+            strike_add: Plus
+            strike_sub: Sub
+            deposit: Deposit
+            withdraw: Withdraw
+            fix: Fix
+          aok:
+            strike_add: Plus
+            strike_sub: Sub
+            deposit: Deposit
+            withdraw: Withdraw
+            fix: Fix
+          cac+:
+            strike_add: Plus
+            strike_sub: Sub
+            deposit: Deposit
+            withdraw: Withdraw
+            fix: Fix
+
+        ref:
+          system: System
+          default: Default
+
+    id_documents:
+      edit:
+        middle_name: Middle Name
+        last_name: Last Name
+        contact_no: Contact No
+        state: State
+        gender: Gender
+        state_unverified: UNVERIFIED
+        state_verifying: VERIFYING
+        state_verified: VERIFIED
+        name: First Name
+        birth_date: Birth Date
+        address: Address
+        city: City
+        country: Country
+        zipcode: Zipcode
+        status: Status
+        code: Code
+        id_document_type: ID Document Type
+        id_document_number: ID Document Number
+#        id_document_file: Document Photo
+        id_document_file: Selfie with ID document
+        id_bill_file: Proof of Residence Photo
+        msg12: Image will be displayed here after updating the form.
+        id_bill_type: Proof of Residence
+        name_blank: Name can not be blank
+        age: age must be at least 18 and above
+        f_name:  Middle Name can not be blank
+        l_name: Last Name can not be blank
+        contact_blank: Contact no can not be blank
+        id_document_blank: Id document type can not be blank
+        proof_residence_blank: Proof Of Residence can not be blank
+        address_length: Address maximum length is 300 characters
+        city_max_length: City is too long (maximum is 20 characters)
+        id_document_min: Id Document is too short (minimum is 6 characters)
+        id_doc_blank: Id document number can not be blank
+        file_one: "Invalid file type.You can upload only jpg, jpeg, gif, png, pdf file types."
+        file_size: File size should be less than 1 MB
+      update:
+        notice: Your account verification has been submitted.
+    markets:
+
+      candlestick:
+        load: 'Loading ...'
+      show:
+        text: "%{num} decimals"
+        limit: Limit
+        market: Market
+        error: Failed
+        success: Success
+        analysis_panel: Analysis
+        help_panel: Help
+        done: DONE
+        cancel: CANCEL
+        cancel_confirm: Are your sure cancel order?
+        confirm: CONFIRM
+        ask_order: 'ASK ##sn#'
+        bid_order: 'BID ##sn#'
+        my_active_order: Active
+        my_done_order: Done
+        trades: Trading
+        chat: Chat Channel
+        withdraw: Withdraw
+        deposit: Deposit
+        history: History
+        open_orders: Open Orders
+        24_orders_history: My 24h Orders History
+        more: More
+        Hide_Other_pairs: Hide Other pairs
+        Hide_Other_pairs1: Hide Other pairs
+
+      market_list:
+        bt1: Change
+        bt: Volume
+        all: All Markets
+        search: Search
+        all_html: "<i class='fa fa-star'></i><span>Favorites</span>"
+        tusd_html: "<i class='fa fa-check'></i><span>TUSD Markets</span>"
+        eth_html: "<i class='fa fa-check'></i><span>ETH Markets</span>"
+        btc_html: "<i class='fa fa-check'></i><span>BTC Markets</span>"
+        csc_html: "<i class='fa fa-check'></i><span>CSC Markets</span>"
+        price: Price
+        change: "24h %"
+        btc: BTC
+        eth: ETH
+        tusd: TUSD
+        csc:  CSC
+      order:
+        wait: Open
+        bid: Buy
+      order_history:
+        date: Date
+        wait: Open
+        bid: Buy
+        price: Price
+        average: Average
+        volume: Volume
+        amount: Amount
+        remaining_amount: Remaining Amount
+        time: Date
+        pair: Pair
+        type: Type
+        side: Side
+        filled: Filled
+        total: Total
+        remaining_total: Remaining Total
+        condition: Trigger Conditions
+        all: All
+        status: Status
+        no_order_history: You have no order history.
+      market_ticker:
+        pair: Pair
+        all: All Markets
+        all_html: "<i class='fa fa-check'></i><span>All Markets</span>"
+        ccy_html: "<i class='fa fa-check'></i><span>%{currency} Markets</span>"
+        price: Price
+#        change: "24h %"
+        change: Change
+      range_switch:
+        switch_1: 1m
+        switch_5: 5m
+        switch_15: 15m
+        switch_30: 30m
+        switch_60: 1H
+        switch_120: 2H
+        switch_240: 4H
+        switch_360: 6H
+        switch_720: 12H
+        switch_1440: 1D
+        switch_4320: 3D
+        switch_10080: 1W
+        switch_43200: 1M
+      depths:
+        price: Price
+        amount: Amount
+        buy: Buy
+        sell: Sell
+        ask_orders: Sell
+        bid_orders: Buy
+      ticker:
+        last: Last Price
+        ask: ASK
+        bid: BID
+      account_balance:
+        title: Account Balance
+        available: Available %{currency}
+      market_bid_entry:
+        Market: Market Price
+        action: "Buy %{currency}"
+        price: Price
+        last_price: Last Price
+        amount: Amount
+        total: Total
+        buy: Buy
+      bid_entry:
+        buy: Buy
+        action: "Buy %{currency}"
+        price: Price
+        last_price: Last Price
+        amount: Amount
+        total: Total
+      ask_entry:
+        action: "Sell %{currency}"
+        price: Price
+        last_price: Last Price
+        amount: Amount
+        total: Total
+        sell: Sell
+      market_ask_entry:
+        Market: Market Price
+        action: "Sell %{currency}"
+        price: Price
+        last_price: Last Price
+        amount: Amount
+        total: Total
+        sell: Sell
+      place_order:
+        price: price
+        amount: amount
+        total: total
+        price_high: HIGH
+        price_low: LOW
+        full_bid: FULL
+        full_ask: EMPTY
+      order_book:
+        group: groups
+        title: Order Book
+        volume: Volume
+        price: Price(%{currency})
+        amount: Amount(%{currency})
+        total: Total(%{currency})
+        ask: ASK
+        bid: BID
+        fade_toggle_depth: Market Depth
+      trade_state:
+        new: New
+        partial: Partial
+        full: Full
+      market_trades:
+        all: All
+        trade_history: Trade History
+        my: Mine
+        all_html: Market
+        my_html: Yours
+        time: Time
+        price: Price
+        volume: Volume
+      header:
+        network: Connection State
+        vol: 24h Volume
+        high: 24h High
+        low: 24h Low
+        change: 24h Change
+        last: Last Price
+      settings:
+        sound: Sound
+        notification: Notify
+        funds: "Funds"
+        signout: "Sign Out"
+        settings: "Profile"
+        history: "History"
+      account_summary:
+        title: Summary
+        account: Account
+        amount: Amount
+        locked: Freeze
+        view_all_accounts: "View All"
+        hide_all_accounts: "Hide Other"
+      my_orders:
+        orders_wait: Latest Orders
+        orders_done: Completed Orders
+        orders_cancel: Cancel Orders
+        no_open_orders: You have no open orders.
+        clear_all_html: Cancel All
+        clear_bids_html: Cancel Bids
+        clear_asks_html: Cancel Asks
+        confirm_clear_all: Are you sure to cancel ALL orders?
+        confirm_clear_bids: Are you sure to cancel all BIDS?
+        confirm_clear_asks: Are you sure to cancel all ASKS?
+        price: Price
+        volume: Volume
+        amount: Amount
+        time: Date
+        pair: Pair
+        type: Type
+        side: Side
+        filled: Filled%
+        total: Total
+        condition: Trigger Conditions
+        all: All
+        date: Date
+
+
+      mask:
+        warning: <a class=text-up href='/signin'>Log In</a> or <a class=text-up href='/signup'>Register</a> to trade
+      klime_chart:
+        title: Candlestick Charts
+      global:
+        global_orders_title: ORDERS
+        global_trades_title: TRADES
+      chat:
+        title: Chat Channel
+    referral:
+      invite:
+        text: 'Effective as of %{activated} (UTC)'
+        text1: "The commission you receive from the referral program will initially be set at a rate of %{rate}. For accounts holding %{bonus} or more, this rate will increase to 40%."
+        text2: The fee commission will be sent instantly in real-time to your BitCorex account as your referee completes each trade and will be paid to you in whatever token/cryptocurrency the original fee was paid in.
+        text3: There %{limit} number of friends you can refer, although we do reserve the right to adjust or change the referral program rules at any time.
+        text4: Each referee must be signed up through your Referral Link, QR Code or Referral ID.
+        text5: BitCorex will check for duplicate or fake accounts and will not pay out referral bonuses on these accounts. Duplicate or shared finances will result in disqualification.
+        notice: '* Important Notice:'
+        text6: BitCorex reserves the right to change the terms of the referral program at any time due to changing market conditions, risk of fraud, or any other factors we deem relevant.
+        text9: No.1
+        commission: Commission
+        text10: No.2
+        text11: No.3
+        no_friend: You have no referral friends.
+        history: Latest Commission History
+        Export: Export
+        email: Email
+        date: Date
+        no_commission: You have no commission.
+    settings:
+      authentication_disable:
+        auth_text: We strongly recommend you to enable 2FA on your account !
+        auth_text1: 'Please choose how you wish to receive 2FA code:'
+        google_auth: Google Authentication
+        sms_auth: SMS Authentication
+        text: I understand the risks for not enabling 2FA
+        skip_text: Skip for now
+      success: Settings updated successfully.
+      failure: Invalid passcode. Please try again.
+      index:
+        reset_password: Rest your Password
+        reauthenticate: Authentication
+        activated: An  email has been sent to your mailbox, please check it for verification
+                  as soon as possible. If you do not received it , please click "send it again"
+                  button
+        auth-activated: Please confirm your email address first.
+        auth-verified: Please verify your account first.
+        email:
+          title: E-mail verification
+          description: Your e-mail has not been verified, click the "Send Mail" button
+                    to complete the verification
+          description-activated: Your email adress has been verified successfully,
+                    remember and protect this e-mail address, it is the single certificate
+                    for your  account
+          resend: Send it again
+          activated: Verified
+          go: Set
+        verification:
+          title: Verify Account
+          description: Help keep the bad guys out of your account by using your
+            password
+          go: Submit
+          verified: Verified
+        asset_passwords:
+          title: Asset password
+          description: The asset password will be needed when you withdraw your money.
+                      It is strongly recommended that you do not use the same password as your
+                      account password!
+          go: Set
+        passwords:
+            title: Password
+            description: This password is required for login, please remember it.
+            go: Change Password
+            set: Set
+        api_tokens:
+          title: API Tokens
+          description: Create and manage your API tokens.
+          go: Enable
+
+        bank_details:
+          title: Bank Detail
+          description: Add Bank Details for Withdraws
+          go: Enable
+        google_authenticater:
+          title: Google Authentication
+          description: Used for withdrawals and security modifications.
+          go: Set
+          disable: Disable
+          enable: Enable
+        sms_authenticater:
+          title: SMS Authentication
+          description: Used for withdrawals and security modifications.
+          go: Set
+          disable: Disable
+          enable: Enable
+      sms_authentication:
+        notice: "%{type} Authentication is %{status} successfully!"
+        wrong_otp: Wrong OTP code !
+      send_token_sms:
+        sms_text: "[BitCorex]Verification code:- %{token}. make sure the domain in your address bar is %{domain} before proceeding tp prevent phishing."
+      google_auth:
+        google_title: Google Authentication
+        enable: Enable
+        disable: Disable
+        update: Update
+        Token_Verify: Verify Token
+      sms:
+        sms_title: SMS Authentication
+        sms_error_msg: "error msg here ......."
+        sms_success_msg: "SMS has been sent successfully!"
+        sms_label: Phone Number
+        disable: Disable
+        enable: Enable
+        sms_send: Submit
+        sms_send1: Send SMS
+        sms_token: SMS token
+    shared:
+      balances:
+        locked: Frozen
+        balance: Balance
+        available: Available
+        title: "%{icon} %{c} Account"
+        btc_format: '0.00000000'
+        bch_format: '0.00000000'
+        eth_format: '0.00000000'
+        trx_format: '0.000000'
+        xrp_format: '0.000000'
+        eos_format: '0.000000000000000000'
+        csc_format: '0.000000'
+        ipm_format: '0.000000'
+        ems_format: '0.000000'
+        ecp+_format: '0.00000000'
+        usdc_format: '0.000000'
+        fto_format: '0.000000'
+        aok_format: '0.000000000000000000'
+        cac+_format: '0.000000'
+        total: Total
+  guides:
+    two_factors:
+      panel: Reset Google Verification
+    private:
+      settings:
+        panel: Settings
+        index:
+          intro: Admin and revise your profile.
+      api_tokens:
+        panel: API Tokens
+        index:
+          title: My Tokens
+          intro: A list of all your API tokens. An empty 'IP Whitelist' means any
+            ip is allowed to use the token.
+        new:
+          title: Create API Token
+        create:
+          title: Create API Token
+        edit:
+          title: Edit API Token
+        update:
+          title: Edit API Token
+      tickets:
+        panel: Tickets
+      id_documents:
+        panel: Identity Authentication
+        new:
+          title: Submit real-name authentication information
+          intro: In line with the national laws , identity verification is required.
+            please verify your account to proceed.
+
+    panels:
+      balance: Account
+    sessions:
+
+      panel: Login
+      new:
+        title: Login my account
+        intro: Login BitCorex now for you to exchange.
+
+      failure:
+        title: Login my account
+        intro: Login BitCorex now for you to exchange.
+
+
+
+    reset_passwords:
+      panel: Password
+      new:
+
+        title: Reset Password
+        intro: Please enter your e-mail address which is verified by your  account,
+          enter verification code to submit,and login your mailbox, follow the prompts
+          to reset your password.
+      create:
+        title: Reset password
+        intro: Please enter your e-mail address which is verified by your  account,
+          enter verification code to submit,and login your mailbox, follow the prompts
+          to reset your password.
+      edit:
+        title: Set Password
+      update:
+        title: Set Password
+
+  activations:
+    new:
+      notice: An email has been sent to your mailbox, please check it for verification as soon as possible. If you do not received it , please click "send it again" button.
+      verified: Your email adress has been verified successfully.
+      login_required: login required!
+      tip: Activation link was sent to %{email}
+      spam: Please check your spam folder for the activation link.
+    edit:
+      notice: Account activated successfully!
+      alert: Activation link is expired or invalid
+
+  authentications:
+    emails:
+      new:
+        title: Setup Email
+        setup_email: Please setup your email address.
+        warning: Please check your inbox after saving the email address.
+        email_address: Email Address
+        save: Save
+    weibo:
+      destroy:
+        last_auth_alert: You couldn't delete the last authentication
+        unbind_success: Unbind from the Weibo
+    identities:
+      new:
+        title: Setup The Password
+        save: Save
+      create:
+        success: Setup password successfully
+  forum:
+    index:
+      notice:
+        display_name: Please set your display name for the forum.
+  identities:
+    new:
+      title: SIGN UP
+      signin: Sign In
+      password: Please enter a password at least 6 characters and it's better to contain
+        uppercase and lowercase letters and numbers.
+      heading: Register
+      agree_content:  I agree to BitCorex's
+      email: Email
+      create_password: 'Create Password'
+      confirm_password: 'Confirm Password'
+      reference_user:  'Referral ID (optional)'
+      register: Register
+      login: Log In
+      home: Home
+      support: Support
+      language: Language
+      terms: Terms Of Use
+      register_content: Already registered?
+    update:
+      auth-error: 'The original password you entered is incorrect, please re-enter.'
+      auth-same: The new password you entered is the same as the old password, please
+        re-enter.
+      notice: Account password updated successfully.
+    edit:
+      title: Change Password
+      old_password: ' * Old Password'
+      new_password: New Password
+      confirmation_password: Confirmation Password
+      update: Change Password
+      msg: required filed can't be blank
+
+  token_expires:
+    index:
+      email_activation: Your email address has been verified successfully.
+  google_verifies:
+    new:
+      title: Token Verification
+      google_label: Google Authentication Code
+      g_tab: Google Authentication
+      sms_alert: SMS has been sent successfully!
+      sms_label: SMS Authentication Code
+      s_tab: SMS Authentication
+      SMS_Token: SMS Token
+      Send_SMS: Send SMS
+      SMS: 'Phone number is unavailable?'
+      google_auth: Lost Your Google Authenticator?
+      login: Login
+
+
+  simple_form:
+    placeholders:
+      deposit:
+        bank:
+          amount: Minimum amount 100
+      session:
+        email: E-mail Address
+        password: Password
+      order_bid:
+        origin_volume: Buy Volume
+        sum: Sum
+      order_ask:
+        origin_volume: Sell Volume
+        sum: Total Turnover
+      withdraw:
+        satoshi:
+          sum: Minimum amount 0.001
+          fund_extra: Enter a label for this address (optional)
+    hints:
+      deposit:
+        bank:
+          sum: "<a target='_balance' href='#'>Fee structure</a>"
+          member_name: "<span class='text-danger'>Recharge bank account name must
+            match the name with your real name authentication</span>"
+          sn: "<span class='text-danger'>Please copy the SN in your bank transfer's
+            message, otherwise we can not process your order quickly.</span>"
+      id_document:
+#        name: Please fill in the name which is consistent with your Credentials.
+      withdraw:
+        bank:
+          member_name: "<span class='text-danger'>Withdraw bank account name must
+            match your name used for real-name authentication</span>"
+          sum: "<a target='_balance' href='#'>Fee structure</a>"
+          fund_extra: If your bank is no longer in the list, please contact customer
+            service
+        satoshi:
+          sum: "<a target='_balance' href='#'>Fee structure</a>"
+        bitcoin_cash:
+          sum: "<a target='_balance' href='#'>Fee structure</a>"
+        ripple:
+          sum: "<a target='_balance' href='#'>Fee structure</a>"
+        ether:
+          sum: "<a target='_balance' href='#'>Fee structure</a>"
+        tronix:
+          sum: "<a target='_balance' href='#'>Fee structure</a>"
+        eos:
+          sum: "<a target='_balance' href='#'>Fee structure</a>"
+        csc:
+          sum: "<a target='_balance' href='#'>Fee structure</a>"
+        ipm:
+          sum: "<a target='_balance' href='#'>Fee structure</a>"
+        ems:
+          sum: "<a target='_balance' href='#'>Fee structure</a>"
+        ecp+:
+          sum: "<a target='_balance' href='#'>Fee structure</a>"
+        usdc:
+          sum: "<a target='_balance' href='#'>Fee structure</a>"
+        fto:
+          sum: "<a target='_balance' href='#'>Fee structure</a>"
+        aokey7_token:
+          sum: "<a target='_balance' href='#'>Fee structure</a>"
+        cac+:
+          sum: "<a target='_balance' href='#'>Fee structure</a>"
+
+    creating: Creating...
+    updating: Updating...
+    buttons:
+      or: Or
+      cancel: Cancel
+    'yes': 'Yes'
+    'no': 'No'
+    required:
+      text: required
+      mark: "*"
+    error_notification:
+      default_message: 'Please review the problems below:'
+    labels:
+      defaults:
+        title: Title
+      fund_source:
+        label: Label
+        address: Address
+        category: Category
+      withdraw:
+        satoshi:
+          fee: Fee
+          sum: Amount
+          fund_uid: Bitcoin Address
+          fund_extra: Label
+          account_balance: Account Balance
+          member_name: Account
+        bitcoin_cash:
+          fee: Fee
+          sum: Amount
+          fund_uid: Bitcoin Address
+          fund_extra: Label
+          account_balance: Account Balance
+          member_name: Account
+        ethereum:
+           fee: Fee
+           sum: Amount
+           fund_uid: Litoshi Address
+           fund_extra: Label
+           account_balance: Account Balance
+        tronix:
+            fee: Fee
+            sum: Amount
+            fund_uid: tronix Address
+            fund_extra: Label
+            account_balance: Account Balance
+        ripple:
+            fee: Fee
+            sum: Amount
+            fund_uid: ripple Address
+            fund_extra: Label
+            account_balance: Account Balance
+        eos_token:
+            fee: Fee
+            sum: Amount
+            fund_uid: eos Address
+            fund_extra: Label
+            account_balance: Account Balance
+        csc:
+          fee: Fee
+          sum: Amount
+          fund_uid: csc Address
+          fund_extra: Label
+          account_balance: Account Balance
+        ipm:
+          fee: Fee
+          sum: Amount
+          fund_uid: ipm Address
+          fund_extra: Label
+          account_balance: Account Balance
+        ems_token:
+          fee: Fee
+          sum: Amount
+          fund_uid: ipm Address
+          fund_extra: Label
+          account_balance: Account Balance
+        ecpplus_token:
+          fee: Fee
+          sum: Amount
+          fund_uid: ipm Address
+          fund_extra: Label
+          account_balance: Account Balance
+        usdcoin:
+          fee: Fee
+          sum: Amount
+          fund_uid: ipm Address
+          fund_extra: Label
+          account_balance: Account Balance
+        fto_token:
+          fee: Fee
+          sum: Amount
+          fund_uid: ipm Address
+          fund_extra: Label
+          account_balance: Account Balance
+        aokey7_token:
+          fee: Fee
+          sum: Amount
+          fund_uid: ipm Address
+          fund_extra: Label
+          account_balance: Account Balance
+        cacplus_token:
+          fee: Fee
+          sum: Amount
+          fund_uid: ipm Address
+          fund_extra: Label
+          account_balance: Account Balance
+
+
+
+  admin:
+    deposits:
+      banks:
+        index:
+          oneday: Requests in the last 24 hours
+          available: All Pending Requests
+        show:
+          alert: Recharge cannot be located.
+          notice: The recharge have been successful.
+          deposit: Deposit Request
+          accept: Accept
+          target_deposit: Wire Transfer
+          confirm: Confirm recharge?
+        update:
+          blank_txid: TxID can't be blank
+      coins:
+        update:
+          notice: The deposit was successful.
+        index:
+          accept: Accept
+          accept_confirm: Confirm deposit?
+      fiats:
+        show:
+          id: ID
+          amount: Amount
+          done_at: Done AT
+          back: back
+          reference: Reference ID
+    members:
+      index:
+        search: Search
+        members: Members
+        email: Email
+        name: Name
+        wallet_address: Wallet Address
+      show:
+        member_title: User Information
+        actions_title: Action
+        accounts_title: Account Information
+        account_versions_title: Records
+    dashboard:
+      index:
+        accounts_title: Account Summary
+        download_csv: Download CSV
+    statistic:
+      filter: Filter
+      summary: Summary
+      click-to-expand: Expand
+      members:
+        show:
+          table: Results
+      orders:
+        show:
+          avg: Average
+          sum: Order Volume
+          sum_strike: By Volume
+          count: Count
+      trades:
+        show:
+          count: Transactions
+          volume: Volume
+          amount: Total Amount
+          min_price: Minimum Price
+          max_price: Maximum Price
+          avg_price: Average Price
+          amount_fee: Transaction Fee
+          volume_fee: Total Fee
+      deposits:
+        show:
+          count: Total
+          amount: Total Amount
+      withdraws:
+        show:
+          count: Total
+          amount: Total Amount
+          fee: Fee
+    withdraws:
+      banks:
+        index:
+          one: Pending withdrawal Orders
+          all: Twenty-four hours Orders
+          empty: No Data
+        show:
+          process: Process
+          succeed: Succeed
+          reject: Reject
+          succeed_confirm: Confirm Process?
+          reject_confirm: Confirm Reject?
+          withdraw: Withdraw
+          empty: No Data
+        update:
+          notice: The withdrawal was successful.
+        destroy:
+          notice: The withdrawal was rejected.
+      coins:
+        index:
+          one: Withdraws for the last 24 hours
+          all: All withdraws
+          empty: No data
+        show:
+          process: Accepted
+          succeed: Withdraw
+          reject: Reject
+          succeed_confirm: Process withdrawal?
+          reject_confirm: Reject withdrawal?
+          withdraw: Withdrawals
+        withdraw_rejected_mail:
+          email: Compose Email
+          send: Send
+        update:
+          notice: Succesfully updated.
+        destroy:
+          notice: Succesfully destroyed.
+  deposits/satoshi:
+    aasm_state:
+      submitted: Submitted
+      accepted: Accepted
+      checked: Checked
+      warning: Warning
+  deposits/bitcoin_cash:
+    aasm_state:
+      submitted: Submitted
+      accepted: Accepted
+      checked: Checked
+      warning: Warning
+  deposits/ethereum:
+    aasm_state:
+      submitted: Submitted
+      accepted: Accepted
+      checked: Checked
+      warning: Warning
+  deposits/tronix:
+      aasm_state:
+        submitted: Submitted
+        accepted: Accepted
+        checked: Checked
+        warning: Warning
+  deposits/ripple:
+      aasm_state:
+        submitted: Submitted
+        accepted: Accepted
+        checked: Checked
+        warning: Warning
+  deposits/eos_token:
+      aasm_state:
+        submitted: Submitted
+        accepted: Accepted
+        checked: Checked
+        warning: Warning
+  deposits/csc:
+    aasm_state:
+      submitted: Submitted
+      accepted: Accepted
+      checked: Checked
+      warning: Warning
+  deposits/ipm:
+    aasm_state:
+      submitted: Submitted
+      accepted: Accepted
+      checked: Checked
+      warning: Warning
+  deposits/ems_token:
+    aasm_state:
+      submitted: Submitted
+      accepted: Accepted
+      checked: Checked
+      warning: Warning
+  deposits/ecpplus_token:
+    aasm_state:
+      submitted: Submitted
+      accepted: Accepted
+      checked: Checked
+      warning: Warning
+  deposits/usdcoin:
+    aasm_state:
+      submitted: Submitted
+      accepted: Accepted
+      checked: Checked
+      warning: Warning
+  deposits/fto_token:
+    aasm_state:
+      submitted: Submitted
+      accepted: Accepted
+      checked: Checked
+      warning: Warning
+  deposits/aokey7_token:
+    aasm_state:
+      submitted: Submitted
+      accepted: Accepted
+      checked: Checked
+      warning: Warning
+  deposits/cacplus_token:
+    aasm_state:
+      submitted: Submitted
+      accepted: Accepted
+      checked: Checked
+      warning: Warning    
+  easy_table:
+    satoshi:
+      amount: Amount
+      txid: TxId
+      created_at: Created At
+      confirmations: Confirmations
+      member_name: Member
+      state_and_actions: State/Actions
+      currency_obj_key_text: Currency
+    bitcoin_cash:
+      amount: Amount
+      txid: TxId
+      created_at: Created At
+      confirmations: Confirmations
+      member_name: Member
+      state_and_actions: State/Actions
+      currency_obj_key_text: Currency
+    ethereum:
+      amount: Amount
+      txid: TxId
+      created_at: Created At
+      confirmations: Confirmations
+      member_name: Member
+      state_and_actions: State/Actions
+      currency_obj_key_text: Currency
+    tronix:
+      amount: Amount
+      txid: TxId
+      created_at: Created At
+      confirmations: Confirmations
+      member_name: Member
+      state_and_actions: State/Actions
+      currency_obj_key_text: Currency
+    ripple:
+       amount: Amount
+       txid: TxId
+       created_at: Created At
+       confirmations: Confirmations
+       state_and_actions: State/Actions
+       currency_obj_key_text: Currency
+    eos_token:
+        amount: Amount
+        txid: TxId
+        created_at: Created At
+        confirmations: Confirmations
+        state_and_actions: State/Actions
+        currency_obj_key_text: Currency
+    csc:
+      amount: Amount
+      txid: TxId
+      created_at: Created At
+      confirmations: Confirmations
+      state_and_actions: State/Actions
+      currency_obj_key_text: Currency
+    ipm:
+      amount: Amount
+      txid: TxId
+      created_at: Created At
+      confirmations: Confirmations
+      state_and_actions: State/Actions
+      currency_obj_key_text: Currency
+    ems_token:
+      amount: Amount
+      txid: TxId
+      created_at: Created At
+      confirmations: Confirmations
+      state_and_actions: State/Actions
+      currency_obj_key_text: Currency
+    ecpplus_token:
+      amount: Amount
+      txid: TxId
+      created_at: Created At
+      confirmations: Confirmations
+      state_and_actions: State/Actions
+      currency_obj_key_text: Currency
+    usdcoin:
+      amount: Amount
+      txid: TxId
+      created_at: Created At
+      confirmations: Confirmations
+      state_and_actions: State/Actions
+      currency_obj_key_text: Currency
+    fto_token:
+      amount: Amount
+      txid: TxId
+      created_at: Created At
+      confirmations: Confirmations
+      state_and_actions: State/Actions
+      currency_obj_key_text: Currency
+    aokey7_token:
+      amount: Amount
+      txid: TxId
+      created_at: Created At
+      confirmations: Confirmations
+      state_and_actions: State/Actions
+      currency_obj_key_text: Currency
+    cacplus_token:
+      amount: Amount
+      txid: TxId
+      created_at: Created At
+      confirmations: Confirmations
+      state_and_actions: State/Actions
+      currency_obj_key_text: Currency
+
+    bank:
+      sn: SN
+      amount: Amount
+      created_at: At
+      fund_source: Fund Source
+      memo: Memo
+      member_name: Member
+      state_and_actions: State/Action
+      currency_obj_key_text: Currency
+  enumerize:
+    account_version:
+      reason:
+        fix: FIX
+        unknown: UNKNOWN
+        strike_add: TRADE PLUS
+        strike_sub: TRADE SUB
+        strike_fee: TRADE FEE
+        strike_unlock: TRADE UNLOCK
+        order_cancel: ORDER CANCEL
+        order_submit: ORDER SUBMIT
+        deposit: DEPOSIT
+        withdraw: WITHDRAW
+        withdraw_lock: WITHDRAW LOCK
+        withdraw_unlock: WITHDRAW UNLOCK
+    state:
+      done: Done
+      wait: Wait
+      cancel: Cancel
+    currency:
+      btc: BTC
+      bch: BCH
+      eth: ETH
+      trx: TRX
+      xrp: XRP
+      eos: EOS
+      csc: CSC
+      ipm: IPM
+      ems: EMS
+      ecp+: ECP+
+      usdc:  USDC
+      fto: FTO
+      aok: AOK
+      cac+: CAC+
+    order:
+      state:
+        done: DONE
+        wait: WAIT
+        cancel: CANCEL
+    deposit:
+      aasm_state:
+        submitted: Submitted
+        submitting: Submitting
+        accepted: Accepted
+        cancelled: Canceled
+        rejected: Rejected
+        checked: Checked
+        warning: Warning
+    withdraw:
+      state:
+        submitting: Submitting
+        submitted: Submitted
+        rejected: Rejected
+        accepted: Accepted
+        suspect: Suspect
+        processing: Processing
+        done: Done
+        canceled: Canceled
+    fund_source:
+      category:
+        satoshi: Bitcoin
+        bank: Bank
+    id_document:
+      id_document_type:
+        id_card: ID Card
+        passport: Passport
+        driver_license: Driver's License
+      id_bill_type:
+        bank_statement: Bank Statement
+        tax_bill: Tax Bill
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: Last &raquo;
+      previous: "&lsaquo; Prev"
+      next: Next &rsaquo;
+      truncate: "..."
+
+  mailer:
+    dear_user: Dear user,
+    signature: Thanks,<br/>The BitCorex Team
+    please_contact: If it's not you, please <a href='mailto:%{contact_mail}'>contact us</a> ASAP.
+    footer: This is an automatically generated email, Please do not reply, if you have any question, please <a href="mailto:%{contact_mail}">contact us</a>.
+
+  member_mailer:
+    notify_signin:
+      subject: "[BitCorex] You have just signed in"
+      just_signed_in: You have just signed in.
+    google_auth_activated:
+      subject: "[BitCorex] Google authenticator activated"
+      google_auth_activated: You have activated google authenticator successfully
+    google_auth_deactivated:
+      subject: "[BitCorex] Google authenticator deactivated"
+      google_auth_deactivated: You have deactivated google authenticator successfully
+    sms_auth_activated:
+      subject: "[BitCorex] SMS authenticator activated"
+      sms_auth_activated: You have activated SMS authenticator successfully
+    sms_auth_deactivated:
+      subject: "[BitCorex] SMS authenticator deactivated"
+      sms_auth_deactivated: You have deactivated SMS authenticator successfully
+    reset_password_done:
+      subject: "[BitCorex] Password changed"
+      successful: Your BitCorex's password has been changed.The withdrawal function is not available in 24h.If this activity is not your own operation, please disable your account and contact us immediately.
+      header_content: Password Changed
+      zinance_team: BitCorex Team
+      hello: Hello,
+      footer_content: Automated message. Please do not reply
+    phone_number_verified:
+      subject: "[BitCorex] Your phone number verified"
+      verified: 'Your phone number verified: %{phone_number}'
+    disable_google_auth:
+      google_auth_subject: "Google Auth Disable Success"
+      sms_auth_subject: "Sms Auth Disable Success"
+      google_auth_body: "Your BitCorex's Google Auth has been disabled.The withdrawal function is not available in 24h. If this activity is not your own operation, please contact us immediately."
+      sms_auth_body: "Your BitCorex's Sms Auth has been disabled.The withdrawal function is not available in 24h. If this activity is not your own operation, please contact us immediately."
+      footer_content: If this activity is not your own operation, please contact us immediately.
+      zinance_team: BitCorex Team
+      automated_text: Automated message. Please do not reply
+      hello: Hello,
+
+  deposit_mailer:
+    accepted:
+      subject: "[BitCorex] Your deposit has been credited into your account"
+      hello: Hello
+      content: Your BitCorex's account has recharged
+      head_content: Deposit Success
+      footer_content: If this activity is not your own operation, please contact us immediately.
+      zinance_team: BitCorex Team
+      automated_text: Automated message. Please do not reply
+
+  system_mailer:
+    daily_stats:
+      member_stats: Member Stats
+      signup: Signup
+      activation: Activation
+      asset_stats: Assets Changes
+      trade_stats: Trades Changes
+      asset_value_change_total: Digital Assets Changes Total
+      trades_change_total: Trades Changes Total
+
+  ticket_mailer:
+    admin_notification:
+      subject: "[BitCorex] User created a new ticket"
+      admin_notification_content: User %{email} created a new ticket, please follow the link below to see the detail
+    author_notification:
+      subject: "[BitCorex] Thank you for submit ticket"
+      thanks_for_submit_ticket: Thank you for submit ticket to us, we will get back to you as soon as possible.
+      head_content: Confirm Your Registration
+      welcome_content: Welcome to BitCorex!
+
+
+  token_mailer:
+    activation:
+      subject: "[BitCorex] Account Activation"
+      click_to_verify: 'Thank you for signing up on BitCorex, please follow this link to verify your Email:'
+      unable_to_click: Copy and open the link in your browser if you are unable to click and visit it.
+      link_expire: The link expires in 30 minutes.
+      content_link: "Click the link below to complete verification:"
+      warning_msg: If this activity is not your own operation, please contact us immediately.
+      automated_msg: Automated message. Please do not reply
+      security_msg:  "5 Security Tips:"
+      security_tip1:  "* DO NOT give your password to anyone!"
+      security_tip2:  "* DO NOT call any phone number for someone claiming to be BitCorex Support!"
+      security_tip3:  "* DO NOT send any money to anyone claiming to be a member of BitCorex!"
+      security_tip4:  "* Enable Google Two Factor Authentication!"
+      security_tip5:  "* Make sure you are visiting "
+      head_content: Confirm Your Registration
+      welcome_content: "Welcome to BitCorex!"
+      verify_button: Verify Email
+    signin_verify:
+      header_content: Authorize New Device
+      Authorize_This_Device: Authorize This Device
+      Zinance_team: BitCorex team
+      Automated_message: Automated message. Please do not reply
+      download: Download
+      Location: 'Location :'
+      IP_Address: 'IP Address:'
+      Device: 'Device:'
+      msg: You recently attempted to sign into your BitCorex account from a new device or in a new location. As a security measure, we require additional confirmation before allowing access to your BitCorex account
+    reset_password:
+      subject: "[BitCorex] Password Reset "
+      hello: Hello,
+      follow_the_link: 'Please follow this link to reset your password within 30 minutes:'
+      header_content: Password Reset
+      body_content: You have just initiated a request to reset the password in BitCorex's account. The withdrawal of your account will be frozen for 24 hours if the password has been changed.
+      action_statment: "To set a new password,please click the button below:"
+      reset_button: Reset Password
+      suggest_msg: If you can't confirm by clicking the button above, please copy the address below to the browser address bar to confirm.
+      link_expire: For security reasons, this link will expire in 30 minutes.
+      security_msg: If this activity is not your own operation, please contact us immediately.
+      team: BitCorex team
+      automated_msg: Automated message. Please do not reply
+
+    two_factor:
+      subject: "[BitCorex]- Reset two factor authentication."
+      click_to_verify: "Click to reset %{type} authentication."
+      unable_to_click: Copy and open the link in your browser if you are unable to click and visit it.
+      link_expire: The link expires in 30 minutes.
+      header_content: "Reset %{type} Authenticator"
+      hello: Hello,
+      body_content: " Reset your two factor authenticator .Withdrawal isn’t allowed within 48 hours after the reset is finished. Please click the button to reset:"
+      reset_button: Confirm Reset
+      suggested_text: If you can't confirm by clicking the button above, please copy the address below to the browser address bar to confirm.
+      security_info: If this activity is not your own operation, please contact us immediately.
+      team: BitCorex Team
+      automated_msg: Automated message. Please do not reply
+  supports:
+    new:
+      Home: Home
+      Support: Support
+      FAQ: FAQ
+      text: Select your queries &amp; write to our experts.
+      text2: Basic or General Queries
+      text3: Techninal Support Queries
+      text4: Advertisement Queries
+      text5: Business Development Queries
+      text6: Affiliate Program Queries
+      text7: Press Area Queries
+      text8: Contact Form
+      text18: Submit
+      text17: Write*
+      text16: Website*
+      text19: 'Telephone*'
+      text20: 'Email*'
+      text21: 'Name*'
+      text22: 'Please enter valid URL.'
+      text23: 'please enter valid Url or Website '
+      text9: Fill up the form. Your e-mail will not be published. Required fields are marked by
+      text10: "Name*"
+      text11: "E-mail*"
+      text12: "Telephone*"
+      text13: "Website"
+      text14: "Write message*"
+      text15: Send message
+    create:
+      success: 'You query has been submitted successfully. We will get back to you soon ...'
+    _header:
+      home: Home
+      submit_request:
+    _footer:
+      Zinance: BitCorex
+    info_page:
+      search: Search
+      home: Home
+      Submit_a_request: Submit a request
+      Tips: 'Tips:  Feedback and responses are in your Email;Be precise in picking the Issue Type as this will greatly expedite the support process;'
+      Please: Please select your issue below.
+      help: Help with Deposit
+      help1: Help with Withdrawals
+      help2: Not Receiving Emails
+      help3: Help with Clients Issue
+      help4: Help with Google Auth
+      help5: Help with SMS Auth
+      help6: Help with Account
+      email: BitCorex email account
+      text: Please enter your BitCorex account email address.
+      Subject: Subject
+      Description: Description
+      Sumbit: Sumbit
+  terms:
+    index:
+      text00: BitCorex Terms of Use
+      date: '[Last revised: 15 november 2018]'
+      text1: This agreement is between you and the service operator,BitCorex. By using any services made available through the BitCorex website
+      text2: https://api.BitCorex.com
+      text0: https://www.BitCorex.net
+      text01: ', API'
+      text3: or BitCorex affiliates, you agree that you have read, understood and accepted all of the terms and conditions contained in this Terms of Use agreement, as well as our Privacy Policy and Consent Form which have incorporated the GDPR regulation. As this is a legally binding contract, please carefully read through this agreement and related notices before using any of our Services. By registering, accessing or using BitCorex, you have agreed to the terms and conditions as laid out in this User Agreement. Should you disagree to this User Agreement, please proceed to initiate the account lock function (for existing users) and stop the usage of BitCorex and any of its services.
+      text4: For more information on BitCorex, you can refer to the company and license information found on the website. If you have questions regarding this agreement, please feel free to contact BitCorex for clarification via our Customer Support team
+      text5: /hc/en-us/requests/new
+      text6: Agreement Conditions
+      text7: BitCorex reserves the right to modify or change the terms and conditions of the agreement at any time and at its sole discretion. BitCorex will provide notice of these changes by updating the revised Terms of Use on the webpage
+      text8: /hc/en-us/articles/115000421672-Terms-of-Use
+      text9: 'and changing the “[Last revised: ]” date on this page. Any and all modifications or changes to the Terms of Use will be effective immediately upon being announced on the website or released to users. As such, your continued use of BitCorex’s services acts as acceptance of the amended agreement and rules.'
+      text10: Eligibility
+      text11: By registering to use a BitCorex Account, you have affirmed that you are at least 18 years old and are an individual, legal person or other organization with full legal capacity to enter into this User Agreement between you and BitCorex. If you are not, you and your guardian shall undertake all consequences resulting from your actions and BitCorex shall have the right to cancel or freeze your account in addition to filing claims against you and your guardian for compensation.
+      text12: Prohibition of use
+      text13: By accessing and using BitCorex and any of its services, you acknowledge and declare that you are not on any trade or economic sanctions lists, such as the United Nations Security Council Sanctions List and its equivalent. BitCorex maintains the right to select its markets and jurisdictions to operate and may restrict or deny its services to certain countries. The content of this Agreement shall not be excluded from the laws of the country under which the user belongs. BitCorex maintains its stance that prohibited users are not to use or access BitCorex and any of its services.
+      text14: Description of services
+      text15: BitCorex provides an online digital asset trading platform (crypto to crypto) for products commonly known as cryptographic tokens, digital tokens or cryptographic currency. BitCorex does not provide fiat trading capabilities on its platform and as such is not subjected to the stringent regulations that come with it. BitCorex functions as a trading platform provider and is not a buyer or seller in trades made between traders. BitCorex is also not a market maker. Traders must register and open an account with BitCorex and deposit digital assets prior to commencement of trading. Traders may request the withdrawal of their digital assets, subject to the limitations as stated in the Terms and Conditions.
+      text16: BitCorex strives to maintain the accuracy of information posted on its website however it cannot guarantee the accuracy, suitability, reliability, completeness, performance or fitness for purpose of the content through the website, and will not accept liability for any loss or damage that may arise directly or indirectly from the content. Information on BitCorex website can be subjected to change without notice and is provided for the primary purpose of facilitating users to arrive at independent decisions. BitCorex does not provide investment or advisory advice and will have no liability for the use or interpretation of information as stated in its website or other communication mediums. All users of BitCorex must understand that there are risks involved in trading. BitCorex encourages all users to exercise prudence and trade responsibly within their own means.
+      text17: While BitCorex emphasises platform security to ensure the continuity and security of its services (announcements will be made in event of downtime/maintenance), it will be non-accountable to Act of God, malicious targeted hacking, terrorist attacks and other unforeseen circumstances. BitCorex reserves the right to cancel, rollback or block transactions of all type on its platform in event of abnormal transactions. BitCorex will not ask for any password from its users nor ask users to transfer funds that are not listed on its trading platform. Users are encouraged to exercise prudence in dealing with discounts or promotions that could lead to them getting scammed. While the list is non-exhaustive, you agree that BitCorex will not be held responsible for any losses arising from the situations stated above.
+      text18: By using BitCorex and any of its services, you declare that all information to BitCorex in connection with these Terms are true, accurate and complete.
+      text19: BitCorex Account Registration & Requirements
+      text20: Registration
+      text21: All users must register
+      text22: /register.html
+      text23: for a BitCorex Account before using the site. To register for an account, you must provide your real name, email address and password, as well as accept the Terms of Use, Privacy Policy and Consent Form. Depending on certain mo and in our sole discretion, we may refuse to open an account for you.
+      text24: User Identity Verification
+      text25: With registration of an account on BitCorex, you agree to share personal information requested for the purposes of identity verification. This information is used specifically for the detection of money laundering, terrorist financing, fraud and other financial crimes on the BitCorex platform. In addition to providing this information, to facilitate compliance with global industry standards for data retention, you agree to permit us to keep a record of such information for the lifetime of your account plus 5 years beyond account closing. You also authorise us to make inquiries, either directly or through third parties, that are deemed necessary to verify your identity or to protect you and/or us against financial crimes such as fraud.
+      text26: 'The Identity Verification information we request may include, but is not limited to, your: Name, Email Address, Contact Information, Telephone Number, Username, Government Issued ID. In providing this required information, you confirm that it is accurate and authentic. Post-registration, you must guarantee that the information is truthful, complete and updated in a timely manner with any changes. If there is any reasonable doubt that any information provided by you is wrong, untruthful, outdated or incomplete, BitCorex shall have the right to send you a notice to demand corrections, remove relevant information directly and, as the case may be, terminate all or part of BitCorex Service to you. You shall be solely and fully responsible for any loss or expenses incurred during the use of BitCorex Service if you cannot be reached through the contact information provided. You hereby acknowledge and agree that you have the obligation to keep all information provided up to date if there are any changes.'
+      text27: Account Usage Requirements
+      text28: BitCorex accounts can only be used by the person whose name they are registered under. BitCorex reserves the right to suspend, freeze or cancel accounts that are used by persons other than the persons whose names they are registered under. Accordingly, BitCorex will not take legal responsibility for these accounts.
+      text29: Account Security
+      text30: 'BitCorex prioritizes maintaining the safety of those user funds entrusted to us and has implemented industry standard protections for our platform. With that said, there are account-level risks that are created by individual user actions. We request that you understand the need to independently take safety precautions to protect your own account and personal information.'
+      text31: 'You shall be solely responsible for the safekeeping of your BitCorex account and password on your own, and you shall be responsible for all activities under your log-in email, BitCorex account and password (including but not limited to information disclosure, information posting, consent to or submission of various rules and agreements by clicking on the website, online renewal of agreement, etc.).'
+      text32: 'You hereby agree that:'
+      text33: 'you will notify BitCorex immediately if you are aware of any unauthorized use of your BitCorex account and password by any person or any other violations to the security rules;'
+      text34: you will strictly observe the security, authentication, dealing, charging, withdrawal mechanism or procedures of the website/service; and
+      text35: you will log out from the website by taking proper steps at the end of every visit.
+      text36: BitCorex will not be responsible for any loss or consequences caused by your failure to comply with the above Account Security provision.
+      text37: Dispute Resolution
+      text38: BitCorex reserves the right to resolve issues and disputes at its sole discretion. Some issues include infringement of others’ rights, violation of laws and regulations, abnormal trades and others not explicitly mentioned in the Terms. Users agree to bear the costs arising from the process of dispute resolution.
+      text39: Guidelines for usage of services on BitCorex
+      text40: 'You hereby agree to observe the following covenants during your use of services on BitCorex:'
+      text41: All the activities that you carry out during the use of BitCorex Service will be in compliance with the requirements of applicable laws, regulations, as well as the various guidelines of BitCorex,
+      text42: will not be in violation of public interests, public ethics or other’s legitimate interests,
+      text43: will not constitute evasion of payable taxes or fees and will not violate this agreement or relevant rules.If you violate the foregoing promises and thereby cause any legal consequence, you shall independently undertake all of the legal liabilities in your own name and indemnify BitCorex from all actions, claims, or costs arising from such violation. You will not use any data or information displayed on the site for commercial purposes without the prior written consent of BitCorex. You will use the site in accordance with the Terms of Use and Privacy Policy, without taking acts of unfair competition nor attempting to intervene with the normal operation of BitCorex. Examples of such malicious acts include, but are not limited to
+      text44: using a device, software or subroutine to interfere with the site
+      text45: overloading network equipments with unreasonable data loading requests
+      text46: executing malicious sales or purchases on the market By accessing the BitCorex Service, you agree that BitCorex shall have the right to unilaterally determine whether you have violated any of the above covenants and take actions to apply relevant rules without receiving your consent or giving prior notice to you. Examples of such actions include, but are not limited to
+      text47: block and close order requests
+      text48: freezing your account
+      text49: reporting the incident to authorities
+      text50: publishing the alleged violations and actions that have been taken
+      text51: deleting any information you published that is in violation
+      text52: If your alleged violation causes any losses to a third party, you shall solely undertake all the legal liabilities in your own name and hold BitCorex harmless from any loss, fine or extra expenses. If, due to any alleged violation BitCorex incurs any losses, is claimed by any third party for compensation or suffers any punishment imposed by any administrative authorities, you shall indemnify BitCorex against any losses and expense caused thereby, including reasonable attorney’s fee.
+      text53: Service fees
+      text54: BitCorex reserves the rights to levy service fees on users who use its services. It is in the discretion of BitCorex to adjust the servce fees charged to users using its services.
+      text541: Liability
+      text55: Provision of Service
+      text56: BitCorex will provide BitCorex Service at an “as is” and “commercially available” condition, and does not offer any form of warranty with regards to the Service’s reliability, stability, accuracy and completeness of the technology involved. BitCorex serves merely as a venue of transactions where coin-related information can be acquired and coin-related transactions can be conducted. BitCorex cannot control the quality, security or legality of the coin involved in any transaction, truthfulness of the transaction information, or capacity of the parties to any transaction to perform their obligations under the rules. You must carefully consider the associated investment risks, legal status and validity of the transaction information and investment decisions prior to your use of the BitCorex Services provided.
+      text57: Limitation of Liability
+      text58: You acknowledge and agree, BitCorex shall not be liable for any of your losses caused by any of the following events, including but not limited to
+      text59: Losses of profits, goodwill, usage or data or any other intangible losses
+      text60: Use or failure to use BitCorex Service
+      text61: Unauthorized use of your account or unauthorized alteration of your data by third parties
+      text62: Your misunderstanding of BitCorex Service
+      text63: Any other losses related to BitCorex Service which are not directly attributable to BitCorex
+      text64: In no event shall BitCorex be liable for any failure or delay of service resulting from regular network maintenance or external factors such as power failure, natural disaster, service provider-side problems or governmental acts.
+      text65: Indemnification
+      text66: You agree to indemnify and hold harmless BitCorex, its affiliates, contractors, licensors, and their respective directors, officers, employees and agents from and against any claims and damages (including attorneys’ fees, fines or penalties imposed by any regulatory authority) arising out of your breach or our enforcement of this Agreement. This shall also apply to your violation of any applicable law, regulation, or rights of any third party during your use of the BitCorex Service.
+      text67: Announcements
+      text68: Please be aware that all official announcements, news, promotions, competitions and airdrops will be listed on
+      text69: '/hc/en-us/categories/115000056351-Announcements'
+      text70: where we urge all users to refer to regularly. BitCorex will not be held liable or responsible in any manner of compensation should users incur personal losses arising from ignorance or negligence of the announcements.
+      text71: Termination of Agreement
+      text72: 'You agree that we have the right to immediately suspend your account (and any accounts beneficially owned by related entities or affiliates), freeze or lock the funds in all such accounts, and suspend your access to BitCorex if we suspect any such accounts to be in violation of the Terms of Service, Privacy Policy, AML/CTF acts or any applicable laws & regulations. BitCorex shall have the right to keep and use the transaction data or other information related to such accounts. The above account controls may also be applied in the following cases:'
+      text73: The account is subject to a governmental proceeding, criminal investigation or other pending litigation
+      text74: We detect unusual activity in the account
+      text75: We detect unauthorized access to the account
+      text76: 'We are required to do so by a court order or command by a regulatory/government authority   In case of any of the following events, BitCorex shall have the right to directly terminate this agreement by cancelling your account, and shall have the right to permanently freeze (cancel) the authorizations of your account on BitCorex and withdraw the corresponding BitCorex account thereof: '
+      text77: 'after BitCorex terminates services to you,'
+      text78: 'you allegedly register or register in any other person’s name as BitCorex user again, directly or indirectly;'
+      text79: 'the main content of user’s information that you have provided is untruthful, inaccurate, outdated or incomplete;'
+      text80: 'when this agreement (including the rules) is amended, you expressly state and notify BitCorex of your unwillingness to accept the amended service agreement;'
+      text81: any other circumstances where BitCorex deems it should terminate the services.Should the account be terminated, the account & transactional information required for meeting data retention standards will be securely stored for five years. In addition, if a transaction is unfinished during the account termination process, BitCorex shall have the right to notify your counterparty of the situation at that time.
+      text82: Remaining funds after account termination (normal)
+      text83: Once the account is closed/withdrawn, all remaining balance (which includes charges and liabilities owed to BitCorex) on the account will be payable at once to BitCorex. Upon payment of all outstanding charges to BitCorex (if any), the user will have 5 working days to withdraw all funds from the account.
+      text84: Remaining funds after account termination (fraud/AML/violation of terms)
+      text85: 'BitCorex maintains full custody of the funds and user data/information which may be turned over to the authorities in event of account suspension/closure arising from fraud investigations, AML investigations or violation of BitCorex’s Terms (eg. trading on BitCorex from a sanctioned country).'
+      text86: Compliance with local laws
+      text87: It is the responsibility of the user to abide by local laws in relation to the legal usage of BitCorex in their local jurisdiction. Users must also factor, to the extent of their local law all aspects of taxation, the withholding, collection, reporting and remittance to their appropriate tax authorities. All users of BitCorex and any of its services acknowledge and declare that the source of their funds come from a legitimate manner and are not derived from illegal activities. BitCorex maintains a stance of cooperation with law enforcement authorities globally and will not hesitate to seize, freeze, terminate the account and funds of users which are flagged out or investigated by legal mandate.
+      text88: Privacy Policy
+      text89: BitCorex may announce and amend its privacy policy on the platform of BitCorex from time to time and the privacy policy shall be an integral part of this Usage Agreement. The latest version of the Privacy Policy which has included the GDPR can always be found here on this page
+      text90: Indemnity and disclaimer
+      text91: You agree to indemnify BitCorex and its entirety of affiliates and hold them harmless from and against all third party claims except from BitCorex’s breach of these Terms. As mentioned in description of services, BitCorex strives its best to maintain the data integrity on its site but does not guarantee the information and services provided in its platform. BitCorex will not be liable for errors arising from the use of its services.
+      text92: Complaints
+      text93: If you have any complaints, feedback or questions, kindly contact
+      text94: "(https://support.BitCorex.com/hc/en-us/requests/new)"
+      text95: 'and we will in our best efforts try to resolve it for you.'
+      text96: '/statement.html'
+
+  withdraw_mailer:
+    submitted:
+      subject: "[BitCorex] Your withdraw state update"
+      body_content: The request of your %{currency} withdrawal has been successfully submitted, We will process it as soon as possible. Please be patient with us. Contact us if you have any questions.
+      header_content: Withdraw Submitted
+      hello: Hello,
+      security_msg: If this activity is not your own operation, please contact us immediately.
+      team: BitCorex Team
+      automated_msg: Automated message. Please do not reply.
+
+    processing:
+      subject: "[BitCorex] Your withdraw state update"
+      body_content: The request of your %{currency} withdrawal is in process. Please be patient with us. Contact us if you have any questions.
+      header_content: Withdraw Processed
+      hello: Hello,
+      security_msg: If this activity is not your own operation, please contact us immediately.
+      team: BitCorex Team
+      automated_msg: Automated message. Please do not reply.
+
+    done:
+      subject: "[BitCorex] Your withdraw state update"
+      content: The request of your %{currency} withdrawal is complete. Please check it out. Contact us if you have any questions.
+      header_content: Withdraw Success
+      hello: Hello,
+      body_content: The request of your %{currency} withdrawal is complete.Please check it out.
+      security_msg: If this activity is not your own operation, please contact us immediately.
+      team: BitCorex Team
+      automated_msg: Automated message. Please do not reply.
+
+    withdraw_state:
+      subject: "[BitCorex] Your withdraw state update"
+      your_state: 'Your withdrawal state: '
+      header_content: Your Withdrawal State
+      hello: Hello,
+      team: BitCorex Team
+      automated_msg: Automated message. Please do not reply.
+
+  'true': true
+  'false': false
+  view_on_github: View on Github
+  slogan:
+    heading: BitCorex
+    subheading: Cloud deployment made simple and secure
+    text1: BitCorex - Cryptocurrency exchange for managing digital currency.
+    text2: We provide Crypto installation and configuration services.
+  trade:
+    markets: Markets
+    realtime_price:
+      title: Realtime Price
+    account_balance:
+      title: Balance
+  gon:
+    ask: Ask
+    bid: Bid
+    brand: Crypto Exchange
+    notification:
+      title: Crypto Exchange
+      enabled: Notification enabled.
+      new_trade: "%{kind} order#%{id} executed at %{price} %{quote_unit} for %{volume} %{base_unit}。"
+  back: Back
+  invalid_password: Invalid password
+  all: All
+  date:
+    formats:
+      date-short: "%m-%d"
+      short: "%m-%d %H:%M"
+      default: "%m/%d/%Y %H:%M"
+  time:
+    formats:
+      date-short: "%m-%d"
+      short: "%m-%d %H:%M"
+      default: "%m/%d/%Y %H:%M"
+  header:
+    news: News
+    or: or
+    support: Support
+    cc: "© %{year} %{host}"
+    All_Rights_Reserved: All Rights Reserved
+    language: Language
+    home: Home
+    dashboard: Dashboard
+    admin: Admin Panel
+    market: Trade
+    settings: Profile
+    signin: Sign In
+    login: Log In
+    b_details: Bank Details
+    signout: Logout
+    signup: Sign Up
+    register: Register
+    forgot_password: "Forgot Password?"
+    funds: Funds
+    getstart: Markets
+    assets: Solvency
+    history: History
+    order_history: Order History
+    trade_history: Trade History
+    account_history: Transaction History
+    open_order_history: Open Orders
+    my_profile: My Profile
+    balance_summary: Balances
+    account_balance: Total Assets
+    back: Back
+    total: Total
+    deposit: Deposit
+    withdraw: Withdraw
+    trade: Trade
+    sign_in_with_google: Sign In With Google
+    sign_in_with_facebook: Sign In With Facebook
+    toggle_navigation: Toggle navigation
+    exchange: Exchange
+    basic: Basic
+    not_on: Not on
+    website_translator: Website Translator
+    yet: 'yet?'
+    translator_text: Translations by Google is provided for convenience and is not verified contextually. Please refer to original for accuracy.
+    account: Account
+    order: Orders
+  admin_header:
+    deposits: Deposits
+    withdraws: Withdraws
+    statistics: Data Statistics
+    id_documents: Verify Account
+    commission: Commissions
+    third_party: Liquidity Management
+    client_details: Client Details
+    members_details: Member Details
+    referral: Referral Settings
+    airdrop: Airdrop
+  login_header:
+    hello: 'testing'
+
+
+  footer:
+    Powered_by: Powered By
+    Antier_Solutions: Antier Solutions
+    about: About
+    privacy: Privacy
+    contact: Contact
+    price: Price
+    liability_proof: liability proof
+    terms: Terms
+    cc: "© %{year}-%{year1}%{host}. %{add} All rights reserved."
+    volume: 24h Volume
+    Connected: Connected
+  about:
+    index:
+     more: More
+     title: About BitCorex
+     safety_stability: Safety Stability
+     system_architecture: Multi-tier &amp; multi-cluster system architecture
+     performance: High Performance
+     processing: Capable of processing 1,400,000 orders per second
+     liquidity: High Liquidity
+     resources: Abundant resources and partners
+     devices: All Devices Covered
+     device_text: Web, Android, iOS, Mobile Web, Windows, macOS
+     support: Multilingual Support
+     support_text: Support and FAQs available in multiple languages
+     coin_support: Multiple-Coin Support
+     coins: BTC, ETH,  USDT, CSC
+     advantages: Our Advantages
+     team: Strong Team
+     team_text:  our team have experience in both wall-street and crypto finance. Our team also have a track record of successful startups under our belt.
+     products: Proven Products
+     products_text: The underlying BitCorex platform has been deployed on 30+ exchanges already.  It supports all devices and multiple languages, offering a seamless user experience.
+     technology: Superior Technology
+     technology_text: Our certified matching engine is capable of processing 1,400,000 orders per second, making BitCorex one of the fastest exchange in the market today.
+     resources: Industry Resources
+     resources_text: We have solid relationships with industry leaders, simply look at the list of investors and advisors who are willing to stand behind our platform.
+     assets_download: Assets For Download
+     assets_text: These images have been made available for download to only be used in articles written about BitCorex. If you would like to use these images for any other purpose, please contact us at
+  contact:
+    index:
+     view: 'VIEW SUPPORT DOCUMENTATION'
+     submit: 'submit a request'
+     title: Contact us
+     question: Got a Question?
+     FAQ1: official BitCorex FAQ
+     please_content: Please first check the
+     content: "to see if your question has already been answered:"
+     request_msg: Still can’t find what you’re looking for? Please
+     join_msg: "For non-account-related communications, join our online communities:"
+     telegram: BitCorex Telegram
+     announcements: Announcements
+
+  privacy:
+   index:
+     date: '[Last revised: 15 november 2018]'
+     title: BitCorex Privacy Policy
+     privacy_content: This Privacy Policy explains how BitCorex Holdings Limited (“BitCorex”) collects, uses, shares, and protects user information obtained through the BitCorex.com website. The terms “we,” “us,” and “our” refer to BitCorex Holdings Limited and its affiliates. When we ask for certain personal information from users it is because we are required by law to collect this information or it is relevant for specified purposes. Any non-required information you provide to us is done so voluntarily. You decided whether to provide us with these non-required information; you may not be able to access or utilize all of our Services if you choose not to.
+     privacy_content2: By using the Site, you consent to the data practices described in this Privacy Policy. On occasion, BitCorex may revise this Privacy Policy to reflect changes in law or our personal data collection and use practices. If material changes are made to this Privacy Policy, the changes will be announced by posting on the site. We will ask for your consent before using your information for any purpose that is not covered in this Privacy Policy.
+     privacy_content3: The latest privacy policy has incorporated elements from the General Data Protection Regulation (GDPR) as we act in accordance to its personal information processing rules within the European Economic Area (EEA).
+     info_title: INFORMATION BitCorex COLLECTS
+     last_revised_content: We want you to understand the types of information we collect when you register for and use BitCorex’s services
+     info_content: Information you provide to us at registration
+     privacy_content4: When you create a BitCorex Account, you provide us with personal information that includes your contact information (Email Address, name, and a password). You can also choose to add a phone number for SMS or Google Authenticator account to be used for 2FA verification for improved security.
+     info_identity: Information we collect when authenticating user identity
+     privacy_content5: To comply with global industry regulatory standards including Anti-Money Laundering (AML), Know-Your-Customer (KYC), and Counter Terrorist Financing (CTF), BitCorex requires user accounts to undergo user identity authentication for both Personal & Enterprise-level accounts. This entails collecting formal identification.
+     info_service: Information we collect as you use our services
+     service_title: Service Usage Information
+     privacy_content6: Through your use of the BitCorex platform, we also monitor and collect tracking information related to usage such as access date & time, device identification, operating system, browser type and IP address. This information may be directly obtained by BitCorex or through third party services. This service usage data helps us our systems to ensure that our interface is accessible for users across all platforms and can aid during criminal investigations.
+     transaction_info: Transaction Information
+     privacy_content7: For all personal and enterprise user accounts, we collect transaction information including deposit snapshots, account balances, trade history, withdrawals, order activity and distribution history. This transaction data is monitored for suspicious trading activity for user fraud protection, and legal case resolution.
+     collect_info: WHY DOES BitCorex COLLECT THIS INFORMATION
+     maintain_info: To provide and maintain our services
+     privacy_content8_info: We use the information collected to deliver our services and verify user identity.
+     privacy_content8: We use the IP address and unique identifiers stored in your device’s cookies to help us authenticate your identity and provide our service. Given our legal obligations and system requirements, we cannot provide you with services without data like identification, contact information and transaction-related information.
+     protect_text: To protect our users
+     info_collect: We use the information collected to protect our platform, users’ accounts and archives.
+     info_collect2:  We use IP addresses and cookie data to protect against automated abuse such as spam, phishing and Distributed Denial of Service (DDoS) attacks.
+     privacy_content9: We analyse trading activity with the goal of detecting suspicious behavior early to prevent potential fraud and loss of funds to bad actors.
+     revised_info: To comply with legal and regulatory requirements
+     privacy_content9: Respect for the privacy and security of data you store with BitCorex informs our approach to complying with regulations, governmental requests and user-generated inquiries. We will not disclose or provide any personal information to third party sources without review from our legal case team and/or prior consent from the user.
+     performance_info: To measure site performance
+     performance_text: We actively measure and analyse data to understand how our services are used. This review activity is conducted by our operations team to continually improve our platform’s performance and to resolve issues with the user experience.
+     performance_text_content: We continuously monitor our systems’ activity information and communications with users to look for and quickly fix problems.
+     communicate_info: To communicate with you
+     performance_content10: We use personal information collected, like an email address to interact with users directly when providing customer support on a ticket or to keep you informed on log ins, transations, and security. Without processing your personal information for confirming each communication, we will not be able to respond to your submitted requests, questions and inquiries. All direct communications are kept confidential and reviewed internally for accuracy.
+     agreements_info: To enforce our Terms of Use and other agreements
+     performance_content11: It is very important for us and our customers that we continually review, investigate and prevent any potentially prohibited or illegal activities that violate our Terms of Service. For the benefit of our entire user base, we carefully enforce our agreements with third parties and actively investigate violations of our posted Terms of Use. BitCorex reserves the right to terminate the provision of service to any user found engaging in activities that violate our Terms of Use.
+     protect_title: HOW DOES BitCorex PROTECT USER DATA
+     protect_content: "BitCorex has implemented a number of security measures to ensure that your information is not lost, abused, or altered. Our data security measures include, but are not limited to: PCI Scanning, Secured Sockets Layered encryption technology, pseudonymisation, internal data access restrictions, and strict physical access controls to buildings & files. Please note that it is impossible to guarantee 100% secure transmission of data over the Internet nor method of electronic storage. As such, we request that you understand the responsibility to independently take safety precautions to protect your own personal information."
+     performance_content12: If you suspect that your personal information has been compromised, especially account and/or password information, please lock your account and contact BitCorex customer service immediately.
+     contact_title: CONTACT US
+     conatct_content: We are committed to respecting the freedoms and rights of all our BitCorex users who have placed their trust in our service. If you should have any questions or concerns regarding this Privacy Policy, or if you would like to file a Data Protection request, please refer to our FAQ and contact us on our Support Page.
+  actions:
+    go: Go
+    submit: Submit
+    deposit: Deposit
+    withdraw: Withdraw
+    select: Please Select
+    unlock: Unlock
+    confirm: Confirm
+    back: Back
+    block: view in block
+    destroy: Delete
+    destroy_confirm: Are you sure you want to delete this?
+    detail: Detail
+    publish: Publish
+    edit: Edit
+    preview: Preview
+    close: Close
+    cancel: Cancel
+    view: View
+    member: Member
+    transact: Transact
+    reject: Reject
+    clipboard:
+      click: Click to copy
+      done: Copied
+  chart:
+    open: Open
+    high: High
+    low: Low
+    close: Close
+    price: Price
+    volume: Volume
+    candlestick: 'Original'
+    line: 'TradingView'
+    minute: m
+    hour: Hour
+    day: Day
+    week: Week
+    month: Month
+    year: Year
+    zoom: Zoom
+    ask: ASK
+    bid: BID
+    depth: Depth
+    depth_title: Market Depth
+  'yes': 'Yes'
+  'no': 'No'
+  helpers:
+    action:
+      view: View
+      customer_service: contact us
+    submit:
+      order_ask:
+        create: ASK
+      order_bid:
+        create: BID
+      member:
+        update: Open Account
+      fund_source:
+        create: Save
+      deposit:
+        create: Deposit
+      id_document:
+        create: Submit
+      withdraw:
+        create: Submit
+  layouts:
+    admin:
+      menus:
+        sections:
+          members: Members
+          deposits: Deposits
+          sites_statistics: Analytics
+          operating: Operations
+        items:
+          operating:
+            proofs: Proof
+            deposits: Deposits
+            withdraws: Withdraws
+          deposits:
+            currency: Deposit
+    application:
+      close: Close
+    meta:
+      page_title: BitCorex -  Exchange
+      page_description: BitCorex - The Cryptocurrency Exchange
+      page_keywords: Crypto,Exchange,Cryptocurrency
+  members:
+    edit:
+      name: Please fill out the application.
+    balance_summary:
+      search: Coin
+      coin: Coin
+      name: Name
+      total_balance: Total balance
+      available_balance: Available balance
+      in_order: In Order
+      security_recommendations: "Security Recommendations: confirm URL; enable 2FA; never disclose password or make any transactions to anyone claiming to be BitCorex support."
+      visiting_text: Make sure you are visiting
+      prevention: to prevent any phishing attacks , We recommend that you install the Netcraft Anti-Phishing Extension (offered by www.netcraft.com) .
+      showico2_text: Never install any browser plug-ins that claim to be associated with BitCorex.(Except Netcraft Anti-Phishing Extension).
+      showico3_text: Never make any phone calls to anyone that claims to be a BitCorex Support Representative.
+      showico4_text: Never tell your password or 2FA codes/keys to anyone, including BitCorex Support.
+      showico5_text: Never send funds to anyone claiming to be a member of BitCorex Support
+      estimate_value: Estimated Value
+      limit: "24h Withdrawal Limit：2BTC"
+      use: "In Use：%{in_use} BTC"
+      balance: Balances
+      btc_text: 'BTC Value'
+  two_factors:
+    panel: Reset Google Verification
+    new:
+      info: For Security reason. you must activate google two factor authentication as visit in your profile.
+      warning: Resetting your Google Authenticator is very manual and will often take over 30 minutes.
+      notice: The reset will cause your account to lose Google Authenticator protection. To avoid the assets loss, please ensure that your email and login password are secure, and re-bind Google Authenticator immediately after the reset is successful.
+      confirm: Confirm Your Reset Request
+    create:
+      success: "An email has been send successfully. Please have a look in your inbox."
+    show:
+      reset: "%{type} authentication has been disabled successfully!"
+      token_expired: Invalid token or may be expired !
+
+  reset_passwords:
+    new:
+      text: '*For security purposes no withdrawals are permitted for 24 hours after modification of security methods.'
+      text1: This field is required.
+      text2: Invalid email address.
+      Submit: Submit
+      email: 'Your Email'
+      Reset_Password1: Reset Password
+      new_password: Reset Password
+      submit: Submit
+    create:
+      success_old: E-mail to reset your password with a introduction has been sent to your mailbox. Failure to receive e-mail , go to "junk mail " firstly,or send the request again.
+      success: We have sent you an email with reset password instructions.
+      blank_email: Please fill your registered email.
+      msg: Account password updated successfully.
+    edit:
+      password: Please enter a password at least 6 characters and it's better to contain uppercase and lowercase letters and numbers.
+      invalid: Invalid request
+      submit: Reset Login Password
+      alert: Invalid reset password link.
+    update:
+      success: Login password has been reset, please keep your new password.
+      invalid: Invalid request
+  welcome:
+    market_list:
+
+      search: Search
+      all_html: "<i class='fa fa-star'></i><span>Favorites</span>"
+      tusd_html: "<i class='fa fa-check'></i><span>TUSD Markets</span>"
+      eth_html: "<i class='fa fa-check'></i><span>ETH Markets</span>"
+      btc_html: "<i class='fa fa-check'></i><span>BTC Markets</span>"
+      csc_html: "<i class='fa fa-check'></i><span>CSC Markets</span>"
+      price: Price
+      change: "24h %"
+      btc: BTC Markets
+      eth: ETH Markets
+      tusd: TUSD Markets
+      csc: CSC Markets
+
+    activity_sky:
+      rank: 'Your Trading Volume:'
+      sKY: '? SKY'
+      rank1: 'Your Ranking:'
+      Q: '?'
+      please: Please
+      login: 'Login »'
+      Ranking: Ranking
+      email: Email
+      Trading_Volume: Trading Volume
+
+    activity_iotx:
+      trading: Trading Competion Rankings
+      volume: 'Your Trading Volume:'
+      text: '?IOTX'
+      ranking: 'Your Ranking:'
+      please: Please
+      login: Login »
+      ranking1: Ranking
+      email: Email
+      trading_volume: Trading Volume
+    market_ticker:
+      pair: Pair
+      all: All Markets
+      all_html: "<i class='fa fa-check'></i><span>All Markets</span>"
+      ccy_html: "<i class='fa fa-check'></i><span>%{currency} Markets</span>"
+      price: Price
+      change: "24h %"
+      coin: Coin
+      change: Change
+      last_price: Last Price
+      24h_change: 24h Change
+      24h_high: 24h High
+      24h_low: 24h Low
+      24h_volume: 24h Volume
+
+    ticker:
+      volume: 'Volume:'
+
+    index:
+      search: Search
+      banner_heading: BitCorex - Exchange The World
+      banner_title: BitCorex is the world’s most popular way to buy and sell bitcoin, ethereum, and litecoin.
+      placeholder: Enter your email address
+      button_title: Get Started
+      banner_signup: New to BitCorex ?
+      banner_signin: Log In
+      already_register: Already Registered?
+      tab_1: BitCorex will list IPM and EMS for CSC market on 2019/03/19
+      tab_2: BitCorex will list CNC and ECP+ for CSC market on 2019/03/30
+      tab_3: BitCorex will list FTO for CSC market on 2019/04/04
+      tab_4: BitCorex will support USDT market on 2019/03/25
+      tab_5: BitCorex will list aokey7 on 2019/05/15
+      favorites: Favorites
+      btc_market: BTC Markets
+      eth_market: ETH Markets
+      tusd_market: TUSD Markets
+      search_placeholder: Search
+      pair: Pair
+      last_price: Last Price
+      24_change: 24h Change
+      24_high: 24h High
+      24_low: 24h Low
+      24_volume: 24h Volume
+      para_heading: Buy and Sell Cryptocurrency
+      para_1: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy tempor invidunt ut labore et dolore magna aliquyam.
+      para_2: This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
+      join_now: Join Now
+      create_an_account: Create an Account
+      start_time: Start Time
+      date_time: 2018-06-15 15:30:00
+      download: Download
+      end: End in
+      slider1_days: 6
+      slider1_day: d
+      slider1_hours: 11
+      slider1_hour: H
+      slider1_minutes: 19
+      slider1_minute: m
+      slider1_seconds: 51
+      slider1_second: s
+      slider2_days: 1
+      slider2_hours: 11
+      slider2_minutes: 11
+      slider2_seconds: 51
+      slider3_days: 17
+      slider3_hours: 11
+      slider3_minutes: 19
+      slider3_seconds: 28
+      coin: Coin
+    application_form:
+     Your_answer: Your answer
+     Your_answer1: Your answer
+     Your_answer2: Your answer
+     Your_answer3: Your answer
+     Your_answer4: Your answer
+     Your_answer5: Your answer
+     Your_answer6: Your answer
+     Your_answer7: Your answer
+     Your_answer8: Your answer
+     Your_answer9: Your answer
+     Your_answer10: Your answer
+     Your_answer11: Your answer
+     Your_answer12: Your answer
+     Your_answer13: Your answer
+     Your_answer14: Your answer
+     Your_answer15: Your answer
+     Your_answer16: Your answer
+     Your_answer17: Your answer
+     Your_answer18: Your answer
+     Your_answer19: Your answer
+     yes2: YES
+     yes1: YES
+     no2: NO
+     no1:  NO
+     header: BitCorex Angel Application Form
+     header_content: BitCorex Angels are passionate volunteers from within our community that support our platform in various ways, primarily promoting the BitCorex ecosystem and assisting our user base with questions and concerns. In BitCorex we focus on creating the best possible customer experience and Angels play a major role acting as a bridge between BitCorex and the communities around the world.
+     info: The name and photo associated with your Google account will be recorded when you upload files and submit this form. Not
+     switch_account: Switch account
+     required: '* Required'
+     name: Name
+     gender: Gender
+     age: Age
+     nationality: Nationality
+     current_location:  Current Location - Country and City
+     current_location_info: Country and city where you are based and can join local events
+     occupation: Occupation
+     phone_number:  Phone number
+     email: Email
+     telegram: Telegram
+     telegram_info: This is a must have tool for BitCorex angels. Please register for one if you don't have.
+     skype: Skype
+     account: BitCorex account (email address)
+     reason_text:  "Reason for wanting to become a BitCorex Angel?"
+     zinance_text: "Where did you first hear about BitCorex?"
+     work_commitment: "How much free time can you commit per week?"
+     work_exp: "Do you have any relevant work experience in blockchain field?"
+     strength: "What are your strengths and how will you be able to bring these to BitCorex?"
+     language: "What languages do you speak? Can you help us do some translations?"
+     commit_time: "How much free time can you commit per week?"
+     question: "Can you help BitCorex maintain and moderate online and offline communities in your free time?"
+     question2: "Can you list your local influential media outlets related to the blockchain and cryptocurrency that may apply to BitCorex?"
+     question3: "What other crypto communities/groups are you enrolled in? online and offline."
+     question4:  "Please attach a photo of yourself (without photo your application will not be processed)"
+     question5: "All Angels are requested to submit a KYC form. Do you agree?"
+     question6: "Do you understand that BitCorex Angel is a voluntary role?"
+     submit: Submit
+     submit_text: Never submit passwords through Google Forms.
+    invite:
+     commission: Commission
+     text9: 'No.1'
+     text10:  'No.2'
+     text11: 'No.3'
+     no_login_text: You are not logged in, please login and share with your friends.
+     login: Log In
+     text: "Not on BitCorex yet?"
+     register: Register
+     details: Program Details
+     text: Effective as of
+     text1: The commission you receive from the referral program will initially be set at a rate of 20%. For accounts holding 500BNB or more, this rate will increase to 40%.
+     text2: The fee commission will be sent instantly in real-time to your BitCorex account as your referee completes each trade and will be paid to you in whatever token/cryptocurrency the original fee was paid in.
+     text3: There is no limit to the number of friends you can refer, although we do reserve the right to adjust or change the referral program rules at any time.
+     text4: Each referee must be signed up through your Referral Link, QR Code or Referral ID.
+     text5: BitCorex will check for duplicate or fake accounts and will not pay out referral bonuses on these accounts. Duplicate or shared finances will result in disqualification.
+     notice: "* Important Notice:"
+     text6: BitCorex reserves the right to change the terms of the referral program at any time due to changing market conditions, risk of fraud, or any other factors we deem relevant.
+    vote:
+     text1: "The Seventh Session of 'Community Coin of the Month' "
+     deadline: "Deadline:"
+     text2: You can select the candidates you would like to vote for below. Each registered user can vote for multiple candidates but will only be able to submit their full vote once. Users will need to pay 0.1 BNB per candidate in their vote (i.e. 0.2 BNB will be deducted if 2 candidates are selected). The Final Multiple applied to your vote is based on your amount of BNB holdings.
+     click_content: "Click here for further details »"
+     options: Options
+     voter: Voters
+     votes: Votes
+     proportion: Proportion
+     end: Voting ends
+     text3: "How to vote on the BitCorex platform:"
+     time: "Voting time:"
+     text4: Each registered user can vote for multiple candidates but will only be able to submit their full vote once. Users will need to pay 0.1 BNB per candidate in their vote (i.e. 0.2 BNB will be deducted if 2 candidates are selected).
+     text5: BitCorex will take a final snapshot of each user’s BNB balance at 2018/06/19 0:00 AM (UTC) to determine the Final Multiple of the user’s votes.  For every 1 BNB held in the balance, the Final Multiple will be increased by 1, up to a maximum Final Multiple of 500. For example, at the time of snapshot, a user having 3.9 BNB in balance will have a Final Multiple of 3. A user having 1000 BNB in balance will have a Final Multiple of 500.
+     text6: Each vote the user gives to any of the project nominees will be multiplied by the Final Multiple calculated by step 3 above.
+     text7: At the end of the voting period, we will review the votes garnered by each candidate for final review. As always, we reserve the right to adjust the weightings of each vote.
+     text8: Upon completion of the voting process, BitCorex will list the coin on our exchange within a reasonable time frame. Depending on market response, we will try to conduct this event monthly.
+     text9: "Please note: BitCorex reserves all rights to change the rules of this event without notification, including the revoking of results or disqualifying candidates who are confirmed to have engaged in vote manipulation. This includes but is not limited to any form of financial or monetary incentives, airdrops or competition rewards offered that will influence user votes. The weight of each vote may also vary based on a variety of factors including but not limited to the level of historical activity of the account used to vote."
+  sessions:
+    new:
+
+      email: Email
+      password: Password
+      language: Language
+      login: Log In
+      register: Register
+      log_in: Log In
+      home: Home
+      support: Support
+      check: Please check that you are visiting
+      new: Not on BitCorex yet?
+      Password_Forgot: Forgot Password
+      msg: It appears that you may be signing into BitCorex from a device we are unfamiliar with or one that you have not used for a long period of time  For your security, a confirmation email has been sent to your email address
+    clear_existing_session:
+      new1: New Device is authorized successfully
+      new2: You have successfully authorized a new device.  Please
+      new3: try to log in with it again. And you can login to your User
+      new4: Center on the web client to delete at any time through Device Management
+      new5: 'Log In >>'
+      Location: 'Location:'
+      Ip_Address: 'Ip Address:'
+      Device: 'Device:'
+
+    create:
+      recaptcha_failed: Recaptcha failed, please try again.
+      disabled: Your account has been disabled, contact admin if you have any problem.
+      signed_up: Welcome! You have signed up successfully.
+      error: The email or password is incorrect. please try again.
+      no_terms: Terms & condition must be selected
+
+    failure:
+      account_locked: Too many failed login attempts. To ensure the safety of your
+        account, we have locked your account. To unlock, reset your password by clicking
+        on "Forgot Password".
+      error: The email or password is incorrect. please try again.
+  shared:
+    admin:
+      member:
+        member_info: Member Info
+        inactive: Inactive
+        deactive: Deactive
+      account:
+        account_info: Account Info
+        payment_address: Deposit Address
+    alert:
+      modern: In order not to affect trading experience, please use a more popular
+        browser transaction, we recommend you <a target='_blank' href='https://www.google.com/#q=google+chrome'>Google
+        Chrome</a>。
+      pusher_unavailable: The network connection is temporarily unavailable... <a
+        href='#' class='alert-link'>Please refresh</a>.
+    header:
+      balance: Balance
+
+    header_account_balance:
+      locked: Locked
+    market:
+      text: decimals
+      ticker:
+        ask_price: Ask
+        bid_price: Bid
+        high_price: High
+        low_price: Low
+        volume: Volume
+        latest_price: Last
+    frame:
+      deposit_now: Deposit Now
+  withdraw_channel:
+    satoshi:
+      key: Blockchain
+      title: Bitcoin Blockchain
+      intro: Withdraw Bitcoin to your own Bitcoin wallet
+      latency: 30 minutes
+      transfer: Manual
+      go: Withdraw
+    bitcoin_cash:
+      key: Blockchain
+      title: Bitcoin Cash Blockchain
+      intro: Withdraw Bitcoin Cash to your own Bitcoin Cash wallet
+      latency: 30 minutes
+      transfer: Manual
+      go: Withdraw
+    chelscoin:
+      key: Blockchain
+      title: Chelscoin Blockchain
+      intro: Withdraw Chelscoin to your own rep wallet
+      latency: 30 minutes
+      transfer: Manual
+      go: Withdraw
+    ecpplus_token:
+      key: Blockchain
+      title: ECP+ Blockchain
+      intro: Withdraw Ecp+ to your own ecp wallet
+      latency: 30 minutes
+      transfer: Manual
+      go: Withdraw
+    ethereum:
+      key: Blockchain
+      title: Ethereum Blockchain
+      intro: Withdraw Ethereum to your own Ethereum wallet
+      latency: 30 minutes
+      transfer: Manual
+      go: Withdraw
+    tronix:
+      key: Blockchain
+      title: Tronix Blockchain
+      intro: Withdraw trx to your own tronix wallet
+      latency: 30 minutes
+      transfer: Manual
+      go: Withdraw
+    ripple:
+      key: Blockchain
+      title: Ripple Blockchain
+      intro: Withdraw ripple to your own ripple wallet
+      latency: 30 minutes
+      transfer: Manual
+      go: Withdraw
+    eos_token:
+      key: Blockchain
+      title: EOS Blockchain
+      intro: Withdraw eos to your own eos wallet
+      latency: 30 minutes
+      transfer: Manual
+      go: Withdraw
+    impereum:
+      key: Blockchain
+      title: Impereum Blockchain
+      intro: Withdraw Impereum to your own imp wallet
+      latency: 30 minutes
+      transfer: Manual
+      go: Withdraw
+    ems_token:
+      key: Blockchain
+      title: EMS Blockchain
+      intro: Withdraw Ems to your own ems wallet
+      latency: 30 minutes
+      transfer: Manual
+      go: Withdraw
+    fto_token:
+      key: Blockchain
+      title: FTO Blockchain
+      intro: Withdraw FTO to your own ecp wallet
+      latency: 30 minutes
+      transfer: Manual
+      go: Withdraw
+    usdcoin:
+      key: Blockchain
+      title: USDC Blockchain
+      intro: Withdraw Usdc to your own usdc wallet
+      latency: 30 minutes
+      transfer: Manual
+      go: Withdraw
+    aokey7_token:
+      key: Blockchain
+      title: Aokey7 Blockchain
+      intro: Withdraw Aok to your own aok wallet
+      latency: 30 minutes
+      transfer: Manual
+      go: Withdraw
+    cacplus_token:
+      key: Blockchain
+      title: CAC+ Blockchain
+      intro: Withdraw CAC+ to your own CAC+ wallet
+      latency: 30 minutes
+      transfer: Manual
+      go: Withdraw
+
+
+  withdraws:
+    invalid_address: is not valid. You can not withdraw to this address.
+  withdraws/bank:
+    aasm_state:
+      submitting: Submitting
+      submitted: Submitted
+      rejected: Rejected
+      accepted: Accepted
+      suspect: Suspect
+      processing: Processing
+      done: Done
+      canceled: Cancelled
+      failed: Failed
+
+  withdraws/satoshi:
+    aasm_state:
+      submitting: Submitting
+      submitted: Submitted
+      rejected: Rejected
+      accepted: Accepted
+      suspect: Suspect
+      processing: processing
+      done: Done
+      canceled: Cancelled
+      failed: Failed
+  withdraws/bitcoin_cash:
+    aasm_state:
+      submitting: Submitting
+      submitted: Submitted
+      rejected: Rejected
+      accepted: Accepted
+      suspect: Suspect
+      processing: processing
+      done: Done
+      canceled: Cancelled
+      failed: Failed
+  withdraws/tronix:
+    aasm_state:
+      submitting: Submitting
+      submitted: Submitted
+      rejected: Rejected
+      accepted: Accepted
+      suspect: Suspect
+      processing: processing
+      done: Done
+      canceled: Cancelled
+      failed: Failed
+  withdraws/ripple:
+    aasm_state:
+      submitting: Submitting
+      submitted: Submitted
+      rejected: Rejected
+      accepted: Accepted
+      suspect: Suspect
+      processing: processing
+      done: Done
+      canceled: Cancelled
+      failed: Failed
+  withdraws/eos_token:
+    aasm_state:
+      submitting: Submitting
+      submitted: Submitted
+      rejected: Rejected
+      accepted: Accepted
+      suspect: Suspect
+      processing: processing
+      done: Done
+      canceled: Cancelled
+      failed: Failed
+  withdraws/chelscoin:
+    aasm_state:
+      submitting: Submitting
+      submitted: Submitted
+      rejected: Rejected
+      accepted: Accepted
+      suspect: Suspect
+      processing: processing
+      done: Done
+      canceled: Cancelled
+      failed: Failed
+  withdraws/impereum:
+    aasm_state:
+      submitting: Submitting
+      submitted: Submitted
+      rejected: Rejected
+      accepted: Accepted
+      suspect: Suspect
+      processing: processing
+      done: Done
+      canceled: Cancelled
+      failed: Failed
+  withdraws/ems_token:
+    aasm_state:
+      submitting: Submitting
+      submitted: Submitted
+      rejected: Rejected
+      accepted: Accepted
+      suspect: Suspect
+      processing: processing
+      done: Done
+      canceled: Cancelled
+      failed: Failed
+  withdraws/ecpplus_token:
+    aasm_state:
+      submitting: Submitting
+      submitted: Submitted
+      rejected: Rejected
+      accepted: Accepted
+      suspect: Suspect
+      processing: processing
+      done: Done
+      canceled: Cancelled
+      failed: Failed
+  withdraws/usdcoin:
+    aasm_state:
+      submitting: Submitting
+      submitted: Submitted
+      rejected: Rejected
+      accepted: Accepted
+      suspect: Suspect
+      processing: processing
+      done: Done
+      canceled: Cancelled
+      failed: Failed
+  withdraws/fto_token:
+    aasm_state:
+      submitting: Submitting
+      submitted: Submitted
+      rejected: Rejected
+      accepted: Accepted
+      suspect: Suspect
+      processing: processing
+      done: Done
+      canceled: Cancelled
+      failed: Failed
+  withdraws/aokey7_token:
+    aasm_state:
+      submitting: Submitting
+      submitted: Submitted
+      rejected: Rejected
+      accepted: Accepted
+      suspect: Suspect
+      processing: processing
+      done: Done
+      canceled: Cancelled
+      failed: Failed
+  withdraws/cacplus_token:
+    aasm_state:
+      submitting: Submitting
+      submitted: Submitted
+      rejected: Rejected
+      accepted: Accepted
+      suspect: Suspect
+      processing: processing
+      done: Done
+      canceled: Cancelled
+      failed: Failed
+
+
+  grape:
+    entity:
+      auth:
+        wrong_email: Wrong email or password!
+        token_expie: Token has been expired
+      profile:
+        incorrect: login password is not correct
+        wrong_sms_code: wrong sms code!
+        wrong_google_code: wrong google code!
+        sms_sent: SMS sent!
+        wrong_auth_code: wrong google authentication code!
+        invalid_number: Invalid mobile number
+      reset_password:
+        invalid_current_password: Invalid current password
+        password_same: new password can not be same as old password
+        password_changed: password has been changed successfully!
+        user_no_found: User does not exist!
+        token_expired: token code has been expired!
+      two_factor:
+        otp_matched: otp code is matched
+        otp_no_matched: otp code is invalid
+        invalid_two_factor: Invalid two factor type
+        invalid_authorization: Invalid authorization token
+        otp_sent: Otp sent successfully
+      orders:
+        order_created: Order has been placed successfully!
+        order_cancalled: Order has been cancelled successfully!
+      favorites:
+        favorite_added: Favorite added
+        favorite_deleted: Favorite deleted
+
+
+
+

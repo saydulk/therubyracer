@@ -1,0 +1,63 @@
+<div id="indicator_switch_wrapper" class="switch">
+  <ul>
+    <li>
+      <ul id="type_switch" class="indicator_switch trade_graph" data-x="trading">
+        <li class="text-center trade_chart active">
+          <a class="hand-point active" data-x="candlestick" href="javascript:void(0)"><%= t('chart.line') %></a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <ul>
+        <li class="text-center orig_graph" data-x="candlestick">
+          <a class="hand-point" data-x="close" href="javascript:void(0)"><%= t('chart.candlestick') %></a>
+        </li>
+      </ul>
+    </li>
+    <!--<li>-->
+      <!--<ul id="main_indicator_switch" class="indicator_switch" data-x="MA">-->
+        <!--<li class="text-center">-->
+          <!--<a class="hand-point" data-x="MA" href="javascript:void(0)">MA</a>-->
+        <!--</li>-->
+        <!--<li class="text-center">-->
+          <!--<a class="hand-point" data-x="EMA" href="javascript:void(0)">EMA</a>-->
+        <!--</li>-->
+      <!--</ul>-->
+    <!--</li>-->
+    <!--<li>-->
+      <!--<ul id="indicator_switch" class="indicator_switch macd" data-x="MACD">-->
+        <!--<li class="text-center">-->
+          <!--<a class="hand-point" data-x="MACD" href="javascript:void(0)">MACD</a>-->
+        <!--</li>-->
+      <!--</ul>-->
+    <!--</li>-->
+
+    <li>
+      <ul>
+        <li id="depth_graph" class="indicator_switch change_graph" data-x="Depth">
+          <a class="hand-point" data-x="MACD" href="javascript:void(0)">Depth</a>
+        </li>
+      </ul>
+    </li>
+
+  </ul>
+</div>
+
+<script>
+    $('.hand-point').on('click', function () {
+        $('.trade_chart').removeClass('active');
+        $('.orig_graph').removeClass('active');
+        $('.change_graph').removeClass('active');
+
+        if ($(this).parent().hasClass('change_graph')) {
+          $('.change_graph').addClass('active');
+        }
+        else if ($(this).parent().hasClass('trade_chart')){
+          $('.trade_chart').addClass('active');
+        }
+        else
+        {
+          $('.orig_graph').addClass('active');
+        }
+    })
+</script>

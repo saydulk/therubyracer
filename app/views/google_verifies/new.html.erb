@@ -1,0 +1,110 @@
+<% content_for :header do %> <span></span>
+<% end %>
+<% content_for :footer do %> <span></span>
+<% end %>
+
+<section class="login_page">
+  <% if flash[:alert] %>
+    <div class="alert"><%= flash[:alert] %></div>
+  <% end %>
+  <div class="container">
+    <div class="login_block">
+      <div class="login_block_inner google_verify text-center">
+        <div class="wrapper">
+          <div class="login_logo"><a class="navbar-brand top_logo" href="<%= root_path %>"></a></div>
+          <!--<div class="login_logo"><a class="navbar-brand top_logo"></a></div>-->
+          <div class="login_hding"><span><%= t('.title') %></span></div>
+          <span id="sms_success" class="hide alert-success changes"> <%= t('.sms_alert') %></span>
+          <div class="login_form">
+            <%= simple_form_for @google_verify, url: create_google_verifies_path(@member), defaults: {wrapper: false}, method: :post do |f| %>
+              <ul class="sms_auth nav nav-tabs" id="myTab" role="tablist">
+                  <% if @member.enable? %>
+                  <li class="nav-item active" style="width: 50%;">
+                    <a class="nav-link " id="google_tab" data-toggle="tab" href="#google" role="tab" aria-controls="home"><%= t('.g_tab') %></a>
+                  </li>
+                  <% end %>
+
+                  <% if @member.sms_enable? %>
+                  <li class="nav-item" style="width: 50%;">
+                    <a class="nav-link" id="sms_tab" data-toggle="tab" href="#sms" role="tab" aria-controls="profile"><%= t('.s_tab') %></a>
+                  </li>
+                  <% end %>
+
+              </ul>
+
+              <div class="tab-content">
+
+                  <div class="tab-pane <%= ((@member.sms_enable? && @member.enable?) || @member.enable?) ? 'active' : ''%>" id="google" role="tabpanel">
+                    <div class="form-group">
+                      <label class="inpt_lbl"><%= t('.google_label') %></label>
+                      <%= f.input :otp_code_token, placeholder: 'Token', input_html: {required: true, class: 'input_fld'}, label: false %>
+                    </div>
+                  </div>
+
+
+                  <div class="tab-pane <%= (@member.sms_enable? && @member.disable?) ? 'active' : ''%>" id="sms" role="tabpanel">
+                    <div class="form-group">
+                      <label class="inpt_lbl"><%= t('.sms_label') %></label>
+                      <div class="input-group send_sms_block">
+                        <%= f.input_field :otp_code, placeholder:  t('.SMS_Token'), class: 'form-control' %>
+                        <span class="input-group-text"> <button id="send_sms" class="btn btn-default"> <%= t('.Send_SMS') %> </button> </span> <%#= link_to  t('.Send_SMS'), send_token_sms_settings_path(member: @member), { method: :post, remote: true, id: 'send_sms', class: 'btn btn-default'} %>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+                <div class="form-group text-center token_verifybtn">
+                  <%= f.button :wrapped,  t('.login'), class: "create_account grey_btn" %>
+                </div>
+                <% if ((@member.sms_enable? && @member.enable?) || @member.enable?) %>
+                  <div class="text-right" id="google_link">
+                    <%= link_to t('.google_auth'), new_two_factor_path(auth_type: :google, id: @member.id) %>
+                  </div>
+                <% end%>
+
+                <div class="text-right <%= (@member.sms_enable? && @member.enable?) || (@member.sms_disable? && @member.enable?) ? 'hide' : '' %> " id="mobile_link">
+                  <%= link_to t('.SMS'), new_two_factor_path(auth_type: :mobile, id: @member.id) %>
+                </div>
+
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  $(document).ready(function(){
+    $('#google_tab').click(function(){
+      $('#mobile_link').addClass('hide')
+      $('#google_link').removeClass('hide')
+    });
+
+    $('#sms_tab').click(function(){
+        $('#mobile_link').removeClass('hide')
+        $('#google_link').addClass('hide')
+    });
+    // add for sms authication
+    $('#send_sms').click(function(e){
+        e.preventDefault();
+        $('#send_sms').addClass("disabled");
+        $.ajax({
+            type: "POST",
+            url: '<%= send_token_sms_settings_path %>',
+            data: { member: "<%= @member.id %>" },
+            dataType: 'script',
+            success: function(data){
+                $('#send_sms').removeClass("disabled");
+            },
+            complete: function(){
+                //Ajax request is finished, so we can enable
+                //the button again.
+            }
+        });
+    });
+  });
+
+</script>

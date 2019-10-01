@@ -1,0 +1,93 @@
+<div class="paymentAddress" id="xmr_payment_id" ng-if="currency == 'xmr' && account.payment_id">
+    {{account.payment_id}}
+</div>
+
+<div  ng-if="currency == 'xrp' && proceed_accepted">
+    <div class="msg_changeAddress" id="xrp_deposit_tag"> {{ xrp_deposit_tag }}
+       <div ng-if="!xrp_deposit_tag">Fetching your payment ID.It will take approx 2 min to get your {{currency}} payment ID</div>
+    </div>
+    <ul class="qr_btns">
+        <li>
+            <button class="show_qr" ng-click="opentagQRCodePanel()"><i class="fa fa-qrcode"></i> Show QR Code</button>
+        </li>
+        <li>
+            <button  data-clipboard-action="copy" data-clipboard-target="#xrp_deposit_tag" id="xrp_payment_address">
+                <i style='margin-right: 4px;'  class="fa fa-copy"></i>Copy Address
+            </button>
+        </li>
+    </ul>
+</div>
+
+<div class="msg_changeAddress" id="xmr_payment_fetch" ng-if="currency == 'xmr' && !account.payment_id" >
+    Fetching your payment ID. It will take approax 2 min to get your {{currency}} payment ID
+</div>
+<ul class="qr_btns" ng-if="currency == 'xmr'">
+    <li>
+        <button class="show_qr" ng-click="openQRCodePanel()"><i class="fa fa-qrcode"></i> Show QR Code</button>
+    </li>
+    <li>
+        <button  data-clipboard-action="copy" data-clipboard-target="#xmr_payment_id" id="xmr_payment_address">
+            <i style='margin-right: 4px;'  class="fa fa-copy"></i>Copy Address
+        </button>
+    </li>
+</ul>
+
+<strong ng-if="currency == 'xrp' && proceed_accepted" > {{account.currency | uppercase}}  {{ "funds.address.deposit_address" | t}} </strong>
+<strong ng-if="currency != 'xrp'"> {{account.currency | uppercase}}  {{ "funds.address.deposit_address" | t}} </strong>
+<!--<div class="changeAddress" id="leagcy_address" ng-if=" account.legacy_address && currency == 'bch'">-->
+    <!--{{account.legacy_address}}-->
+<!--</div>-->
+
+<input ng-if=" account.legacy_address && currency == 'bch'" value="{{account.legacy_address}}" id="leagcy_address" class="changeAddress" readonly>
+
+<!--<div class="changeAddress" id="deposit_address" ng-if="currency != 'bch' && currency != 'xrp' && account.deposit_address ">-->
+    <!--{{account.deposit_address}}-->
+<!--</div>-->
+
+<input ng-if="currency != 'bch' && currency != 'xrp' && account.deposit_address " value="{{account.deposit_address}}" id="deposit_address" class="changeAddress" readonly>
+
+
+<!--<div class="changeAddress" id="xrp_deposit_address1" ng-if="currency == 'xrp' && account.deposit_address  && proceed_accepted ">-->
+    <!--{{xrp_address}}-->
+<!--</div>  -->
+
+<input ng-if="currency == 'xrp' && account.deposit_address  && proceed_accepted " value="{{xrp_address}}" id="xrp_deposit_address1" class="changeAddress" readonly>
+
+<div class="msg_changeAddress" id="xrp_deposit_address" ng-if= "account.currency == 'xrp' && account.deposit_address == nil && proceed_accepted ">
+    {{ "funds.address.fetching_your" | t}} {{ currency| uppercase }} {{ "funds.address.address_text" | t}}. {{ "funds.address.minute_text" | t }} {{ currency| uppercase }} {{"funds.address.address_text1" | t}}
+</div>
+
+<div class="msg_changeAddress" id="msg_deposit_address" ng-if= "account.currency != 'bch' &&  account.currency != 'xrp' && account.deposit_address == nil ">
+    {{ "funds.address.fetching_your" | t}} {{ currency| uppercase }} {{ "funds.address.address_text" | t}}. {{ "funds.address.minute_text" | t }} {{ currency| uppercase }} {{"funds.address.address_text1" | t}}
+</div>
+
+<div class="msg_changeAddress" id="msg_legacy_address" ng-if= "account.legacy_address == nil && account.currency == 'bch' " >
+    {{ "funds.address.fetching_your" | t}} {{ currency| uppercase }} {{ "funds.address.address_text" | t}}. {{ "funds.address.minute_text" | t }} {{ currency| uppercase }} {{"funds.address.address_text1" | t}}
+</div>
+
+
+<ul class="qr_btns">
+
+    <li ng-if="currency == 'xrp' && proceed_accepted">
+        <button class="show_qr" ng-click="openQRCodePanel()"><i class="fa fa-qrcode"></i> {{ "funds.address.qr_code_text" | t }}</button>
+    </li>
+
+    <li ng-if="currency != 'xrp' ">
+        <button class="show_qr" ng-click="openQRCodePanel()"><i class="fa fa-qrcode"></i> {{ "funds.address.qr_code_text" | t }}</button>
+    </li>
+    <li>
+
+        <button  data-clipboard-action="copy" data-clipboard-target="#xrp_deposit_address1" id="deposit_address_data1" ng-if="currency == 'xrp' && proceed_accepted ">
+            <i style='margin-right: 4px;' class="fa fa-copy"></i>{{ "funds.address.copy_address" | t}}
+        </button>
+
+        <button  data-clipboard-action="copy" data-clipboard-target="#deposit_address" id="deposit_address_data" ng-if="currency != 'bch' && currency != 'xrp' ">
+            <i style='margin-right: 4px;' class="fa fa-copy"></i>{{ "funds.address.copy_address" | t}}
+        </button>
+
+        <button  data-clipboard-action="copy" data-clipboard-target="#leagcy_address" id="leagcy_address_data" ng-if="currency == 'bch' &&  currency != 'xrp' " >
+            <i style='margin-right: 4px;'  class="fa fa-copy"></i>{{ "funds.address.copy_address" | t}}
+        </button>
+    </li>
+</ul>
+

@@ -1,0 +1,31 @@
+<div class="panel-heading">
+  <span> <%= exchange.capitalize %> User Details </span>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Currency</th>
+      <th class="text-center"> Crypto Address </th>
+      <th class="text-center"> Available Balance </th>
+      <th class="text-center"> Locked Balance </th>
+      <th class="text-center"> Actions </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if client.balances['result'].present? %>
+      <% client.balances['result'].each do |result| %>
+        <% currency = result.fetch('Currency','') == 'ZEC' ? 'ZCH' : result.fetch('Currency','') %>
+        <% if result.present? and currencies.include?currency.downcase %>
+          <tr>
+            <td> <%= currency == 'ZCH' ? 'ZCASH' : currency %> </td>
+            <td class="text-center"> <%= result.fetch('CryptoAddress','') %> </td>
+            <td class="text-center"> <%= result.fetch('Available').round(8)  %> </td>
+            <td class="text-center"> <%=  (result.fetch('Balance') -  result.fetch('Available')).round(8) %> </td>
+            <td class="text-center"> <%= link_to '', "/funds#/withdraws/#{currency.downcase}", class: 'fa fa-money text-center', title: 'Withdraw' %> </td>
+          </tr>
+        <% end %>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

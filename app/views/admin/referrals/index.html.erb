@@ -1,0 +1,73 @@
+<%= render 'admin/back_admin' %>
+<div class="wallet_row" >
+  <% if can? :create, Referral %>
+    <div class="wallet_icon_Sec tbl_div">
+      <span class="wallet_icon_blocks text-left tbl_cell">
+      <%= link_to raw("<i class='fa fa-plus mr-2'></i> New Plan"), new_admin_referral_path, class: 'btn btn-primary float-right mb-3' %>
+      </span>
+    </div>
+  <% end %>
+</div>
+<div class="row">
+  <div class="col-xs-24 currencies_summary">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <span>Referral Plans</span>
+      </div>
+      <div class="panel-body">
+        <%= table_for @referral_plans, class: 'table table-condensed table-hover' do |t| %>
+          <% t.column :name, class: 'col-xs-1' %>
+          <% t.column 'Date Validity', class: 'col-xs-2' do |plan| %>
+            <%= plan.date_validity_choice ? plan.date_validity.strftime("%d %b %Y") : 'Unlimited' %>
+            <% if plan.date_validity and plan.date_validity.past? %>
+              <span style="color: red; font-weight: bold; font-size: 20px;" title="Plan has been expired"><sup>*</sup></span>
+            <% end %>
+          <% end %>
+
+          <% t.column 'No. of Referral', class: 'col-xs-1' do |plan| %>
+            <%= plan.no_of_referral_choice ? plan.no_of_referral : 'Unlimited' %>
+          <% end %>
+
+          <% t.column 'Referral Amount', class: 'col-xs-1' do |plan| %>
+            <%= plan.referral_bonus %>
+          <% end %>
+
+          <% t.column 'Transaction Bonus', class: 'col-xs-1' do |plan| %>
+            <%= "#{plan.transaction_bonus}%" %>
+          <% end %>
+
+          <% t.column :level_no,'Level no.' , class: 'col-xs-1' %>
+
+          <% t.column 'Created At', class: 'col-xs-3' do |plan| %>
+            <%= plan.created_at.strftime("%d %b %Y %H:%M:%S%p") %>
+          <% end %>
+
+          <% t.column 'Active', class: 'col-xs-1' do |x| %>
+            <%= radio_button_tag 'active', x.id, x.status, class: "plan_active"%>
+          <% end %>
+
+          <% t.column :Actions, class: 'col-xs-2' do |x| %>
+            <%= link_to t('actions.edit'), edit_admin_referral_path(x.id)%>
+            |
+            <%= link_to t('actions.destroy'), admin_referral_path(x.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.plan_active').click(function(){
+        id = $(this).val()
+        $.ajax({
+            method: "patch",
+            url: "<%= active_admin_referrals_path %>",
+            data: { id: id },
+            type: 'script'
+        })
+    })
+  });
+</script>

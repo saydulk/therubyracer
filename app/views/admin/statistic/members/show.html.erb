@@ -1,0 +1,70 @@
+<%= render 'admin/back_admin' %>
+<div class="row">
+  <div class="col-lg-24 currencies_summary">
+    <div class="panel panel-primary">
+      <div class="panel-body">
+
+        <div id="chart-container"></div>
+        <%= @chart.render() %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-24 currencies_summary">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <span>Filter By</span>
+      </div>
+      <div class="panel-body filterby">
+        <%= form_tag admin_statistic_members_path, method: :get do |f| %>
+          <div class="col-xs-8 serach_form">
+            <%= select_month(params.has_key?('date') ? params['date']['month'].to_i : Date.today) %>
+          </div>
+          <div class="col-xs-8 serach_form">
+            <%= select_year((params.has_key?('date') ? params['date']['year'].to_i : Date.today), start_year: 2018, end_year: Time.now.year) %>
+          </div>
+          <div class="col-xs-8 serach_form">
+            <%= submit_tag 'Search' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-xs-24 currencies_summary">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <span>Member Register Stats</span>
+        <span class="pull-right">Total: <%= @members_count %></span>
+      </div>
+
+      <%= table_for(@register_group, class: 'table table-condensed table-hover') do |t| %>
+        <% t.column :date, 'Date', class: 'col-xs-8' do |x| %>
+          <span><%= x.date.to_formatted_s(:rfc822) %></span>
+        <% end %>
+        <% t.column :reg, 'Act / Reg', class: 'col-xs-10' do |x| %>
+          <code class="text-success">
+            <%= x.total_activated %>
+          </code>
+          <span>
+            <%= '/'%>
+          </span>
+          <code class="text-info">
+            <%= x.total %>
+          </code>
+        <% end %>
+
+        <% t.column :rate, 'Rate', class: 'col-xs-6' do |x| %>
+          <code>
+            <%= number_to_percentage(x.total_activated.fdiv(x.total) * 100, precision: 0) %>
+          </code>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

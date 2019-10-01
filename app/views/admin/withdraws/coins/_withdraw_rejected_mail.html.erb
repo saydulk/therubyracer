@@ -1,0 +1,52 @@
+<div class="panel panel-primary compose_email">
+  <div class="panel-heading">
+    <span><%= t('admin.withdraws.coins.withdraw_rejected_mail.email') %></span>
+  </div>
+  <div class="panel-body">
+    <%= hidden_field_tag "withdraw",withdraw.id %>
+    <%= text_area_tag :message_body,  @message_body, :size =>"50x5", placeholder: "Write a text message..." %>
+    <%# if params[:reject] == 'true' %>
+    <%= button_tag t('admin.withdraws.coins.withdraw_rejected_mail.send'),id:"send_email"%>
+    <%# else %>
+    <!--<button type="button" class="btn btn-secondary btn-lg" disabled> <%#= t('admin.withdraws.coins.withdraw_rejected_mail.send') %> </button>-->
+    <%# end %>
+  </div>
+</div>
+
+
+<script>
+    $(function () {
+
+        var is_enable_send = '<%= @withdraw.aasm_state == 'rejected' %>'
+        if(is_enable_send == 'true'){
+            $('#send_email').removeClass('send_disabled')
+            $('#send_email').removeAttr('send_disabled');
+        }
+        else{
+            $('#send_email').addClass('send_disabled')
+            $('#send_email').attr("disabled", 'disabled');
+        }
+
+
+        var minlength = 1;
+        $("#send_email").click(function () {
+            message = $("#message_body").val();
+            withdraw_id = $("#withdraw").val();
+            if (message.length >= minlength) {
+                $.ajax({
+                    url: '<%= admin_withdraws_email_send_path %>',
+                    data: {send_text: message, withdraw_id: withdraw_id},
+                    datatype: 'script',
+                    method: 'GET'
+                });
+            } else
+            {
+                alert("Please write a text message!")
+            }
+            $("#message_body").val("")
+        });
+
+
+    });
+
+</script>

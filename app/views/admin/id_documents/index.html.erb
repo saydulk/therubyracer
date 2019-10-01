@@ -1,0 +1,81 @@
+<%= render 'admin/back_admin' %>
+<% flag = params['tab'] == 'unverified' %>
+<div class="history_tab_btns tbl_div">
+  <ul class="nav nav-tabs history_tabs tbl_cell">
+    <li class="<%= 'active' unless flag %> switch_history_tab" id="verified">
+      <a data-toggle="tab" href="#verified_account"> Verified Account </a>
+    </li>
+    <li class="<%= 'active' if flag %> switch_history_tab" id="unverified">
+      <a data-toggle="tab" href="#unverified_account"> Unverified Account </a>
+    </li>
+  </ul>
+</div>
+<div class="tab-content">
+  <div id="verified_account" class="tab-pane <%= 'active' unless flag %>">
+    <div class="col-xs-24 currencies_summary">
+      <div class="panel-heading">
+        <span style="color: #fff;"><%= t('.verify_account') %></span>
+        <span>  <%= link_to 'Download CSV', csv_download_admin_id_documents_path(format: :csv, type: 'verified' ), class: 'pull-right summary_download_btn' %> </span>
+      </div>
+
+      <table id="verified_datatable" class="table table-condensed table-hover" data-source="<%= admin_id_documents_path(format: :json , verified: 'yes') %>">
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>Email</th>
+          <!--<th>Id Document Type</th>-->
+          <th>Id Bill Type</th>
+          <th>Request At</th>
+          <th> Verified </th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="unverified_account" class="tab-pane <%= 'active' if flag %>">
+    <div class="col-xs-24 currencies_summary">
+      <div class="panel-heading">
+        <span style="color: #fff;">Unverify Accounts</span>
+        <span> <%= link_to 'Download CSV', csv_download_admin_id_documents_path(format: :csv, type: 'unverified' ), class: 'pull-right summary_download_btn' %> </span>
+      </div>
+      <table id="unverified_datatable" class="table table-condensed table-hover" data-source="<%= admin_id_documents_path(format: :json , verified: 'no') %>">
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>Email</th>
+          <!--<th>Id Document Type</th>-->
+          <th>Id Bill Type</th>
+          <th>Request At</th>
+          <th> Verified </th>
+          <th></th>
+
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    $('.switch_history_tab').click(function() {
+        url_split = location.href.split("=")
+        var uri = window.location.toString();
+        old_name = url_split[1]
+        new_tab = $(this).attr("id")
+        if ( (uri.indexOf("?") > 0) && url_split ) {
+            var clean_uri = uri.replace("tab="+old_name, "tab="+new_tab);
+            window.history.replaceState({}, document.title, clean_uri);
+        }
+    })
+
+  })
+</script>
