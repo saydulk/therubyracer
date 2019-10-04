@@ -1,0 +1,21 @@
+current directory: /home/username/mike/vendor/cache/ruby/2.5.0/gems/digest-sha3-1.1.0/ext/digest
+/usr/bin/ruby2.5 -I /usr/local/lib/site_ruby/2.5.0 -r ./siteconf20191004-25829-1xbabh1.rb extconf.rb --with-cflags\=-Wno-format-security
+checking for ruby/digest.h... yes
+checking for rb_str_set_len()... yes
+creating Makefile
+
+current directory: /home/username/mike/vendor/cache/ruby/2.5.0/gems/digest-sha3-1.1.0/ext/digest
+make "DESTDIR=" clean
+
+current directory: /home/username/mike/vendor/cache/ruby/2.5.0/gems/digest-sha3-1.1.0/ext/digest
+make "DESTDIR="
+compiling KeccakF-1600-reference.c
+compiling KeccakNISTInterface.c
+compiling KeccakSponge.c
+compiling displayIntermediateValues.c
+compiling sha3.c
+linking shared-object digest/sha3.so
+
+current directory: /home/username/mike/vendor/cache/ruby/2.5.0/gems/digest-sha3-1.1.0/ext/digest
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 sha3.so ./.gem.20191004-25829-o2qfe4/digest

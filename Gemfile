@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 gem 'rails', '~> 4.2'
 gem 'rails-i18n'
 gem 'responders', '~> 2.0'
+gem "better_errors", "~> 2.5.1"
+
+# gem "therubyracer"
 
 gem 'puma'
 gem 'mysql2', '~> 0.3.21'
@@ -12,8 +15,13 @@ gem 'rotp', '3.3.1'
 gem 'json'
 gem 'jbuilder'
 
+gem 'webconsole', '~> 0.2.1'
+
+gem 'padrino'
+
 gem 'omniauth',               '~> 1.8.1'
-gem 'omniauth-identity',      '~> 1.1.1'
+# gem 'omniauth-identity',      '~> 1.1.1'
+gem 'omniauth-identity', '~> 1.1', '>= 1.1.1'
 gem 'omniauth-auth0',         '~> 2.0.0'
 gem 'omniauth-google-oauth2', '~> 0.5.2'
 gem 'omniauth-facebook'

@@ -1,0 +1,21 @@
+current directory: /home/username/mike/vendor/cache/ruby/2.5.0/gems/rbtree-0.4.2
+/usr/bin/ruby2.5 -I /usr/local/lib/site_ruby/2.5.0 -r ./siteconf20191004-25829-r950fj.rb extconf.rb
+checking for rb_exec_recursive() in ruby.h... yes
+checking for rb_exec_recursive_paired() in ruby.h... yes
+checking for rb_proc_lambda_p() in ruby.h... yes
+checking for rb_ary_resize() in ruby.h... yes
+checking for rb_obj_hide() in ruby.h... yes
+creating Makefile
+
+current directory: /home/username/mike/vendor/cache/ruby/2.5.0/gems/rbtree-0.4.2
+make "DESTDIR=" clean
+
+current directory: /home/username/mike/vendor/cache/ruby/2.5.0/gems/rbtree-0.4.2
+make "DESTDIR="
+compiling dict.c
+compiling rbtree.c
+linking shared-object rbtree.so
+
+current directory: /home/username/mike/vendor/cache/ruby/2.5.0/gems/rbtree-0.4.2
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 rbtree.so ./.gem.20191004-25829-w346ob

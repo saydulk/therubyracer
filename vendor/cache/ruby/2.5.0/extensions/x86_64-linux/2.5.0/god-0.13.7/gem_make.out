@@ -1,0 +1,20 @@
+current directory: /home/username/mike/vendor/cache/ruby/2.5.0/gems/god-0.13.7/ext/god
+/usr/bin/ruby2.5 -I /usr/local/lib/site_ruby/2.5.0 -r ./siteconf20191004-25829-1xya2ev.rb extconf.rb
+checking for rb_wait_for_single_fd()... yes
+checking for linux/netlink.h... yes
+checking for linux/connector.h... yes
+checking for linux/cn_proc.h... yes
+creating Makefile
+
+current directory: /home/username/mike/vendor/cache/ruby/2.5.0/gems/god-0.13.7/ext/god
+make "DESTDIR=" clean
+
+current directory: /home/username/mike/vendor/cache/ruby/2.5.0/gems/god-0.13.7/ext/god
+make "DESTDIR="
+compiling kqueue_handler.c
+compiling netlink_handler.c
+linking shared-object netlink_handler_ext.so
+
+current directory: /home/username/mike/vendor/cache/ruby/2.5.0/gems/god-0.13.7/ext/god
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 netlink_handler_ext.so ./.gem.20191004-25829-59ldj0
