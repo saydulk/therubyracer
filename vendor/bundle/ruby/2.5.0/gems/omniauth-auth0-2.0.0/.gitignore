@@ -1,0 +1,9 @@
+.ruby-version
+coverage
+Gemfile.lock
+*.gem
+
+.#*
+.env
+log/
+tmp/

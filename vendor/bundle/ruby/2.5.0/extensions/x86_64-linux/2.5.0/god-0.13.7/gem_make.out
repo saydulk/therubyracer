@@ -1,0 +1,20 @@
+current directory: /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/god-0.13.7/ext/god
+/usr/share/rvm/rubies/ruby-2.5.0/bin/ruby -I /usr/share/rvm/rubies/ruby-2.5.0/lib/ruby/site_ruby/2.5.0 -r ./siteconf20191007-23492-155463c.rb extconf.rb
+checking for rb_wait_for_single_fd()... yes
+checking for linux/netlink.h... yes
+checking for linux/connector.h... yes
+checking for linux/cn_proc.h... yes
+creating Makefile
+
+current directory: /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/god-0.13.7/ext/god
+make "DESTDIR=" clean
+
+current directory: /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/god-0.13.7/ext/god
+make "DESTDIR="
+compiling kqueue_handler.c
+compiling netlink_handler.c
+linking shared-object netlink_handler_ext.so
+
+current directory: /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/god-0.13.7/ext/god
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 netlink_handler_ext.so ./.gem.20191007-23492-lvthxg

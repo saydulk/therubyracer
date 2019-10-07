@@ -6,9 +6,18 @@ gem 'responders', '~> 2.0'
 gem "better_errors", "~> 2.5.1"
 
 # gem "therubyracer"
+ruby ">=2.5.0"
+gem 'bcrypt', '~> 3.1', '>= 3.1.10'
+
+gem 'mysql2'
+
+
+
+
+
 
 gem 'puma'
-gem 'mysql2', '~> 0.3.21'
+# gem 'mysql2', '~> 0.3.21'
 gem 'redis-rails'
 
 gem 'rotp', '3.3.1'
@@ -91,7 +100,7 @@ gem 'memoist', '~> 0.16'
 gem 'method-not-implemented', '~> 1.0'
 # gem 'passgen', '~> 1.0'
 gem 'cryptice-passgen', '~> 0.1.2'
-gem 'digest-sha3', '~> 1.1'
+gem 'digest-sha3', '~> 1.1.0'
 gem 'cashaddress'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'active_model_otp'

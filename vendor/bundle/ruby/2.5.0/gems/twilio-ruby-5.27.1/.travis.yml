@@ -1,0 +1,28 @@
+sudo: false
+language: ruby
+cache: bundler
+bundler_args: --without development
+
+rvm:
+  - ruby-head
+  - 2.6
+  - 2.5
+  - 2.4
+  - jruby
+
+services:
+  - docker
+
+install: make install
+script: make test
+
+matrix:
+  fast_finish: true
+
+deploy:
+  provider: script
+  script: make docker-build && make docker-push
+  skip_cleanup: true
+  on:
+    tags: true
+    rvm: "2.4"
