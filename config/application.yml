@@ -187,12 +187,20 @@ production:
   PUSHER_APP: 
   PUSHER_KEY: 
   PUSHER_SECRET:
+<<<<<<< HEAD
 
   S3_ACCESS_KEY: 
   S3_SECRET_KEY: 
   S3_BUCKET_NAME: 
   S3_REGION: 
 
+=======
+
+  S3_ACCESS_KEY: 
+  S3_SECRET_KEY: 
+  S3_BUCKET_NAME: 
+  S3_REGION: 
+>>>>>>> e1743e9c8b3513ab3f4dbf2ac14a18188d9a7a7e
 
 
   SUPPORT_MAIL:
@@ -200,3 +208,10 @@ production:
   SYSTEM_MAIL_TO: 
   OPERATE_MAIL_TO:
 
+<<<<<<< HEAD
+=======
+  SUPPORT_MAIL:
+  SYSTEM_MAIL_FROM:
+  SYSTEM_MAIL_TO: 
+  OPERATE_MAIL_TO:
+>>>>>>> e1743e9c8b3513ab3f4dbf2ac14a18188d9a7a7e
