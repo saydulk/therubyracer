@@ -115,7 +115,12 @@ gem 'rack-attack', '~> 3.0.0'
 gem 'easy_table'
 gem 'carrierwave', '~> 1.0'
 gem 'fog'
-gem 'rest-client', '~> 1.6.8'
+# gem 'rest-client', '~> 1.6.8'
+
+
+gem "rest-client", ">= 1.8.0"
+
+
 gem 'jwt', '~> 1.5'
 gem 'email_validator', '~> 1.6'
 gem 'clipboard-rails', '~> 1.7'
