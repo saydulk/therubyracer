@@ -92,6 +92,11 @@ gem 'em-websocket', '~> 0.5.1'
 gem 'simple_form'
 
 
+# gem "simple_form", ">= 5.0.0"
+
+
+
+
 gem 'slim-rails'
 gem 'sass-rails' 
 gem 'coffee-rails'
