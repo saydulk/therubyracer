@@ -662,9 +662,9 @@ GEM
       json
     sentry-raven (2.11.3)
       faraday (>= 0.7.6, < 1.0)
-    simple_form (3.1.1)
-      actionpack (~> 4.0)
-      activemodel (~> 4.0)
+    simple_form (4.0.0)
+      actionpack (> 4)
+      activemodel (> 4)
     simplebar-rails (2.6.1)
       railties (>= 3.1)
     sinatra (1.4.8)
@@ -828,7 +828,7 @@ DEPENDENCIES
   selenium-webdriver (~> 3.8)
   sendgrid
   sentry-raven (~> 2.7)
-  simple_form (~> 3.1.0)
+  simple_form
   simplebar-rails
   slim-rails
   social-share-button (~> 1.2)
