@@ -2,6 +2,48 @@
 # yarn lockfile v1
 
 
+asap@^2.0.0:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/asap/-/asap-2.0.6.tgz#e50347611d7e690943208bbdafebcbc2fb866d46"
+  integrity sha1-5QNHYR1+aQlDIIu9r+vLwvuGbUY=
+
+buffers@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/buffers/-/buffers-0.1.1.tgz#b24579c3bed4d6d396aeee6d9a8ae7f5482ab7bb"
+  integrity sha1-skV5w77U1tOWru5tmorn9Ugqt7s=
+
+dezalgo@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/dezalgo/-/dezalgo-1.0.3.tgz#7f742de066fc748bc8db820569dddce49bf0d456"
+  integrity sha1-f3Qt4Gb8dIvI24IFad3c5Jvw1FY=
+  dependencies:
+    asap "^2.0.0"
+    wrappy "1"
+
+duplex-child-process@0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/duplex-child-process/-/duplex-child-process-0.0.5.tgz#1c2462b8ec8fd01e432836ebbd592bcdffbb65e9"
+  integrity sha1-HCRiuOyP0B5DKDbrvVkrzf+7Zek=
+
+node-osascript@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/node-osascript/-/node-osascript-2.1.0.tgz#217db348db32d4d045e5bc1a3b3ac25545734a68"
+  integrity sha512-rW2vA0OGDGtoB+Ek6tKA7OYsBVzPZucHHssPsCbjOHJEcMLbHCDo+9UjgNX1tUIaSfMUtDLtEqY7JdIIINCkXQ==
+  dependencies:
+    buffers "^0.1.1"
+
+osascript@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/osascript/-/osascript-1.2.0.tgz#de82e292f0891dd0858ac5528e5ac772061c2a47"
+  integrity sha1-3oLikvCJHdCFisVSjlrHcgYcKkc=
+  dependencies:
+    duplex-child-process "0.0.5"
+
 raven-js@^3.22.1:
   version "3.22.1"
   resolved "https://registry.yarnpkg.com/raven-js/-/raven-js-3.22.1.tgz#1117f00dfefaa427ef6e1a7d50bbb1fb998a24da"
+
+wrappy@1:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
+  integrity sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=

@@ -31,8 +31,8 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(vendorlibdir)/$(sitearch)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
-sitearchdir = $(DESTDIR)./.gem.20191007-23492-bbub
-sitelibdir = $(DESTDIR)./.gem.20191007-23492-bbub
+sitearchdir = $(DESTDIR)./.gem.20191010-21548-p31vli
+sitelibdir = $(DESTDIR)./.gem.20191010-21548-p31vli
 sitedir = $(rubylibprefix)/site_ruby
 rubyarchdir = $(rubylibdir)/$(arch)
 rubylibdir = $(rubylibprefix)/$(ruby_version)
@@ -82,11 +82,11 @@ debugflags = -ggdb3
 warnflags = -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wno-tautological-compare -Wno-parentheses-equality -Wno-constant-logical-operand -Wno-self-assign -Wunused-variable -Wimplicit-int -Wpointer-arith -Wwrite-strings   -Wdeprecated-declarations -Wmisleading-indentation -Wno-packed-bitfield-compat -Wsuggest-attribute=noreturn -Wsuggest-attribute=format -Wimplicit-fallthrough=0 -Wduplicated-cond -Wrestrict
 CCDLFLAGS = -fPIC
 CFLAGS   = $(CCDLFLAGS) $(cflags)  -fPIC $(ARCH_FLAG)
-INCFLAGS = -I. -I/root/pro/mike/vendor/bundle/ruby/2.5.0/gems/libv8-7.3.492.27.1-x86_64-linux/vendor/v8/include -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
+INCFLAGS = -I. -I/root/mike/vendor/bundle/ruby/2.5.0/gems/libv8-7.3.492.27.1-x86_64-linux/vendor/v8/include -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
 DEFS     = 
 CPPFLAGS =   $(DEFS) $(cppflags) -Wall -g -rdynamic -std=c++0x -fpermissive
 CXXFLAGS = $(CCDLFLAGS) $(cxxflags) $(ARCH_FLAG)
-ldflags  = /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/libv8-7.3.492.27.1-x86_64-linux/vendor/v8/out.gn/libv8/obj/libv8_monolith.a -L. -fstack-protector -rdynamic -Wl,-export-dynamic
+ldflags  = /root/mike/vendor/bundle/ruby/2.5.0/gems/libv8-7.3.492.27.1-x86_64-linux/vendor/v8/out.gn/libv8/obj/libv8_monolith.a -L. -fstack-protector -rdynamic -Wl,-export-dynamic
 dldflags = -Wl,--compress-debug-sections=zlib 
 ARCH_FLAG = 
 DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG)

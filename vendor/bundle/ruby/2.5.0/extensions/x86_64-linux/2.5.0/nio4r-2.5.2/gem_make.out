@@ -1,5 +1,5 @@
-current directory: /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/nio4r-2.5.2/ext/nio4r
-/usr/share/rvm/rubies/ruby-2.5.0/bin/ruby -I /usr/share/rvm/rubies/ruby-2.5.0/lib/ruby/site_ruby/2.5.0 -r ./siteconf20191007-23492-1a4f9ua.rb extconf.rb
+current directory: /root/mike/vendor/bundle/ruby/2.5.0/gems/nio4r-2.5.2/ext/nio4r
+/usr/share/rvm/rubies/ruby-2.5.0/bin/ruby -I /usr/share/rvm/rubies/ruby-2.5.0/lib/ruby/site_ruby/2.5.0 -r ./siteconf20191010-21548-bu09km.rb extconf.rb
 checking for unistd.h... yes
 checking for linux/aio_abi.h... yes
 checking for sys/select.h... yes
@@ -10,10 +10,10 @@ checking for port_event_t in port.h... no
 checking for sys/resource.h... yes
 creating Makefile
 
-current directory: /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/nio4r-2.5.2/ext/nio4r
+current directory: /root/mike/vendor/bundle/ruby/2.5.0/gems/nio4r-2.5.2/ext/nio4r
 make "DESTDIR=" clean
 
-current directory: /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/nio4r-2.5.2/ext/nio4r
+current directory: /root/mike/vendor/bundle/ruby/2.5.0/gems/nio4r-2.5.2/ext/nio4r
 make "DESTDIR="
 compiling bytebuffer.c
 compiling monitor.c
@@ -457,6 +457,6 @@ cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand�
 cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
 linking shared-object nio4r_ext.so
 
-current directory: /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/nio4r-2.5.2/ext/nio4r
+current directory: /root/mike/vendor/bundle/ruby/2.5.0/gems/nio4r-2.5.2/ext/nio4r
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 nio4r_ext.so ./.gem.20191007-23492-18ot6bz
+/usr/bin/install -c -m 0755 nio4r_ext.so ./.gem.20191010-21548-jq6zjd

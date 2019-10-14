@@ -21,3 +21,6 @@
 	from /root/pro/mike/config/environment.rb:2:in `<top (required)>'
 	from lib/daemons/payment_transaction.rb:1:in `require'
 	from lib/daemons/payment_transaction.rb:1:in `<main>'
+lib/daemons/payment_transaction.rb: incompatible library version - /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/mysql2-0.5.2/lib/mysql2/mysql2.so (LoadError)
+lib/daemons/payment_transaction.rb: incompatible library version - /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/mysql2-0.5.2/lib/mysql2/mysql2.so (LoadError)
+lib/daemons/payment_transaction.rb: incompatible library version - /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/mysql2-0.5.2/lib/mysql2/mysql2.so (LoadError)

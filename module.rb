@@ -1,0 +1,1 @@
+/root/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/module.rb

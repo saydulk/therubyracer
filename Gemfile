@@ -1,28 +1,51 @@
 source 'https://rubygems.org'
 
+
 gem 'rails', '~> 4.2'
-gem 'rails-i18n'
+gem 'rails-i18n' 
 gem 'responders', '~> 2.0'
 gem "better_errors", "~> 2.5.1"
 
 # gem "therubyracer"
 ruby ">=2.5.0"
 gem 'bcrypt', '~> 3.1', '>= 3.1.10'
+gem 'bcrypt-ruby' 
 
-gem 'mysql2'
+# gem 'mysql2'
+gem 'mysql2', '~> 0.4.10'
+
+gem 'rubysl-shellwords', '~> 2.0'
+gem 'sprockets', '~> 3.2'
+gem 'osaka', '~> 0.4.13'
+
+gem 'nokogiri'
+gem 'rack'
+gem 'rspec'
+
+gem 'bundler'
+
+
+
+
+# gem 'sass-rails'
 
 
 
 
 
+gem 'io-console'
 
 gem 'puma'
 # gem 'mysql2', '~> 0.3.21'
-gem 'redis-rails'
+# gem 'redis-rails'
+gem 'redis-rails', '~> 5.0.2'
+
 
 gem 'rotp', '3.3.1'
 gem 'json'
-gem 'jbuilder'
+
+# gem 'jbuilder'
+gem 'jbuilder', '~> 2.7.0'
 
 gem 'webconsole', '~> 0.2.1'
 
@@ -66,7 +89,7 @@ gem 'em-websocket', '~> 0.5.1'
 
 gem 'simple_form', '~> 3.1.0'
 gem 'slim-rails'
-gem 'sass-rails'
+gem 'sass-rails' 
 gem 'coffee-rails'
 gem 'uglifier', '~> 4.1'
 gem 'jquery-rails'

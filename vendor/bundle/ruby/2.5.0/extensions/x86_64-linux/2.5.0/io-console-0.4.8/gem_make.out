@@ -1,0 +1,18 @@
+current directory: /root/mike/vendor/bundle/ruby/2.5.0/gems/io-console-0.4.8/ext/io/console
+/usr/share/rvm/rubies/ruby-2.5.0/bin/ruby -I /usr/share/rvm/rubies/ruby-2.5.0/lib/ruby/site_ruby/2.5.0 -r ./siteconf20191011-19261-1b8zq1b.rb extconf.rb
+checking for termios.h... yes
+checking for cfmakeraw() in termios.h... yes
+checking for sys/ioctl.h... yes
+creating Makefile
+
+current directory: /root/mike/vendor/bundle/ruby/2.5.0/gems/io-console-0.4.8/ext/io/console
+make "DESTDIR=" clean
+
+current directory: /root/mike/vendor/bundle/ruby/2.5.0/gems/io-console-0.4.8/ext/io/console
+make "DESTDIR="
+compiling console.c
+linking shared-object io/console.so
+
+current directory: /root/mike/vendor/bundle/ruby/2.5.0/gems/io-console-0.4.8/ext/io/console
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 console.so ./.gem.20191011-19261-1559vf5/io

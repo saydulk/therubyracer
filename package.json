@@ -2,6 +2,10 @@
   "name": "peatio",
   "license": "MIT",
   "dependencies": {
+    "dezalgo": "^1.0.3",
+    "node-osascript": "^2.1.0",
+    "osascript": "^1.2.0",
+    "path": "^0.12.7",
     "raven-js": "^3.22.1"
   }
 }

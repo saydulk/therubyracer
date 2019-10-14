@@ -1,5 +1,5 @@
-current directory: /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/ffi-1.11.1/ext/ffi_c
-/usr/bin/ruby2.5 -I /usr/local/lib/site_ruby/2.5.0 -r ./siteconf20191007-21154-12aznyq.rb extconf.rb
+current directory: /root/mike/vendor/bundle/ruby/2.5.0/gems/ffi-1.11.1/ext/ffi_c
+/usr/share/rvm/rubies/ruby-2.5.0/bin/ruby -I /usr/share/rvm/rubies/ruby-2.5.0/lib/ruby/site_ruby/2.5.0 -r ./siteconf20191010-21548-2x9nmu.rb extconf.rb
 checking for ffi_call() in -lffi... yes
 checking for ffi_closure_alloc()... yes
 checking for shlwapi.h... no
@@ -12,10 +12,10 @@ checking for ffi_prep_raw_closure()... yes
 creating extconf.h
 creating Makefile
 
-current directory: /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/ffi-1.11.1/ext/ffi_c
+current directory: /root/mike/vendor/bundle/ruby/2.5.0/gems/ffi-1.11.1/ext/ffi_c
 make "DESTDIR=" clean
 
-current directory: /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/ffi-1.11.1/ext/ffi_c
+current directory: /root/mike/vendor/bundle/ruby/2.5.0/gems/ffi-1.11.1/ext/ffi_c
 make "DESTDIR="
 compiling AbstractMemory.c
 compiling ArrayType.c
@@ -42,6 +42,6 @@ compiling Variadic.c
 compiling ffi.c
 linking shared-object ffi_c.so
 
-current directory: /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/ffi-1.11.1/ext/ffi_c
+current directory: /root/mike/vendor/bundle/ruby/2.5.0/gems/ffi-1.11.1/ext/ffi_c
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20191007-21154-18siddu
+/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20191010-21548-215x97
