@@ -12,7 +12,7 @@ defaults: &defaults
   URL_SCHEME: http
 
   # admin role account
-  ADMIN: 'admin@mailinator.com'
+  ADMIN: 'admin@cactoken.net'
 
   #  database.yml variables
   #  RDS_HOSTNAME: dietbitcoinico-org.c0vfzk4vecgn.us-east-1.rds.amazonaws.com
@@ -60,11 +60,6 @@ defaults: &defaults
   RABBITMQ_USER: 
   RABBITMQ_PASSWORD:
 
-  # pusher settings  
-  #PUSHER_APP: '571926'
-  #PUSHER_KEY: f6fe7174fb47201da259
-  #PUSHER_SECRET: c7491005c74c028686c8
-  # 프로덕션과 동일하게 수정함.위는 없는 키 값같음.9.10
   PUSHER_APP: 
   PUSHER_KEY: 
   PUSHER_SECRET:
@@ -155,16 +150,12 @@ production:
   RDS_PASSWORD:
   POOL: 50
   # site host
-  #URL_HOST: coinchel.hk
   URL_HOST: cactoken.net
   URL_SCHEME: https
 
   # Secret Key
   SECRET_KEY_BASE: 
   JWT_SHARED_SECRET_KEY:
-
-  #RECAPTCA_SITE_KEY: 6LerqowUAAAAAKP15BiSCquxGyiWVhhf8foD7zSA         # coinchel.hk
-  #RECAPTCA_SECRET_KEY: 6LerqowUAAAAAE4kIOLoGV8AZwkR98lC1uFib2nO
   
   RECAPTCA_SITE_KEY: 
   RECAPTCA_SECRET_KEY:
@@ -173,16 +164,13 @@ production:
   RDS_HOSTNAME: cactoken.net
 
   # admin role account
-  ADMIN: 'dev.cccubes@gmail.com' # mkK&w9RN
+  ADMIN: 'dev.cccubes@cactoken.net' # mkK&w9RN
 
   AIRDROP_CURRENCY: 
   AIRDROP_USER: 
 
   # Stage configuration variables for sign in with Google. - need to confirm - is it working
   GOOGLE_OAUTH2_SIGN_IN:      on
-  #GOOGLE_CLIENT_ID:           131450012324-6e3ndk6on1t6k8sbbvd9fjltm1cvasbr.apps.googleusercontent.com
-  #GOOGLE_CLIENT_SECRET:       0IRJ3CwSKQbigbRy3LlX7Kg9
-  #신규 생성키 9.3 by dev.cccubes@gmail.com  
   GOOGLE_CLIENT_ID: 
   GOOGLE_CLIENT_SECRET: 
 
@@ -205,11 +193,6 @@ production:
   S3_BUCKET_NAME: 
   S3_REGION: 
 
-  # email accounts
-  #SUPPORT_MAIL: support@coinchel.hk
-  #SYSTEM_MAIL_FROM: do-not-reply@coinchel.hk
-  #SYSTEM_MAIL_TO: do-not-reply@coinchel.hk
-  #OPERATE_MAIL_TO: operate@coinchel.hk
 
 
   SUPPORT_MAIL:
