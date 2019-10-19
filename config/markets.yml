@@ -1,268 +1,82 @@
 - id: ethbtc
   code: 1
-  coin_name: Ethereum
   base_unit: eth
   quote_unit: btc
   sort_order: 1
-  bid: { fee: 0.001, currency: btc, fixed: 6 }
-  ask: { fee: 0.001, currency: eth, fixed: 6 }
+  bid: { fee: 0.0015, currency: btc, fixed: 2 }
+  ask: { fee: 0.0015, currency: eth, fixed: 4 }
+
+  # default name
+  # name: BTC/USD
+
+  # aggregate price levels in orderbook
+  # price_group_fixed: 1
+
+  # default is true
+  # visible: false
 
 - id: bchbtc
   code: 2
-  coin_name: Bitcoin Cash
   base_unit: bch
   quote_unit: btc
   sort_order: 1
-  bid: { fee: 0.001, currency: btc, fixed: 6 }
-  ask: { fee: 0.001, currency: bch, fixed: 6 }
+  bid: { fee: 0.0015, currency: btc, fixed: 2 }
+  ask: { fee: 0.0015, currency: bch, fixed: 3 }
 
-#- id: eosbtc
-#  code: 3
-#  coin_name: EOS
-#  base_unit: eos
-#  quote_unit: btc
-#  sort_order: 1
-#  bid: { fee: 0.001, currency: btc, fixed: 7 }
-#  ask: { fee: 0.001, currency: eos, fixed: 7 }
 
-- id: xrpbtc
-  code: 4
-  coin_name: Ripple
-  base_unit: xrp
+- id: trxbtc
+  code: 3
+  base_unit: trx
   quote_unit: btc
   sort_order: 1
-  bid: { fee: 0.001, currency: btc, fixed: 8 }
-  ask: { fee: 0.001, currency: xrp, fixed: 8 }
+  bid: { fee: 0.0015, currency: btc, fixed: 2 }
+  ask: { fee: 0.0015, currency: trx, fixed: 3 }
+
+- id: btceth
+  code: 4
+  base_unit: btc
+  quote_unit: eth
+  sort_order: 1
+  bid: { fee: 0.0015, currency: eth, fixed: 3 }
+  ask: { fee: 0.0015, currency: btc, fixed: 4 }
 
 - id: bcheth
   code: 5
-  coin_name: Bitcoin Cash
   base_unit: bch
   quote_unit: eth
   sort_order: 1
-  bid: { fee: 0.001, currency: eth, fixed: 5 }
-  ask: { fee: 0.001, currency: bch, fixed: 5 }
+  bid: { fee: 0.0015, currency: eth, fixed: 2 }
+  ask: { fee: 0.0015, currency: bch, fixed: 4 }
 
+- id: trxeth
+  code: 6
+  base_unit: trx
+  quote_unit: eth
+  sort_order: 1
+  bid: { fee: 0.0015, currency: eth, fixed: 2 }
+  ask: { fee: 0.0015, currency: trx, fixed: 4 }
 
-#- id: eoseth
-#  code: 6
-#  coin_name: EOS
-#  base_unit: eos
-#  quote_unit: eth
-#  sort_order: 1
-#  bid: { fee: 0.001, currency: eth, fixed: 6 }
-#  ask: { fee: 0.001, currency: eos, fixed: 6 }
-
-- id: xrpeth
+- id: btcusdt
   code: 7
-  coin_name: Ripple
-  base_unit: xrp
-  quote_unit: eth
+  base_unit: btc
+  quote_unit: usdt
   sort_order: 1
-  bid: { fee: 0.001, currency: eth, fixed: 8 }
-  ask: { fee: 0.001, currency: xrp, fixed: 8 }
+  bid: { fee: 0.0015, currency: usdt, fixed: 2 }
+  ask: { fee: 0.0015, currency: btc, fixed: 4 }
 
-- id: cscbtc
+
+- id: bchusdt
   code: 8
-  coin_name: Chelscoin
-  base_unit: csc
-  quote_unit: btc
+  base_unit: bch
+  quote_unit: usdt
   sort_order: 1
-  bid: { fee: 0.001, currency: btc, fixed: 6 }
-  ask: { fee: 0.001, currency: csc, fixed: 6 }
+  bid: { fee: 0.0015, currency: usdt, fixed: 2 }
+  ask: { fee: 0.0015, currency: bch, fixed: 4 }
 
-- id: csceth
+- id: trxusdt
   code: 9
-  coin_name: Chelscoin
-  base_unit: csc
-  quote_unit: eth
+  base_unit: trx
+  quote_unit: usdt
   sort_order: 1
-  bid: { fee: 0.001, currency: eth, fixed: 6 }
-  ask: { fee: 0.001, currency: csc, fixed: 6 }
-
-
-#- id: trxbtc
-#  code: 10
-#  coin_name: TRON
-#  base_unit: trx
-#  quote_unit: btc
-#  sort_order: 1
-#  bid: { fee: 0.001, currency: btc, fixed: 8 }
-#  ask: { fee: 0.001, currency: trx, fixed: 8 }
-
-#- id: trxeth
-#  code: 11
-#  coin_name: TRON
-#  base_unit: trx
-#  quote_unit: eth
-#  sort_order: 1
-#  bid: { fee: 0.001, currency: eth, fixed: 8 }
-#  ask: { fee: 0.001, currency: trx, fixed: 8 }
-
-- id: ipmcsc
-  code: 12
-  coin_name: Impereum
-  base_unit: ipm
-  quote_unit: csc
-  sort_order: 1
-  bid: { fee: 0.001, currency: csc, fixed: 6 }
-  ask: { fee: 0.001, currency: ipm, fixed: 6 }
-
-- id: emscsc
-  code: 13
-  coin_name: Ems
-  base_unit: ems
-  quote_unit: csc
-  sort_order: 1
-  bid: { fee: 0.001, currency: csc, fixed: 6 }
-  ask: { fee: 0.001, currency: ems, fixed: 6 }
-
-- id: ecpcsc
-  code: 14
-  coin_name: Ecpplus
-  base_unit: "ecp+"
-  quote_unit: csc
-  sort_order: 1
-  bid: { fee: 0.001, currency: csc, fixed: 8 }
-  ask: { fee: 0.001, currency: "ecp+", fixed: 8 }
-
-- id: ipmbtc
-  code: 15
-  coin_name: Impereum
-  base_unit: ipm
-  quote_unit: btc
-  sort_order: 1
-  bid: { fee: 0.001, currency: btc, fixed: 6 }
-  ask: { fee: 0.001, currency: ipm, fixed: 6 }
-
-- id: ipmeth
-  code: 16
-  coin_name: Impereum
-  base_unit: ipm
-  quote_unit: eth
-  sort_order: 1
-  bid: { fee: 0.001, currency: eth, fixed: 6 }
-  ask: { fee: 0.001, currency: ipm, fixed: 6 }
-
-
-- id: emsbtc
-  code: 17
-  coin_name: Ems
-  base_unit: ems
-  quote_unit: btc
-  sort_order: 1
-  bid: { fee: 0.001, currency: btc, fixed: 6 }
-  ask: { fee: 0.001, currency: ems, fixed: 6 }
-
-- id: emseth
-  code: 18
-  coin_name: Ems
-  base_unit: ems
-  quote_unit: eth
-  sort_order: 1
-  bid: { fee: 0.001, currency: eth, fixed: 6 }
-  ask: { fee: 0.001, currency: ems, fixed: 6 }
-
-- id: ecpbtc
-  code: 19
-  coin_name: Ecpplus
-  base_unit: "ecp+"
-  quote_unit: btc
-  sort_order: 1
-  bid: { fee: 0.001, currency: btc, fixed: 8 }
-  ask: { fee: 0.001, currency: "ecp+", fixed: 8 }
-
-- id: ecpeth
-  code: 20
-  coin_name: Ecpplus
-  base_unit: "ecp+"
-  quote_unit: eth
-  sort_order: 1
-  bid: { fee: 0.001, currency: eth, fixed: 8 }
-  ask: { fee: 0.001, currency: "ecp+", fixed: 8 }
-
-- id: usdcbtc
-  code: 21
-  coin_name: Usdcoin
-  base_unit: usdc
-  quote_unit: btc
-  sort_order: 1
-  bid: { fee: 0.001, currency: btc, fixed: 6 }
-  ask: { fee: 0.001, currency: usdc, fixed: 6 }
-
-- id: usdceth
-  code: 22
-  coin_name: Usdcoin
-  base_unit: usdc
-  quote_unit: eth
-  sort_order: 1
-  bid: { fee: 0.001, currency: eth, fixed: 6 }
-  ask: { fee: 0.001, currency: usdc, fixed: 6 }
-
-- id: usdccsc
-  code: 23
-  coin_name: Usdcoin
-  base_unit: usdc
-  quote_unit: csc
-  sort_order: 1
-  bid: { fee: 0.001, currency: csc, fixed: 6 }
-  ask: { fee: 0.001, currency: usdc, fixed: 6 }
-
-- id: aokbtc
-  code: 24
-  coin_name: Aokey7
-  base_unit: aok
-  quote_unit: btc
-  sort_order: 1
-  bid: { fee: 0.001, currency: btc, fixed: 6 }
-  ask: { fee: 0.001, currency: aok, fixed: 6 }
-
-- id: aoketh
-  code: 25
-  coin_name: Aokey7
-  base_unit: aok
-  quote_unit: eth
-  sort_order: 1
-  bid: { fee: 0.001, currency: eth, fixed: 6 }
-  ask: { fee: 0.001, currency: aok, fixed: 6 }
-
-- id: aokcsc
-  code: 26
-  coin_name: Aokey7
-  base_unit: aok
-  quote_unit: csc
-  sort_order: 1
-  bid: { fee: 0.001, currency: csc, fixed: 6 }
-  ask: { fee: 0.001, currency: aok, fixed: 6 }
-
-- id: cacbtc
-  code: 27
-  coin_name: Cacplus
-  base_unit: "cac+"
-  quote_unit: btc
-  sort_order: 1
-  bid: { fee: 0.001, currency: btc, fixed: 6 }
-  ask: { fee: 0.001, currency: "cac+", fixed: 6 }
-
-- id: caceth
-  code: 28
-  coin_name: Cacplus
-  base_unit: "cac+"
-  quote_unit: eth
-  sort_order: 1
-  bid: { fee: 0.001, currency: eth, fixed: 6 }
-  ask: { fee: 0.001, currency: "cac+", fixed: 6 }
-
-
-  
-- id: caccsc
-  code: 29
-  coin_name: Cacplus
-  base_unit: "cac+"
-  quote_unit: csc
-  sort_order: 1
-  bid: { fee: 0.001, currency: csc, fixed: 6 }
-  ask: { fee: 0.001, currency: "cac+", fixed: 6 }
-
-
-
+  bid: { fee: 0.0015, currency: usdt, fixed: 2 }
+  ask: { fee: 0.0015, currency: trx, fixed: 4 }

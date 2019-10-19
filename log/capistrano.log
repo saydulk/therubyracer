@@ -1,0 +1,39 @@
+# Logfile created on 2019-10-17 22:20:51 +0000 by logger.rb/61378
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-10-17 22:20:51 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [277a671b] Running /usr/bin/env mkdir -p /tmp as deploy@57.230.37.177
+ DEBUG [277a671b] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-10-17 22:26:12 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [a0a50641] Running /usr/bin/env mkdir -p /tmp as deploy@57.230.37.177
+ DEBUG [a0a50641] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-10-17 22:46:55 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [37e2dba4] Running /usr/bin/env mkdir -p /tmp as deploy@57.230.37.177
+ DEBUG [37e2dba4] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-10-17 22:51:18 +0000 cap production server:restart
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-10-17 23:11:53 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [b127cc48] Running /usr/bin/env mkdir -p /tmp as deploy@57.230.37.177
+ DEBUG [b127cc48] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-10-17 23:15:03 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [1f03afa0] Running /usr/bin/env mkdir -p /tmp as deploy@57.230.37.177
+ DEBUG [1f03afa0] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-10-19 00:02:24 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [86698ace] Running /usr/bin/env mkdir -p /tmp as deploy@57.230.37.177
+ DEBUG [86698ace] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-10-19 00:03:27 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [346daaef] Running /usr/bin/env mkdir -p /tmp as deploy@57.230.37.177
+ DEBUG [346daaef] Command: /usr/bin/env mkdir -p /tmp

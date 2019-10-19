@@ -10,7 +10,7 @@ Peatio::Application.routes.draw do
   get 'bank_details/index'
 
   scope "(:locale)", locale: /en|zh|ko|/ do
-    root 'welcome#index'
+    root 'posts#index'
   end
 
   get '/signin' => 'sessions#new', :as => :signin

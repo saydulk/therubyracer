@@ -1,0 +1,616 @@
+[ N 2019-10-17 23:19:16.6573 5279/T1 age/Wat/WatchdogMain.cpp:1373 ]: Starting Passenger watchdog...
+[ N 2019-10-17 23:19:16.6745 5282/T1 age/Cor/CoreMain.cpp:1340 ]: Starting Passenger core...
+[ N 2019-10-17 23:19:16.6747 5282/T1 age/Cor/CoreMain.cpp:256 ]: Passenger core running in multi-application mode.
+[ N 2019-10-17 23:19:16.6921 5282/T1 age/Cor/CoreMain.cpp:1015 ]: Passenger core online, PID 5282
+[ N 2019-10-17 23:19:19.4865 5282/T5 age/Cor/SecurityUpdateChecker.h:519 ]: Security update check: no update found (next check in 24 hours)
+App 5326 output: Error: The application encountered the following error: cannot load such file -- Shellwords (LoadError)
+App 5326 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/module.rb:1:in `require'
+App 5326 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/module.rb:1:in `<top (required)>'
+App 5326 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:6:in `require_relative'
+App 5326 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:6:in `<class:View>'
+App 5326 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:2:in `<module:WebConsole>'
+App 5326 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:1:in `<top (required)>'
+App 5326 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view.rb:4:in `require_relative'
+App 5326 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view.rb:4:in `<top (required)>'
+App 5326 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole.rb:5:in `require_relative'
+App 5326 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole.rb:5:in `<module:WebConsole>'
+App 5326 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole.rb:1:in `<top (required)>'
+App 5326 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:81:in `require'
+App 5326 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:81:in `block (2 levels) in require'
+App 5326 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:76:in `each'
+App 5326 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:76:in `block in require'
+App 5326 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:65:in `each'
+App 5326 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:65:in `require'
+App 5326 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler.rb:114:in `require'
+App 5326 output:     /home/deploy/mike/config/application.rb:7:in `<top (required)>'
+App 5326 output:     /home/deploy/mike/config/environment.rb:2:in `require'
+App 5326 output:     /home/deploy/mike/config/environment.rb:2:in `<top (required)>'
+App 5326 output:     config.ru:3:in `require'
+App 5326 output:     config.ru:3:in `block in <main>'
+App 5326 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/rack-1.6.11/lib/rack/builder.rb:55:in `instance_eval'
+App 5326 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/rack-1.6.11/lib/rack/builder.rb:55:in `initialize'
+App 5326 output:     config.ru:1:in `new'
+App 5326 output:     config.ru:1:in `<main>'
+App 5326 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:101:in `eval'
+App 5326 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:101:in `preload_app'
+App 5326 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:189:in `block in <module:App>'
+App 5326 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/ruby_supportlib/phusion_passenger/loader_shared_helpers.rb:380:in `run_block_and_record_step_progress'
+App 5326 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:188:in `<module:App>'
+App 5326 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:30:in `<module:PhusionPassenger>'
+App 5326 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:29:in `<main>'
+[ E 2019-10-17 23:19:21.0131 5282/Tn age/Cor/App/Implementation.cpp:221 ]: Could not spawn process for application /home/deploy/mike: The application encountered the following error: cannot load such file -- Shellwords (LoadError)
+  Error ID: d3a5ecbc
+  Error details saved to: /tmp/passenger-error-3GAcy1.html
+
+[ E 2019-10-17 23:19:21.0213 5282/T9 age/Cor/Con/CheckoutSession.cpp:276 ]: [Client 1-1] Cannot checkout session because a spawning error occurred. The identifier of the error is d3a5ecbc. Please see earlier logs for details about the error.
+
+[ N 2019-10-18 19:48:55.6904 5282/T9 age/Cor/CoreMain.cpp:671 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2019-10-18 19:48:55.6904 5282/T1 age/Cor/CoreMain.cpp:1246 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2019-10-18 19:48:55.6905 5282/Te Ser/Server.h:902 ]: [ServerThr.4] Freed 0 spare client objects
+[ N 2019-10-18 19:48:55.6906 5282/Te Ser/Server.h:558 ]: [ServerThr.4] Shutdown finished
+[ N 2019-10-18 19:48:55.6905 5282/Td Ser/Server.h:902 ]: [ServerThr.3] Freed 0 spare client objects
+[ N 2019-10-18 19:48:55.6906 5282/Td Ser/Server.h:558 ]: [ServerThr.3] Shutdown finished
+[ N 2019-10-18 19:48:55.6905 5282/Th Ser/Server.h:902 ]: [ServerThr.5] Freed 0 spare client objects
+[ N 2019-10-18 19:48:55.6907 5282/Th Ser/Server.h:558 ]: [ServerThr.5] Shutdown finished
+[ N 2019-10-18 19:48:55.6926 5282/Tk Ser/Server.h:902 ]: [ApiServer] Freed 0 spare client objects
+[ N 2019-10-18 19:48:55.6926 5282/Tk Ser/Server.h:558 ]: [ApiServer] Shutdown finished
+[ N 2019-10-18 19:48:55.6926 5282/T9 Ser/Server.h:902 ]: [ServerThr.1] Freed 0 spare client objects
+[ N 2019-10-18 19:48:55.6927 5282/T9 Ser/Server.h:558 ]: [ServerThr.1] Shutdown finished
+[ N 2019-10-18 21:44:25.3286 32009/T1 age/Wat/WatchdogMain.cpp:1373 ]: Starting Passenger watchdog...
+[ N 2019-10-18 21:44:25.3527 32013/T1 age/Cor/CoreMain.cpp:1340 ]: Starting Passenger core...
+[ N 2019-10-18 21:44:25.3529 32013/T1 age/Cor/CoreMain.cpp:256 ]: Passenger core running in multi-application mode.
+[ W 2019-10-18 21:44:25.3686 32013/T1 age/Cor/CoreMain.cpp:1007 ]: WARNING: potential privilege escalation vulnerability detected. Phusion Passenger is running as root, and part(s) of the Passenger root path (/home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4) can be changed by non-root user(s):
+
+ - /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems is not secure: it can be modified by user deploy
+ - /home/deploy/mike/vendor/bundle/ruby/2.5.0 is not secure: it can be modified by user deploy
+ - /home/deploy/mike/vendor/bundle/ruby is not secure: it can be modified by user deploy
+ - /home/deploy/mike/vendor/bundle is not secure: it can be modified by user deploy
+ - /home/deploy/mike/vendor is not secure: it can be modified by user deploy
+ - /home/deploy/mike is not secure: it can be modified by user deploy
+ - /home/deploy is not secure: it can be modified by user deploy
+
+Please either fix up the permissions for the insecure paths, or install Passenger in a different location that can only be modified by root.
+[ N 2019-10-18 21:44:25.3686 32013/T1 age/Cor/CoreMain.cpp:1015 ]: Passenger core online, PID 32013
+[ N 2019-10-18 21:44:28.2985 32013/T5 age/Cor/SecurityUpdateChecker.h:519 ]: Security update check: no update found (next check in 24 hours)
+App 32058 output: Error: The application encountered the following error: cannot load such file -- Shellwords (LoadError)
+App 32058 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/module.rb:1:in `require'
+App 32058 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/module.rb:1:in `<top (required)>'
+App 32058 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:6:in `require_relative'
+App 32058 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:6:in `<class:View>'
+App 32058 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:2:in `<module:WebConsole>'
+App 32058 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:1:in `<top (required)>'
+App 32058 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view.rb:4:in `require_relative'
+App 32058 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view.rb:4:in `<top (required)>'
+App 32058 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole.rb:5:in `require_relative'
+App 32058 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole.rb:5:in `<module:WebConsole>'
+App 32058 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole.rb:1:in `<top (required)>'
+App 32058 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:81:in `require'
+App 32058 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:81:in `block (2 levels) in require'
+App 32058 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:76:in `each'
+App 32058 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:76:in `block in require'
+App 32058 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:65:in `each'
+App 32058 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:65:in `require'
+App 32058 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler.rb:114:in `require'
+App 32058 output:     /home/deploy/mike/config/application.rb:7:in `<top (required)>'
+App 32058 output:     /home/deploy/mike/config/environment.rb:2:in `require'
+App 32058 output:     /home/deploy/mike/config/environment.rb:2:in `<top (required)>'
+App 32058 output:     config.ru:3:in `require'
+App 32058 output:     config.ru:3:in `block in <main>'
+App 32058 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/rack-1.6.11/lib/rack/builder.rb:55:in `instance_eval'
+App 32058 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/rack-1.6.11/lib/rack/builder.rb:55:in `initialize'
+App 32058 output:     config.ru:1:in `new'
+App 32058 output:     config.ru:1:in `<main>'
+App 32058 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:101:in `eval'
+App 32058 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:101:in `preload_app'
+App 32058 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:189:in `block in <module:App>'
+App 32058 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/ruby_supportlib/phusion_passenger/loader_shared_helpers.rb:380:in `run_block_and_record_step_progress'
+App 32058 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:188:in `<module:App>'
+App 32058 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:30:in `<module:PhusionPassenger>'
+App 32058 output:     /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:29:in `<main>'
+[ E 2019-10-18 21:44:31.0583 32013/Tn age/Cor/App/Implementation.cpp:221 ]: Could not spawn process for application /home/deploy/mike: The application encountered the following error: cannot load such file -- Shellwords (LoadError)
+  Error ID: 712964cb
+  Error details saved to: /tmp/passenger-error-LZJnUu.html
+
+[ E 2019-10-18 21:44:31.0656 32013/T9 age/Cor/Con/CheckoutSession.cpp:276 ]: [Client 1-1] Cannot checkout session because a spawning error occurred. The identifier of the error is 712964cb. Please see earlier logs for details about the error.
+
+[ N 2019-10-18 21:45:38.1776 32013/T9 age/Cor/CoreMain.cpp:671 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2019-10-18 21:45:38.1777 32013/T1 age/Cor/CoreMain.cpp:1246 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2019-10-18 21:45:38.1778 32013/Tf Ser/Server.h:902 ]: [ServerThr.4] Freed 0 spare client objects
+[ N 2019-10-18 21:45:38.1778 32013/Tc Ser/Server.h:902 ]: [ServerThr.3] Freed 0 spare client objects
+[ N 2019-10-18 21:45:38.1779 32013/Tf Ser/Server.h:558 ]: [ServerThr.4] Shutdown finished
+[ N 2019-10-18 21:45:38.1779 32013/Tc Ser/Server.h:558 ]: [ServerThr.3] Shutdown finished
+[ N 2019-10-18 21:45:38.1779 32013/Tg Ser/Server.h:902 ]: [ServerThr.5] Freed 0 spare client objects
+[ N 2019-10-18 21:45:38.1779 32013/Tj Ser/Server.h:902 ]: [ServerThr.6] Freed 0 spare client objects
+[ N 2019-10-18 21:45:38.1779 32013/T9 Ser/Server.h:902 ]: [ServerThr.1] Freed 0 spare client objects
+[ N 2019-10-18 21:45:38.1779 32013/Tg Ser/Server.h:558 ]: [ServerThr.5] Shutdown finished
+[ N 2019-10-18 21:45:38.1779 32013/Tj Ser/Server.h:558 ]: [ServerThr.6] Shutdown finished
+[ N 2019-10-18 21:45:38.1779 32013/T9 Ser/Server.h:558 ]: [ServerThr.1] Shutdown finished
+[ N 2019-10-18 21:45:38.1792 32013/Ta Ser/Server.h:902 ]: [ServerThr.2] Freed 0 spare client objects
+[ N 2019-10-18 21:45:38.1792 32013/Ta Ser/Server.h:558 ]: [ServerThr.2] Shutdown finished
+[ N 2019-10-18 21:45:38.1794 32013/Tk Ser/Server.h:902 ]: [ApiServer] Freed 0 spare client objects
+[ N 2019-10-18 21:45:38.1795 32013/Tk Ser/Server.h:558 ]: [ApiServer] Shutdown finished
+[ N 2019-10-18 21:45:38.9417 32013/T1 age/Cor/CoreMain.cpp:1325 ]: Passenger core shutdown finished
+[ N 2019-10-18 23:12:41.7719 15614/T1 age/Wat/WatchdogMain.cpp:1373 ]: Starting Passenger watchdog...
+[ N 2019-10-18 23:12:41.7947 15617/T1 age/Cor/CoreMain.cpp:1340 ]: Starting Passenger core...
+[ N 2019-10-18 23:12:41.7949 15617/T1 age/Cor/CoreMain.cpp:256 ]: Passenger core running in multi-application mode.
+[ W 2019-10-18 23:12:41.8097 15617/T1 age/Cor/CoreMain.cpp:1007 ]: WARNING: potential privilege escalation vulnerability detected. Phusion Passenger is running as root, and part(s) of the Passenger root path (/var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4) can be changed by non-root user(s):
+
+ - /var/www/mike is not secure: it can be modified by user deploy
+
+Please either fix up the permissions for the insecure paths, or install Passenger in a different location that can only be modified by root.
+[ N 2019-10-18 23:12:41.8097 15617/T1 age/Cor/CoreMain.cpp:1015 ]: Passenger core online, PID 15617
+[ N 2019-10-18 23:12:44.5400 15617/T5 age/Cor/SecurityUpdateChecker.h:519 ]: Security update check: no update found (next check in 24 hours)
+App 15662 output: Error: The application encountered the following error: cannot load such file -- Shellwords (LoadError)
+App 15662 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/module.rb:1:in `require'
+App 15662 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/module.rb:1:in `<top (required)>'
+App 15662 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:6:in `require_relative'
+App 15662 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:6:in `<class:View>'
+App 15662 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:2:in `<module:WebConsole>'
+App 15662 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:1:in `<top (required)>'
+App 15662 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view.rb:4:in `require_relative'
+App 15662 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view.rb:4:in `<top (required)>'
+App 15662 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole.rb:5:in `require_relative'
+App 15662 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole.rb:5:in `<module:WebConsole>'
+App 15662 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole.rb:1:in `<top (required)>'
+App 15662 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:81:in `require'
+App 15662 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:81:in `block (2 levels) in require'
+App 15662 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:76:in `each'
+App 15662 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:76:in `block in require'
+App 15662 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:65:in `each'
+App 15662 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:65:in `require'
+App 15662 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler.rb:114:in `require'
+App 15662 output:     /var/www/mike/config/application.rb:7:in `<top (required)>'
+App 15662 output:     /var/www/mike/config/environment.rb:2:in `require'
+App 15662 output:     /var/www/mike/config/environment.rb:2:in `<top (required)>'
+App 15662 output:     config.ru:3:in `require'
+App 15662 output:     config.ru:3:in `block in <main>'
+App 15662 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/rack-1.6.11/lib/rack/builder.rb:55:in `instance_eval'
+App 15662 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/rack-1.6.11/lib/rack/builder.rb:55:in `initialize'
+App 15662 output:     config.ru:1:in `new'
+App 15662 output:     config.ru:1:in `<main>'
+App 15662 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:101:in `eval'
+App 15662 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:101:in `preload_app'
+App 15662 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:189:in `block in <module:App>'
+App 15662 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/ruby_supportlib/phusion_passenger/loader_shared_helpers.rb:380:in `run_block_and_record_step_progress'
+App 15662 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:188:in `<module:App>'
+App 15662 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:30:in `<module:PhusionPassenger>'
+App 15662 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:29:in `<main>'
+[ E 2019-10-18 23:12:46.1700 15617/Tn age/Cor/App/Implementation.cpp:221 ]: Could not spawn process for application /var/www/mike: The application encountered the following error: cannot load such file -- Shellwords (LoadError)
+  Error ID: c03aca22
+  Error details saved to: /tmp/passenger-error-aDr0OE.html
+
+[ E 2019-10-18 23:12:46.1736 15617/T8 age/Cor/Con/CheckoutSession.cpp:276 ]: [Client 1-1] Cannot checkout session because a spawning error occurred. The identifier of the error is c03aca22. Please see earlier logs for details about the error.
+
+[ N 2019-10-18 23:13:49.6770 15617/T8 age/Cor/CoreMain.cpp:671 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2019-10-18 23:13:49.6771 15617/T1 age/Cor/CoreMain.cpp:1246 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2019-10-18 23:13:49.6773 15617/T8 Ser/Server.h:902 ]: [ServerThr.1] Freed 0 spare client objects
+[ N 2019-10-18 23:13:49.6773 15617/T8 Ser/Server.h:558 ]: [ServerThr.1] Shutdown finished
+[ N 2019-10-18 23:13:49.6774 15617/Tb Ser/Server.h:902 ]: [ServerThr.2] Freed 0 spare client objects
+[ N 2019-10-18 23:13:49.6774 15617/Tg Ser/Server.h:902 ]: [ServerThr.5] Freed 0 spare client objects
+[ N 2019-10-18 23:13:49.6775 15617/Tb Ser/Server.h:558 ]: [ServerThr.2] Shutdown finished
+[ N 2019-10-18 23:13:49.6775 15617/Td Ser/Server.h:902 ]: [ServerThr.3] Freed 0 spare client objects
+[ N 2019-10-18 23:13:49.6775 15617/Tg Ser/Server.h:558 ]: [ServerThr.5] Shutdown finished
+[ N 2019-10-18 23:13:49.6775 15617/Td Ser/Server.h:558 ]: [ServerThr.3] Shutdown finished
+[ N 2019-10-18 23:13:49.6775 15617/Ti Ser/Server.h:902 ]: [ServerThr.6] Freed 0 spare client objects
+[ N 2019-10-18 23:13:49.6776 15617/Ti Ser/Server.h:558 ]: [ServerThr.6] Shutdown finished
+[ N 2019-10-18 23:13:49.6776 15617/Tf Ser/Server.h:902 ]: [ServerThr.4] Freed 0 spare client objects
+[ N 2019-10-18 23:13:49.6776 15617/Tf Ser/Server.h:558 ]: [ServerThr.4] Shutdown finished
+[ N 2019-10-18 23:13:49.6777 15617/Tk Ser/Server.h:902 ]: [ApiServer] Freed 0 spare client objects
+[ N 2019-10-18 23:13:49.6777 15617/Tk Ser/Server.h:558 ]: [ApiServer] Shutdown finished
+[ N 2019-10-18 23:13:50.4966 15617/T1 age/Cor/CoreMain.cpp:1325 ]: Passenger core shutdown finished
+[ N 2019-10-18 23:16:19.1424 16110/T1 age/Wat/WatchdogMain.cpp:1373 ]: Starting Passenger watchdog...
+[ N 2019-10-18 23:16:19.1626 16113/T1 age/Cor/CoreMain.cpp:1340 ]: Starting Passenger core...
+[ N 2019-10-18 23:16:19.1628 16113/T1 age/Cor/CoreMain.cpp:256 ]: Passenger core running in multi-application mode.
+[ W 2019-10-18 23:16:19.1799 16113/T1 age/Cor/CoreMain.cpp:1007 ]: WARNING: potential privilege escalation vulnerability detected. Phusion Passenger is running as root, and part(s) of the Passenger root path (/var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4) can be changed by non-root user(s):
+
+ - /var/www/mike is not secure: it can be modified by user deploy
+
+Please either fix up the permissions for the insecure paths, or install Passenger in a different location that can only be modified by root.
+[ N 2019-10-18 23:16:19.1799 16113/T1 age/Cor/CoreMain.cpp:1015 ]: Passenger core online, PID 16113
+[ N 2019-10-18 23:16:22.1407 16113/T5 age/Cor/SecurityUpdateChecker.h:519 ]: Security update check: no update found (next check in 24 hours)
+App 16159 output: Error: The application encountered the following error: cannot load such file -- Shellwords (LoadError)
+App 16159 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/module.rb:1:in `require'
+App 16159 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/module.rb:1:in `<top (required)>'
+App 16159 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:6:in `require_relative'
+App 16159 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:6:in `<class:View>'
+App 16159 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:2:in `<module:WebConsole>'
+App 16159 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:1:in `<top (required)>'
+App 16159 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view.rb:4:in `require_relative'
+App 16159 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view.rb:4:in `<top (required)>'
+App 16159 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole.rb:5:in `require_relative'
+App 16159 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole.rb:5:in `<module:WebConsole>'
+App 16159 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole.rb:1:in `<top (required)>'
+App 16159 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:81:in `require'
+App 16159 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:81:in `block (2 levels) in require'
+App 16159 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:76:in `each'
+App 16159 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:76:in `block in require'
+App 16159 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:65:in `each'
+App 16159 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:65:in `require'
+App 16159 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler.rb:114:in `require'
+App 16159 output:     /var/www/mike/config/application.rb:7:in `<top (required)>'
+App 16159 output:     /var/www/mike/config/environment.rb:2:in `require'
+App 16159 output:     /var/www/mike/config/environment.rb:2:in `<top (required)>'
+App 16159 output:     config.ru:3:in `require'
+App 16159 output:     config.ru:3:in `block in <main>'
+App 16159 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/rack-1.6.11/lib/rack/builder.rb:55:in `instance_eval'
+App 16159 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/rack-1.6.11/lib/rack/builder.rb:55:in `initialize'
+App 16159 output:     config.ru:1:in `new'
+App 16159 output:     config.ru:1:in `<main>'
+App 16159 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:101:in `eval'
+App 16159 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:101:in `preload_app'
+App 16159 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:189:in `block in <module:App>'
+App 16159 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/ruby_supportlib/phusion_passenger/loader_shared_helpers.rb:380:in `run_block_and_record_step_progress'
+App 16159 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:188:in `<module:App>'
+App 16159 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:30:in `<module:PhusionPassenger>'
+App 16159 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:29:in `<main>'
+[ E 2019-10-18 23:16:23.4974 16113/Tn age/Cor/App/Implementation.cpp:221 ]: Could not spawn process for application /var/www/mike: The application encountered the following error: cannot load such file -- Shellwords (LoadError)
+  Error ID: 2454aed6
+  Error details saved to: /tmp/passenger-error-N1AZHF.html
+
+[ E 2019-10-18 23:16:23.5017 16113/T8 age/Cor/Con/CheckoutSession.cpp:276 ]: [Client 1-1] Cannot checkout session because a spawning error occurred. The identifier of the error is 2454aed6. Please see earlier logs for details about the error.
+
+[ N 2019-10-18 23:18:27.3817 16113/T8 age/Cor/CoreMain.cpp:671 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2019-10-18 23:18:27.3818 16113/T1 age/Cor/CoreMain.cpp:1246 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2019-10-18 23:18:27.3819 16113/Tf Ser/Server.h:902 ]: [ServerThr.4] Freed 0 spare client objects
+[ N 2019-10-18 23:18:27.3820 16113/Tf Ser/Server.h:558 ]: [ServerThr.4] Shutdown finished
+[ N 2019-10-18 23:18:27.3821 16113/Ti Ser/Server.h:902 ]: [ServerThr.6] Freed 0 spare client objects
+[ N 2019-10-18 23:18:27.3820 16113/Tc Ser/Server.h:902 ]: [ServerThr.3] Freed 0 spare client objects
+[ N 2019-10-18 23:18:27.3821 16113/Ti Ser/Server.h:558 ]: [ServerThr.6] Shutdown finished
+[ N 2019-10-18 23:18:27.3821 16113/Tc Ser/Server.h:558 ]: [ServerThr.3] Shutdown finished
+[ N 2019-10-18 23:18:27.3824 16113/Tk Ser/Server.h:902 ]: [ApiServer] Freed 0 spare client objects
+[ N 2019-10-18 23:18:27.3824 16113/Tk Ser/Server.h:558 ]: [ApiServer] Shutdown finished
+[ N 2019-10-18 23:18:27.3825 16113/Tg Ser/Server.h:902 ]: [ServerThr.5] Freed 0 spare client objects
+[ N 2019-10-18 23:18:27.3825 16113/Tg Ser/Server.h:558 ]: [ServerThr.5] Shutdown finished
+[ N 2019-10-18 23:18:27.3826 16113/Ta Ser/Server.h:902 ]: [ServerThr.2] Freed 0 spare client objects
+[ N 2019-10-18 23:18:27.3827 16113/Ta Ser/Server.h:558 ]: [ServerThr.2] Shutdown finished
+[ N 2019-10-18 23:18:27.3828 16113/T8 Ser/Server.h:902 ]: [ServerThr.1] Freed 0 spare client objects
+[ N 2019-10-18 23:18:27.3828 16113/T8 Ser/Server.h:558 ]: [ServerThr.1] Shutdown finished
+[ N 2019-10-18 23:18:28.2073 16113/T1 age/Cor/CoreMain.cpp:1325 ]: Passenger core shutdown finished
+[ N 2019-10-18 23:21:58.4518 16656/T1 age/Wat/WatchdogMain.cpp:1373 ]: Starting Passenger watchdog...
+[ N 2019-10-18 23:21:58.4730 16659/T1 age/Cor/CoreMain.cpp:1340 ]: Starting Passenger core...
+[ N 2019-10-18 23:21:58.4732 16659/T1 age/Cor/CoreMain.cpp:256 ]: Passenger core running in multi-application mode.
+[ W 2019-10-18 23:21:58.4872 16659/T1 age/Cor/CoreMain.cpp:1007 ]: WARNING: potential privilege escalation vulnerability detected. Phusion Passenger is running as root, and part(s) of the Passenger root path (/var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4) can be changed by non-root user(s):
+
+ - /var/www/mike is not secure: it can be modified by user deploy
+
+Please either fix up the permissions for the insecure paths, or install Passenger in a different location that can only be modified by root.
+[ N 2019-10-18 23:21:58.4872 16659/T1 age/Cor/CoreMain.cpp:1015 ]: Passenger core online, PID 16659
+[ N 2019-10-18 23:22:01.2557 16659/T6 age/Cor/SecurityUpdateChecker.h:519 ]: Security update check: no update found (next check in 24 hours)
+App 16704 output: Error: The application encountered the following error: cannot load such file -- Shellwords (LoadError)
+App 16704 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/module.rb:1:in `require'
+App 16704 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/module.rb:1:in `<top (required)>'
+App 16704 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:6:in `require_relative'
+App 16704 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:6:in `<class:View>'
+App 16704 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:2:in `<module:WebConsole>'
+App 16704 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:1:in `<top (required)>'
+App 16704 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view.rb:4:in `require_relative'
+App 16704 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view.rb:4:in `<top (required)>'
+App 16704 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole.rb:5:in `require_relative'
+App 16704 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole.rb:5:in `<module:WebConsole>'
+App 16704 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole.rb:1:in `<top (required)>'
+App 16704 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:81:in `require'
+App 16704 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:81:in `block (2 levels) in require'
+App 16704 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:76:in `each'
+App 16704 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:76:in `block in require'
+App 16704 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:65:in `each'
+App 16704 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:65:in `require'
+App 16704 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler.rb:114:in `require'
+App 16704 output:     /var/www/mike/config/application.rb:7:in `<top (required)>'
+App 16704 output:     /var/www/mike/config/environment.rb:2:in `require'
+App 16704 output:     /var/www/mike/config/environment.rb:2:in `<top (required)>'
+App 16704 output:     config.ru:3:in `require'
+App 16704 output:     config.ru:3:in `block in <main>'
+App 16704 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/rack-1.6.11/lib/rack/builder.rb:55:in `instance_eval'
+App 16704 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/rack-1.6.11/lib/rack/builder.rb:55:in `initialize'
+App 16704 output:     config.ru:1:in `new'
+App 16704 output:     config.ru:1:in `<main>'
+App 16704 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:101:in `eval'
+App 16704 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:101:in `preload_app'
+App 16704 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:189:in `block in <module:App>'
+App 16704 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/ruby_supportlib/phusion_passenger/loader_shared_helpers.rb:380:in `run_block_and_record_step_progress'
+App 16704 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:188:in `<module:App>'
+App 16704 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:30:in `<module:PhusionPassenger>'
+App 16704 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:29:in `<main>'
+[ E 2019-10-18 23:22:03.0545 16659/Tn age/Cor/App/Implementation.cpp:221 ]: Could not spawn process for application /var/www/mike: The application encountered the following error: cannot load such file -- Shellwords (LoadError)
+  Error ID: 216c3556
+  Error details saved to: /tmp/passenger-error-WlcxKu.html
+
+[ E 2019-10-18 23:22:03.0593 16659/T8 age/Cor/Con/CheckoutSession.cpp:276 ]: [Client 1-1] Cannot checkout session because a spawning error occurred. The identifier of the error is 216c3556. Please see earlier logs for details about the error.
+
+[ N 2019-10-18 23:22:17.3028 16659/T8 age/Cor/CoreMain.cpp:671 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2019-10-18 23:22:17.3029 16659/T1 age/Cor/CoreMain.cpp:1246 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2019-10-18 23:22:17.3031 16659/Ti Ser/Server.h:902 ]: [ServerThr.6] Freed 0 spare client objects
+[ N 2019-10-18 23:22:17.3031 16659/Tc Ser/Server.h:902 ]: [ServerThr.3] Freed 0 spare client objects
+[ N 2019-10-18 23:22:17.3032 16659/Ti Ser/Server.h:558 ]: [ServerThr.6] Shutdown finished
+[ N 2019-10-18 23:22:17.3032 16659/Ta Ser/Server.h:902 ]: [ServerThr.2] Freed 0 spare client objects
+[ N 2019-10-18 23:22:17.3033 16659/Tc Ser/Server.h:558 ]: [ServerThr.3] Shutdown finished
+[ N 2019-10-18 23:22:17.3033 16659/Ta Ser/Server.h:558 ]: [ServerThr.2] Shutdown finished
+[ N 2019-10-18 23:22:17.3033 16659/Te Ser/Server.h:902 ]: [ServerThr.4] Freed 0 spare client objects
+[ N 2019-10-18 23:22:17.3033 16659/Te Ser/Server.h:558 ]: [ServerThr.4] Shutdown finished
+[ N 2019-10-18 23:22:17.3034 16659/Tg Ser/Server.h:902 ]: [ServerThr.5] Freed 0 spare client objects
+[ N 2019-10-18 23:22:17.3034 16659/Tg Ser/Server.h:558 ]: [ServerThr.5] Shutdown finished
+[ N 2019-10-18 23:22:17.3034 16659/T8 Ser/Server.h:902 ]: [ServerThr.1] Freed 0 spare client objects
+[ N 2019-10-18 23:22:17.3035 16659/T8 Ser/Server.h:558 ]: [ServerThr.1] Shutdown finished
+[ N 2019-10-18 23:22:17.3036 16659/Tk Ser/Server.h:902 ]: [ApiServer] Freed 0 spare client objects
+[ N 2019-10-18 23:22:17.3036 16659/Tk Ser/Server.h:558 ]: [ApiServer] Shutdown finished
+[ N 2019-10-18 23:22:18.1092 16659/T1 age/Cor/CoreMain.cpp:1325 ]: Passenger core shutdown finished
+[ N 2019-10-18 23:23:26.6712 17084/T1 age/Wat/WatchdogMain.cpp:1373 ]: Starting Passenger watchdog...
+[ N 2019-10-18 23:23:26.6970 17087/T1 age/Cor/CoreMain.cpp:1340 ]: Starting Passenger core...
+[ N 2019-10-18 23:23:26.6971 17087/T1 age/Cor/CoreMain.cpp:256 ]: Passenger core running in multi-application mode.
+[ W 2019-10-18 23:23:26.7131 17087/T1 age/Cor/CoreMain.cpp:1007 ]: WARNING: potential privilege escalation vulnerability detected. Phusion Passenger is running as root, and part(s) of the Passenger root path (/var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4) can be changed by non-root user(s):
+
+ - /var/www/mike is not secure: it can be modified by user deploy
+
+Please either fix up the permissions for the insecure paths, or install Passenger in a different location that can only be modified by root.
+[ N 2019-10-18 23:23:26.7131 17087/T1 age/Cor/CoreMain.cpp:1015 ]: Passenger core online, PID 17087
+[ N 2019-10-18 23:23:29.4717 17087/T5 age/Cor/SecurityUpdateChecker.h:519 ]: Security update check: no update found (next check in 24 hours)
+App 17130 output: Error: The application encountered the following error: cannot load such file -- Shellwords (LoadError)
+App 17130 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/module.rb:1:in `require'
+App 17130 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/module.rb:1:in `<top (required)>'
+App 17130 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:6:in `require_relative'
+App 17130 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:6:in `<class:View>'
+App 17130 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:2:in `<module:WebConsole>'
+App 17130 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:1:in `<top (required)>'
+App 17130 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view.rb:4:in `require_relative'
+App 17130 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view.rb:4:in `<top (required)>'
+App 17130 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole.rb:5:in `require_relative'
+App 17130 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole.rb:5:in `<module:WebConsole>'
+App 17130 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole.rb:1:in `<top (required)>'
+App 17130 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:81:in `require'
+App 17130 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:81:in `block (2 levels) in require'
+App 17130 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:76:in `each'
+App 17130 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:76:in `block in require'
+App 17130 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:65:in `each'
+App 17130 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:65:in `require'
+App 17130 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler.rb:114:in `require'
+App 17130 output:     /var/www/mike/config/application.rb:7:in `<top (required)>'
+App 17130 output:     /var/www/mike/config/environment.rb:2:in `require'
+App 17130 output:     /var/www/mike/config/environment.rb:2:in `<top (required)>'
+App 17130 output:     config.ru:3:in `require'
+App 17130 output:     config.ru:3:in `block in <main>'
+App 17130 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/rack-1.6.11/lib/rack/builder.rb:55:in `instance_eval'
+App 17130 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/rack-1.6.11/lib/rack/builder.rb:55:in `initialize'
+App 17130 output:     config.ru:1:in `new'
+App 17130 output:     config.ru:1:in `<main>'
+App 17130 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:101:in `eval'
+App 17130 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:101:in `preload_app'
+App 17130 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:189:in `block in <module:App>'
+App 17130 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/ruby_supportlib/phusion_passenger/loader_shared_helpers.rb:380:in `run_block_and_record_step_progress'
+App 17130 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:188:in `<module:App>'
+App 17130 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:30:in `<module:PhusionPassenger>'
+App 17130 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:29:in `<main>'
+[ E 2019-10-18 23:23:31.3012 17087/Tn age/Cor/App/Implementation.cpp:221 ]: Could not spawn process for application /var/www/mike: The application encountered the following error: cannot load such file -- Shellwords (LoadError)
+  Error ID: 618c9351
+  Error details saved to: /tmp/passenger-error-FpFAoP.html
+
+[ E 2019-10-18 23:23:31.3103 17087/T9 age/Cor/Con/CheckoutSession.cpp:276 ]: [Client 1-1] Cannot checkout session because a spawning error occurred. The identifier of the error is 618c9351. Please see earlier logs for details about the error.
+
+[ N 2019-10-18 23:23:38.3213 17087/T9 age/Cor/CoreMain.cpp:671 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2019-10-18 23:23:38.3213 17087/T1 age/Cor/CoreMain.cpp:1246 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2019-10-18 23:23:38.3214 17087/T9 Ser/Server.h:902 ]: [ServerThr.1] Freed 0 spare client objects
+[ N 2019-10-18 23:23:38.3214 17087/T9 Ser/Server.h:558 ]: [ServerThr.1] Shutdown finished
+[ N 2019-10-18 23:23:38.3214 17087/Ti Ser/Server.h:902 ]: [ServerThr.6] Freed 0 spare client objects
+[ N 2019-10-18 23:23:38.3215 17087/Ti Ser/Server.h:558 ]: [ServerThr.6] Shutdown finished
+[ N 2019-10-18 23:23:38.3216 17087/Te Ser/Server.h:902 ]: [ServerThr.4] Freed 0 spare client objects
+[ N 2019-10-18 23:23:38.3215 17087/Td Ser/Server.h:902 ]: [ServerThr.3] Freed 0 spare client objects
+[ N 2019-10-18 23:23:38.3216 17087/Te Ser/Server.h:558 ]: [ServerThr.4] Shutdown finished
+[ N 2019-10-18 23:23:38.3216 17087/Td Ser/Server.h:558 ]: [ServerThr.3] Shutdown finished
+[ N 2019-10-18 23:23:38.3215 17087/Tg Ser/Server.h:902 ]: [ServerThr.5] Freed 0 spare client objects
+[ N 2019-10-18 23:23:38.3217 17087/Tg Ser/Server.h:558 ]: [ServerThr.5] Shutdown finished
+[ N 2019-10-18 23:23:38.3218 17087/Ta Ser/Server.h:902 ]: [ServerThr.2] Freed 0 spare client objects
+[ N 2019-10-18 23:23:38.3219 17087/Ta Ser/Server.h:558 ]: [ServerThr.2] Shutdown finished
+[ N 2019-10-18 23:23:38.3219 17087/Tk Ser/Server.h:902 ]: [ApiServer] Freed 0 spare client objects
+[ N 2019-10-18 23:23:38.3219 17087/Tk Ser/Server.h:558 ]: [ApiServer] Shutdown finished
+[ N 2019-10-18 23:23:39.1260 17087/T1 age/Cor/CoreMain.cpp:1325 ]: Passenger core shutdown finished
+[ N 2019-10-18 23:24:25.2466 17573/T1 age/Wat/WatchdogMain.cpp:1373 ]: Starting Passenger watchdog...
+[ N 2019-10-18 23:24:25.2672 17577/T1 age/Cor/CoreMain.cpp:1340 ]: Starting Passenger core...
+[ N 2019-10-18 23:24:25.2674 17577/T1 age/Cor/CoreMain.cpp:256 ]: Passenger core running in multi-application mode.
+[ W 2019-10-18 23:24:25.2823 17577/T1 age/Cor/CoreMain.cpp:1007 ]: WARNING: potential privilege escalation vulnerability detected. Phusion Passenger is running as root, and part(s) of the Passenger root path (/var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4) can be changed by non-root user(s):
+
+ - /var/www/mike is not secure: it can be modified by user deploy
+
+Please either fix up the permissions for the insecure paths, or install Passenger in a different location that can only be modified by root.
+[ N 2019-10-18 23:24:25.2824 17577/T1 age/Cor/CoreMain.cpp:1015 ]: Passenger core online, PID 17577
+[ N 2019-10-18 23:24:28.0366 17577/T5 age/Cor/SecurityUpdateChecker.h:519 ]: Security update check: no update found (next check in 24 hours)
+App 17620 output: Error: The application encountered the following error: cannot load such file -- Shellwords (LoadError)
+App 17620 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/module.rb:1:in `require'
+App 17620 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/module.rb:1:in `<top (required)>'
+App 17620 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:6:in `require_relative'
+App 17620 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:6:in `<class:View>'
+App 17620 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:2:in `<module:WebConsole>'
+App 17620 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:1:in `<top (required)>'
+App 17620 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view.rb:4:in `require_relative'
+App 17620 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view.rb:4:in `<top (required)>'
+App 17620 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole.rb:5:in `require_relative'
+App 17620 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole.rb:5:in `<module:WebConsole>'
+App 17620 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole.rb:1:in `<top (required)>'
+App 17620 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:81:in `require'
+App 17620 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:81:in `block (2 levels) in require'
+App 17620 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:76:in `each'
+App 17620 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:76:in `block in require'
+App 17620 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:65:in `each'
+App 17620 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:65:in `require'
+App 17620 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler.rb:114:in `require'
+App 17620 output:     /var/www/mike/config/application.rb:7:in `<top (required)>'
+App 17620 output:     /var/www/mike/config/environment.rb:2:in `require'
+App 17620 output:     /var/www/mike/config/environment.rb:2:in `<top (required)>'
+App 17620 output:     config.ru:3:in `require'
+App 17620 output:     config.ru:3:in `block in <main>'
+App 17620 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/rack-1.6.11/lib/rack/builder.rb:55:in `instance_eval'
+App 17620 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/rack-1.6.11/lib/rack/builder.rb:55:in `initialize'
+App 17620 output:     config.ru:1:in `new'
+App 17620 output:     config.ru:1:in `<main>'
+App 17620 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:101:in `eval'
+App 17620 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:101:in `preload_app'
+App 17620 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:189:in `block in <module:App>'
+App 17620 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/ruby_supportlib/phusion_passenger/loader_shared_helpers.rb:380:in `run_block_and_record_step_progress'
+App 17620 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:188:in `<module:App>'
+App 17620 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:30:in `<module:PhusionPassenger>'
+App 17620 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:29:in `<main>'
+[ E 2019-10-18 23:24:29.6455 17577/Tn age/Cor/App/Implementation.cpp:221 ]: Could not spawn process for application /var/www/mike: The application encountered the following error: cannot load such file -- Shellwords (LoadError)
+  Error ID: 0b24aa94
+  Error details saved to: /tmp/passenger-error-1lqOm5.html
+
+[ E 2019-10-18 23:24:29.6501 17577/T9 age/Cor/Con/CheckoutSession.cpp:276 ]: [Client 1-1] Cannot checkout session because a spawning error occurred. The identifier of the error is 0b24aa94. Please see earlier logs for details about the error.
+
+[ N 2019-10-18 23:25:59.4716 17577/T9 age/Cor/CoreMain.cpp:671 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2019-10-18 23:25:59.4717 17577/T1 age/Cor/CoreMain.cpp:1246 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2019-10-18 23:25:59.4718 17577/Tc Ser/Server.h:902 ]: [ServerThr.3] Freed 0 spare client objects
+[ N 2019-10-18 23:25:59.4718 17577/Tc Ser/Server.h:558 ]: [ServerThr.3] Shutdown finished
+[ N 2019-10-18 23:25:59.4719 17577/T9 Ser/Server.h:902 ]: [ServerThr.1] Freed 0 spare client objects
+[ N 2019-10-18 23:25:59.4718 17577/Te Ser/Server.h:902 ]: [ServerThr.4] Freed 0 spare client objects
+[ N 2019-10-18 23:25:59.4719 17577/T9 Ser/Server.h:558 ]: [ServerThr.1] Shutdown finished
+[ N 2019-10-18 23:25:59.4719 17577/Tg Ser/Server.h:902 ]: [ServerThr.5] Freed 0 spare client objects
+[ N 2019-10-18 23:25:59.4719 17577/Ta Ser/Server.h:902 ]: [ServerThr.2] Freed 0 spare client objects
+[ N 2019-10-18 23:25:59.4719 17577/Tg Ser/Server.h:558 ]: [ServerThr.5] Shutdown finished
+[ N 2019-10-18 23:25:59.4720 17577/Ta Ser/Server.h:558 ]: [ServerThr.2] Shutdown finished
+[ N 2019-10-18 23:25:59.4719 17577/Ti Ser/Server.h:902 ]: [ServerThr.6] Freed 0 spare client objects
+[ N 2019-10-18 23:25:59.4720 17577/Ti Ser/Server.h:558 ]: [ServerThr.6] Shutdown finished
+[ N 2019-10-18 23:25:59.4719 17577/Te Ser/Server.h:558 ]: [ServerThr.4] Shutdown finished
+[ N 2019-10-18 23:25:59.4721 17577/Tk Ser/Server.h:902 ]: [ApiServer] Freed 0 spare client objects
+[ N 2019-10-18 23:25:59.4721 17577/Tk Ser/Server.h:558 ]: [ApiServer] Shutdown finished
+[ N 2019-10-18 23:26:00.2303 17577/T1 age/Cor/CoreMain.cpp:1325 ]: Passenger core shutdown finished
+[ N 2019-10-18 23:31:08.8058 18275/T1 age/Wat/WatchdogMain.cpp:1373 ]: Starting Passenger watchdog...
+[ N 2019-10-18 23:31:08.8230 18278/T1 age/Cor/CoreMain.cpp:1340 ]: Starting Passenger core...
+[ N 2019-10-18 23:31:08.8231 18278/T1 age/Cor/CoreMain.cpp:256 ]: Passenger core running in multi-application mode.
+[ W 2019-10-18 23:31:08.8386 18278/T1 age/Cor/CoreMain.cpp:1007 ]: WARNING: potential privilege escalation vulnerability detected. Phusion Passenger is running as root, and part(s) of the Passenger root path (/var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4) can be changed by non-root user(s):
+
+ - /var/www/mike is not secure: it can be modified by user deploy
+
+Please either fix up the permissions for the insecure paths, or install Passenger in a different location that can only be modified by root.
+[ N 2019-10-18 23:31:08.8386 18278/T1 age/Cor/CoreMain.cpp:1015 ]: Passenger core online, PID 18278
+App 18321 output: Error: The application encountered the following error: You are trying to install in deployment mode after changing
+App 18321 output: your Gemfile. Run `bundle install` elsewhere and add the
+App 18321 output: updated Gemfile.lock to version control.
+App 18321 output: 
+App 18321 output: If this is a development machine, remove the /var/www/mike/Gemfile freeze 
+App 18321 output: by running `bundle install --no-deployment`.
+App 18321 output: 
+App 18321 output: The dependencies in your gemfile changed
+App 18321 output: 
+App 18321 output: You have added to the Gemfile:
+App 18321 output: * capistrano-passenger
+App 18321 output:  (Bundler::ProductionError)
+App 18321 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/definition.rb:466:in `ensure_equivalent_gemfile_and_lockfile'
+App 18321 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:13:in `setup'
+App 18321 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler.rb:107:in `setup'
+App 18321 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/setup.rb:20:in `<top (required)>'
+App 18321 output:     /usr/local/lib/ruby/site_ruby/2.5.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+App 18321 output:     /usr/local/lib/ruby/site_ruby/2.5.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+App 18321 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/ruby_supportlib/phusion_passenger/loader_shared_helpers.rb:363:in `activate_gem'
+App 18321 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/ruby_supportlib/phusion_passenger/loader_shared_helpers.rb:221:in `block in run_load_path_setup_code'
+App 18321 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/ruby_supportlib/phusion_passenger/loader_shared_helpers.rb:527:in `running_bundler'
+App 18321 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/ruby_supportlib/phusion_passenger/loader_shared_helpers.rb:220:in `run_load_path_setup_code'
+App 18321 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:91:in `preload_app'
+App 18321 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:189:in `block in <module:App>'
+App 18321 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/ruby_supportlib/phusion_passenger/loader_shared_helpers.rb:380:in `run_block_and_record_step_progress'
+App 18321 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:188:in `<module:App>'
+App 18321 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:30:in `<module:PhusionPassenger>'
+App 18321 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:29:in `<main>'
+[ E 2019-10-18 23:31:11.3329 18278/Tn age/Cor/App/Implementation.cpp:221 ]: Could not spawn process for application /var/www/mike: The application encountered the following error: You are trying to install in deployment mode after changing
+your Gemfile. Run `bundle install` elsewhere and add the
+updated Gemfile.lock to version control.
+
+If this is a development machine, remove the /var/www/mike/Gemfile freeze 
+by running `bundle install --no-deployment`.
+
+The dependencies in your gemfile changed
+
+You have added to the Gemfile:
+* capistrano-passenger
+ (Bundler::ProductionError)
+  Error ID: 51d24f95
+  Error details saved to: /tmp/passenger-error-w4pk4Y.html
+
+[ E 2019-10-18 23:31:11.3397 18278/T9 age/Cor/Con/CheckoutSession.cpp:276 ]: [Client 1-1] Cannot checkout session because a spawning error occurred. The identifier of the error is 51d24f95. Please see earlier logs for details about the error.
+[ N 2019-10-18 23:31:11.5436 18278/T5 age/Cor/SecurityUpdateChecker.h:519 ]: Security update check: no update found (next check in 24 hours)
+
+[ N 2019-10-18 23:32:42.0210 18278/T9 age/Cor/CoreMain.cpp:671 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2019-10-18 23:32:42.0211 18278/T1 age/Cor/CoreMain.cpp:1246 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2019-10-18 23:32:42.0213 18278/Ta Ser/Server.h:902 ]: [ServerThr.2] Freed 0 spare client objects
+[ N 2019-10-18 23:32:42.0213 18278/Ta Ser/Server.h:558 ]: [ServerThr.2] Shutdown finished
+[ N 2019-10-18 23:32:42.0213 18278/Te Ser/Server.h:902 ]: [ServerThr.4] Freed 0 spare client objects
+[ N 2019-10-18 23:32:42.0213 18278/Tc Ser/Server.h:902 ]: [ServerThr.3] Freed 0 spare client objects
+[ N 2019-10-18 23:32:42.0213 18278/Tg Ser/Server.h:902 ]: [ServerThr.5] Freed 0 spare client objects
+[ N 2019-10-18 23:32:42.0214 18278/Te Ser/Server.h:558 ]: [ServerThr.4] Shutdown finished
+[ N 2019-10-18 23:32:42.0214 18278/Tc Ser/Server.h:558 ]: [ServerThr.3] Shutdown finished
+[ N 2019-10-18 23:32:42.0214 18278/Tg Ser/Server.h:558 ]: [ServerThr.5] Shutdown finished
+[ N 2019-10-18 23:32:42.0213 18278/T9 Ser/Server.h:902 ]: [ServerThr.1] Freed 0 spare client objects
+[ N 2019-10-18 23:32:42.0214 18278/T9 Ser/Server.h:558 ]: [ServerThr.1] Shutdown finished
+[ N 2019-10-18 23:32:42.0214 18278/Ti Ser/Server.h:902 ]: [ServerThr.6] Freed 0 spare client objects
+[ N 2019-10-18 23:32:42.0214 18278/Ti Ser/Server.h:558 ]: [ServerThr.6] Shutdown finished
+[ N 2019-10-18 23:32:42.0217 18278/Tk Ser/Server.h:902 ]: [ApiServer] Freed 0 spare client objects
+[ N 2019-10-18 23:32:42.0217 18278/Tk Ser/Server.h:558 ]: [ApiServer] Shutdown finished
+[ N 2019-10-18 23:32:42.8155 18278/T1 age/Cor/CoreMain.cpp:1325 ]: Passenger core shutdown finished
+[ N 2019-10-18 23:32:45.8096 18497/T1 age/Wat/WatchdogMain.cpp:1373 ]: Starting Passenger watchdog...
+[ N 2019-10-18 23:32:45.8255 18500/T1 age/Cor/CoreMain.cpp:1340 ]: Starting Passenger core...
+[ N 2019-10-18 23:32:45.8256 18500/T1 age/Cor/CoreMain.cpp:256 ]: Passenger core running in multi-application mode.
+[ W 2019-10-18 23:32:45.8375 18500/T1 age/Cor/CoreMain.cpp:1007 ]: WARNING: potential privilege escalation vulnerability detected. Phusion Passenger is running as root, and part(s) of the Passenger root path (/var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4) can be changed by non-root user(s):
+
+ - /var/www/mike is not secure: it can be modified by user deploy
+
+Please either fix up the permissions for the insecure paths, or install Passenger in a different location that can only be modified by root.
+[ N 2019-10-18 23:32:45.8376 18500/T1 age/Cor/CoreMain.cpp:1015 ]: Passenger core online, PID 18500
+App 18543 output: Error: The application encountered the following error: You are trying to install in deployment mode after changing
+App 18543 output: your Gemfile. Run `bundle install` elsewhere and add the
+App 18543 output: updated Gemfile.lock to version control.
+App 18543 output: 
+App 18543 output: If this is a development machine, remove the /var/www/mike/Gemfile freeze 
+App 18543 output: by running `bundle install --no-deployment`.
+App 18543 output: 
+App 18543 output: The dependencies in your gemfile changed
+App 18543 output: 
+App 18543 output: You have added to the Gemfile:
+App 18543 output: * capistrano-passenger
+App 18543 output:  (Bundler::ProductionError)
+App 18543 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/definition.rb:466:in `ensure_equivalent_gemfile_and_lockfile'
+App 18543 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/runtime.rb:13:in `setup'
+App 18543 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler.rb:107:in `setup'
+App 18543 output:     /usr/local/lib/ruby/site_ruby/2.5.0/bundler/setup.rb:20:in `<top (required)>'
+App 18543 output:     /usr/local/lib/ruby/site_ruby/2.5.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+App 18543 output:     /usr/local/lib/ruby/site_ruby/2.5.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+App 18543 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/ruby_supportlib/phusion_passenger/loader_shared_helpers.rb:363:in `activate_gem'
+App 18543 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/ruby_supportlib/phusion_passenger/loader_shared_helpers.rb:221:in `block in run_load_path_setup_code'
+App 18543 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/ruby_supportlib/phusion_passenger/loader_shared_helpers.rb:527:in `running_bundler'
+App 18543 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/ruby_supportlib/phusion_passenger/loader_shared_helpers.rb:220:in `run_load_path_setup_code'
+App 18543 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:91:in `preload_app'
+App 18543 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:189:in `block in <module:App>'
+App 18543 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/ruby_supportlib/phusion_passenger/loader_shared_helpers.rb:380:in `run_block_and_record_step_progress'
+App 18543 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:188:in `<module:App>'
+App 18543 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:30:in `<module:PhusionPassenger>'
+App 18543 output:     /var/www/mike/vendor/bundle/ruby/2.5.0/gems/passenger-6.0.4/src/helper-scripts/rack-preloader.rb:29:in `<main>'
+[ E 2019-10-18 23:32:48.3327 18500/Tn age/Cor/App/Implementation.cpp:221 ]: Could not spawn process for application /var/www/mike: The application encountered the following error: You are trying to install in deployment mode after changing
+your Gemfile. Run `bundle install` elsewhere and add the
+updated Gemfile.lock to version control.
+
+If this is a development machine, remove the /var/www/mike/Gemfile freeze 
+by running `bundle install --no-deployment`.
+
+The dependencies in your gemfile changed
+
+You have added to the Gemfile:
+* capistrano-passenger
+ (Bundler::ProductionError)
+  Error ID: 0a6841f9
+  Error details saved to: /tmp/passenger-error-DosAQP.html
+
+[ E 2019-10-18 23:32:48.3380 18500/T8 age/Cor/Con/CheckoutSession.cpp:276 ]: [Client 1-1] Cannot checkout session because a spawning error occurred. The identifier of the error is 0a6841f9. Please see earlier logs for details about the error.
+[ N 2019-10-18 23:32:48.5542 18500/T5 age/Cor/SecurityUpdateChecker.h:519 ]: Security update check: no update found (next check in 24 hours)
+
+[ N 2019-10-18 23:32:51.1945 18500/T8 age/Cor/CoreMain.cpp:671 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2019-10-18 23:32:51.1946 18500/T1 age/Cor/CoreMain.cpp:1246 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2019-10-18 23:32:51.1947 18500/T8 Ser/Server.h:902 ]: [ServerThr.1] Freed 0 spare client objects
+[ N 2019-10-18 23:32:51.1947 18500/T8 Ser/Server.h:558 ]: [ServerThr.1] Shutdown finished
+[ N 2019-10-18 23:32:51.1948 18500/Ti Ser/Server.h:902 ]: [ServerThr.6] Freed 0 spare client objects
+[ N 2019-10-18 23:32:51.1948 18500/Th Ser/Server.h:902 ]: [ServerThr.5] Freed 0 spare client objects
+[ N 2019-10-18 23:32:51.1949 18500/Te Ser/Server.h:902 ]: [ServerThr.4] Freed 0 spare client objects
+[ N 2019-10-18 23:32:51.1949 18500/Te Ser/Server.h:558 ]: [ServerThr.4] Shutdown finished
+[ N 2019-10-18 23:32:51.1949 18500/Th Ser/Server.h:558 ]: [ServerThr.5] Shutdown finished
+[ N 2019-10-18 23:32:51.1949 18500/Ti Ser/Server.h:558 ]: [ServerThr.6] Shutdown finished
+[ N 2019-10-18 23:32:51.1949 18500/Tb Ser/Server.h:902 ]: [ServerThr.2] Freed 0 spare client objects
+[ N 2019-10-18 23:32:51.1950 18500/Tb Ser/Server.h:558 ]: [ServerThr.2] Shutdown finished
+[ N 2019-10-18 23:32:51.1948 18500/Tc Ser/Server.h:902 ]: [ServerThr.3] Freed 0 spare client objects
+[ N 2019-10-18 23:32:51.1950 18500/Tc Ser/Server.h:558 ]: [ServerThr.3] Shutdown finished
+[ N 2019-10-18 23:32:51.1952 18500/Tk Ser/Server.h:902 ]: [ApiServer] Freed 0 spare client objects
+[ N 2019-10-18 23:32:51.1952 18500/Tk Ser/Server.h:558 ]: [ApiServer] Shutdown finished
+[ N 2019-10-18 23:32:51.9976 18500/T1 age/Cor/CoreMain.cpp:1325 ]: Passenger core shutdown finished

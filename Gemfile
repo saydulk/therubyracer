@@ -1,28 +1,43 @@
 source 'https://rubygems.org'
 
+
 gem 'rails', '~> 4.2'
 gem 'rails-i18n'
 gem 'responders', '~> 2.0'
 gem "better_errors", "~> 2.5.1"
 
 # gem "therubyracer"
-ruby ">=2.5.0"
+# ruby "2.5.7"
 gem 'bcrypt', '~> 3.1', '>= 3.1.10'
 
 gem 'mysql2'
 
+gem 'rake', '~> 13.0'
 
-
-
-
+gem 'figaro' 
+gem 'foreman'
 
 gem 'puma'
 # gem 'mysql2', '~> 0.3.21'
 gem 'redis-rails'
 
+
+# masum
+
+gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
+gem "bundler", ">= 1.5.0" 
+# gem 'capistrano-passenger'
+
 gem 'rotp', '3.3.1'
 gem 'json'
 gem 'jbuilder'
+
+# gem 'capistrano'
+# gem 'capistrano-rails'
+# gem 'capistrano-passenger'
+# gem 'capistrano-rbenv
+# gem 'capistrano-rvm'
+
 
 gem 'webconsole', '~> 0.2.1'
 
@@ -40,7 +55,7 @@ gem 'dalli'
 
 # gem 'invisible_captcha'
 
-gem 'figaro'
+
 gem 'hashie', '~> 3.0'
 
 gem 'aasm', '~> 3.4.0'
@@ -122,6 +137,9 @@ gem 'social-share-button', '~> 1.2'
 gem 'modernizr-rails'
 gem  'grpc'
 
+# gem "passenger", ">= 5.0.25", require: 
+# "phusion_passenger/rack_handler"
+
 group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker', '~> 1.4.3'
@@ -143,3 +161,12 @@ group :test do
   gem 'chromedriver-helper', '~> 1.1'
   gem 'rack_session_access', '~> 0.1'
 end
+
+group :development do
+  gem 'capistrano',         require: false
+  gem 'capistrano-rvm',     require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+end
+
+

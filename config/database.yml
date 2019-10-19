@@ -4,7 +4,7 @@ default: &default
   pool: 5
   host: 127.0.0.1
   username: root
-  password: autoset
+  password: 01722gausia
 
 
 development:
@@ -29,11 +29,23 @@ stage:
   password: <%= ENV['RDS_PASSWORD'] %>
   reconnect: true
 
+# production:
+#  <<: *default
+#  pool: <%= ENV['POOL']%>
+#  database: <%= ENV['RDS_DB_NAME']%>
+#  host: <%= ENV['RDS_HOSTNAME']%>
+#  username: <%= ENV['RDS_USERNAME'] %>
+#  password: <%= ENV['RDS_PASSWORD'] %>
+#  reconnect: true
+
 production:
   <<: *default
-  pool: <%= ENV['POOL']%>
-  database: <%= ENV['RDS_DB_NAME']%>
-  host: <%= ENV['RDS_HOSTNAME']%>
-  username: <%= ENV['RDS_USERNAME'] %>
-  password: <%= ENV['RDS_PASSWORD'] %>
+  pool: 5
+  adapter: mysql
+  database: cactoken
+  host: 127.0.0.1
+  username: user
+  password: C@ctok20
+  encoding: unicode
   reconnect: true
+
