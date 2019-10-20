@@ -41,7 +41,7 @@ stage:
 production:
   <<: *default
   pool: 5
-  adapter: mysql
+  adapter: mysql2
   database: cactoken
   host: 127.0.0.1
   username: user

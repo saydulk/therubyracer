@@ -23,6 +23,7 @@ gem 'redis-rails'
 
 
 # masum
+gem 'sass-rails'
 
 gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
 gem "bundler", ">= 1.5.0" 

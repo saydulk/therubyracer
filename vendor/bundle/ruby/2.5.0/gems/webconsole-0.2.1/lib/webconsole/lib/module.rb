@@ -1,4 +1,4 @@
-require 'Shellwords'
+require 'shellwords'
 module WebConsole
   LOAD_PLUGIN_SCRIPT = File.join(APPLESCRIPT_DIRECTORY, "load_plugin.scpt")
   def self.load_plugin(path)
