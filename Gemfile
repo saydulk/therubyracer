@@ -1,67 +1,33 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '~> 4.2'
 gem 'rails-i18n'
 gem 'responders', '~> 2.0'
 gem "better_errors", "~> 2.5.1"
-
-# gem "therubyracer"
-# ruby "2.5.7"
-gem 'bcrypt', '~> 3.1', '>= 3.1.10'
-
 gem 'mysql2'
-
 gem 'rake', '~> 13.0'
-
 gem 'figaro' 
 gem 'foreman'
-
 gem 'puma'
-# gem 'mysql2', '~> 0.3.21'
 gem 'redis-rails'
-
-
 # masum
-gem 'sass-rails'
-
-gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
-gem "bundler", ">= 1.5.0" 
-# gem 'capistrano-passenger'
-
+gem 'google-protobuf'
+# gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
+gem "bundler", ">= 1.17.3" 
 gem 'rotp', '3.3.1'
 gem 'json'
 gem 'jbuilder'
-
-# gem 'capistrano'
-# gem 'capistrano-rails'
-# gem 'capistrano-passenger'
-# gem 'capistrano-rbenv
-# gem 'capistrano-rvm'
-
-
 gem 'webconsole', '~> 0.2.1'
-
 gem 'padrino'
-
 gem 'omniauth',               '~> 1.8.1'
-# gem 'omniauth-identity',      '~> 1.1.1'
 gem 'omniauth-identity', '~> 1.1', '>= 1.1.1'
 gem 'omniauth-auth0',         '~> 2.0.0'
 gem 'omniauth-google-oauth2', '~> 0.5.2'
 gem 'omniauth-facebook'
-
 gem 'rucaptcha'
 gem 'dalli'
-
-# gem 'invisible_captcha'
-
-
 gem 'hashie', '~> 3.0'
-
 gem 'aasm', '~> 3.4.0'
-# gem 'amqp', '~> 1.3.0'
-# gem 'bunny', '~> 2.9.0'
 gem 'amqp', '~> 1.8'
 gem 'bunny', '~> 2.12'
 gem 'cancancan'
@@ -74,12 +40,10 @@ gem 'http_accept_language'
 gem 'paper_trail', '~> 3.0.1'
 gem 'rails-observers'
 gem 'country_select', '~> 2.1.0'
-
 gem 'gon', '~> 5.2.0'
 gem 'pusher'
 gem 'eventmachine', '~> 1.0.4'
 gem 'em-websocket', '~> 0.5.1'
-
 gem 'simple_form', '~> 3.1.0'
 gem 'slim-rails'
 gem 'sass-rails'
@@ -108,15 +72,12 @@ gem 'rest-client', '~> 1.6.8'
 gem 'jwt', '~> 1.5'
 gem 'email_validator', '~> 1.6'
 gem 'clipboard-rails', '~> 1.7'
-gem 'god', '~> 0.13.7', require: false
 gem 'mini_racer', '~> 0.1', require: false
 gem 'arel-is-blank', '~> 1.0'
 gem 'sentry-raven', '~> 2.7', require: false
 gem 'memoist', '~> 0.16'
 gem 'method-not-implemented', '~> 1.0'
-# gem 'passgen', '~> 1.0'
 gem 'cryptice-passgen', '~> 0.1.2'
-gem 'digest-sha3', '~> 1.1.0'
 gem 'cashaddress'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'active_model_otp'
@@ -137,10 +98,6 @@ gem 'geocoder'
 gem 'social-share-button', '~> 1.2'
 gem 'modernizr-rails'
 gem  'grpc'
-
-# gem "passenger", ">= 5.0.25", require: 
-# "phusion_passenger/rack_handler"
-
 group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker', '~> 1.4.3'
@@ -169,5 +126,4 @@ group :development do
   gem 'capistrano-rails',   require: false
   gem 'capistrano-bundler', require: false
 end
-
 
