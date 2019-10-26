@@ -11,13 +11,17 @@ gem 'foreman'
 gem 'puma'
 gem 'redis-rails'
 # masum
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'peatio'
 gem 'google-protobuf'
-# gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
+gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
 gem "bundler", ">= 1.17.3" 
 gem 'rotp', '3.3.1'
 gem 'json'
 gem 'jbuilder'
-gem 'webconsole', '~> 0.2.1'
+gem 'rdoc'
+# gem 'webconsole', '~> 0.2.1'
+gem 'webconsole' if RUBY_PLATFORM.match?(/darwin/)
 gem 'padrino'
 gem 'omniauth',               '~> 1.8.1'
 gem 'omniauth-identity', '~> 1.1', '>= 1.1.1'

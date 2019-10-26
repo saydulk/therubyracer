@@ -27,11 +27,11 @@ defaults: &defaults
   # – http://api.rubyonrails.org/v4.2/classes/ActionMailer/Base.html
   # – config/environments/production.rb at config.action_mailer.smtp_settings
   #
-  SMTP_ADDRESS:             smtp.sendgrid.net
-  SMTP_PORT:                587
-  SMTP_USERNAME:            apikey
-  SMTP_PASSWORD:            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
-  SMTP_AUTHENTICATION_TYPE: :plain
+  SMTP_ADDRESS:             
+  SMTP_PORT:                
+  SMTP_USERNAME:            
+  SMTP_PASSWORD:            
+  SMTP_AUTHENTICATION_TYPE: 
   SMTP_DOMAIN:  ''
 
   # email accounts
@@ -59,12 +59,12 @@ defaults: &defaults
   PUSHER_ENCRYPTED: 'on'
 
   # twilio setting (https://github.com/twilio/twilio-ruby)
-  TWILIO_NUMBER: 15146128050
-  TWILIO_SID: ACaae09411c0951841720f025a928301bb
-  TWILIO_TOKEN: acb1557b2b90f6dadad2b1772b38779f
+  TWILIO_NUMBER: 
+  TWILIO_SID: 
+  TWILIO_TOKEN: 
 
-  RECAPTCA_SITE_KEY: 6LdXsFcUAAAAAPQ3Mu-X-l7_5e267YlMlre4i8gz
-  RECAPTCA_SECRET_KEY: 6LdXsFcUAAAAABZxuKFgfxSLZr11CThDJmdEsvMG
+  RECAPTCA_SITE_KEY: 
+  RECAPTCA_SECRET_KEY:
 
   # Configuration variables for sign in with Google.
   # See https://github.com/zquestz/omniauth-google-oauth2
@@ -112,15 +112,15 @@ defaults: &defaults
 development:
   <<: *defaults
   # Development configuration variables for sign in with Google.
-  GOOGLE_OAUTH2_SIGN_IN:      on
-  GOOGLE_CLIENT_ID:           131450012324-6e3ndk6on1t6k8sbbvd9fjltm1cvasbr.apps.googleusercontent.com
-  GOOGLE_CLIENT_SECRET:       0IRJ3CwSKQbigbRy3LlX7Kg9
+  GOOGLE_OAUTH2_SIGN_IN:      
+  GOOGLE_CLIENT_ID:           
+  GOOGLE_CLIENT_SECRET:       
 
   # Development configuration variables for sign in with Auth0.
-  AUTH0_OAUTH2_SIGN_IN:       on
-  AUTH0_OAUTH2_DOMAIN:        peatio-playground.auth0.com
-  AUTH0_OAUTH2_CLIENT_ID:     lGKS9ADpknQr415RNZrrQTf3Jh8k2Fvc
-  AUTH0_OAUTH2_CLIENT_SECRET: LxUPnrrrpRHSB-vVgWU3TwmakQ8acY5mYVTaVgkREQL3i9avjpOnWTXSSEsrbLzK
+  AUTH0_OAUTH2_SIGN_IN:       
+  AUTH0_OAUTH2_DOMAIN:        
+  AUTH0_OAUTH2_CLIENT_ID:     
+  AUTH0_OAUTH2_CLIENT_SECRET: 
 
   RAILS_ENV: 'development'
   OS_DATABASE_PASSWORD: 'root'
@@ -142,19 +142,19 @@ stage:
   URL_HOST: cactoken.net
   URL_SCHEME: http
 
-  RECAPTCA_SITE_KEY: 6LdczlsUAAAAABe0dK2gKIifeUkUvC8kNYmjeV7X
-  RECAPTCA_SECRET_KEY: 6LdczlsUAAAAAJqmSAAuToJQQTnmZe4Ky0chU5Th
+  RECAPTCA_SITE_KEY: 
+  RECAPTCA_SECRET_KEY: 
 
 production:
   <<: *defaults
   # production configuration variables for sign in with Google.
-  GOOGLE_OAUTH2_SIGN_IN:     on
-  GOOGLE_CLIENT_ID:          131450012324-6e3ndk6on1t6k8sbbvd9fjltm1cvasbr.apps.googleusercontent.com
-  GOOGLE_CLIENT_SECRET:      0IRJ3CwSKQbigbRy3LlX7Kg9
+  GOOGLE_OAUTH2_SIGN_IN:    
+  GOOGLE_CLIENT_ID:          
+  GOOGLE_CLIENT_SECRET:      
   # production configuration variables for sign in with Facebook.
-  OMNIAUTH_FACEBOOK_SIGN_IN: on
-  FACEBOOK_CLIENT_ID: 546572719076462
-  FACEBOOK_CLIENT_SECRET: a05a4cb8ac92b8fd5716c1c7145f66f9
+  OMNIAUTH_FACEBOOK_SIGN_IN: 
+  FACEBOOK_CLIENT_ID: 
+  FACEBOOK_CLIENT_SECRET: 
 
   RAILS_ENV: 'production'
   OS_DATABASE_PASSWORD: '01722gausia'

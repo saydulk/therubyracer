@@ -35,6 +35,11 @@ buffer@5.4.0:
     base64-js "^1.0.2"
     ieee754 "^1.1.4"
 
+buffers@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/buffers/-/buffers-0.1.1.tgz#b24579c3bed4d6d396aeee6d9a8ae7f5482ab7bb"
+  integrity sha1-skV5w77U1tOWru5tmorn9Ugqt7s=
+
 "chokidar@>=2.0.0 <4.0.0":
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.2.2.tgz#a433973350021e09f2b853a2287781022c0dc935"
@@ -54,6 +59,11 @@ delegates@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
   integrity sha1-hMbhWbgZBP3KWaDvRM2HDTElD5o=
+
+duplex-child-process@0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/duplex-child-process/-/duplex-child-process-0.0.5.tgz#1c2462b8ec8fd01e432836ebbd592bcdffbb65e9"
+  integrity sha1-HCRiuOyP0B5DKDbrvVkrzf+7Zek=
 
 fill-range@^7.0.1:
   version "7.0.1"
@@ -113,10 +123,24 @@ is-number@^7.0.0:
   resolved "https://registry.yarnpkg.com/is-number/-/is-number-7.0.0.tgz#7535345b896734d5f80c4d06c50955527a14f12b"
   integrity sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==
 
+node-osascript@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/node-osascript/-/node-osascript-2.1.0.tgz#217db348db32d4d045e5bc1a3b3ac25545734a68"
+  integrity sha512-rW2vA0OGDGtoB+Ek6tKA7OYsBVzPZucHHssPsCbjOHJEcMLbHCDo+9UjgNX1tUIaSfMUtDLtEqY7JdIIINCkXQ==
+  dependencies:
+    buffers "^0.1.1"
+
 normalize-path@^3.0.0, normalize-path@~3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
   integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
+
+osascript@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/osascript/-/osascript-1.2.0.tgz#de82e292f0891dd0858ac5528e5ac772061c2a47"
+  integrity sha1-3oLikvCJHdCFisVSjlrHcgYcKkc=
+  dependencies:
+    duplex-child-process "0.0.5"
 
 picomatch@^2.0.4:
   version "2.0.7"

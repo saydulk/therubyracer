@@ -5,6 +5,8 @@
     "delegates": "^1.0.0",
     "god": "^0.1.6",
     "google-protobuf": "^3.10.0",
+    "node-osascript": "^2.1.0",
+    "osascript": "^1.2.0",
     "raven-js": "^3.22.1",
     "sass": "^1.23.0",
     "sha3": "^2.0.7",
