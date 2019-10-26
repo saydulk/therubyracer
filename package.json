@@ -1,24 +1,29 @@
 {
-  "name": "peatio",
-  "license": "MIT",
+  "name": "code",
+  "version": "1.0.0",
+  "description": "Peatio is a free and open-source crypto currency exchange implementation with the Rails framework and other cutting-edge technology.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib"
+  },
   "dependencies": {
-<<<<<<< HEAD
-    "delegates": "^1.0.0",
-    "god": "^0.1.6",
-    "google-protobuf": "^3.10.0",
-    "node-osascript": "^2.1.0",
-    "osascript": "^1.2.0",
-    "raven-js": "^3.22.1",
-    "sass": "^1.23.0",
-    "sha3": "^2.0.7",
-    "shellwords": "^0.1.1",
-    "shellwords-ts": "^2.0.4"
-=======
-    "dezalgo": "^1.0.3",
-    "node-osascript": "^2.1.0",
-    "osascript": "^1.2.0",
     "path": "^0.12.7",
-    "raven-js": "^3.22.1"
->>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
-  }
+    "shellwords": "^0.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FreelancerMasum/therubyracer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FreelancerMasum/therubyracer/issues"
+  },
+  "homepage": "https://github.com/FreelancerMasum/therubyracer#readme"
 }

@@ -53,6 +53,7 @@ GEM
       amq-protocol (>= 2.2.0)
       eventmachine
     angularjs-rails (1.3.15)
+    applescript (1.0)
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (6.0.4)
@@ -62,7 +63,7 @@ GEM
     arel-to-sql (1.0.0)
       arel (>= 6.0)
     ast (2.4.0)
-    autoprefixer-rails (9.6.5)
+    autoprefixer-rails (9.7.0)
       execjs
     awesome_print (1.8.0)
     axiom-types (0.1.1)
@@ -153,16 +154,12 @@ GEM
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     diff-lcs (1.3)
-<<<<<<< HEAD
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
     dotenv (2.7.5)
     dotenv-rails (2.7.5)
       dotenv (= 2.7.5)
       railties (>= 3.2, < 6.1)
-=======
-    digest-sha3 (1.1.0)
-    domain_name (0.5.20190701)
-      unf (>= 0.0.5, < 1.0.0)
->>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
     dry-inflector (0.2.0)
     easy_table (0.0.10)
       actionpack (> 4.2)
@@ -405,9 +402,8 @@ GEM
     io-like (0.3.0)
     ipaddress (0.8.3)
     jaro_winkler (1.5.3)
-    jbuilder (2.7.0)
+    jbuilder (2.9.1)
       activesupport (>= 4.2.0)
-      multi_json (>= 1.2)
     jquery-datatables (1.10.19.1)
     jquery-rails (4.3.5)
       rails-dom-testing (>= 1, < 3)
@@ -451,11 +447,7 @@ GEM
     momentjs-rails (2.20.1)
       railties (>= 3.1)
     moneta (1.0.0)
-<<<<<<< HEAD
     multi_json (1.14.1)
-=======
-    multi_json (1.14.0)
->>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
     multi_xml (0.6.0)
     multipart-post (2.1.1)
     mustermann (1.0.3)
@@ -463,15 +455,11 @@ GEM
       mustermann (~> 1.0.0)
     mustermann19 (0.4.4)
       enumerable-lazy
-<<<<<<< HEAD
     mysql2 (0.5.2)
     net-scp (2.0.0)
       net-ssh (>= 2.6.5, < 6.0.0)
     net-ssh (5.2.0)
-=======
-    mysql2 (0.4.10)
     netrc (0.11.0)
->>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
     nio4r (2.5.2)
     nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
@@ -628,10 +616,7 @@ GEM
       json (>= 1.8)
       nokogiri (~> 1.5)
       optimist (~> 3.0)
-<<<<<<< HEAD
     rdoc (6.2.0)
-=======
->>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
     recaptcha (5.2.1)
       json
     redis (4.1.3)
@@ -666,13 +651,10 @@ GEM
       chunky_png (~> 1.0)
       rqrcode_core (~> 0.1.0)
     rqrcode_core (0.1.0)
-<<<<<<< HEAD
-=======
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
       rspec-expectations (~> 3.9.0)
       rspec-mocks (~> 3.9.0)
->>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
     rspec-core (3.9.0)
       rspec-support (~> 3.9.0)
     rspec-expectations (3.9.0)
@@ -700,6 +682,7 @@ GEM
       unicode-display_width (~> 1.0, >= 1.0.1)
     rubocop-rspec (1.30.0)
       rubocop (>= 0.58.0)
+    ruby (0.1.0)
     ruby-progressbar (1.10.1)
     rubysl-shellwords (2.0.0)
     rubytree (1.0.0)
@@ -725,9 +708,9 @@ GEM
       json
     sentry-raven (2.12.2)
       faraday (>= 0.7.6, < 1.0)
-    simple_form (4.0.0)
-      actionpack (> 4)
-      activemodel (> 4)
+    simple_form (3.1.1)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
     simplebar-rails (2.6.1)
       railties (>= 3.1)
     sinatra (1.4.8)
@@ -779,6 +762,7 @@ GEM
       coercible (~> 1.0)
       descendants_tracker (~> 0.0, >= 0.0.3)
       equalizer (~> 0.0, >= 0.0.9)
+    webconsole (0.2.1)
     xml-simple (1.1.5)
     xmlrpc (0.3.0)
     xpath (3.2.0)
@@ -794,23 +778,17 @@ DEPENDENCIES
   ajax-datatables-rails
   amqp (~> 1.8)
   angularjs-rails (~> 1.3.15)
+  applescript (~> 1.0)
   arel-is-blank (~> 1.0)
-<<<<<<< HEAD
-=======
   bcrypt (~> 3.1, >= 3.1.10)
   bcrypt-ruby
->>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
   better_errors (~> 2.5.1)
   binding_of_caller
   bootstrap-datepicker-rails
   bootstrap-sass (~> 3.4.1)
   bourbon
   browser (~> 0.8.0)
-<<<<<<< HEAD
   bundler (>= 1.17.3)
-=======
-  bundler
->>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
   bunny (~> 2.12)
   cancancan
   capistrano
@@ -856,7 +834,7 @@ DEPENDENCIES
   http_accept_language
   httparty
   io-console
-  jbuilder (~> 2.7.0)
+  jbuilder
   jquery-datatables
   jquery-rails
   json
@@ -869,7 +847,7 @@ DEPENDENCIES
   mocha
   modernizr-rails
   momentjs-rails
-  mysql2 (~> 0.4.10)
+  mysql2
   nokogiri
   omniauth (~> 1.8.1)
   omniauth-auth0 (~> 2.0.0)
@@ -877,6 +855,7 @@ DEPENDENCIES
   omniauth-google-oauth2 (~> 0.5.2)
   omniauth-identity (~> 1.1, >= 1.1.1)
   osaka (~> 0.4.13)
+  ovirt-engine-sdk (~> 4.3)
   padrino
   paper_trail (~> 3.0.1)
   paranoid2
@@ -906,29 +885,24 @@ DEPENDENCIES
   rspec-rails
   rubocop (~> 0.58.2)
   rubocop-rspec
+  ruby
   rubysl-shellwords (~> 2.0)
   rucaptcha
   sass-rails
   selenium-webdriver (~> 3.8)
   sendgrid
   sentry-raven (~> 2.7)
-  simple_form
+  simple_form (~> 3.1.0)
   simplebar-rails
   slim-rails
   social-share-button (~> 1.2)
-  sprockets (~> 3.2)
+  sprockets (~> 4.0.0)
   timecop
   twilio-ruby
   uglifier (~> 4.1)
   useragent
   validates_zipcode
-<<<<<<< HEAD
-=======
   webconsole (~> 0.2.1)
-
-RUBY VERSION
-   ruby 2.5.3p105
->>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
 
 BUNDLED WITH
    1.17.3
