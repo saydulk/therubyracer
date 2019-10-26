@@ -21,6 +21,7 @@
 	from /home/deploy/mike/config/environment.rb:2:in `<top (required)>'
 	from lib/daemons/amqp_daemon.rb:1:in `require'
 	from lib/daemons/amqp_daemon.rb:1:in `<main>'
+<<<<<<< HEAD
 /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/module.rb:1:in `require': cannot load such file -- Shellwords (LoadError)
 	from /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/module.rb:1:in `<top (required)>'
 	from /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/webconsole-0.2.1/lib/webconsole/lib/view/resources.rb:6:in `require_relative'
@@ -5608,3 +5609,6 @@
 	from /usr/local/lib/ruby/site_ruby/2.5.0/bundler/setup.rb:20:in `<top (required)>'
 	from /usr/local/lib/ruby/site_ruby/2.5.0/rubygems/core_ext/kernel_require.rb:54:in `require'
 	from /usr/local/lib/ruby/site_ruby/2.5.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+=======
+lib/daemons/amqp_daemon.rb: incompatible library version - /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/mysql2-0.5.2/lib/mysql2/mysql2.so (LoadError)
+>>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce

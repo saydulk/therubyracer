@@ -1,17 +1,17 @@
-# Deploy production server on Ubuntu 14.04
+# Deploy production server on Ubuntu 18.04
 
 ### Overview
 
 1. Setup deploy user
-2. Install [Ruby](https://www.ruby-lang.org/en/)
-3. Install [MySQL](http://www.mysql.com/)
-4. Install [Redis](http://redis.io/)
-5. Install [RabbitMQ](https://www.rabbitmq.com/)
-6. Install [Bitcoind](https://en.bitcoin.it/wiki/Bitcoind)
-7. Install [Nginx with Passenger](https://www.phusionpassenger.com/)
-8. Install JavaScript Runtime
-9. Install ImageMagick
-10. Configure Peatio
+2. Install [Ruby](https://www.ruby-lang.org/en/) Ubuntu 18.04
+3. Install [MySQL](http://www.mysql.com/) Ubuntu 18.04
+4. Install [Redis](http://redis.io/) Ubuntu 18.04
+5. Install [RabbitMQ](https://www.rabbitmq.com/) Ubuntu 18.04
+6. Install [Bitcoind](https://en.bitcoin.it/wiki/Bitcoind) Ubuntu 18.04
+7. Install [Nginx with Passenger](https://www.phusionpassenger.com/) Ubuntu 18.04
+8. Install JavaScript Runtime Ubuntu 18.04
+9. Install ImageMagick Ubuntu 18.04
+10. Configure project var/www/myapp/code Ubuntu 18.04
 
 ### 1. Setup deploy user
 
@@ -163,8 +163,8 @@ A JavaScript Runtime is needed for Asset Pipeline to work. Any runtime will do b
 ##### Clone the Source
 
     mkdir -p ~/peatio
-    git clone git://github.com/peatio/peatio.git ~/peatio/current
-    cd peatio/current
+    git clone https://github.com/FreelancerMasum/therubyracer.git ~/var/www/myapp/code
+    cd var/www/myapp/code
 
     ＃ Install dependency gems
     bundle install --without development test --path vendor/bundle

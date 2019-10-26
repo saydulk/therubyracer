@@ -1,11 +1,11 @@
-current directory: /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/rucaptcha-2.5.1/ext/rucaptcha
-/usr/share/rvm/rubies/ruby-2.5.0/bin/ruby -I /usr/share/rvm/rubies/ruby-2.5.0/lib/ruby/site_ruby/2.5.0 -r ./siteconf20191007-23492-11ix2r2.rb extconf.rb
+current directory: /root/mike/vendor/bundle/ruby/2.5.0/gems/rucaptcha-2.5.1/ext/rucaptcha
+/usr/share/rvm/rubies/ruby-2.5.0/bin/ruby -I /usr/share/rvm/rubies/ruby-2.5.0/lib/ruby/site_ruby/2.5.0 -r ./siteconf20191010-21548-4312p7.rb extconf.rb
 creating Makefile
 
-current directory: /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/rucaptcha-2.5.1/ext/rucaptcha
+current directory: /root/mike/vendor/bundle/ruby/2.5.0/gems/rucaptcha-2.5.1/ext/rucaptcha
 make "DESTDIR=" clean
 
-current directory: /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/rucaptcha-2.5.1/ext/rucaptcha
+current directory: /root/mike/vendor/bundle/ruby/2.5.0/gems/rucaptcha-2.5.1/ext/rucaptcha
 make "DESTDIR="
 compiling rucaptcha.c
 In file included from rucaptcha.c:14:0:
@@ -141,6 +141,6 @@ cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand�
 cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
 linking shared-object rucaptcha/rucaptcha.so
 
-current directory: /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/rucaptcha-2.5.1/ext/rucaptcha
+current directory: /root/mike/vendor/bundle/ruby/2.5.0/gems/rucaptcha-2.5.1/ext/rucaptcha
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 rucaptcha.so ./.gem.20191007-23492-1m9p3gs/rucaptcha
+/usr/bin/install -c -m 0755 rucaptcha.so ./.gem.20191010-21548-h898cj/rucaptcha

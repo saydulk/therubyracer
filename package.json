@@ -2,6 +2,7 @@
   "name": "peatio",
   "license": "MIT",
   "dependencies": {
+<<<<<<< HEAD
     "delegates": "^1.0.0",
     "god": "^0.1.6",
     "google-protobuf": "^3.10.0",
@@ -12,5 +13,12 @@
     "sha3": "^2.0.7",
     "shellwords": "^0.1.1",
     "shellwords-ts": "^2.0.4"
+=======
+    "dezalgo": "^1.0.3",
+    "node-osascript": "^2.1.0",
+    "osascript": "^1.2.0",
+    "path": "^0.12.7",
+    "raven-js": "^3.22.1"
+>>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
   }
 }

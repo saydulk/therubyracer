@@ -31,8 +31,13 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(vendorlibdir)/$(sitearch)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
+<<<<<<< HEAD
 sitearchdir = $(DESTDIR)./.gem.20191016-6773-14269re
 sitelibdir = $(DESTDIR)./.gem.20191016-6773-14269re
+=======
+sitearchdir = $(DESTDIR)./.gem.20191010-21548-p31vli
+sitelibdir = $(DESTDIR)./.gem.20191010-21548-p31vli
+>>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
 sitedir = $(rubylibprefix)/site_ruby
 rubyarchdir = $(rubylibdir)/$(arch)
 rubylibdir = $(rubylibprefix)/$(ruby_version)
@@ -81,12 +86,21 @@ optflags = -O3
 debugflags = -ggdb3
 warnflags = -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wno-tautological-compare -Wno-parentheses-equality -Wno-constant-logical-operand -Wno-self-assign -Wunused-variable -Wimplicit-int -Wpointer-arith -Wwrite-strings   -Wdeprecated-declarations -Wmisleading-indentation -Wno-packed-bitfield-compat -Wsuggest-attribute=noreturn -Wsuggest-attribute=format -Wimplicit-fallthrough=0 -Wduplicated-cond -Wrestrict
 CCDLFLAGS = -fPIC
+<<<<<<< HEAD
 CFLAGS   = $(CCDLFLAGS) $(cflags) $(ARCH_FLAG)
 INCFLAGS = -I. -I/home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/libv8-7.3.492.27.1-x86_64-linux/vendor/v8/include -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
 DEFS     = 
 CPPFLAGS =   $(DEFS) $(cppflags) -Wall -g -rdynamic -std=c++0x -fpermissive
 CXXFLAGS = $(CCDLFLAGS) $(cxxflags) $(ARCH_FLAG)
 ldflags  = /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/libv8-7.3.492.27.1-x86_64-linux/vendor/v8/out.gn/libv8/obj/libv8_monolith.a -L. -fstack-protector -rdynamic -Wl,-export-dynamic
+=======
+CFLAGS   = $(CCDLFLAGS) $(cflags)  -fPIC $(ARCH_FLAG)
+INCFLAGS = -I. -I/root/mike/vendor/bundle/ruby/2.5.0/gems/libv8-7.3.492.27.1-x86_64-linux/vendor/v8/include -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
+DEFS     = 
+CPPFLAGS =   $(DEFS) $(cppflags) -Wall -g -rdynamic -std=c++0x -fpermissive
+CXXFLAGS = $(CCDLFLAGS) $(cxxflags) $(ARCH_FLAG)
+ldflags  = /root/mike/vendor/bundle/ruby/2.5.0/gems/libv8-7.3.492.27.1-x86_64-linux/vendor/v8/out.gn/libv8/obj/libv8_monolith.a -L. -fstack-protector -rdynamic -Wl,-export-dynamic
+>>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
 dldflags = -Wl,--compress-debug-sections=zlib 
 ARCH_FLAG = 
 DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG)

@@ -1,0 +1,51 @@
+current directory: /root/project/vendor/bundle/ruby/2.5.0/gems/ovirt-engine-sdk-4.3.0/ext/ovirtsdk4c
+/usr/share/rvm/rubies/ruby-2.5.0/bin/ruby -r ./siteconf20191014-6609-11tc8a0.rb extconf.rb
+checking for xml2-config... yes
+checking for curl-config... yes
+creating Makefile
+
+current directory: /root/project/vendor/bundle/ruby/2.5.0/gems/ovirt-engine-sdk-4.3.0/ext/ovirtsdk4c
+make "DESTDIR=" clean
+
+current directory: /root/project/vendor/bundle/ruby/2.5.0/gems/ovirt-engine-sdk-4.3.0/ext/ovirtsdk4c
+make "DESTDIR="
+compiling ov_error.c
+compiling ov_http_client.c
+ov_http_client.c: In function ‘ov_http_client_header_task’:
+ov_http_client.c:392:33: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         while (pointer - buffer < length && isspace(*pointer)) {
+                                 ^
+ov_http_client.c: In function ‘ov_http_client_send’:
+ov_http_client.c:1092:34: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if (RHASH_SIZE(ptr->pending) < ptr->limit) {
+                                  ^
+ov_http_client.c: In function ‘ov_http_client_wait’:
+ov_http_client.c:1118:71: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         while (RARRAY_LEN(ptr->queue) > 0 && RHASH_SIZE(ptr->pending) < ptr->limit) {
+                                                                       ^
+ov_http_client.c: At top level:
+cc1: warning: unrecognized command line option ‘-Wno-self-assign’
+cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand’
+cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
+compiling ov_http_request.c
+compiling ov_http_response.c
+compiling ov_http_transfer.c
+compiling ov_module.c
+compiling ov_string.c
+compiling ov_xml_reader.c
+compiling ov_xml_writer.c
+ov_xml_writer.c: In function ‘ov_xml_writer_string’:
+ov_xml_writer.c:184:12: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+     return rb_funcall(ptr->io, STRING_ID, 0, NULL);
+            ^~~~~~~~~~
+ov_xml_writer.c:184:12: note: (near initialization for ‘rb_funcall_args[0]’)
+ov_xml_writer.c: At top level:
+cc1: warning: unrecognized command line option ‘-Wno-self-assign’
+cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand’
+cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
+compiling ovirtsdk4c.c
+linking shared-object ovirtsdk4c.so
+
+current directory: /root/project/vendor/bundle/ruby/2.5.0/gems/ovirt-engine-sdk-4.3.0/ext/ovirtsdk4c
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 ovirtsdk4c.so ./.gem.20191014-6609-132fmkb

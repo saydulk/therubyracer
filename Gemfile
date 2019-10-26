@@ -1,9 +1,11 @@
 source 'https://rubygems.org'
 
+
 gem 'rails', '~> 4.2'
-gem 'rails-i18n'
+gem 'rails-i18n' 
 gem 'responders', '~> 2.0'
 gem "better_errors", "~> 2.5.1"
+<<<<<<< HEAD
 gem 'mysql2'
 gem 'rake', '~> 13.0'
 gem 'figaro' 
@@ -22,6 +24,52 @@ gem 'jbuilder'
 gem 'rdoc'
 # gem 'webconsole', '~> 0.2.1'
 gem 'webconsole' if RUBY_PLATFORM.match?(/darwin/)
+=======
+
+# gem "therubyracer"
+ruby ">=2.5.0"
+gem 'bcrypt', '~> 3.1', '>= 3.1.10'
+gem 'bcrypt-ruby' 
+
+# gem 'mysql2'
+gem 'mysql2', '~> 0.4.10'
+
+gem 'rubysl-shellwords', '~> 2.0'
+gem 'sprockets', '~> 3.2'
+gem 'osaka', '~> 0.4.13'
+
+gem 'nokogiri'
+gem 'rack'
+gem 'rspec'
+
+gem 'bundler'
+
+
+
+
+# gem 'sass-rails'
+
+
+
+
+
+gem 'io-console'
+
+gem 'puma'
+# gem 'mysql2', '~> 0.3.21'
+# gem 'redis-rails'
+gem 'redis-rails', '~> 5.0.2'
+
+
+gem 'rotp', '3.3.1'
+gem 'json'
+
+# gem 'jbuilder'
+gem 'jbuilder', '~> 2.7.0'
+
+gem 'webconsole', '~> 0.2.1'
+
+>>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
 gem 'padrino'
 gem 'omniauth',               '~> 1.8.1'
 gem 'omniauth-identity', '~> 1.1', '>= 1.1.1'
@@ -48,14 +96,28 @@ gem 'gon', '~> 5.2.0'
 gem 'pusher'
 gem 'eventmachine', '~> 1.0.4'
 gem 'em-websocket', '~> 0.5.1'
+<<<<<<< HEAD
 gem 'simple_form', '~> 3.1.0'
+=======
+
+
+
+gem 'simple_form'
+
+
+# gem "simple_form", ">= 5.0.0"
+
+
+
+
+>>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
 gem 'slim-rails'
-gem 'sass-rails'
+gem 'sass-rails' 
 gem 'coffee-rails'
 gem 'uglifier', '~> 4.1'
 gem 'jquery-rails'
 gem 'angularjs-rails', '~> 1.3.15'
-gem 'bootstrap-sass', '~> 3.2.0.2'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'font-awesome-sass'
 gem 'font-awesome-rails'
 gem 'bourbon'
@@ -72,7 +134,12 @@ gem 'rack-attack', '~> 3.0.0'
 gem 'easy_table'
 gem 'carrierwave', '~> 1.0'
 gem 'fog'
-gem 'rest-client', '~> 1.6.8'
+# gem 'rest-client', '~> 1.6.8'
+
+
+gem "rest-client", ">= 1.8.0"
+
+
 gem 'jwt', '~> 1.5'
 gem 'email_validator', '~> 1.6'
 gem 'clipboard-rails', '~> 1.7'

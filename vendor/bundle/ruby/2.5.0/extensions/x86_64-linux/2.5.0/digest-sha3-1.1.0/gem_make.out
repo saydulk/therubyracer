@@ -1,13 +1,13 @@
-current directory: /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/digest-sha3-1.1.0/ext/digest
-/usr/share/rvm/rubies/ruby-2.5.0/bin/ruby -I /usr/share/rvm/rubies/ruby-2.5.0/lib/ruby/site_ruby/2.5.0 -r ./siteconf20191007-23492-lujad2.rb extconf.rb
+current directory: /root/mike/vendor/bundle/ruby/2.5.0/gems/digest-sha3-1.1.0/ext/digest
+/usr/share/rvm/rubies/ruby-2.5.0/bin/ruby -I /usr/share/rvm/rubies/ruby-2.5.0/lib/ruby/site_ruby/2.5.0 -r ./siteconf20191010-21548-i97fu2.rb extconf.rb
 checking for ruby/digest.h... yes
 checking for rb_str_set_len()... yes
 creating Makefile
 
-current directory: /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/digest-sha3-1.1.0/ext/digest
+current directory: /root/mike/vendor/bundle/ruby/2.5.0/gems/digest-sha3-1.1.0/ext/digest
 make "DESTDIR=" clean
 
-current directory: /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/digest-sha3-1.1.0/ext/digest
+current directory: /root/mike/vendor/bundle/ruby/2.5.0/gems/digest-sha3-1.1.0/ext/digest
 make "DESTDIR="
 compiling KeccakF-1600-reference.c
 compiling KeccakNISTInterface.c
@@ -24,6 +24,6 @@ cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
 compiling sha3.c
 linking shared-object digest/sha3.so
 
-current directory: /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/digest-sha3-1.1.0/ext/digest
+current directory: /root/mike/vendor/bundle/ruby/2.5.0/gems/digest-sha3-1.1.0/ext/digest
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 sha3.so ./.gem.20191007-23492-19j9h0f/digest
+/usr/bin/install -c -m 0755 sha3.so ./.gem.20191010-21548-izwjr2/digest

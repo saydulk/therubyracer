@@ -1,13 +1,13 @@
-current directory: /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/json-2.2.0/ext/json
-/usr/share/rvm/rubies/ruby-2.5.0/bin/ruby -I /usr/share/rvm/rubies/ruby-2.5.0/lib/ruby/site_ruby/2.5.0 -r ./siteconf20191007-23492-18ev9kf.rb extconf.rb
+current directory: /root/mike/vendor/bundle/ruby/2.5.0/gems/json-2.2.0/ext/json
+/usr/share/rvm/rubies/ruby-2.5.0/bin/ruby -I /usr/share/rvm/rubies/ruby-2.5.0/lib/ruby/site_ruby/2.5.0 -r ./siteconf20191010-21548-o6vhk3.rb extconf.rb
 creating Makefile
 
-current directory: /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/json-2.2.0/ext/json
+current directory: /root/mike/vendor/bundle/ruby/2.5.0/gems/json-2.2.0/ext/json
 make "DESTDIR=" clean
 
-current directory: /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/json-2.2.0/ext/json
+current directory: /root/mike/vendor/bundle/ruby/2.5.0/gems/json-2.2.0/ext/json
 make "DESTDIR="
 make: Nothing to be done for 'all'.
 
-current directory: /root/pro/mike/vendor/bundle/ruby/2.5.0/gems/json-2.2.0/ext/json
+current directory: /root/mike/vendor/bundle/ruby/2.5.0/gems/json-2.2.0/ext/json
 make "DESTDIR=" install

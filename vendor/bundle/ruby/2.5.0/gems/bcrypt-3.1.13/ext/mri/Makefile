@@ -12,12 +12,21 @@ NULLCMD = :
 #### Start of system configuration section. ####
 
 srcdir = .
+<<<<<<< HEAD
 topdir = /usr/local/include/ruby-2.5.0
 hdrdir = $(topdir)
 arch_hdrdir = /usr/local/include/ruby-2.5.0/x86_64-linux
 PATH_SEPARATOR = :
 VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
 prefix = $(DESTDIR)/usr/local
+=======
+topdir = /usr/share/rvm/rubies/ruby-2.5.0/include/ruby-2.5.0
+hdrdir = $(topdir)
+arch_hdrdir = /usr/share/rvm/rubies/ruby-2.5.0/include/ruby-2.5.0/x86_64-linux
+PATH_SEPARATOR = :
+VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
+prefix = $(DESTDIR)/usr/share/rvm/rubies/ruby-2.5.0
+>>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
 rubysitearchprefix = $(rubylibprefix)/$(sitearch)
 rubyarchprefix = $(rubylibprefix)/$(arch)
 rubylibprefix = $(libdir)/$(RUBY_BASE_NAME)
@@ -31,8 +40,13 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(vendorlibdir)/$(sitearch)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
+<<<<<<< HEAD
 sitearchdir = $(DESTDIR)./.gem.20191016-6773-1bbia9
 sitelibdir = $(DESTDIR)./.gem.20191016-6773-1bbia9
+=======
+sitearchdir = $(DESTDIR)./.gem.20191010-21548-wo1zo9
+sitelibdir = $(DESTDIR)./.gem.20191010-21548-wo1zo9
+>>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
 sitedir = $(rubylibprefix)/site_ruby
 rubyarchdir = $(rubylibdir)/$(arch)
 rubylibdir = $(rubylibprefix)/$(ruby_version)
@@ -67,7 +81,11 @@ CC = gcc
 CXX = g++
 LIBRUBY = $(LIBRUBY_A)
 LIBRUBY_A = lib$(RUBY_SO_NAME)-static.a
+<<<<<<< HEAD
 LIBRUBYARG_SHARED = -Wl,-rpath,$(libdir) -L$(libdir) 
+=======
+LIBRUBYARG_SHARED = -Wl,-rpath,$(libdir) -L$(libdir) -l$(RUBY_SO_NAME)
+>>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
 LIBRUBYARG_STATIC = -Wl,-rpath,$(libdir) -L$(libdir) -l$(RUBY_SO_NAME)-static
 empty =
 OUTFLAG = -o $(empty)
@@ -81,7 +99,11 @@ optflags = -O3
 debugflags = -ggdb3
 warnflags = -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wno-tautological-compare -Wno-parentheses-equality -Wno-constant-logical-operand -Wno-self-assign -Wunused-variable -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wmisleading-indentation -Wno-packed-bitfield-compat -Wsuggest-attribute=noreturn -Wsuggest-attribute=format -Wimplicit-fallthrough=0 -Wduplicated-cond -Wrestrict
 CCDLFLAGS = -fPIC
+<<<<<<< HEAD
 CFLAGS   = $(CCDLFLAGS) $(cflags) $(ARCH_FLAG)
+=======
+CFLAGS   = $(CCDLFLAGS) $(cflags)  -fPIC $(ARCH_FLAG)
+>>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
 INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
 DEFS     = 
 CPPFLAGS = -D__SKIP_GNU  $(DEFS) $(cppflags)

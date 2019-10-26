@@ -8,9 +8,15 @@ defaults: &defaults
   # admin role account
   ADMIN: 'admin@cactoken.net'
 
+<<<<<<< HEAD
   # site host
   URL_HOST: cactoken.net:3000
   URL_SCHEME: http
+=======
+  #  database.yml variables
+  #  RDS_HOSTNAME: dietbitcoinico-org.c0vfzk4vecgn.us-east-1.rds.amazonaws.com
+  RDS_HOSTNAME: 
+>>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
 
   # session expire time (seconds)
   SESSION_EXPIRE: '60'
@@ -27,6 +33,7 @@ defaults: &defaults
   # – http://api.rubyonrails.org/v4.2/classes/ActionMailer/Base.html
   # – config/environments/production.rb at config.action_mailer.smtp_settings
   #
+<<<<<<< HEAD
   SMTP_ADDRESS:             
   SMTP_PORT:                
   SMTP_USERNAME:            
@@ -39,6 +46,24 @@ defaults: &defaults
   SYSTEM_MAIL_FROM:
   SYSTEM_MAIL_TO:
   OPERATE_MAIL_TO:
+=======
+  SMTP_ADDRESS: 
+  SMTP_PORT:    
+  SMTP_USERNAME: 
+  SMTP_PASSWORD: 
+  SMTP_AUTHENTICATION_TYPE: # Can be plain, login or cram_md5.
+
+  S3_ACCESS_KEY: 
+  S3_SECRET_KEY: 
+  S3_BUCKET_NAME:
+
+
+  # email accounts
+  SUPPORT_MAIL: 
+  SYSTEM_MAIL_FROM:
+  SYSTEM_MAIL_TO: 
+  OPERATE_MAIL_TO: 
+>>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
 
   # WebSocket Streaming API settings
   WEBSOCKET_HOST: 0.0.0.0
@@ -48,20 +73,38 @@ defaults: &defaults
   # WEBSOCKET_SSL_KEY: 'your_server.key'
   # WEBSOCKET_SSL_CERT: 'your_server.crt'
 
+<<<<<<< HEAD
   # pusher settings
   PUSHER_APP: '472220'
   PUSHER_KEY: 8ac9bbc74f1dd43252c7
   PUSHER_SECRET: 3a508bed5e38045c1b48
+=======
+  RABBITMQ_HOST: 
+  RABBITMQ_PORT: 
+  RABBITMQ_USER: 
+  RABBITMQ_PASSWORD:
+
+  PUSHER_APP: 
+  PUSHER_KEY: 
+  PUSHER_SECRET:
+>>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
   PUSHER_HOST: api.pusherapp.com
   PUSHER_PORT: '80'
   PUSHER_WS_PORT: '80'
   PUSHER_WSS_PORT: '443'
   PUSHER_ENCRYPTED: 'on'
 
+<<<<<<< HEAD
   # twilio setting (https://github.com/twilio/twilio-ruby)
   TWILIO_NUMBER: 
   TWILIO_SID: 
   TWILIO_TOKEN: 
+=======
+  TWILLIO_REGION: 'HK'
+  TWILIO_NUMBER:
+  TWILIO_SID: 
+  TWILIO_TOKEN:
+>>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
 
   RECAPTCA_SITE_KEY: 
   RECAPTCA_SECRET_KEY:
@@ -112,6 +155,7 @@ defaults: &defaults
 development:
   <<: *defaults
   # Development configuration variables for sign in with Google.
+<<<<<<< HEAD
   GOOGLE_OAUTH2_SIGN_IN:      
   GOOGLE_CLIENT_ID:           
   GOOGLE_CLIENT_SECRET:       
@@ -127,6 +171,20 @@ development:
   OS_DATABASE_USER: '01722gausia'
   OS_DATABASE_HOST: 'localhost'
 
+=======
+  GOOGLE_OAUTH2_SIGN_IN:      on
+  GOOGLE_CLIENT_ID:    
+  GOOGLE_CLIENT_SECRET: 
+
+  # Development configuration variables for sign in with Auth0.
+  AUTH0_OAUTH2_SIGN_IN:       on
+  AUTH0_OAUTH2_DOMAIN:  
+  AUTH0_OAUTH2_CLIENT_ID:
+  AUTH0_OAUTH2_CLIENT_SECRET: 
+
+  SECRET_KEY_BASE: 
+  JWT_SHARED_SECRET_KEY: 
+>>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
 
 test:
   <<: *defaults
@@ -138,6 +196,7 @@ stage:
   RDS_PASSWORD: 'C@ctok20'
   POOL: 10
 
+<<<<<<< HEAD
   # site host
   URL_HOST: cactoken.net
   URL_SCHEME: http
@@ -170,3 +229,77 @@ production:
   # site host
   URL_HOST: 57.230.37.177:3000
   URL_SCHEME: http
+=======
+production:
+  <<: *defaults
+  RDS_DB_NAME:
+  RDS_USERNAME:
+  RDS_PASSWORD:
+  POOL: 50
+  # site host
+  URL_HOST: cactoken.net
+  URL_SCHEME: https
+
+  # Secret Key
+  SECRET_KEY_BASE: 
+  JWT_SHARED_SECRET_KEY:
+  
+  RECAPTCA_SITE_KEY: 
+  RECAPTCA_SECRET_KEY:
+
+  REDIS_URL: redis://cactoken.net:6379
+  RDS_HOSTNAME: cactoken.net
+
+  # admin role account
+  ADMIN: 'dev.cccubes@cactoken.net' # mkK&w9RN
+
+  AIRDROP_CURRENCY: 
+  AIRDROP_USER: 
+
+  # Stage configuration variables for sign in with Google. - need to confirm - is it working
+  GOOGLE_OAUTH2_SIGN_IN:      on
+  GOOGLE_CLIENT_ID: 
+  GOOGLE_CLIENT_SECRET: 
+
+  # Stage configuration variables for sign in with facebook. - need to confirm - is it working
+  OMNIAUTH_FACEBOOK_SIGN_IN:        on
+  FACEBOOK_CLIENT_ID	: 
+  FACEBOOK_CLIENT_SECRET:
+
+  RABBITMQ_HOST: 
+  RABBITMQ_USER: 
+  RABBITMQ_PASSWORD: 
+
+  # pusher settings
+  PUSHER_APP: 
+  PUSHER_KEY: 
+  PUSHER_SECRET:
+<<<<<<< HEAD
+
+  S3_ACCESS_KEY: 
+  S3_SECRET_KEY: 
+  S3_BUCKET_NAME: 
+  S3_REGION: 
+
+=======
+
+  S3_ACCESS_KEY: 
+  S3_SECRET_KEY: 
+  S3_BUCKET_NAME: 
+  S3_REGION: 
+>>>>>>> e1743e9c8b3513ab3f4dbf2ac14a18188d9a7a7e
+
+
+  SUPPORT_MAIL:
+  SYSTEM_MAIL_FROM:
+  SYSTEM_MAIL_TO: 
+  OPERATE_MAIL_TO:
+
+<<<<<<< HEAD
+=======
+  SUPPORT_MAIL:
+  SYSTEM_MAIL_FROM:
+  SYSTEM_MAIL_TO: 
+  OPERATE_MAIL_TO:
+>>>>>>> e1743e9c8b3513ab3f4dbf2ac14a18188d9a7a7e
+>>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce

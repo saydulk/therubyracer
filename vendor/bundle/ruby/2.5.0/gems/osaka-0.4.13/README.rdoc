@@ -1,0 +1,109 @@
+
+Osaka - apple OSA script Kontrolling the Application (OSAKA :P)
+This is a Ruby library for automating work via GUI on Mac (using OSA/Applescript)
+
+= How to install
+
+  $ sudo gem install osaka
+
+= Note before use
+
+You have to enable the "access for assistive devices" for the scripts to run. You do this via System Preferences -> Universal Access / Accessibility -> "enable access for assistive devices"
+
+= How to use
+
+Examples:
+
+  #### Example: Using Osaka Flows to merge multiple keynote files.
+
+  require 'osaka'
+
+  # Convert all keynote files in dir "dirname" with the search pattern "pattern" and write it in "results.key"
+  CommonFlows.keynote_combine_files_from_directory_sorted("results.key", "dirname", /^\d+.*\.key$/)  
+  
+  #### Example: Controlling Keynote
+
+  require 'osaka'
+
+  # Create a new application-specific wrapper
+  app = Osaka::Keynote.new
+
+  # Open a keynote file
+  app.open "presentation.key"
+
+  # Show a print dialog
+  dialog = app.print_dialog
+
+  # Save as PDF  
+  dialog.save_as_pdf("presentation.pdf")
+
+  # Quit
+  app.quit
+
+  #### Example: Controlling Numbers
+
+  require 'osaka'
+
+  # Create a new application-specific wrapper
+  app = Osaka::Numbers.new
+
+  # Open a file
+  app.open "Numbers.numbers"
+
+  # Change a field
+  app.fill_cell(1, 4, "Hello World!")
+
+  # Save and quit
+  app.save
+  app.quit
+
+  #### Example: Using the lower-level remote control
+
+  require 'osaka'
+
+  # Create an application wrapper
+  calculator = Osaka::RemoteControl.new("Calculator")
+
+  # Start the application
+  calculator.activate
+  calculator.focus
+
+  # Control the calculator
+  calculator.click!(at.button("1").group(2))
+  calculator.click!(at.button("+").group(2))
+  calculator.click!(at.button("4").group(2))
+  calculator.click!(at.button("=").group(2))
+
+  calculator.quit
+
+  #### Example: Same as above using the Calculator class
+
+  require 'osaka'
+  calculator = Osaka::Calculator.new
+  calculator.activate
+  calculator.click("1")
+  calculator.click("+")
+  calculator.click("4")
+  calculator.click("=")
+  calculator.quit
+
+
+API document: To be done.
+
+= Source code
+
+https://github.com/basvodde/osaka
+
+The license of this source is "BSD Licence"
+
+= Note on current version (0.4.0)
+
+Current version is reasonably well tested on snow leopard, lion and mountain lion. It has been used to automate keynote, pages, and numbers work. Additional functionality would be useful but hasn't been needed yet. If you do need additional functionality, please extend it and send me a pull request :)
+
+= Supported environments
+
+1.9.x. 
+
+= Author
+
+Bas Vodde - basv AT odd-e.com

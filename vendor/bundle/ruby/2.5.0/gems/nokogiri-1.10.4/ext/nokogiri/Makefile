@@ -12,12 +12,21 @@ NULLCMD = :
 #### Start of system configuration section. ####
 
 srcdir = .
+<<<<<<< HEAD
 topdir = /usr/local/include/ruby-2.5.0
 hdrdir = $(topdir)
 arch_hdrdir = /usr/local/include/ruby-2.5.0/x86_64-linux
 PATH_SEPARATOR = :
 VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
 prefix = $(DESTDIR)/usr/local
+=======
+topdir = /usr/share/rvm/rubies/ruby-2.5.0/include/ruby-2.5.0
+hdrdir = $(topdir)
+arch_hdrdir = /usr/share/rvm/rubies/ruby-2.5.0/include/ruby-2.5.0/x86_64-linux
+PATH_SEPARATOR = :
+VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
+prefix = $(DESTDIR)/usr/share/rvm/rubies/ruby-2.5.0
+>>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
 rubysitearchprefix = $(rubylibprefix)/$(sitearch)
 rubyarchprefix = $(rubylibprefix)/$(arch)
 rubylibprefix = $(libdir)/$(RUBY_BASE_NAME)
@@ -31,8 +40,13 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(vendorlibdir)/$(sitearch)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
+<<<<<<< HEAD
 sitearchdir = $(DESTDIR)./.gem.20191016-6773-1wun45f
 sitelibdir = $(DESTDIR)./.gem.20191016-6773-1wun45f
+=======
+sitearchdir = $(DESTDIR)./.gem.20191010-21548-vm0dvn
+sitelibdir = $(DESTDIR)./.gem.20191010-21548-vm0dvn
+>>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
 sitedir = $(rubylibprefix)/site_ruby
 rubyarchdir = $(rubylibdir)/$(arch)
 rubylibdir = $(rubylibprefix)/$(ruby_version)
@@ -67,7 +81,11 @@ CC = gcc
 CXX = g++
 LIBRUBY = $(LIBRUBY_A)
 LIBRUBY_A = lib$(RUBY_SO_NAME)-static.a
+<<<<<<< HEAD
 LIBRUBYARG_SHARED = -Wl,-rpath,$(libdir) -L$(libdir) 
+=======
+LIBRUBYARG_SHARED = -Wl,-rpath,$(libdir) -L$(libdir) -l$(RUBY_SO_NAME)
+>>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
 LIBRUBYARG_STATIC = -Wl,-rpath,$(libdir) -L$(libdir) -l$(RUBY_SO_NAME)-static
 empty =
 OUTFLAG = -o $(empty)
@@ -81,10 +99,17 @@ optflags = -O3
 debugflags = -ggdb3
 warnflags = -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wno-tautological-compare -Wno-parentheses-equality -Wno-constant-logical-operand -Wno-self-assign -Wunused-variable -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wmisleading-indentation -Wno-packed-bitfield-compat -Wsuggest-attribute=noreturn -Wsuggest-attribute=format -Wimplicit-fallthrough=0 -Wduplicated-cond -Wrestrict
 CCDLFLAGS = -fPIC
+<<<<<<< HEAD
 CFLAGS   = $(CCDLFLAGS) $(cflags)  -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wmissing-noreturn -Winline -DNOKOGIRI_USE_PACKAGED_LIBRARIES $(ARCH_FLAG)
 INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
 DEFS     = 
 CPPFLAGS = -DHAVE_XMLPARSEDOC -DHAVE_XSLTPARSESTYLESHEETDOC -DHAVE_EXSLTFUNCREGISTER -DHAVE_XMLHASFEATURE -DHAVE_XMLFIRSTELEMENTCHILD -DHAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS -DHAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS -DHAVE_XMLRELAXNGSETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETPARSERSTRUCTUREDERRORS -I/home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.33/include -I/home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.9/include/libxml2 -I/home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.9/include/libxml2  $(DEFS) $(cppflags) "-DNOKOGIRI_LIBXML2_PATH=\"/home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.9\"" "-DNOKOGIRI_LIBXML2_PATCHES=\"0001-Revert-Do-not-URI-escape-in-server-side-includes.patch 0002-Remove-script-macro-support.patch 0003-Update-entities-to-remove-handling-of-ssi.patch\"" "-DNOKOGIRI_LIBXSLT_PATH=\"/home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.33\"" "-DNOKOGIRI_LIBXSLT_PATCHES=\"0001-Fix-security-framework-bypass.patch\""
+=======
+CFLAGS   = $(CCDLFLAGS) $(cflags)  -fPIC  -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wmissing-noreturn -Winline -DNOKOGIRI_USE_PACKAGED_LIBRARIES $(ARCH_FLAG)
+INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
+DEFS     = 
+CPPFLAGS = -DHAVE_XMLPARSEDOC -DHAVE_XSLTPARSESTYLESHEETDOC -DHAVE_EXSLTFUNCREGISTER -DHAVE_XMLHASFEATURE -DHAVE_XMLFIRSTELEMENTCHILD -DHAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS -DHAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS -DHAVE_XMLRELAXNGSETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETPARSERSTRUCTUREDERRORS -I/root/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.33/include -I/root/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.9/include/libxml2 -I/root/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.9/include/libxml2  $(DEFS) $(cppflags) "-DNOKOGIRI_LIBXML2_PATH=\"/root/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.9\"" "-DNOKOGIRI_LIBXML2_PATCHES=\"0001-Revert-Do-not-URI-escape-in-server-side-includes.patch 0002-Remove-script-macro-support.patch 0003-Update-entities-to-remove-handling-of-ssi.patch\"" "-DNOKOGIRI_LIBXSLT_PATH=\"/root/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.33\"" "-DNOKOGIRI_LIBXSLT_PATCHES=\"0001-Fix-security-framework-bypass.patch\""
+>>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
 CXXFLAGS = $(CCDLFLAGS) $(cxxflags) $(ARCH_FLAG)
 ldflags  = -L. -fstack-protector -rdynamic -Wl,-export-dynamic
 dldflags = -Wl,--compress-debug-sections=zlib 
@@ -122,8 +147,13 @@ TOUCH = exit >
 #### End of system configuration section. ####
 
 preload = 
+<<<<<<< HEAD
 libpath = . $(libdir) /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.9/lib /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.33/lib
 LIBPATH =  -L. -L$(libdir) -Wl,-rpath,$(libdir) -L/home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.9/lib -Wl,-rpath,/home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.9/lib -L/home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.33/lib -Wl,-rpath,/home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.33/lib
+=======
+libpath = . $(libdir) /root/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.9/lib /root/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.33/lib
+LIBPATH =  -L. -L$(libdir) -Wl,-rpath,$(libdir) -L/root/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.9/lib -Wl,-rpath,/root/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.9/lib -L/root/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.33/lib -Wl,-rpath,/root/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.33/lib
+>>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
 DEFFILE = 
 
 CLEANFILES = mkmf.log
@@ -134,7 +164,11 @@ extout =
 extout_prefix = 
 target_prefix = /nokogiri
 LOCAL_LIBS = 
+<<<<<<< HEAD
 LIBS =  /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.33/lib/libexslt.a -lm -ldl -llzma -lz /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.9/lib/libxml2.a /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.33/lib/libxslt.a -ldl -lm -llzma -lz /home/deploy/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.9/lib/libxml2.a -llzma -lpthread -lgmp -ldl -lcrypt -lm   -lc 
+=======
+LIBS = $(LIBRUBYARG_SHARED) /root/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.33/lib/libexslt.a -lm -ldl -llzma -lz /root/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.9/lib/libxml2.a /root/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.33/lib/libxslt.a -ldl -lm -llzma -lz /root/mike/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.9/lib/libxml2.a -llzma -lpthread -lgmp -ldl -lcrypt -lm   -lc 
+>>>>>>> 1d584bc086a175960f3d607684059dfe797e0bce
 ORIG_SRCS = html_document.c html_element_description.c html_entity_lookup.c html_sax_parser_context.c html_sax_push_parser.c nokogiri.c xml_attr.c xml_attribute_decl.c xml_cdata.c xml_comment.c xml_document.c xml_document_fragment.c xml_dtd.c xml_element_content.c xml_element_decl.c xml_encoding_handler.c xml_entity_decl.c xml_entity_reference.c xml_io.c xml_libxml2_hacks.c xml_namespace.c xml_node.c xml_node_set.c xml_processing_instruction.c xml_reader.c xml_relax_ng.c xml_sax_parser.c xml_sax_parser_context.c xml_sax_push_parser.c xml_schema.c xml_syntax_error.c xml_text.c xml_xpath_context.c xslt_stylesheet.c
 SRCS = $(ORIG_SRCS) 
 OBJS = html_document.o html_element_description.o html_entity_lookup.o html_sax_parser_context.o html_sax_push_parser.o nokogiri.o xml_attr.o xml_attribute_decl.o xml_cdata.o xml_comment.o xml_document.o xml_document_fragment.o xml_dtd.o xml_element_content.o xml_element_decl.o xml_encoding_handler.o xml_entity_decl.o xml_entity_reference.o xml_io.o xml_libxml2_hacks.o xml_namespace.o xml_node.o xml_node_set.o xml_processing_instruction.o xml_reader.o xml_relax_ng.o xml_sax_parser.o xml_sax_parser_context.o xml_sax_push_parser.o xml_schema.o xml_syntax_error.o xml_text.o xml_xpath_context.o xslt_stylesheet.o
