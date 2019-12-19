@@ -83,7 +83,7 @@ gem 'grape-swagger-ui', '~> 2.2.8'
 gem 'rack-attack', '~> 3.0.0'
 gem 'easy_table'
 gem 'carrierwave', '~> 1.0'
-gem 'fog'
+gem 'fog', '>= 2.0.0'
 gem "rest-client", ">= 1.8.0"
 gem 'jwt', '~> 1.5'
 gem 'email_validator', '~> 1.6'
