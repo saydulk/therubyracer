@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-gem "json"
+gem "json", ">= 2.3.0"
 
 # Add dependencies required to use your gem here.
 # Example:
