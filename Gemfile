@@ -17,7 +17,7 @@ gem 'google-protobuf'
 gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
 gem "bundler", ">= 1.17.3" 
 gem 'jbuilder'
-gem 'rdoc'
+gem 'rdoc', '>= 6.3.0'
 gem 'webconsole' if RUBY_PLATFORM.match?(/darwin/)
 gem 'ruby'
 gem 'bcrypt', '~> 3.1', '>= 3.1.10'
