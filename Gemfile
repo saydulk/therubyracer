@@ -130,7 +130,7 @@ group :test do
   gem 'database_cleaner'
   gem 'mocha', require: false
 
-  gem 'capybara',            '~> 2.17'
+  gem 'capybara', '~> 2.18', '>= 2.18.0'
   gem 'selenium-webdriver',  '~> 3.8'
   gem 'chromedriver-helper', '~> 1.1'
   gem 'rack_session_access', '~> 0.1'
