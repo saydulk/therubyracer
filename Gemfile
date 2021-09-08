@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 4.2'
 gem 'rails-i18n' 
 gem 'responders', '~> 2.0'
-gem "better_errors", "~> 2.5.1"
+gem "better_errors", "~> 2.8.0"
 gem 'mysql2'
 gem 'rake', '~> 13.0'
 gem 'figaro' 
