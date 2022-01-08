@@ -13,7 +13,7 @@ gem 'applescript', '~> 1.0'
 gem 'ovirt-engine-sdk', '~> 4.3'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'peatio'
-gem 'google-protobuf'
+gem 'google-protobuf', '>= 3.19.2'
 gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
 gem "bundler", ">= 1.17.3" 
 gem 'jbuilder'
@@ -113,7 +113,7 @@ gem 'useragent'
 gem 'geocoder'
 gem 'social-share-button', '~> 1.2'
 gem 'modernizr-rails'
-gem  'grpc'
+gem  'grpc', '>= 1.24.0'
 group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker', '~> 1.4.3'
