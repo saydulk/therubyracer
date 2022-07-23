@@ -23,7 +23,7 @@ group :test do
   gem 'cookiejar'
   gem 'coveralls', '~> 0.8.17', require: false
   gem 'danger-toc', '~> 0.1.2'
-  gem 'grape-entity', '~> 0.6'
+  gem 'grape-entity', '~> 0.7', '>= 0.7.1'
   gem 'maruku'
   gem 'mime-types'
   gem 'rack-jsonp', require: 'rack/jsonp'
