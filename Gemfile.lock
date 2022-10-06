@@ -367,9 +367,9 @@ GEM
       json
       multi_json
       request_store (>= 1.0.5)
-    google-protobuf (3.9.2)
-    googleapis-common-protos-types (1.0.4)
-      google-protobuf (~> 3.0)
+    google-protobuf (3.21.7)
+    googleapis-common-protos-types (1.4.0)
+      google-protobuf (~> 3.14)
     grape (1.0.3)
       activesupport
       builder
@@ -383,8 +383,8 @@ GEM
       grape (>= 0.16.2)
     grape-swagger-ui (2.2.8)
       railties (>= 3.1)
-    grpc (1.24.0)
-      google-protobuf (~> 3.8)
+    grpc (1.49.1)
+      google-protobuf (~> 3.21)
       googleapis-common-protos-types (~> 1.0)
     hashie (3.5.7)
     http-accept (1.7.0)
@@ -824,7 +824,7 @@ DEPENDENCIES
   fusioncharts-rails (~> 0.0.2)
   geocoder
   gon (~> 5.2.0)
-  google-protobuf
+  google-protobuf (>= 3.19.6)
   grape (~> 1.0.1)
   grape-entity (~> 0.5.2)
   grape-swagger (~> 0.27.3)
