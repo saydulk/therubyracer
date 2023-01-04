@@ -392,7 +392,8 @@ GEM
       domain_name (~> 0.5)
     http_accept_language (2.1.1)
     http_parser.rb (0.6.0)
-    httparty (0.16.2)
+    httparty (0.21.0)
+      mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
     httpclient (2.8.3)
     i18n (0.9.5)
@@ -832,7 +833,7 @@ DEPENDENCIES
   grpc
   hashie (~> 3.0)
   http_accept_language
-  httparty
+  httparty (>= 0.21.0)
   io-console
   jbuilder
   jquery-datatables
