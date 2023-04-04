@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-gem "json"
+gem "json", ">= 2.3.0"
 
 # Add dependencies required to use your gem here.
 # Example:
@@ -11,10 +11,10 @@ gem "json"
 group :development do
   gem "shoulda", ">= 0"
   gem "bundler", "~> 1.0.0"
-  gem "jeweler", "~> 1.5.1"
+  gem "jeweler", "~> 1.5.2"
   # gem "rcov", ">= 0"
 end
 
 group :test do
-  gem "actionmailer", ">= 2.3.2"
+  gem "actionmailer", ">= 6.1.7.3"
 end
