@@ -3,7 +3,7 @@ GEM
   specs:
     awesome_print (1.6.1)
     diff-lcs (1.2.5)
-    rake (11.1.2)
+    rake (13.0.6)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
@@ -23,8 +23,8 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
-  rake
+  rake (>= 12.3.3)
   rspec
 
 BUNDLED WITH
-   1.11.2
+   1.17.3
