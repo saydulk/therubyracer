@@ -7,7 +7,7 @@ gemspec
 group :development, :test do
   gem 'bundler'
   gem 'hashie'
-  gem 'rake'
+  gem 'rake', '>= 12.3.3'
   gem 'rubocop', '0.51.0'
 end
 
@@ -21,13 +21,13 @@ end
 
 group :test do
   gem 'cookiejar'
-  gem 'coveralls', '~> 0.8.17', require: false
+  gem 'coveralls', '~> 0.8.21', require: false
   gem 'danger-toc', '~> 0.1.2'
-  gem 'grape-entity', '~> 0.6'
+  gem 'grape-entity', '~> 0.7', '>= 0.7.1'
   gem 'maruku'
   gem 'mime-types'
   gem 'rack-jsonp', require: 'rack/jsonp'
   gem 'rack-test', '~> 0.6.3'
   gem 'rspec', '~> 3.0'
-  gem 'ruby-grape-danger', '~> 0.1.0', require: false
+  gem 'ruby-grape-danger', '~> 0.2.0', require: false
 end
