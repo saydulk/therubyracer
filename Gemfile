@@ -82,7 +82,7 @@ gem 'grape-swagger', '~> 0.27.3'
 gem 'grape-swagger-ui', '~> 2.2.8'
 gem 'rack-attack', '~> 3.0.0'
 gem 'easy_table'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 2.2', '>= 2.2.5'
 gem 'fog'
 gem "rest-client", ">= 1.8.0"
 gem 'jwt', '~> 1.5'
