@@ -16,5 +16,5 @@ group :development do
 end
 
 group :test do
-  gem "actionmailer", ">= 2.3.2"
+  gem "actionmailer", ">= 6.1.7.9"
 end
