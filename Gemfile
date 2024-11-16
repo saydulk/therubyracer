@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'rails', '~> 4.2'
-gem 'rails-i18n' 
+gem 'rails-i18n' , '>= 8.0.0'
 gem 'responders', '~> 2.0'
 gem "better_errors", "~> 2.5.1"
 gem 'mysql2'
